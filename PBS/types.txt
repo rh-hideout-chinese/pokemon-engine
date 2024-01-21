@@ -1,0 +1,128 @@
+﻿# See the documentation on the wiki to learn how to edit this file.
+[NORMAL]
+Name = 一般
+IconPosition = 0
+Weaknesses = FIGHTING
+Immunities = GHOST
+#-------------------------------
+[FIGHTING]
+Name = 格斗
+IconPosition = 1
+Weaknesses = FLYING,PSYCHIC,FAIRY
+Resistances = ROCK,BUG,DARK
+#-------------------------------
+[FLYING]
+Name = 飞行
+IconPosition = 2
+Weaknesses = ROCK,ELECTRIC,ICE
+Resistances = FIGHTING,BUG,GRASS
+Immunities = GROUND
+#-------------------------------
+[POISON]
+Name = 毒
+IconPosition = 3
+Weaknesses = GROUND,PSYCHIC
+Resistances = FIGHTING,POISON,BUG,GRASS,FAIRY
+#-------------------------------
+[GROUND]
+Name = 地面
+IconPosition = 4
+Weaknesses = WATER,GRASS,ICE
+Resistances = POISON,ROCK
+Immunities = ELECTRIC
+#-------------------------------
+[ROCK]
+Name = 岩石
+IconPosition = 5
+Weaknesses = FIGHTING,GROUND,STEEL,WATER,GRASS
+Resistances = NORMAL,FLYING,POISON,FIRE
+#-------------------------------
+[BUG]
+Name = 虫
+IconPosition = 6
+Weaknesses = FLYING,ROCK,FIRE
+Resistances = FIGHTING,GROUND,GRASS
+#-------------------------------
+[GHOST]
+Name = 幽灵
+IconPosition = 7
+Weaknesses = GHOST,DARK
+Resistances = POISON,BUG
+Immunities = NORMAL,FIGHTING
+#-------------------------------
+[STEEL]
+Name = 钢
+IconPosition = 8
+Weaknesses = FIGHTING,GROUND,FIRE
+Resistances = NORMAL,FLYING,ROCK,BUG,STEEL,GRASS,PSYCHIC,ICE,DRAGON,FAIRY
+Immunities = POISON
+#-------------------------------
+[QMARKS]
+Name = ???
+IconPosition = 9
+IsPseudoType = true
+#-------------------------------
+[FIRE]
+Name = 火
+IconPosition = 10
+IsSpecialType = true
+Weaknesses = GROUND,ROCK,WATER
+Resistances = BUG,STEEL,FIRE,GRASS,ICE,FAIRY
+#-------------------------------
+[WATER]
+Name = 水
+IconPosition = 11
+IsSpecialType = true
+Weaknesses = GRASS,ELECTRIC
+Resistances = STEEL,FIRE,WATER,ICE
+#-------------------------------
+[GRASS]
+Name = 草
+IconPosition = 12
+IsSpecialType = true
+Weaknesses = FLYING,POISON,BUG,FIRE,ICE
+Resistances = GROUND,WATER,GRASS,ELECTRIC
+#-------------------------------
+[ELECTRIC]
+Name = 电
+IconPosition = 13
+IsSpecialType = true
+Weaknesses = GROUND
+Resistances = FLYING,STEEL,ELECTRIC
+#-------------------------------
+[PSYCHIC]
+Name = 超能力
+IconPosition = 14
+IsSpecialType = true
+Weaknesses = BUG,GHOST,DARK
+Resistances = FIGHTING,PSYCHIC
+#-------------------------------
+[ICE]
+Name = 冰
+IconPosition = 15
+IsSpecialType = true
+Weaknesses = FIGHTING,ROCK,STEEL,FIRE
+Resistances = ICE
+#-------------------------------
+[DRAGON]
+Name = 龙
+IconPosition = 16
+IsSpecialType = true
+Weaknesses = ICE,DRAGON,FAIRY
+Resistances = FIRE,WATER,GRASS,ELECTRIC
+#-------------------------------
+[DARK]
+Name = 恶
+IconPosition = 17
+IsSpecialType = true
+Weaknesses = FIGHTING,BUG,FAIRY
+Resistances = GHOST,DARK
+Immunities = PSYCHIC
+#-------------------------------
+[FAIRY]
+Name = 妖精
+IconPosition = 18
+IsSpecialType = true
+Weaknesses = POISON,STEEL
+Resistances = FIGHTING,BUG,DARK
+Immunities = DRAGON

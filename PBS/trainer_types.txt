@@ -1,0 +1,401 @@
+﻿# See the documentation on the wiki to learn how to edit this file.
+#-------------------------------
+[POKEMONTRAINER_Red]
+Name = 宝可梦训练家
+Gender = Male
+BaseMoney = 60
+#-------------------------------
+[POKEMONTRAINER_Leaf]
+Name = 宝可梦训练家
+Gender = Female
+BaseMoney = 60
+#-------------------------------
+[POKEMONTRAINER_Brendan]
+Name = 宝可梦训练家
+Gender = Male
+BaseMoney = 60
+#-------------------------------
+[POKEMONTRAINER_May]
+Name = 宝可梦训练家
+Gender = Female
+BaseMoney = 60
+#-------------------------------
+[RIVAL1]
+Name = 劲敌
+Gender = Male
+BaseMoney = 16
+#-------------------------------
+[RIVAL2]
+Name = 劲敌
+Gender = Male
+BaseMoney = 36
+#-------------------------------
+[AROMALADY]
+Name = 香氛姐姐
+Gender = Female
+BaseMoney = 32
+#-------------------------------
+[BEAUTY]
+Name = 大姐姐
+Gender = Female
+BaseMoney = 56
+#-------------------------------
+[BIKER]
+Name = 暴走族
+Gender = Male
+BaseMoney = 32
+#-------------------------------
+[BIRDKEEPER]
+Name = 养鸟人
+Gender = Male
+BaseMoney = 32
+#-------------------------------
+[BUGCATCHER]
+Name = 捕虫少年
+Gender = Male
+BaseMoney = 16
+#-------------------------------
+[BURGLAR]
+Name = 趁火打劫者
+Gender = Male
+BaseMoney = 88
+SkillLevel = 32
+#-------------------------------
+[CHANNELER]
+Name = 祈祷师
+Gender = Female
+BaseMoney = 32
+#-------------------------------
+[CUEBALL]
+Name = 光头男
+Gender = Male
+BaseMoney = 24
+#-------------------------------
+[ENGINEER]
+Name = 电工大叔
+Gender = Male
+BaseMoney = 48
+#-------------------------------
+[FISHERMAN]
+Name = 垂钓者
+Gender = Male
+BaseMoney = 32
+#-------------------------------
+[GAMBLER]
+Name = 赌徒
+Gender = Male
+BaseMoney = 72
+SkillLevel = 32
+#-------------------------------
+[GENTLEMAN]
+Name = 绅士
+Gender = Male
+BaseMoney = 72
+#-------------------------------
+[HIKER]
+Name = 登山男
+Gender = Male
+BaseMoney = 32
+#-------------------------------
+[JUGGLER]
+Name = 杂耍艺人
+Gender = Male
+BaseMoney = 32
+#-------------------------------
+[LADY]
+Name = 千金小姐
+Gender = Female
+BaseMoney = 160
+SkillLevel = 72
+#-------------------------------
+[PAINTER]
+Name = 画家
+Gender = Female
+BaseMoney = 16
+#-------------------------------
+[POKEMANIAC]
+Name = 怪兽狂
+Gender = Male
+BaseMoney = 64
+#-------------------------------
+[POKEMONBREEDER]
+Name = 宝可梦培育家
+Gender = Female
+BaseMoney = 48
+#-------------------------------
+[PROFESSOR]
+Name = 博士
+Gender = Male
+BaseMoney = 100
+#-------------------------------
+[ROCKER]
+Name = 电气摇滚团
+Gender = Male
+BaseMoney = 24
+#-------------------------------
+[RUINMANIAC]
+Name = 遗迹迷
+Gender = Male
+BaseMoney = 48
+#-------------------------------
+[SAILOR]
+Name = 水手
+Gender = Male
+BaseMoney = 32
+#-------------------------------
+[SCIENTIST]
+Name = 研究员
+Gender = Male
+BaseMoney = 48
+#-------------------------------
+[SUPERNERD]
+Name = 理科男
+Gender = Male
+BaseMoney = 48
+#-------------------------------
+[TAMER]
+Name = 驯兽师
+Gender = Male
+BaseMoney = 40
+#-------------------------------
+[BLACKBELT]
+Name = 空手道王
+Gender = Male
+BaseMoney = 32
+#-------------------------------
+[CRUSHGIRL]
+Name = 格斗女孩
+Gender = Female
+BaseMoney = 24
+#-------------------------------
+[CAMPER]
+Name = 露营少年
+Gender = Male
+BaseMoney = 16
+#-------------------------------
+[PICNICKER]
+Name = 野餐女孩
+Gender = Female
+BaseMoney = 16
+#-------------------------------
+[COOLTRAINER_M]
+Name = 精英训练家
+Gender = Male
+BaseMoney = 60
+#-------------------------------
+[COOLTRAINER_F]
+Name = 精英训练家
+Gender = Female
+BaseMoney = 60
+#-------------------------------
+[YOUNGSTER]
+Name = 短裤小子
+Gender = Male
+BaseMoney = 16
+#-------------------------------
+[LASS]
+Name = 迷你裙
+Gender = Female
+BaseMoney = 16
+#-------------------------------
+[POKEMONRANGER_M]
+Name = 宝可梦巡护员
+Gender = Male
+BaseMoney = 60
+#-------------------------------
+[POKEMONRANGER_F]
+Name = 宝可梦巡护员
+Gender = Female
+BaseMoney = 60
+#-------------------------------
+[PSYCHIC_M]
+Name = 超能力者
+Gender = Male
+BaseMoney = 32
+#-------------------------------
+[PSYCHIC_F]
+Name = 超能力者
+Gender = Female
+BaseMoney = 32
+#-------------------------------
+[SWIMMER_M]
+Name = 泳裤小伙子
+Gender = Male
+BaseMoney = 16
+SkillLevel = 32
+#-------------------------------
+[SWIMMER_F]
+Name = 比基尼姐姐
+Gender = Female
+BaseMoney = 16
+SkillLevel = 32
+#-------------------------------
+[SWIMMER2_M]
+Name = 泳裤小伙子
+Gender = Male
+BaseMoney = 16
+SkillLevel = 32
+#-------------------------------
+[SWIMMER2_F]
+Name = 比基尼姐姐
+Gender = Female
+BaseMoney = 16
+SkillLevel = 32
+#-------------------------------
+[TUBER_M]
+Name = 泳圈男孩
+Gender = Male
+BaseMoney = 4
+SkillLevel = 16
+#-------------------------------
+[TUBER_F]
+Name = 泳圈女孩
+Gender = Female
+BaseMoney = 4
+SkillLevel = 16
+#-------------------------------
+[TUBER2_M]
+Name = 泳圈男孩
+Gender = Male
+BaseMoney = 4
+SkillLevel = 16
+#-------------------------------
+[TUBER2_F]
+Name = 泳圈女孩
+Gender = Female
+BaseMoney = 4
+SkillLevel = 16
+#-------------------------------
+[COOLCOUPLE]
+Name = 精英情侣
+Gender = Unknown
+BaseMoney = 72
+SkillLevel = 48
+#-------------------------------
+[CRUSHKIN]
+Name = 格斗姐弟
+Gender = Unknown
+BaseMoney = 48
+#-------------------------------
+[SISANDBRO]
+Name = 海上姐弟
+Gender = Unknown
+BaseMoney = 16
+SkillLevel = 48
+#-------------------------------
+[TWINS]
+Name = 双胞胎
+Gender = Unknown
+BaseMoney = 24
+#-------------------------------
+[YOUNGCOUPLE]
+Name = 热恋情侣
+Gender = Unknown
+BaseMoney = 60
+SkillLevel = 32
+#-------------------------------
+[TEAMROCKET_M]
+Name = 火箭队
+Gender = Male
+BaseMoney = 32
+#-------------------------------
+[TEAMROCKET_F]
+Name = 火箭队
+Gender = Female
+BaseMoney = 32
+#-------------------------------
+[ROCKETBOSS]
+Name = 火箭队老大
+Gender = Male
+BaseMoney = 100
+#-------------------------------
+[LEADER_Brock]
+Name = 道馆馆主
+Gender = Male
+BaseMoney = 100
+BattleBGM = Battle Gym Leader
+VictoryBGM = Battle victory leader
+#-------------------------------
+[LEADER_Misty]
+Name = 道馆馆主
+Gender = Female
+BaseMoney = 100
+BattleBGM = Battle Gym Leader
+VictoryBGM = Battle victory leader
+#-------------------------------
+[LEADER_Surge]
+Name = 道馆馆主
+Gender = Male
+BaseMoney = 100
+BattleBGM = Battle Gym Leader
+VictoryBGM = Battle victory leader
+#-------------------------------
+[LEADER_Erika]
+Name = 道馆馆主
+Gender = Female
+BaseMoney = 100
+BattleBGM = Battle Gym Leader
+VictoryBGM = Battle victory leader
+#-------------------------------
+[LEADER_Koga]
+Name = 道馆馆主
+Gender = Male
+BaseMoney = 100
+BattleBGM = Battle Gym Leader
+VictoryBGM = Battle victory leader
+#-------------------------------
+[LEADER_Sabrina]
+Name = 道馆馆主
+Gender = Female
+BaseMoney = 100
+BattleBGM = Battle Gym Leader
+VictoryBGM = Battle victory leader
+#-------------------------------
+[LEADER_Blaine]
+Name = 道馆馆主
+Gender = Male
+BaseMoney = 100
+BattleBGM = Battle Gym Leader
+VictoryBGM = Battle victory leader
+#-------------------------------
+[LEADER_Giovanni]
+Name = 道馆馆主
+Gender = Male
+BaseMoney = 100
+BattleBGM = Battle Gym Leader
+VictoryBGM = Battle victory leader
+#-------------------------------
+[ELITEFOUR_Lorelei]
+Name = 四天王
+Gender = Female
+BaseMoney = 100
+BattleBGM = Battle Elite
+VictoryBGM = Battle victory leader
+#-------------------------------
+[ELITEFOUR_Bruno]
+Name = 四天王
+Gender = Male
+BaseMoney = 100
+BattleBGM = Battle Elite
+VictoryBGM = Battle victory leader
+#-------------------------------
+[ELITEFOUR_Agatha]
+Name = 四天王
+Gender = Female
+BaseMoney = 100
+BattleBGM = Battle Elite
+VictoryBGM = Battle victory leader
+#-------------------------------
+[ELITEFOUR_Lance]
+Name = 四天王
+Gender = Male
+BaseMoney = 100
+BattleBGM = Battle Elite
+VictoryBGM = Battle victory leader
+#-------------------------------
+[CHAMPION]
+Name = 冠军
+Gender = Male
+BaseMoney = 100
+BattleBGM = Battle Champion
+VictoryBGM = Battle victory leader
