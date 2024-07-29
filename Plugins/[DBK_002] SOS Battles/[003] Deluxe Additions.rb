@@ -76,7 +76,7 @@ MidbattleHandlers.add(:midbattle_global, :wild_totem_battle,
     foe = battle.battlers[1]
     PBDebug.log("[Midbattle Global] #{foe.pbThis} (#{foe.index}) gains a Z-Powered aura")
     battle.pbAnimation(:DRAGONDANCE, foe, foe)
-    battle.pbDisplay(_INTL("{1}'s aura flared to life!", foe.pbThis))
+    battle.pbDisplay(_INTL("{1} 的气场突然亮起！", foe.pbThis))
     stats = battle.totemBattle 
     if !stats.is_a?(Array)
       stats = []

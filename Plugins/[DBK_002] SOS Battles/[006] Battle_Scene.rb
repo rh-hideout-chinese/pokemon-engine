@@ -87,8 +87,8 @@ class Battle::Scene
     while inPartyAnimation?
       pbUpdate
     end
-    pbDisplayPausedMessage(_INTL("{1} joined the battle!", trainer.full_name))
-    pbDisplayMessage(_INTL("{1} sent out {2}!", trainer.full_name, battler.name))
+    pbDisplayPausedMessage(_INTL("{1}加入了战斗!", trainer.full_name))
+    pbDisplayMessage(_INTL("{1}派出了{2}!", trainer.full_name, battler.name))
     @battle.pbSendOut([[idxBattler, battler.pokemon]])
   end
   

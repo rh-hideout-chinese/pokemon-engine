@@ -23,10 +23,10 @@ module GameData
     def self.editor_properties
       properties = self.sos_editor_properties
       properties.concat([
-        ["RivalSpecies",   GameDataPoolProperty.new(:Species), _INTL("Species that this wild Pokémon will prioritize attacking, even if on the same side.")],
-        ["SpeciesSOS",     GameDataPoolProperty.new(:Species), _INTL("Species that may appear when this wild Pokémon calls for help.")],
-        ["ConditionalSOS", SOSEncounterProperty.new,           _INTL("Conditional species that may appear when this wild Pokémon calls for help.")],
-        ["CallRateSOS",    LimitProperty.new(100),             _INTL("Base odds of this wild Pokémon calling for help.")],
+        ["RivalSpecies",   GameDataPoolProperty.new(:Species), _INTL("该野生宝可梦会优先攻击的物种，即使在同一方。")],
+        ["SpeciesSOS",     GameDataPoolProperty.new(:Species), _INTL("当这只野生宝可梦呼救时可能出现的物种。")],
+        ["ConditionalSOS", SOSEncounterProperty.new,           _INTL("当这只野生宝可梦呼救时可能出现的条件物种。")],
+        ["CallRateSOS",    LimitProperty.new(100),             _INTL("这只野生宝可梦呼救的基础几率。")],
       ])
       return properties
     end
@@ -73,7 +73,7 @@ module GameData
     def self.editor_properties
       properties = self.sos_editor_properties
       properties.push(
-        ["SpecialSOS", SOSMapEncounterProperty.new, _INTL("Exclusive SOS encounters found on this map.")]
+        ["SpecialSOS", SOSMapEncounterProperty.new, _INTL("在这个地图上发现的闯入对战。")]
       )
       return properties
     end
@@ -108,10 +108,10 @@ ItemHandlers::CanUseInBattle.add(:ADRENALINEORB, proc { |item, pokemon, battler,
 
 ItemHandlers::UseInBattle.add(:ADRENALINEORB, proc { |item, battler, battle|
   if battle.adrenalineOrb
-    battle.pbDisplay(_INTL("But it had no effect!"))
+    battle.pbDisplay(_INTL("但是,没有效果!"))
     battle.pbReturnUnusedItemToBag(item, battler.index)
   else
-    battle.pbDisplay(_INTL("The {1} makes the wild Pokémon nervous!", GameData::Item.get(item).portion_name))
+    battle.pbDisplay(_INTL("{1} 使得野生宝可梦感到紧张！", GameData::Item.get(item).portion_name))
     battle.adrenalineOrb = true
   end
 })

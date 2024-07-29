@@ -20,7 +20,7 @@ class Battle::Battler
   alias totem_pbThis pbThis
   def pbThis(lowerCase = false)
     if @totemBattler && opposes? && wild?
-      return _INTL("Totem {1}", name)
+      return _INTL("霸主{1}", name)
     else
       return totem_pbThis(lowerCase)
     end

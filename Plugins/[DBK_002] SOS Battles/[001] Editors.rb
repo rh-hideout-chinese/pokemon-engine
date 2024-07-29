@@ -16,7 +16,7 @@ class SOSEncounterProperty
     params.setRange(0, 65_535)
     params.setDefaultValue(value.to_i) if value
     params.setCancelValue(-1)
-    ret = pbMessageChooseNumber(_INTL("Choose a map number."), params)
+    ret = pbMessageChooseNumber(_INTL("选择地图编号"), params)
     ret = nil if ret < 0
     return (ret) ? ret.to_s : nil
   end
@@ -69,10 +69,10 @@ class SOSEncounterProperty
         if cmd[1] >= 0
           entry = realcmds[cmd[1]]
           if entry[3] == -1
-            pbMessage(_INTL("Choose a species, encounter type and map ID."))
+            pbMessage(_INTL("选择一个物种、遭遇类型和地图 ID。"))
             newspecies = pbChooseSpeciesList
             if newspecies
-              newtypeindex = pbMessage(_INTL("Choose an encounter type."), @methods, -1)
+              newtypeindex = pbMessage(_INTL("选择一个遭遇类型。"), @methods, -1)
               if newtypeindex >= 0
                 newtype = @type_ids[newtypeindex]
                 newmap = edit_parameter
@@ -94,9 +94,9 @@ class SOSEncounterProperty
               end
             end
           else
-            case pbMessage("\\ts[]" + _INTL("Do what with this encounter?"),
-                           [_INTL("Change species"), _INTL("Change encounter type"),
-                            _INTL("Change map number"), _INTL("Delete"), _INTL("Cancel")], 5)
+            case pbMessage("\\ts[]" + _INTL("对这个遭遇做什么？"),
+              [_INTL("更改物种"), _INTL("更改遭遇类型"),
+               _INTL("更改地图编号"), _INTL("删除"), _INTL("取消")], 5)
             when 0   # Change species
               newspecies = pbChooseSpeciesList(entry[0])
               if newspecies
@@ -118,7 +118,7 @@ class SOSEncounterProperty
             when 1   # Change encounter type
               default_index = 0
               @type_ids.each_with_index { |type, i| default_index = i if type == entry[1] }
-              newtypeindex = pbMessage(_INTL("Choose an encounter type."), @methods, -1, nil, default_index)
+              newtypeindex = pbMessage(_INTL("选择一个遭遇类型"), @methods, -1, nil, default_index)
               if newtypeindex >= 0
                 newtype = @type_ids[newtypeindex]
                 existing_sos = -1
@@ -160,8 +160,8 @@ class SOSEncounterProperty
             end
           end
         else
-          cmd2 = pbMessage(_INTL("Save changes?"),
-                           [_INTL("Yes"), _INTL("No"), _INTL("Cancel")], 3)
+          cmd2 = pbMessage(_INTL("保存更改?"),
+                           [_INTL("是"), _INTL("否"), _INTL("取消")], 3)
           if [0, 1].include?(cmd2)
             if cmd2 == 0
               realcmds.length.times do |i|
@@ -225,7 +225,7 @@ class SOSMapEncounterProperty
         methods.push(e.real_name)
         type_ids.push(e.id)
       end
-      newindex = pbMessage(_INTL("Choose a type of {1}.", @cond_methods[index].downcase), methods, -1)
+      newindex = pbMessage(_INTL("选择{1}的类型.", @cond_methods[index].downcase), methods, -1)
       ret = type_ids[newindex]
     end
     return ret
@@ -236,7 +236,7 @@ class SOSMapEncounterProperty
     params.setRange(1, 100)
     params.setDefaultValue(value.to_i) if value
     params.setCancelValue(0)
-    ret = pbMessageChooseNumber(_INTL("Set an encounter chance."), params)
+    ret = pbMessageChooseNumber(_INTL("设置一个遭遇几率。"), params)
     ret = nil if ret < 1
     return ret
   end
@@ -294,14 +294,14 @@ class SOSMapEncounterProperty
         if cmd[1] >= 0
           entry = realcmds[cmd[1]]
           if entry[5] == -1   # Add new sos encounter
-            pbMessage(_INTL("Choose a species, encounter chance, time of day, battle condition, and type of condition."))
+            pbMessage(_INTL("选择一个物种、遭遇几率、时间段、战斗条件以及条件类型。"))
             newspecies = pbChooseSpeciesList
             if newspecies
               newchance = edit_encounter_chance
               if newchance
-                newtimeindex = pbMessage(_INTL("Choose a time of day."), @time_methods, -1)
+                newtimeindex = pbMessage(_INTL("选择每一天中的时间"), @time_methods, -1)
                 if newtimeindex >= 0
-                  newcondindex = pbMessage(_INTL("Choose a battle condition."), @cond_methods, -1)
+                  newcondindex = pbMessage(_INTL("选择一个战斗条件"), @cond_methods, -1)
                   if newcondindex >= 0
                     newtype = edit_parameter(newcondindex)
                     existing_sos = -1
@@ -326,13 +326,14 @@ class SOSMapEncounterProperty
               end
             end
           else   # Edit encounter
-            case pbMessage("\\ts[]" + _INTL("Do what with this evolution?"),
-                           [_INTL("Change species"), 
-                            _INTL("Change encounter chance"),
-                            _INTL("Change time of day"), 
-                            _INTL("Change battle condition"), 
-                            _INTL("Change condition type"), 
-                            _INTL("Delete"), _INTL("Cancel")], 7)
+            case pbMessage("\\ts[]" + _INTL("对这个进化做什么？"),
+                      [_INTL("更改物种"), 
+                       _INTL("更改遭遇几率"),
+                       _INTL("更改时间段"),
+                       _INTL("更改战斗条件"),
+                       _INTL("更改条件类型"),
+                       _INTL("删除"), _INTL("取消")], 7)
+when 0   # 更改物种
             when 0   # Change species
               newspecies = pbChooseSpeciesList(entry[0])
               if newspecies
@@ -376,7 +377,7 @@ class SOSMapEncounterProperty
             when 2   # Change time
               default_index = 0
               @time_methods.each_with_index { |time, i| default_index = i if time == entry[2] }
-              newtimeindex = pbMessage(_INTL("Choose a time of day."), @time_methods, -1, nil, default_index)
+              newtimeindex = pbMessage(_INTL("选择一天中的时间"), @time_methods, -1, nil, default_index)
               if newtimeindex >= 0
                 existing_sos = -1
                 realcmds.length.times do |i|
@@ -398,7 +399,7 @@ class SOSMapEncounterProperty
             when 3   # Change condition
               default_index = 0
               @cond_methods.each_with_index { |cond, i| default_index = i if cond == entry[3] }
-              newcondindex = pbMessage(_INTL("Choose a battle condition."), @cond_methods, -1, nil, default_index)
+              newcondindex = pbMessage(_INTL("选择一个战斗条件"), @cond_methods, -1, nil, default_index)
               if newcondindex >= 0
                 existing_sos = -1
                 realcmds.length.times do |i|
@@ -420,7 +421,7 @@ class SOSMapEncounterProperty
               end
             when 4   # Change condition type
               if entry[3] == 0
-                pbMessage(_INTL("No specific battle condition has been set."))
+                pbMessage(_INTL("未设置特定的战斗条件。"))
               else
                 newtype = edit_parameter(entry[3])
                 if newtype != entry[4]
@@ -449,8 +450,8 @@ class SOSMapEncounterProperty
             end
           end
         else
-          cmd2 = pbMessage(_INTL("Save changes?"),
-                           [_INTL("Yes"), _INTL("No"), _INTL("Cancel")], 3)
+          cmd2 = pbMessage(_INTL("保存更改?"),
+                           [_INTL("是"), _INTL("否"), _INTL("取消")], 3)
           if [0, 1].include?(cmd2)
             if cmd2 == 0
               realcmds.length.times do |i|
@@ -495,13 +496,13 @@ end
 # General Debug options
 #-------------------------------------------------------------------------------
 MenuHandlers.add(:debug_menu, :deluxe_sos, {
-  "name"        => _INTL("Toggle SOS battles"),
+  "name"        => _INTL("切换闯入对战"),
   "parent"      => :deluxe_plugins_menu,
-  "description" => _INTL("Toggles SOS call functionality for wild Pokémon."),
+  "description" => _INTL("切换野生宝可梦的闯入对战呼叫功能。"),
   "effect"      => proc {
     $game_switches[Settings::SOS_CALL_SWITCH] = !$game_switches[Settings::SOS_CALL_SWITCH]
     toggle = ($game_switches[Settings::SOS_CALL_SWITCH]) ? "enabled" : "disabled"
-    pbMessage(_INTL("SOS calls {1}.", toggle))
+    pbMessage(_INTL("闯入对战呼叫{1}.", toggle))
   }
 })
 
@@ -510,9 +511,9 @@ MenuHandlers.add(:debug_menu, :deluxe_sos, {
 # Battle Debug options
 #-------------------------------------------------------------------------------
 MenuHandlers.add(:battle_debug_menu, :add_new_foe, {
-  "name"        => _INTL("Add new foe"),
+  "name"        => _INTL("添加新的对手"),
   "parent"      => :battlers,
-  "description" => _INTL("Add or replace a foe on the opposing side."),
+  "description" => _INTL("在对方一方添加或替换一个对手。"),
   "effect"      => proc { |battle|
     cmd = 0
     cmds = []
@@ -527,10 +528,10 @@ MenuHandlers.add(:battle_debug_menu, :add_new_foe, {
       cmds.push(_INTL("[{1}] {2} {3}", idx, name, owner))
     end
     loop do
-      cmd = pbMessage("\\ts[]" + _INTL("Choose an index for the new foe."), cmds, -1, nil, cmd)
+      cmd = pbMessage("\\ts[]" + _INTL("为新对手选择一个索引。"), cmds, -1, nil, cmd)
       break if cmd < 0
       if battle.trainerBattle?
-        trainerdata = pbListScreen(_INTL("CHOOSE A TRAINER"), TrainerBattleLister.new(0, false))
+        trainerdata = pbListScreen(_INTL("选择训练师"), TrainerBattleLister.new(0, false))
         break if !trainerdata
         slot = cmd + 1
         if size < 3 && slot > size 
@@ -556,7 +557,7 @@ MenuHandlers.add(:battle_debug_menu, :add_new_foe, {
         params.setRange(1, GameData::GrowthRate.max_level)
         params.setDefaultValue(5)
         level = pbMessageChooseNumber(
-          "\\ts[]" + _INTL("Set {1}'s level (max. {2}).", speciesName, params.maxNumber), params
+          "\\ts[]" + _INTL("设置{1}的等级(最高{2}).", speciesName, params.maxNumber), params
         )
         break if !level
         slot = cmd + 1

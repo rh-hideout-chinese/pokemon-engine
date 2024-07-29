@@ -368,9 +368,9 @@ class Battle
     answered = roll < answer_rate.round || $DEBUG && Input.press?(Input::CTRL)
     pbDeluxeTriggers(caller, nil, "BeforeSOS", caller.species, *caller.pokemon.types)
     if caller.totemBattler
-      pbDisplay(_INTL("{1} called its ally Pokémon!", caller.pbThis))
+      pbDisplay(_INTL("{1}召唤了它的伙伴宝可!", caller.pbThis))
     else
-      pbDisplay(_INTL("{1} called for help!", caller.pbThis))
+      pbDisplay(_INTL("{1}寻求了帮助p!", caller.pbThis))
     end
     @scene.pbAnimation(:GROWL, caller, caller.pbDirectOpposing(true))
     pbDisplayPaused(_INTL("... ... ..."))
@@ -382,7 +382,7 @@ class Battle
       pbSetSOSChain(caller)
       battler = pbGenerateSOSBattler(idxNewBattler, caller, roll)
       @scene.pbSOSJoin(idxNewBattler)
-      pbDisplay(_INTL("{1} appeared!", battler.name))
+      pbDisplay(_INTL("{1}出现了!", battler.name))
       pbCalculatePriority(true)
       pbOnBattlerEnteringBattle(idxNewBattler)
       battler.pbCheckForm
@@ -391,7 +391,7 @@ class Battle
     else
       PBDebug.log("[SOS] #{caller.pbThis}'s (#{caller.index}) call failed (Answer rate = #{answer_rate})")
       @lastCallAnswered = false
-      pbDisplay(_INTL("Its help didn't appear!"))
+      pbDisplay(_INTL("它的帮助没有出现!"))
       pbDeluxeTriggers(caller, nil, "FailedSOS", caller.species, *caller.pokemon.types)
     end
     @lastTurnCalled = @turnCount
@@ -402,9 +402,9 @@ class Battle
   #-----------------------------------------------------------------------------
   def pbCallForHelpSimple(caller)
     if caller.totemBattler
-      pbDisplay(_INTL("{1} called its ally Pokémon!", caller.pbThis))
+      pbDisplay(_INTL("{1}叫来了它的伙伴宝可梦!", caller.pbThis))
     else
-      pbDisplay(_INTL("{1} called for help!", caller.pbThis))
+      pbDisplay(_INTL("{1}寻求了帮助!", caller.pbThis))
     end
     @scene.pbAnimation(:GROWL, caller, caller.pbDirectOpposing(true))
     pbDisplayPaused(_INTL("... ... ..."))
@@ -414,14 +414,14 @@ class Battle
       @lastCallAnswered = true
       battler = pbGenerateSOSBattler(idxNewBattler, caller, pbRandom(100))
       @scene.pbSOSJoin(idxNewBattler)
-      pbDisplay(_INTL("{1} appeared!", battler.name))
+      pbDisplay(_INTL("{1}出现了!", battler.name))
       pbCalculatePriority(true)
       pbOnBattlerEnteringBattle(idxNewBattler)
       battler.pbCheckForm
     else
       PBDebug.log("[SOS] #{caller.pbThis}'s (#{caller.index}) call failed (Answer rate = 100)")
       @lastCallAnswered = false
-      pbDisplay(_INTL("Its help didn't appear!"))
+      pbDisplay(_INTL("它的帮助没有出现!"))
     end
     @lastTurnCalled = @turnCount
   end
@@ -456,7 +456,7 @@ class Battle
     battler = @battlers[idxBattler]
     @peer.pbOnEnteringBattle(self, battler, pokemon, true)
     @scene.pbSOSJoin(idxBattler)
-    pbDisplay(_INTL("{1} appeared!", battler.name))
+    pbDisplay(_INTL("{1}出现了!", battler.name))
     pbCalculatePriority(true)
     pbOnBattlerEnteringBattle(idxBattler)
     battler.pbCheckForm
