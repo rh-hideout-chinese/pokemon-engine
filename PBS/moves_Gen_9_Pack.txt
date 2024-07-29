@@ -1,0 +1,1136 @@
+﻿# 请参阅 wiki 上的文档，了解如何编辑此文件。
+#-------------------------------
+[DIRECLAW]
+Name = 克命爪
+Type = POISON
+Category = Physical
+Power = 80
+Accuracy = 100
+TotalPP = 15
+Target = NearOther
+FunctionCode = PoisonParalyzeOrSleepTarget
+Flags = Contact,CanProtect,CanMirrorMove,HighCriticalHitRate
+EffectChance = 50
+Description = 以破灭之爪瞄准要害 进行攻击。有时还会 让对手陷入中毒、麻 痹、睡眠之中的一种 状态。
+#-------------------------------
+[SPRINGTIDESTORM]
+Name = 阳春风暴
+Type = FAIRY
+Category = Special
+Power = 100
+Accuracy = 80
+TotalPP = 5
+Target = AllNearFoes
+FunctionCode = LowerTargetAttack1
+Flags = Wind,CanProtect,CanMirrorMove,CannotMetronome
+EffectChance = 30
+Description = 用交织着爱与恨的烈 风席卷对手进行攻击 。有时会降低对手的 攻击。
+#-------------------------------
+[RAGINGFURY]
+Name = 大愤慨
+Type = FIRE
+Category = Physical
+Power = 120
+Accuracy = 100
+TotalPP = 10
+Target = RandomNearFoe
+FunctionCode = MultiTurnAttackConfuseUserAtEnd
+Flags = CanProtect,CanMirrorMove,CannotMetronome
+Description = 在2～3回合内，一 边放出火焰，一边疯 狂乱打。大闹一番后 自己会陷入混乱。
+#-------------------------------
+[WAVECRASH]
+Name = 波动冲
+Type = WATER
+Category = Physical
+Power = 120
+Accuracy = 100
+TotalPP = 10
+Target = NearOther
+FunctionCode = RecoilThirdOfDamageDealt
+Flags = Contact,CanProtect,CanMirrorMove
+EffectChance = 100
+Description = 让水覆盖全身后撞向 对手。自己也会受到 不少伤害。
+#-------------------------------
+[CHLOROBLAST]
+Name = 叶绿爆震
+Type = GRASS
+Category = Special
+Power = 150
+Accuracy = 95
+TotalPP = 5
+Target = NearOther
+FunctionCode = RecoilHalfOfTotalHP
+Flags = CanProtect,CanMirrorMove
+Description = 将自己的叶绿素凝聚 起来后放出去进行攻 击。自己也会受到伤 害。
+#-------------------------------
+[MOUNTAINGALE]
+Name = 冰山风
+Type = ICE
+Category = Physical
+Power = 100
+Accuracy = 85
+TotalPP = 10
+Target = NearOther
+FunctionCode = FlinchTarget
+Flags = CanProtect,CanMirrorMove
+EffectChance = 30
+Description = 将冰山般巨大的冰块 砸向对手进行攻击。 有时会使对手畏缩。
+#-------------------------------
+[HEADLONGRUSH]
+Name = 突飞猛扑
+Type = GROUND
+Category = Physical
+Power = 120
+Accuracy = 100
+TotalPP = 5
+Target = NearOther
+FunctionCode = LowerUserDefSpDef1
+Flags = Contact,Punching,CanProtect,CanMirrorMove
+Description = 向对手使出灌注了全 心全力的撞击。自己 的防御和特防会降低 。
+#-------------------------------
+[BARBBARRAGE]
+Name = 毒千针
+Type = POISON
+Category = Physical
+Power = 60
+Accuracy = 100
+TotalPP = 10
+Target = NearOther
+FunctionCode = DoublePowerIfTargetPoisonedPoisonTarget
+Flags = CanProtect,CanMirrorMove
+EffectChance = 50
+Description = 用无数的毒针进行攻 击。有时还会让对手 陷入中毒状态。攻击 处于中毒状态的对手 时，威力会变成２倍 。
+#-------------------------------
+[ESPERWING]
+Name = 气场之翼
+Type = PSYCHIC
+Category = Special
+Power = 80
+Accuracy = 100
+TotalPP = 10
+Target = NearOther
+FunctionCode = RaiseUserSpeed1
+Flags = CanProtect,CanMirrorMove,HighCriticalHitRate
+EffectChance = 100
+Description = 用经过气场强化的翅 膀撕裂对手。容易击 中要害。会提高自己 的速度。
+#-------------------------------
+[BITTERMALICE]
+Name = 冤冤相报
+Type = GHOST
+Category = Special
+Power = 75
+Accuracy = 100
+TotalPP = 10
+Target = NearOther
+FunctionCode = LowerTargetAttack1
+Flags = CanProtect,CanMirrorMove
+EffectChance = 30
+Description = 用令人毛骨悚然的怨 念进行攻击。会降低 对手的攻击。
+#-------------------------------
+[TRIPLEARROWS]
+Name = 三连箭
+Type = FIGHTING
+Category = Physical
+Power = 90
+Accuracy = 100
+TotalPP = 10
+Target = NearOther
+FunctionCode = LowerTargetDefense1FlinchTarget
+Flags = CanProtect,CanMirrorMove,HighCriticalHitRate
+EffectChance = 100
+Description = 使出一记腿技后同时 发射3箭。有时会降 低对手的防御或使对 手畏缩。容易击中要 害。
+#-------------------------------
+[BLEAKWINDSTORM]
+Name = 枯叶风暴
+Type = FLYING
+Category = Special
+Power = 100
+Accuracy = 80
+TotalPP = 10
+Target = AllNearFoes
+FunctionCode = LowerTargetSpeed1
+Flags = CanProtect,CanMirrorMove,Wind
+EffectChance = 30
+Description = 用足以让身心都止不 住颤抖的冰冷狂风进 行攻击。有时会降低 对手的速度。
+#-------------------------------
+[WILDBOLTSTORM]
+Name = 鸣雷风暴
+Type = ELECTRIC
+Category = Special
+Power = 100
+Accuracy = 80
+TotalPP = 10
+Target = AllNearFoes
+FunctionCode = ParalyzeTarget
+Flags = CanProtect,CanMirrorMove,Wind
+EffectChance = 20
+Description = 呼唤雷云引起风暴， 用雷与风进行激烈的 攻击。有时会让对手 陷入麻痹状态。
+#-------------------------------
+[SANDSEARSTORM]
+Name = 热沙风暴
+Type = GROUND
+Category = Special
+Power = 100
+Accuracy = 80
+TotalPP = 10
+Target = AllNearFoes
+FunctionCode = BurnTarget
+Flags = CanProtect,CanMirrorMove,Wind
+EffectChance = 20
+Description = 用灼热的沙子和强烈 的风席卷对手进行攻 击。有时会让对手陷 入灼伤状态。
+#-------------------------------
+[LUNARBLESSING]
+Name = 新月祈祷
+Type = PSYCHIC
+Category = Status
+Accuracy = 0
+TotalPP = 5
+Target = UserAndAllies
+FunctionCode = HealUserAndAlliesQuarterOfTotalHPCureStatus
+Description = 向新月献上祈祷，回 复自己和场上同伴的 HP和状态。
+Flags = ZPower_ResetStats
+#-------------------------------
+[PSYSHIELDBASH]
+Name = 屏障猛攻
+Type = PSYCHIC
+Category = Physical
+Power = 70
+Accuracy = 90
+TotalPP = 10
+Target = NearOther
+FunctionCode = RaiseUserDefense1
+Flags = Contact,CanProtect,CanMirrorMove
+EffectChance = 100
+Description = 让意念的能量覆盖全 身，撞向对手进行攻 击。会提高自己的防 御。
+#-------------------------------
+[POWERSHIFT]
+Name = 力量转换
+Type = NORMAL
+Category = Status
+Accuracy = 0
+TotalPP = 10
+Target = User
+FunctionCode = UserSwapBaseAtkDef
+Flags = CannotMetronome
+Description = 将自己的攻击与防御 互相交换。
+#-------------------------------
+[STONEAXE]
+Name = 岩斧
+Type = ROCK
+Category = Physical
+Power = 65
+Accuracy = 90
+TotalPP = 15
+Target = NearOther
+FunctionCode = SplintersTargetGen8AddStealthRocksGen9
+Flags = Contact,CanProtect,CanMirrorMove,Slicing
+EffectChance = 100
+Description = 用岩石之斧进行攻击 。散落的岩石碎片会 飘浮在对手周围。
+#-------------------------------
+[MYSTICALPOWER]
+Name = 神秘之力
+Type = PSYCHIC
+Category = Special
+Power = 70
+Accuracy = 90
+TotalPP = 10
+Target = NearOther
+FunctionCode = RaiseUserSpAtk1
+Flags = CanProtect,CanMirrorMove
+EffectChance = 100
+Description = 放出不可思议的力量 攻击。会提高自己的 特攻。
+#-------------------------------
+[VICTORYDANCE]
+Name = 胜利之舞
+Type = FIGHTING
+Category = Status
+Accuracy = 0
+TotalPP = 10
+Target = User
+FunctionCode = RaiseUserAtkDefSpd1
+Flags = Dance,ZPower_ResetStats
+Description = 激烈地跳起唤来胜利 的舞蹈，提高自己的 攻击、防御和速度。
+#-------------------------------
+[SHELTER]
+Name = 闭关
+Type = STEEL
+Category = Status
+Accuracy = 0
+TotalPP = 10
+Target = User
+FunctionCode = RaiseUserDefense2
+Description = 将皮肤变得坚硬如铁 盾，从而大幅提高自 己的防御。
+Flags = ZPower_ResetStats
+#-------------------------------
+[INFERNALPARADE]
+Name = 群魔乱舞
+Type = GHOST
+Category = Special
+Power = 60
+Accuracy = 100
+TotalPP = 15
+Target = NearOther
+FunctionCode = DoublePowerIfTargetStatusProblemBurnTarget
+Flags = CanProtect,CanMirrorMove
+EffectChance = 30
+Description = 用无数的火球进行攻 击。有时会让对手陷 入灼伤状态。攻击处 于异常状态的对手时 ，威力会变成2倍。
+#-------------------------------
+[CEASELESSEDGE]
+Name = 秘剑・千重涛
+Type = DARK
+Category = Physical
+Power = 65
+Accuracy = 90
+TotalPP = 15
+Target = NearOther
+FunctionCode = SplintersTargetGen8AddSpikesGen9
+Flags = Contact,CanProtect,CanMirrorMove,Slicing
+EffectChance = 100
+Description = 用贝壳之剑进行攻击 。散落的贝壳碎片会 散落在对手脚下成为 撒菱。
+#-------------------------------
+[TAKEHEART]
+Name = 勇气填充
+Type = PSYCHIC
+Category = Status
+Accuracy = 0
+TotalPP = 10
+Target = User
+FunctionCode = RaiseUserSpAtkSpDef1CureStatus
+Description = 鼓起冲劲，治愈自己 的异常状态，同时提 高自己的特攻和特防 。
+Flags = ZPower_ResetStats
+#-------------------------------
+[AQUACUTTER]
+Name = 水波刀
+Type = WATER
+Category = Physical
+Power = 70
+Accuracy = 100
+TotalPP = 20
+Target = NearOther
+FunctionCode = None
+Flags = CanProtect,CanMirrorMove,Slicing,HighCriticalHitRate
+Description = 如刀刃般喷射出加压 的水切开对手。容易 击中要害。
+#-------------------------------
+[AQUASTEP]
+Name = 流水旋舞
+Type = WATER
+Category = Physical
+Power = 80
+Accuracy = 100
+TotalPP = 10
+Target = NearOther
+FunctionCode = RaiseUserSpeed1
+Flags = Dance,Contact,CanProtect,CanMirrorMove
+EffectChance = 100
+Description = 以盈盈欲滴的轻快步 伐戏耍对手并给予其 伤害。会提高自己的 速度。
+#-------------------------------
+[ARMORCANNON]
+Name = 铠农炮
+Type = FIRE
+Category = Special
+Power = 120
+Accuracy = 100
+TotalPP = 5
+Target = NearOther
+FunctionCode = LowerUserDefSpDef1
+Flags = CanProtect,CanMirrorMove,CannotMetronome
+EffectChance = 100
+Description = 熊熊燃烧自己的铠甲 ，将其做成炮弹射出 攻击。自己的防御和 特防会降低。
+#-------------------------------
+[AXEKICK]
+Name = 下压踢
+Type = FIGHTING
+Category = Physical
+Power = 120
+Accuracy = 90
+TotalPP = 10
+Target = NearOther
+FunctionCode = CrashDamageIfFailsConfuseTarget
+Flags = Contact,CanProtect,CanMirrorMove
+EffectChance = 30
+Description = 将踢起的脚跟往下劈 向对手进行攻击。有 时会使对手混乱。如 果劈偏则自己会受到 伤害。
+#-------------------------------
+[BITTERBLADE]
+Name = 悔念剑
+Type = FIRE
+Category = Physical
+Power = 90
+Accuracy = 100
+TotalPP = 10
+Target = NearOther
+FunctionCode = HealUserByHalfOfDamageDone
+Flags = Contact,CanProtect,Slicing,CanMirrorMove
+Description = 将对世间的留恋聚集 于剑尖，并斩击对手 。可以回复给予对手 伤害的一半HP。
+#-------------------------------
+[BLAZINGTORQUE]
+Name = 灼热暴冲
+Type = FIRE
+Category = Physical
+Power = 80
+Accuracy = 100
+TotalPP = 10
+Target = NearOther
+FunctionCode = StarmobileBurnTarget
+Flags = CanProtect,CannotMetronome
+EffectChance = 30
+Description = 只能被天星队车使用 ， 有时会使对手烧 伤。
+#-------------------------------
+[CHILLINGWATER]
+Name = 泼冷水
+Type = WATER
+Category = Special
+Power = 50
+Accuracy = 100
+TotalPP = 20
+Target = NearOther
+FunctionCode = LowerTargetAttack1
+Flags = CanProtect,CanMirrorMove,CannotMetronome
+EffectChance = 100
+Description = 泼洒冰冷得足以让对 手失去活力的水进行 攻击。会降低对手的 攻击。
+#-------------------------------
+[CHILLYRECEPTION]
+Name = 冷笑话
+Type = ICE
+Category = Status
+Accuracy = 0
+TotalPP = 10
+Target = BothSides
+FunctionCode = StartHailWeatherSwitchOutUser
+Flags = CannotMetronome,ZPower_HealSwitch
+Description = 留下冷场的冷笑话后 ，和后备宝可梦进行 替换。在５回合内会 下雪。
+#-------------------------------
+[COLLISIONCOURSE]
+Name = 全开猛撞
+Type = FIGHTING
+Category = Physical
+Power = 100
+Accuracy = 100
+TotalPP = 5
+Target = NearOther
+FunctionCode = IncreasePowerSuperEffective
+Flags = Contact,CanProtect,CanMirrorMove,CannotMetronome
+Description = 边变形边凶暴地落下 ，并引发起古老的大 爆炸。若针对到弱点 ，威力会进一步。
+#-------------------------------
+[COMBATTORQUE]
+Name = 格斗暴冲
+Type = FIGHTING
+Category = Physical
+Power = 100
+Accuracy = 100
+TotalPP = 10
+Target = NearOther
+FunctionCode = StarmobileParalyzeTarget
+Flags = CanProtect,CannotMetronome
+EffectChance = 30
+Description = 只能被天星队车使用 ， 有时会使对手麻 痹。
+#-------------------------------
+[COMEUPPANCE]
+Name = 复仇
+Type = DARK
+Category = Physical
+Power = 1
+Accuracy = 100
+TotalPP = 10
+Target = None
+FunctionCode = CounterDamagePlusHalf
+Flags = Contact,CanProtect,CanMirrorMove,CannotMetronome
+Description = 使出招式前，将最后 受到的招式的伤害大 力返还给对手。
+#-------------------------------
+[DOODLE]
+Name = 描绘
+Type = NORMAL
+Category = Status
+Accuracy = 100
+TotalPP = 10
+Target = NearFoe
+FunctionCode = SetUserAlliesAbilityToTargetAbility
+Flags = CannotMetronome,ZPower_SPEED_1
+Description = 把握并映射出对手的 本质，让自己和同伴 宝可梦的特性变得和 对手相同。
+#-------------------------------
+[DOUBLESHOCK]
+Name = 电光双击
+Type = ELECTRIC
+Category = Physical
+Power = 120
+Accuracy = 100
+TotalPP = 5
+Target = NearOther
+FunctionCode = UserLosesElectricType
+Flags = Contact,CanProtect,CanMirrorMove,CannotMetronome
+Description = 将全身所有的电力放 出，给予对手大大的 伤害。自己的电属性 将会消失。
+#-------------------------------
+[ELECTRODRIFT]
+Name = 闪电猛冲
+Type = ELECTRIC
+Category = Special
+Power = 100
+Accuracy = 100
+TotalPP = 5
+Target = NearOther
+FunctionCode = IncreasePowerSuperEffective
+Flags = Contact,CanProtect,CanMirrorMove,CannotMetronome
+Description = 边变形边高速奔走， 并以未知的电击贯穿 对手。若针对到弱点 ，威力会进一步。
+#-------------------------------
+[FILLETAWAY]
+Name = 甩肉
+Type = NORMAL
+Category = Status
+Accuracy = 0
+TotalPP = 10
+Target = NearOther
+FunctionCode = RaiseUserAtk2SpAtk2Speed2LoseHalfOfTotalHP
+Flags = CannotMetronome,ZPower_HealUser
+Description = 削减自己的HP，大 幅提高攻击和特攻以 及速度。
+#-------------------------------
+[FLOWERTRICK]
+Name = 千变万花
+Type = GRASS
+Category = Physical
+Power = 70
+Accuracy = 0
+TotalPP = 10
+Target = NearOther
+FunctionCode = AlwaysCriticalHit
+Flags = CanProtect,CanMirrorMove
+Description = 将做了手脚的花束扔 向对手进行攻击。必 定会命中，且会击中 要害。
+#-------------------------------
+[GIGATONHAMMER]
+Name = 巨力锤
+Type = STEEL
+Category = Physical
+Power = 160
+Accuracy = 100
+TotalPP = 5
+Target = NearOther
+FunctionCode = CantSelectConsecutiveTurns
+Flags = CanProtect,CanMirrorMove
+Description = 连同身体转起巨大的 锤子进行攻击。这个 招式无法连续使出2 次。
+#-------------------------------
+[GLAIVERUSH]
+Name = 巨剑突击
+Type = DRAGON
+Category = Physical
+Power = 120
+Accuracy = 100
+TotalPP = 5
+Target = NearOther
+FunctionCode = UserVulnerableUntilNextAction
+Flags = Contact,CanProtect,CanMirrorMove
+Description = 有勇无谋的舍身突击 。使出招式后，对手 的攻击必定会命中， 且伤害会变成2倍。
+#-------------------------------
+[HYPERDRILL]
+Name = 强力钻
+Type = NORMAL
+Category = Physical
+Power = 100
+Accuracy = 100
+TotalPP = 5
+Target = NearOther
+FunctionCode = None
+Flags = Contact,CanMirrorMove,CannotMetronome
+Description = 急速旋转尖锐的身体 部位贯穿对手。可以 无视守住和看穿等招 式。
+#-------------------------------
+[ICESPINNER]
+Name = 冰旋
+Type = ICE
+Category = Physical
+Power = 80
+Accuracy = 100
+TotalPP = 15
+Target = NearOther
+FunctionCode = RemoveTerrainIceSpinner
+Flags = Contact,CanProtect,CanMirrorMove
+Description = 脚上覆盖薄冰，旋转 着撞击对手。通过旋 转的动作破坏场地。
+#-------------------------------
+[JETPUNCH]
+Name = 喷射拳
+Type = WATER
+Category = Physical
+Power = 60
+Accuracy = 100
+TotalPP = 15
+Target = NearOther
+Priority = 1
+FunctionCode = None
+Flags = Contact,CanProtect,CanMirrorMove,CannotMetronome,Punching
+Description = 将激流覆盖于拳头， 以肉眼无法辨识的速 度打出拳击。必定能 够先制攻击。
+#-------------------------------
+[KOWTOWCLEAVE]
+Name = 仆刀
+Type = DARK
+Category = Physical
+Power = 85
+Accuracy = 0
+TotalPP = 10
+Target = NearOther
+FunctionCode = None
+Flags = Slicing,Contact,CanProtect,CanMirrorMove
+Description = 下跪让对手大意后发 起袭击劈向对手。攻 击必定会命中。
+#-------------------------------
+[LASTRESPECTS]
+Name = 扫墓
+Type = GHOST
+Category = Physical
+Power = 50
+Accuracy = 100
+TotalPP = 10
+Target = NearOther
+FunctionCode = IncreasePowerEachFaintedAlly
+Flags = CanProtect,CanMirrorMove
+Description = 为了化解伙伴的悔恨 而进行攻击。被打倒 的我方宝可梦越多， 招式的威力越高。
+#-------------------------------
+[LUMINACRASH]
+Name = 琉光冲激
+Type = PSYCHIC
+Category = Special
+Power = 80
+Accuracy = 100
+TotalPP = 10
+Target = NearOther
+FunctionCode = LowerTargetSpDef2
+Flags = CanProtect,CanMirrorMove
+EffectChance = 100
+Description = 放出连精神都能影响 到的奇妙怪光进行攻 击。会大幅降低对方 的特防。
+#-------------------------------
+[MAGICALTORQUE]
+Name = 魔法暴冲
+Type = FAIRY
+Category = Physical
+Power = 100
+Accuracy = 100
+TotalPP = 10
+Target = NearOther
+FunctionCode = StarmobileConfuseTarget
+Flags = CanProtect,CannotMetronome
+EffectChance = 30
+Description = 只能被天星队车使用 ， 有时会使对手混 乱。
+#-------------------------------
+[MAKEITRAIN]
+Name = 淘金潮
+Type = STEEL
+Category = Special
+Power = 120
+Accuracy = 100
+TotalPP = 5
+Target = AllNearFoes
+FunctionCode = AddMoneyGainedFromBattleLowerUserSpAtk1
+Flags = CanProtect,CanMirrorMove,CannotMetronome
+Description = 扔出大量硬币攻击。 自己的特攻会降低， 战斗后还可以拿到钱 。
+#-------------------------------
+[MORTALSPIN]
+Name = 晶光转转
+Type = POISON
+Category = Physical
+Power = 30
+Accuracy = 100
+TotalPP = 15
+Target = AllNearFoes
+FunctionCode = RemoveUserBindingAndEntryHazardsPoisonTarget
+Flags = Contact,CanProtect,CanMirrorMove
+EffectChance = 100
+Description = 通过旋转来攻击对手 。可以摆脱绑紧、紧 束、寄生种子等招式 。还能让对手陷入中 毒状态。
+#-------------------------------
+[NOXIOUSTORQUE]
+Name = 剧毒暴冲
+Type = POISON
+Category = Physical
+Power = 100
+Accuracy = 100
+TotalPP = 10
+Target = NearOther
+FunctionCode = StarmobilePoisonTarget
+Flags = CanProtect,CannotMetronome
+EffectChance = 30
+Description = 只能被天星队车使用 ，有时会使对手中毒 。
+#-------------------------------
+[ORDERUP]
+Name = 上菜
+Type = DRAGON
+Category = Physical
+Power = 80
+Accuracy = 100
+TotalPP = 10
+Target = NearOther
+FunctionCode = RaiseUserStat1Commander
+Flags = CanProtect,CannotMetronome
+EffectChance = 100
+Description = 以潇洒的身手进行攻 击。若口中有米立龙 ，会按其样子提高能 力。
+#-------------------------------
+[POPULATIONBOMB]
+Name = 鼠数儿
+Type = NORMAL
+Category = Physical
+Power = 20
+Accuracy = 90
+TotalPP = 10
+Target = NearOther
+FunctionCode = HitTenTimes
+Flags = Contact,CanProtect,CanMirrorMove,CannotMetronome,Slicing
+Description = 伙伴们会纷纷赶来集 合，以群体行动给予 对手攻击。连续命中 1～10次。
+#-------------------------------
+[POUNCE]
+Name = 虫扑
+Type = BUG
+Category = Physical
+Power = 50
+Accuracy = 100
+TotalPP = 20
+Target = NearOther
+FunctionCode = LowerTargetSpeed1
+Flags = Contact,CanProtect,CanMirrorMove,CannotMetronome
+EffectChance = 100
+Description = 飞扑向对手攻击。会 降低对手的速度。
+#-------------------------------
+[RAGEFIST]
+Name = 愤怒之拳
+Type = GHOST
+Category = Physical
+Power = 50
+Accuracy = 100
+TotalPP = 10
+Target = NearOther
+FunctionCode = IncreasePowerEachTimeHit
+Flags = Contact,CanProtect,CanMirrorMove,CannotMetronome,Punching
+Description = 将愤怒化为力量攻击 。受到攻击的次数越 多，招式的威力越高 。
+#-------------------------------
+[RAGINGBULL]
+Name = 怒牛
+Type = NORMAL
+Category = Physical
+Power = 90
+Accuracy = 100
+TotalPP = 10
+Target = NearOther
+FunctionCode = TypeIsUserSecondTypeRemoveScreens
+Flags = Contact,CanProtect,CanMirrorMove,CannotMetronome
+Description = 狂怒暴牛的猛烈冲撞 。招式的属性随形态 改变，光墙和反射壁 等招式也能破坏。
+#-------------------------------
+[REVIVALBLESSING]
+Name = 复生祈祷
+Type = NORMAL
+Category = Status
+Accuracy = 0
+TotalPP = 1
+Target = User
+FunctionCode = RevivePokemonHalfHP
+Flags = CannotMetronome,ZPower_HealUser
+Description = 通过以慈爱之心祈祷 ，让陷入昏厥的后备 宝可梦以回复一半H P的状态复活。
+#-------------------------------
+[RUINATION]
+Name = 大灾难
+Type = DARK
+Category = Special
+Power = 1
+Accuracy = 90
+TotalPP = 10
+Target = NearOther
+FunctionCode = FixedDamageHalfTargetHP
+Flags = CanProtect,CanMirrorMove,CannotMetronome
+Description = 引发毁灭性的灾厄， 使对手的HP减半。
+#-------------------------------
+[SALTCURE]
+Name = 盐腌
+Type = ROCK
+Category = Physical
+Power = 40
+Accuracy = 100
+TotalPP = 15
+Target = NearOther
+FunctionCode = StartSaltCureTarget
+Flags = CanProtect,CanMirrorMove,CannotMetronome
+EffectChance = 100
+Description = 使对手陷入盐腌状态 ，每回合给予对手伤 害。对手为钢或水属 性时会更痛苦。
+#-------------------------------
+[SHEDTAIL]
+Name = 断尾
+Type = NORMAL
+Category = Status
+Accuracy = 0
+TotalPP = 10
+Target = User
+FunctionCode = UserMakeSubstituteSwitchOut
+Flags = CannotMetronome,ZPower_HealSwitch
+Description = 削减自己的HP，制 造分身后会返回，并 和后备宝可梦进行替 换。
+#-------------------------------
+[SILKTRAP]
+Name = 线阱
+Type = BUG
+Category = Status
+Accuracy = 0
+TotalPP = 10
+Target = User
+Priority = 4
+FunctionCode = ProtectUserFromDamagingMovesSilkTrap
+Flags = CannotMetronome,ZPower_SPEED_1
+Description = 用丝设置陷阱。防住 对方攻击的同时，能 够降低所接触到的对 手的速度。
+#-------------------------------
+[SNOWSCAPE]
+Name = 雪景
+Type = ICE
+Category = Status
+Accuracy = 0
+TotalPP = 10
+Target = BothSides
+FunctionCode = StartHailWeather
+Flags = CannotMetronome,ZPower_SPECIAL_DEFENSE_1
+Description = 在5回合内会下雪。 冰属性的防御会提高 。
+#-------------------------------
+[SPICYEXTRACT]
+Name = 辣椒精华
+Type = GRASS
+Category = Status
+Accuracy = 0
+TotalPP = 15
+Target = NearOther
+FunctionCode = RaiseTargetAtkLowerTargetDef2
+Flags = CanProtect,CanMirrorMove,CannotMetronome,ZPower_ATTACK_2
+Description = 放出极为辛辣的精华 。对手的攻击会大幅 提高，防御会大幅降 低。
+#-------------------------------
+[SPINOUT]
+Name = 疾速转轮
+Type = STEEL
+Category = Physical
+Power = 100
+Accuracy = 100
+TotalPP = 5
+Target = NearOther
+FunctionCode = LowerUserSpeed2
+Flags = Contact,CanProtect,CanMirrorMove
+Description = 通过往腿上增加负荷 ，以激烈的旋转给予 对手伤害。自己的速 度会大幅降低。
+#-------------------------------
+[TIDYUP]
+Name = 大扫除
+Type = NORMAL
+Category = Status
+Accuracy = 0
+TotalPP = 10
+Target = NearOther
+FunctionCode = RaiseUserAtkSpd1RemoveHazardsSubstitutes
+Flags = CannotMetronome,ZPower_ResetStats
+EffectChance = 100
+Description = 将撒菱、隐形岩、黏 黏网、毒菱、替身全 部扫除掉。自己的攻 击和速度会提高。
+#-------------------------------
+[TORCHSONG]
+Name = 闪焰高歌
+Type = FIRE
+Category = Special
+Power = 80
+Accuracy = 100
+TotalPP = 10
+Target = NearOther
+FunctionCode = RaiseUserSpAtk1
+Flags = Sound,CanProtect,CanMirrorMove
+EffectChance = 100
+Description = 如唱歌一样喷出熊熊 燃烧的火焰烧焦对手 。会提高自己的特攻 。
+#-------------------------------
+[TRAILBLAZE]
+Name = 起草
+Type = GRASS
+Category = Physical
+Power = 50
+Accuracy = 100
+TotalPP = 20
+Target = NearOther
+FunctionCode = RaiseUserSpeed1
+Flags = Contact,CanProtect,CanMirrorMove,CannotMetronome
+EffectChance = 100
+Description = 跳出草丛进行攻击。 通过轻快的步伐会提 高自己的速度。
+#-------------------------------
+[TRIPLEDIVE]
+Name = 三连钻
+Type = WATER
+Category = Physical
+Power = 30
+Accuracy = 95
+TotalPP = 10
+Target = NearOther
+FunctionCode = HitThreeTimes
+Flags = Contact,CanProtect,CanMirrorMove
+Description = 以默契的跳跃溅起水 花击向对手。连续3 次给予伤害。
+#-------------------------------
+[TWINBEAM]
+Name = 双光束
+Type = PSYCHIC
+Category = Special
+Power = 40
+Accuracy = 100
+TotalPP = 10
+Target = NearOther
+FunctionCode = HitTwoTimes
+Flags = CanProtect,CanMirrorMove,CannotMetronome
+Description = 从两眼发射出神奇的 光线攻击。连续2次 给予伤害。
+#-------------------------------
+[WICKEDTORQUE]
+Name = 黑暗暴冲
+Type = DARK
+Category = Physical
+Power = 80
+Accuracy = 100
+TotalPP = 10
+Target = NearOther
+FunctionCode = StarmobileSleepTarget
+Flags = CanProtect,CannotMetronome
+EffectChance = 10
+Description = 只能被天星队车使用 ， 有时会使对手睡 眠。
+#-------------------------------
+[HYDROSTEAM]
+Name = 水蒸气
+Type = WATER
+Category = Special
+Power = 80
+Accuracy = 100
+TotalPP = 15
+Target = NearOther
+FunctionCode = IncreasePowerInSunWeather
+Flags = CanProtect,CanMirrorMove
+Description = 将煮得翻滚的开水猛 烈地喷向对手。日照 强烈时，招式威力不 但不会降低，还会变 成1.5倍。
+#-------------------------------
+[PSYBLADE]
+Name = 精神剑
+Type = PSYCHIC
+Category = Physical
+Power = 80
+Accuracy = 100
+TotalPP = 15
+Target = NearOther
+FunctionCode = IncreasePowerInElectricTerrain
+Flags = Contact,CanProtect,CanMirrorMove,Slicing
+EffectChance = 10
+Description = 用无形的利刃劈开对 手。处于电气场地时 ，招式威力会变成１ .5倍。
+#-------------------------------
+[BLOODMOON]
+Name = 血月
+Type = NORMAL
+Category = Special
+Power = 140
+Accuracy = 100
+TotalPP = 5
+Target = NearOther
+FunctionCode = CantSelectConsecutiveTurns
+Flags = CanProtect,CanMirrorMove
+Description = 从赤红如血的满月发 射出全部的气势。这 个招式无法连续使出 2次。
+#-------------------------------
+[MATCHAGOTCHA]
+Name = 刷刷茶炮
+Type = GRASS
+Category = Special
+Power = 80
+Accuracy = 90
+TotalPP = 15
+Target = AllNearFoes
+FunctionCode = HealUserByHalfOfDamageDoneBurnTarget
+Flags = CanProtect,CanMirrorMove,ThawsUser
+EffectChance = 20
+Description = 发射经搅拌的茶的大 炮，可以回复给予对 手伤害的一半HP， 有时会让对手陷入灼 伤状态。
+#-------------------------------
+[SYRUPBOMB]
+Name = 糖浆炸弹
+Type = GRASS
+Category = Special
+Power = 60
+Accuracy = 85
+TotalPP = 10
+Target = NearOther
+FunctionCode = LowerTargetSpeedOverTime
+Flags = CanProtect,CanMirrorMove,Bomb
+EffectChance = 100
+Description = 使粘稠的麦芽糖浆爆 炸，让对手陷入满身 糖状态，在3回合内 持续降低其速度。
+#-------------------------------
+[IVYCUDGEL]
+Name = 棘藤棒
+Type = GRASS
+Category = Physical
+Power = 100
+Accuracy = 100
+TotalPP = 10
+Target = NearOther
+FunctionCode = TypeIsUserSecondType
+Flags = CanProtect,CanMirrorMove,HighCriticalHitRate
+Description = 用缠有藤蔓的棍棒殴 打。属性会随所戴的 面具而改变。容易击 中要害。
+#-------------------------------
+[ELECTROSHOT]
+Name = 电光束
+Type = ELECTRIC
+Category = Special
+Power = 130
+Accuracy = 100
+TotalPP = 10
+Target = NearOther
+FunctionCode = TwoTurnAttackOneTurnInRainRaiseUserSpAtk1
+Flags = CanProtect,CanMirrorMove
+EffectChance = 100
+Description = 第1回合收集电力提 高特攻，第2回合将 高压的电力发射出去 。下雨天气时能立刻 发射。
+#-------------------------------
+[TERASTARSTORM]
+Name = 晶光星群
+Type = NORMAL
+Category = Special
+Power = 120
+Accuracy = 100
+TotalPP = 5
+Target = NearOther
+FunctionCode = TerapagosCategoryDependsOnHigherDamage
+Flags = CanProtect,CanMirrorMove,CannotMetronome
+Description = 照射出结晶的力量来 驱逐敌人。太乐巴戈 斯在星晶形态下使出 时，能对所有对手造 成伤害。
+#-------------------------------
+[FICKLEBEAM]
+Name = 随机光
+Type = DRAGON
+Category = Special
+Power = 80
+Accuracy = 100
+TotalPP = 5
+Target = NearOther
+FunctionCode = RandomlyDealsDoubleDamage
+Flags = CanProtect,CanMirrorMove
+Description = 发射光线进行攻击。 有时其他的头也会合 力发射镭射，让招式 威力变成2倍。
+#-------------------------------
+[BURNINGBULWARK]
+Name = 火焰守护
+Type = FIRE
+Category = Status
+Accuracy = 0
+TotalPP = 10
+Target = User
+Priority = 4
+FunctionCode = ProtectUserBurningBulwark
+Description = 用超高温的体毛防住 对手攻击的同时，让 接触到自己的对手灼 伤。
+Flags = ZPower_DEFENSE_1
+#-------------------------------
+[THUNDERCLAP]
+Name = 迅雷
+Type = ELECTRIC
+Category = Special
+Power = 70
+Accuracy = 100
+TotalPP = 5
+Target = NearOther
+Priority = 1
+FunctionCode = FailsIfTargetActed
+Flags = CanProtect,CanMirrorMove
+Description = 可以比对手先使出电 击进行攻击。对手使 出的招式如果不是攻 击招式则会失败。
+#-------------------------------
+[MIGHTYCLEAVE]
+Name = 强刃攻击
+Type = ROCK
+Category = Physical
+Power = 95
+Accuracy = 100
+TotalPP = 5
+Target = NearOther
+FunctionCode = None
+Flags = Contact,CanMirrorMove,Slicing
+Description = 用积蓄在头部的光来 斩切对手。可以无视 守护进行攻击。
+#-------------------------------
+[TACHYONCUTTER]
+Name = 迅子利刃
+Type = STEEL
+Category = Special
+Power = 50
+Accuracy = 0
+TotalPP = 10
+Target = NearOther
+FunctionCode = HitTwoTimes
+Flags = CanProtect,CanMirrorMove,Slicing
+Description = 接连发射出粒子的利 刃，连续2次给予伤 害。攻击必定会命中 。
+#-------------------------------
+[HARDPRESS]
+Name = 硬压
+Type = STEEL
+Category = Physical
+Power = 1
+Accuracy = 100
+TotalPP = 10
+Target = NearOther
+FunctionCode = PowerHigherWithTargetHP100PowerRange
+Flags = Contact,CanProtect,CanMirrorMove
+Description = 用手臂或钳子压迫对 手。对手剩余的HP 越多，威力越大。
+#-------------------------------
+[DRAGONCHEER]
+Name = 龙声鼓舞
+Type = DRAGON
+Category = Status
+Accuracy = 0
+TotalPP = 10
+Target = AllAllies
+FunctionCode = RaiseAlliesCriticalHitRate1DragonTypes2
+Description = 以龙之鼓舞提高士气 ，让我方的招式变得 容易击中要害。对龙 属性的鼓舞效果会更 强。
+Flags = ZPower_CriticalHit
+#-------------------------------
+[ALLURINGVOICE]
+Name = 魅诱之声
+Type = FAIRY
+Category = Special
+Power = 80
+Accuracy = 100
+TotalPP = 10
+Target = NearOther
+FunctionCode = ConfuseTargetIfTargetStatsRaisedThisTurn
+Flags = Sound,CanProtect,CanMirrorMove
+EffectChance = 100
+Description = 用天使般的歌声攻击 对手。会让此回合内 能力有提高的宝可梦 陷入混乱状态。
+#-------------------------------
+[TEMPERFLARE]
+Name = 豁出去
+Type = FIRE
+Category = Physical
+Power = 75
+Accuracy = 100
+TotalPP = 10
+Target = NearOther
+FunctionCode = DoublePowerIfUserLastMoveFailed
+Flags = Contact,CanProtect,CanMirrorMove
+Description = 以自暴自弃的气势进 行攻击。如果上一回 合招式没有命中，威 力就会翻倍。
+#-------------------------------
+[SUPERCELLSLAM]
+Name = 闪电强袭
+Type = ELECTRIC
+Category = Physical
+Power = 100
+Accuracy = 95
+TotalPP = 15
+Target = NearOther
+FunctionCode = CrashDamageIfFails
+Flags = Contact,CanProtect,CanMirrorMove
+Description = 让身体带电后压向对 手。如果没有命中则 自己会受到伤害。
+#-------------------------------
+[PSYCHICNOISE]
+Name = 精神噪音
+Type = PSYCHIC
+Category = Special
+Power = 75
+Accuracy = 100
+TotalPP = 10
+Target = NearOther
+FunctionCode = DisableTargetHealingMoves2Turns
+Flags = Sound,CanProtect,CanMirrorMove
+EffectChance = 100
+Description = 用令对手不舒服的音 波进行攻击。让对手 在2回合内无法通过 招式、特性或携带的 道具回复HP。
+#-------------------------------
+[UPPERHAND]
+Name = 快手还击
+Type = FIGHTING
+Category = Physical
+Power = 65
+Accuracy = 100
+TotalPP = 15
+Target = NearOther
+Priority = 3
+FunctionCode = FlinchTargetFailsIfTargetNotUsingPriorityMove
+Flags = Contact,CanProtect,CanMirrorMove
+EffectChance = 100
+Description = 察觉到对手的动作后 用掌根攻击，让对手 畏缩。如果对手使出 的招式不是先制攻击 ，则会失败。
+#-------------------------------
+[MALIGNANTCHAIN]
+Name = 邪毒锁链
+Type = POISON
+Category = Special
+Power = 100
+Accuracy = 100
+TotalPP = 5
+Target = NearOther
+FunctionCode = BadPoisonTarget
+Flags = CanProtect,CanMirrorMove
+EffectChance = 50
+Description = 用由毒形成的锁链缠 住对手注入毒素加以 侵蚀。有时会让对手 陷入剧毒状态。
+

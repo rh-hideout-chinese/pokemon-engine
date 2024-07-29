@@ -1,0 +1,7 @@
+### Changes will apply automatically. ###
+#-------------------------------
+[PICHU,2]
+CallRateSOS = 0
+#-------------------------------
+[FLOETTE,5]
+CallRateSOS = 0

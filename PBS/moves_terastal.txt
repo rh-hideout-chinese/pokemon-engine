@@ -1,0 +1,13 @@
+﻿# See the documentation on the wiki to learn how to edit this file.
+#-------------------------------
+[TERABLAST]
+Name = Tera Blast
+Type = NORMAL
+Category = Special
+Power = 80
+Accuracy = 100
+TotalPP = 10
+Target = NearOther
+FunctionCode = CategoryDependsOnHigherDamageTera
+Flags = CanProtect,CanMirrorMove
+Description = Move type changes to match a Terastallized user's Tera Type. Deals damage based on user's higher stat.

@@ -1,0 +1,5 @@
+Name       = Encounter List UI
+Version    = 1.1.0
+Essentials = 21.1
+Website    = https://reliccastle.com/resources/658/
+Credits    = ThatWelshOne_,raZ,Marin,Maruno,Nuri Yuri,PurpleZaffre,Savordez,Vendily

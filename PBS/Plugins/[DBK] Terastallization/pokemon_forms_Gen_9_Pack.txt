@@ -1,0 +1,39 @@
+#-------------------------------
+[OGERPON,1]
+Flags = Legendary,TeraType_WATER
+#-------------------------------
+[OGERPON,2]
+Flags = Legendary,TeraType_FIRE
+#-------------------------------
+[OGERPON,3]
+Flags = Legendary,TeraType_ROCK
+#-------------------------------
+[OGERPON,4]
+Flags = Legendary,TeraType_GRASS
+#-------------------------------
+[OGERPON,5]
+Flags = Legendary,TeraType_WATER
+#-------------------------------
+[OGERPON,6]
+Flags = Legendary,TeraType_FIRE
+#-------------------------------
+[OGERPON,7]
+Flags = Legendary,TeraType_ROCK
+#-------------------------------
+[OGERPON,8]
+Flags = Legendary,CannotDynamax,TeraType_GRASS
+#-------------------------------
+[OGERPON,9]
+Flags = Legendary,CannotDynamax,TeraType_WATER
+#-------------------------------
+[OGERPON,10]
+Flags = Legendary,CannotDynamax,TeraType_FIRE
+#-------------------------------
+[OGERPON,11]
+Flags = Legendary,CannotDynamax,TeraType_ROCK
+#-------------------------------
+[TERAPAGOS,1]
+Flags = Legendary,TeraType_STELLAR
+#-------------------------------
+[TERAPAGOS,2]
+Flags = Legendary,CannotDynamax,TeraType_STELLAR

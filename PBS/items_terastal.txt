@@ -1,0 +1,215 @@
+﻿# See the documentation on the wiki to learn how to edit this file.
+#-------------------------------
+[TERAORB]
+Name = Tera Orb
+NamePlural = Tera Orbs
+Pocket = 8
+Price = 0
+Flags = KeyItem,TeraOrb
+Description = An orb that holds the power to crystallize. When charged, it allows Pokémon to Terastallize.
+#-------------------------------
+[NORMALTERASHARD]
+Name = Normal Tera Shard
+NamePlural = Normal Tera Shards
+Pocket = 1
+Price = 2000
+FieldUse = OnPokemon
+Flags = Fling_30,TeraShard_NORMAL
+Description = On rare occasions, these shards form when a Tera Pokémon falls in battle and its Tera Jewel shatters.
+#-------------------------------
+[FIRETERASHARD]
+Name = Fire Tera Shard
+NamePlural = Fire Tera Shards
+Pocket = 1
+Price = 2000
+FieldUse = OnPokemon
+Flags = Fling_30,TeraShard_FIRE
+Description = On rare occasions, these shards form when a Tera Pokémon falls in battle and its Tera Jewel shatters.
+#-------------------------------
+[WATERTERASHARD]
+Name = Water Tera Shard
+NamePlural = Water Tera Shards
+Pocket = 1
+Price = 2000
+FieldUse = OnPokemon
+Flags = Fling_30,TeraShard_WATER
+Description = On rare occasions, these shards form when a Tera Pokémon falls in battle and its Tera Jewel shatters.
+#-------------------------------
+[ELECTRICTERASHARD]
+Name = Electric Tera Shard
+NamePlural = Electric Tera Shards
+Pocket = 1
+Price = 2000
+FieldUse = OnPokemon
+Flags = Fling_30,TeraShard_ELECTRIC
+Description = On rare occasions, these shards form when a Tera Pokémon falls in battle and its Tera Jewel shatters.
+#-------------------------------
+[GRASSTERASHARD]
+Name = Grass Tera Shard
+NamePlural = Grass Tera Shards
+Pocket = 1
+Price = 2000
+FieldUse = OnPokemon
+Flags = Fling_30,TeraShard_GRASS
+Description = On rare occasions, these shards form when a Tera Pokémon falls in battle and its Tera Jewel shatters.
+#-------------------------------
+[ICETERASHARD]
+Name = Ice Tera Shard
+NamePlural = Ice Tera Shards
+Pocket = 1
+Price = 2000
+FieldUse = OnPokemon
+Flags = Fling_30,TeraShard_ICE
+Description = On rare occasions, these shards form when a Tera Pokémon falls in battle and its Tera Jewel shatters.
+#-------------------------------
+[FIGHTINGTERASHARD]
+Name = Fighting Tera Shard
+NamePlural = Fighting Tera Shards
+Pocket = 1
+Price = 2000
+FieldUse = OnPokemon
+Flags = Fling_30,TeraShard_FIGHTING
+Description = On rare occasions, these shards form when a Tera Pokémon falls in battle and its Tera Jewel shatters.
+#-------------------------------
+[POISONTERASHARD]
+Name = Poison Tera Shard
+NamePlural = Poison Tera Shards
+Pocket = 1
+Price = 2000
+FieldUse = OnPokemon
+Flags = Fling_30,TeraShard_POISON
+Description = On rare occasions, these shards form when a Tera Pokémon falls in battle and its Tera Jewel shatters.
+#-------------------------------
+[GROUNDTERASHARD]
+Name = Ground Tera Shard
+NamePlural = Ground Tera Shards
+Pocket = 1
+Price = 2000
+FieldUse = OnPokemon
+Flags = Fling_30,TeraShard_GROUND
+Description = On rare occasions, these shards form when a Tera Pokémon falls in battle and its Tera Jewel shatters.
+#-------------------------------
+[FLYINGTERASHARD]
+Name = Flying Tera Shard
+NamePlural = Flying Tera Shards
+Pocket = 1
+Price = 2000
+FieldUse = OnPokemon
+Flags = Fling_30,TeraShard_FLYING
+Description = On rare occasions, these shards form when a Tera Pokémon falls in battle and its Tera Jewel shatters.
+#-------------------------------
+[PSYCHICTERASHARD]
+Name = Psychic Tera Shard
+NamePlural = Psychic Tera Shards
+Pocket = 1
+Price = 2000
+FieldUse = OnPokemon
+Flags = Fling_30,TeraShard_PSYCHIC
+Description = On rare occasions, these shards form when a Tera Pokémon falls in battle and its Tera Jewel shatters.
+#-------------------------------
+[BUGTERASHARD]
+Name = Bug Tera Shard
+NamePlural = Bug Tera Shards
+Pocket = 1
+Price = 2000
+FieldUse = OnPokemon
+Flags = Fling_30,TeraShard_BUG
+Description = On rare occasions, these shards form when a Tera Pokémon falls in battle and its Tera Jewel shatters.
+#-------------------------------
+[ROCKTERASHARD]
+Name = Rock Tera Shard
+NamePlural = Rock Tera Shards
+Pocket = 1
+Price = 2000
+FieldUse = OnPokemon
+Flags = Fling_30,TeraShard_ROCK
+Description = On rare occasions, these shards form when a Tera Pokémon falls in battle and its Tera Jewel shatters.
+#-------------------------------
+[GHOSTTERASHARD]
+Name = Ghost Tera Shard
+NamePlural = Ghost Tera Shards
+Pocket = 1
+Price = 2000
+FieldUse = OnPokemon
+Flags = Fling_30,TeraShard_GHOST
+Description = On rare occasions, these shards form when a Tera Pokémon falls in battle and its Tera Jewel shatters.
+#-------------------------------
+[DRAGONTERASHARD]
+Name = Dragon Tera Shard
+NamePlural = Dragon Tera Shards
+Pocket = 1
+Price = 2000
+FieldUse = OnPokemon
+Flags = Fling_30,TeraShard_DRAGON
+Description = On rare occasions, these shards form when a Tera Pokémon falls in battle and its Tera Jewel shatters.
+#-------------------------------
+[DARKTERASHARD]
+Name = Dark Tera Shard
+NamePlural = Dark Tera Shards
+Pocket = 1
+Price = 2000
+FieldUse = OnPokemon
+Flags = Fling_30,TeraShard_DARK
+Description = On rare occasions, these shards form when a Tera Pokémon falls in battle and its Tera Jewel shatters.
+#-------------------------------
+[STEELTERASHARD]
+Name = Steel Tera Shard
+NamePlural = Steel Tera Shards
+Pocket = 1
+Price = 2000
+FieldUse = OnPokemon
+Flags = Fling_30,TeraShard_STEEL
+Description = On rare occasions, these shards form when a Tera Pokémon falls in battle and its Tera Jewel shatters.
+#-------------------------------
+[FAIRYTERASHARD]
+Name = Fairy Tera Shard
+NamePlural = Fairy Tera Shards
+Pocket = 1
+Price = 2000
+FieldUse = OnPokemon
+Flags = Fling_30,TeraShard_FAIRY
+Description = On rare occasions, these shards form when a Tera Pokémon falls in battle and its Tera Jewel shatters.
+#-------------------------------
+[STELLARTERASHARD]
+Name = Stellar Tera Shard
+NamePlural = Stellar Tera Shards
+Pocket = 1
+Price = 2000
+FieldUse = OnPokemon
+Flags = Fling_30,TeraShard_STELLAR
+Description = On rare occasions, these shards form when a Tera Pokémon falls in battle and its Tera Jewel shatters.
+#-------------------------------
+[MYSTERYTERAJEWEL]
+Name = Mystery Tera Jewel
+NamePlural = Mystery Tera Jewels
+Pocket = 1
+Price = 10000
+FieldUse = OnPokemon
+Flags = Fling_60,TeraShard_Random
+Description = A mostly in-tact Tera Jewel. Its awkward shape makes it hard to tell what Tera Type it may unlock.
+#-------------------------------
+[MASTERTERAJEWEL]
+Name = Master Tera Jewel
+NamePlural = Master Tera Jewels
+Pocket = 1
+Price = 100000
+FieldUse = OnPokemon
+Flags = Fling_60,TeraShard_Choose
+Description = A perfectly hexogonal Tera Jewel. Using this can unlock any Tera Type that the user desires.
+#-------------------------------
+[RADIANTTERAJEWEL]
+Name = Radiant Tera Jewel
+NamePlural = Radiant Tera Jewels
+Pocket = 7
+Price = 4000
+BattleUse = Direct
+Flags = Fling_50,UsesAllBattleActions
+Description = A jewel glistening with Terastal energy. It can fully recharge your Tera Orb in battle.
+#-------------------------------
+[GLIMMERINGCHARM]
+Name = Glimmering Charm
+NamePlural = Glimmering Charms
+Pocket = 8
+Price = 0
+Flags = KeyItem
+Description = A mysterious glimmering charm that increases the number of Tera Shards you receive from Tera Raid Battles.

@@ -1,0 +1,745 @@
+### Changes will apply automatically. ###
+#-------------------------------
+[BULKUP]
+Flags = ZPower_ATTACK_1
+#-------------------------------
+[CURSE]
+Flags = ZPower_ATTACK_1
+#-------------------------------
+[HONECLAWS]
+Flags = ZPower_ATTACK_1
+#-------------------------------
+[HOWL]
+Flags = ZPower_ATTACK_1
+#-------------------------------
+[LASERFOCUS]
+Flags = ZPower_ATTACK_1
+#-------------------------------
+[LEER]
+Flags = ZPower_ATTACK_1
+#-------------------------------
+[MEDITATE]
+Flags = ZPower_ATTACK_1
+#-------------------------------
+[ODORSLEUTH]
+Flags = ZPower_ATTACK_1
+#-------------------------------
+[POWERTRICK]
+Flags = ZPower_ATTACK_1
+#-------------------------------
+[ROTOTILLER]
+Flags = ZPower_ATTACK_1
+#-------------------------------
+[SCREECH]
+Flags = ZPower_ATTACK_1
+#-------------------------------
+[SHARPEN]
+Flags = ZPower_ATTACK_1
+#-------------------------------
+[TAILWHIP]
+Flags = ZPower_ATTACK_1
+#-------------------------------
+[TAUNT]
+Flags = ZPower_ATTACK_1
+#-------------------------------
+[TOPSYTURVY]
+Flags = ZPower_ATTACK_1
+#-------------------------------
+[WILLOWISP]
+Flags = ZPower_ATTACK_1
+#-------------------------------
+[WORKUP]
+Flags = ZPower_ATTACK_1
+#-------------------------------
+[COACHING]
+Flags = ZPower_ATTACK_1
+#-------------------------------
+[MIRRORMOVE]
+Flags = ZPower_ATTACK_2
+#-------------------------------
+[SPLASH]
+Flags = ZPower_ATTACK_3
+#-------------------------------
+[AQUARING]
+Flags = ZPower_DEFENSE_1
+#-------------------------------
+[BABYDOLLEYES]
+Flags = ZPower_DEFENSE_1
+#-------------------------------
+[BANEFULBUNKER]
+Flags = ZPower_DEFENSE_1
+#-------------------------------
+[BLOCK]
+Flags = ZPower_DEFENSE_1
+#-------------------------------
+[CHARM]
+Flags = ZPower_DEFENSE_1
+#-------------------------------
+[DEFENDORDER]
+Flags = ZPower_DEFENSE_1
+#-------------------------------
+[FAIRYLOCK]
+Flags = ZPower_DEFENSE_1
+#-------------------------------
+[FEATHERDANCE]
+Flags = ZPower_DEFENSE_1
+#-------------------------------
+[FLOWERSHIELD]
+Flags = ZPower_DEFENSE_1
+#-------------------------------
+[GRASSYTERRAIN]
+Flags = ZPower_DEFENSE_1
+#-------------------------------
+[GROWL]
+Flags = ZPower_DEFENSE_1
+#-------------------------------
+[HARDEN]
+Flags = ZPower_DEFENSE_1
+#-------------------------------
+[MATBLOCK]
+Flags = ZPower_DEFENSE_1
+#-------------------------------
+[NOBLEROAR]
+Flags = ZPower_DEFENSE_1
+#-------------------------------
+[PAINSPLIT]
+Flags = ZPower_DEFENSE_1
+#-------------------------------
+[PLAYNICE]
+Flags = ZPower_DEFENSE_1
+#-------------------------------
+[POISONGAS]
+Flags = ZPower_DEFENSE_1
+#-------------------------------
+[POISONPOWDER]
+Flags = ZPower_DEFENSE_1
+#-------------------------------
+[QUICKGUARD]
+Flags = ZPower_DEFENSE_1
+#-------------------------------
+[REFLECT]
+Flags = ZPower_DEFENSE_1
+#-------------------------------
+[ROAR]
+Flags = ZPower_DEFENSE_1
+#-------------------------------
+[SPIDERWEB]
+Flags = ZPower_DEFENSE_1
+#-------------------------------
+[SPIKES]
+Flags = ZPower_DEFENSE_1
+#-------------------------------
+[SPIKYSHIELD]
+Flags = ZPower_DEFENSE_1
+#-------------------------------
+[STEALTHROCK]
+Flags = ZPower_DEFENSE_1
+#-------------------------------
+[STRENGTHSAP]
+Flags = ZPower_DEFENSE_1
+#-------------------------------
+[TEARFULLOOK]
+Flags = ZPower_DEFENSE_1
+#-------------------------------
+[TICKLE]
+Flags = ZPower_DEFENSE_1
+#-------------------------------
+[TORMENT]
+Flags = ZPower_DEFENSE_1
+#-------------------------------
+[TOXIC]
+Flags = ZPower_DEFENSE_1
+#-------------------------------
+[TOXICSPIKES]
+Flags = ZPower_DEFENSE_1
+#-------------------------------
+[VENOMDRENCH]
+Flags = ZPower_DEFENSE_1
+#-------------------------------
+[WIDEGUARD]
+Flags = ZPower_DEFENSE_1
+#-------------------------------
+[WITHDRAW]
+Flags = ZPower_DEFENSE_1
+#-------------------------------
+[OCTOLOCK]
+Flags = ZPower_DEFENSE_1
+#-------------------------------
+[CONFUSERAY]
+Flags = ZPower_SPECIAL_ATTACK_1
+#-------------------------------
+[ELECTRIFY]
+Flags = ZPower_SPECIAL_ATTACK_1
+#-------------------------------
+[EMBARGO]
+Flags = ZPower_SPECIAL_ATTACK_1
+#-------------------------------
+[FAKETEARS]
+Flags = ZPower_SPECIAL_ATTACK_1
+#-------------------------------
+[GEARUP]
+Flags = ZPower_SPECIAL_ATTACK_1
+#-------------------------------
+[GRAVITY]
+Flags = ZPower_SPECIAL_ATTACK_1
+#-------------------------------
+[GROWTH]
+Flags = ZPower_SPECIAL_ATTACK_1
+#-------------------------------
+[INSTRUCT]
+Flags = ZPower_SPECIAL_ATTACK_1
+#-------------------------------
+[IONDELUGE]
+Flags = ZPower_SPECIAL_ATTACK_1
+#-------------------------------
+[METALSOUND]
+Flags = ZPower_SPECIAL_ATTACK_1
+#-------------------------------
+[MINDREADER]
+Flags = ZPower_SPECIAL_ATTACK_1
+#-------------------------------
+[MIRACLEEYE]
+Flags = ZPower_SPECIAL_ATTACK_1
+#-------------------------------
+[NIGHTMARE]
+Flags = ZPower_SPECIAL_ATTACK_1
+#-------------------------------
+[PSYCHICTERRAIN]
+Flags = ZPower_SPECIAL_ATTACK_1
+#-------------------------------
+[REFLECTTYPE]
+Flags = ZPower_SPECIAL_ATTACK_1
+#-------------------------------
+[SIMPLEBEAM]
+Flags = ZPower_SPECIAL_ATTACK_1
+#-------------------------------
+[SOAK]
+Flags = ZPower_SPECIAL_ATTACK_1
+#-------------------------------
+[SWEETKISS]
+Flags = ZPower_SPECIAL_ATTACK_1
+#-------------------------------
+[TEETERDANCE]
+Flags = ZPower_SPECIAL_ATTACK_1
+#-------------------------------
+[TELEKINESIS]
+Flags = ZPower_SPECIAL_ATTACK_1
+#-------------------------------
+[MAGICPOWDER]
+Flags = ZPower_SPECIAL_ATTACK_1
+#-------------------------------
+[HEALBLOCK]
+Flags = ZPower_SPECIAL_ATTACK_2
+#-------------------------------
+[PSYCHOSHIFT]
+Flags = ZPower_SPECIAL_ATTACK_2
+#-------------------------------
+[CHARGE]
+Flags = ZPower_SPECIAL_DEFENSE_1
+#-------------------------------
+[CONFIDE]
+Flags = ZPower_SPECIAL_DEFENSE_1
+#-------------------------------
+[COSMICPOWER]
+Flags = ZPower_SPECIAL_DEFENSE_1
+#-------------------------------
+[CRAFTYSHIELD]
+Flags = ZPower_SPECIAL_DEFENSE_1
+#-------------------------------
+[EERIEIMPULSE]
+Flags = ZPower_SPECIAL_DEFENSE_1
+#-------------------------------
+[ENTRAINMENT]
+Flags = ZPower_SPECIAL_DEFENSE_1
+#-------------------------------
+[FLATTER]
+Flags = ZPower_SPECIAL_DEFENSE_1
+#-------------------------------
+[GLARE]
+Flags = ZPower_SPECIAL_DEFENSE_1
+#-------------------------------
+[INGRAIN]
+Flags = ZPower_SPECIAL_DEFENSE_1
+#-------------------------------
+[LIGHTSCREEN]
+Flags = ZPower_SPECIAL_DEFENSE_1
+#-------------------------------
+[MAGICROOM]
+Flags = ZPower_SPECIAL_DEFENSE_1
+#-------------------------------
+[MAGNETICFLUX]
+Flags = ZPower_SPECIAL_DEFENSE_1
+#-------------------------------
+[MEANLOOK]
+Flags = ZPower_SPECIAL_DEFENSE_1
+#-------------------------------
+[MISTYTERRAIN]
+Flags = ZPower_SPECIAL_DEFENSE_1
+#-------------------------------
+[MUDSPORT]
+Flags = ZPower_SPECIAL_DEFENSE_1
+#-------------------------------
+[SPOTLIGHT]
+Flags = ZPower_SPECIAL_DEFENSE_1
+#-------------------------------
+[STUNSPORE]
+Flags = ZPower_SPECIAL_DEFENSE_1
+#-------------------------------
+[THUNDERWAVE]
+Flags = ZPower_SPECIAL_DEFENSE_1
+#-------------------------------
+[WATERSPORT]
+Flags = ZPower_SPECIAL_DEFENSE_1
+#-------------------------------
+[WHIRLWIND]
+Flags = ZPower_SPECIAL_DEFENSE_1
+#-------------------------------
+[WISH]
+Flags = ZPower_SPECIAL_DEFENSE_1
+#-------------------------------
+[WONDERROOM]
+Flags = ZPower_SPECIAL_DEFENSE_1
+#-------------------------------
+[CORROSIVEGAS]
+Flags = ZPower_SPECIAL_DEFENSE_1
+#-------------------------------
+[DECORATE]
+Flags = ZPower_SPECIAL_DEFENSE_1
+#-------------------------------
+[AROMATICMIST]
+Flags = ZPower_SPECIAL_DEFENSE_2
+#-------------------------------
+[CAPTIVATE]
+Flags = ZPower_SPECIAL_DEFENSE_2
+#-------------------------------
+[IMPRISON]
+Flags = ZPower_SPECIAL_DEFENSE_2
+#-------------------------------
+[MAGICCOAT]
+Flags = ZPower_SPECIAL_DEFENSE_2
+#-------------------------------
+[POWDER]
+Flags = ZPower_SPECIAL_DEFENSE_2
+#-------------------------------
+[AFTERYOU]
+Flags = ZPower_SPEED_1
+#-------------------------------
+[AURORAVEIL]
+Flags = ZPower_SPEED_1
+#-------------------------------
+[ELECTRICTERRAIN]
+Flags = ZPower_SPEED_1
+#-------------------------------
+[ENCORE]
+Flags = ZPower_SPEED_1
+#-------------------------------
+[GASTROACID]
+Flags = ZPower_SPEED_1
+#-------------------------------
+[GRASSWHISTLE]
+Flags = ZPower_SPEED_1
+#-------------------------------
+[GUARDSPLIT]
+Flags = ZPower_SPEED_1
+#-------------------------------
+[GUARDSWAP]
+Flags = ZPower_SPEED_1
+#-------------------------------
+[HAIL]
+Flags = ZPower_SPEED_1
+#-------------------------------
+[HYPNOSIS]
+Flags = ZPower_SPEED_1
+#-------------------------------
+[LOCKON]
+Flags = ZPower_SPEED_1
+#-------------------------------
+[LOVELYKISS]
+Flags = ZPower_SPEED_1
+#-------------------------------
+[POWERSPLIT]
+Flags = ZPower_SPEED_1
+#-------------------------------
+[POWERSWAP]
+Flags = ZPower_SPEED_1
+#-------------------------------
+[QUASH]
+Flags = ZPower_SPEED_1
+#-------------------------------
+[RAINDANCE]
+Flags = ZPower_SPEED_1
+#-------------------------------
+[ROLEPLAY]
+Flags = ZPower_SPEED_1
+#-------------------------------
+[SAFEGUARD]
+Flags = ZPower_SPEED_1
+#-------------------------------
+[SANDSTORM]
+Flags = ZPower_SPEED_1
+#-------------------------------
+[SCARYFACE]
+Flags = ZPower_SPEED_1
+#-------------------------------
+[SING]
+Flags = ZPower_SPEED_1
+#-------------------------------
+[SKILLSWAP]
+Flags = ZPower_SPEED_1
+#-------------------------------
+[SLEEPPOWDER]
+Flags = ZPower_SPEED_1
+#-------------------------------
+[SPEEDSWAP]
+Flags = ZPower_SPEED_1
+#-------------------------------
+[STICKYWEB]
+Flags = ZPower_SPEED_1
+#-------------------------------
+[STRINGSHOT]
+Flags = ZPower_SPEED_1
+#-------------------------------
+[SUNNYDAY]
+Flags = ZPower_SPEED_1
+#-------------------------------
+[SUPERSONIC]
+Flags = ZPower_SPEED_1
+#-------------------------------
+[TOXICTHREAD]
+Flags = ZPower_SPEED_1
+#-------------------------------
+[WORRYSEED]
+Flags = ZPower_SPEED_1
+#-------------------------------
+[YAWN]
+Flags = ZPower_SPEED_1
+#-------------------------------
+[COURTCHANGE]
+Flags = ZPower_SPEED_1
+#-------------------------------
+[TARSHOT]
+Flags = ZPower_SPEED_1
+#-------------------------------
+[ALLYSWITCH]
+Flags = ZPower_SPEED_2
+#-------------------------------
+[BESTOW]
+Flags = ZPower_SPEED_2
+#-------------------------------
+[MEFIRST]
+Flags = ZPower_SPEED_2
+#-------------------------------
+[RECYCLE]
+Flags = ZPower_SPEED_2
+#-------------------------------
+[SNATCH]
+Flags = ZPower_SPEED_2
+#-------------------------------
+[SWITCHEROO]
+Flags = ZPower_SPEED_2
+#-------------------------------
+[TRICK]
+Flags = ZPower_SPEED_2
+#-------------------------------
+[COPYCAT]
+Flags = ZPower_ACCURACY_1
+#-------------------------------
+[DEFENSECURL]
+Flags = ZPower_ACCURACY_1
+#-------------------------------
+[DEFOG]
+Flags = ZPower_ACCURACY_1
+#-------------------------------
+[FOCUSENERGY]
+Flags = ZPower_ACCURACY_1
+#-------------------------------
+[MIMIC]
+Flags = ZPower_ACCURACY_1
+#-------------------------------
+[SWEETSCENT]
+Flags = ZPower_ACCURACY_1
+#-------------------------------
+[TRICKROOM]
+Flags = ZPower_ACCURACY_1
+#-------------------------------
+[CAMOUFLAGE]
+Flags = ZPower_EVASION_1
+#-------------------------------
+[DETECT]
+Flags = ZPower_EVASION_1
+#-------------------------------
+[FLASH]
+Flags = ZPower_EVASION_1
+#-------------------------------
+[KINESIS]
+Flags = ZPower_EVASION_1
+#-------------------------------
+[LUCKYCHANT]
+Flags = ZPower_EVASION_1
+#-------------------------------
+[MAGNETRISE]
+Flags = ZPower_EVASION_1
+#-------------------------------
+[SANDATTACK]
+Flags = ZPower_EVASION_1
+#-------------------------------
+[SMOKESCREEN]
+Flags = ZPower_EVASION_1
+#-------------------------------
+[CELEBRATE]
+Flags = ZPower_AllStats_1
+#-------------------------------
+[CONVERSION]
+Flags = ZPower_AllStats_1
+#-------------------------------
+[FORESTSCURSE]
+Flags = ZPower_AllStats_1
+#-------------------------------
+[GEOMANCY]
+Flags = ZPower_AllStats_1
+#-------------------------------
+[HAPPYHOUR]
+Flags = ZPower_AllStats_1
+#-------------------------------
+[HOLDHANDS]
+Flags = ZPower_AllStats_1
+#-------------------------------
+[PURIFY]
+Flags = ZPower_AllStats_1
+#-------------------------------
+[SKETCH]
+Flags = ZPower_AllStats_1
+#-------------------------------
+[TRICKORTREAT]
+Flags = ZPower_AllStats_1
+#-------------------------------
+[TEATIME]
+Flags = ZPower_AllStats_1
+#-------------------------------
+[AROMATHERAPY]
+Flags = ZPower_HealUser
+#-------------------------------
+[BELLYDRUM]
+Flags = ZPower_HealUser
+#-------------------------------
+[CONVERSION2]
+Flags = ZPower_HealUser
+#-------------------------------
+[HAZE]
+Flags = ZPower_HealUser
+#-------------------------------
+[HEALBELL]
+Flags = ZPower_HealUser
+#-------------------------------
+[MIST]
+Flags = ZPower_HealUser
+#-------------------------------
+[PSYCHUP]
+Flags = ZPower_HealUser
+#-------------------------------
+[REFRESH]
+Flags = ZPower_HealUser
+#-------------------------------
+[SPITE]
+Flags = ZPower_HealUser
+#-------------------------------
+[STOCKPILE]
+Flags = ZPower_HealUser
+#-------------------------------
+[TELEPORT]
+Flags = ZPower_HealUser
+#-------------------------------
+[TRANSFORM]
+Flags = ZPower_HealUser
+#-------------------------------
+[CLANGOROUSSOUL]
+Flags = ZPower_HealUser
+#-------------------------------
+[NORETREAT]
+Flags = ZPower_HealUser
+#-------------------------------
+[STUFFCHEEKS]
+Flags = ZPower_HealUser
+#-------------------------------
+[MEMENTO]
+Flags = ZPower_HealSwitch
+#-------------------------------
+[PARTINGSHOT]
+Flags = ZPower_HealSwitch
+#-------------------------------
+[ACUPRESSURE]
+Flags = ZPower_CriticalHit
+#-------------------------------
+[FORESIGHT]
+Flags = ZPower_CriticalHit
+#-------------------------------
+[HEARTSWAP]
+Flags = ZPower_CriticalHit
+#-------------------------------
+[SLEEPTALK]
+Flags = ZPower_CriticalHit
+#-------------------------------
+[TAILWIND]
+Flags = ZPower_CriticalHit
+#-------------------------------
+[ACIDARMOR]
+Flags = ZPower_ResetStats
+#-------------------------------
+[AGILITY]
+Flags = ZPower_ResetStats
+#-------------------------------
+[AMNESIA]
+Flags = ZPower_ResetStats
+#-------------------------------
+[ATTRACT]
+Flags = ZPower_ResetStats
+#-------------------------------
+[AUTOTOMIZE]
+Flags = ZPower_ResetStats
+#-------------------------------
+[BARRIER]
+Flags = ZPower_ResetStats
+#-------------------------------
+[BATONPASS]
+Flags = ZPower_ResetStats
+#-------------------------------
+[CALMMIND]
+Flags = ZPower_ResetStats
+#-------------------------------
+[COIL]
+Flags = ZPower_ResetStats
+#-------------------------------
+[COTTONGUARD]
+Flags = ZPower_ResetStats
+#-------------------------------
+[COTTONSPORE]
+Flags = ZPower_ResetStats
+#-------------------------------
+[DARKVOID]
+Flags = ZPower_ResetStats
+#-------------------------------
+[DISABLE]
+Flags = ZPower_ResetStats
+#-------------------------------
+[DOUBLETEAM]
+Flags = ZPower_ResetStats
+#-------------------------------
+[DRAGONDANCE]
+Flags = ZPower_ResetStats
+#-------------------------------
+[ENDURE]
+Flags = ZPower_ResetStats
+#-------------------------------
+[FLORALHEALING]
+Flags = ZPower_ResetStats
+#-------------------------------
+[FOLLOWME]
+Flags = ZPower_ResetStats
+#-------------------------------
+[HEALORDER]
+Flags = ZPower_ResetStats
+#-------------------------------
+[HEALPULSE]
+Flags = ZPower_ResetStats
+#-------------------------------
+[HELPINGHAND]
+Flags = ZPower_ResetStats
+#-------------------------------
+[IRONDEFENSE]
+Flags = ZPower_ResetStats
+#-------------------------------
+[KINGSSHIELD]
+Flags = ZPower_ResetStats
+#-------------------------------
+[LEECHSEED]
+Flags = ZPower_ResetStats
+#-------------------------------
+[MILKDRINK]
+Flags = ZPower_ResetStats
+#-------------------------------
+[MINIMIZE]
+Flags = ZPower_ResetStats
+#-------------------------------
+[MOONLIGHT]
+Flags = ZPower_ResetStats
+#-------------------------------
+[MORNINGSUN]
+Flags = ZPower_ResetStats
+#-------------------------------
+[NASTYPLOT]
+Flags = ZPower_ResetStats
+#-------------------------------
+[PERISHSONG]
+Flags = ZPower_ResetStats
+#-------------------------------
+[PROTECT]
+Flags = ZPower_ResetStats
+#-------------------------------
+[QUIVERDANCE]
+Flags = ZPower_ResetStats
+#-------------------------------
+[RAGEPOWDER]
+Flags = ZPower_ResetStats
+#-------------------------------
+[RECOVER]
+Flags = ZPower_ResetStats
+#-------------------------------
+[REST]
+Flags = ZPower_ResetStats
+#-------------------------------
+[ROCKPOLISH]
+Flags = ZPower_ResetStats
+#-------------------------------
+[ROOST]
+Flags = ZPower_ResetStats
+#-------------------------------
+[SHELLSMASH]
+Flags = ZPower_ResetStats
+#-------------------------------
+[SHIFTGEAR]
+Flags = ZPower_ResetStats
+#-------------------------------
+[SHOREUP]
+Flags = ZPower_ResetStats
+#-------------------------------
+[SLACKOFF]
+Flags = ZPower_ResetStats
+#-------------------------------
+[SOFTBOILED]
+Flags = ZPower_ResetStats
+#-------------------------------
+[SPORE]
+Flags = ZPower_ResetStats
+#-------------------------------
+[SUBSTITUTE]
+Flags = ZPower_ResetStats
+#-------------------------------
+[SWAGGER]
+Flags = ZPower_ResetStats
+#-------------------------------
+[SWALLOW]
+Flags = ZPower_ResetStats
+#-------------------------------
+[SWORDSDANCE]
+Flags = ZPower_ResetStats
+#-------------------------------
+[SYNTHESIS]
+Flags = ZPower_ResetStats
+#-------------------------------
+[TAILGLOW]
+Flags = ZPower_ResetStats
+#-------------------------------
+[LIFEDEW]
+Flags = ZPower_ResetStats
+#-------------------------------
+[OBSTRUCT]
+Flags = ZPower_ResetStats
+#-------------------------------
+[JUNGLEHEALING]
+Flags = ZPower_ResetStats
+#-------------------------------
+[DESTINYBOND]
+Flags = ZPower_FollowMe
+#-------------------------------
+[GRUDGE]
+Flags = ZPower_FollowMe

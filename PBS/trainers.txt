@@ -1,4 +1,4 @@
-﻿# See the documentation on the wiki to learn how to edit this file.
+﻿# 请参阅wiki以了解如何编辑文件
 #-------------------------------
 [CAMPER,Liam]
 LoseText = A very good battle, indeed!
@@ -68,7 +68,7 @@ Pokemon = MAGIKARP,14
 Pokemon = MAGIKARP,18
 #-------------------------------
 [BEAUTY,Bridget]
-LoseText = My Skitty!
+LoseText = ...
 Pokemon = SKITTY,18
 #-------------------------------
 [LASS,Crissy]

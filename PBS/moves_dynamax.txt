@@ -1,0 +1,625 @@
+﻿# See the documentation on the wiki to learn how to edit this file.
+#-------------------------------
+[MAXGUARD]
+Name = Max Guard
+Type = NORMAL
+Category = Status
+Accuracy = 0
+TotalPP = 1
+Target = User
+Priority = 4
+FunctionCode = ProtectUserEvenFromDynamaxMoves
+Flags = DynamaxMove,CannotMetronome
+Description = The user protects itself from all attacks, including Max Moves. May fail if used in succession.
+#-------------------------------
+[MAXKNUCKLE]
+Name = Max Knuckle
+Type = FIGHTING
+Category = Physical
+Power = 1
+Accuracy = 0
+TotalPP = 1
+Target = NearFoe
+FunctionCode = RaiseUserSideAtk1
+Flags = DynamaxMove_FIGHTING,CannotMetronome
+Description = A Fighting-type attack Dynamax Pokémon use. This raises ally Pokémon's Attack stats.
+#-------------------------------
+[MAXSTEELSPIKE]
+Name = Max Steelspike
+Type = STEEL
+Category = Physical
+Power = 1
+Accuracy = 0
+TotalPP = 1
+Target = NearFoe
+FunctionCode = RaiseUserSideDef1
+Flags = DynamaxMove_STEEL,CannotMetronome
+Description = A Steel-type attack Dynamax Pokémon use. This raises ally Pokémon's Defense stats.
+#-------------------------------
+[MAXOOZE]
+Name = Max Ooze
+Type = POISON
+Category = Physical
+Power = 1
+Accuracy = 0
+TotalPP = 1
+Target = NearFoe
+FunctionCode = RaiseUserSideSpAtk1
+Flags = DynamaxMove_POISON,CannotMetronome
+Description = A Poison-type attack Dynamax Pokémon use. This raises ally Pokémon's Sp. Atk stats.
+#-------------------------------
+[MAXQUAKE]
+Name = Max Quake
+Type = GROUND
+Category = Physical
+Power = 1
+Accuracy = 0
+TotalPP = 1
+Target = NearFoe
+FunctionCode = RaiseUserSideSpDef1
+Flags = DynamaxMove_GROUND,CannotMetronome
+Description = A Ground-type attack Dynamax Pokémon use. This raises ally Pokémon's Sp. Def stats.
+#-------------------------------
+[MAXAIRSTREAM]
+Name = Max Airstream
+Type = FLYING
+Category = Physical
+Power = 1
+Accuracy = 0
+TotalPP = 1
+Target = NearFoe
+FunctionCode = RaiseUserSideSpeed1
+Flags = DynamaxMove_FLYING,CannotMetronome
+Description = A Flying-type attack Dynamax Pokémon use. This raises ally Pokémon's Speed stats.
+#-------------------------------
+[MAXWYRMWIND]
+Name = Max Wyrmwind
+Type = DRAGON
+Category = Physical
+Power = 1
+Accuracy = 0
+TotalPP = 1
+Target = NearFoe
+FunctionCode = LowerTargetSideAtk1
+Flags = DynamaxMove_DRAGON,CannotMetronome
+Description = A Dragon-type attack Dynamax Pokémon use. This lowers the target's Attack stat.
+#-------------------------------
+[MAXPHANTASM]
+Name = Max Phantasm
+Type = GHOST
+Category = Physical
+Power = 1
+Accuracy = 0
+TotalPP = 1
+Target = NearFoe
+FunctionCode = LowerTargetSideDef1
+Flags = DynamaxMove_GHOST,CannotMetronome
+Description = A Ghost-type attack Dynamax Pokémon use. This lowers the target's Defense stat.
+#-------------------------------
+[MAXFLUTTERBY]
+Name = Max Flutterby
+Type = BUG
+Category = Physical
+Power = 1
+Accuracy = 0
+TotalPP = 1
+Target = NearFoe
+FunctionCode = LowerTargetSideSpAtk1
+Flags = DynamaxMove_BUG,CannotMetronome
+Description = A Bug-type attack Dynamax Pokémon use. This lowers the target's Sp. Atk stat.
+#-------------------------------
+[MAXDARKNESS]
+Name = Max Darkness
+Type = DARK
+Category = Physical
+Power = 1
+Accuracy = 0
+TotalPP = 1
+Target = NearFoe
+FunctionCode = LowerTargetSideSpDef1
+Flags = DynamaxMove_DARK,CannotMetronome
+Description = A Dark-type attack Dynamax Pokémon use. This lowers the target's Sp. Def stat.
+#-------------------------------
+[MAXSTRIKE]
+Name = Max Strike
+Type = NORMAL
+Category = Physical
+Power = 1
+Accuracy = 0
+TotalPP = 1
+Target = NearFoe
+FunctionCode = LowerTargetSideSpeed1
+Flags = DynamaxMove_NORMAL,CannotMetronome
+Description = A Normal-type attack Dynamax Pokémon use. This lowers the target's Speed stat.
+#-------------------------------
+[MAXFLARE]
+Name = Max Flare
+Type = FIRE
+Category = Physical
+Power = 1
+Accuracy = 0
+TotalPP = 1
+Target = NearFoe
+FunctionCode = DamageTargetStartSunWeather
+Flags = DynamaxMove_FIRE,CannotMetronome
+Description = A Fire-type attack Dynamax Pokémon use. Intensifies the sun's rays for five turns.
+#-------------------------------
+[MAXGEYSER]
+Name = Max Geyser
+Type = WATER
+Category = Physical
+Power = 1
+Accuracy = 0
+TotalPP = 1
+Target = NearFoe
+FunctionCode = DamageTargetStartRainWeather
+Flags = DynamaxMove_WATER,CannotMetronome
+Description = A Water-type attack Dynamax Pokémon use. Summons a heavy rain that falls for five turns.
+#-------------------------------
+[MAXROCKFALL]
+Name = Max Rockfall
+Type = ROCK
+Category = Physical
+Power = 1
+Accuracy = 0
+TotalPP = 1
+Target = NearFoe
+FunctionCode = DamageTargetStartSandstormWeather
+Flags = DynamaxMove_ROCK,CannotMetronome
+Description = A Rock-type attack Dynamax Pokémon use. Summons a sandstorm lasting five turns.
+#-------------------------------
+[MAXHAILSTORM]
+Name = Max Hailstorm
+Type = ICE
+Category = Physical
+Power = 1
+Accuracy = 0
+TotalPP = 1
+Target = NearFoe
+FunctionCode = DamageTargetStartHailWeather
+Flags = DynamaxMove_ICE,CannotMetronome
+Description = An Ice-type attack Dynamax Pokémon use. Summons a hailstorm lasting five turns.
+#-------------------------------
+[MAXOVERGROWTH]
+Name = Max Overgrowth
+Type = GRASS
+Category = Physical
+Power = 1
+Accuracy = 0
+TotalPP = 1
+Target = NearFoe
+FunctionCode = DamageTargetStartGrassyTerrain
+Flags = DynamaxMove_GRASS,CannotMetronome
+Description = A Grass-type attack Dynamax Pokémon use. Sets Grassy Terrain for five turns.
+#-------------------------------
+[MAXLIGHTNING]
+Name = Max Lightning
+Type = ELECTRIC
+Category = Physical
+Power = 1
+Accuracy = 0
+TotalPP = 1
+Target = NearFoe
+FunctionCode = DamageTargetStartElectricTerrain
+Flags = DynamaxMove_ELECTRIC,CannotMetronome
+Description = An Electric-type attack Dynamax Pokémon use. Sets Electric Terrain for five turns.
+#-------------------------------
+[MAXSTARFALL]
+Name = Max Starfall
+Type = FAIRY
+Category = Physical
+Power = 1
+Accuracy = 0
+TotalPP = 1
+Target = NearFoe
+FunctionCode = DamageTargetStartMistyTerrain
+Flags = DynamaxMove_FAIRY,CannotMetronome
+Description = A Fairy-type attack Dynamax Pokémon use. Sets Misty Terrain for five turns.
+#-------------------------------
+[MAXMINDSTORM]
+Name = Max Mindstorm
+Type = PSYCHIC
+Category = Physical
+Power = 1
+Accuracy = 0
+TotalPP = 1
+Target = NearFoe
+FunctionCode = DamageTargetStartPsychicTerrain
+Flags = DynamaxMove_PSYCHIC,CannotMetronome
+Description = A Psychic-type attack Dynamax Pokémon use. Sets Psychic Terrain for five turns.
+#-------------------------------
+[GMAXVINELASH]
+Name = G-Max Vine Lash
+Type = GRASS
+Category = Physical
+Power = 1
+Accuracy = 0
+TotalPP = 1
+Target = NearFoe
+FunctionCode = StartVineLashOnFoeSide
+Flags = GmaxMove,CannotMetronome
+Description = A G-Max Move used by G-Max Venusaur. Deals additional damage to opponents for four turns.
+#-------------------------------
+[GMAXWILDFIRE]
+Name = G-Max Wildfire
+Type = FIRE
+Category = Physical
+Power = 1
+Accuracy = 0
+TotalPP = 1
+Target = NearFoe
+FunctionCode = StartWildfireOnFoeSide
+Flags = GmaxMove,CannotMetronome
+Description = A G-Max Move used by G-Max Charizard. Deals additional damage to opponents for four turns.
+#-------------------------------
+[GMAXCANNONADE]
+Name = G-Max Cannonade
+Type = WATER
+Category = Physical
+Power = 1
+Accuracy = 0
+TotalPP = 1
+Target = NearFoe
+FunctionCode = StartCannonadeOnFoeSide
+Flags = GmaxMove,CannotMetronome
+Description = A G-Max Move used by G-Max Blastoise. Deals additional damage to opponents for four turns.
+#-------------------------------
+[GMAXVOLCALITH]
+Name = G-Max Volcalith
+Type = ROCK
+Category = Physical
+Power = 1
+Accuracy = 0
+TotalPP = 1
+Target = NearFoe
+FunctionCode = StartVolcalithOnFoeSide
+Flags = GmaxMove,CannotMetronome
+Description = A G-Max Move used by G-Max Coalossal. Deals additional damage to opponents for four turns.
+#-------------------------------
+[GMAXDRUMSOLO]
+Name = G-Max Drum Solo
+Type = GRASS
+Category = Physical
+Power = 160
+Accuracy = 0
+TotalPP = 1
+Target = NearFoe
+FunctionCode = IgnoreTargetAbility
+Flags = GmaxMove,CannotMetronome
+Description = A G-Max Move used by G-Max Rillaboom. Ignores opponent's Abilities that would reduce damage.
+#-------------------------------
+[GMAXFIREBALL]
+Name = G-Max Fireball
+Type = FIRE
+Category = Physical
+Power = 160
+Accuracy = 0
+TotalPP = 1
+Target = NearFoe
+FunctionCode = IgnoreTargetAbility
+Flags = GmaxMove,CannotMetronome
+Description = A G-Max Move used by G-Max Cinderace. Ignores opponent's Abilities that would reduce damage.
+#-------------------------------
+[GMAXHYDROSNIPE]
+Name = G-Max Hydrosnipe
+Type = WATER
+Category = Physical
+Power = 160
+Accuracy = 0
+TotalPP = 1
+Target = NearFoe
+FunctionCode = IgnoreTargetAbility
+Flags = GmaxMove,CannotMetronome
+Description = A G-Max Move used by G-Max Inteleon. Ignores opponent's Abilities that would reduce damage.
+#-------------------------------
+[GMAXVOLTCRASH]
+Name = G-Max Volt Crash
+Type = ELECTRIC
+Category = Physical
+Power = 1
+Accuracy = 0
+TotalPP = 1
+Target = NearFoe
+FunctionCode = ParalyzeTargetSide
+Flags = GmaxMove,CannotMetronome
+Description = A G-Max Move used by G-Max Pikachu. May paralyze all opposing Pokémon.
+#-------------------------------
+[GMAXMALODOR]
+Name = G-Max Malodor
+Type = POISON
+Category = Physical
+Power = 1
+Accuracy = 0
+TotalPP = 1
+Target = NearFoe
+FunctionCode = PoisonTargetSide
+Flags = GmaxMove,CannotMetronome
+Description = A G-Max Move used by G-Max Garbodor. May poison all opposing Pokémon.
+#-------------------------------
+[GMAXSTUNSHOCK]
+Name = G-Max Stun Shock
+Type = ELECTRIC
+Category = Physical
+Power = 1
+Accuracy = 0
+TotalPP = 1
+Target = NearFoe
+FunctionCode = PoisonOrParalyzeTargetSide
+Flags = GmaxMove,CannotMetronome
+Description = A G-Max Move used by G-Max Toxtricity. May poison or paralyze all opposing Pokémon.
+#-------------------------------
+[GMAXBEFUDDLE]
+Name = G-Max Befuddle
+Type = BUG
+Category = Physical
+Power = 1
+Accuracy = 0
+TotalPP = 1
+Target = NearFoe
+FunctionCode = PoisonParalyzeOrSleepTargetSide
+Flags = GmaxMove,CannotMetronome
+Description = A G-Max Move used by G-Max Butterfree. Opposing Pokémon may fall asleep, or become poisoned or paralyzed.
+#-------------------------------
+[GMAXSMITE]
+Name = G-Max Smite
+Type = FAIRY
+Category = Physical
+Power = 1
+Accuracy = 0
+TotalPP = 1
+Target = NearFoe
+FunctionCode = ConfuseTargetSide
+Flags = GmaxMove,CannotMetronome
+Description = A G-Max Move used by G-Max Hatterene. May confuse all opposing Pokémon.
+#-------------------------------
+[GMAXCUDDLE]
+Name = G-Max Cuddle
+Type = NORMAL
+Category = Physical
+Power = 1
+Accuracy = 0
+TotalPP = 1
+Target = NearFoe
+FunctionCode = InfatuateTargetSide
+Flags = GmaxMove,CannotMetronome
+Description = A G-Max Move used by G-Max Eevee. May infatuate all opposing Pokémon.
+#-------------------------------
+[GMAXGOLDRUSH]
+Name = G-Max Gold Rush
+Type = NORMAL
+Category = Physical
+Power = 1
+Accuracy = 0
+TotalPP = 1
+Target = NearFoe
+FunctionCode = ConfuseTargetSideAddMoney
+Flags = GmaxMove,CannotMetronome
+Description = A G-Max Move used by G-Max Meowth. May confuse all opposing Pokémon. Also earns extra money.
+#-------------------------------
+[GMAXSTONESURGE]
+Name = G-Max Stonesurge
+Type = WATER
+Category = Physical
+Power = 1
+Accuracy = 0
+TotalPP = 1
+Target = NearFoe
+FunctionCode = DamageTargetAddStealthRocksToFoeSide
+Flags = GmaxMove,CannotMetronome
+Description = A G-Max Move used by G-Max Drednaw. Scatters sharp rocks around the opposing side of the field.
+#-------------------------------
+[GMAXSTEELSURGE]
+Name = G-Max Steelsurge
+Type = STEEL
+Category = Physical
+Power = 1
+Accuracy = 0
+TotalPP = 1
+Target = NearFoe
+FunctionCode = DamageTargetAddSteelsurgeToFoeSide
+Flags = GmaxMove,CannotMetronome
+Description = A G-Max Move used by G-Max Copperajah. Scatters sharp spikes around the opposing side of the field.
+#-------------------------------
+[GMAXCENTIFERNO]
+Name = G-Max Centiferno
+Type = FIRE
+Category = Physical
+Power = 1
+Accuracy = 0
+TotalPP = 1
+Target = NearFoe
+FunctionCode = BindTargetSideUserCanSwitch
+Flags = GmaxMove,CannotMetronome
+Description = A G-Max Move used by G-Max Centiskorch. Traps all opposing Pokémon in flames for four to five turns.
+#-------------------------------
+[GMAXSANDBLAST]
+Name = G-Max Sandblast
+Type = GROUND
+Category = Physical
+Power = 1
+Accuracy = 0
+TotalPP = 1
+Target = NearFoe
+FunctionCode = BindTargetSideUserCanSwitch
+Flags = GmaxMove,CannotMetronome
+Description = A G-Max Move used by G-Max Sandaconda. Traps all opposing Pokémon in sand for four to five turns.
+#-------------------------------
+[GMAXFOAMBURST]
+Name = G-Max Foam Burst
+Type = WATER
+Category = Physical
+Power = 1
+Accuracy = 0
+TotalPP = 1
+Target = NearFoe
+FunctionCode = LowerTargetSideSpeed2
+Flags = GmaxMove,CannotMetronome
+Description = A G-Max Move used by G-Max Kingler. Harshly lowers the Speed of all opposing Pokémon.
+#-------------------------------
+[GMAXWINDRAGE]
+Name = G-Max Wind Rage
+Type = FLYING
+Category = Physical
+Power = 1
+Accuracy = 0
+TotalPP = 1
+Target = NearFoe
+FunctionCode = RemoveSideEffectsAndTerrain
+Flags = GmaxMove,CannotMetronome
+Description = A G-Max Move used by G-Max Corviknight. Removes effects like Reflect and Light Screen from the field.
+#-------------------------------
+[GMAXGRAVITAS]
+Name = G-Max Gravitas
+Type = PSYCHIC
+Category = Physical
+Power = 1
+Accuracy = 0
+TotalPP = 1
+Target = NearFoe
+FunctionCode = DamageTargetStartGravity
+Flags = GmaxMove,CannotMetronome
+Description = A G-Max Move used by G-Max Orbeetle. Intensifies gravity for five turns.
+#-------------------------------
+[GMAXFINALE]
+Name = G-Max Finale
+Type = FAIRY
+Category = Physical
+Power = 1
+Accuracy = 0
+TotalPP = 1
+Target = NearFoe
+FunctionCode = HealUserSideOneSixthOfTotalHP
+Flags = GmaxMove,CannotMetronome
+Description = A G-Max Move used by G-Max Alcremie. Heals the HP of all ally Pokémon.
+#-------------------------------
+[GMAXSWEETNESS]
+Name = G-Max Sweetness
+Type = GRASS
+Category = Physical
+Power = 1
+Accuracy = 0
+TotalPP = 1
+Target = NearFoe
+FunctionCode = CureStatusConditionsUsersSide
+Flags = GmaxMove,CannotMetronome
+Description = A G-Max Move used by G-Max Appletun. Heals the status conditions of all ally Pokémon.
+#-------------------------------
+[GMAXTARTNESS]
+Name = G-Max Tartness
+Type = GRASS
+Category = Physical
+Power = 1
+Accuracy = 0
+TotalPP = 1
+Target = NearFoe
+FunctionCode = LowerTargetSideEva1
+Flags = GmaxMove,CannotMetronome
+Description = A G-Max Move used by G-Max Flapple. Reduces the evasiveness of all opposing Pokémon.
+#-------------------------------
+[GMAXREPLENISH]
+Name = G-Max Replenish
+Type = NORMAL
+Category = Physical
+Power = 1
+Accuracy = 0
+TotalPP = 1
+Target = NearFoe
+FunctionCode = RestoreUserSideConsumedBerries
+Flags = GmaxMove,CannotMetronome
+Description = A G-Max Move used by G-Max Snorlax. May restore consumed Berries of all ally Pokémon.
+#-------------------------------
+[GMAXDEPLETION]
+Name = G-Max Depletion
+Type = DRAGON
+Category = Physical
+Power = 1
+Accuracy = 0
+TotalPP = 1
+Target = NearFoe
+FunctionCode = LowerPPOfTargetSideLastMoveBy2
+Flags = GmaxMove,CannotMetronome
+Description = A G-Max Move used by G-Max Duraludon. Reduces the PP of the last move used by the target.
+#-------------------------------
+[GMAXRESONANCE]
+Name = G-Max Resonance
+Type = ICE
+Category = Physical
+Power = 1
+Accuracy = 0
+TotalPP = 1
+Target = NearFoe
+FunctionCode = DamageTargetStartWeakenDamageAgainstUserSide
+Flags = GmaxMove,CannotMetronome
+Description = A G-Max Move used by G-Max Lapras. Reduces the damage the party receives for five turns.
+#-------------------------------
+[GMAXCHISTRIKE]
+Name = G-Max Chi Strike
+Type = FIGHTING
+Category = Physical
+Power = 1
+Accuracy = 0
+TotalPP = 1
+Target = NearFoe
+FunctionCode = UserSideCriticalBoost1
+Flags = GmaxMove,CannotMetronome
+Description = A G-Max Move used by G-Max Machamp. Boosts the chance of critical hits for all ally Pokémon.
+#-------------------------------
+[GMAXTERROR]
+Name = G-Max Terror
+Type = GHOST
+Category = Physical
+Power = 1
+Accuracy = 0
+TotalPP = 1
+Target = NearFoe
+FunctionCode = TrapTargetSideInBattle
+Flags = GmaxMove,CannotMetronome
+Description = A G-Max Move used by G-Max Gengar. Prevents all opposing Pokémon from escaping.
+#-------------------------------
+[GMAXSNOOZE]
+Name = G-Max Snooze
+Type = DARK
+Category = Physical
+Power = 1
+Accuracy = 0
+TotalPP = 1
+Target = NearFoe
+FunctionCode = DamageTargetSleepTargetNextTurn
+Flags = GmaxMove,CannotMetronome
+Description = A G-Max Move used by G-Max Grimmsnarl. May lull the target into falling asleep on its following turn.
+#-------------------------------
+[GMAXMELTDOWN]
+Name = G-Max Meltdown
+Type = STEEL
+Category = Physical
+Power = 1
+Accuracy = 0
+TotalPP = 1
+Target = NearFoe
+FunctionCode = DisableTargetSideUsingSameMoveConsecutively
+Flags = GmaxMove,CannotMetronome
+Description = A G-Max Move used by G-Max Melmetal. Prevents opponents from using the same move twice in a row.
+#-------------------------------
+[GMAXONEBLOW]
+Name = G-Max One Blow
+Type = DARK
+Category = Physical
+Power = 1
+Accuracy = 0
+TotalPP = 1
+Target = NearFoe
+FunctionCode = IgnoreProtections
+Flags = GmaxMove,CannotMetronome
+Description = A G-Max Move used by G-Max Urshifu. This single-strike move can ignore Max Guard.
+#-------------------------------
+[GMAXRAPIDFLOW]
+Name = G-Max Rapid Flow
+Type = WATER
+Category = Physical
+Power = 1
+Accuracy = 0
+TotalPP = 1
+Target = NearFoe
+FunctionCode = IgnoreProtections
+Flags = GmaxMove,CannotMetronome
+Description = A G-Max Move used by G-Max Urshifu. This rapid-strike move can ignore Max Guard.

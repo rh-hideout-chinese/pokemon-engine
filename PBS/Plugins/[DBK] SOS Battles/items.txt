@@ -1,0 +1,4 @@
+### Changes will apply automatically. ###
+#-------------------------------
+[ADRENALINEORB]
+BattleUse = Direct

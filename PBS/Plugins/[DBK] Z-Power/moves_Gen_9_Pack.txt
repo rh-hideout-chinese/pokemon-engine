@@ -1,0 +1,46 @@
+### Changes will apply automatically. ###
+#-------------------------------
+[SPICYEXTRACT]
+Flags = ZPower_ATTACK_2
+#-------------------------------
+[BURNINGBULWARK]
+Flags = ZPower_DEFENSE_1
+#-------------------------------
+[SNOWSCAPE]
+Flags = ZPower_SPECIAL_DEFENSE_1
+#-------------------------------
+[SILKTRAP]
+Flags = ZPower_SPEED_1
+#-------------------------------
+[DOODLE]
+Flags = ZPower_SPEED_1
+#-------------------------------
+[DRAGONCHEER]
+Flags = ZPower_CriticalHit
+#-------------------------------
+[LUNARBLESSING]
+Flags = ZPower_ResetStats
+#-------------------------------
+[VICTORYDANCE]
+Flags = ZPower_ResetStats
+#-------------------------------
+[SHELTER]
+Flags = ZPower_ResetStats
+#-------------------------------
+[TAKEHEART]
+Flags = ZPower_ResetStats
+#-------------------------------
+[TIDYUP]
+Flags = ZPower_ResetStats
+#-------------------------------
+[REVIVALBLESSING]
+Flags = ZPower_HealUser
+#-------------------------------
+[FILLETAWAY]
+Flags = ZPower_HealUser
+#-------------------------------
+[SHEDTAIL]
+Flags = ZPower_HealSwitch
+#-------------------------------
+[CHILLYRECEPTION]
+Flags = ZPower_HealSwitch

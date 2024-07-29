@@ -1,0 +1,398 @@
+﻿# See the documentation on the wiki to learn how to edit this file.
+#-------------------------------
+[BREAKNECKBLITZ]
+Name = Breakneck Blitz
+Type = NORMAL
+Category = Physical
+Power = 1
+Accuracy = 0
+TotalPP = 1
+Target = NearOther
+Flags = ZMove_NORMAL,CannotMetronome
+Description = The user builds up its momentum using its Z-Power and crashes into the target at full speed.
+#-------------------------------
+[ALLOUTPUMMELING]
+Name = All-Out Pummeling
+Type = FIGHTING
+Category = Physical
+Power = 1
+Accuracy = 0
+TotalPP = 1
+Target = NearOther
+Flags = ZMove_FIGHTING,CannotMetronome
+Description = The user rams an energy orb created by its Z-Power into the target with full force.
+#-------------------------------
+[SUPERSONICSKYSTRIKE]
+Name = Supersonic Skystrike
+Type = FLYING
+Category = Physical
+Power = 1
+Accuracy = 0
+TotalPP = 1
+Target = NearOther
+Flags = ZMove_FLYING,CannotMetronome
+Description = The user soars up with its Z-Power and plummets toward the target at full speed.
+#-------------------------------
+[ACIDDOWNPOUR]
+Name = Acid Downpour
+Type = POISON
+Category = Physical
+Power = 1
+Accuracy = 0
+TotalPP = 1
+Target = NearOther
+Flags = ZMove_POISON,CannotMetronome
+Description = The user creates a poisonous swamp using its Z-Power and sinks the target into it at full force.
+#-------------------------------
+[TECTONICRAGE]
+Name = Tectonic Rage
+Type = GROUND
+Category = Physical
+Power = 1
+Accuracy = 0
+TotalPP = 1
+Target = NearOther
+Flags = ZMove_GROUND,CannotMetronome
+Description = The user burrows deep into the ground and slams into the target with the full force of its Z-Power.
+#-------------------------------
+[CONTINENTALCRUSH]
+Name = Continental Crush
+Type = ROCK
+Category = Physical
+Power = 1
+Accuracy = 0
+TotalPP = 1
+Target = NearOther
+Flags = ZMove_ROCK,CannotMetronome
+Description = The user summons a huge rock mountain using its Z-Power and drops it onto the target with full force.
+#-------------------------------
+[SAVAGESPINOUT]
+Name = Savage Spin-Out
+Type = BUG
+Category = Physical
+Power = 1
+Accuracy = 0
+TotalPP = 1
+Target = NearOther
+Flags = ZMove_BUG,CannotMetronome
+Description = The user binds the target with full force with threads of silk that the user spits using its Z-Power.
+#-------------------------------
+[NEVERENDINGNIGHTMARE]
+Name = Never-Ending Nightmare
+Type = GHOST
+Category = Physical
+Power = 1
+Accuracy = 0
+TotalPP = 1
+Target = NearOther
+Flags = ZMove_GHOST,CannotMetronome
+Description = Deep-seated grudges summoned by the user's Z-Power trap the target.
+#-------------------------------
+[CORKSCREWCRASH]
+Name = Corkscrew Crash
+Type = STEEL
+Category = Physical
+Power = 1
+Accuracy = 0
+TotalPP = 1
+Target = NearOther
+Flags = ZMove_STEEL,CannotMetronome
+Description = The user spins very fast and rams into the target with the full force of its Z-Power.
+#-------------------------------
+[INFERNOOVERDRIVE]
+Name = Inferno Overdrive
+Type = FIRE
+Category = Physical
+Power = 1
+Accuracy = 0
+TotalPP = 1
+Target = NearOther
+Flags = ZMove_FIRE,CannotMetronome
+Description = The user breathes a stream of intense fire toward the target with the full force of its Z-Power.
+#-------------------------------
+[HYDROVORTEX]
+Name = Hydro Vortex
+Type = WATER
+Category = Physical
+Power = 1
+Accuracy = 0
+TotalPP = 1
+Target = NearOther
+Flags = ZMove_WATER,CannotMetronome
+Description = The user creates a huge whirling current using its Z-Power to swallow the target with full force.
+#-------------------------------
+[BLOOMDOOM]
+Name = Bloom Doom
+Type = GRASS
+Category = Physical
+Power = 1
+Accuracy = 0
+TotalPP = 1
+Target = NearOther
+Flags = ZMove_GRASS,CannotMetronome
+Description = The user collects energy from plants using its Z-Power and attacks the target with full force.
+#-------------------------------
+[GIGAVOLTHAVOC]
+Name = Gigavolt Havoc
+Type = ELECTRIC
+Category = Physical
+Power = 1
+Accuracy = 0
+TotalPP = 1
+Target = NearOther
+Flags = ZMove_ELECTRIC,CannotMetronome
+Description = The user hits the target with a powerful electric current collected by its Z-Power.
+#-------------------------------
+[SHATTEREDPSYCHE]
+Name = Shattered Psyche
+Type = PSYCHIC
+Category = Physical
+Power = 1
+Accuracy = 0
+TotalPP = 1
+Target = NearOther
+Flags = ZMove_PSYCHIC,CannotMetronome
+Description = The user controls the target with its Z-Power and hurts the target with full force.
+#-------------------------------
+[SUBZEROSLAMMER]
+Name = Subzero Slammer
+Type = ICE
+Category = Physical
+Power = 1
+Accuracy = 0
+TotalPP = 1
+Target = NearOther
+Flags = ZMove_ICE,CannotMetronome
+Description = The user dramatically drops the temperature using its Z-Power and freezes the target with full force.
+#-------------------------------
+[DEVASTATINGDRAKE]
+Name = Devastating Drake
+Type = DRAGON
+Category = Physical
+Power = 1
+Accuracy = 0
+TotalPP = 1
+Target = NearOther
+Flags = ZMove_DRAGON,CannotMetronome
+Description = The user materializes its aura using its Z-Power and attacks the target with full force.
+#-------------------------------
+[BLACKHOLEECLIPSE]
+Name = Black Hole Eclipse
+Type = DARK
+Category = Physical
+Power = 1
+Accuracy = 0
+TotalPP = 1
+Target = NearOther
+Flags = ZMove_DARK,CannotMetronome
+Description = The user gathers dark energy using its Z-Power and sucks the target into it.
+#-------------------------------
+[TWINKLETACKLE]
+Name = Twinkle Tackle
+Type = FAIRY
+Category = Physical
+Power = 1
+Accuracy = 0
+TotalPP = 1
+Target = NearOther
+Flags = ZMove_FAIRY,CannotMetronome
+Description = The user creates a very charming space using its Z-Power and totally toys with the target.
+#-------------------------------
+[CATASTROPIKA]
+Name = Catastropika
+Type = ELECTRIC
+Category = Physical
+Power = 210
+Accuracy = 0
+TotalPP = 1
+Target = NearOther
+Flags = ZMove,Contact,CannotMetronome
+Description = Pikachu surrounds itself with the maximum amount of electricity using its Z-Power.
+#-------------------------------
+[TENMILLIONVOLTTHUNDERBOLT]
+Name = 10_000_000 Volt Thunderbolt
+Type = ELECTRIC
+Category = Special
+Power = 195
+Accuracy = 0
+TotalPP = 1
+Target = NearOther
+Flags = ZMove,HighCriticalHitRate_2,CannotMetronome
+Description = Pikachu wearing a cap unleashes a jolt of electricity. Critical hits land more easily.
+#-------------------------------
+[STOKEDSPARKSURFER]
+Name = Stoked Sparksurfer
+Type = ELECTRIC
+Category = Special
+Power = 175
+Accuracy = 0
+TotalPP = 1
+Target = NearOther
+FunctionCode = ParalyzeTarget
+Flags = ZMove,CannotMetronome
+EffectChance = 100
+Description = Alolan Raichu attacks the target using its Z-Power and paralyzes the target.
+#-------------------------------
+[EXTREMEEVOBOOST]
+Name = Extreme Evoboost
+Type = NORMAL
+Category = Status
+Accuracy = 0
+TotalPP = 1
+Target = User
+FunctionCode = RaiseUserMainStats2
+Flags = ZMove,CannotMetronome
+Description = Eevee gets energy from its evolved friends and boosts its stats sharply.
+#-------------------------------
+[PULVERIZINGPANCAKE]
+Name = Pulverizing Pancake
+Type = NORMAL
+Category = Physical
+Power = 210
+Accuracy = 0
+TotalPP = 1
+Target = NearOther
+Flags = ZMove,Contact,CannotMetronome
+Description = Snorlax moves its enormous body energetically and attacks the target with full force.
+#-------------------------------
+[GENESISSUPERNOVA]
+Name = Genesis Supernova
+Type = PSYCHIC
+Category = Special
+Power = 185
+Accuracy = 0
+TotalPP = 1
+Target = NearOther
+FunctionCode = DamageTargetStartPsychicTerrain
+Flags = ZMove,CannotMetronome
+EffectChance = 100
+Description = Mew attacks the target with full force. The terrain will be charged with psychic energy.
+#-------------------------------
+[SINISTERARROWRAID]
+Name = Sinister Arrow Raid
+Type = GHOST
+Category = Physical
+Power = 180
+Accuracy = 0
+TotalPP = 1
+Target = NearOther
+Flags = ZMove,CannotMetronome
+Description = Decidueye shoots the target with countless arrows using its Z-Power.
+#-------------------------------
+[MALICIOUSMOONSAULT]
+Name = Malicious Moonsault
+Type = DARK
+Category = Physical
+Power = 180
+Accuracy = 0
+TotalPP = 1
+Target = NearOther
+Flags = ZMove,Contact,TramplesMinimize,CannotMetronome
+Description = Incineroar crashes into the target using its Z-Power.
+#-------------------------------
+[OCEANICOPERETTA]
+Name = Oceanic Operetta
+Type = WATER
+Category = Special
+Power = 195
+Accuracy = 0
+TotalPP = 1
+Target = NearOther
+Flags = ZMove,CannotMetronome
+Description = Primarina summons a massive amount of water using its Z-Power.
+#-------------------------------
+[SPLINTEREDSTORMSHARDS]
+Name = Splintered Stormshards
+Type = ROCK
+Category = Physical
+Power = 190
+Accuracy = 0
+TotalPP = 1
+Target = NearOther
+FunctionCode = DamageTargetRemoveTerrain
+Flags = ZMove,CannotMetronome
+EffectChance = 100
+Description = Lycanroc attacks the target with full force. This move negates the effect on the battlefield.
+#-------------------------------
+[LETSSNUGGLEFOREVER]
+Name = Let's Snuggle Forever
+Type = FAIRY
+Category = Physical
+Power = 190
+Accuracy = 0
+TotalPP = 1
+Target = NearOther
+Flags = ZMove,Contact,CannotMetronome
+Description = After obtaining Z-Power, the user, Mimikyu, punches the target with full force.
+#-------------------------------
+[CLANGOROUSSOULBLAZE]
+Name = Clangorous Soulblaze
+Type = DRAGON
+Category = Special
+Power = 185
+Accuracy = 0
+TotalPP = 1
+Target = AllNearFoes
+FunctionCode = RaiseUserMainStats1
+Flags = ZMove,Sound,CannotMetronome
+EffectChance = 100
+Description = Kommo-o attacks the opposing Pokémon with full force. This move boosts the user's stats.
+#-------------------------------
+[GUARDIANOFALOLA]
+Name = Guardian of Alola
+Type = FAIRY
+Category = Special
+Power = 1
+Accuracy = 0
+TotalPP = 1
+Target = NearOther
+FunctionCode = FixedDamageThreeQuartersTargetHP
+Flags = ZMove,CannotMetronome
+Description = The Pokémon obtains Alola's energy using its Z-Power. This reduces the target's HP greatly.
+#-------------------------------
+[SEARINGSUNRAZESMASH]
+Name = Searing Sunraze Smash
+Type = STEEL
+Category = Physical
+Power = 200
+Accuracy = 0
+TotalPP = 1
+Target = NearOther
+FunctionCode = IgnoreTargetAbility
+Flags = ZMove,Contact,CannotMetronome
+Description = Solgaleo attacks the target with full force and ignores the target's Ability.
+#-------------------------------
+[MENACINGMOONRAZEMAELSTROM]
+Name = Menacing Moonraze Maelstrom
+Type = GHOST
+Category = Special
+Power = 200
+Accuracy = 0
+TotalPP = 1
+Target = NearOther
+FunctionCode = IgnoreTargetAbility
+Flags = ZMove,CannotMetronome
+Description = Lunala attacks the target with full force and ignores the target's Ability.
+#-------------------------------
+[LIGHTTHATBURNSTHESKY]
+Name = Light That Burns the Sky
+Type = PSYCHIC
+Category = Special
+Power = 200
+Accuracy = 0
+TotalPP = 1
+Target = NearOther
+FunctionCode = CategoryDependsOnHigherDamageIgnoreTargetAbility
+Flags = ZMove,CannotMetronome
+Description = Deals damage based on the user's higher offensive stat. Ignores the target's Ability.
+#-------------------------------
+[SOULSTEALING7STARSTRIKE]
+Name = Soul-Stealing 7-Star Strike
+Type = GHOST
+Category = Physical
+Power = 195
+Accuracy = 0
+TotalPP = 1
+Target = NearOther
+Flags = ZMove,Contact,CannotMetronome
+Description = Marshadow punches and kicks the target consecutively with full force.

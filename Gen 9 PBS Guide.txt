@@ -1,0 +1,64 @@
+[B][U][SIZE="5"]Generation 9 PBS Guide[/SIZE][/U][/B]
+This plugin includes all the new PBS data for PLA and Gen 9 content, up to the Indigo Disk DLC. This includes all new Abilities, Items, Moves, Pokemon, forms, and metrics. Each data type is included in its own stand-alone file that is not mixed together with your base PBS data, so you don't have to completely overwrite all of your files to include them. These files are named as such:
+[QUOTE][LIST][*]abilities_Gen_9_Pack.txt
+[*]items_Gen_9_Pack.txt
+[*]moves_Gen_9_Pack.txt
+[*]pokemon_base_Gen_9_Pack.txt
+[*]pokemon_forms_Gen_9_Pack.txt
+[*]pokemon_metrics_Gen_9_Pack.txt[/LIST][/QUOTE]
+
+When you install this plugin, these files are automatically added to your game, so there isn't anything extra you have to do with these.
+
+However, there are a lot of existing data in your base PBS files that need to be updated, too. You can check all the changes in the [ICODE]PBS folder > Gen 9 backup > Auto-Updates[/ICODE]. For example, old species that gained new evolutions in PLA/SV need new evolution handlers, many old abilities need their descriptions changed, many old moves need updates to their power and flags, etc. Previously, this was done by simply replacing all of your base PBS files. However, this meant that if you made any custom edits to your PBS data, they would all be deleted. To address this, there are now two alternate methods for updating your base PBS files.
+
+[SIZE=5][B]Updating Your PBS Data[/B][/SIZE]
+[LIST]
+[*][SIZE=4][B]Scenario 1:[/B] [COLOR=Red][B]"I don't mind overwriting any of my PBS files."[/B][/COLOR][/SIZE]
+[SPOILER]If you're someone who hasn't made any edits to your base PBS files that you mind losing, or you aren't using any other plugins that have added content to your base PBS files, then this is the easiest method for updating your base data to Gen 9 standards. First, in the PBS folder, you will find a new folder named [ICODE]Gen 9 backup[/ICODE]. In here, you will find three more folders. Open the folder named [ICODE]Vanilla PBS Files[/ICODE]. Highlight all of the text files that are in this folder, and copy them. Then, go back to your main PBS folder, and paste those text files here. When you are asked if you want to replace the old files, click yes.
+
+Then, load your game in Debug mode, and make sure the game recompiles. If so, you have successfully updated all of your PBS data to Gen 9 standards.[/SPOILER]
+
+
+[*][SIZE=4][B]Scenario 2:[/B] [COLOR=Red][B]"I have custom data added to one or more of my PBS files that I do NOT want to overwrite!"[/B][/COLOR][/SIZE]
+[SPOILER]If you're someone who has made any edits to [ICODE]abilities.txt[/ICODE], [ICODE]items.txt[/ICODE], [ICODE]moves.txt[/ICODE], [ICODE]pokemon.txt[/ICODE], OR [ICODE]pokemon_forms.txt[/ICODE], AND you don't want to lose any of those custom edits/additions, then this is the method for you.
+
+In one of your maps, create an event which includes the following script: [ICODE]Compiler.update_gen9[/ICODE]
+[ATTACH type="full" width="444px" alt="1697947675562.png"]22149[/ATTACH]
+Next, when you interact with this event in-game, this will trigger the script to run which will automatically compile and update all of your base PBS files with the specific lines of new data they need. This will do so WITHOUT overwriting any other lines or touching custom content. This will allow you to apply the updates required for Gen 9 compatibility without having to replace your files.
+
+[U]Updating Only Specific Files[/U]
+[SPOILER]If you want to update the data for only [I]specific[/I] files and want to leave the others untouched, you may do so by including specific arguments in the above script. The specific arguments the script accepts are the following: [ICODE]:Ability[/ICODE], [ICODE]:Item[/ICODE], [ICODE]:Move[/ICODE], and/or [ICODE]:Species[/ICODE].
+
+For example, say you want to update ONLY your species data, but don't want any of your other files being touched. In this case, you would just include [ICODE]:Species[/ICODE] as an argument for your script, like this: [ICODE]Compiler.update_gen9(:Species)[/ICODE]
+
+You may add as many of these arguments as you wish for each script. For example, if you want to update your ability, move, and species data, but do [I]not[/I] want your item data touched, your script would look like this: [ICODE]Compiler.update_gen9(:Ability, :Move, :Species)[/ICODE][/SPOILER]
+
+[U]How Do I Know Which Lines Will Be Updated?[/U]
+[SPOILER]If you want to know the exact lines of data that will be overwritten when you run the above script, you can view these by going to your PBS folder and opening the folder named [ICODE]Gen 9 backup[/ICODE]. In here, you will find three more folders. Open the folder named [ICODE]Auto-Updates[/ICODE], and you will see various text files. Each of these files contain ONLY the data that will be overwritten when you run the [ICODE]Compiler.update_gen9[/ICODE] script. You can look through this data if you wish, to carefully review which lines will be overwritten. If there are any lines which you [I]don't[/I] want the script to overwrite for some reason, you may delete those lines in this file. However, keep in mind that most of these changes are listed here for a reason, so don't delete anything if you're unsure of why it's there.
+
+Here's a general breakdown of what lines each file changes:
+[SPOILER]
+[LIST]
+[*][B]abilities.txt[/B]
+This file updates the descriptions of several abilities that have had their effects changed from Gen 8 to match the effects of their Gen 9 counterparts.
+[*][B]items.txt[/B]
+This file updates the pricing data of several items that have had their prices changed from Gen 8 to match their new prices in Gen 9. This also updates the new Gen 9 Fling damage for the item Big Nugget.
+[*][B]moves.txt[/B]
+This file updates various data of several moves that have undergone changes from Gen 8 to match their Gen 9 counterparts. This includes adding the new "Wind" and "Slicing" flags to several moves and/or nerfing the PP or Power of several moves, Some moves have also had their descriptions changed for cosmetic purposes, so that they now properly fit in certain UI's.
+[*][B]pokemon.txt[/B]
+This file updates various data of several species or forms that have undergone changes from Gen 8 to match their Gen 9 counterparts. This typically includes new level-up learnsets, new tutor moves, and/or new egg moves. Certain species that have gained new evolutions or new methods of evolutions have had these lines updated as well. This also includes more specific changes made to Base Stats, Abilities, wild held items, flags, and more. This also adds missing Habitat data for all Gen 4+ species. This isn't a Gen 9 feature, but it's included here for the sake of keeping all species consistent, even if this data isn't official.
+
+Note that this file contains data for species found in [ICODE]pokemon.txt[/ICODE] and forms found in [ICODE]pokemon_forms.txt[/ICODE] in one combined file.
+[/LIST]
+[/SPOILER][/SPOILER][/SPOILER]
+[/LIST]
+[SIZE=5][B]Other Scenarios[/B][/SIZE]
+[LIST]
+[*][SIZE=4][COLOR=Blue][B]"I am updating my PBS data from a previous version of this plugin (v3.0.1 or older)."[/B][/COLOR][/SIZE]
+[SPOILER]If you're someone who already has a previous version of this plugin installed that is at v3.0.1 or lower, then this applies to you. In previous iterations of this plugin, all the new PBS additions were included in a single file that you would be forced to simply replace your base files with. In newer versions, all of the new PBS data are separated in their own exclusive files. This means that if you are updating from an older version, you must delete the newly-added PLA/Gen 9 content from your base PBS files. The easiest way to do this is by simply following the instructions in "Scenario 1" listed above.[/SPOILER]
+
+
+[*][SIZE=4][COLOR=Blue][B]"I accidentally deleted one of my Gen 9 PBS files! What do I do?"[/B][/COLOR][/SIZE]
+[SPOILER]If you ever delete or replace one of your Gen 9 PBS files, or messed something up with one of these files that keeps breaking your game, you can simply replace them with a fresh file. These are stored in the [ICODE]Gen 9 backup[/ICODE] folder. In here, you will find three more folders. Open the folder named [ICODE]Gen 9 Content[/ICODE], and you will find backups for all of the stand-alone Gen 9 PBS files that this plugin provides. Copy whichever files you need, and paste them into your main PBS folder as needed.
+[/SPOILER]
+[/LIST]

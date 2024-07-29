@@ -1,0 +1,19 @@
+﻿### Changes will apply automatically. ###
+#-------------------------------
+[010]   # Cedolan Gym
+Flags = PowerSpot
+#-------------------------------
+[037]   # Pokémon League room 1
+Flags = PowerSpot
+#-------------------------------
+[056]   # Battle Tower arena
+Flags = PowerSpot
+#-------------------------------
+[059]   # Battle Palace arena
+Flags = PowerSpot
+#-------------------------------
+[061]   # Battle Arena arena
+Flags = PowerSpot
+#-------------------------------
+[064]   # Battle Factory arena
+Flags = PowerSpot

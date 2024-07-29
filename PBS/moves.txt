@@ -1,4 +1,5 @@
-﻿# See the documentation on the wiki to learn how to edit this file.
+﻿# 请参阅 wiki 上的文档，了解如何编辑此文件。
+#-------------------------------
 [MEGAHORN]
 Name = 超级角击                       
 Type = BUG                       
@@ -257,6 +258,7 @@ TotalPP =10
 Target =User
 FunctionCode =RaiseUserDefSpDef1
 Description =召唤手下，让其附在 自己的身体上。可以 提高自己的防御和特 防。
+Flags = ZPower_DEFENSE_1
 #-------------------------------
 [HEALORDER]
 Name =回复指令
@@ -267,6 +269,7 @@ TotalPP =10
 Target =User
 FunctionCode =HealUserHalfOfTotalHP
 Description =召唤手下疗伤。回复 自己最大ＨＰ的一半 。
+Flags = ZPower_ResetStats
 #-------------------------------
 [POWDER]
 Name =粉尘
@@ -278,6 +281,7 @@ Target =NearOther
 FunctionCode =TargetNextFireMoveDamagesTarget
 Flags =CanProtect,CanMirrorMove,Powder
 Description =如果被撒到粉尘的对 手使用火招式，则会 爆炸并给予伤害。
+Flags = ZPower_SPECIAL_DEFENSE_2
 #-------------------------------
 [QUIVERDANCE]
 Name =蝶舞
@@ -289,6 +293,7 @@ Target =User
 FunctionCode =RaiseUserSpAtkSpDefSpd1
 Flags =Dance
 Description =轻巧地跳起神秘而又 美丽的舞蹈。提高自 己的特攻、特防和速 度。
+Flags = ZPower_ResetStats
 #-------------------------------
 [RAGEPOWDER]
 Name =愤怒粉
@@ -301,6 +306,7 @@ Priority =2
 FunctionCode =RedirectAllMovesToUser
 Flags =Powder
 Description =将令人烦躁的粉末撒 在自己身上，用以吸 引对手的注意。使对 手的攻击全部指向自 己。
+Flags = ZPower_ResetStats
 #-------------------------------
 [SPIDERWEB]
 Name =蛛网
@@ -312,6 +318,7 @@ Target =NearOther
 FunctionCode =TrapTargetInBattle
 Flags =CanMirrorMove
 Description =将黏糊糊的细丝一层 一层缠住对手，使其 不能从战斗中逃走。
+Flags = ZPower_DEFENSE_1
 #-------------------------------
 [STICKYWEB]
 Name =黏黏网
@@ -322,6 +329,7 @@ TotalPP =20
 Target =FoeSide
 FunctionCode =AddStickyWebToFoeSide
 Description =在对手周围围上黏黏 的网，降低替换出场 的对手的速度。
+Flags = ZPower_SPEED_1
 #-------------------------------
 [STRINGSHOT]
 Name =吐丝
@@ -333,6 +341,7 @@ Target =AllNearFoes
 FunctionCode =LowerTargetSpeed2
 Flags =CanProtect,CanMirrorMove
 Description =用口中吐出的丝缠绕 对手，从而大幅降低 对手的速度。
+Flags = ZPower_SPEED_1
 #-------------------------------
 [TAILGLOW]
 Name =萤火
@@ -343,6 +352,7 @@ TotalPP =20
 Target =User
 FunctionCode =RaiseUserSpAtk3
 Description =凝视闪烁的光芒，集 中自己的精神，从而 巨幅提高特攻。
+Flags = ZPower_ResetStats
 #-------------------------------
 [HYPERSPACEFURY]
 Name =异次元猛攻
@@ -686,6 +696,7 @@ Target =AllNearFoes
 FunctionCode =SleepTargetIfUserDarkrai
 Flags =CanProtect,CanMirrorMove
 Description =将对手强制拖入黑暗 的世界，从而让对手 陷入睡眠状态。
+Flags = ZPower_ResetStats
 #-------------------------------
 [EMBARGO]
 Name =查封
@@ -697,6 +708,7 @@ Target =NearOther
 FunctionCode =StartTargetCannotUseItem
 Flags =CanProtect,CanMirrorMove
 Description =让对手在５回合内不 能使用宝可梦携带的 道具。训练家也不能 给那只宝可梦使用道 具。
+Flags = ZPower_SPECIAL_ATTACK_1
 #-------------------------------
 [FAKETEARS]
 Name =假哭
@@ -708,6 +720,7 @@ Target =NearOther
 FunctionCode =LowerTargetSpDef2
 Flags =CanProtect,CanMirrorMove
 Description =装哭流泪。使对手不 知所措，从而大幅降 低对手的特防。
+Flags = ZPower_SPECIAL_ATTACK_1
 #-------------------------------
 [FLATTER]
 Name =吹捧
@@ -719,6 +732,7 @@ Target =NearOther
 FunctionCode =RaiseTargetSpAtk1ConfuseTarget
 Flags =CanProtect,CanMirrorMove
 Description =吹捧对手，使其混乱 。同时还会提高对手 的特攻。
+Flags = ZPower_SPECIAL_DEFENSE_1
 #-------------------------------
 [HONECLAWS]
 Name =磨爪
@@ -729,6 +743,7 @@ TotalPP =15
 Target =User
 FunctionCode =RaiseUserAtkAcc1
 Description =将爪子磨得更加锋利 。提高自己的攻击和 命中率。
+Flags = ZPower_ATTACK_1
 #-------------------------------
 [MEMENTO]
 Name =临别礼物
@@ -740,6 +755,7 @@ Target =NearOther
 FunctionCode =UserFaintsLowerTargetAtkSpAtk2
 Flags =CanProtect,CanMirrorMove
 Description =虽然会使自己陷入濒 死，但是能够大幅降 低对手的攻击和特攻 。
+Flags = ZPower_HealSwitch
 #-------------------------------
 [NASTYPLOT]
 Name =诡计
@@ -750,6 +766,7 @@ TotalPP =20
 Target =User
 FunctionCode =RaiseUserSpAtk2
 Description =谋划诡计，激活头脑 。大幅提高自己的特 攻。
+Flags = ZPower_ResetStats
 #-------------------------------
 [OBSTRUCT]
 Name =拦堵
@@ -761,6 +778,7 @@ Target =User
 Priority =4
 FunctionCode =ProtectUserFromDamagingMovesObstruct
 Description =完全抵挡对手的攻击 。连续使出则容易失 败。一旦触碰，防御 就会大幅降低。
+Flags = ZPower_ResetStats
 #-------------------------------
 [PARTINGSHOT]
 Name =抛下狠话
@@ -772,6 +790,7 @@ Target =NearOther
 FunctionCode =LowerTargetAtkSpAtk1SwitchOutUser
 Flags =CanProtect,CanMirrorMove,Sound
 Description =抛下狠话威吓对手， 降低攻击和特攻后， 和后备宝可梦进行替 换。
+Flags = ZPower_HealSwitch
 #-------------------------------
 [QUASH]
 Name =延后
@@ -783,6 +802,7 @@ Target =NearOther
 FunctionCode =TargetActsLast
 Flags =CanProtect,CanMirrorMove
 Description =压制对手，从而将其 行动顺序放到最后。
+Flags = ZPower_SPEED_1
 #-------------------------------
 [SNATCH]
 Name =抢夺
@@ -794,6 +814,7 @@ Target =User
 Priority =4
 FunctionCode =StealAndUseBeneficialStatusMove
 Description =将对手打算使用的回 复招式或能力变化招 式夺为己用。
+Flags = ZPower_SPEED_2
 #-------------------------------
 [SWITCHEROO]
 Name =掉包
@@ -805,6 +826,7 @@ Target =NearOther
 FunctionCode =UserTargetSwapItems
 Flags =CanProtect,CanMirrorMove
 Description =用一闪而过的速度交 换自己和对手的持有 物。
+Flags = ZPower_SPEED_2
 #-------------------------------
 [TAUNT]
 Name =挑衅
@@ -816,6 +838,7 @@ Target =NearOther
 FunctionCode =DisableTargetStatusMoves
 Flags =CanProtect,CanMirrorMove
 Description =使对手愤怒。在３回 合内让对手只能使出 给予伤害的招式。
+Flags = ZPower_ATTACK_1
 #-------------------------------
 [TOPSYTURVY]
 Name =颠倒
@@ -827,6 +850,7 @@ Target =NearOther
 FunctionCode =InvertTargetStatStages
 Flags =CanProtect,CanMirrorMove
 Description =颠倒对手身上的所有 能力变化，变成和原 来相反的状态。
+Flags = ZPower_ATTACK_1
 #-------------------------------
 [TORMENT]
 Name =无理取闹
@@ -838,6 +862,7 @@ Target =NearOther
 FunctionCode =DisableTargetUsingSameMoveConsecutively
 Flags =CanProtect,CanMirrorMove
 Description =向对手无理取闹，令 其不能连续２次使出 相同招式。
+Flags = ZPower_DEFENSE_1
 #-------------------------------
 [ETERNABEAM]
 Name =无极光束
@@ -947,6 +972,7 @@ Target =NearOther
 FunctionCode =None
 Flags =CanProtect,CannotMetronome
 Description =从核心放出光束进行 攻击。如果对手正处 于极巨化状态，则造 成的伤害会变为２倍。
+FunctionCode = DoubleDamageOnDynamaxTargets
 #-------------------------------
 [SPACIALREND]
 Name =亚空裂斩
@@ -1106,6 +1132,7 @@ Target =User
 FunctionCode =RaiseUserMainStats1LoseThirdOfTotalHP
 Flags =Sound,CannotMetronome
 Description =削减少许自己的ＨＰ， 使所有能力都提高。
+Flags = ZPower_HealUser
 #-------------------------------
 [DRAGONDANCE]
 Name =龙之舞
@@ -1117,6 +1144,7 @@ Target =User
 FunctionCode =RaiseUserAtkSpd1
 Flags =Dance
 Description =激烈地跳起神秘且强 有力的舞蹈。从而提 高自己的攻击和速度 。
+Flags = ZPower_ResetStats
 #-------------------------------
 [BOLTSTRIKE]
 Name =雷击
@@ -1454,6 +1482,7 @@ TotalPP =20
 Target =User
 FunctionCode =RaiseUserSpDef1PowerUpElectricMove
 Description =提高下一回合使出的 电属性的招式威力。 自己的特防也会提高 。
+Flags = ZPower_SPECIAL_DEFENSE_1
 #-------------------------------
 [EERIEIMPULSE]
 Name =怪异电波
@@ -1465,6 +1494,7 @@ Target =NearOther
 FunctionCode =LowerTargetSpAtk2
 Flags =CanProtect,CanMirrorMove
 Description =从身体放射出怪异电 波，让对手沐浴其中 ，从而大幅降低其特 攻。
+Flags = ZPower_SPECIAL_DEFENSE_1
 #-------------------------------
 [ELECTRICTERRAIN]
 Name =电气场地
@@ -1475,6 +1505,7 @@ TotalPP =10
 Target =BothSides
 FunctionCode =StartElectricTerrain
 Description =在５回合内变成电气 场地。地面上的宝可 梦将无法入眠。电属 性的招式威力还会提 高。
+Flags = ZPower_SPEED_1
 #-------------------------------
 [ELECTRIFY]
 Name =输电
@@ -1486,6 +1517,7 @@ Target =NearOther
 FunctionCode =TargetMovesBecomeElectric
 Flags =CanProtect,CanMirrorMove
 Description =对手使出招式前，如 果输电，则该回合对 手的招式变成电属性 。
+Flags = ZPower_SPECIAL_ATTACK_1
 #-------------------------------
 [IONDELUGE]
 Name =等离子浴
@@ -1497,6 +1529,7 @@ Target =BothSides
 Priority =1
 FunctionCode =NormalMovesBecomeElectric
 Description =将带电粒子扩散开来 ，使一般属性的招式 变成电属性。
+Flags = ZPower_SPECIAL_ATTACK_1
 #-------------------------------
 [MAGNETRISE]
 Name =电磁飘浮
@@ -1507,6 +1540,7 @@ TotalPP =10
 Target =User
 FunctionCode =StartUserAirborne
 Description =利用电气产生的磁力 浮在空中。在５回合 内可以飘浮。
+Flags = ZPower_EVASION_1
 #-------------------------------
 [MAGNETICFLUX]
 Name =磁场操控
@@ -1517,6 +1551,7 @@ TotalPP =20
 Target =UserAndAllies
 FunctionCode =RaisePlusMinusUserAndAlliesDefSpDef1
 Description =通过操控磁场，会提 高特性为正电和负电 的宝可梦的防御和特 防。
+Flags = ZPower_SPECIAL_DEFENSE_1
 #-------------------------------
 [THUNDERWAVE]
 Name =电磁波
@@ -1528,6 +1563,7 @@ Target =NearOther
 FunctionCode =ParalyzeTargetIfNotTypeImmune
 Flags =CanProtect,CanMirrorMove
 Description =向对手发出微弱的电 击，从而让对手陷入 麻痹状态。
+Flags = ZPower_SPECIAL_DEFENSE_1
 #-------------------------------
 [LIGHTOFRUIN]
 Name =破灭之光
@@ -1686,6 +1722,7 @@ TotalPP =20
 Target =NearAlly
 FunctionCode =RaiseTargetSpDef1
 Description =通过神奇的芳香，提 高我方宝可梦的特防 。
+Flags = ZPower_SPECIAL_DEFENSE_2
 #-------------------------------
 [BABYDOLLEYES]
 Name =圆瞳
@@ -1698,6 +1735,7 @@ Priority =1
 FunctionCode =LowerTargetAttack1
 Flags =CanProtect,CanMirrorMove
 Description =用圆瞳凝视对手，从 而降低其攻击。必定 能够先制攻击。
+Flags = ZPower_DEFENSE_1
 #-------------------------------
 [CHARM]
 Name =撒娇
@@ -1709,6 +1747,7 @@ Target =NearOther
 FunctionCode =LowerTargetAttack2
 Flags =CanProtect,CanMirrorMove
 Description =可爱地凝视，诱使对 手疏忽大意，从而大 幅降低对手的攻击。
+Flags = ZPower_DEFENSE_1
 #-------------------------------
 [CRAFTYSHIELD]
 Name =戏法防守
@@ -1720,6 +1759,7 @@ Target =UserSide
 Priority =3
 FunctionCode =ProtectUserSideFromStatusMoves
 Description =使用神奇的力量防住 攻击我方的变化招式 。但无法防住伤害招 式的攻击。
+Flags = ZPower_SPECIAL_DEFENSE_1
 #-------------------------------
 [DECORATE]
 Name =装饰
@@ -1731,6 +1771,7 @@ Target =NearOther
 FunctionCode =RaiseTargetAtkSpAtk2
 Flags =CannotMetronome
 Description =通过装饰，大幅提高 对方的攻击和特攻。
+Flags = IgnoresMaxGuard,ZPower_SPECIAL_DEFENSE_1
 #-------------------------------
 [FAIRYLOCK]
 Name =妖精之锁
@@ -1742,6 +1783,7 @@ Target =BothSides
 FunctionCode =TrapAllBattlersInBattleForOneTurn
 Flags =CanMirrorMove
 Description =通过封锁，下一回合 所有的宝可梦都无法 逃走。
+Flags = ZPower_DEFENSE_1
 #-------------------------------
 [FLORALHEALING]
 Name =花疗
@@ -1753,6 +1795,7 @@ Target =NearOther
 FunctionCode =HealTargetDependingOnGrassyTerrain
 Flags =CanProtect
 Description =回复对手最大ＨＰ的 一半。在青草场地时 ，效果会提高。
+Flags = ZPower_ResetStats
 #-------------------------------
 [FLOWERSHIELD]
 Name =鲜花防守
@@ -1763,6 +1806,7 @@ TotalPP =10
 Target =AllBattlers
 FunctionCode =RaiseGrassBattlersDef1
 Description =使用神奇的力量提高 在场的所有草属性宝 可梦的防御。
+Flags = ZPower_DEFENSE_1
 #-------------------------------
 [GEOMANCY]
 Name =大地掌控
@@ -1773,6 +1817,7 @@ TotalPP =10
 Target =User
 FunctionCode =TwoTurnAttackRaiseUserSpAtkSpDefSpd2
 Description =第１回合吸收能量， 第２回合大幅提高特 攻、特防和速度。
+Flags = ZPower_AllStats_1
 #-------------------------------
 [MISTYTERRAIN]
 Name =薄雾场地
@@ -1783,6 +1828,7 @@ TotalPP =10
 Target =BothSides
 FunctionCode =StartMistyTerrain
 Description =在５回合内，地面上 的宝可梦不会陷入异 常状态。龙属性招式 的伤害也会减半。
+Flags = ZPower_SPECIAL_DEFENSE_1
 #-------------------------------
 [MOONLIGHT]
 Name =月光
@@ -1793,6 +1839,7 @@ TotalPP =5
 Target =User
 FunctionCode =HealUserDependingOnWeather
 Description =回复自己的ＨＰ。根 据天气的不同，回复 量也会有所变化。
+Flags = ZPower_ResetStats
 #-------------------------------
 [SWEETKISS]
 Name =天使之吻
@@ -1804,6 +1851,7 @@ Target =NearOther
 FunctionCode =ConfuseTarget
 Flags =CanProtect,CanMirrorMove
 Description =像天使般可爱地亲吻 对手，从而使对手混 乱。
+Flags = ZPower_SPECIAL_ATTACK_1
 #-------------------------------
 [FOCUSPUNCH]
 Name =真气拳
@@ -2321,6 +2369,7 @@ TotalPP =20
 Target =User
 FunctionCode =RaiseUserAtkDef1
 Description =使出全身力气绷紧肌 肉，从而提高自己的 攻击和防御。
+Flags = ZPower_ATTACK_1
 #-------------------------------
 [COACHING]
 Name =指导
@@ -2332,6 +2381,7 @@ Target =AllAllies
 FunctionCode =RaiseUserAndAlliesAtkDef1
 Flags =CanMirrorMove
 Description =通过进行正确合理的 指导，提高我方全员 的攻击和防御。
+Flags = ZPower_ATTACK_1
 #-------------------------------
 [DETECT]
 Name =看穿
@@ -2343,6 +2393,7 @@ Target =User
 Priority =4
 FunctionCode =ProtectUser
 Description =完全抵挡对手的攻击 。连续使出则容易失 败。
+Flags = ZPower_EVASION_1
 #-------------------------------
 [MATBLOCK]
 Name =掀榻榻米
@@ -2353,6 +2404,7 @@ TotalPP =10
 Target =UserSide
 FunctionCode =ProtectUserSideFromDamagingMovesIfUserFirstTurn
 Description =将掀起来的榻榻米当 作盾牌，防住自己和 同伴免受招式伤害。 变化招式无法防住。
+Flags = ZPower_DEFENSE_1
 #-------------------------------
 [NORETREAT]
 Name =背水一战
@@ -2363,6 +2415,7 @@ TotalPP =5
 Target =User
 FunctionCode =RaiseUserMainStats1TrapUserInBattle
 Description =提高自己的所有能力， 但无法替换或逃走。
+Flags = ZPower_HealUser
 #-------------------------------
 [OCTOLOCK]
 Name =蛸固
@@ -2374,6 +2427,7 @@ Target =NearOther
 FunctionCode =TrapTargetInBattleLowerTargetDefSpDef1EachTurn
 Flags =CanProtect,CanMirrorMove
 Description =让对手无法逃走。对 手被固定后，每回 合都会降低防御和特 防。
+Flags = ZPower_DEFENSE_1
 #-------------------------------
 [QUICKGUARD]
 Name =快速防守
@@ -2385,6 +2439,7 @@ Target =UserSide
 Priority =3
 FunctionCode =ProtectUserSideFromPriorityMoves
 Description =守护自己和同伴，以 防对手的先制攻击。
+Flags = ZPower_DEFENSE_1
 #-------------------------------
 [VCREATE]
 Name =Ｖ热焰
@@ -2823,6 +2878,7 @@ TotalPP =5
 Target =BothSides
 FunctionCode =StartSunWeather
 Description =在５回合内阳光变得 强烈，从而提高火属 性的招式威力。水属 性的招式威力则降低 。
+Flags = ZPower_SPEED_1
 #-------------------------------
 [WILLOWISP]
 Name =鬼火
@@ -2834,6 +2890,7 @@ Target =NearOther
 FunctionCode =BurnTarget
 Flags =CanProtect,CanMirrorMove
 Description =放出怪异的火焰，从 而让对手陷入灼伤状 态。
+Flags = ZPower_ATTACK_1
 #-------------------------------
 [SKYATTACK]
 Name =神鸟猛击
@@ -3102,6 +3159,7 @@ Target =NearOther
 FunctionCode =LowerTargetEvasion1RemoveSideEffects
 Flags =CanProtect,CanMirrorMove
 Description =用强风吹开对手的反 射壁或光墙等。也会 降低对手的闪避率。
+Flags = ZPower_ACCURACY_1
 #-------------------------------
 [FEATHERDANCE]
 Name =羽毛舞
@@ -3113,6 +3171,7 @@ Target =NearOther
 FunctionCode =LowerTargetAttack2
 Flags =CanProtect,CanMirrorMove,Dance
 Description =撒出羽毛，笼罩在对 手的周围。大幅降低 对手的攻击。
+Flags = ZPower_DEFENSE_1
 #-------------------------------
 [MIRRORMOVE]
 Name =鹦鹉学舌
@@ -3123,6 +3182,7 @@ TotalPP =20
 Target =NearOther
 FunctionCode =UseLastMoveUsedByTarget
 Description =模仿对手使用的招式 ，自己也使用相同招 式。
+Flags = ZPower_ATTACK_2
 #-------------------------------
 [ROOST]
 Name =羽栖
@@ -3133,6 +3193,7 @@ TotalPP =10
 Target =User
 FunctionCode =HealUserHalfOfTotalHPLoseFlyingTypeThisTurn
 Description =降到地面，使身体休 息。回复自己最大Ｈ Ｐ的一半。
+Flags = ZPower_ResetStats
 #-------------------------------
 [TAILWIND]
 Name =顺风
@@ -3143,6 +3204,7 @@ TotalPP =15
 Target =UserSide
 FunctionCode =StartUserSideDoubleSpeed
 Description =刮起猛烈的旋风，在 ４回合内提高我方全 员的速度。
+Flags = ZPower_CriticalHit
 #-------------------------------
 [ASTRALBARRAGE]
 Name =星碎
@@ -3365,6 +3427,7 @@ Target =NearOther
 FunctionCode =ConfuseTarget
 Flags =CanProtect,CanMirrorMove
 Description =显示奇怪的光，扰乱 对手。使对手混乱。
+Flags = ZPower_SPECIAL_ATTACK_1
 #-------------------------------
 [CURSE]
 Name =诅咒
@@ -3375,6 +3438,7 @@ TotalPP =10
 Target =User
 FunctionCode =CurseTargetOrLowerUserSpd1RaiseUserAtkDef1
 Description =使用该招式的宝可梦 ，其属性是幽灵属性 或其他属性时，效果 会不一样。
+Flags = ZPower_ATTACK_1
 #-------------------------------
 [DESTINYBOND]
 Name =同命
@@ -3385,6 +3449,7 @@ TotalPP =5
 Target =User
 FunctionCode =AttackerFaintsIfUserFaints
 Description =使出招式后，当受到 对手攻击陷入濒死时 ，对手也会一同濒死 。连续使出则会失败 。
+Flags = ZPower_FollowMe
 #-------------------------------
 [GRUDGE]
 Name =怨念
@@ -3395,6 +3460,7 @@ TotalPP =5
 Target =User
 FunctionCode =SetAttackerMovePPTo0IfUserFaints
 Description =因对手的招式而陷入 濒死时给对手施加怨 念，让该招式的ＰＰ 变成０。
+Flags = ZPower_FollowMe
 #-------------------------------
 [NIGHTMARE]
 Name =恶梦
@@ -3406,6 +3472,7 @@ Target =NearOther
 FunctionCode =StartDamageTargetEachTurnIfTargetAsleep
 Flags =CanProtect,CanMirrorMove
 Description =让在睡眠状态下的对 手做恶梦，每回合会 缓缓减少ＨＰ。
+Flags = ZPower_SPECIAL_ATTACK_1
 #-------------------------------
 [SPITE]
 Name =怨恨
@@ -3417,6 +3484,7 @@ Target =NearOther
 FunctionCode =LowerPPOfTargetLastMoveBy4
 Flags =CanProtect,CanMirrorMove
 Description =对对手最后使用的招 式怀有怨恨，减少４ ＰＰ该招式。
+Flags = ZPower_HealUser
 #-------------------------------
 [TRICKORTREAT]
 Name =万圣夜
@@ -3428,6 +3496,7 @@ Target =NearOther
 FunctionCode =AddGhostTypeToTarget
 Flags =CanProtect,CanMirrorMove
 Description =邀请对手参加万圣夜 。使对手被追加幽灵 属性。
+Flags = ZPower_AllStats_1
 #-------------------------------
 [FRENZYPLANT]
 Name =疯狂植物
@@ -3830,6 +3899,7 @@ TotalPP =5
 Target =UserAndAllies
 FunctionCode =CureUserPartyStatus
 Description =让同伴闻沁人心脾的 香气，从而治愈我方 全员的异常状态。
+Flags = ZPower_HealUser
 #-------------------------------
 [COTTONGUARD]
 Name =棉花防守
@@ -3840,6 +3910,7 @@ TotalPP =10
 Target =User
 FunctionCode =RaiseUserDefense3
 Description =用软绵绵的绒毛包裹 住自己的身体进行守 护。巨幅提高自己的 防御。
+Flags = ZPower_ResetStats
 #-------------------------------
 [COTTONSPORE]
 Name =棉孢子
@@ -3851,6 +3922,7 @@ Target =AllNearFoes
 FunctionCode =LowerTargetSpeed2
 Flags =CanProtect,CanMirrorMove,Powder
 Description =将棉花般柔软的孢子 紧贴对手，从而大幅 降低对手的速度。
+Flags = ZPower_ResetStats
 #-------------------------------
 [FORESTSCURSE]
 Name =森林诅咒
@@ -3862,6 +3934,7 @@ Target =NearOther
 FunctionCode =AddGrassTypeToTarget
 Flags =CanProtect,CanMirrorMove
 Description =向对手施加森林诅咒 。中了诅咒的对手会 被追加草属性。
+Flags = ZPower_AllStats_1
 #-------------------------------
 [GRASSWHISTLE]
 Name =草笛
@@ -3873,6 +3946,7 @@ Target =NearOther
 FunctionCode =SleepTarget
 Flags =CanProtect,CanMirrorMove,Sound
 Description =让对手听舒适的笛声 ，从而陷入睡眠状态 。
+Flags = ZPower_SPEED_1
 #-------------------------------
 [GRASSYTERRAIN]
 Name =青草场地
@@ -3883,6 +3957,7 @@ TotalPP =10
 Target =BothSides
 FunctionCode =StartGrassyTerrain
 Description =在５回合内变成青草 场地。地面上的宝可 梦每回合都能回复。 草属性的招式威力还 会提高。
+Flags = ZPower_DEFENSE_1
 #-------------------------------
 [INGRAIN]
 Name =扎根
@@ -3893,6 +3968,7 @@ TotalPP =20
 Target =User
 FunctionCode =StartHealUserEachTurnTrapUserInBattle
 Description =在大地上扎根，每回 合回复自己的ＨＰ。 因为扎根了，所以不 能替换宝可梦。
+Flags = ZPower_SPECIAL_DEFENSE_1
 #-------------------------------
 [JUNGLEHEALING]
 Name =丛林治疗
@@ -3904,6 +3980,7 @@ Target =UserAndAllies
 FunctionCode =HealUserAndAlliesQuarterOfTotalHPCureStatus
 Flags =CannotMetronome
 Description =与丛林融为一体，回 复自己和场上同伴的 ＨＰ和状态。
+Flags = ZPower_ResetStats
 #-------------------------------
 [LEECHSEED]
 Name =寄生种子
@@ -3915,6 +3992,7 @@ Target =NearOther
 FunctionCode =StartLeechSeedTarget
 Flags =CanProtect,CanMirrorMove
 Description =植入寄生种子后，将 在每回合一点一点吸 取对手的ＨＰ，从而 用来回复自己的ＨＰ 。
+Flags = ZPower_ResetStats
 #-------------------------------
 [SLEEPPOWDER]
 Name =催眠粉
@@ -3926,6 +4004,7 @@ Target =NearOther
 FunctionCode =SleepTarget
 Flags =CanProtect,CanMirrorMove,Powder
 Description =撒出催眠粉，从而让 对手陷入睡眠状态。
+Flags = ZPower_SPEED_1
 #-------------------------------
 [SPIKYSHIELD]
 Name =尖刺防守
@@ -3937,6 +4016,7 @@ Target =User
 Priority =4
 FunctionCode =ProtectUserFromTargetingMovesSpikyShield
 Description =防住对手攻击的同时 ，削减接触到自己的 对手的体力。
+Flags = ZPower_DEFENSE_1
 #-------------------------------
 [SPORE]
 Name =蘑菇孢子
@@ -3948,6 +4028,7 @@ Target =NearOther
 FunctionCode =SleepTarget
 Flags =CanProtect,CanMirrorMove,Powder
 Description =沙沙沙地撒满具有催 眠效果的孢子，从而 让对手陷入睡眠状态 。
+Flags = ZPower_ResetStats
 #-------------------------------
 [STRENGTHSAP]
 Name =吸取力量
@@ -3959,6 +4040,7 @@ Target =NearOther
 FunctionCode =HealUserByTargetAttackLowerTargetAttack1
 Flags =CanProtect,CanMirrorMove
 Description =给自己回复和对手攻 击力相同数值的ＨＰ ，然后降低对手的攻 击。
+Flags = ZPower_DEFENSE_1
 #-------------------------------
 [STUNSPORE]
 Name =麻痹粉
@@ -3970,6 +4052,7 @@ Target =NearOther
 FunctionCode =ParalyzeTarget
 Flags =CanProtect,CanMirrorMove,Powder
 Description =撒出麻痹粉，从而让 对手陷入麻痹状态。
+Flags = ZPower_SPECIAL_DEFENSE_1
 #-------------------------------
 [SYNTHESIS]
 Name =光合作用
@@ -3980,6 +4063,7 @@ TotalPP =5
 Target =User
 FunctionCode =HealUserDependingOnWeather
 Description =回复自己的ＨＰ。根 据天气的不同，回复 量也会有所变化。
+Flags = ZPower_ResetStats
 #-------------------------------
 [WORRYSEED]
 Name =烦恼种子
@@ -3991,6 +4075,7 @@ Target =NearOther
 FunctionCode =SetTargetAbilityToInsomnia
 Flags =CanProtect,CanMirrorMove
 Description =种植心神不宁的种子 。使对手不能入眠， 并将特性变成不眠。
+Flags = ZPower_SPEED_1
 #-------------------------------
 [PRECIPICEBLADES]
 Name =断崖之剑
@@ -4260,6 +4345,7 @@ TotalPP =15
 Target =BothSides
 FunctionCode =StartWeakenElectricMoves
 Description =一旦使用此招式，周 围就会弄得到处是泥 。在５回合内减弱电 属性的招式。
+Flags = ZPower_SPECIAL_DEFENSE_1
 #-------------------------------
 [ROTOTILLER]
 Name =耕地
@@ -4270,6 +4356,7 @@ TotalPP =10
 Target =AllBattlers
 FunctionCode =RaiseGroundedGrassBattlersAtkSpAtk1
 Description =翻耕土地，使草木更 容易成长。会提高草 属性宝可梦的攻击和 特攻。
+Flags = ZPower_ATTACK_1
 #-------------------------------
 [SANDATTACK]
 Name =泼沙
@@ -4281,6 +4368,7 @@ Target =NearOther
 FunctionCode =LowerTargetAccuracy1
 Flags =CanProtect,CanMirrorMove
 Description =向对手脸上泼沙子， 从而降低命中率。
+Flags = ZPower_EVASION_1
 #-------------------------------
 [SHOREUP]
 Name =集沙
@@ -4291,6 +4379,7 @@ TotalPP =10
 Target =User
 FunctionCode =HealUserDependingOnSandstorm
 Description =回复自己最大ＨＰ的 一半。在沙暴中回复 得更多。
+Flags = ZPower_ResetStats
 #-------------------------------
 [SPIKES]
 Name =撒菱
@@ -4301,6 +4390,7 @@ TotalPP =20
 Target =FoeSide
 FunctionCode =AddSpikesToFoeSide
 Description =在对手的脚下扔撒菱 。对替换出场的对手 的宝可梦给予伤害。
+Flags = ZPower_DEFENSE_1
 #-------------------------------
 [FREEZESHOCK]
 Name =冰冻伏特
@@ -4577,6 +4667,7 @@ TotalPP =20
 Target =UserSide
 FunctionCode =StartWeakenDamageAgainstUserSideIfHail
 Description =在５回合内减弱物理 和特殊的伤害。只有 冰雹时才能使出。
+Flags = ZPower_SPEED_1
 #-------------------------------
 [HAIL]
 Name =冰雹
@@ -4587,6 +4678,7 @@ TotalPP =10
 Target =BothSides
 FunctionCode =StartHailWeather
 Description =在５回合内一直降冰 雹，除冰属性的宝可 梦以外，给予全体宝 可梦伤害。
+Flags = ZPower_SPEED_1
 #-------------------------------
 [HAZE]
 Name =黑雾
@@ -4597,6 +4689,7 @@ TotalPP =30
 Target =BothSides
 FunctionCode =ResetAllBattlersStatStages
 Description =升起黑雾，将正在场 上战斗的全体宝可梦 的能力变回原点。
+Flags = ZPower_HealUser
 #-------------------------------
 [MIST]
 Name =白雾
@@ -4607,6 +4700,7 @@ TotalPP =30
 Target =UserSide
 FunctionCode =StartUserSideImmunityToStatStageLowering
 Description =用白雾覆盖身体。在 ５回合内不会让对手 降低自己的能力。
+Flags = ZPower_HealUser
 #-------------------------------
 [EXPLOSION]
 Name =大爆炸
@@ -5692,6 +5786,7 @@ TotalPP =30
 Target =UserOrNearAlly
 FunctionCode =RaiseTargetRandomStat2
 Description =通过点穴让身体舒筋 活络。大幅提高某１ 项能力。
+Flags = ZPower_CriticalHit
 #-------------------------------
 [AFTERYOU]
 Name =您先请
@@ -5702,6 +5797,7 @@ TotalPP =15
 Target =NearOther
 FunctionCode =TargetActsNext
 Description =支援我方或对手的行 动，使其紧接着此招 式之后行动。
+Flags = ZPower_SPEED_1
 #-------------------------------
 [ASSIST]
 Name =借助
@@ -5723,6 +5819,7 @@ Target =NearOther
 FunctionCode =AttractTarget
 Flags =CanProtect,CanMirrorMove
 Description =♂诱惑♀或♀诱惑♂ ，让对手着迷。对手 将很难使出招式。
+Flags = ZPower_ResetStats
 #-------------------------------
 [BATONPASS]
 Name =接棒
@@ -5733,6 +5830,7 @@ TotalPP =40
 Target =User
 FunctionCode =SwitchOutUserPassOnEffects
 Description =和后备宝可梦进行替 换。换上的宝可梦能 直接继承其能力的变 化。
+Flags = ZPower_ResetStats
 #-------------------------------
 [BELLYDRUM]
 Name =腹鼓
@@ -5743,6 +5841,7 @@ TotalPP =10
 Target =User
 FunctionCode =MaxUserAttackLoseHalfOfTotalHP
 Description =将自己的ＨＰ减少到 最大ＨＰ的一半，从 而最大限度提高自己 的攻击。
+Flags = ZPower_HealUser
 #-------------------------------
 [BESTOW]
 Name =传递礼物
@@ -5754,6 +5853,7 @@ Target =NearOther
 FunctionCode =TargetTakesUserItem
 Flags =CanMirrorMove
 Description =当对手未携带道具时 ，能够将自己携带的 道具交给对手。
+Flags = ZPower_SPEED_2
 #-------------------------------
 [BLOCK]
 Name =挡路
@@ -5765,6 +5865,7 @@ Target =NearOther
 FunctionCode =TrapTargetInBattle
 Flags =CanMirrorMove
 Description =张开双手进行阻挡， 封住对手的退路，使 其不能逃走。
+Flags = ZPower_DEFENSE_1
 #-------------------------------
 [CAMOUFLAGE]
 Name =保护色
@@ -5775,6 +5876,7 @@ TotalPP =20
 Target =User
 FunctionCode =SetUserTypesBasedOnEnvironment
 Description =根据所在场所不同， 如水边、草丛和洞窟 等，可以改变自己的 属性。
+Flags = ZPower_EVASION_1
 #-------------------------------
 [CAPTIVATE]
 Name =诱惑
@@ -5786,6 +5888,7 @@ Target =AllNearFoes
 FunctionCode =LowerTargetSpAtk2IfCanAttract
 Flags =CanProtect,CanMirrorMove
 Description =♂诱惑♀或♀诱惑♂ ，从而大幅降低对手 的特攻。
+Flags = ZPower_SPECIAL_DEFENSE_2
 #-------------------------------
 [CELEBRATE]
 Name =庆祝
@@ -5796,6 +5899,7 @@ TotalPP =40
 Target =User
 FunctionCode =DoesNothingCongratulations
 Description =宝可梦为十分开心的 你庆祝。
+Flags = ZPower_AllStats_1
 #-------------------------------
 [CONFIDE]
 Name =密语
@@ -5807,6 +5911,7 @@ Target =NearOther
 FunctionCode =LowerTargetSpAtk1
 Flags =CanMirrorMove,Sound
 Description =和对手进行密语，使 其失去集中力，从而 降低对手的特攻。
+Flags = ZPower_SPECIAL_DEFENSE_1
 #-------------------------------
 [CONVERSION]
 Name =纹理
@@ -5817,6 +5922,7 @@ TotalPP =30
 Target =User
 FunctionCode =SetUserTypesToUserMoveType
 Description =将自己的属性转换成 和已学会的招式中第 一个招式相同的属性 。
+Flags = ZPower_AllStats_1
 #-------------------------------
 [CONVERSION2]
 Name =纹理２
@@ -5827,6 +5933,7 @@ TotalPP =30
 Target =NearOther
 FunctionCode =SetUserTypesToResistLastAttack
 Description =为了可以抵抗对手最 后使用的招式，从而 使自己的属性发生变 化。
+Flags = ZPower_HealUser
 #-------------------------------
 [COPYCAT]
 Name =仿效
@@ -5837,6 +5944,7 @@ TotalPP =20
 Target =User
 FunctionCode =UseLastMoveUsed
 Description =模仿对手刚才使出的 招式，并使出相同招 式。如果对手还没出 招则会失败。
+Flags = ZPower_ACCURACY_1
 #-------------------------------
 [COURTCHANGE]
 Name =换场
@@ -5848,6 +5956,7 @@ Target =BothSides
 FunctionCode =SwapSideEffects
 Flags =CanMirrorMove
 Description =用神奇的力量交换双 方的场地效果。
+Flags = ZPower_SPEED_1
 #-------------------------------
 [DEFENSECURL]
 Name =变圆
@@ -5858,6 +5967,7 @@ TotalPP =40
 Target =User
 FunctionCode =RaiseUserDefense1CurlUpUser
 Description =将身体蜷曲变圆，从 而提高自己的防御。
+Flags = ZPower_ACCURACY_1
 #-------------------------------
 [DISABLE]
 Name =定身法
@@ -5869,6 +5979,7 @@ Target =NearOther
 FunctionCode =DisableTargetLastMoveUsed
 Flags =CanProtect,CanMirrorMove
 Description =阻碍对手行动，之前 使出的招式将在４回 合内无法使用。
+Flags = ZPower_ResetStats
 #-------------------------------
 [DOUBLETEAM]
 Name =影子分身
@@ -5879,6 +5990,7 @@ TotalPP =15
 Target =User
 FunctionCode =RaiseUserEvasion1
 Description =通过快速移动来制造 分身，扰乱对手，从 而提高闪避率。
+Flags = ZPower_ResetStats
 #-------------------------------
 [ENCORE]
 Name =再来一次
@@ -5890,6 +6002,7 @@ Target =NearOther
 FunctionCode =DisableTargetUsingDifferentMove
 Flags =CanProtect,CanMirrorMove
 Description =让对手接受再来一次 ，连续３次使出最后 使用的招式。
+Flags = ZPower_SPEED_1
 #-------------------------------
 [ENDURE]
 Name =挺住
@@ -5901,6 +6014,7 @@ Target =User
 Priority =4
 FunctionCode =UserEnduresFaintingThisTurn
 Description =即使受到攻击，也至 少会留下１ＨＰ。连 续使出则容易失败。
+Flags = ZPower_ResetStats
 #-------------------------------
 [ENTRAINMENT]
 Name =找伙伴
@@ -5912,6 +6026,7 @@ Target =NearOther
 FunctionCode =SetTargetAbilityToUserAbility
 Flags =CanProtect,CanMirrorMove
 Description =用神奇的节奏跳舞。 使对手模仿自己的动 作，从而将特性变成 一样。
+Flags = ZPower_SPECIAL_DEFENSE_1
 #-------------------------------
 [FLASH]
 Name =闪光
@@ -5923,6 +6038,7 @@ Target =NearOther
 FunctionCode =LowerTargetAccuracy1
 Flags =CanProtect,CanMirrorMove
 Description =使出耀眼光芒，从而 降低对手的命中率。
+Flags = ZPower_EVASION_1
 #-------------------------------
 [FOCUSENERGY]
 Name =聚气
@@ -5933,6 +6049,7 @@ TotalPP =30
 Target =User
 FunctionCode =RaiseUserCriticalHitRate2
 Description =深深地吸口气，集中 精神。自己的攻击会 变得容易击中要害。
+Flags = ZPower_ACCURACY_1
 #-------------------------------
 [FOLLOWME]
 Name =看我嘛
@@ -5944,6 +6061,7 @@ Target =User
 Priority =2
 FunctionCode =RedirectAllMovesToUser
 Description =引起对手的注意，将 对手的攻击全部转移 到自己身上。
+Flags = ZPower_ResetStats
 #-------------------------------
 [FORESIGHT]
 Name =识破
@@ -5955,6 +6073,7 @@ Target =NearOther
 FunctionCode =StartNegateTargetEvasionStatStageAndGhostImmunity
 Flags =CanProtect,CanMirrorMove
 Description =对幽灵属性宝可梦没 有效果的招式以及闪 避率高的对手，使用 后变得能够打中。
+Flags = ZPower_CriticalHit
 #-------------------------------
 [GLARE]
 Name =大蛇瞪眼
@@ -5966,6 +6085,7 @@ Target =NearOther
 FunctionCode =ParalyzeTarget
 Flags =CanProtect,CanMirrorMove
 Description =用腹部的花纹使对手 害怕，从而让其陷入 麻痹状态。
+Flags = ZPower_SPECIAL_DEFENSE_1
 #-------------------------------
 [GROWL]
 Name =叫声
@@ -5977,6 +6097,7 @@ Target =AllNearFoes
 FunctionCode =LowerTargetAttack1
 Flags =CanProtect,CanMirrorMove,Sound
 Description =让对手听可爱的叫声 ，引开注意力使其疏 忽，从而降低对手的 攻击。
+Flags = ZPower_DEFENSE_1
 #-------------------------------
 [GROWTH]
 Name =生长
@@ -5987,6 +6108,7 @@ TotalPP =20
 Target =User
 FunctionCode =RaiseUserAtkSpAtk1Or2InSun
 Description =让身体一下子长大， 从而提高攻击和特攻 。
+Flags = ZPower_SPECIAL_ATTACK_1
 #-------------------------------
 [HAPPYHOUR]
 Name =欢乐时光
@@ -5997,6 +6119,7 @@ TotalPP =30
 Target =UserSide
 FunctionCode =DoubleMoneyGainedFromBattle
 Description =如果使用欢乐时光， 战斗后得到的钱会翻 倍。
+Flags = ZPower_AllStats_1
 #-------------------------------
 [HARDEN]
 Name =变硬
@@ -6007,6 +6130,7 @@ TotalPP =30
 Target =User
 FunctionCode =RaiseUserDefense1
 Description =全身使劲，让身体变 硬，从而提高自己的 防御。
+Flags = ZPower_DEFENSE_1
 #-------------------------------
 [HEALBELL]
 Name =治愈铃声
@@ -6018,6 +6142,7 @@ Target =UserAndAllies
 FunctionCode =CureUserPartyStatus
 Flags =Sound
 Description =让同伴听舒适的铃音 ，从而治愈我方全员 的异常状态。
+Flags = ZPower_HealUser
 #-------------------------------
 [HELPINGHAND]
 Name =帮助
@@ -6029,6 +6154,7 @@ Target =NearAlly
 Priority =5
 FunctionCode =PowerUpAllyMove
 Description =帮助伙伴。被帮助的 宝可梦，其招式威力 变得比平时大。
+Flags = ZPower_ResetStats
 #-------------------------------
 [HOLDHANDS]
 Name =牵手
@@ -6039,6 +6165,7 @@ TotalPP =40
 Target =NearAlly
 FunctionCode =DoesNothingFailsIfNoAlly
 Description =我方宝可梦之间牵手 。能带来非常幸福的 心情。
+Flags = ZPower_AllStats_1
 #-------------------------------
 [HOWL]
 Name =长嚎
@@ -6050,6 +6177,7 @@ Target =UserAndAllies
 FunctionCode =RaiseTargetAttack1
 Flags =Sound
 Description =大声吼叫提高气势， 从而提高自己的攻击。
+Flags = ZPower_ATTACK_1
 #-------------------------------
 [LASERFOCUS]
 Name =磨砺
@@ -6060,6 +6188,7 @@ TotalPP =30
 Target =User
 FunctionCode =EnsureNextCriticalHit
 Description =集中精神，下次攻击 必定会击中要害。
+Flags = ZPower_ATTACK_1
 #-------------------------------
 [LEER]
 Name =瞪眼
@@ -6071,6 +6200,7 @@ Target =AllNearFoes
 FunctionCode =LowerTargetDefense1
 Flags =CanProtect,CanMirrorMove
 Description =用犀利的眼神使其害 怕，从而降低对手的 防御。
+Flags = ZPower_ATTACK_1
 #-------------------------------
 [LOCKON]
 Name =锁定
@@ -6082,6 +6212,7 @@ Target =NearOther
 FunctionCode =EnsureNextMoveAlwaysHits
 Flags =CanProtect,CanMirrorMove
 Description =紧紧瞄准对手，下次 攻击必定会打中。
+Flags = ZPower_SPEED_1
 #-------------------------------
 [LOVELYKISS]
 Name =恶魔之吻
@@ -6093,6 +6224,7 @@ Target =NearOther
 FunctionCode =SleepTarget
 Flags =CanProtect,CanMirrorMove
 Description =用恐怖的脸强吻对手 。让对手陷入睡眠状 态。
+Flags = ZPower_SPEED_1
 #-------------------------------
 [LUCKYCHANT]
 Name =幸运咒语
@@ -6103,6 +6235,7 @@ TotalPP =30
 Target =UserSide
 FunctionCode =StartPreventCriticalHitsAgainstUserSide
 Description =向天许愿，从而在５ 回合内不会被对手的 攻击打中要害。
+Flags = ZPower_EVASION_1
 #-------------------------------
 [MEFIRST]
 Name =抢先一步
@@ -6114,6 +6247,7 @@ Target =NearFoe
 FunctionCode =UseMoveTargetIsAboutToUse
 Flags =CanProtect
 Description =提高威力，抢先使出 对手想要使出的招式 。如果不先使出则会 失败。
+Flags = ZPower_SPEED_2
 #-------------------------------
 [MEANLOOK]
 Name =黑色目光
@@ -6125,6 +6259,7 @@ Target =NearOther
 FunctionCode =TrapTargetInBattle
 Flags =CanMirrorMove
 Description =用好似要勾人心魂的 黑色目光一动不动地 凝视对手，使其不能 从战斗中逃走。
+Flags = ZPower_SPECIAL_DEFENSE_1
 #-------------------------------
 [METRONOME]
 Name =挥指
@@ -6145,6 +6280,7 @@ TotalPP =10
 Target =User
 FunctionCode =HealUserHalfOfTotalHP
 Description =回复自己最大ＨＰ的 一半。
+Flags = ZPower_ResetStats
 #-------------------------------
 [MIMIC]
 Name =模仿
@@ -6156,6 +6292,7 @@ Target =NearOther
 FunctionCode =ReplaceMoveThisBattleWithTargetLastMoveUsed
 Flags =CanProtect
 Description =可以将对手最后使用 的招式，在战斗内变 成自己的招式。
+Flags = ZPower_ACCURACY_1
 #-------------------------------
 [MINDREADER]
 Name =心之眼
@@ -6167,6 +6304,7 @@ Target =NearOther
 FunctionCode =EnsureNextMoveAlwaysHits
 Flags =CanProtect,CanMirrorMove
 Description =用心感受对手的行动 ，下次攻击必定会击 中对手。
+Flags = ZPower_SPECIAL_ATTACK_1
 #-------------------------------
 [MINIMIZE]
 Name =变小
@@ -6177,6 +6315,7 @@ TotalPP =10
 Target =User
 FunctionCode =RaiseUserEvasion2MinimizeUser
 Description =蜷缩身体显得很小， 从而大幅提高自己的 闪避率。
+Flags = ZPower_ResetStats
 #-------------------------------
 [MORNINGSUN]
 Name =晨光
@@ -6187,6 +6326,7 @@ TotalPP =5
 Target =User
 FunctionCode =HealUserDependingOnWeather
 Description =回复自己的ＨＰ。根 据天气的不同，回复 量也会有所变化。
+Flags = ZPower_ResetStats
 #-------------------------------
 [NATUREPOWER]
 Name =自然之力
@@ -6208,6 +6348,7 @@ Target =NearOther
 FunctionCode =LowerTargetAtkSpAtk1
 Flags =CanProtect,CanMirrorMove,Sound
 Description =发出战吼威吓对手， 从而降低对手的攻击 和特攻。
+Flags = ZPower_DEFENSE_1
 #-------------------------------
 [ODORSLEUTH]
 Name =气味侦测
@@ -6219,6 +6360,7 @@ Target =NearOther
 FunctionCode =StartNegateTargetEvasionStatStageAndGhostImmunity
 Flags =CanProtect,CanMirrorMove
 Description =对幽灵属性宝可梦没 有效果的招式以及闪 避率高的对手，使用 后变得能够打中。
+Flags = ZPower_ATTACK_1
 #-------------------------------
 [PAINSPLIT]
 Name =分担痛楚
@@ -6230,6 +6372,7 @@ Target =NearOther
 FunctionCode =UserTargetAverageHP
 Flags =CanProtect,CanMirrorMove
 Description =将自己的ＨＰ和对手 的ＨＰ相加，然后自 己和对手友好地平分 。
+Flags = ZPower_DEFENSE_1
 #-------------------------------
 [PERISHSONG]
 Name =灭亡之歌
@@ -6241,6 +6384,7 @@ Target =AllBattlers
 FunctionCode =StartPerishCountsForAllBattlers
 Flags =Sound
 Description =倾听歌声的宝可梦经 过３回合陷入濒死。 替换后效果消失。
+Flags = IgnoresMaxGuard,ZPower_ResetStats
 #-------------------------------
 [PLAYNICE]
 Name =和睦相处
@@ -6252,6 +6396,7 @@ Target =NearOther
 FunctionCode =LowerTargetAttack1BypassSubstitute
 Flags =CanMirrorMove
 Description =和对手和睦相处，使 其失去战斗的气力， 从而降低对手的攻击 。
+Flags = ZPower_DEFENSE_1
 #-------------------------------
 [PROTECT]
 Name =守住
@@ -6263,6 +6408,7 @@ Target =User
 Priority =4
 FunctionCode =ProtectUser
 Description =完全抵挡对手的攻击 。连续使出则容易失 败。
+Flags = ZPower_ResetStats
 #-------------------------------
 [PSYCHUP]
 Name =自我暗示
@@ -6273,6 +6419,7 @@ TotalPP =10
 Target =NearOther
 FunctionCode =UserCopyTargetStatStages
 Description =向自己施以自我暗示 ，将能力变化的状态 变得和对手一样。
+Flags = ZPower_HealUser
 #-------------------------------
 [RECOVER]
 Name =自我再生
@@ -6283,6 +6430,7 @@ TotalPP =10
 Target =User
 FunctionCode =HealUserHalfOfTotalHP
 Description =让全身的细胞获得再 生，回复一半ＨＰ。
+Flags = ZPower_ResetStats
 #-------------------------------
 [RECYCLE]
 Name =回收利用
@@ -6293,6 +6441,7 @@ TotalPP =10
 Target =User
 FunctionCode =RestoreUserConsumedItem
 Description =使战斗中已经消耗掉 的自己的持有物再生 ，并可以再次使用。
+Flags = ZPower_SPEED_2
 #-------------------------------
 [REFLECTTYPE]
 Name =镜面属性
@@ -6304,6 +6453,7 @@ Target =NearOther
 FunctionCode =SetUserTypesToTargetTypes
 Flags =CanProtect
 Description =反射对手的属性，让 自己也变成一样的属 性。
+Flags = ZPower_SPECIAL_ATTACK_1
 #-------------------------------
 [REFRESH]
 Name =焕然一新
@@ -6314,6 +6464,7 @@ TotalPP =20
 Target =User
 FunctionCode =CureUserBurnPoisonParalysis
 Description =让身体休息，治愈自 己身上所中的毒、麻 痹、灼伤的异常状态 。
+Flags = ZPower_HealUser
 #-------------------------------
 [ROAR]
 Name =吼叫
@@ -6326,6 +6477,7 @@ Priority =-6
 FunctionCode =SwitchOutTargetStatusMove
 Flags =CanMirrorMove,Sound
 Description =放走对手，强制拉后 备宝可梦上场。如果 对手为野生宝可梦， 战斗将直接结束。
+Flags = ZPower_DEFENSE_1
 #-------------------------------
 [SAFEGUARD]
 Name =神秘守护
@@ -6336,6 +6488,7 @@ TotalPP =25
 Target =UserSide
 FunctionCode =StartUserSideImmunityToInflictedStatus
 Description =在５回合内被神奇的 力量守护，从而不会 陷入异常状态。
+Flags = ZPower_SPEED_1
 #-------------------------------
 [SCARYFACE]
 Name =鬼面
@@ -6347,6 +6500,7 @@ Target =NearOther
 FunctionCode =LowerTargetSpeed2
 Flags =CanProtect,CanMirrorMove
 Description =用恐怖的脸瞪着对手 ，使其害怕，从而大 幅降低对手的速度。
+Flags = ZPower_SPEED_1
 #-------------------------------
 [SCREECH]
 Name =刺耳声
@@ -6358,6 +6512,7 @@ Target =NearOther
 FunctionCode =LowerTargetDefense2
 Flags =CanProtect,CanMirrorMove,Sound
 Description =发出不由自主想要捂 起耳朵的刺耳声，从 而大幅降低对手的防 御。
+Flags = ZPower_ATTACK_1
 #-------------------------------
 [SHARPEN]
 Name =棱角化
@@ -6368,6 +6523,7 @@ TotalPP =30
 Target =User
 FunctionCode =RaiseUserAttack1
 Description =增加身体的角，变得 棱棱角角，从而提高 自己的攻击。
+Flags = ZPower_ATTACK_1
 #-------------------------------
 [SHELLSMASH]
 Name =破壳
@@ -6378,6 +6534,7 @@ TotalPP =15
 Target =User
 FunctionCode =LowerUserDefSpDef1RaiseUserAtkSpAtkSpd2
 Description =打破外壳，降低自己 的防御和特防，但大 幅提高攻击、特攻和 速度。
+Flags = ZPower_ResetStats
 #-------------------------------
 [SIMPLEBEAM]
 Name =单纯光束
@@ -6389,6 +6546,7 @@ Target =NearOther
 FunctionCode =SetTargetAbilityToSimple
 Flags =CanProtect,CanMirrorMove
 Description =向对手发送谜之念波 。接收到念波的对手 ，其特性会变为单纯 。
+Flags = ZPower_SPECIAL_ATTACK_1
 #-------------------------------
 [SING]
 Name =唱歌
@@ -6400,6 +6558,7 @@ Target =NearOther
 FunctionCode =SleepTarget
 Flags =CanProtect,CanMirrorMove,Sound
 Description =让对手听舒适、美妙 的歌声，从而陷入睡 眠状态。
+Flags = ZPower_SPEED_1
 #-------------------------------
 [SKETCH]
 Name =写生
@@ -6410,6 +6569,7 @@ TotalPP =1
 Target =NearOther
 FunctionCode =ReplaceMoveWithTargetLastMoveUsed
 Description =将对手使用的招式变 成自己的招式。使用 １次后写生消失。
+Flags = ZPower_AllStats_1
 #-------------------------------
 [SLACKOFF]
 Name =偷懒
@@ -6420,6 +6580,7 @@ TotalPP =10
 Target =User
 FunctionCode =HealUserHalfOfTotalHP
 Description =偷懒休息。回复自己 最大ＨＰ的一半。
+Flags = ZPower_ResetStats
 #-------------------------------
 [SLEEPTALK]
 Name =梦话
@@ -6430,6 +6591,7 @@ TotalPP =10
 Target =User
 FunctionCode =UseRandomUserMoveIfAsleep
 Description =从自己已学会的招式 中任意使出１个。只 能在自己睡觉时使用 。
+Flags = ZPower_CriticalHit
 #-------------------------------
 [SMOKESCREEN]
 Name =烟幕
@@ -6441,6 +6603,7 @@ Target =NearOther
 FunctionCode =LowerTargetAccuracy1
 Flags =CanProtect,CanMirrorMove
 Description =向对手喷出烟或墨汁 等，从而降低对手的 命中率。
+Flags = ZPower_EVASION_1
 #-------------------------------
 [SOFTBOILED]
 Name =生蛋
@@ -6451,6 +6614,7 @@ TotalPP =10
 Target =User
 FunctionCode =HealUserHalfOfTotalHP
 Description =回复自己最大ＨＰ的 一半。
+Flags = ZPower_ResetStats
 #-------------------------------
 [SPLASH]
 Name =跃起
@@ -6461,6 +6625,7 @@ TotalPP =40
 Target =User
 FunctionCode =DoesNothingUnusableInGravity
 Description =也不攻击只是一蹦一 蹦地跳，什么都不会 发生……
+Flags = ZPower_ATTACK_3
 #-------------------------------
 [SPOTLIGHT]
 Name =聚光灯
@@ -6473,6 +6638,7 @@ Priority =3
 FunctionCode =RedirectAllMovesToTarget
 Flags =CanProtect
 Description =给宝可梦打上聚光灯 ，该回合只能瞄准该 宝可梦。
+Flags = ZPower_SPECIAL_DEFENSE_1
 #-------------------------------
 [STOCKPILE]
 Name =蓄力
@@ -6483,6 +6649,7 @@ TotalPP =20
 Target =User
 FunctionCode =UserAddStockpileRaiseDefSpDef1
 Description =积蓄力量，提高自己 的防御和特防。最多 积蓄３次。
+Flags = ZPower_HealUser
 #-------------------------------
 [STUFFCHEEKS]
 Name =大快朵颐
@@ -6493,6 +6660,7 @@ TotalPP =10
 Target =User
 FunctionCode =UserConsumeBerryRaiseDefense2
 Description =吃掉携带的树果，大 幅提高防御。
+Flags = ZPower_HealUser
 #-------------------------------
 [SUBSTITUTE]
 Name =替身
@@ -6503,6 +6671,7 @@ TotalPP =10
 Target =User
 FunctionCode =UserMakeSubstitute
 Description =削减少许自己的ＨＰ ，制造分身。分身将 成为自己的替身。
+Flags = ZPower_ResetStats
 #-------------------------------
 [SUPERSONIC]
 Name =超音波
@@ -6514,6 +6683,7 @@ Target =NearOther
 FunctionCode =ConfuseTarget
 Flags =CanProtect,CanMirrorMove,Sound
 Description =从身体发出特殊的音 波，从而使对手混乱 。
+Flags = ZPower_SPEED_1
 #-------------------------------
 [SWAGGER]
 Name =虚张声势
@@ -6525,6 +6695,7 @@ Target =NearOther
 FunctionCode =RaiseTargetAttack2ConfuseTarget
 Flags =CanProtect,CanMirrorMove
 Description =激怒对手，使其混乱 。因为愤怒，对手的 攻击会大幅提高。
+Flags = ZPower_ResetStats
 #-------------------------------
 [SWALLOW]
 Name =吞下
@@ -6535,6 +6706,7 @@ TotalPP =10
 Target =User
 FunctionCode =HealUserDependingOnUserStockpile
 Description =将积蓄的力量吞下， 从而回复自己的ＨＰ 。积蓄得越多，回复 越大。
+Flags = ZPower_ResetStats
 #-------------------------------
 [SWEETSCENT]
 Name =甜甜香气
@@ -6546,6 +6718,7 @@ Target =AllNearFoes
 FunctionCode =LowerTargetEvasion2
 Flags =CanProtect,CanMirrorMove
 Description =用香气大幅降低对手 的闪避率。
+Flags = ZPower_ACCURACY_1
 #-------------------------------
 [SWORDSDANCE]
 Name =剑舞
@@ -6557,6 +6730,7 @@ Target =User
 FunctionCode =RaiseUserAttack2
 Flags =Dance
 Description =激烈地跳起战舞提高 气势。大幅提高自己 的攻击。
+Flags = ZPower_ResetStats
 #-------------------------------
 [TAILWHIP]
 Name =摇尾巴
@@ -6568,6 +6742,7 @@ Target =AllNearFoes
 FunctionCode =LowerTargetDefense1
 Flags =CanProtect,CanMirrorMove
 Description =可爱地左右摇晃尾巴 ，诱使对手疏忽大意 。会降低对手的防御 。
+Flags = ZPower_ATTACK_1
 #-------------------------------
 [TEARFULLOOK]
 Name =泪眼汪汪
@@ -6579,6 +6754,7 @@ Target =NearOther
 FunctionCode =LowerTargetAtkSpAtk1
 Flags =CanMirrorMove
 Description =变得泪眼汪汪，让对 手丧失斗志。从而降 低对手的攻击和特攻。
+Flags = ZPower_DEFENSE_1
 #-------------------------------
 [TEATIME]
 Name =茶会
@@ -6589,6 +6765,7 @@ TotalPP =10
 Target =AllBattlers
 FunctionCode =AllBattlersConsumeBerry
 Description =举办一场茶会，场上 的所有宝可梦都会吃 掉自己携带的树果。
+Flags = ZPower_AllStats_1
 #-------------------------------
 [TEETERDANCE]
 Name =摇晃舞
@@ -6600,6 +6777,7 @@ Target =AllNearOthers
 FunctionCode =ConfuseTarget
 Flags =CanProtect,CanMirrorMove,Dance
 Description =摇摇晃晃地跳起舞蹈 ，让自己周围的宝可 梦陷入混乱状态。
+Flags = ZPower_SPECIAL_ATTACK_1
 #-------------------------------
 [TICKLE]
 Name =挠痒
@@ -6611,6 +6789,7 @@ Target =NearOther
 FunctionCode =LowerTargetAtkDef1
 Flags =CanProtect,CanMirrorMove
 Description =给对手挠痒，使其发 笑，从而降低对手的 攻击和防御。
+Flags = ZPower_DEFENSE_1
 #-------------------------------
 [TRANSFORM]
 Name =变身
@@ -6621,6 +6800,7 @@ TotalPP =10
 Target =NearOther
 FunctionCode =TransformUserIntoTarget
 Description =变身成对手宝可梦的 样子，能够使用和对 手完全相同的招式。
+Flags = ZPower_HealUser
 #-------------------------------
 [WHIRLWIND]
 Name =吹飞
@@ -6633,6 +6813,7 @@ Priority =-6
 FunctionCode =SwitchOutTargetStatusMove
 Flags =CanMirrorMove
 Description =吹飞对手，强制拉后 备宝可梦上场。如果 对手为野生宝可梦， 战斗将直接结束。
+Flags = ZPower_SPECIAL_DEFENSE_1
 #-------------------------------
 [WISH]
 Name =祈愿
@@ -6643,6 +6824,7 @@ TotalPP =10
 Target =User
 FunctionCode =HealUserPositionNextTurn
 Description =在下一回合回复自己 或是替换出场的宝可 梦最大ＨＰ的一半。
+Flags = ZPower_SPECIAL_DEFENSE_1
 #-------------------------------
 [WORKUP]
 Name =自我激励
@@ -6653,6 +6835,7 @@ TotalPP =30
 Target =User
 FunctionCode =RaiseUserAtkSpAtk1
 Description =激励自己，从而提高 攻击和特攻。
+Flags = ZPower_ATTACK_1
 #-------------------------------
 [YAWN]
 Name =哈欠
@@ -6664,6 +6847,7 @@ Target =NearOther
 FunctionCode =SleepTargetNextTurn
 Flags =CanProtect,CanMirrorMove
 Description =打个大哈欠引起睡意 。在下一回合让对手 陷入睡眠状态。
+Flags = ZPower_SPEED_1
 #-------------------------------
 [BELCH]
 Name =打嗝
@@ -6879,6 +7063,7 @@ TotalPP =20
 Target =User
 FunctionCode =RaiseUserDefense2
 Description =通过细胞的变化进行 液化，从而大幅提高 自己的防御。
+Flags = ZPower_ResetStats
 #-------------------------------
 [BANEFULBUNKER]
 Name =碉堡
@@ -6890,6 +7075,7 @@ Target =User
 Priority =4
 FunctionCode =ProtectUserBanefulBunker
 Description =防住对手攻击的同时 ，让接触到自己的对 手中毒。
+Flags = ZPower_DEFENSE_1
 #-------------------------------
 [COIL]
 Name =盘蜷
@@ -6900,6 +7086,7 @@ TotalPP =20
 Target =User
 FunctionCode =RaiseUserAtkDefAcc1
 Description =盘蜷着集中精神。提 高自己的攻击、防御 和命中率。
+Flags = ZPower_ResetStats
 #-------------------------------
 [CORROSIVEGAS]
 Name =腐蚀气体
@@ -6911,6 +7098,7 @@ Target =AllNearOthers
 FunctionCode =CorrodeTargetItem
 Flags =CanProtect,CanMirrorMove
 Description =用具有强酸性的气体 包裹住自己周围所有 的宝可梦，并融化其 所携带的道具。
+Flags = ZPower_SPECIAL_DEFENSE_1
 #-------------------------------
 [GASTROACID]
 Name =胃液
@@ -6922,6 +7110,7 @@ Target =NearOther
 FunctionCode =NegateTargetAbility
 Flags =CanProtect,CanMirrorMove
 Description =将胃液吐向对手的身 体。沾上的胃液会消 除对手的特性效果。
+Flags = ZPower_SPEED_1
 #-------------------------------
 [POISONGAS]
 Name =毒瓦斯
@@ -6933,6 +7122,7 @@ Target =AllNearFoes
 FunctionCode =PoisonTarget
 Flags =CanProtect,CanMirrorMove
 Description =将毒瓦斯吹到对手的 脸上，从而让对手陷 入中毒状态。
+Flags = ZPower_DEFENSE_1
 #-------------------------------
 [POISONPOWDER]
 Name =毒粉
@@ -6944,6 +7134,7 @@ Target =NearOther
 FunctionCode =PoisonTarget
 Flags =CanProtect,CanMirrorMove,Powder
 Description =撒出毒粉，从而让对 手陷入中毒状态。
+Flags = ZPower_DEFENSE_1
 #-------------------------------
 [PURIFY]
 Name =净化
@@ -6955,6 +7146,7 @@ Target =NearOther
 FunctionCode =CureTargetStatusHealUserHalfOfTotalHP
 Flags =CanProtect,CanMirrorMove
 Description =治愈对手的异常状态。 治愈后可以回复自己 的ＨＰ。
+Flags = ZPower_AllStats_1
 #-------------------------------
 [TOXIC]
 Name =剧毒
@@ -6966,6 +7158,7 @@ Target =NearOther
 FunctionCode =BadPoisonTarget
 Flags =CanProtect,CanMirrorMove
 Description =让对手陷入剧毒状态 。随着回合的推进， 中毒伤害会增加。
+Flags = ZPower_DEFENSE_1
 #-------------------------------
 [TOXICSPIKES]
 Name =毒菱
@@ -6976,6 +7169,7 @@ TotalPP =20
 Target =FoeSide
 FunctionCode =AddToxicSpikesToFoeSide
 Description =在对手的脚下撒毒菱 。使对手替换出场的 宝可梦中毒。
+Flags = ZPower_DEFENSE_1
 #-------------------------------
 [TOXICTHREAD]
 Name =毒丝
@@ -6987,6 +7181,7 @@ Target =NearOther
 FunctionCode =PoisonTargetLowerTargetSpeed1
 Flags =CanProtect,CanMirrorMove
 Description =将混有毒的丝吐向对 手。使其中毒，从而 降低对手的速度。
+Flags = ZPower_SPEED_1
 #-------------------------------
 [VENOMDRENCH]
 Name =毒液陷阱
@@ -6998,6 +7193,7 @@ Target =AllNearFoes
 FunctionCode =LowerPoisonedTargetAtkSpAtkSpd1
 Flags =CanProtect
 Description =将特殊的毒液泼向对 手。对处于中毒状态 的对手，其攻击、特 攻和速度都会降低。
+Flags = ZPower_DEFENSE_1
 #-------------------------------
 [PRISMATICLASER]
 Name =棱镜镭射
@@ -7317,6 +7513,7 @@ TotalPP =30
 Target =User
 FunctionCode =RaiseUserSpeed2
 Description =让身体放松变得轻盈 ，以便高速移动。大 幅提高自己的速度。
+Flags = ZPower_ResetStats
 #-------------------------------
 [ALLYSWITCH]
 Name =交换场地
@@ -7328,6 +7525,7 @@ Target =User
 Priority =2
 FunctionCode =UserSwapsPositionsWithAlly
 Description =用神奇的力量瞬间移 动，互换自己和同伴 所在的位置。
+Flags = ZPower_SPEED_2
 #-------------------------------
 [AMNESIA]
 Name =瞬间失忆
@@ -7338,6 +7536,7 @@ TotalPP =20
 Target =User
 FunctionCode =RaiseUserSpDef2
 Description =将头脑清空，瞬间忘 记某事，从而大幅提 高自己的特防。
+Flags = ZPower_ResetStats
 #-------------------------------
 [BARRIER]
 Name =屏障
@@ -7348,6 +7547,7 @@ TotalPP =20
 Target =User
 FunctionCode =RaiseUserDefense2
 Description =制造坚固的壁障，从 而大幅提高自己的防 御。
+Flags = ZPower_ResetStats
 #-------------------------------
 [CALMMIND]
 Name =冥想
@@ -7358,6 +7558,7 @@ TotalPP =20
 Target =User
 FunctionCode =RaiseUserSpAtkSpDef1
 Description =静心凝神，从而提高 自己的特攻和特防。
+Flags = ZPower_ResetStats
 #-------------------------------
 [COSMICPOWER]
 Name =宇宙力量
@@ -7368,6 +7569,7 @@ TotalPP =20
 Target =User
 FunctionCode =RaiseUserDefSpDef1
 Description =汲取宇宙中神秘的力 量，从而提高自己的 防御和特防。
+Flags = ZPower_SPECIAL_DEFENSE_1
 #-------------------------------
 [GRAVITY]
 Name =重力
@@ -7378,6 +7580,7 @@ TotalPP =5
 Target =BothSides
 FunctionCode =StartGravity
 Description =在５回合内，飘浮特 性和飞行属性的宝可 梦会被地面属性的招 式击中。飞向空中的 招式也将无法使用。
+Flags = ZPower_SPECIAL_ATTACK_1
 #-------------------------------
 [GUARDSPLIT]
 Name =防守平分
@@ -7389,6 +7592,7 @@ Target =NearOther
 FunctionCode =UserTargetAverageBaseDefSpDef
 Flags =CanProtect
 Description =利用超能力将自己和 对手的防御和特防相 加，再进行平分。
+Flags = ZPower_SPEED_1
 #-------------------------------
 [GUARDSWAP]
 Name =防守互换
@@ -7400,6 +7604,7 @@ Target =NearOther
 FunctionCode =UserTargetSwapDefSpDefStages
 Flags =CanProtect,CanMirrorMove
 Description =利用超能力互换自己 和对手的防御以及特 防的能力变化。
+Flags = ZPower_SPEED_1
 #-------------------------------
 [HEALBLOCK]
 Name =回复封锁
@@ -7411,6 +7616,7 @@ Target =AllNearFoes
 FunctionCode =DisableTargetHealingMoves
 Flags =CanProtect,CanMirrorMove
 Description =在５回合内无法通过 招式、特性或携带的 道具来回复ＨＰ。
+Flags = ZPower_SPECIAL_ATTACK_2
 #-------------------------------
 [HEALPULSE]
 Name =治愈波动
@@ -7422,6 +7628,7 @@ Target =Other
 FunctionCode =HealTargetHalfOfTotalHP
 Flags =CanProtect,Pulse
 Description =放出治愈波动，从而 回复对手最大ＨＰ的 一半。
+Flags = ZPower_ResetStats
 #-------------------------------
 [HEALINGWISH]
 Name =治愈之愿
@@ -7443,6 +7650,7 @@ Target =NearOther
 FunctionCode =UserTargetSwapStatStages
 Flags =CanProtect,CanMirrorMove
 Description =利用超能力互换自己 和对手之间的能力变 化。
+Flags = ZPower_CriticalHit
 #-------------------------------
 [HYPNOSIS]
 Name =催眠术
@@ -7454,6 +7662,7 @@ Target =NearOther
 FunctionCode =SleepTarget
 Flags =CanProtect,CanMirrorMove
 Description =施以诱导睡意的暗示 ，让对手陷入睡眠状 态。
+Flags = ZPower_SPEED_1
 #-------------------------------
 [IMPRISON]
 Name =封印
@@ -7464,6 +7673,7 @@ TotalPP =10
 Target =User
 FunctionCode =DisableTargetMovesKnownByUser
 Description =如果对手有和自己相 同的招式，那么只有 对手无法使用该招式 。
+Flags = ZPower_SPECIAL_DEFENSE_2
 #-------------------------------
 [INSTRUCT]
 Name =号令
@@ -7475,6 +7685,7 @@ Target =NearOther
 FunctionCode =TargetUsesItsLastUsedMoveAgain
 Flags =CanProtect
 Description =向对手下达指示，让 其再次使出刚才的招 式。
+Flags = ZPower_SPECIAL_ATTACK_1
 #-------------------------------
 [KINESIS]
 Name =折弯汤匙
@@ -7486,6 +7697,7 @@ Target =NearOther
 FunctionCode =LowerTargetAccuracy1
 Flags =CanProtect,CanMirrorMove
 Description =折弯汤匙引开注意， 从而降低对手的命中 率。
+Flags = ZPower_EVASION_1
 #-------------------------------
 [LIGHTSCREEN]
 Name =光墙
@@ -7496,6 +7708,7 @@ TotalPP =30
 Target =UserSide
 FunctionCode =StartWeakenSpecialDamageAgainstUserSide
 Description =在５回合内使用神奇 的墙，减弱从对手那 受到的特殊攻击的伤 害。
+Flags = ZPower_SPECIAL_DEFENSE_1
 #-------------------------------
 [LUNARDANCE]
 Name =新月舞
@@ -7518,6 +7731,7 @@ Target =User
 Priority =4
 FunctionCode =BounceBackProblemCausingStatusMoves
 Description =当对手使出会变成异 常状态的招式或寄生 种子等时，会将对手 的招式反射回去。
+Flags = ZPower_SPECIAL_DEFENSE_2
 #-------------------------------
 [MAGICPOWDER]
 Name =魔法粉
@@ -7529,6 +7743,7 @@ Target =NearOther
 FunctionCode =SetTargetTypesToPsychic
 Flags =CanProtect,CanMirrorMove,Powder
 Description =向对手喷洒魔法粉， 使对手变为超能力属 性。
+Flags = ZPower_SPECIAL_ATTACK_1
 #-------------------------------
 [MAGICROOM]
 Name =魔法空间
@@ -7540,6 +7755,7 @@ Target =BothSides
 FunctionCode =StartNegateHeldItems
 Flags =CanMirrorMove
 Description =制造出离奇的空间。 在５回合内所有宝可 梦携带道具的效果都 会消失。
+Flags = ZPower_SPECIAL_DEFENSE_1
 #-------------------------------
 [MEDITATE]
 Name =瑜伽姿势
@@ -7550,6 +7766,7 @@ TotalPP =40
 Target =User
 FunctionCode =RaiseUserAttack1
 Description =唤醒身体深处沉睡的 力量，从而提高自己 的攻击。
+Flags = ZPower_ATTACK_1
 #-------------------------------
 [MIRACLEEYE]
 Name =奇迹之眼
@@ -7561,6 +7778,7 @@ Target =NearOther
 FunctionCode =StartNegateTargetEvasionStatStageAndDarkImmunity
 Flags =CanProtect,CanMirrorMove
 Description =对恶属性宝可梦没有 效果的招式以及闪避 率高的对手，使用后 变得能够打中。
+Flags = ZPower_SPECIAL_ATTACK_1
 #-------------------------------
 [POWERSPLIT]
 Name =力量平分
@@ -7572,6 +7790,7 @@ Target =NearOther
 FunctionCode =UserTargetAverageBaseAtkSpAtk
 Flags =CanProtect
 Description =利用超能力将自己和 对手的攻击和特攻相 加，再进行平分。
+Flags = ZPower_SPEED_1
 #-------------------------------
 [POWERSWAP]
 Name =力量互换
@@ -7583,6 +7802,7 @@ Target =NearOther
 FunctionCode =UserTargetSwapAtkSpAtkStages
 Flags =CanProtect,CanMirrorMove
 Description =利用超能力互换自己 和对手的攻击以及特 攻的能力变化。
+Flags = ZPower_SPEED_1
 #-------------------------------
 [POWERTRICK]
 Name =力量戏法
@@ -7593,6 +7813,7 @@ TotalPP =10
 Target =User
 FunctionCode =UserSwapBaseAtkDef
 Description =利用超能力交换自己 的攻击和防御的力量 。
+Flags = ZPower_ATTACK_1
 #-------------------------------
 [PSYCHICTERRAIN]
 Name =精神场地
@@ -7603,6 +7824,7 @@ TotalPP =10
 Target =BothSides
 FunctionCode =StartPsychicTerrain
 Description =在５回合内，地面上 的宝可梦不会受到先 制招式的攻击。超能 力属性的招式威力会 提高。
+Flags = ZPower_SPECIAL_ATTACK_1
 #-------------------------------
 [PSYCHOSHIFT]
 Name =精神转移
@@ -7614,6 +7836,7 @@ Target =NearOther
 FunctionCode =GiveUserStatusToTarget
 Flags =CanProtect,CanMirrorMove
 Description =利用超能力施以暗示 ，从而将自己受到的 异常状态转移给对手 。
+Flags = ZPower_SPECIAL_ATTACK_2
 #-------------------------------
 [REFLECT]
 Name =反射壁
@@ -7624,6 +7847,7 @@ TotalPP =20
 Target =UserSide
 FunctionCode =StartWeakenPhysicalDamageAgainstUserSide
 Description =在５回合内使用神奇 的墙，减弱从对手那 受到的物理攻击的伤 害。
+Flags = ZPower_DEFENSE_1
 #-------------------------------
 [REST]
 Name =睡觉
@@ -7634,6 +7858,7 @@ TotalPP =10
 Target =User
 FunctionCode =HealUserFullyAndFallAsleep
 Description =连续睡上２回合。回 复自己的全部ＨＰ以 及治愈所有异常状态 。
+Flags = ZPower_ResetStats
 #-------------------------------
 [ROLEPLAY]
 Name =扮演
@@ -7644,6 +7869,7 @@ TotalPP =10
 Target =NearOther
 FunctionCode =SetUserAbilityToTargetAbility
 Description =扮演对手，让自己的 特性变得和对手相同 。
+Flags = IgnoresMaxGuard,ZPower_SPEED_1
 #-------------------------------
 [SKILLSWAP]
 Name =特性互换
@@ -7655,6 +7881,7 @@ Target =NearOther
 FunctionCode =UserTargetSwapAbilities
 Flags =CanProtect,CanMirrorMove
 Description =利用超能力互换自己 和对手的特性。
+Flags = ZPower_SPEED_1
 #-------------------------------
 [SPEEDSWAP]
 Name =速度互换
@@ -7666,6 +7893,7 @@ Target =NearOther
 FunctionCode =UserTargetSwapBaseSpeed
 Flags =CanProtect,CanMirrorMove
 Description =将对手和自己的速度 进行互换。
+Flags = ZPower_SPEED_1
 #-------------------------------
 [TELEKINESIS]
 Name =意念移物
@@ -7677,6 +7905,7 @@ Target =NearOther
 FunctionCode =StartTargetAirborneAndAlwaysHitByMoves
 Flags =CanProtect,CanMirrorMove
 Description =利用超能力使对手浮 起来。在３回合内攻 击会变得容易打中对 手。
+Flags = ZPower_SPECIAL_ATTACK_1
 #-------------------------------
 [TELEPORT]
 Name =瞬间移动
@@ -7688,6 +7917,7 @@ Target =User
 Priority =-6
 FunctionCode =SwitchOutUserStatusMove
 Description =停止和野生宝可梦战 斗并逃走。
+Flags = ZPower_HealUser
 #-------------------------------
 [TRICK]
 Name =戏法
@@ -7699,6 +7929,7 @@ Target =NearOther
 FunctionCode =UserTargetSwapItems
 Flags =CanProtect,CanMirrorMove
 Description =抓住对手的空隙，交 换自己和对手的持有 物。
+Flags = ZPower_SPEED_2
 #-------------------------------
 [TRICKROOM]
 Name =戏法空间
@@ -7711,6 +7942,7 @@ Priority =-7
 FunctionCode =StartSlowerBattlersActFirst
 Flags =CanMirrorMove
 Description =制造出离奇的空间。 在５回合内速度慢的 宝可梦可以先行动。
+Flags = ZPower_ACCURACY_1
 #-------------------------------
 [WONDERROOM]
 Name =奇妙空间
@@ -7723,6 +7955,7 @@ Priority =-7
 FunctionCode =StartSwapAllBattlersBaseDefensiveStats
 Flags =CanMirrorMove
 Description =制造出离奇的空间。 在５回合内互换所有 宝可梦的防御和特防 。
+Flags = ZPower_SPECIAL_DEFENSE_1
 #-------------------------------
 [HEADSMASH]
 Name =双刃头锤
@@ -7906,6 +8139,7 @@ TotalPP =20
 Target =User
 FunctionCode =RaiseUserSpeed2
 Description =打磨自己的身体，减 少空气阻力。可以大 幅提高自己的速度。
+Flags = ZPower_ResetStats
 #-------------------------------
 [SANDSTORM]
 Name =沙暴
@@ -7916,6 +8150,7 @@ TotalPP =10
 Target =BothSides
 FunctionCode =StartSandstormWeather
 Description =在５回合内扬起沙暴 ，除岩石、地面和钢 属性以外的宝可梦， 都会受到伤害。岩石 属性的特防还会提高。
+Flags = ZPower_SPEED_1
 #-------------------------------
 [STEALTHROCK]
 Name =隐形岩
@@ -7926,6 +8161,7 @@ TotalPP =20
 Target =FoeSide
 FunctionCode =AddStealthRocksToFoeSide
 Description =将无数岩石悬浮在对 手的周围，从而对替 换出场的对手的宝可 梦给予伤害。
+Flags = ZPower_DEFENSE_1
 #-------------------------------
 [TARSHOT]
 Name =沥青射击
@@ -7937,6 +8173,7 @@ Target =NearOther
 FunctionCode =LowerTargetSpeed1MakeTargetWeakerToFire
 Flags =CanProtect,CanMirrorMove
 Description =泼洒黏糊糊的沥青， 降低对手的速度，并 且使对手的弱点变为 火。
+Flags = ZPower_SPEED_1
 #-------------------------------
 [WIDEGUARD]
 Name =广域防守
@@ -7948,6 +8185,7 @@ Target =UserSide
 Priority =3
 FunctionCode =ProtectUserSideFromMultiTargetDamagingMoves
 Description =在１回合内防住击打 我方全员的攻击。
+Flags = ZPower_DEFENSE_1
 #-------------------------------
 [DOOMDESIRE]
 Name =破灭之愿
@@ -7995,6 +8233,7 @@ Target =NearOther
 FunctionCode =None
 Flags =Contact,CanProtect,CanMirrorMove,CannotMetronome
 Description =变身为巨大的盾，撞 击对手。如果对手正 处于极巨化状态，则 造成的伤害会变为２倍。
+FunctionCode = DoubleDamageOnDynamaxTargets
 #-------------------------------
 [BEHEMOTHBLADE]
 Name =巨兽斩
@@ -8007,6 +8246,7 @@ Target =NearOther
 FunctionCode =None
 Flags =Contact,CanProtect,CanMirrorMove,CannotMetronome
 Description =变身为巨大的剑，挥 斩对手。如果对手正 处于极巨化状态，则 造成的伤害会变为２倍。
+FunctionCode = DoubleDamageOnDynamaxTargets
 #-------------------------------
 [IRONTAIL]
 Name =铁尾
@@ -8231,6 +8471,7 @@ TotalPP =15
 Target =User
 FunctionCode =RaiseUserSpeed2LowerUserWeight
 Description =削掉身体上没用的部 分。大幅提高自己的 速度，同时体重也会 变轻。
+Flags = ZPower_ResetStats
 #-------------------------------
 [GEARUP]
 Name =辅助齿轮
@@ -8241,6 +8482,7 @@ TotalPP =20
 Target =UserAndAllies
 FunctionCode =RaisePlusMinusUserAndAlliesAtkSpAtk1
 Description =启动齿轮，提高特性 为正电和负电的宝可 梦的攻击和特攻。
+Flags = ZPower_SPECIAL_ATTACK_1
 #-------------------------------
 [IRONDEFENSE]
 Name =铁壁
@@ -8251,6 +8493,7 @@ TotalPP =15
 Target =User
 FunctionCode =RaiseUserDefense2
 Description =将皮肤变得坚硬如铁 ，从而大幅提高自己 的防御。
+Flags = ZPower_ResetStats
 #-------------------------------
 [KINGSSHIELD]
 Name =王者盾牌
@@ -8262,6 +8505,7 @@ Target =User
 Priority =4
 FunctionCode =ProtectUserFromDamagingMovesKingsShield
 Description =防住对手攻击的同时 ，自己变为防御姿态 。降低所接触到的对 手的攻击。
+Flags = ZPower_ResetStats
 #-------------------------------
 [METALSOUND]
 Name =金属音
@@ -8273,6 +8517,7 @@ Target =NearOther
 FunctionCode =LowerTargetSpDef2
 Flags =CanProtect,CanMirrorMove,Sound
 Description =让对手听摩擦金属般 讨厌的声音。大幅降 低对手的特防。
+Flags = ZPower_SPECIAL_ATTACK_1
 #-------------------------------
 [SHIFTGEAR]
 Name =换挡
@@ -8283,6 +8528,7 @@ TotalPP =10
 Target =User
 FunctionCode =RaiseUserAtk1Spd2
 Description =转动齿轮，不仅提高 自己的攻击，还会大 幅提高速度。
+Flags = ZPower_ResetStats
 #-------------------------------
 [HYDROCANNON]
 Name =加农水炮
@@ -8666,6 +8912,7 @@ TotalPP =20
 Target =User
 FunctionCode =StartHealUserEachTurn
 Description =在自己身体的周围覆 盖用水制造的幕。每 回合回复ＨＰ。
+Flags = ZPower_DEFENSE_1
 #-------------------------------
 [LIFEDEW]
 Name =生命水滴
@@ -8677,6 +8924,7 @@ Target =UserAndAllies
 FunctionCode =HealUserAndAlliesQuarterOfTotalHP
 Flags =CannotMetronome
 Description =喷洒出神奇的水，回 复自己和场上同伴的 ＨＰ。
+Flags = ZPower_ResetStats
 #-------------------------------
 [RAINDANCE]
 Name =求雨
@@ -8687,6 +8935,7 @@ TotalPP =5
 Target =BothSides
 FunctionCode =StartRainWeather
 Description =在５回合内一直降雨 ，从而提高水属性的 招式威力。火属性的 招式威力则降低。
+Flags = ZPower_SPEED_1
 #-------------------------------
 [SOAK]
 Name =浸水
@@ -8698,6 +8947,7 @@ Target =NearOther
 FunctionCode =SetTargetTypesToWater
 Flags =CanProtect,CanMirrorMove
 Description =将大量的水泼向对手 ，从而使其变成水属 性。
+Flags = ZPower_SPECIAL_ATTACK_1
 #-------------------------------
 [WATERSPORT]
 Name =玩水
@@ -8708,6 +8958,7 @@ TotalPP =15
 Target =BothSides
 FunctionCode =StartWeakenFireMoves
 Description =用水湿透周围。在５ 回合内减弱火属性的 招式。
+Flags = ZPower_SPECIAL_DEFENSE_1
 #-------------------------------
 [WITHDRAW]
 Name =缩入壳中
@@ -8718,3 +8969,4 @@ TotalPP =40
 Target =User
 FunctionCode =RaiseUserDefense1
 Description =缩入壳里保护身体， 从而提高自己的防御 。
+Flags = ZPower_DEFENSE_1

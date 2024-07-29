@@ -1,0 +1,189 @@
+### Changes will apply automatically. ###
+#-------------------------------
+[LECHONK]
+CallRateSOS = 9
+#-------------------------------
+[OINKOLOGNE]
+CallRateSOS = 6
+#-------------------------------
+[TAROUNTULA]
+SpeciesSOS = TAROUNTULA,SPIDOPS
+CallRateSOS = 15
+#-------------------------------
+[SPIDOPS]
+CallRateSOS = 9
+#-------------------------------
+[NYMBLE]
+CallRateSOS = 15
+#-------------------------------
+[LOKIX]
+CallRateSOS = 9
+#-------------------------------
+[PAWMI]
+CallRateSOS = 9
+#-------------------------------
+[PAWMO]
+CallRateSOS = 6
+#-------------------------------
+[TANDEMAUS]
+CallRateSOS = 9
+#-------------------------------
+[MAUSHOLD]
+CallRateSOS = 6
+#-------------------------------
+[FIDOUGH]
+CallRateSOS = 9
+#-------------------------------
+[DACHSBUN]
+CallRateSOS = 6
+#-------------------------------
+[SMOLIV]
+CallRateSOS = 15
+#-------------------------------
+[DOLLIV]
+CallRateSOS = 9
+#-------------------------------
+[SQUAWKABILLY]
+CallRateSOS = 9
+#-------------------------------
+[NACLI]
+CallRateSOS = 9
+#-------------------------------
+[NACLSTACK]
+CallRateSOS = 6
+#-------------------------------
+[CHARCADET]
+CallRateSOS = 9
+#-------------------------------
+[TADBULB]
+CallRateSOS = 9
+#-------------------------------
+[BELLIBOLT]
+CallRateSOS = 6
+#-------------------------------
+[WATTREL]
+CallRateSOS = 9
+#-------------------------------
+[KILOWATTREL]
+CallRateSOS = 6
+#-------------------------------
+[MASCHIFF]
+CallRateSOS = 9
+#-------------------------------
+[MABOSSTIFF]
+CallRateSOS = 6
+#-------------------------------
+[SHROODLE]
+CallRateSOS = 9
+#-------------------------------
+[GRAFAIAI]
+CallRateSOS = 6
+#-------------------------------
+[BRAMBLIN]
+CallRateSOS = 9
+#-------------------------------
+[BRAMBLEGHAST]
+CallRateSOS = 6
+#-------------------------------
+[TOEDSCOOL]
+CallRateSOS = 9
+#-------------------------------
+[TOEDSCRUEL]
+CallRateSOS = 6
+#-------------------------------
+[KLAWF]
+CallRateSOS = 3
+#-------------------------------
+[CAPSAKID]
+CallRateSOS = 9
+#-------------------------------
+[RELLOR]
+CallRateSOS = 9
+#-------------------------------
+[RABSCA]
+CallRateSOS = 6
+#-------------------------------
+[FLITTLE]
+CallRateSOS = 9
+#-------------------------------
+[ESPATHRA]
+CallRateSOS = 6
+#-------------------------------
+[TINKATINK]
+CallRateSOS = 9
+#-------------------------------
+[TINKATUFF]
+RivalSpecies = PAWNIARD,BISHARP
+CallRateSOS = 6
+#-------------------------------
+[TINKATON]
+RivalSpecies = CORVIKNIGHT
+#-------------------------------
+[WIGLETT]
+CallRateSOS = 9
+#-------------------------------
+[WUGTRIO]
+CallRateSOS = 6
+#-------------------------------
+[BOMBIRDIER]
+CallRateSOS = 3
+#-------------------------------
+[FINIZEN]
+CallRateSOS = 9
+#-------------------------------
+[VAROOM]
+CallRateSOS = 9
+#-------------------------------
+[REVAVROOM]
+Flags = SOSForm_0
+CallRateSOS = 6
+#-------------------------------
+[CYCLIZAR]
+CallRateSOS = 3
+#-------------------------------
+[ORTHWORM]
+CallRateSOS = 3
+#-------------------------------
+[GLIMMET]
+CallRateSOS = 9
+#-------------------------------
+[GLIMMORA]
+CallRateSOS = 6
+#-------------------------------
+[GREAVARD]
+CallRateSOS = 9
+#-------------------------------
+[HOUNDSTONE]
+CallRateSOS = 6
+#-------------------------------
+[FLAMIGO]
+CallRateSOS = 3
+#-------------------------------
+[CETODDLE]
+CallRateSOS = 9
+#-------------------------------
+[VELUZA]
+CallRateSOS = 9
+#-------------------------------
+[DONDOZO]
+CallRateSOS = 3
+#-------------------------------
+[TATSUGIRI]
+SpeciesSOS = TATSUGIRI
+ConditionalSOS = DONDOZO,Water,,DONDOZO,GoodRod,,DONDOZO,SuperRod,
+CallRateSOS = 6
+#-------------------------------
+[FRIGIBAX]
+CallRateSOS = 9
+#-------------------------------
+[ARCTIBAX]
+CallRateSOS = 6
+#-------------------------------
+[DIPPLIN]
+CallRateSOS = 6
+#-------------------------------
+[POLTCHAGEIST]
+CallRateSOS = 9
+#-------------------------------
+[SINISTCHA]
+CallRateSOS = 6

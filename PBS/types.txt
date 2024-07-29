@@ -1,4 +1,5 @@
-﻿# See the documentation on the wiki to learn how to edit this file.
+﻿# 莉露·梅亚汉化，有错误请指出
+#-------------------------------
 [NORMAL]
 Name = 一般
 IconPosition = 0

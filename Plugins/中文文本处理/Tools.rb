@@ -6,7 +6,7 @@ module Settings
   Y_OFFSET_OF_ORDER_CORRCETION = 8
 
 	#引号中填写自已使用的字体即可
-	GLOBAL_FONT_NAME = "Fusion Pixel 12px Monospaced zh_hans"
+	GLOBAL_FONT_NAME = "FZCuYuan-M03S"
 end
 
 module MessageConfig

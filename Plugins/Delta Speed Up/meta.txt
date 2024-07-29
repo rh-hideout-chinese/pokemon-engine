@@ -1,0 +1,6 @@
+Name         = Delta Speed Up
+Version      = 1.2
+Essentials   = 21.1
+Requires     = v21.1 Hotfixes
+Website      = https://reliccastle.com/threads/7145
+Credits      = Marin (og speed up script), Phantombass (19.1 version), Mashirosakura, Golisopod User, D0vid (v21.1 version), Manurocker95(bug fixes)

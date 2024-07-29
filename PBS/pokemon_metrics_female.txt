@@ -1,0 +1,73 @@
+﻿# See the documentation on the wiki to learn how to edit this file.
+#-------------------------------
+[RATICATE,,female]
+BackSprite = -6,30
+FrontSprite = 2,10
+ShadowSprite = 2,-6,2
+#-------------------------------
+[PIKACHU,,female]
+BackSprite = -5,5
+FrontSprite = 8,5
+ShadowSprite = 1,12,3
+#-------------------------------
+[RAICHU,,female]
+BackSprite = 8,27
+FrontSprite = -6,5
+ShadowSprite = 2,15,5
+#-------------------------------
+[RHYHORN,,female]
+BackSprite = 2,33
+FrontSprite = -1,13
+ShadowSprite = 0,-18,0
+#-------------------------------
+[WOOPER,,female]
+BackSprite = 1,10
+FrontSprite = 0,6
+ShadowSprite = 0,0,1
+#-------------------------------
+[SUDOWOODO,,female]
+BackSprite = 6,21
+FrontSprite = -6,8
+ShadowSprite = 0,0,1
+AnimationSpeed = 0
+#-------------------------------
+[SNEASEL,,female]
+BackSprite = 6,18
+FrontSprite = -3,6
+ShadowSprite = 1,0,0
+#-------------------------------
+[SNEASEL,1,female]
+BackSprite = 3,16
+FrontSprite = -2,8
+ShadowSprite = 1,5,0
+#-------------------------------
+[COMBUSKEN,,female]
+BackSprite = 4,25
+FrontSprite = 2,12
+ShadowSprite = 0,2,0
+AnimationSpeed = 2,1
+#-------------------------------
+[SHIFTRY,,female]
+BackSprite = -10,59
+FrontSprite = 3,23
+ShadowSprite = 4,-18,-2
+#-------------------------------
+[LUXIO,,female]
+BackSprite = 0,24
+FrontSprite = 4,14
+ShadowSprite = 2,-3,-2
+#-------------------------------
+[LUXRAY,,female]
+BackSprite = 0,29
+FrontSprite = 7,11
+ShadowSprite = 2,-4,1
+#-------------------------------
+[RHYPERIOR,,female]
+BackSprite = -5,53
+FrontSprite = 5,13
+ShadowSprite = 0,-13,2
+#-------------------------------
+[UNFEZANT,,female]
+BackSprite = -15,35
+FrontSprite = 11,5
+ShadowSprite = 2,5,4

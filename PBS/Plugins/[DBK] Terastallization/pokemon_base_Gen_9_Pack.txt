@@ -1,0 +1,6 @@
+#-------------------------------
+[OGERPON]
+Flags = TeraType_GRASS
+#-------------------------------
+[TERAPAGOS]
+Flags = TeraType_STELLAR

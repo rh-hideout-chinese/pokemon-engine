@@ -1,0 +1,524 @@
+﻿# 请参阅wiki以了解如何编辑文件
+#-------------------------------
+[BLACKAUGURITE]
+Name = 黑奇石
+NamePlural = 黑奇石
+Pocket = 1
+Price = 2100
+FieldUse = OnPokemon
+Flags = Fling_30,EvolutionStone
+Description = 破碎后会变得十分锋利，性质类 似玻璃的黑石。某种宝可梦很喜 欢它。
+#-------------------------------
+[PEATBLOCK]
+Name = 泥炭块
+NamePlural = 泥炭块
+Pocket = 1
+Price = 2100
+FieldUse = OnPokemon
+Flags = Fling_30,EvolutionStone
+Description = 质地像是泥土的煤炭块。干燥后 也能当成燃料使用。某种宝可梦 很喜欢它。
+#-------------------------------
+[LINKINGCORD]
+Name = 联系绳
+NamePlural = 联系绳
+Pocket = 1
+Price = 2100
+FieldUse = OnPokemon
+Flags = Fling_30,EvolutionStone
+Description = 蕴藏着不可思议能量的绳子，能 从中感受到某种联系。某种宝可 梦们很喜欢它。
+#-------------------------------
+[ADAMANTCRYSTAL]
+Name = 大金刚宝玉
+NamePlural = 大金刚宝玉
+Pocket = 1
+Price = 20000
+SellPrice = 0
+Flags = Fling_60
+Description = 光辉灿烂的大珠子。让帝牙卢卡 携带后，能使之力量高涨并改变 形态。
+#-------------------------------
+[LUSTROUSGLOBE]
+Name = 大白宝玉
+NamePlural = 大白宝玉
+Pocket = 1
+Price = 20000
+SellPrice = 0
+Flags = Fling_60
+Description = 光辉灿烂的大珠子。让帕路奇亚 携带后，能使之力量高涨并改变 形态。
+#-------------------------------
+[LEGENDPLATE]
+Name = 传说石板
+NamePlural = 传说石板
+Pocket = 1
+Price = 20000
+SellPrice = 0
+Flags = Fling_90,Plate
+Description = 蕴含着万物之力的石板。对某种 宝可梦使用，可使其获得一切属 性的力量。
+#-------------------------------
+[BLANKPLATE]
+Name = 净空石板
+NamePlural = 净空石板
+Pocket = 1
+Price = 10000
+SellPrice = 500
+Flags = Fling_90,Plate
+Description = 一般属性的石板。对某种宝可梦 使用，可使其获得一般属性的力 量。
+#-------------------------------
+[HOPOBERRY]
+Name = 花啤果
+NamePlural = 花啤果
+Pocket = 5
+Price = 20
+Flags = Berry,Fling_10,NaturalGift_FIGHTING_80
+Description = 让宝可梦吃下后，可以回复PP 。
+#-------------------------------
+[GRISEOUSCORE]
+Name = 大白金宝玉
+NamePlural = 大白金宝玉
+Pocket = 1
+Price = 20000
+SellPrice = 0
+Flags = Fling_60
+Description = 光辉灿烂的大珠子。让骑拉帝纳 携带后，能使之力量高涨并改变 形态。
+#-------------------------------
+[HISUIANPOKEBALL]
+Name = 精灵球（洗翠）
+NamePlural = 精灵球（洗翠）
+Pocket = 3
+Price = 500
+BattleUse = OnFoe
+Flags = PokeBall
+Description = 不可思议的球。用于投向野生宝 可梦并将其捕捉。
+#-------------------------------
+[HISUIANGREATBALL]
+Name = 超级球（洗翠）
+NamePlural = 超级球（洗翠）
+Pocket = 3
+Price = 900
+BattleUse = OnFoe
+Flags = PokeBall
+Description = 不可思议的球。比起精灵球来更 容易捉到宝可梦的，性能还算不 错的球。
+#-------------------------------
+[HISUIANULTRABALL]
+Name = 高级球（洗翠）
+NamePlural = 高级球（洗翠）
+Pocket = 3
+Price = 1500
+BattleUse = OnFoe
+Flags = PokeBall
+Description = 不可思议的球。比起超级球来更 容易捉到宝可梦的，性能非常不 错的球。
+#-------------------------------
+[FEATHERBALL]
+Name = 飞羽球
+NamePlural = 飞羽球
+Pocket = 3
+Price = 700
+BattleUse = OnFoe
+Flags = PokeBall
+Description = 能直线高速飞行的球。在捕捉动 作快速的宝可梦及飞在高空的宝 可梦时十分有效。
+#-------------------------------
+[WINGBALL]
+Name = 飞翼球
+NamePlural = 飞翼球
+Pocket = 3
+Price = 1000
+BattleUse = OnFoe
+Flags = PokeBall
+Description = 强化后的飞羽球。能直线高速飞 行，在捕捉动作快速的宝可梦及 飞在高空的宝可梦时十分有效。
+#-------------------------------
+[JETBALL]
+Name = 飞梭球
+NamePlural = 飞梭球
+Pocket = 3
+Price = 1500
+BattleUse = OnFoe
+Flags = PokeBall
+Description = 强化到最高阶的飞羽球。能直线 高速飞行，在捕捉动作快速的宝 可梦及飞在高空的宝可梦时十分 有效。
+#-------------------------------
+[HISUIANHEAVYBALL]
+Name = 沉重球（洗翠）
+NamePlural = 沉重球（洗翠）
+Pocket = 3
+Price = 700
+BattleUse = OnFoe
+Flags = PokeBall
+Description = 沉重而无法远投，但若能命中掉 以轻心的宝可梦，就能发挥强大 的捕获能力。
+#-------------------------------
+[LEADENBALL]
+Name = 超重球
+NamePlural = 超重球
+Pocket = 3
+Price = 1000
+BattleUse = OnFoe
+Flags = PokeBall
+Description = 强化后的沉重球。沉重而无法远 投，但若能命中掉以轻心的宝可 梦，就能发挥强大的捕获能力。
+#-------------------------------
+[GIGATONBALL]
+Name = 巨重球
+NamePlural = 巨重球
+Pocket = 3
+Price = 1500
+BattleUse = OnFoe
+Flags = PokeBall
+Description = 强化到最高阶的沉重球。沉重而 无法远投，但若能命中掉以轻心 的宝可梦，就能发挥强大的捕获 能力。
+#-------------------------------
+[ORIGINBALL]
+Name = 起源球
+NamePlural = 起源球
+Pocket = 3
+Price = 0
+BattleUse = OnFoe
+Flags = PokeBall
+Description = 独一无二的特殊精灵球。能够捕 捉在神奥神殿狂暴大闹的宝可梦 。
+#-------------------------------
+[STRANGEBALL]
+Name = 奇异球
+NamePlural = 奇异球
+Pocket = 3
+Price = 0
+BattleUse = OnFoe
+Flags = PokeBall
+Description = 看上去有点奇怪的精灵球，来自 过去的神奥。
+#-------------------------------
+[AUSPICIOUSARMOR]
+Name = 庆祝之铠
+NamePlural = 庆祝之铠
+PortionName = 一组庆祝之铠
+PortionNamePlural = 一组庆祝之铠
+Pocket = 1
+Price = 3000
+FieldUse = OnPokemon
+Flags = EvolutionStone,Fling_30
+Description = 能让某些特定宝可梦进化的神奇 铠甲。蕴含着祝贺的感情。
+#-------------------------------
+[MALICIOUSARMOR]
+Name = 咒术之铠
+NamePlural = 咒术之铠
+PortionName = 一组咒术之铠
+PortionNamePlural = 一组咒术之铠
+Pocket = 1
+Price = 3000
+FieldUse = OnPokemon
+Flags = EvolutionStone,Fling_30
+Description = 能让某些特定宝可梦进化的神奇 铠甲。蕴含着诅咒的感情。
+#-------------------------------
+[SCROLLOFDARKNESS]
+Name = 恶之挂轴
+NamePlural = 恶之挂轴
+Pocket = 1
+Price = 0
+FieldUse = OnPokemon
+Flags = EvolutionStone,Fling_30
+Description = 能让某些特定宝可梦进化的神奇 挂轴。上面写着恶之奥秘。
+#-------------------------------
+[SCROLLOFWATERS]
+Name = 水之挂轴
+NamePlural = 水之挂轴
+Pocket = 1
+Price = 0
+FieldUse = OnPokemon
+Flags = EvolutionStone,Fling_30
+Description = 能让某些特定宝可梦进化的神奇 挂轴。上面写着水之奥秘。
+#-------------------------------
+[LEADERSCREST]
+Name = 头领凭证
+NamePlural = 头领凭证
+Pocket = 1
+Price = 3000
+Flags = Fling_30
+Description = 像久经岁月的刃器一样的碎片。 只有率领着驹刀小兵群体的劈斩 司令能携带着。
+#-------------------------------
+[BOOSTERENERGY]
+Name = 驱劲能量
+NamePlural = 驱劲能量
+PortionName = 胶囊装驱劲能量
+PortionNamePlural = 胶囊装驱劲能量
+Pocket = 1
+Price = 0
+Flags = Fling_30
+Description = 充满能量的胶囊。让有某种特性 的宝可梦携带后，其能力会得到 提升。
+#-------------------------------
+[ABILITYSHIELD]
+Name = 特性护具
+NamePlural = 特性护具
+Pocket = 1
+Price = 20000
+Flags = Fling_30
+Description = 可爱而有个性的盾。携带后，特 性不会被对手改变。
+#-------------------------------
+[CLEARAMULET]
+Name = 清净坠饰
+NamePlural = 清净坠饰
+Pocket = 1
+Price = 30000
+Flags = Fling_30
+Description = 光芒晶莹剔透的坠饰。携带后， 不会因为对手的招式或特性而被 降低能力。
+#-------------------------------
+[MIRRORHERB]
+Name = 模仿香草
+NamePlural = 模仿香草
+Pocket = 1
+Price = 30000
+Flags = Fling_30
+Description = 携带它的宝可梦仅有１次机会可 以在对手提高能力时，对其进行 模仿并提高同样的能力。
+#-------------------------------
+[PUNCHINGGLOVE]
+Name = 拳击手套
+NamePlural = 拳击手套
+Pocket = 1
+Price = 15000
+Flags = Fling_30
+Description = 保护拳头的手套。携带后，拳击 招式的威力会提高，且变得拳击 时不会接触到对手。
+#-------------------------------
+[COVERTCLOAK]
+Name = 密探斗篷
+NamePlural = 密探斗篷
+Pocket = 1
+Price = 20000
+Flags = Fling_30
+Description = 能骗过敌人眼睛的带帽披风。携 带后，能够隐藏身体，变得不会 受到招式的追加效果影响。
+#-------------------------------
+[LOADEDDICE]
+Name = 机变骰子
+NamePlural = 机变骰子
+Pocket = 1
+Price = 20000
+Flags = Fling_30
+Description = 只会出现好数字的骰子。携带后 ，在使用连续招式时，能使出较 多次招式。
+#-------------------------------
+[GIMMIGHOULCOIN]
+Name = 索财灵的硬币
+NamePlural = 索财灵的硬币
+Pocket = 1
+Price = 0
+Flags = Fling_10
+Description = 宝可梦不小心掉落的东西。索财 灵珍爱有加地收集着它。
+#-------------------------------
+[TINYBAMBOOSHOOT]
+Name = 小竹笋
+NamePlural = 小竹笋
+Pocket = 1
+Price = 1500
+Flags = Fling_30
+Description = 小小的珍贵竹笋。在部分美食家 中拥有很高人气。
+#-------------------------------
+[BIGBAMBOOSHOOT]
+Name = 大竹笋
+NamePlural = 大竹笋
+Pocket = 1
+Price = 6000
+Flags = Fling_30
+Description = 大大的珍贵竹笋。在部分美食家 中拥有非常高人气。
+#-------------------------------
+[ROTOMPHONE]
+Name = 手机洛托姆
+NamePlural = 手机洛托姆
+Pocket = 8
+Price = 0
+Flags = KeyItem
+Description = 被一种叫洛托姆的宝可梦潜入到 了里面的最新型智能手机。能够 启动便利的App。
+#-------------------------------
+[SCARLETBOOK]
+Name = 朱之书
+NamePlural = 朱之书
+Pocket = 8
+Price = 0
+Flags = KeyItem
+Description = 由海哲撰写的帕底亚巨坑探险记 。以拙劣的字迹写着“奥琳”二 字。
+#-------------------------------
+[VIOLETBOOK]
+Name = 紫之书
+NamePlural = 紫之书
+Pocket = 8
+Price = 0
+Flags = KeyItem
+Description = 由海哲撰写的帕底亚巨坑探险记 。以拙劣的字迹写着“弗图”二 字。
+#-------------------------------
+[HEALTHMOCHI]
+Name = 体力粘糕
+NamePlural = 体力粘糕
+Pocket = 2
+Price = 250
+FieldUse = OnPokemon
+Flags = Fling_20
+Description = 糅合树果的粘糕。能提高1只宝 可梦的HP的基础点数。
+#-------------------------------
+[MUSCLEMOCHI]
+Name = 肌力粘糕
+NamePlural = 肌力粘糕
+Pocket = 2
+Price = 250
+FieldUse = OnPokemon
+Flags = Fling_20
+Description = 糅合树果的粘糕。能提高1只宝 可梦的攻击的基础点数。
+#-------------------------------
+[RESISTMOCHI]
+Name = 抵抗粘糕
+NamePlural = 抵抗粘糕
+Pocket = 2
+Price = 250
+FieldUse = OnPokemon
+Flags = Fling_20
+Description = 糅合树果的粘糕。能提高1只宝 可梦的防御的基础点数。
+#-------------------------------
+[GENIUSMOCHI]
+Name = 智力粘糕
+NamePlural = 智力粘糕
+Pocket = 2
+Price = 250
+FieldUse = OnPokemon
+Flags = Fling_20
+Description = 糅合树果的粘糕。能提高1只宝 可梦的特攻的基础点数。
+#-------------------------------
+[CLEVERMOCHI]
+Name = 精神粘糕
+NamePlural = 精神粘糕
+Pocket = 2
+Price = 250
+FieldUse = OnPokemon
+Flags = Fling_20
+Description = 糅合树果的粘糕。能提高1只宝 可梦的特防的基础点数。
+#-------------------------------
+[SWIFTMOCHI]
+Name = 瞬发粘糕
+NamePlural = 瞬发粘糕
+Pocket = 2
+Price = 250
+FieldUse = OnPokemon
+Flags = Fling_20
+Description = 糅合树果的粘糕。能提高1只宝 可梦的速度的基础点数。
+#-------------------------------
+[FRESHSTARTMOCHI]
+Name = 净空粘糕
+NamePlural = 净空粘糕
+Pocket = 2
+Price = 250
+FieldUse = OnPokemon
+Flags = Fling_20
+Description = 糅合树果的粘糕。能让宝可梦的 基础点数全部消失。
+#-------------------------------
+[FAIRYFEATHER]
+Name = 妖精之羽
+NamePlural = 妖精之羽
+Pocket = 1
+Price = 3000
+SellPrice = 750
+Flags = Fling_20
+Description = 接触到光后就会微微发光的羽毛 。携带后，妖精属性的招式威力 就会提高。
+#-------------------------------
+[SYRUPYAPPLE]
+Name = 蜜汁苹果
+NamePlural = 蜜汁苹果
+Pocket = 1
+Price = 2200
+SellPrice = 550
+BPPrice = 5
+FieldUse = OnPokemon
+Flags = EvolutionStone,Fling_30
+Description = 这种神奇的苹果可以使特定的宝 可梦进化。富含蜜汁。
+#-------------------------------
+[UNREMARKABLETEACUP]
+Name = 凡作茶碗
+NamePlural = 凡作茶碗
+Pocket = 1
+Price = 1500
+SellPrice = 400
+BPPrice = 5
+FieldUse = OnPokemon
+Flags = EvolutionStone,Fling_80
+Description = 这个神奇的茶碗可以使特定的宝 可梦进化。虽然破裂了，但泡出 来的茶会很香。
+#-------------------------------
+[MASTERPIECETEACUP]
+Name = 杰作茶碗
+NamePlural = 杰作茶碗
+Pocket = 1
+Price = 1500
+SellPrice = 9500
+BPPrice = 5
+FieldUse = OnPokemon
+Flags = EvolutionStone,Fling_80
+Description = 这个神奇的茶碗可以使特定的宝 可梦进化。虽然破缺了，但泡出 来的茶会很香。
+#-------------------------------
+[WELLSPRINGMASK]
+Name = 水井面具
+NamePlural = 水井面具
+Pocket = 1
+Price = 0
+Flags = Fling_60
+Description = 用结晶装饰的木雕面具。让厄诡 椪携带后，就会用水属性覆盖全 身进行战斗。
+#-------------------------------
+[HEARTHFLAMEMASK]
+Name = 火灶面具
+NamePlural = 火灶面具
+Pocket = 1
+Price = 0
+Flags = Fling_60
+Description = 用结晶装饰的木雕面具。让厄诡 椪携带后，就会用火属性覆盖全 身进行战斗。
+#-------------------------------
+[CORNERSTONEMASK]
+Name = 础石面具
+NamePlural = 础石面具
+Pocket = 1
+Price = 0
+Flags = Fling_60
+Description = 用结晶装饰的木雕面具。让厄诡 椪携带后，就会用岩石属性覆盖 全身进行战斗。
+#-------------------------------
+[TEALMASK]
+Name = 碧草面具
+NamePlural = 碧草面具
+Pocket = 8
+Price = 0
+Flags = KeyItem,Fling_60
+Description = 模仿鬼的脸制成的绿色面具。面 具是捡到的，在掩面祭遇到的孩 子把它掉在了台阶上。
+#-------------------------------
+[METALALLOY]
+Name = 复合金属
+NamePlural = 复合金属
+PortionName = 大块的金属合金
+PortionNamePlural = 大块的金属合金
+Pocket = 1
+Price = 3000
+BPPrice = 8
+FieldUse = OnPokemon
+Flags = EvolutionStone,Fling_30
+Description = 能让某些特定宝可梦进化的神奇 金属。由多个层次叠加而成。
+#-------------------------------
+[INDIGODISK]
+Name = 蓝之光碟
+NamePlural = 蓝之光碟
+Pocket = 8
+Price = 0
+Flags = KeyItem
+Description = 从首席冠军那里得到的散发着蓝 色光辉的神秘光碟。似乎和第零 区有关。
+#-------------------------------
+[MYTHICALPECHABERRY]
+Name = 幻之桃桃果
+NamePlural = 幻之桃桃果
+Pocket = 8
+Price = 0
+Flags = KeyItem
+Description = 据说每隔数年才会在匠人精心栽 培的桃桃树上结出一颗的最高级 桃桃果。光泽与众不同。
+#-------------------------------
+[SYNCHROMACHINE]
+Name = 同步器
+NamePlural = 同步器
+Pocket = 8
+Price = 0
+Flags = KeyItem
+Description = 能够和宝可梦的情感同步，让宝 可梦帮忙做各种事情的装置。由 于是试制品，所以外观很简约。
+#-------------------------------
+[METEORITE]
+Name = 陨石
+NamePlural = 陨石
+Pocket = 8
+Price = 0
+FieldUse = OnPokemon
+Flags = KeyItem
+Description = 从宇宙中坠落到地面上的石头。 摸上去隐约有点暖暖的。可以改 变特定宝可梦的样子。
+#-------------------------------
+[BRIARSBOOK]
+Name = 零之秘宝
+NamePlural = 零之秘宝
+Pocket = 8
+Price = 0
+Flags = KeyItem
+Description = 零之大空洞探险记的样书。里面 用长篇的文章记载着调查中发生 的事件和白蕾雅老师的考察内容 。

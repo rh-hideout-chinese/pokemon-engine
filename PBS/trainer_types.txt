@@ -1,4 +1,4 @@
-﻿# See the documentation on the wiki to learn how to edit this file.
+﻿# 请参阅wiki以了解如何编辑文件
 #-------------------------------
 [POKEMONTRAINER_Red]
 Name = 宝可梦训练家
@@ -61,7 +61,7 @@ Gender = Male
 BaseMoney = 88
 SkillLevel = 32
 #-------------------------------
-[CHANNELER]
+[CHANELLER]
 Name = 祈祷师
 Gender = Female
 BaseMoney = 32

@@ -1,0 +1,1764 @@
+### Changes will apply automatically. ###
+#-------------------------------
+[CATERPIE]
+CallRateSOS = 15
+#-------------------------------
+[METAPOD]
+SpeciesSOS = CATERPIE,BUTTERFREE
+CallRateSOS = 15
+#-------------------------------
+[WEEDLE]
+CallRateSOS = 15
+#-------------------------------
+[KAKUNA]
+SpeciesSOS = WEEDLE,BEEDRILL
+CallRateSOS = 15
+#-------------------------------
+[PIDGEY]
+SpeciesSOS = PIDGEY,PIDGEOTTO
+CallRateSOS = 9
+#-------------------------------
+[PIDGEOTTO]
+CallRateSOS = 6
+#-------------------------------
+[RATTATA]
+CallRateSOS = 9
+#-------------------------------
+[RATICATE]
+CallRateSOS = 6
+#-------------------------------
+[SPEAROW]
+CallRateSOS = 9
+#-------------------------------
+[FEAROW]
+CallRateSOS = 6
+#-------------------------------
+[EKANS]
+CallRateSOS = 9
+#-------------------------------
+[ARBOK]
+CallRateSOS = 6
+#-------------------------------
+[PIKACHU]
+CallRateSOS = 6
+#-------------------------------
+[SANDSHREW]
+CallRateSOS = 9
+#-------------------------------
+[NIDORANfE]
+SpeciesSOS = NIDORANfE,NIDORANmA
+CallRateSOS = 9
+#-------------------------------
+[NIDORINA]
+SpeciesSOS = NIDORINA,NIDORINO
+CallRateSOS = 6
+#-------------------------------
+[NIDORANmA]
+SpeciesSOS = NIDORANmA,NIDORANfE
+CallRateSOS = 9
+#-------------------------------
+[NIDORINO]
+SpeciesSOS = NIDORINO,NIDORINA
+CallRateSOS = 6
+#-------------------------------
+[CLEFAIRY]
+CallRateSOS = 6
+#-------------------------------
+[VULPIX]
+CallRateSOS = 9
+#-------------------------------
+[JIGGLYPUFF]
+CallRateSOS = 6
+#-------------------------------
+[ZUBAT]
+CallRateSOS = 15
+#-------------------------------
+[GOLBAT]
+ConditionalSOS = CROBAT,Cave,
+CallRateSOS = 9
+#-------------------------------
+[ODDISH]
+CallRateSOS = 9
+#-------------------------------
+[GLOOM]
+CallRateSOS = 6
+#-------------------------------
+[PARAS]
+CallRateSOS = 9
+#-------------------------------
+[PARASECT]
+CallRateSOS = 6
+#-------------------------------
+[VENONAT]
+CallRateSOS = 9
+#-------------------------------
+[VENOMOTH]
+CallRateSOS = 6
+#-------------------------------
+[DIGLETT]
+CallRateSOS = 9
+#-------------------------------
+[DUGTRIO]
+CallRateSOS = 6
+#-------------------------------
+[MEOWTH]
+CallRateSOS = 9
+#-------------------------------
+[PERSIAN]
+CallRateSOS = 6
+#-------------------------------
+[PSYDUCK]
+CallRateSOS = 15
+#-------------------------------
+[GOLDUCK]
+CallRateSOS = 6
+#-------------------------------
+[MANKEY]
+CallRateSOS = 9
+#-------------------------------
+[PRIMEAPE]
+CallRateSOS = 6
+#-------------------------------
+[GROWLITHE]
+CallRateSOS = 9
+#-------------------------------
+[POLIWAG]
+CallRateSOS = 9
+#-------------------------------
+[POLIWHIRL]
+CallRateSOS = 6
+#-------------------------------
+[ABRA]
+CallRateSOS = 9
+#-------------------------------
+[KADABRA]
+CallRateSOS = 6
+#-------------------------------
+[MACHOP]
+CallRateSOS = 9
+#-------------------------------
+[MACHOKE]
+CallRateSOS = 6
+#-------------------------------
+[BELLSPROUT]
+CallRateSOS = 9
+#-------------------------------
+[WEEPINBELL]
+CallRateSOS = 6
+#-------------------------------
+[TENTACOOL]
+CallRateSOS = 15
+#-------------------------------
+[TENTACRUEL]
+CallRateSOS = 6
+#-------------------------------
+[GEODUDE]
+CallRateSOS = 9
+#-------------------------------
+[GRAVELER]
+CallRateSOS = 6
+#-------------------------------
+[PONYTA]
+CallRateSOS = 9
+#-------------------------------
+[RAPIDASH]
+CallRateSOS = 6
+#-------------------------------
+[SLOWPOKE]
+ConditionalSOS = SHELLDER,Water,,SLOWBRO,Land,,SLOWKING,Land,
+CallRateSOS = 9
+#-------------------------------
+[SLOWBRO]
+CallRateSOS = 3
+#-------------------------------
+[MAGNEMITE]
+ConditionalSOS = NOSEPASS,Cave,
+CallRateSOS = 9
+#-------------------------------
+[MAGNETON]
+ConditionalSOS = NOSEPASS,Cave,
+CallRateSOS = 6
+#-------------------------------
+[FARFETCHD]
+CallRateSOS = 9
+#-------------------------------
+[DODUO]
+CallRateSOS = 9
+#-------------------------------
+[DODRIO]
+CallRateSOS = 6
+#-------------------------------
+[SEEL]
+CallRateSOS = 9
+#-------------------------------
+[DEWGONG]
+CallRateSOS = 6
+#-------------------------------
+[GRIMER]
+CallRateSOS = 9
+#-------------------------------
+[MUK]
+CallRateSOS = 6
+#-------------------------------
+[SHELLDER]
+CallRateSOS = 9
+#-------------------------------
+[GASTLY]
+CallRateSOS = 9
+#-------------------------------
+[HAUNTER]
+SpeciesSOS = HAUNTER,GENGAR
+CallRateSOS = 6
+#-------------------------------
+[ONIX]
+SpeciesSOS = GEODUDE,ONIX
+CallRateSOS = 9
+#-------------------------------
+[DROWZEE]
+CallRateSOS = 9
+#-------------------------------
+[HYPNO]
+CallRateSOS = 6
+#-------------------------------
+[KRABBY]
+CallRateSOS = 9
+#-------------------------------
+[KINGLER]
+CallRateSOS = 6
+#-------------------------------
+[VOLTORB]
+CallRateSOS = 15
+#-------------------------------
+[EXEGGCUTE]
+CallRateSOS = 15
+#-------------------------------
+[CUBONE]
+SpeciesSOS = CUBONE,KANGASKHAN
+ConditionalSOS = MANDIBUZZ,Land,
+CallRateSOS = 15
+#-------------------------------
+[MAROWAK]
+CallRateSOS = 3
+#-------------------------------
+[HITMONLEE]
+SpeciesSOS = HITMONLEE,HITMONCHAN,HITMONTOP
+CallRateSOS = 3
+#-------------------------------
+[HITMONCHAN]
+SpeciesSOS = HITMONCHAN,HITMONLEE,HITMONTOP
+CallRateSOS = 3
+#-------------------------------
+[LICKITUNG]
+CallRateSOS = 3
+#-------------------------------
+[KOFFING]
+CallRateSOS = 9
+#-------------------------------
+[WEEZING]
+CallRateSOS = 6
+#-------------------------------
+[RHYHORN]
+CallRateSOS = 9
+#-------------------------------
+[RHYDON]
+CallRateSOS = 6
+#-------------------------------
+[CHANSEY]
+SpeciesSOS = CHANSEY,BLISSEY
+CallRateSOS = 9
+#-------------------------------
+[TANGELA]
+CallRateSOS = 9
+#-------------------------------
+[KANGASKHAN]
+CallRateSOS = 3
+#-------------------------------
+[HORSEA]
+SpeciesSOS = HORSEA,SEADRA
+CallRateSOS = 9
+#-------------------------------
+[SEADRA]
+CallRateSOS = 6
+#-------------------------------
+[GOLDEEN]
+SpeciesSOS = GOLDEEN,SEAKING
+CallRateSOS = 9
+#-------------------------------
+[SEAKING]
+CallRateSOS = 6
+#-------------------------------
+[STARYU]
+SpeciesSOS = STARYU,STARMIE
+CallRateSOS = 9
+#-------------------------------
+[SCYTHER]
+CallRateSOS = 3
+#-------------------------------
+[ELECTABUZZ]
+CallRateSOS = 6
+#-------------------------------
+[MAGMAR]
+CallRateSOS = 6
+#-------------------------------
+[PINSIR]
+CallRateSOS = 3
+#-------------------------------
+[TAUROS]
+SpeciesSOS = TAUROS,MILTANK
+CallRateSOS = 3
+#-------------------------------
+[MAGIKARP]
+SpeciesSOS = MAGIKARP,GYARADOS
+CallRateSOS = 9
+#-------------------------------
+[GYARADOS]
+CallRateSOS = 3
+#-------------------------------
+[LAPRAS]
+CallRateSOS = 3
+#-------------------------------
+[DITTO]
+CallRateSOS = 9
+#-------------------------------
+[EEVEE]
+ConditionalSOS = ESPEON,LandDay,,UMBREON,LandNight,
+CallRateSOS = 9
+#-------------------------------
+[DRATINI]
+SpeciesSOS = DRATINI,DRAGONAIR
+CallRateSOS = 9
+#-------------------------------
+[DRAGONAIR]
+CallRateSOS = 6
+#-------------------------------
+[SENTRET]
+CallRateSOS = 9
+#-------------------------------
+[FURRET]
+CallRateSOS = 6
+#-------------------------------
+[HOOTHOOT]
+SpeciesSOS = HOOTHOOT,NOCTOWL
+CallRateSOS = 9
+#-------------------------------
+[NOCTOWL]
+CallRateSOS = 6
+#-------------------------------
+[LEDYBA]
+CallRateSOS = 9
+#-------------------------------
+[LEDIAN]
+CallRateSOS = 6
+#-------------------------------
+[SPINARAK]
+CallRateSOS = 9
+#-------------------------------
+[ARIADOS]
+CallRateSOS = 6
+#-------------------------------
+[CHINCHOU]
+SpeciesSOS = CHINCHOU,LANTURN
+CallRateSOS = 9
+#-------------------------------
+[LANTURN]
+CallRateSOS = 6
+#-------------------------------
+[PICHU]
+Flags = SOSForm_0
+SpeciesSOS = PICHU,PIKACHU,HAPPINY
+CallRateSOS = 15
+#-------------------------------
+[CLEFFA]
+SpeciesSOS = CLEFFA,CLEFAIRY,HAPPINY
+CallRateSOS = 15
+#-------------------------------
+[IGGLYBUFF]
+SpeciesSOS = IGGLYBUFF,JIGGLYPUFF,HAPPINY
+CallRateSOS = 15
+#-------------------------------
+[TOGEPI]
+SpeciesSOS = TOGEPI,TOGETIC,HAPPINY
+CallRateSOS = 15
+#-------------------------------
+[NATU]
+SpeciesSOS = NATU,XATU
+CallRateSOS = 9
+#-------------------------------
+[XATU]
+CallRateSOS = 6
+#-------------------------------
+[MAREEP]
+CallRateSOS = 9
+#-------------------------------
+[FLAAFFY]
+CallRateSOS = 6
+#-------------------------------
+[MARILL]
+CallRateSOS = 9
+#-------------------------------
+[HOPPIP]
+CallRateSOS = 9
+#-------------------------------
+[SKIPLOOM]
+CallRateSOS = 6
+#-------------------------------
+[AIPOM]
+SpeciesSOS = AIPOM,AMBIPOM
+CallRateSOS = 9
+#-------------------------------
+[SUNKERN]
+CallRateSOS = 9
+#-------------------------------
+[YANMA]
+SpeciesSOS = YANMA,YANMEGA
+CallRateSOS = 9
+#-------------------------------
+[WOOPER]
+SpeciesSOS = WOOPER,QUAGSIRE
+CallRateSOS = 9
+#-------------------------------
+[MURKROW]
+CallRateSOS = 9
+#-------------------------------
+[SLOWKING]
+CallRateSOS = 3
+#-------------------------------
+[MISDREAVUS]
+CallRateSOS = 9
+#-------------------------------
+[UNOWN]
+CallRateSOS = 15
+#-------------------------------
+[GIRAFARIG]
+CallRateSOS = 9
+#-------------------------------
+[PINECO]
+CallRateSOS = 9
+#-------------------------------
+[FORRETRESS]
+CallRateSOS = 6
+#-------------------------------
+[DUNSPARCE]
+CallRateSOS = 3
+#-------------------------------
+[GLIGAR]
+CallRateSOS = 9
+#-------------------------------
+[SNUBBULL]
+CallRateSOS = 9
+#-------------------------------
+[GRANBULL]
+CallRateSOS = 6
+#-------------------------------
+[QWILFISH]
+CallRateSOS = 9
+#-------------------------------
+[SHUCKLE]
+CallRateSOS = 3
+#-------------------------------
+[HERACROSS]
+CallRateSOS = 3
+#-------------------------------
+[SNEASEL]
+CallRateSOS = 9
+#-------------------------------
+[TEDDIURSA]
+SpeciesSOS = TEDDIURSA,URSARING
+CallRateSOS = 9
+#-------------------------------
+[SLUGMA]
+CallRateSOS = 9
+#-------------------------------
+[MAGCARGO]
+CallRateSOS = 6
+#-------------------------------
+[SWINUB]
+CallRateSOS = 9
+#-------------------------------
+[PILOSWINE]
+CallRateSOS = 6
+#-------------------------------
+[CORSOLA]
+SpeciesSOS = CORSOLA,MAREANIE
+CallRateSOS = 9
+#-------------------------------
+[REMORAID]
+SpeciesSOS = REMORAID,OCTILLERY
+CallRateSOS = 3
+#-------------------------------
+[DELIBIRD]
+CallRateSOS = 9
+#-------------------------------
+[SKARMORY]
+CallRateSOS = 6
+#-------------------------------
+[HOUNDOUR]
+CallRateSOS = 9
+#-------------------------------
+[HOUNDOOM]
+CallRateSOS = 6
+#-------------------------------
+[PHANPY]
+CallRateSOS = 9
+#-------------------------------
+[STANTLER]
+CallRateSOS = 9
+#-------------------------------
+[SMEARGLE]
+CallRateSOS = 9
+#-------------------------------
+[TYROGUE]
+SpeciesSOS = TYROGUE,HITMONCHAN,HITMONLEE,HITMONTOP,HAPPINY
+CallRateSOS = 15
+#-------------------------------
+[HITMONTOP]
+SpeciesSOS = HITMONTOP,HITMONLEE,HITMONCHAN
+CallRateSOS = 3
+#-------------------------------
+[SMOOCHUM]
+SpeciesSOS = SMOOCHUM,JYNX,HAPPINY
+CallRateSOS = 15
+#-------------------------------
+[ELEKID]
+SpeciesSOS = ELEKID,ELECTABUZZ,HAPPINY
+CallRateSOS = 15
+#-------------------------------
+[MAGBY]
+SpeciesSOS = MAGBY,MAGMAR,HAPPINY
+CallRateSOS = 15
+#-------------------------------
+[MILTANK]
+SpeciesSOS = MILTANK,TAUROS
+CallRateSOS = 3
+#-------------------------------
+[LARVITAR]
+CallRateSOS = 9
+#-------------------------------
+[PUPITAR]
+CallRateSOS = 9
+#-------------------------------
+[POOCHYENA]
+CallRateSOS = 9
+#-------------------------------
+[MIGHTYENA]
+CallRateSOS = 6
+#-------------------------------
+[ZIGZAGOON]
+CallRateSOS = 9
+#-------------------------------
+[LINOONE]
+CallRateSOS = 6
+#-------------------------------
+[WURMPLE]
+CallRateSOS = 15
+#-------------------------------
+[SILCOON]
+SpeciesSOS = WURMPLE,BEAUTIFLY
+CallRateSOS = 15
+#-------------------------------
+[CASCOON]
+SpeciesSOS = WURMPLE,DUSTOX
+CallRateSOS = 15
+#-------------------------------
+[LOTAD]
+CallRateSOS = 9
+#-------------------------------
+[LOMBRE]
+CallRateSOS = 6
+#-------------------------------
+[SEEDOT]
+CallRateSOS = 9
+#-------------------------------
+[NUZLEAF]
+CallRateSOS = 6
+#-------------------------------
+[SHIFTRY]
+SpeciesSOS = SEEDOT,NUZLEAF
+CallRateSOS = 15
+#-------------------------------
+[TAILLOW]
+CallRateSOS = 9
+#-------------------------------
+[SWELLOW]
+CallRateSOS = 6
+#-------------------------------
+[WINGULL]
+CallRateSOS = 9
+#-------------------------------
+[PELIPPER]
+CallRateSOS = 6
+#-------------------------------
+[RALTS]
+CallRateSOS = 9
+#-------------------------------
+[KIRLIA]
+CallRateSOS = 6
+#-------------------------------
+[SURSKIT]
+CallRateSOS = 9
+#-------------------------------
+[MASQUERAIN]
+CallRateSOS = 6
+#-------------------------------
+[SHROOMISH]
+CallRateSOS = 9
+#-------------------------------
+[BRELOOM]
+CallRateSOS = 6
+#-------------------------------
+[SLAKOTH]
+CallRateSOS = 9
+#-------------------------------
+[VIGOROTH]
+CallRateSOS = 6
+#-------------------------------
+[NINCADA]
+CallRateSOS = 9
+#-------------------------------
+[NINJASK]
+SpeciesSOS = NINJASK,SHEDINJA
+CallRateSOS = 6
+#-------------------------------
+[WHISMUR]
+CallRateSOS = 9
+#-------------------------------
+[LOUDRED]
+CallRateSOS = 6
+#-------------------------------
+[MAKUHITA]
+CallRateSOS = 9
+#-------------------------------
+[HARIYAMA]
+CallRateSOS = 6
+#-------------------------------
+[AZURILL]
+SpeciesSOS = AZURILL,MARILL,HAPPINY
+CallRateSOS = 15
+#-------------------------------
+[NOSEPASS]
+CallRateSOS = 9
+#-------------------------------
+[SKITTY]
+CallRateSOS = 9
+#-------------------------------
+[DELCATTY]
+CallRateSOS = 6
+#-------------------------------
+[SABLEYE]
+RivalSpecies = CARBINK
+#-------------------------------
+[MAWILE]
+CallRateSOS = 6
+#-------------------------------
+[ARON]
+CallRateSOS = 9
+#-------------------------------
+[LAIRON]
+CallRateSOS = 6
+#-------------------------------
+[MEDITITE]
+CallRateSOS = 9
+#-------------------------------
+[MEDICHAM]
+CallRateSOS = 6
+#-------------------------------
+[ELECTRIKE]
+CallRateSOS = 9
+#-------------------------------
+[MANECTRIC]
+CallRateSOS = 6
+#-------------------------------
+[PLUSLE]
+SpeciesSOS = PLUSLE,MINUN
+CallRateSOS = 15
+#-------------------------------
+[MINUN]
+SpeciesSOS = MINUN,PLUSLE
+CallRateSOS = 15
+#-------------------------------
+[VOLBEAT]
+SpeciesSOS = VOLBEAT,ILLUMISE
+CallRateSOS = 9
+#-------------------------------
+[ILLUMISE]
+SpeciesSOS = ILLUMISE,VOLBEAT
+CallRateSOS = 9
+#-------------------------------
+[ROSELIA]
+CallRateSOS = 9
+#-------------------------------
+[GULPIN]
+CallRateSOS = 9
+#-------------------------------
+[SWALOT]
+CallRateSOS = 6
+#-------------------------------
+[CARVANHA]
+SpeciesSOS = CARVANHA,SHARPEDO
+CallRateSOS = 9
+#-------------------------------
+[SHARPEDO]
+CallRateSOS = 3
+#-------------------------------
+[WAILMER]
+ConditionalSOS = WAILORD,GoodRod,,WAILORD,SuperRod,
+CallRateSOS = 9
+#-------------------------------
+[WAILORD]
+CallRateSOS = 6
+#-------------------------------
+[NUMEL]
+CallRateSOS = 9
+#-------------------------------
+[CAMERUPT]
+CallRateSOS = 6
+#-------------------------------
+[TORKOAL]
+CallRateSOS = 6
+#-------------------------------
+[SPOINK]
+CallRateSOS = 9
+#-------------------------------
+[GRUMPIG]
+CallRateSOS = 6
+#-------------------------------
+[SPINDA]
+CallRateSOS = 6
+#-------------------------------
+[TRAPINCH]
+CallRateSOS = 9
+#-------------------------------
+[VIBRAVA]
+CallRateSOS = 6
+#-------------------------------
+[CACNEA]
+CallRateSOS = 9
+#-------------------------------
+[CACTURNE]
+CallRateSOS = 6
+#-------------------------------
+[SWABLU]
+CallRateSOS = 9
+#-------------------------------
+[ALTARIA]
+CallRateSOS = 6
+#-------------------------------
+[ZANGOOSE]
+RivalSpecies = SEVIPER
+SpeciesSOS = ZANGOOSE,SEVIPER
+CallRateSOS = 9
+#-------------------------------
+[SEVIPER]
+RivalSpecies = ZANGOOSE
+SpeciesSOS = SEVIPER,ZANGOOSE
+CallRateSOS = 9
+#-------------------------------
+[LUNATONE]
+ConditionalSOS = SOLROCK,LandDay,,SOLROCK,CaveDay,
+CallRateSOS = 9
+#-------------------------------
+[SOLROCK]
+ConditionalSOS = LUNATONE,LandNight,,LUNATONE,CaveNight,
+CallRateSOS = 9
+#-------------------------------
+[BARBOACH]
+SpeciesSOS = BARBOACH,WHISCASH
+CallRateSOS = 9
+#-------------------------------
+[WHISCASH]
+CallRateSOS = 6
+#-------------------------------
+[CORPHISH]
+SpeciesSOS = CORPHISH,CRAWDAUNT
+CallRateSOS = 9
+#-------------------------------
+[CRAWDAUNT]
+CallRateSOS = 6
+#-------------------------------
+[BALTOY]
+CallRateSOS = 15
+#-------------------------------
+[CLAYDOL]
+CallRateSOS = 15
+#-------------------------------
+[FEEBAS]
+CallRateSOS = 9
+#-------------------------------
+[KECLEON]
+CallRateSOS = 9
+#-------------------------------
+[SHUPPET]
+CallRateSOS = 9
+#-------------------------------
+[BANETTE]
+CallRateSOS = 6
+#-------------------------------
+[DUSKULL]
+CallRateSOS = 9
+#-------------------------------
+[DUSCLOPS]
+CallRateSOS = 6
+#-------------------------------
+[TROPIUS]
+CallRateSOS = 3
+#-------------------------------
+[CHIMECHO]
+CallRateSOS = 6
+#-------------------------------
+[ABSOL]
+CallRateSOS = 3
+#-------------------------------
+[SNORUNT]
+CallRateSOS = 9
+#-------------------------------
+[GLALIE]
+CallRateSOS = 3
+#-------------------------------
+[SPHEAL]
+CallRateSOS = 9
+#-------------------------------
+[SEALEO]
+CallRateSOS = 6
+#-------------------------------
+[CLAMPERL]
+ConditionalSOS = HUNTAIL,WaterNight,,GOREBYSS,WaterDay,
+CallRateSOS = 15
+#-------------------------------
+[RELICANTH]
+CallRateSOS = 3
+#-------------------------------
+[LUVDISC]
+CallRateSOS = 6
+#-------------------------------
+[BAGON]
+CallRateSOS = 9
+#-------------------------------
+[SHELGON]
+CallRateSOS = 6
+#-------------------------------
+[BELDUM]
+CallRateSOS = 9
+#-------------------------------
+[METANG]
+CallRateSOS = 6
+#-------------------------------
+[STARLY]
+CallRateSOS = 9
+#-------------------------------
+[STARAVIA]
+CallRateSOS = 6
+#-------------------------------
+[BIDOOF]
+CallRateSOS = 9
+#-------------------------------
+[BIBAREL]
+CallRateSOS = 6
+#-------------------------------
+[KRICKETOT]
+CallRateSOS = 15
+#-------------------------------
+[KRICKETUNE]
+CallRateSOS = 9
+#-------------------------------
+[SHINX]
+CallRateSOS = 9
+#-------------------------------
+[LUXIO]
+CallRateSOS = 6
+#-------------------------------
+[BUDEW]
+SpeciesSOS = BUDEW,ROSELIA,HAPPINY
+CallRateSOS = 15
+#-------------------------------
+[BURMY]
+SpeciesSOS = BURMY,WORMADAM,MOTHIM
+CallRateSOS = 15
+#-------------------------------
+[COMBEE]
+CallRateSOS = 15
+#-------------------------------
+[VESPIQUEN]
+SpeciesSOS = COMBEE
+CallRateSOS = 15
+#-------------------------------
+[PACHIRISU]
+CallRateSOS = 9
+#-------------------------------
+[BUIZEL]
+CallRateSOS = 9
+#-------------------------------
+[FLOATZEL]
+CallRateSOS = 6
+#-------------------------------
+[CHERUBI]
+CallRateSOS = 9
+#-------------------------------
+[CHERRIM]
+CallRateSOS = 6
+#-------------------------------
+[SHELLOS]
+CallRateSOS = 9
+#-------------------------------
+[GASTRODON]
+CallRateSOS = 6
+#-------------------------------
+[DRIFLOON]
+CallRateSOS = 9
+#-------------------------------
+[DRIFBLIM]
+CallRateSOS = 6
+#-------------------------------
+[BUNEARY]
+ConditionalSOS = LOPUNNY,LandDay,
+CallRateSOS = 9
+#-------------------------------
+[LOPUNNY]
+CallRateSOS = 6
+#-------------------------------
+[HONCHKROW]
+SpeciesSOS = MURKROW
+CallRateSOS = 15
+#-------------------------------
+[GLAMEOW]
+CallRateSOS = 9
+#-------------------------------
+[PURUGLY]
+CallRateSOS = 6
+#-------------------------------
+[CHINGLING]
+SpeciesSOS = CHINGLING,CHIMECHO,HAPPINY
+CallRateSOS = 15
+#-------------------------------
+[STUNKY]
+CallRateSOS = 9
+#-------------------------------
+[SKUNTANK]
+CallRateSOS = 6
+#-------------------------------
+[BRONZOR]
+CallRateSOS = 9
+#-------------------------------
+[BRONZONG]
+CallRateSOS = 6
+#-------------------------------
+[BONSLY]
+SpeciesSOS = BONSLY,SUDOWOODO,HAPPINY
+CallRateSOS = 15
+#-------------------------------
+[MIMEJR]
+SpeciesSOS = MIMEJR,MRMIME,HAPPINY
+CallRateSOS = 15
+#-------------------------------
+[CHATOT]
+CallRateSOS = 9
+#-------------------------------
+[GIBLE]
+CallRateSOS = 9
+#-------------------------------
+[MUNCHLAX]
+SpeciesSOS = MUNCHLAX,SNORLAX,HAPPINY
+CallRateSOS = 6
+#-------------------------------
+[RIOLU]
+SpeciesSOS = RIOLU,LUCARIO,HAPPINY
+CallRateSOS = 15
+#-------------------------------
+[HIPPOPOTAS]
+CallRateSOS = 9
+#-------------------------------
+[HIPPOWDON]
+CallRateSOS = 6
+#-------------------------------
+[SKORUPI]
+CallRateSOS = 9
+#-------------------------------
+[DRAPION]
+CallRateSOS = 6
+#-------------------------------
+[CROAGUNK]
+CallRateSOS = 9
+#-------------------------------
+[TOXICROAK]
+CallRateSOS = 6
+#-------------------------------
+[CARNIVINE]
+CallRateSOS = 9
+#-------------------------------
+[FINNEON]
+SpeciesSOS = FINNEON,LUMINEON
+CallRateSOS = 9
+#-------------------------------
+[LUMINEON]
+CallRateSOS = 6
+#-------------------------------
+[MANTYKE]
+SpeciesSOS = MANTYKE,REMORAID
+CallRateSOS = 15
+#-------------------------------
+[SNOVER]
+CallRateSOS = 9
+#-------------------------------
+[ABOMASNOW]
+CallRateSOS = 6
+#-------------------------------
+[PATRAT]
+CallRateSOS = 9
+#-------------------------------
+[WATCHOG]
+CallRateSOS = 6
+#-------------------------------
+[LILLIPUP]
+CallRateSOS = 9
+#-------------------------------
+[HERDIER]
+CallRateSOS = 6
+#-------------------------------
+[PURRLOIN]
+CallRateSOS = 9
+#-------------------------------
+[LIEPARD]
+CallRateSOS = 6
+#-------------------------------
+[PANSAGE]
+SpeciesSOS = PANSAGE,PANSEAR,PANPOUR
+CallRateSOS = 9
+#-------------------------------
+[SIMISAGE]
+SpeciesSOS = SIMISAGE,SIMISEAR,SIMIPOUR
+CallRateSOS = 6
+#-------------------------------
+[PANSEAR]
+SpeciesSOS = PANSEAR,PANSAGE,PANPOUR
+CallRateSOS = 9
+#-------------------------------
+[SIMISEAR]
+SpeciesSOS = SIMISEAR,SIMISAGE,SIMIPOUR
+CallRateSOS = 6
+#-------------------------------
+[PANPOUR]
+SpeciesSOS = PANPOUR,PANSAGE,PANSEAR
+CallRateSOS = 9
+#-------------------------------
+[SIMIPOUR]
+SpeciesSOS = SIMIPOUR,SIMISAGE,SIMISEAR
+CallRateSOS = 6
+#-------------------------------
+[MUNNA]
+CallRateSOS = 9
+#-------------------------------
+[PIDOVE]
+CallRateSOS = 9
+#-------------------------------
+[TRANQUILL]
+CallRateSOS = 6
+#-------------------------------
+[BLITZLE]
+CallRateSOS = 9
+#-------------------------------
+[ZEBSTRIKA]
+CallRateSOS = 6
+#-------------------------------
+[ROGGENROLA]
+CallRateSOS = 9
+#-------------------------------
+[BOLDORE]
+CallRateSOS = 6
+#-------------------------------
+[WOOBAT]
+CallRateSOS = 9
+#-------------------------------
+[SWOOBAT]
+CallRateSOS = 6
+#-------------------------------
+[DRILBUR]
+CallRateSOS = 9
+#-------------------------------
+[EXCADRILL]
+CallRateSOS = 6
+#-------------------------------
+[TIMBURR]
+CallRateSOS = 9
+#-------------------------------
+[GURDURR]
+CallRateSOS = 6
+#-------------------------------
+[TYMPOLE]
+CallRateSOS = 9
+#-------------------------------
+[PALPITOAD]
+CallRateSOS = 6
+#-------------------------------
+[THROH]
+SpeciesSOS = THROH,SAWK
+CallRateSOS = 6
+#-------------------------------
+[SAWK]
+SpeciesSOS = SAWK,THROH
+CallRateSOS = 6
+#-------------------------------
+[SEWADDLE]
+CallRateSOS = 9
+#-------------------------------
+[SWADLOON]
+CallRateSOS = 6
+#-------------------------------
+[VENIPEDE]
+CallRateSOS = 9
+#-------------------------------
+[WHIRLIPEDE]
+CallRateSOS = 6
+#-------------------------------
+[COTTONEE]
+CallRateSOS = 9
+#-------------------------------
+[PETILIL]
+CallRateSOS = 9
+#-------------------------------
+[BASCULIN]
+CallRateSOS = 9
+#-------------------------------
+[SANDILE]
+CallRateSOS = 9
+#-------------------------------
+[KROKOROK]
+CallRateSOS = 6
+#-------------------------------
+[DARUMAKA]
+CallRateSOS = 9
+#-------------------------------
+[DARMANITAN]
+CallRateSOS = 6
+#-------------------------------
+[MARACTUS]
+CallRateSOS = 9
+#-------------------------------
+[DWEBBLE]
+CallRateSOS = 9
+#-------------------------------
+[CRUSTLE]
+CallRateSOS = 6
+#-------------------------------
+[SCRAGGY]
+CallRateSOS = 9
+#-------------------------------
+[SCRAFTY]
+CallRateSOS = 6
+#-------------------------------
+[YAMASK]
+CallRateSOS = 9
+#-------------------------------
+[COFAGRIGUS]
+CallRateSOS = 6
+#-------------------------------
+[TRUBBISH]
+SpeciesSOS = TRUBBISH,GARBODOR
+CallRateSOS = 9
+#-------------------------------
+[GARBODOR]
+CallRateSOS = 6
+#-------------------------------
+[ZORUA]
+CallRateSOS = 9
+#-------------------------------
+[ZOROARK]
+CallRateSOS = 6
+#-------------------------------
+[MINCCINO]
+CallRateSOS = 9
+#-------------------------------
+[GOTHITA]
+CallRateSOS = 9
+#-------------------------------
+[GOTHORITA]
+CallRateSOS = 6
+#-------------------------------
+[SOLOSIS]
+CallRateSOS = 9
+#-------------------------------
+[DUOSION]
+CallRateSOS = 6
+#-------------------------------
+[DUCKLETT]
+CallRateSOS = 9
+#-------------------------------
+[SWANNA]
+CallRateSOS = 6
+#-------------------------------
+[VANILLITE]
+CallRateSOS = 9
+#-------------------------------
+[VANILLISH]
+CallRateSOS = 6
+#-------------------------------
+[DEERLING]
+SpeciesSOS = DEERLING,SAWSBUCK
+CallRateSOS = 9
+#-------------------------------
+[SAWSBUCK]
+SpeciesSOS = DEERLING
+CallRateSOS = 15
+#-------------------------------
+[EMOLGA]
+CallRateSOS = 9
+#-------------------------------
+[KARRABLAST]
+SpeciesSOS = KARRABLAST,SHELMET
+CallRateSOS = 9
+#-------------------------------
+[FOONGUS]
+CallRateSOS = 9
+#-------------------------------
+[FRILLISH]
+CallRateSOS = 9
+#-------------------------------
+[JELLICENT]
+CallRateSOS = 6
+#-------------------------------
+[ALOMOMOLA]
+CallRateSOS = 6
+#-------------------------------
+[JOLTIK]
+SpeciesSOS = JOLTIK,GALVANTULA
+CallRateSOS = 9
+#-------------------------------
+[GALVANTULA]
+CallRateSOS = 6
+#-------------------------------
+[FERROSEED]
+CallRateSOS = 9
+#-------------------------------
+[FERROTHORN]
+CallRateSOS = 6
+#-------------------------------
+[KLINK]
+CallRateSOS = 9
+#-------------------------------
+[KLANG]
+CallRateSOS = 6
+#-------------------------------
+[TYNAMO]
+SpeciesSOS = TYNAMO,EELEKTRIK
+CallRateSOS = 15
+#-------------------------------
+[EELEKTRIK]
+CallRateSOS = 9
+#-------------------------------
+[ELGYEM]
+CallRateSOS = 15
+#-------------------------------
+[BEHEEYEM]
+CallRateSOS = 15
+#-------------------------------
+[LITWICK]
+CallRateSOS = 9
+#-------------------------------
+[LAMPENT]
+CallRateSOS = 6
+#-------------------------------
+[AXEW]
+CallRateSOS = 9
+#-------------------------------
+[FRAXURE]
+CallRateSOS = 6
+#-------------------------------
+[CUBCHOO]
+SpeciesSOS = CUBCHOO,BEARTIC
+CallRateSOS = 9
+#-------------------------------
+[BEARTIC]
+CallRateSOS = 6
+#-------------------------------
+[CRYOGONAL]
+CallRateSOS = 9
+#-------------------------------
+[SHELMET]
+SpeciesSOS = SHELMET,KARRABLAST
+CallRateSOS = 9
+#-------------------------------
+[STUNFISK]
+CallRateSOS = 9
+#-------------------------------
+[MIENFOO]
+CallRateSOS = 6
+#-------------------------------
+[MIENSHAO]
+CallRateSOS = 3
+#-------------------------------
+[DRUDDIGON]
+CallRateSOS = 3
+#-------------------------------
+[GOLETT]
+CallRateSOS = 15
+#-------------------------------
+[GOLURK]
+CallRateSOS = 15
+#-------------------------------
+[PAWNIARD]
+SpeciesSOS = PAWNIARD,TINKATUFF
+CallRateSOS = 9
+#-------------------------------
+[BISHARP]
+SpeciesSOS = PAWNIARD,TINKATUFF
+CallRateSOS = 15
+#-------------------------------
+[BOUFFALANT]
+CallRateSOS = 9
+#-------------------------------
+[RUFFLET]
+CallRateSOS = 9
+#-------------------------------
+[BRAVIARY]
+CallRateSOS = 6
+#-------------------------------
+[VULLABY]
+CallRateSOS = 9
+#-------------------------------
+[MANDIBUZZ]
+CallRateSOS = 6
+#-------------------------------
+[HEATMOR]
+RivalSpecies = DURANT
+#-------------------------------
+[DURANT]
+SpeciesSOS = DURANT,HEATMOR
+CallRateSOS = 9
+#-------------------------------
+[DEINO]
+CallRateSOS = 9
+#-------------------------------
+[ZWEILOUS]
+CallRateSOS = 6
+#-------------------------------
+[LARVESTA]
+SpeciesSOS = LARVESTA,VOLCARONA
+CallRateSOS = 3
+#-------------------------------
+[BUNNELBY]
+CallRateSOS = 9
+#-------------------------------
+[DIGGERSBY]
+CallRateSOS = 6
+#-------------------------------
+[FLETCHLING]
+SpeciesSOS = FLETCHLING,FLETCHINDER
+CallRateSOS = 9
+#-------------------------------
+[FLETCHINDER]
+CallRateSOS = 6
+#-------------------------------
+[SCATTERBUG]
+CallRateSOS = 15
+#-------------------------------
+[SPEWPA]
+SpeciesSOS = SCATTERBUG,VIVILLON
+CallRateSOS = 15
+#-------------------------------
+[LITLEO]
+CallRateSOS = 9
+#-------------------------------
+[PYROAR]
+CallRateSOS = 6
+#-------------------------------
+[FLABEBE]
+CallRateSOS = 15
+#-------------------------------
+[FLOETTE]
+CallRateSOS = 9
+#-------------------------------
+[SKIDDO]
+CallRateSOS = 9
+#-------------------------------
+[GOGOAT]
+CallRateSOS = 6
+#-------------------------------
+[PANCHAM]
+SpeciesSOS = PANCHAM,PANGORO
+CallRateSOS = 9
+#-------------------------------
+[FURFROU]
+CallRateSOS = 6
+#-------------------------------
+[ESPURR]
+CallRateSOS = 9
+#-------------------------------
+[MEOWSTIC]
+CallRateSOS = 6
+#-------------------------------
+[HONEDGE]
+CallRateSOS = 9
+#-------------------------------
+[SPRITZEE]
+CallRateSOS = 9
+#-------------------------------
+[SWIRLIX]
+CallRateSOS = 9
+#-------------------------------
+[INKAY]
+CallRateSOS = 9
+#-------------------------------
+[MALAMAR]
+CallRateSOS = 6
+#-------------------------------
+[BINACLE]
+CallRateSOS = 9
+#-------------------------------
+[BARBARACLE]
+CallRateSOS = 6
+#-------------------------------
+[SKRELP]
+CallRateSOS = 9
+#-------------------------------
+[DRAGALGE]
+CallRateSOS = 6
+#-------------------------------
+[CLAUNCHER]
+CallRateSOS = 9
+#-------------------------------
+[CLAWITZER]
+CallRateSOS = 6
+#-------------------------------
+[HELIOPTILE]
+CallRateSOS = 9
+#-------------------------------
+[HELIOLISK]
+CallRateSOS = 6
+#-------------------------------
+[HAWLUCHA]
+CallRateSOS = 3
+#-------------------------------
+[DEDENNE]
+SpeciesSOS = DEDENNE,TOGEDEMARU
+CallRateSOS = 9
+#-------------------------------
+[CARBINK]
+SpeciesSOS = CARBINK,SABLEYE
+CallRateSOS = 9
+#-------------------------------
+[GOOMY]
+CallRateSOS = 9
+#-------------------------------
+[SLIGGOO]
+CallRateSOS = 6
+#-------------------------------
+[KLEFKI]
+CallRateSOS = 6
+#-------------------------------
+[PHANTUMP]
+CallRateSOS = 9
+#-------------------------------
+[PUMPKABOO]
+CallRateSOS = 9
+#-------------------------------
+[BERGMITE]
+CallRateSOS = 9
+#-------------------------------
+[AVALUGG]
+CallRateSOS = 6
+#-------------------------------
+[NOIBAT]
+CallRateSOS = 9
+#-------------------------------
+[NOIVERN]
+CallRateSOS = 6
+#-------------------------------
+[PIKIPEK]
+CallRateSOS = 15
+#-------------------------------
+[TRUMBEAK]
+CallRateSOS = 9
+#-------------------------------
+[YUNGOOS]
+CallRateSOS = 9
+#-------------------------------
+[GUMSHOOS]
+CallRateSOS = 6
+#-------------------------------
+[GRUBBIN]
+CallRateSOS = 9
+#-------------------------------
+[CHARJABUG]
+SpeciesSOS = GRUBBIN,CHARJABUG
+CallRateSOS = 15
+#-------------------------------
+[CRABRAWLER]
+CallRateSOS = 9
+#-------------------------------
+[ORICORIO]
+CallRateSOS = 6
+#-------------------------------
+[CUTIEFLY]
+CallRateSOS = 9
+#-------------------------------
+[RIBOMBEE]
+CallRateSOS = 6
+#-------------------------------
+[ROCKRUFF]
+CallRateSOS = 9
+#-------------------------------
+[LYCANROC]
+CallRateSOS = 3
+#-------------------------------
+[WISHIWASHI]
+CallRateSOS = 9
+#-------------------------------
+[MAREANIE]
+RivalSpecies = CORSOLA
+#-------------------------------
+[TOXAPEX]
+RivalSpecies = CORSOLA
+#-------------------------------
+[MUDBRAY]
+CallRateSOS = 9
+#-------------------------------
+[MUDSDALE]
+CallRateSOS = 6
+#-------------------------------
+[DEWPIDER]
+CallRateSOS = 9
+#-------------------------------
+[ARAQUANID]
+CallRateSOS = 6
+#-------------------------------
+[FOMANTIS]
+SpeciesSOS = FOMANTIS,CUTIEFLY
+CallRateSOS = 9
+#-------------------------------
+[LURANTIS]
+CallRateSOS = 3
+#-------------------------------
+[MORELULL]
+CallRateSOS = 9
+#-------------------------------
+[SHIINOTIC]
+CallRateSOS = 6
+#-------------------------------
+[SALANDIT]
+CallRateSOS = 9
+#-------------------------------
+[SALAZZLE]
+SpeciesSOS = SALANDIT
+CallRateSOS = 15
+#-------------------------------
+[STUFFUL]
+CallRateSOS = 9
+#-------------------------------
+[BEWEAR]
+CallRateSOS = 6
+#-------------------------------
+[BOUNSWEET]
+CallRateSOS = 9
+#-------------------------------
+[STEENEE]
+CallRateSOS = 6
+#-------------------------------
+[COMFEY]
+CallRateSOS = 9
+#-------------------------------
+[ORANGURU]
+CallRateSOS = PASSIMIAN
+CallRateSOS = 6
+#-------------------------------
+[PASSIMIAN]
+SpeciesSOS = ORANGURU
+CallRateSOS = 6
+#-------------------------------
+[SANDYGAST]
+CallRateSOS = 9
+#-------------------------------
+[PALOSSAND]
+CallRateSOS = 6
+#-------------------------------
+[PYUKUMUKU]
+SpeciesSOS = PYUKUMUKU,WINGULL
+CallRateSOS = 6
+#-------------------------------
+[TURTONATOR]
+CallRateSOS = 3
+#-------------------------------
+[TOGEDEMARU]
+SpeciesSOS = TOGEDEMARU,DEDENNE
+CallRateSOS = 9
+#-------------------------------
+[MIMIKYU]
+CallRateSOS = 9
+#-------------------------------
+[BRUXISH]
+CallRateSOS = 6
+#-------------------------------
+[DRAMPA]
+CallRateSOS = 3
+#-------------------------------
+[DHELMISE]
+CallRateSOS = 3
+#-------------------------------
+[JANGMOO]
+SpeciesSOS = HAKAMOO,KOMMOO
+CallRateSOS = 9
+#-------------------------------
+[HAKAMOO]
+CallRateSOS = 6
+#-------------------------------
+[SKWOVET]
+CallRateSOS = 9
+#-------------------------------
+[GREEDENT]
+CallRateSOS = 6
+#-------------------------------
+[ROOKIDEE]
+CallRateSOS = 9
+#-------------------------------
+[CORVISQUIRE]
+CallRateSOS = 6
+#-------------------------------
+[BLIPBUG]
+CallRateSOS = 9
+#-------------------------------
+[DOTTLER]
+CallRateSOS = 6
+#-------------------------------
+[NICKIT]
+CallRateSOS = 9
+#-------------------------------
+[THIEVUL]
+CallRateSOS = 6
+#-------------------------------
+[GOSSIFLEUR]
+CallRateSOS = 9
+#-------------------------------
+[ELDEGOSS]
+CallRateSOS = 6
+#-------------------------------
+[WOOLOO]
+CallRateSOS = 9
+#-------------------------------
+[DUBWOOL]
+CallRateSOS = 6
+#-------------------------------
+[CHEWTLE]
+CallRateSOS = 9
+#-------------------------------
+[DREDNAW]
+CallRateSOS = 6
+#-------------------------------
+[YAMPER]
+CallRateSOS = 9
+#-------------------------------
+[BOLTUND]
+CallRateSOS = 6
+#-------------------------------
+[ROLYCOLY]
+CallRateSOS = 9
+#-------------------------------
+[CARKOL]
+CallRateSOS = 6
+#-------------------------------
+[APPLIN]
+CallRateSOS = 9
+#-------------------------------
+[SILICOBRA]
+CallRateSOS = 9
+#-------------------------------
+[SANDACONDA]
+CallRateSOS = 6
+#-------------------------------
+[CRAMORANT]
+CallRateSOS = 3
+#-------------------------------
+[ARROKUDA]
+SpeciesSOS = ARROKUDA,CRAMORANT
+CallRateSOS = 9
+#-------------------------------
+[BARRASKEWDA]
+CallRateSOS = 6
+#-------------------------------
+[TOXEL]
+SpeciesSOS = TOXEL,TOXTRICITY,HAPPINY
+CallRateSOS = 9
+#-------------------------------
+[TOXTRICITY]
+CallRateSOS = 6
+#-------------------------------
+[SIZZLIPEDE]
+CallRateSOS = 9
+#-------------------------------
+[CENTISKORCH]
+CallRateSOS = 6
+#-------------------------------
+[CLOBBOPUS]
+CallRateSOS = 9
+#-------------------------------
+[GRAPPLOCT]
+CallRateSOS = 6
+#-------------------------------
+[SINISTEA]
+CallRateSOS = 9
+#-------------------------------
+[POLTEAGEIST]
+CallRateSOS = 6
+#-------------------------------
+[HATENNA]
+CallRateSOS = 9
+#-------------------------------
+[HATTREM]
+CallRateSOS = 6
+#-------------------------------
+[IMPIDIMP]
+CallRateSOS = 9
+#-------------------------------
+[MORGREM]
+CallRateSOS = 6
+#-------------------------------
+[PERRSERKER]
+CallRateSOS = 6
+#-------------------------------
+[CURSOLA]
+CallRateSOS = 6
+#-------------------------------
+[SIRFETCHD]
+CallRateSOS = 3
+#-------------------------------
+[RUNERIGUS]
+CallRateSOS = 6
+#-------------------------------
+[MILCERY]
+CallRateSOS = 9
+#-------------------------------
+[FALINKS]
+CallRateSOS = 3
+#-------------------------------
+[PINCURCHIN]
+CallRateSOS = 9
+#-------------------------------
+[SNOM]
+CallRateSOS = 15
+#-------------------------------
+[FROSMOTH]
+CallRateSOS = 6
+#-------------------------------
+[STONJOURNER]
+CallRateSOS = 3
+#-------------------------------
+[EISCUE]
+CallRateSOS = 9
+#-------------------------------
+[INDEEDEE]
+CallRateSOS = 9
+#-------------------------------
+[MORPEKO]
+CallRateSOS = 9
+#-------------------------------
+[CUFANT]
+CallRateSOS = 9
+#-------------------------------
+[COPPERAJAH]
+CallRateSOS = 6
+#-------------------------------
+[DURALUDON]
+CallRateSOS = 3
+#-------------------------------
+[DREEPY]
+SpeciesSOS = DREEPY,DRAKLOAK
+CallRateSOS = 9
+#-------------------------------
+[DRAKLOAK]
+CallRateSOS = 6

@@ -1,0 +1,18 @@
+#-------------------------------
+[BEHEMOTHBASH]
+FunctionCode = DoubleDamageOnDynamaxTargets
+#-------------------------------
+[BEHEMOTHBLADE]
+FunctionCode = DoubleDamageOnDynamaxTargets
+#-------------------------------
+[DYNAMAXCANNON]
+FunctionCode = DoubleDamageOnDynamaxTargets
+#-------------------------------
+[DECORATE]
+Flags = IgnoresMaxGuard
+#-------------------------------
+[PERISHSONG]
+Flags = IgnoresMaxGuard
+#-------------------------------
+[ROLEPLAY]
+Flags = IgnoresMaxGuard

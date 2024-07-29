@@ -1,0 +1,428 @@
+﻿# See the documentation on the wiki to learn how to edit this file.
+#-------------------------------
+[ZRING]
+Name = Z-Ring
+NamePlural = Z-Rings
+Pocket = 8
+Price = 0
+Flags = KeyItem,ZRing
+Description = A mysterious ring that enables Pokémon to use Z-Power if they are holding a compatible Z-Crystal.
+#-------------------------------
+[ZPOWERRING]
+Name = Z-Power Ring
+NamePlural = Z-Power Rings
+Pocket = 8
+Price = 0
+Flags = KeyItem,ZRing
+Description = A mysterious ring that enables Pokémon to use Z-Power if they are holding a compatible Z-Crystal.
+#-------------------------------
+[ZBOOSTER]
+Name = Z-Booster
+NamePlural = Z-Boosters
+Pocket = 7
+Price = 4000
+BattleUse = Direct
+Flags = Fling_30,UsesAllBattleActions
+Description = A crystal brimming with Z-Power. It can fully recharge your Z-Ring in battle.
+#-------------------------------
+[NORMALIUMZ]
+Name = Normalium Z
+NamePlural = Normalium Z
+Pocket = 9
+Price = 0
+FieldUse = OnPokemon
+Flags = KeyItem,ZCrystal
+Move = BREAKNECKBLITZ
+Description = It converts Z-Power into crystals that upgrade Normal-type moves to Normal-type Z-Moves.
+HeldDescription = This is a crystallized form of Z-Power. It upgrades Normal-type moves to Z-Moves.
+#-------------------------------
+[FIGHTINIUMZ]
+Name = Fightinium Z
+NamePlural = Fightinium Z
+Pocket = 9
+Price = 0
+FieldUse = OnPokemon
+Flags = KeyItem,ZCrystal
+Move = ALLOUTPUMMELING
+Description = It converts Z-Power into crystals that upgrade Fighting-type moves to Fighting-type Z-Moves.
+HeldDescription = This is a crystallized form of Z-Power. It upgrades Fighting-type moves to Z-Moves.
+#-------------------------------
+[FLYINIUMZ]
+Name = Flyinium Z
+NamePlural = Flyinium Z
+Pocket = 9
+Price = 0
+FieldUse = OnPokemon
+Flags = KeyItem,ZCrystal
+Move = SUPERSONICSKYSTRIKE
+Description = It converts Z-Power into crystals that upgrade Flying-type moves to Flying-type Z-Moves.
+HeldDescription = This is a crystallized form of Z-Power. It upgrades Flying-type moves to Z-Moves.
+#-------------------------------
+[POISONIUMZ]
+Name = Poisonium Z
+NamePlural = Poisonium Z
+Pocket = 9
+Price = 0
+FieldUse = OnPokemon
+Flags = KeyItem,ZCrystal
+Move = ACIDDOWNPOUR
+Description = It converts Z-Power into crystals that upgrade Poison-type moves to Poison-type Z-Moves.
+HeldDescription = This is a crystallized form of Z-Power. It upgrades Poison-type moves to Z-Moves.
+#-------------------------------
+[GROUNDIUMZ]
+Name = Groundium Z
+NamePlural = Groundium Z
+Pocket = 9
+Price = 0
+FieldUse = OnPokemon
+Flags = KeyItem,ZCrystal
+Move = TECTONICRAGE
+Description = It converts Z-Power into crystals that upgrade Ground-type moves to Ground-type Z-Moves.
+HeldDescription = This is a crystallized form of Z-Power. It upgrades Ground-type moves to Z-Moves.
+#-------------------------------
+[ROCKIUMZ]
+Name = Rockium Z
+NamePlural = Rockium Z
+Pocket = 9
+Price = 0
+FieldUse = OnPokemon
+Flags = KeyItem,ZCrystal
+Move = CONTINENTALCRUSH
+Description = It converts Z-Power into crystals that upgrade Rock-type moves to Rock-type Z-Moves.
+HeldDescription = This is a crystallized form of Z-Power. It upgrades Rock-type moves to Z-Moves.
+#-------------------------------
+[BUGINIUMZ]
+Name = Buginium Z
+NamePlural = Buginium Z
+Pocket = 9
+Price = 0
+FieldUse = OnPokemon
+Flags = KeyItem,ZCrystal
+Move = SAVAGESPINOUT
+Description = It converts Z-Power into crystals that upgrade Bug-type moves to Bug-type Z-Moves.
+HeldDescription = This is a crystallized form of Z-Power. It upgrades Bug-type moves to Z-Moves.
+#-------------------------------
+[GHOSTIUMZ]
+Name = Ghostium Z
+NamePlural = Ghostium Z
+Pocket = 9
+Price = 0
+FieldUse = OnPokemon
+Flags = KeyItem,ZCrystal
+Move = NEVERENDINGNIGHTMARE
+Description = It converts Z-Power into crystals that upgrade Ghost-type moves to Ghost-type Z-Moves.
+HeldDescription = This is a crystallized form of Z-Power. It upgrades Ghost-type moves to Z-Moves.
+#-------------------------------
+[STEELIUMZ]
+Name = Steelium Z
+NamePlural = Steelium Z
+Pocket = 9
+Price = 0
+FieldUse = OnPokemon
+Flags = KeyItem,ZCrystal
+Move = CORKSCREWCRASH
+Description = It converts Z-Power into crystals that upgrade Steel-type moves to Steel-type Z-Moves.
+HeldDescription = This is a crystallized form of Z-Power. It upgrades Steel-type moves to Z-Moves.
+#-------------------------------
+[FIRIUMZ]
+Name = Firium Z
+NamePlural = Firium Z
+Pocket = 9
+Price = 0
+FieldUse = OnPokemon
+Flags = KeyItem,ZCrystal
+Move = INFERNOOVERDRIVE
+Description = It converts Z-Power into crystals that upgrade Fire-type moves to Fire-type Z-Moves.
+HeldDescription = This is a crystallized form of Z-Power. It upgrades Fire-type moves to Z-Moves.
+#-------------------------------
+[WATERIUMZ]
+Name = Waterium Z
+NamePlural = Waterium Z
+Pocket = 9
+Price = 0
+FieldUse = OnPokemon
+Flags = KeyItem,ZCrystal
+Move = HYDROVORTEX
+Description = It converts Z-Power into crystals that upgrade Water-type moves to Water-type Z-Moves.
+HeldDescription = This is a crystallized form of Z-Power. It upgrades Water-type moves to Z-Moves.
+#-------------------------------
+[GRASSIUMZ]
+Name = Grassium Z
+NamePlural = Grassium Z
+Pocket = 9
+Price = 0
+FieldUse = OnPokemon
+Flags = KeyItem,ZCrystal
+Move = BLOOMDOOM
+Description = It converts Z-Power into crystals that upgrade Grass-type moves to Grass-type Z-Moves.
+HeldDescription = This is a crystallized form of Z-Power. It upgrades Grass-type moves to Z-Moves.
+#-------------------------------
+[ELECTRIUMZ]
+Name = Electrium Z
+NamePlural = Electrium Z
+Pocket = 9
+Price = 0
+FieldUse = OnPokemon
+Flags = KeyItem,ZCrystal
+Move = GIGAVOLTHAVOC
+Description = It converts Z-Power into crystals that upgrade Electric-type moves to Electric-type Z-Moves.
+HeldDescription = This is a crystallized form of Z-Power. It upgrades Electric-type moves to Z-Moves.
+#-------------------------------
+[PSYCHIUMZ]
+Name = Psychium Z
+NamePlural = Psychium Z
+Pocket = 9
+Price = 0
+FieldUse = OnPokemon
+Flags = KeyItem,ZCrystal
+Move = SHATTEREDPSYCHE
+Description = It converts Z-Power into crystals that upgrade Psychic-type moves to Psychic-type Z-Moves.
+HeldDescription = This is a crystallized form of Z-Power. It upgrades Psychic-type moves to Z-Moves.
+#-------------------------------
+[ICIUMZ]
+Name = Icium Z
+NamePlural = Icium Z
+Pocket = 9
+Price = 0
+FieldUse = OnPokemon
+Flags = KeyItem,ZCrystal
+Move = SUBZEROSLAMMER
+Description = It converts Z-Power into crystals that upgrade Ice-type moves to Ice-type Z-Moves.
+HeldDescription = This is a crystallized form of Z-Power. It upgrades Ice-type moves to Z-Moves.
+#-------------------------------
+[DRAGONIUMZ]
+Name = Dragonium Z
+NamePlural = Dragonium Z
+Pocket = 9
+Price = 0
+FieldUse = OnPokemon
+Flags = KeyItem,ZCrystal
+Move = DEVASTATINGDRAKE
+Description = It converts Z-Power into crystals that upgrade Dragon-type moves to Dragon-type Z-Moves.
+HeldDescription = This is a crystallized form of Z-Power. It upgrades Dragon-type moves to Z-Moves.
+#-------------------------------
+[DARKINIUMZ]
+Name = Darkinium Z
+NamePlural = Darkinium Z
+Pocket = 9
+Price = 0
+FieldUse = OnPokemon
+Flags = KeyItem,ZCrystal
+Move = BLACKHOLEECLIPSE
+Description = It converts Z-Power into crystals that upgrade Dark-type moves to Dark-type Z-Moves.
+HeldDescription = This is a crystallized form of Z-Power. It upgrades Dark-type moves to Z-Moves.
+#-------------------------------
+[FAIRIUMZ]
+Name = Fairium Z
+NamePlural = Fairium Z
+Pocket = 9
+Price = 0
+FieldUse = OnPokemon
+Flags = KeyItem,ZCrystal
+Move = TWINKLETACKLE
+Description = It converts Z-Power into crystals that upgrade Fairy-type moves to Fairy-type Z-Moves.
+HeldDescription = This is a crystallized form of Z-Power. It upgrades Fairy-type moves to Z-Moves.
+#-------------------------------
+[PIKANIUMZ]
+Name = Pikanium Z
+NamePlural = Pikanium Z
+Pocket = 9
+Price = 0
+FieldUse = OnPokemon
+Flags = KeyItem,ZCrystal,UsableByAllForms
+Move = CATASTROPIKA
+Description = It converts Z-Power into crystals that upgrade Pikachu's Volt Tackle to an exclusive Z-Move.
+HeldDescription = This is a crystallized form of Z-Power. It upgrades Pikachu's Volt Tackle to a Z-Move.
+ZCombo = VOLTTACKLE,PIKACHU
+#-------------------------------
+[PIKASHUNIUMZ]
+Name = Pikashunium Z
+NamePlural = Pikashunium Z
+Pocket = 9
+Price = 0
+FieldUse = OnPokemon
+Flags = KeyItem,ZCrystal
+Move = TENMILLIONVOLTTHUNDERBOLT
+Description = It converts Z-Power into crystals that upgrade a capped Pikachu's Thunderbolt to an exclusive Z-Move.
+HeldDescription = This is a crystallized form of Z-Power. It upgrades a capped Pikachu's Thunderbolt to a Z-Move.
+ZCombo = THUNDERBOLT,PIKACHU_8,PIKACHU_9,PIKACHU_10,PIKACHU_11,PIKACHU_12,PIKACHU_13,PIKACHU_14,PIKACHU_15
+#-------------------------------
+[ALORAICHIUMZ]
+Name = Aloraichium Z
+NamePlural = Aloraichium Z
+Pocket = 9
+Price = 0
+FieldUse = OnPokemon
+Flags = KeyItem,ZCrystal
+Move = STOKEDSPARKSURFER
+Description = It converts Z-Power into crystals that upgrade Alolan Raichu's Thunderbolt to an exclusive Z-Move.
+HeldDescription = This is a crystallized form of Z-Power. It upgrades Alolan Raichu's Thunderbolt to a Z-Move.
+ZCombo = THUNDERBOLT,RAICHU_1
+#-------------------------------
+[EEVIUMZ]
+Name = Eevium Z
+NamePlural = Eevium Z
+Pocket = 9
+Price = 0
+FieldUse = OnPokemon
+Flags = KeyItem,ZCrystal
+Move = EXTREMEEVOBOOST
+Description = It converts Z-Power into crystals that upgrade Eevee's Last Resort to an exclusive Z-Move.
+HeldDescription = This is a crystallized form of Z-Power. It upgrades Eevee's Last Resort to a Z-Move.
+ZCombo = LASTRESORT,EEVEE
+#-------------------------------
+[SNORLIUMZ]
+Name = Snorlium Z
+NamePlural = Snorlium Z
+Pocket = 9
+Price = 0
+FieldUse = OnPokemon
+Flags = KeyItem,ZCrystal
+Move = PULVERIZINGPANCAKE
+Description = It converts Z-Power into crystals that upgrade Snorlax's Giga Impact to an exclusive Z-Move.
+HeldDescription = This is a crystallized form of Z-Power. It upgrades Snorlax's Giga Impact to a Z-Move.
+ZCombo = GIGAIMPACT,SNORLAX
+#-------------------------------
+[MEWNIUMZ]
+Name = Mewnium Z
+NamePlural = Mewnium Z
+Pocket = 9
+Price = 0
+FieldUse = OnPokemon
+Flags = KeyItem,ZCrystal
+Move = GENESISSUPERNOVA
+Description = It converts Z-Power into crystals that upgrade Mew's Psychic to an exclusive Z-Move.
+HeldDescription = This is a crystallized form of Z-Power. It upgrades Mew's Psychic to a Z-Move.
+ZCombo = PSYCHIC,MEW
+#-------------------------------
+[DECIDIUMZ]
+Name = Decidium Z
+NamePlural = Decidium Z
+Pocket = 9
+Price = 0
+FieldUse = OnPokemon
+Flags = KeyItem,ZCrystal
+Move = SINISTERARROWRAID
+Description = It converts Z-Power into crystals that upgrade Decidueye's Spirit Shackle to an exclusive Z-Move.
+HeldDescription = This is a crystallized form of Z-Power. It upgrades Decidueye's Spirit Shackle to a Z-Move.
+ZCombo = SPIRITSHACKLE,DECIDUEYE
+#-------------------------------
+[INCINIUMZ]
+Name = Incinium Z
+NamePlural = Incinium Z
+Pocket = 9
+Price = 0
+FieldUse = OnPokemon
+Flags = KeyItem,ZCrystal
+Move = MALICIOUSMOONSAULT
+Description = It converts Z-Power into crystals that upgrade Incineroar's Darkest Lariat to an exclusive Z-Move.
+HeldDescription = This is a crystallized form of Z-Power. It upgrades Incineroar's Darkest Lariat to a Z-Move.
+ZCombo = DARKESTLARIAT,INCINEROAR
+#-------------------------------
+[PRIMARIUMZ]
+Name = Primarium Z
+NamePlural = Primarium Z
+Pocket = 9
+Price = 0
+FieldUse = OnPokemon
+Flags = KeyItem,ZCrystal
+Move = OCEANICOPERETTA
+Description = It converts Z-Power into crystals that upgrade Primarina's Sparkling Aria to an exclusive Z-Move.
+HeldDescription = This is a crystallized form of Z-Power. It upgrades Primarina's Sparkling Aria to a Z-Move.
+ZCombo = SPARKLINGARIA,PRIMARINA
+#-------------------------------
+[LYCANIUMZ]
+Name = Lycanium Z
+NamePlural = Lycanium Z
+Pocket = 9
+Price = 0
+FieldUse = OnPokemon
+Flags = KeyItem,ZCrystal,UsableByAllForms
+Move = SPLINTEREDSTORMSHARDS
+Description = It converts Z-Power into crystals that upgrade Lycanroc's Stone Edge to an exclusive Z-Move.
+HeldDescription = This is a crystallized form of Z-Power. It upgrades Lycanroc's Stone Edge to a Z-Move.
+ZCombo = STONEEDGE,LYCANROC
+#-------------------------------
+[MIMIKIUMZ]
+Name = Mimikium Z
+NamePlural = Mimikium Z
+Pocket = 9
+Price = 0
+FieldUse = OnPokemon
+Flags = KeyItem,ZCrystal,UsableByAllForms
+Move = LETSSNUGGLEFOREVER
+Description = It converts Z-Power into crystals that upgrade Mimikyu's Play Rough to an exclusive Z-Move.
+HeldDescription = This is a crystallized form of Z-Power. It upgrades Mimikyu's Play Rough to a Z-Move.
+ZCombo = PLAYROUGH,MIMIKYU
+#-------------------------------
+[KOMMONIUMZ]
+Name = Kommonium Z
+NamePlural = Kommonium Z
+Pocket = 9
+Price = 0
+FieldUse = OnPokemon
+Flags = KeyItem,ZCrystal
+Move = CLANGOROUSSOULBLAZE
+Description = It converts Z-Power into crystals that upgrade Kommo-o's Clanging Scales to an exclusive Z-Move.
+HeldDescription = This is a crystallized form of Z-Power. It upgrades Kommo-o's Clanging Scales to a Z-Move.
+ZCombo = CLANGINGSCALES,KOMMOO
+#-------------------------------
+[TAPUNIUMZ]
+Name = Tapunium Z
+NamePlural = Tapunium Z
+Pocket = 9
+Price = 0
+FieldUse = OnPokemon
+Flags = KeyItem,ZCrystal
+Move = GUARDIANOFALOLA
+Description = It converts Z-Power into crystals that upgrade the tapus' Nature's Madness to an exclusive Z-Move.
+HeldDescription = This is a crystallized form of Z-Power. It upgrades the tapu's Nature's Madness to a Z-Move.
+ZCombo = NATURESMADNESS,TAPUKOKO,TAPULELE,TAPUBULU,TAPUFINI
+#-------------------------------
+[SOLGANIUMZ]
+Name = Solganium Z
+NamePlural = Solganium Z
+Pocket = 9
+Price = 0
+FieldUse = OnPokemon
+Flags = KeyItem,ZCrystal
+Move = SEARINGSUNRAZESMASH
+Description = It converts Z-Power into crystals that upgrade Solgaleo's Sunsteel Strike to an exclusive Z-Move.
+HeldDescription = This is a crystallized form of Z-Power. It upgrades Solgaleo's Sunsteel Strike to a Z-Move.
+ZCombo = SUNSTEELSTRIKE,SOLGALEO,NECROZMA_1
+#-------------------------------
+[LUNALIUMZ]
+Name = Lunalium Z
+NamePlural = Lunalium Z
+Pocket = 9
+Price = 0
+FieldUse = OnPokemon
+Flags = KeyItem,ZCrystal
+Move = MENACINGMOONRAZEMAELSTROM
+Description = It converts Z-Power into crystals that upgrade Lunala's Moongeist Beam to an exclusive Z-Move.
+HeldDescription = This is a crystallized form of Z-Power. It upgrades Lunala's Moongeist Beam to a Z-Move.
+ZCombo = MOONGEISTBEAM,LUNALA,NECROZMA_2
+#-------------------------------
+[MARSHADIUMZ]
+Name = Marshadium Z
+NamePlural = Marshadium Z
+Pocket = 9
+Price = 0
+FieldUse = OnPokemon
+Flags = KeyItem,ZCrystal
+Move = SOULSTEALING7STARSTRIKE
+Description = It converts Z-Power into crystals that upgrade Marshadow's Spectral Thief to an exclusive Z-Move.
+HeldDescription = This is a crystallized form of Z-Power. It upgrades Marshadow's Spectral Thief to a Z-Move.
+ZCombo = SPECTRALTHIEF,MARSHADOW
+#-------------------------------
+[ULTRANECROZIUMZ]
+Name = Ultranecrozium Z
+NamePlural = Ultranecrozium Z
+Pocket = 9
+Price = 0
+FieldUse = OnPokemon
+Flags = KeyItem,ZCrystal
+Move = LIGHTTHATBURNSTHESKY
+Description = It's a crystal that turns Necrozma fused with Solgaleo or Lunala into a new form.
+HeldDescription = This is a crystallized form of Z-Power. It upgrades Necrozma's Photon Geyser to a Z-Move.
+ZCombo = PHOTONGEYSER,NECROZMA_3,NECROZMA_4
