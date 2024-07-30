@@ -1,428 +1,428 @@
-﻿# See the documentation on the wiki to learn how to edit this file.
+﻿# 请参阅wiki以了解如何编辑文件
 #-------------------------------
 [ZRING]
-Name = Z-Ring
+Name = Ｚ手环
 NamePlural = Z-Rings
 Pocket = 8
 Price = 0
 Flags = KeyItem,ZRing
-Description = A mysterious ring that enables Pokémon to use Z-Power if they are holding a compatible Z-Crystal.
+Description = 通过使用训练家的气力和体力来 让宝可梦释放出Ｚ力量的神奇手 环。
 #-------------------------------
 [ZPOWERRING]
-Name = Z-Power Ring
+Name = Ｚ强力手环
 NamePlural = Z-Power Rings
 Pocket = 8
 Price = 0
 Flags = KeyItem,ZRing
-Description = A mysterious ring that enables Pokémon to use Z-Power if they are holding a compatible Z-Crystal.
+Description = 通过使用训练家的气力和体力来 让宝可梦释放出Ｚ力量的神奇手 环。
 #-------------------------------
 [ZBOOSTER]
-Name = Z-Booster
+Name = Z-推进器
 NamePlural = Z-Boosters
 Pocket = 7
 Price = 4000
 BattleUse = Direct
 Flags = Fling_30,UsesAllBattleActions
-Description = A crystal brimming with Z-Power. It can fully recharge your Z-Ring in battle.
+Description = 一块充满Z能量的水晶。它可以 在战斗中为你的Z手环充能。
 #-------------------------------
 [NORMALIUMZ]
-Name = Normalium Z
+Name = 一般Ｚ
 NamePlural = Normalium Z
 Pocket = 9
 Price = 0
 FieldUse = OnPokemon
 Flags = KeyItem,ZCrystal
 Move = BREAKNECKBLITZ
-Description = It converts Z-Power into crystals that upgrade Normal-type moves to Normal-type Z-Moves.
-HeldDescription = This is a crystallized form of Z-Power. It upgrades Normal-type moves to Z-Moves.
+Description = 可用它来制造用于对战并能将一 般属性招式升级成Ｚ招式的Ｚ力 量结晶。
+HeldDescription = Ｚ力量的结晶。会将一般属性的 招式升级成Ｚ招式。
 #-------------------------------
 [FIGHTINIUMZ]
-Name = Fightinium Z
+Name = 格斗Ｚ
 NamePlural = Fightinium Z
 Pocket = 9
 Price = 0
 FieldUse = OnPokemon
 Flags = KeyItem,ZCrystal
 Move = ALLOUTPUMMELING
-Description = It converts Z-Power into crystals that upgrade Fighting-type moves to Fighting-type Z-Moves.
-HeldDescription = This is a crystallized form of Z-Power. It upgrades Fighting-type moves to Z-Moves.
+Description = 可用它来制造用于对战并能将格 斗属性招式升级成Ｚ招式的Ｚ力 量结晶。
+HeldDescription = Ｚ力量的结晶。会将格斗属性的 招式升级成Ｚ招式。
 #-------------------------------
 [FLYINIUMZ]
-Name = Flyinium Z
+Name = 飞行Ｚ
 NamePlural = Flyinium Z
 Pocket = 9
 Price = 0
 FieldUse = OnPokemon
 Flags = KeyItem,ZCrystal
 Move = SUPERSONICSKYSTRIKE
-Description = It converts Z-Power into crystals that upgrade Flying-type moves to Flying-type Z-Moves.
-HeldDescription = This is a crystallized form of Z-Power. It upgrades Flying-type moves to Z-Moves.
+Description = 可用它来制造用于对战并能将飞 行属性招式升级成Ｚ招式的Ｚ力 量结晶。
+HeldDescription = Ｚ力量的结晶。会将飞行属性的 招式升级成Ｚ招式。
 #-------------------------------
 [POISONIUMZ]
-Name = Poisonium Z
+Name = 毒Ｚ
 NamePlural = Poisonium Z
 Pocket = 9
 Price = 0
 FieldUse = OnPokemon
 Flags = KeyItem,ZCrystal
 Move = ACIDDOWNPOUR
-Description = It converts Z-Power into crystals that upgrade Poison-type moves to Poison-type Z-Moves.
-HeldDescription = This is a crystallized form of Z-Power. It upgrades Poison-type moves to Z-Moves.
+Description = 可用它来制造用于对战并能将毒 属性招式升级成Ｚ招式的Ｚ力量 结晶。
+HeldDescription = Ｚ力量的结晶。会将毒属性的招 式升级成Ｚ招式。
 #-------------------------------
 [GROUNDIUMZ]
-Name = Groundium Z
+Name = 地面Ｚ
 NamePlural = Groundium Z
 Pocket = 9
 Price = 0
 FieldUse = OnPokemon
 Flags = KeyItem,ZCrystal
 Move = TECTONICRAGE
-Description = It converts Z-Power into crystals that upgrade Ground-type moves to Ground-type Z-Moves.
-HeldDescription = This is a crystallized form of Z-Power. It upgrades Ground-type moves to Z-Moves.
+Description = 可用它来制造用于对战并能将地 面属性招式升级成Ｚ招式的Ｚ力 量结晶。
+HeldDescription = Ｚ力量的结晶。会将地面属性的 招式升级成Ｚ招式。
 #-------------------------------
 [ROCKIUMZ]
-Name = Rockium Z
+Name = 岩石Ｚ
 NamePlural = Rockium Z
 Pocket = 9
 Price = 0
 FieldUse = OnPokemon
 Flags = KeyItem,ZCrystal
 Move = CONTINENTALCRUSH
-Description = It converts Z-Power into crystals that upgrade Rock-type moves to Rock-type Z-Moves.
-HeldDescription = This is a crystallized form of Z-Power. It upgrades Rock-type moves to Z-Moves.
+Description = 可用它来制造用于对战并能将岩 石属性招式升级成Ｚ招式的Ｚ力 量结晶。
+HeldDescription = Ｚ力量的结晶。会将岩石属性的 招式升级成Ｚ招式。
 #-------------------------------
 [BUGINIUMZ]
-Name = Buginium Z
+Name = 虫Ｚ
 NamePlural = Buginium Z
 Pocket = 9
 Price = 0
 FieldUse = OnPokemon
 Flags = KeyItem,ZCrystal
 Move = SAVAGESPINOUT
-Description = It converts Z-Power into crystals that upgrade Bug-type moves to Bug-type Z-Moves.
-HeldDescription = This is a crystallized form of Z-Power. It upgrades Bug-type moves to Z-Moves.
+Description = 可用它来制造用于对战并能将虫 属性招式升级成Ｚ招式的Ｚ力量 结晶。
+HeldDescription = Ｚ力量的结晶。会将虫属性的招 式升级成Ｚ招式。
 #-------------------------------
 [GHOSTIUMZ]
-Name = Ghostium Z
+Name = 幽灵Ｚ
 NamePlural = Ghostium Z
 Pocket = 9
 Price = 0
 FieldUse = OnPokemon
 Flags = KeyItem,ZCrystal
 Move = NEVERENDINGNIGHTMARE
-Description = It converts Z-Power into crystals that upgrade Ghost-type moves to Ghost-type Z-Moves.
-HeldDescription = This is a crystallized form of Z-Power. It upgrades Ghost-type moves to Z-Moves.
+Description = 可用它来制造用于对战并能将幽 灵属性招式升级成Ｚ招式的Ｚ力 量结晶。
+HeldDescription = Ｚ力量的结晶。会将幽灵属性的 招式升级成Ｚ招式。
 #-------------------------------
 [STEELIUMZ]
-Name = Steelium Z
+Name = 钢Ｚ
 NamePlural = Steelium Z
 Pocket = 9
 Price = 0
 FieldUse = OnPokemon
 Flags = KeyItem,ZCrystal
 Move = CORKSCREWCRASH
-Description = It converts Z-Power into crystals that upgrade Steel-type moves to Steel-type Z-Moves.
-HeldDescription = This is a crystallized form of Z-Power. It upgrades Steel-type moves to Z-Moves.
+Description = 可用它来制造用于对战并能将钢 属性招式升级成Ｚ招式的Ｚ力量 结晶。
+HeldDescription = Ｚ力量的结晶。会将钢属性的招 式升级成Ｚ招式。
 #-------------------------------
 [FIRIUMZ]
-Name = Firium Z
+Name = 火Ｚ
 NamePlural = Firium Z
 Pocket = 9
 Price = 0
 FieldUse = OnPokemon
 Flags = KeyItem,ZCrystal
 Move = INFERNOOVERDRIVE
-Description = It converts Z-Power into crystals that upgrade Fire-type moves to Fire-type Z-Moves.
-HeldDescription = This is a crystallized form of Z-Power. It upgrades Fire-type moves to Z-Moves.
+Description = 可用它来制造用于对战并能将火 属性招式升级成Ｚ招式的Ｚ力量 结晶。
+HeldDescription = Ｚ力量的结晶。会将火属性的招 式升级成Ｚ招式。
 #-------------------------------
 [WATERIUMZ]
-Name = Waterium Z
+Name = 水Ｚ
 NamePlural = Waterium Z
 Pocket = 9
 Price = 0
 FieldUse = OnPokemon
 Flags = KeyItem,ZCrystal
 Move = HYDROVORTEX
-Description = It converts Z-Power into crystals that upgrade Water-type moves to Water-type Z-Moves.
-HeldDescription = This is a crystallized form of Z-Power. It upgrades Water-type moves to Z-Moves.
+Description = 可用它来制造用于对战并能将水 属性招式升级成Ｚ招式的Ｚ力量 结晶。
+HeldDescription = Ｚ力量的结晶。会将水属性的招 式升级成Ｚ招式。
 #-------------------------------
 [GRASSIUMZ]
-Name = Grassium Z
+Name = 草Ｚ
 NamePlural = Grassium Z
 Pocket = 9
 Price = 0
 FieldUse = OnPokemon
 Flags = KeyItem,ZCrystal
 Move = BLOOMDOOM
-Description = It converts Z-Power into crystals that upgrade Grass-type moves to Grass-type Z-Moves.
-HeldDescription = This is a crystallized form of Z-Power. It upgrades Grass-type moves to Z-Moves.
+Description = 可用它来制造用于对战并能将草 属性招式升级成Ｚ招式的Ｚ力量 结晶。
+HeldDescription = Ｚ力量的结晶。会将草属性的招 式升级成Ｚ招式。
 #-------------------------------
 [ELECTRIUMZ]
-Name = Electrium Z
+Name = 电Ｚ
 NamePlural = Electrium Z
 Pocket = 9
 Price = 0
 FieldUse = OnPokemon
 Flags = KeyItem,ZCrystal
 Move = GIGAVOLTHAVOC
-Description = It converts Z-Power into crystals that upgrade Electric-type moves to Electric-type Z-Moves.
-HeldDescription = This is a crystallized form of Z-Power. It upgrades Electric-type moves to Z-Moves.
+Description = 可用它来制造用于对战并能将电 属性招式升级成Ｚ招式的Ｚ力量 结晶。
+HeldDescription = Ｚ力量的结晶。会将电属性的招 式升级成Ｚ招式。
 #-------------------------------
 [PSYCHIUMZ]
-Name = Psychium Z
+Name = 超能力Ｚ
 NamePlural = Psychium Z
 Pocket = 9
 Price = 0
 FieldUse = OnPokemon
 Flags = KeyItem,ZCrystal
 Move = SHATTEREDPSYCHE
-Description = It converts Z-Power into crystals that upgrade Psychic-type moves to Psychic-type Z-Moves.
-HeldDescription = This is a crystallized form of Z-Power. It upgrades Psychic-type moves to Z-Moves.
+Description = 可用它来制造用于对战并能将超 能力属性招式升级成Ｚ招式的Ｚ 力量结晶。
+HeldDescription = Ｚ力量的结晶。会将超能力属性 的招式升级成Ｚ招式。
 #-------------------------------
 [ICIUMZ]
-Name = Icium Z
+Name = 冰Ｚ
 NamePlural = Icium Z
 Pocket = 9
 Price = 0
 FieldUse = OnPokemon
 Flags = KeyItem,ZCrystal
 Move = SUBZEROSLAMMER
-Description = It converts Z-Power into crystals that upgrade Ice-type moves to Ice-type Z-Moves.
-HeldDescription = This is a crystallized form of Z-Power. It upgrades Ice-type moves to Z-Moves.
+Description = 可用它来制造用于对战并能将冰 属性招式升级成Ｚ招式的Ｚ力量 结晶。
+HeldDescription = Ｚ力量的结晶。会将冰属性的招 式升级成Ｚ招式。
 #-------------------------------
 [DRAGONIUMZ]
-Name = Dragonium Z
+Name = 龙Ｚ
 NamePlural = Dragonium Z
 Pocket = 9
 Price = 0
 FieldUse = OnPokemon
 Flags = KeyItem,ZCrystal
 Move = DEVASTATINGDRAKE
-Description = It converts Z-Power into crystals that upgrade Dragon-type moves to Dragon-type Z-Moves.
-HeldDescription = This is a crystallized form of Z-Power. It upgrades Dragon-type moves to Z-Moves.
+Description = 可用它来制造用于对战并能将龙 属性招式升级成Ｚ招式的Ｚ力量 结晶。
+HeldDescription = Ｚ力量的结晶。会将龙属性的招 式升级成Ｚ招式。
 #-------------------------------
 [DARKINIUMZ]
-Name = Darkinium Z
+Name = 恶Ｚ
 NamePlural = Darkinium Z
 Pocket = 9
 Price = 0
 FieldUse = OnPokemon
 Flags = KeyItem,ZCrystal
 Move = BLACKHOLEECLIPSE
-Description = It converts Z-Power into crystals that upgrade Dark-type moves to Dark-type Z-Moves.
-HeldDescription = This is a crystallized form of Z-Power. It upgrades Dark-type moves to Z-Moves.
+Description = 可用它来制造用于对战并能将恶 属性招式升级成Ｚ招式的Ｚ力量 结晶。
+HeldDescription = Ｚ力量的结晶。会将恶属性的招 式升级成Ｚ招式。
 #-------------------------------
 [FAIRIUMZ]
-Name = Fairium Z
+Name = 妖精Ｚ
 NamePlural = Fairium Z
 Pocket = 9
 Price = 0
 FieldUse = OnPokemon
 Flags = KeyItem,ZCrystal
 Move = TWINKLETACKLE
-Description = It converts Z-Power into crystals that upgrade Fairy-type moves to Fairy-type Z-Moves.
-HeldDescription = This is a crystallized form of Z-Power. It upgrades Fairy-type moves to Z-Moves.
+Description = 可用它来制造用于对战并能将妖 精属性招式升级成Ｚ招式的Ｚ力 量结晶。
+HeldDescription = Ｚ力量的结晶。会将妖精属性的 招式升级成Ｚ招式。
 #-------------------------------
 [PIKANIUMZ]
-Name = Pikanium Z
+Name = 皮卡丘Ｚ
 NamePlural = Pikanium Z
 Pocket = 9
 Price = 0
 FieldUse = OnPokemon
 Flags = KeyItem,ZCrystal,UsableByAllForms
 Move = CATASTROPIKA
-Description = It converts Z-Power into crystals that upgrade Pikachu's Volt Tackle to an exclusive Z-Move.
-HeldDescription = This is a crystallized form of Z-Power. It upgrades Pikachu's Volt Tackle to a Z-Move.
+Description = 可用它来制造用于对战并能将皮 卡丘的伏特攻击升级成特殊Ｚ招 式的Ｚ力量结晶。
+HeldDescription = Ｚ力量的结晶。会将皮卡丘的伏 特攻击升级成Ｚ招式。
 ZCombo = VOLTTACKLE,PIKACHU
 #-------------------------------
 [PIKASHUNIUMZ]
-Name = Pikashunium Z
+Name = 智皮卡Ｚ
 NamePlural = Pikashunium Z
 Pocket = 9
 Price = 0
 FieldUse = OnPokemon
 Flags = KeyItem,ZCrystal
 Move = TENMILLIONVOLTTHUNDERBOLT
-Description = It converts Z-Power into crystals that upgrade a capped Pikachu's Thunderbolt to an exclusive Z-Move.
-HeldDescription = This is a crystallized form of Z-Power. It upgrades a capped Pikachu's Thunderbolt to a Z-Move.
+Description = 可用它来制造用于对战并能将戴 着帽子的皮卡丘的十万伏特升级 成特殊Ｚ招式的Ｚ力量结晶。
+HeldDescription = Ｚ力量的结晶。会将戴着帽子的 皮卡丘的十万伏特升级成Ｚ招式 。
 ZCombo = THUNDERBOLT,PIKACHU_8,PIKACHU_9,PIKACHU_10,PIKACHU_11,PIKACHU_12,PIKACHU_13,PIKACHU_14,PIKACHU_15
 #-------------------------------
 [ALORAICHIUMZ]
-Name = Aloraichium Z
+Name = 阿罗雷Ｚ
 NamePlural = Aloraichium Z
 Pocket = 9
 Price = 0
 FieldUse = OnPokemon
 Flags = KeyItem,ZCrystal
 Move = STOKEDSPARKSURFER
-Description = It converts Z-Power into crystals that upgrade Alolan Raichu's Thunderbolt to an exclusive Z-Move.
-HeldDescription = This is a crystallized form of Z-Power. It upgrades Alolan Raichu's Thunderbolt to a Z-Move.
+Description = 可用它来制造用于对战并能将阿 罗拉地区雷丘的十万伏特升级成 特殊Ｚ招式的Ｚ力量结晶。
+HeldDescription = Ｚ力量的结晶。会将阿罗拉地区 雷丘的十万伏特升级成Ｚ招式。
 ZCombo = THUNDERBOLT,RAICHU_1
 #-------------------------------
 [EEVIUMZ]
-Name = Eevium Z
+Name = 伊布Ｚ
 NamePlural = Eevium Z
 Pocket = 9
 Price = 0
 FieldUse = OnPokemon
 Flags = KeyItem,ZCrystal
 Move = EXTREMEEVOBOOST
-Description = It converts Z-Power into crystals that upgrade Eevee's Last Resort to an exclusive Z-Move.
-HeldDescription = This is a crystallized form of Z-Power. It upgrades Eevee's Last Resort to a Z-Move.
+Description = 可用它来制造用于对战并能将伊 布的珍藏升级成特殊Ｚ招式的Ｚ 力量结晶。
+HeldDescription = Ｚ力量的结晶。会将伊布的珍藏 升级成Ｚ招式。
 ZCombo = LASTRESORT,EEVEE
 #-------------------------------
 [SNORLIUMZ]
-Name = Snorlium Z
+Name = 卡比兽Ｚ
 NamePlural = Snorlium Z
 Pocket = 9
 Price = 0
 FieldUse = OnPokemon
 Flags = KeyItem,ZCrystal
 Move = PULVERIZINGPANCAKE
-Description = It converts Z-Power into crystals that upgrade Snorlax's Giga Impact to an exclusive Z-Move.
-HeldDescription = This is a crystallized form of Z-Power. It upgrades Snorlax's Giga Impact to a Z-Move.
+Description = 可用它来制造用于对战并能将卡 比兽的终极冲击升级成特殊Ｚ招 式的Ｚ力量结晶。
+HeldDescription = Ｚ力量的结晶。会将卡比兽的终 极冲击升级成Ｚ招式。
 ZCombo = GIGAIMPACT,SNORLAX
 #-------------------------------
 [MEWNIUMZ]
-Name = Mewnium Z
+Name = 梦幻Ｚ
 NamePlural = Mewnium Z
 Pocket = 9
 Price = 0
 FieldUse = OnPokemon
 Flags = KeyItem,ZCrystal
 Move = GENESISSUPERNOVA
-Description = It converts Z-Power into crystals that upgrade Mew's Psychic to an exclusive Z-Move.
-HeldDescription = This is a crystallized form of Z-Power. It upgrades Mew's Psychic to a Z-Move.
+Description = 可用它来制造用于对战并能将梦 幻的精神强念升级成特殊Ｚ招式 的Ｚ力量结晶。
+HeldDescription = Ｚ力量的结晶。会将梦幻的精神 强念升级成Ｚ招式。
 ZCombo = PSYCHIC,MEW
 #-------------------------------
 [DECIDIUMZ]
-Name = Decidium Z
+Name = 狙射树枭Ｚ
 NamePlural = Decidium Z
 Pocket = 9
 Price = 0
 FieldUse = OnPokemon
 Flags = KeyItem,ZCrystal
 Move = SINISTERARROWRAID
-Description = It converts Z-Power into crystals that upgrade Decidueye's Spirit Shackle to an exclusive Z-Move.
-HeldDescription = This is a crystallized form of Z-Power. It upgrades Decidueye's Spirit Shackle to a Z-Move.
+Description = 可用它来制造用于对战并能将狙 射树枭的缝影升级成特殊Ｚ招式 的Ｚ力量结晶。
+HeldDescription = Ｚ力量的结晶。会将狙射树枭的 缝影升级成Ｚ招式。
 ZCombo = SPIRITSHACKLE,DECIDUEYE
 #-------------------------------
 [INCINIUMZ]
-Name = Incinium Z
+Name = 炽焰咆哮虎Ｚ
 NamePlural = Incinium Z
 Pocket = 9
 Price = 0
 FieldUse = OnPokemon
 Flags = KeyItem,ZCrystal
 Move = MALICIOUSMOONSAULT
-Description = It converts Z-Power into crystals that upgrade Incineroar's Darkest Lariat to an exclusive Z-Move.
-HeldDescription = This is a crystallized form of Z-Power. It upgrades Incineroar's Darkest Lariat to a Z-Move.
+Description = 可用它来制造用于对战并能将炽 焰咆哮虎的ＤＤ金勾臂升级成特 殊Ｚ招式的Ｚ力量结晶。
+HeldDescription = Ｚ力量的结晶。会将炽焰咆哮虎 的ＤＤ金勾臂升级成Ｚ招式。
 ZCombo = DARKESTLARIAT,INCINEROAR
 #-------------------------------
 [PRIMARIUMZ]
-Name = Primarium Z
+Name = 西狮海壬Ｚ
 NamePlural = Primarium Z
 Pocket = 9
 Price = 0
 FieldUse = OnPokemon
 Flags = KeyItem,ZCrystal
 Move = OCEANICOPERETTA
-Description = It converts Z-Power into crystals that upgrade Primarina's Sparkling Aria to an exclusive Z-Move.
-HeldDescription = This is a crystallized form of Z-Power. It upgrades Primarina's Sparkling Aria to a Z-Move.
+Description = 可用它来制造用于对战并能将西 狮海壬的泡影的咏叹调升级成特 殊Ｚ招式的Ｚ力量结晶。
+HeldDescription = Ｚ力量的结晶。会将西狮海壬的 泡影的咏叹调升级成Ｚ招式。
 ZCombo = SPARKLINGARIA,PRIMARINA
 #-------------------------------
 [LYCANIUMZ]
-Name = Lycanium Z
+Name = 鬃岩狼人Ｚ
 NamePlural = Lycanium Z
 Pocket = 9
 Price = 0
 FieldUse = OnPokemon
 Flags = KeyItem,ZCrystal,UsableByAllForms
 Move = SPLINTEREDSTORMSHARDS
-Description = It converts Z-Power into crystals that upgrade Lycanroc's Stone Edge to an exclusive Z-Move.
-HeldDescription = This is a crystallized form of Z-Power. It upgrades Lycanroc's Stone Edge to a Z-Move.
+Description = 可用它来制造用于对战并能将鬃 岩狼人的尖石攻击升级成Ｚ招式 的Ｚ力量结晶。
+HeldDescription = Ｚ力量的结晶。会将鬃岩狼人的 尖石攻击升级成Ｚ招式。
 ZCombo = STONEEDGE,LYCANROC
 #-------------------------------
 [MIMIKIUMZ]
-Name = Mimikium Z
+Name = 谜拟丘Ｚ
 NamePlural = Mimikium Z
 Pocket = 9
 Price = 0
 FieldUse = OnPokemon
 Flags = KeyItem,ZCrystal,UsableByAllForms
 Move = LETSSNUGGLEFOREVER
-Description = It converts Z-Power into crystals that upgrade Mimikyu's Play Rough to an exclusive Z-Move.
-HeldDescription = This is a crystallized form of Z-Power. It upgrades Mimikyu's Play Rough to a Z-Move.
+Description = 可用它来制造用于对战并能将谜 拟Ｑ的嬉闹升级成Ｚ招式的Ｚ力 量结晶。
+HeldDescription = Ｚ力量的结晶。会将谜拟Ｑ的嬉 闹升级成Ｚ招式。
 ZCombo = PLAYROUGH,MIMIKYU
 #-------------------------------
 [KOMMONIUMZ]
-Name = Kommonium Z
+Name = 杖尾鳞甲龙Ｚ
 NamePlural = Kommonium Z
 Pocket = 9
 Price = 0
 FieldUse = OnPokemon
 Flags = KeyItem,ZCrystal
 Move = CLANGOROUSSOULBLAZE
-Description = It converts Z-Power into crystals that upgrade Kommo-o's Clanging Scales to an exclusive Z-Move.
-HeldDescription = This is a crystallized form of Z-Power. It upgrades Kommo-o's Clanging Scales to a Z-Move.
+Description = 可用它来制造用于对战并能将杖 尾鳞甲龙的鳞片噪音升级成Ｚ招 式的Ｚ力量结晶。
+HeldDescription = Ｚ力量的结晶。会将杖尾鳞甲龙 的鳞片噪音升级成Ｚ招式。
 ZCombo = CLANGINGSCALES,KOMMOO
 #-------------------------------
 [TAPUNIUMZ]
-Name = Tapunium Z
+Name = 卡璞Ｚ
 NamePlural = Tapunium Z
 Pocket = 9
 Price = 0
 FieldUse = OnPokemon
 Flags = KeyItem,ZCrystal
 Move = GUARDIANOFALOLA
-Description = It converts Z-Power into crystals that upgrade the tapus' Nature's Madness to an exclusive Z-Move.
-HeldDescription = This is a crystallized form of Z-Power. It upgrades the tapu's Nature's Madness to a Z-Move.
+Description = 可用它来制造用于对战并能将卡 璞们的自然之怒升级成特殊Ｚ招 式的Ｚ力量结晶。
+HeldDescription = Ｚ力量的结晶。会将卡璞们的自 然之怒升级成Ｚ招式。
 ZCombo = NATURESMADNESS,TAPUKOKO,TAPULELE,TAPUBULU,TAPUFINI
 #-------------------------------
 [SOLGANIUMZ]
-Name = Solganium Z
+Name = 索尔迦雷欧Ｚ
 NamePlural = Solganium Z
 Pocket = 9
 Price = 0
 FieldUse = OnPokemon
 Flags = KeyItem,ZCrystal
 Move = SEARINGSUNRAZESMASH
-Description = It converts Z-Power into crystals that upgrade Solgaleo's Sunsteel Strike to an exclusive Z-Move.
-HeldDescription = This is a crystallized form of Z-Power. It upgrades Solgaleo's Sunsteel Strike to a Z-Move.
+Description = 可用它来制造用于对战并能将索 尔迦雷欧的流星闪冲升级成Ｚ招 式的Ｚ力量结晶。
+HeldDescription = Ｚ力量的结晶。会将索尔迦雷欧 的流星闪冲升级成Ｚ招式。
 ZCombo = SUNSTEELSTRIKE,SOLGALEO,NECROZMA_1
 #-------------------------------
 [LUNALIUMZ]
-Name = Lunalium Z
+Name = 露奈雅拉Ｚ
 NamePlural = Lunalium Z
 Pocket = 9
 Price = 0
 FieldUse = OnPokemon
 Flags = KeyItem,ZCrystal
 Move = MENACINGMOONRAZEMAELSTROM
-Description = It converts Z-Power into crystals that upgrade Lunala's Moongeist Beam to an exclusive Z-Move.
-HeldDescription = This is a crystallized form of Z-Power. It upgrades Lunala's Moongeist Beam to a Z-Move.
+Description = 可用它来制造用于对战并能将露 奈雅拉的暗影之光升级成Ｚ招式 的Ｚ力量结晶。
+HeldDescription = Ｚ力量的结晶。会将露奈雅拉的 暗影之光升级成Ｚ招式。
 ZCombo = MOONGEISTBEAM,LUNALA,NECROZMA_2
 #-------------------------------
 [MARSHADIUMZ]
-Name = Marshadium Z
+Name = 玛夏多Ｚ
 NamePlural = Marshadium Z
 Pocket = 9
 Price = 0
 FieldUse = OnPokemon
 Flags = KeyItem,ZCrystal
 Move = SOULSTEALING7STARSTRIKE
-Description = It converts Z-Power into crystals that upgrade Marshadow's Spectral Thief to an exclusive Z-Move.
-HeldDescription = This is a crystallized form of Z-Power. It upgrades Marshadow's Spectral Thief to a Z-Move.
+Description = 可用它来制造用于对战并能将玛 夏多的暗影偷盗升级成特殊Ｚ招 式的Ｚ力量结晶。
+HeldDescription = Ｚ力量的结晶。会将玛夏多的暗 影偷盗升级成Ｚ招式。
 ZCombo = SPECTRALTHIEF,MARSHADOW
 #-------------------------------
 [ULTRANECROZIUMZ]
-Name = Ultranecrozium Z
+Name = 究极奈克洛Ｚ
 NamePlural = Ultranecrozium Z
 Pocket = 9
 Price = 0
 FieldUse = OnPokemon
 Flags = KeyItem,ZCrystal
 Move = LIGHTTHATBURNSTHESKY
-Description = It's a crystal that turns Necrozma fused with Solgaleo or Lunala into a new form.
-HeldDescription = This is a crystallized form of Z-Power. It upgrades Necrozma's Photon Geyser to a Z-Move.
+Description = 能让和索尔迦雷欧或露奈雅拉合 体的奈克洛兹玛变成崭新样子的 结晶。
+HeldDescription = Ｚ力量的结晶。会将奈克洛兹玛 的光子喷涌升级成Ｚ招式。
 ZCombo = PHOTONGEYSER,NECROZMA_3,NECROZMA_4

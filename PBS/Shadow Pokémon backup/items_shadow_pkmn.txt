@@ -1,42 +1,43 @@
 ﻿# See the documentation on the wiki to learn how to edit this file.
 #-------------------------------
 [JOYSCENT]
-Name = Joy Scent
-NamePlural = Joy Scents
-PortionName = bottle of Joy Scent
-PortionNamePlural = bottles of Joy Scent
+Name = 喜悦香气
+NamePlural = 喜悦香气
+PortionName = 瓶装喜悦香气
+PortionNamePlural = 瓶装喜悦香气
 Pocket = 1
 Price = 600
 FieldUse = OnPokemon
 BattleUse = OnPokemon
-Description = A cologne that inspires feelings of joy. It will slightly please a Shadow Pokémon.
+Description = 一种能带来喜悦感的香水。它会稍微的让影子宝可梦感到愉悦。
 #-------------------------------
 [EXCITESCENT]
-Name = Excite Scent
-NamePlural = Excite Scents
-PortionName = bottle of Excite Scent
-PortionNamePlural = bottles of Excite Scent
+Name = 兴奋香气
+NamePlural = 兴奋香气
+PortionName = 瓶装兴奋香气
+PortionNamePlural = 瓶装兴奋香气
 Pocket = 1
 Price = 800
 FieldUse = OnPokemon
 BattleUse = OnPokemon
-Description = A cologne that inspires feelings of excitement. It will please a Shadow Pokémon.
+Description = 一种能带来兴奋感的香水。它会让影子宝可梦感到愉悦。
 #-------------------------------
 [VIVIDSCENT]
-Name = Vivid Scent
-NamePlural = Vivid Scents
-PortionName = bottle of Vivid Scent
-PortionNamePlural = bottles of Vivid Scent
+Name = 生动香气
+NamePlural = 生动香气
+PortionName = 瓶装生动香气
+PortionNamePlural = 瓶装生动香气
 Pocket = 1
 Price = 1200
 FieldUse = OnPokemon
 BattleUse = OnPokemon
-Description = A cologne that inspires vivid feelings. It will greatly please a Shadow Pokémon.
+Description = 一种能带来生动感觉的香水。它会让影子宝可梦感到非常愉悦。
 #-------------------------------
 [TIMEFLUTE]
-Name = Time Flute
-NamePlural = Time Flutes
+Name = 时光笛
+NamePlural = 时光笛
 Pocket = 1
 Price = 0
 FieldUse = OnPokemon
-Description = A marvellous flute that can summon Celebi to instantly purify a Shadow Pokémon.
+Description = 一种神奇的笛子，可以召唤时拉比来净化影子宝可梦。
+

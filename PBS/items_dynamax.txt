@@ -1,42 +1,42 @@
-﻿# See the documentation on the wiki to learn how to edit this file.
+﻿# 请参阅wiki以了解如何编辑文件
 #-------------------------------
 [DYNAMAXBAND]
-Name = Dynamax Band
+Name = 极巨腕带
 NamePlural = Dynamax Bands
 Pocket = 8
 Price = 0
 Flags = KeyItem,DynamaxBand
-Description = A Wishing Star has been affixed to it. It lets out light that allows Pokémon to Dynamax when at a Power Spot.
+Description = 内部嵌入了许愿星，在能量点就 会发出光芒，使宝可梦极巨化。
 #-------------------------------
 [WISHINGSTAR]
-Name = Wishing Star
+Name = 许愿星
 NamePlural = Wishing Stars
 Pocket = 7
 Price = 4000
 BattleUse = Direct
 Flags = Fling_50,UsesAllBattleActions
-Description = A stone that radiates Dynamax energy. It can fully recharge your Dynamax Band in battle.
+Description = 这是一块在伽勒尔地区发现的蕴 含着神奇力量的石头。听说捡到 它的人能实现自己的愿望。
 #-------------------------------
 [DYNAMAXCANDY]
-Name = Dynamax Candy
+Name = 极巨糖果
 NamePlural = Dynamax Candies
 Pocket = 2
 Price = 0
 FieldUse = OnPokemon
 Flags = Fling_30
-Description = Raises the Dynamax Level of a single Pokémon by one. A higher level means higher HP when Dynamaxed.
+Description = 充满能量的糖果。给予宝可梦后 ，极巨化等级能够提高1级。当 极巨化等级提高时，HP也会增加 。
 #-------------------------------
 [DYNAMAXCANDYXL]
-Name = Dynamax Candy XL
+Name = 极巨糖果 XL
 NamePlural = Dynamax Candies XL
 Pocket = 2
 Price = 0
 FieldUse = OnPokemon
 Flags = Fling_30
-Description = Maxes out the Dynamax Level of a single Pokémon. A higher level means higher HP when Dynamaxed.
+Description = 最大化提高宝可梦的极巨化等级。极巨化等级提高，HP也会增加。
 #-------------------------------
 [MAXSOUP]
-Name = Max Soup
+Name = 极巨汤
 NamePlural = Max Soups
 PortionName = serving of Max Soup
 PortionNamePlural = servings of Max Soup
@@ -44,4 +44,4 @@ Pocket = 2
 Price = 10000
 FieldUse = OnPokemon
 Flags = Fling_30
-Description = A soup that packs a huge kick. Certain Pokémon that consume it may be given the ability to Gigantamax.
+Description = 让有可能超极巨化的宝可梦喝下 极巨汤，可以让原本不能超极巨 化的宝可梦变得可以超极巨化， 也可以让原本可以超极巨化的宝 可梦变得不能超极巨化。

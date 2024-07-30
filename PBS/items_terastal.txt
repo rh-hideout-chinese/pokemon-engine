@@ -1,215 +1,215 @@
-﻿# See the documentation on the wiki to learn how to edit this file.
+﻿# 请参阅wiki以了解如何编辑文件
 #-------------------------------
 [TERAORB]
-Name = Tera Orb
+Name = 太晶珠
 NamePlural = Tera Orbs
 Pocket = 8
 Price = 0
 Flags = KeyItem,TeraOrb
-Description = An orb that holds the power to crystallize. When charged, it allows Pokémon to Terastallize.
+Description = 蕴藏着结晶之力的宝珠。经过蓄 能之后，能够让宝可梦太晶化。
 #-------------------------------
 [NORMALTERASHARD]
-Name = Normal Tera Shard
+Name = 一般太晶碎块
 NamePlural = Normal Tera Shards
 Pocket = 1
 Price = 2000
 FieldUse = OnPokemon
 Flags = Fling_30,TeraShard_NORMAL
-Description = On rare occasions, these shards form when a Tera Pokémon falls in battle and its Tera Jewel shatters.
+Description = 打倒太晶宝可梦时，破碎掉的太 晶宝石有极低概率会结晶成此物 。
 #-------------------------------
 [FIRETERASHARD]
-Name = Fire Tera Shard
+Name = 火太晶碎块
 NamePlural = Fire Tera Shards
 Pocket = 1
 Price = 2000
 FieldUse = OnPokemon
 Flags = Fling_30,TeraShard_FIRE
-Description = On rare occasions, these shards form when a Tera Pokémon falls in battle and its Tera Jewel shatters.
+Description = 打倒太晶宝可梦时，破碎掉的太 晶宝石有极低概率会结晶成此物 。
 #-------------------------------
 [WATERTERASHARD]
-Name = Water Tera Shard
+Name = 水太晶碎块
 NamePlural = Water Tera Shards
 Pocket = 1
 Price = 2000
 FieldUse = OnPokemon
 Flags = Fling_30,TeraShard_WATER
-Description = On rare occasions, these shards form when a Tera Pokémon falls in battle and its Tera Jewel shatters.
+Description = 打倒太晶宝可梦时，破碎掉的太 晶宝石有极低概率会结晶成此物 。
 #-------------------------------
 [ELECTRICTERASHARD]
-Name = Electric Tera Shard
+Name = 电太晶碎块
 NamePlural = Electric Tera Shards
 Pocket = 1
 Price = 2000
 FieldUse = OnPokemon
 Flags = Fling_30,TeraShard_ELECTRIC
-Description = On rare occasions, these shards form when a Tera Pokémon falls in battle and its Tera Jewel shatters.
+Description = 打倒太晶宝可梦时，破碎掉的太 晶宝石有极低概率会结晶成此物 。
 #-------------------------------
 [GRASSTERASHARD]
-Name = Grass Tera Shard
+Name = 草太晶碎块
 NamePlural = Grass Tera Shards
 Pocket = 1
 Price = 2000
 FieldUse = OnPokemon
 Flags = Fling_30,TeraShard_GRASS
-Description = On rare occasions, these shards form when a Tera Pokémon falls in battle and its Tera Jewel shatters.
+Description = 打倒太晶宝可梦时，破碎掉的太 晶宝石有极低概率会结晶成此物 。
 #-------------------------------
 [ICETERASHARD]
-Name = Ice Tera Shard
+Name = 冰太晶碎块
 NamePlural = Ice Tera Shards
 Pocket = 1
 Price = 2000
 FieldUse = OnPokemon
 Flags = Fling_30,TeraShard_ICE
-Description = On rare occasions, these shards form when a Tera Pokémon falls in battle and its Tera Jewel shatters.
+Description = 打倒太晶宝可梦时，破碎掉的太 晶宝石有极低概率会结晶成此物 。
 #-------------------------------
 [FIGHTINGTERASHARD]
-Name = Fighting Tera Shard
+Name = 格斗太晶碎块
 NamePlural = Fighting Tera Shards
 Pocket = 1
 Price = 2000
 FieldUse = OnPokemon
 Flags = Fling_30,TeraShard_FIGHTING
-Description = On rare occasions, these shards form when a Tera Pokémon falls in battle and its Tera Jewel shatters.
+Description = 打倒太晶宝可梦时，破碎掉的太 晶宝石有极低概率会结晶成此物 。
 #-------------------------------
 [POISONTERASHARD]
-Name = Poison Tera Shard
+Name = 毒太晶碎块
 NamePlural = Poison Tera Shards
 Pocket = 1
 Price = 2000
 FieldUse = OnPokemon
 Flags = Fling_30,TeraShard_POISON
-Description = On rare occasions, these shards form when a Tera Pokémon falls in battle and its Tera Jewel shatters.
+Description = 打倒太晶宝可梦时，破碎掉的太 晶宝石有极低概率会结晶成此物 。
 #-------------------------------
 [GROUNDTERASHARD]
-Name = Ground Tera Shard
+Name = 地面太晶碎块
 NamePlural = Ground Tera Shards
 Pocket = 1
 Price = 2000
 FieldUse = OnPokemon
 Flags = Fling_30,TeraShard_GROUND
-Description = On rare occasions, these shards form when a Tera Pokémon falls in battle and its Tera Jewel shatters.
+Description = 打倒太晶宝可梦时，破碎掉的太 晶宝石有极低概率会结晶成此物 。
 #-------------------------------
 [FLYINGTERASHARD]
-Name = Flying Tera Shard
+Name = 飞行太晶碎块
 NamePlural = Flying Tera Shards
 Pocket = 1
 Price = 2000
 FieldUse = OnPokemon
 Flags = Fling_30,TeraShard_FLYING
-Description = On rare occasions, these shards form when a Tera Pokémon falls in battle and its Tera Jewel shatters.
+Description = 打倒太晶宝可梦时，破碎掉的太 晶宝石有极低概率会结晶成此物 。
 #-------------------------------
 [PSYCHICTERASHARD]
-Name = Psychic Tera Shard
+Name = 超能力太晶碎块
 NamePlural = Psychic Tera Shards
 Pocket = 1
 Price = 2000
 FieldUse = OnPokemon
 Flags = Fling_30,TeraShard_PSYCHIC
-Description = On rare occasions, these shards form when a Tera Pokémon falls in battle and its Tera Jewel shatters.
+Description = 打倒太晶宝可梦时，破碎掉的太 晶宝石有极低概率会结晶成此物 。
 #-------------------------------
 [BUGTERASHARD]
-Name = Bug Tera Shard
+Name = 虫太晶碎块
 NamePlural = Bug Tera Shards
 Pocket = 1
 Price = 2000
 FieldUse = OnPokemon
 Flags = Fling_30,TeraShard_BUG
-Description = On rare occasions, these shards form when a Tera Pokémon falls in battle and its Tera Jewel shatters.
+Description = 打倒太晶宝可梦时，破碎掉的太 晶宝石有极低概率会结晶成此物 。
 #-------------------------------
 [ROCKTERASHARD]
-Name = Rock Tera Shard
+Name = 岩石太晶碎块
 NamePlural = Rock Tera Shards
 Pocket = 1
 Price = 2000
 FieldUse = OnPokemon
 Flags = Fling_30,TeraShard_ROCK
-Description = On rare occasions, these shards form when a Tera Pokémon falls in battle and its Tera Jewel shatters.
+Description = 打倒太晶宝可梦时，破碎掉的太 晶宝石有极低概率会结晶成此物 。
 #-------------------------------
 [GHOSTTERASHARD]
-Name = Ghost Tera Shard
+Name = 幽灵太晶碎块
 NamePlural = Ghost Tera Shards
 Pocket = 1
 Price = 2000
 FieldUse = OnPokemon
 Flags = Fling_30,TeraShard_GHOST
-Description = On rare occasions, these shards form when a Tera Pokémon falls in battle and its Tera Jewel shatters.
+Description = 打倒太晶宝可梦时，破碎掉的太 晶宝石有极低概率会结晶成此物 。
 #-------------------------------
 [DRAGONTERASHARD]
-Name = Dragon Tera Shard
+Name = 龙太晶碎块
 NamePlural = Dragon Tera Shards
 Pocket = 1
 Price = 2000
 FieldUse = OnPokemon
 Flags = Fling_30,TeraShard_DRAGON
-Description = On rare occasions, these shards form when a Tera Pokémon falls in battle and its Tera Jewel shatters.
+Description = 打倒太晶宝可梦时，破碎掉的太 晶宝石有极低概率会结晶成此物 。
 #-------------------------------
 [DARKTERASHARD]
-Name = Dark Tera Shard
+Name = 恶太晶碎块
 NamePlural = Dark Tera Shards
 Pocket = 1
 Price = 2000
 FieldUse = OnPokemon
 Flags = Fling_30,TeraShard_DARK
-Description = On rare occasions, these shards form when a Tera Pokémon falls in battle and its Tera Jewel shatters.
+Description = 打倒太晶宝可梦时，破碎掉的太 晶宝石有极低概率会结晶成此物 。
 #-------------------------------
 [STEELTERASHARD]
-Name = Steel Tera Shard
+Name = 钢太晶碎块
 NamePlural = Steel Tera Shards
 Pocket = 1
 Price = 2000
 FieldUse = OnPokemon
 Flags = Fling_30,TeraShard_STEEL
-Description = On rare occasions, these shards form when a Tera Pokémon falls in battle and its Tera Jewel shatters.
+Description = 打倒太晶宝可梦时，破碎掉的太 晶宝石有极低概率会结晶成此物 。
 #-------------------------------
 [FAIRYTERASHARD]
-Name = Fairy Tera Shard
+Name = 妖精太晶碎块
 NamePlural = Fairy Tera Shards
 Pocket = 1
 Price = 2000
 FieldUse = OnPokemon
 Flags = Fling_30,TeraShard_FAIRY
-Description = On rare occasions, these shards form when a Tera Pokémon falls in battle and its Tera Jewel shatters.
+Description = 打倒太晶宝可梦时，破碎掉的太 晶宝石有极低概率会结晶成此物 。
 #-------------------------------
 [STELLARTERASHARD]
-Name = Stellar Tera Shard
+Name = 星晶太晶碎块
 NamePlural = Stellar Tera Shards
 Pocket = 1
 Price = 2000
 FieldUse = OnPokemon
 Flags = Fling_30,TeraShard_STELLAR
-Description = On rare occasions, these shards form when a Tera Pokémon falls in battle and its Tera Jewel shatters.
+Description = 打倒太晶宝可梦时，破碎掉的太 晶宝石有极低概率会结晶成此物 。
 #-------------------------------
 [MYSTERYTERAJEWEL]
-Name = Mystery Tera Jewel
+Name = 神秘的太晶珠
 NamePlural = Mystery Tera Jewels
 Pocket = 1
 Price = 10000
 FieldUse = OnPokemon
 Flags = Fling_60,TeraShard_Random
-Description = A mostly in-tact Tera Jewel. Its awkward shape makes it hard to tell what Tera Type it may unlock.
+Description = 一颗非常神秘的太晶珠，它笨拙 的形状让人很难判断它可以解锁 什么太晶属性。
 #-------------------------------
 [MASTERTERAJEWEL]
-Name = Master Tera Jewel
+Name = 首领太晶珠
 NamePlural = Master Tera Jewels
 Pocket = 1
 Price = 100000
 FieldUse = OnPokemon
 Flags = Fling_60,TeraShard_Choose
-Description = A perfectly hexogonal Tera Jewel. Using this can unlock any Tera Type that the user desires.
+Description = 完美的六边形太晶珠。可以解锁 想要的任何太晶属性。
 #-------------------------------
 [RADIANTTERAJEWEL]
-Name = Radiant Tera Jewel
+Name = 光芒四射的太晶珠
 NamePlural = Radiant Tera Jewels
 Pocket = 7
 Price = 4000
 BattleUse = Direct
 Flags = Fling_50,UsesAllBattleActions
-Description = A jewel glistening with Terastal energy. It can fully recharge your Tera Orb in battle.
+Description = 闪耀着太晶能量的宝珠。它可以 在战斗中为你的太晶珠充满能量 。
 #-------------------------------
 [GLIMMERINGCHARM]
-Name = Glimmering Charm
+Name = 晶耀护符
 NamePlural = Glimmering Charms
 Pocket = 8
 Price = 0
 Flags = KeyItem
-Description = A mysterious glimmering charm that increases the number of Tera Shards you receive from Tera Raid Battles.
+Description = 拥有它之后，在太晶团体战中会 获得更多太晶碎块的神奇闪光护 符。
