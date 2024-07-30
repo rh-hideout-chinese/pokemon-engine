@@ -178,7 +178,7 @@ class EncounterList_Scene
     # Get user-defined encounter name or default one if not present
     name = USER_DEFINED_NAMES ? USER_DEFINED_NAMES[currKey] : GameData::EncounterType.get(currKey).real_name
     loctext = _INTL("<ac><c2=43F022E8>{1}: {2}</c2></ac>", $game_map.name,name)
-    loctext += sprintf("<al><c2=7FF05EE8>区域可遭遇: %s</c2></al>",enc_array.length)
+    loctext += sprintf("<al><c2=7FF05EE8>区域可遇见: %s</c2></al>",enc_array.length)
     loctext += sprintf("<c2=63184210>-----------------------------------------</c2>")
     @sprites["locwindow"].setText(loctext)
   end
@@ -186,7 +186,7 @@ class EncounterList_Scene
   # Draw text if map has no encounters defined (e.g. in buildings)
   def drawAbsent
     loctext = _INTL("<ac><c2=43F022E8>{1}</c2></ac>", $game_map.name)
-    loctext += sprintf("<al><c2=7FF05EE8>This area has no encounters!</c2></al>")
+    loctext += sprintf("<al><c2=7FF05EE8>这个地区没有精灵!</c2></al>")
     loctext += sprintf("<c2=63184210>-----------------------------------------</c2>")
     @sprites["locwindow"].setText(loctext)
   end
