@@ -1139,7 +1139,7 @@ Pokedex = 粗粗的牙齿像吸管一样，中间是空的， 因而意想不到
 Generation = 1
 Flags = HasGenderedSprites
 Evolutions = CROBAT,Happiness,
-ConditionalSOS = CROBAT,Cave
+ConditionalSOS = CROBAT,Cave,
 CallRateSOS = 9
 #-------------------------------
 [ODDISH]
@@ -2163,7 +2163,7 @@ Pokedex = 有传说讲呆呆兽打哈欠就会下雨，所以 据说有些地方
 Generation = 1
 WildItemUncommon = LAGGINGTAIL
 Evolutions = SLOWBRO,Level,37,SLOWKING,TradeItem,KINGSROCK
-ConditionalSOS = SHELLDER,Water,,SLOWBRO,Land,,SLOWKING,Land
+ConditionalSOS = SHELLDER,Water,,SLOWBRO,Land,,SLOWKING,Land,
 CallRateSOS = 9
 #-------------------------------
 [SLOWBRO]
@@ -2219,7 +2219,7 @@ Pokedex = 释放出电磁波，在空中飘浮。如果在吞 食电力的时候
 Generation = 1
 WildItemUncommon = METALCOAT
 Evolutions = MAGNETON,Level,30
-ConditionalSOS = NOSEPASS,Cave
+ConditionalSOS = NOSEPASS,Cave,
 CallRateSOS = 9
 #-------------------------------
 [MAGNETON]
@@ -2248,7 +2248,7 @@ Pokedex = 会发出神秘的电波，在三合一磁怪栖息 的地方，精密
 Generation = 1
 WildItemUncommon = METALCOAT
 Evolutions = MAGNEZONE,LocationFlag,Magnetic,MAGNEZONE,Item,THUNDERSTONE
-ConditionalSOS = NOSEPASS,Cave
+ConditionalSOS = NOSEPASS,Cave,
 CallRateSOS = 6
 #-------------------------------
 [FARFETCHD]
@@ -2855,7 +2855,7 @@ Generation = 1
 WildItemUncommon = THICKCLUB
 Evolutions = MAROWAK,Level,28
 SpeciesSOS = CUBONE,KANGASKHAN
-ConditionalSOS = MANDIBUZZ,Land
+ConditionalSOS = MANDIBUZZ,Land,
 CallRateSOS = 15
 #-------------------------------
 [MAROWAK]
@@ -3670,7 +3670,7 @@ Category = 进化
 Pokedex = 有着会在生存环境中突然变异的不稳定遗 传基因的宝可梦。石头发出的射线会引起 进化。
 Generation = 1
 Evolutions = VAPOREON,Item,WATERSTONE,JOLTEON,Item,THUNDERSTONE,FLAREON,Item,FIRESTONE,LEAFEON,LocationFlag,MossRock,LEAFEON,Item,LEAFSTONE,GLACEON,LocationFlag,IceRock,GLACEON,Item,ICESTONE,SYLVEON,HappinessMoveType,FAIRY,ESPEON,HappinessDay,,UMBREON,HappinessNight,
-ConditionalSOS = ESPEON,LandDay,,UMBREON,LandNight
+ConditionalSOS = ESPEON,LandDay,,UMBREON,LandNight,
 CallRateSOS = 9
 #-------------------------------
 [VAPOREON]
@@ -8778,7 +8778,7 @@ Category = 球鲸
 Pokedex = 会张着嘴游泳，将食物连同海水一起吃 下去。不要的水会从鼻子里喷出来舍弃 。
 Generation = 3
 Evolutions = WAILORD,Level,40
-ConditionalSOS = WAILORD,GoodRod,,WAILORD,SuperRod
+ConditionalSOS = WAILORD,GoodRod,,WAILORD,SuperRod,
 CallRateSOS = 9
 #-------------------------------
 [WAILORD]
@@ -9247,7 +9247,7 @@ Pokedex = 由于是从陨石坠落的地方发现的，所以 也有该宝可梦
 Generation = 3
 WildItemCommon = STARDUST
 WildItemUncommon = MOONSTONE
-ConditionalSOS = SOLROCK,LandDay,,SOLROCK,CaveDay
+ConditionalSOS = SOLROCK,LandDay,,SOLROCK,CaveDay,
 CallRateSOS = 9
 #-------------------------------
 [SOLROCK]
@@ -9275,7 +9275,7 @@ Pokedex = 据说是从宇宙中落下来的新品种。会飘 浮在空中无声
 Generation = 3
 WildItemCommon = STARDUST
 WildItemUncommon = SUNSTONE
-ConditionalSOS = LUNATONE,LandNight,,LUNATONE,CaveNight
+ConditionalSOS = LUNATONE,LandNight,,LUNATONE,CaveNight,
 CallRateSOS = 9
 #-------------------------------
 [BARBOACH]
@@ -10041,7 +10041,7 @@ Generation = 3
 WildItemCommon = PEARL
 WildItemUncommon = BIGPEARL
 Evolutions = HUNTAIL,TradeItem,DEEPSEATOOTH,GOREBYSS,TradeItem,DEEPSEASCALE
-ConditionalSOS = HUNTAIL,WaterNight,,GOREBYSS,WaterDay
+ConditionalSOS = HUNTAIL,WaterNight,,GOREBYSS,WaterDay,
 CallRateSOS = 15
 #-------------------------------
 [HUNTAIL]
@@ -11644,7 +11644,7 @@ Category = 兔子
 Pokedex = 手脚的力量很弱，但如果死命伸长紧紧 卷起的耳朵，连大岩石也能粉碎。
 Generation = 4
 Evolutions = LOPUNNY,Happiness,
-ConditionalSOS = LOPUNNY,LandDay
+ConditionalSOS = LOPUNNY,LandDay,
 CallRateSOS = 9
 #-------------------------------
 [LOPUNNY]

@@ -182,7 +182,7 @@ class Battle::Scene::FightMenu < Battle::Scene::MenuBase
   # Adds the button bitmaps for each battle mechanic.
   #-----------------------------------------------------------------------------
   def addSpecialActionButtons(path)
-    @actionButtonBitmap[:mega] = AnimatedBitmap.new(_INTL(path + "MEGA图标"))
+    @actionButtonBitmap[:mega] = AnimatedBitmap.new(_INTL(path + "cursor_mega"))
   end
   
   #-----------------------------------------------------------------------------

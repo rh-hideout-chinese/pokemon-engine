@@ -38,7 +38,7 @@ module GameData
       return nil if !species || !form
       validate species => [Symbol, String]
       validate form => Integer
-      raise _INTL("Undefined species {1}.", species) if !GameData::Species.exists?(species)
+      raise _INTL("未定义的宝可梦种类{1}.", species) if !GameData::Species.exists?(species)
       species = species.to_sym if species.is_a?(String)
       sp_data = GameData::Species.get_species_form(species, form)
       gender = (female && sp_data.has_gendered_sprites?) ? "_female" : ""

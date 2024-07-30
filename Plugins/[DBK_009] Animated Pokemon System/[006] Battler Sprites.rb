@@ -457,7 +457,7 @@ Battle::AbilityEffects::OnBeingHit.add(:ILLUSION,
     battle.scene.pbAnimateSubstitute(target, :hide)
     target.effects[PBEffects::Illusion] = nil
     battle.scene.pbChangePokemon(target, target.pokemon)
-    battle.pbDisplay(_INTL("{1}'s illusion wore off!", target.pbThis))
+    battle.pbDisplay(_INTL("{1}的幻觉消失了!", target.pbThis))
     battle.pbSetSeen(target)
     battle.scene.pbAnimateSubstitute(target, :show, true)
   }

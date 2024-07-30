@@ -2139,8 +2139,9 @@ Habitat = Sea
 Category = 拟态
 Pokedex = 小型的龙宝可梦。会住在吃吼霸嘴里，保 护自己免于外敌袭击。
 Generation = 9
-ConditionalSOS = DONDOZO,Water,,DONDOZO,GoodRod,,DONDOZO,SuperRod
+ConditionalSOS = DONDOZO,Water,,DONDOZO,GoodRod,,DONDOZO,SuperRod,
 CallRateSOS = 6
+SpeciesSOS = TATSUGIRI
 #-------------------------------
 [ANNIHILAPE]
 Name = 弃世猴

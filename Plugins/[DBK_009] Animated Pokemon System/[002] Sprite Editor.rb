@@ -65,7 +65,7 @@ class SpritePositioner
   def pbGetSpriteList
     allspecies = []
     GameData::Species.each do |sp|
-      name = (sp.form == 0) ? sp.name : _INTL("{1} (form {2})", sp.real_name, sp.form)
+      name = (sp.form == 0) ? sp.name : _INTL("{1} (表格{2})", sp.real_name, sp.form)
       if name && !name.empty?
         allspecies.push([sp.id, sp.species, sp.form, name, false])
         next if !sp.has_gendered_sprites?
@@ -181,11 +181,11 @@ class SpritePositioner
     oldval = metrics_data.animation_speed
     cmdvals = [0, 1, 2, 3, 4]
     commands = [
-      _INTL("Still"),
-      _INTL("Fast"),
-      _INTL("Normal"),
-      _INTL("Slow"),
-      _INTL("Slowest")
+      _INTL("继续"),
+      _INTL("快速"),
+      _INTL("普通"),
+      _INTL("慢"),
+      _INTL("超慢")
     ]
     cw = Window_CommandPokemon.new(commands)
     cw.index    = (oldval.is_a?(Array)) ? oldval[0] : 0
@@ -220,7 +220,7 @@ class SpritePositioner
       elsif Input.trigger?(Input::USE)
         pbPlayDecisionSE
         cw.visible = false
-        ch = Window_CommandPokemon.new([_INTL("Both"), _INTL("Ally"), _INTL("Enemy")])
+        ch = Window_CommandPokemon.new([_INTL("全部"), _INTL("队友"), _INTL("敌人")])
         ch.x        = Graphics.width - ch.width
         ch.y        = Graphics.height - ch.height
         ch.viewport = @viewport
@@ -493,12 +493,12 @@ class SpritePositioner
   def pbMenu
     refresh
     cw = Window_CommandPokemon.new(
-      [_INTL("Set Ally Position"),
-       _INTL("Set Enemy Position"),
-       _INTL("Set Shadow Position"),
-       _INTL("Set Animation Speed"),
-       _INTL("Set Super Shiny Hue"),
-       _INTL("Auto-Position Sprites")]
+      [_INTL("设定盟友位置"),
+       _INTL("设定敌人位置"),
+       _INTL("设定影子位置"),
+       _INTL("设定动画速度"),
+       _INTL("设定超级异色色调"),
+       _INTL("自动定位精灵")]
     )
     cw.x        = Graphics.width - cw.width
     cw.y        = Graphics.height - cw.height
@@ -575,7 +575,7 @@ class SpritePositioner
         pbChangeSpecies(@allspecies[cw.index][1], @allspecies[cw.index][2], @allspecies[cw.index][4], @shiny)
         refresh
       elsif Input.trigger?(Input::ACTION)
-        find_species = pbMessageFreeText("\\ts[]" + _INTL("Search for a specific species."), "", false, 100, Graphics.width)
+        find_species = pbMessageFreeText("\\ts[]" + _INTL("寻找特定的宝可梦种类。"), "", false, 100, Graphics.width)
         next if nil_or_empty?(find_species)
         next if find_species.downcase == commands[cw.index].downcase
         new_species = false
@@ -635,7 +635,7 @@ class DynamaxSpritePositioner < SpritePositioner
 	  next if !sp.dynamax_able?
 	  next if @filter < 0 && !sp.gmax_move
       next if @filter > 0 && sp.generation != @filter
-      name = (sp.form == 0) ? sp.name : _INTL("{1} (form {2})", sp.real_name, sp.form)
+      name = (sp.form == 0) ? sp.name : _INTL("{1} (表格{2})", sp.real_name, sp.form)
       if name && !name.empty?
         allspecies.push([sp.id, sp.species, sp.form, name, false])
         next if !sp.has_gendered_sprites?
@@ -822,9 +822,9 @@ class DynamaxSpritePositioner < SpritePositioner
   def pbMenu
     refresh
     cw = Window_CommandPokemon.new(
-      [_INTL("Set Ally Position"),
-       _INTL("Set Enemy Position"),
-       _INTL("Auto-Position Sprites")]
+      [_INTL("设置盟友位置"),
+       _INTL("设置敌人位置"),
+       _INTL("自动定位精灵")]
     )
     cw.x        = Graphics.width - cw.width
     cw.y        = Graphics.height - cw.height
@@ -901,7 +901,7 @@ class DynamaxSpritePositioner < SpritePositioner
         pbChangeSpecies(@allspecies[cw.index][1], @allspecies[cw.index][2], @allspecies[cw.index][4], @shiny)
         refresh
       elsif Input.trigger?(Input::ACTION)
-        find_species = pbMessageFreeText("\\ts[]" + _INTL("Search for a specific species."), "", false, 100, Graphics.width)
+        find_species = pbMessageFreeText("\\ts[]" + _INTL("搜索特定的宝可梦种类"), "", false, 100, Graphics.width)
         next if nil_or_empty?(find_species)
         next if find_species.downcase == commands[cw.index].downcase
         new_species = false

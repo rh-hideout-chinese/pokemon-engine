@@ -400,26 +400,31 @@ UngmaxForm = 0
 Types = FIRE
 Abilities = SPEEDBOOST
 UngmaxForm = 0
+CallRateSOS = 0
 #-------------------------------
 [REVAVROOM,2]
 Types = FAIRY
 Abilities = MISTYSURGE
 UngmaxForm = 0
+CallRateSOS = 0
 #-------------------------------
 [REVAVROOM,3]
 Types = FIGHTING
 Abilities = STAMINA
 UngmaxForm = 0
+CallRateSOS = 0
 #-------------------------------
 [REVAVROOM,4]
 Types = POISON
 Abilities = TOXICDEBRIS
 UngmaxForm = 0
+CallRateSOS = 0
 #-------------------------------
 [REVAVROOM,5]
 Types = DARK
 Abilities = INTIMIDATE
 UngmaxForm = 0
+CallRateSOS = 0
 #-------------------------------
 [TATSUGIRI,1]
 FormName = 下垂姿势
@@ -507,6 +512,7 @@ UngmaxForm = 0
 [OGERPON,4]
 PokedexForm = 0
 UngmaxForm = 0
+Flags = Legendary,TeraType_GRASS
 #-------------------------------
 [OGERPON,5]
 FormName = 水井面具
@@ -575,6 +581,7 @@ Weight = 16.0
 Shape = Head
 Pokedex = 若太晶的甲壳受到对手招式的攻击，就 会将其能量吸收，供自己使用。
 UngmaxForm = 0
+Flags = Legendary,TeraType_STELLAR
 #-------------------------------
 [TERAPAGOS,2]
 FormName = 星晶形态

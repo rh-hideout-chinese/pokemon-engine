@@ -1,21 +1,17 @@
 ﻿# 请参阅wiki以了解如何编辑文件
 #-------------------------------
 [002] # Lappet Town
-Water,2
-    60,TENTACOOL,14,19
-    30,MANTYKE,15,16
-    10,REMORAID,14,16
-OldRod
-    100,MAGIKARP,16,19
-GoodRod
-    60,BARBOACH,17,18
-    20,KRABBY,15,16
-    20,SHELLDER,16,19
-SuperRod
-    40,CHINCHOU,17,19
-    40,QWILFISH,16,19
-    15,CORSOLA,15,18
-    5,STARYU,15,17
+Land,21
+    40,PIDGEY,15,18
+    40,RATTATA,14,18
+    10,SENTRET,13,17
+    5,PIDGEY,14,16
+    5,RATTATA,13,16
+LandNight,21
+    40,RATTATA,14,18
+    30,HOOTHOOT,14,17
+    20,SPINARAK,12,16
+    10,CLEFAIRY,11,15
 #-------------------------------
 [005] # Route 1
 Land,21

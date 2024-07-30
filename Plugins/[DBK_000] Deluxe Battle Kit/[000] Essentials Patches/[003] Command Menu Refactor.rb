@@ -14,9 +14,9 @@ class Battle::Scene::FightMenu < Battle::Scene::MenuBase
     folder = @customUI ? "#{$game_variables[53]}/" : ""
     path = "Graphics/UI/Battle/" + folder
     if USE_GRAPHICS
-      @buttonBitmap  = AnimatedBitmap.new(_INTL(path + "格斗图标"))
+      @buttonBitmap  = AnimatedBitmap.new(_INTL(path + "cursor_fight"))
       @typeBitmap    = AnimatedBitmap.new(_INTL("Graphics/UI/types"))
-      @shiftBitmap   = AnimatedBitmap.new(_INTL(path + "移动图标"))
+      @shiftBitmap   = AnimatedBitmap.new(_INTL(path + "cursor_shift"))
       @actionButtonBitmap = {}
       addSpecialActionButtons(path)
       background = IconSprite.new(0, Graphics.height - 96, viewport)

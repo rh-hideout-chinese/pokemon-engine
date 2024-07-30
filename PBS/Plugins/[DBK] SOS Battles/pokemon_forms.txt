@@ -1,4 +1,4 @@
-### Changes will apply automatically. ###
+### Apply changes by holding SHIFT while compiling. ###
 #-------------------------------
 [PICHU,2]
 CallRateSOS = 0

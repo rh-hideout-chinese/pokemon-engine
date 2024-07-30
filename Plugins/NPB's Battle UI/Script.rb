@@ -32,24 +32,24 @@ class PokemonTrainerCard_Scene
     totalsec = $stats.play_time.to_i
     hour = totalsec / 60 / 60
     min = totalsec / 60 % 60
-    time = (hour > 0) ? _INTL("{1}h {2}m", hour, min) : _INTL("{1}m", min)
+    time = (hour > 0) ? _INTL("{1}小时 {2}分钟", hour, min) : _INTL("{1}分钟", min)
     $PokemonGlobal.startTime = pbGetTimeNow if !$PokemonGlobal.startTime
     starttime = _INTL("{1} {2}, {3}",
                       pbGetAbbrevMonthName($PokemonGlobal.startTime.mon),
                       $PokemonGlobal.startTime.day,
                       $PokemonGlobal.startTime.year)
     textPositions = [
-      [_INTL("Name"), 34, 70, 0, baseColor, shadowColor],
+      [_INTL("名字"), 34, 70, 0, baseColor, shadowColor],
       [$player.name, 302, 70, 1, baseColor, shadowColor],
-      [_INTL("ID No."), 332, 70, 0, baseColor, shadowColor],
+      [_INTL("ID号码"), 332, 70, 0, baseColor, shadowColor],
       [sprintf("%05d", $player.public_ID), 468, 70, 1, baseColor, shadowColor],
-      [_INTL("Money"), 34, 118, 0, baseColor, shadowColor],
+      [_INTL("金币"), 34, 118, 0, baseColor, shadowColor],
       [_INTL("${1}", $player.money.to_s_formatted), 302, 118, 1, baseColor, shadowColor],
-      [_INTL("Pokédex"), 34, 166, 0, baseColor, shadowColor],
+      [_INTL("图鉴"), 34, 166, 0, baseColor, shadowColor],
       [sprintf("%d/%d", $player.pokedex.owned_count, $player.pokedex.seen_count), 302, 166, 1, baseColor, shadowColor],
-      [_INTL("Time"), 34, 214, 0, baseColor, shadowColor],
+      [_INTL("时间"), 34, 214, 0, baseColor, shadowColor],
       [time, 302, 214, 1, baseColor, shadowColor],
-      [_INTL("Started"), 34, 262, 0, baseColor, shadowColor],
+      [_INTL("开启"), 34, 262, 0, baseColor, shadowColor],
       [starttime, 302, 262, 1, baseColor, shadowColor]
     ]
     pbDrawTextPositions(overlay, textPositions)
