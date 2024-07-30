@@ -1,7 +1,7 @@
-﻿# See the documentation on the wiki to learn how to edit this file.
+﻿# 请参阅 wiki 上的文档，了解如何编辑此文件。
 #-------------------------------
 [BREAKNECKBLITZ]
-Name = Breakneck Blitz
+Name = 究极无敌大冲撞
 Type = NORMAL
 Category = Physical
 Power = 1
@@ -9,10 +9,10 @@ Accuracy = 0
 TotalPP = 1
 Target = NearOther
 Flags = ZMove_NORMAL,CannotMetronome
-Description = The user builds up its momentum using its Z-Power and crashes into the target at full speed.
+Description = 通过Ｚ力量气势猛烈 地全力撞上对手。威 力会根据原来的招式 而改变。
 #-------------------------------
 [ALLOUTPUMMELING]
-Name = All-Out Pummeling
+Name = 全力无双激烈拳
 Type = FIGHTING
 Category = Physical
 Power = 1
@@ -20,10 +20,10 @@ Accuracy = 0
 TotalPP = 1
 Target = NearOther
 Flags = ZMove_FIGHTING,CannotMetronome
-Description = The user rams an energy orb created by its Z-Power into the target with full force.
+Description = 通过Ｚ力量制造出能 量弹，全力撞向对手 。威力会根据原来的 招式而改变。
 #-------------------------------
 [SUPERSONICSKYSTRIKE]
-Name = Supersonic Skystrike
+Name = 极速俯冲轰烈撞
 Type = FLYING
 Category = Physical
 Power = 1
@@ -31,10 +31,10 @@ Accuracy = 0
 TotalPP = 1
 Target = NearOther
 Flags = ZMove_FLYING,CannotMetronome
-Description = The user soars up with its Z-Power and plummets toward the target at full speed.
+Description = 通过Ｚ力量猛烈地飞 向天空，朝对手全力 落下。威力会根据原 来的招式而改变。
 #-------------------------------
 [ACIDDOWNPOUR]
-Name = Acid Downpour
+Name = 强酸剧毒灭绝雨
 Type = POISON
 Category = Physical
 Power = 1
@@ -42,10 +42,10 @@ Accuracy = 0
 TotalPP = 1
 Target = NearOther
 Flags = ZMove_POISON,CannotMetronome
-Description = The user creates a poisonous swamp using its Z-Power and sinks the target into it at full force.
+Description = 通过Ｚ力量使毒沼涌 起，全力让对手沉下 去。威力会根据原来 的招式而改变。
 #-------------------------------
 [TECTONICRAGE]
-Name = Tectonic Rage
+Name = 地隆嘯天大终结
 Type = GROUND
 Category = Physical
 Power = 1
@@ -53,10 +53,10 @@ Accuracy = 0
 TotalPP = 1
 Target = NearOther
 Flags = ZMove_GROUND,CannotMetronome
-Description = The user burrows deep into the ground and slams into the target with the full force of its Z-Power.
+Description = 通过Ｚ力量潜入地里 最深处，全力撞上对 手。威力会根据原来 的招式而改变。
 #-------------------------------
 [CONTINENTALCRUSH]
-Name = Continental Crush
+Name = 毁天灭地巨岩坠
 Type = ROCK
 Category = Physical
 Power = 1
@@ -64,10 +64,10 @@ Accuracy = 0
 TotalPP = 1
 Target = NearOther
 Flags = ZMove_ROCK,CannotMetronome
-Description = The user summons a huge rock mountain using its Z-Power and drops it onto the target with full force.
+Description = 通过Ｚ力量召唤大大 的岩山，全力撞向对 手。威力会根据原来 的招式而改变。
 #-------------------------------
 [SAVAGESPINOUT]
-Name = Savage Spin-Out
+Name = 绝对捕食回旋斩
 Type = BUG
 Category = Physical
 Power = 1
@@ -75,10 +75,10 @@ Accuracy = 0
 TotalPP = 1
 Target = NearOther
 Flags = ZMove_BUG,CannotMetronome
-Description = The user binds the target with full force with threads of silk that the user spits using its Z-Power.
+Description = 通过Ｚ力量将吐出的 丝线全力束缚对手。 威力会根据原来的招 式而改变。
 #-------------------------------
 [NEVERENDINGNIGHTMARE]
-Name = Never-Ending Nightmare
+Name = 无尽暗夜之诱惑
 Type = GHOST
 Category = Physical
 Power = 1
@@ -86,10 +86,10 @@ Accuracy = 0
 TotalPP = 1
 Target = NearOther
 Flags = ZMove_GHOST,CannotMetronome
-Description = Deep-seated grudges summoned by the user's Z-Power trap the target.
+Description = 通过Ｚ力量召唤强烈 的怨念，全力降临到 对手身上。威力会根 据原来的招式而改变 。
 #-------------------------------
 [CORKSCREWCRASH]
-Name = Corkscrew Crash
+Name = 超绝螺旋连击
 Type = STEEL
 Category = Physical
 Power = 1
@@ -97,10 +97,10 @@ Accuracy = 0
 TotalPP = 1
 Target = NearOther
 Flags = ZMove_STEEL,CannotMetronome
-Description = The user spins very fast and rams into the target with the full force of its Z-Power.
+Description = 通过Ｚ力量进行高速 旋转，全力撞上对手 。威力会根据原来的 招式而改变。
 #-------------------------------
 [INFERNOOVERDRIVE]
-Name = Inferno Overdrive
+Name = 超强极限爆焰弹
 Type = FIRE
 Category = Physical
 Power = 1
@@ -108,10 +108,10 @@ Accuracy = 0
 TotalPP = 1
 Target = NearOther
 Flags = ZMove_FIRE,CannotMetronome
-Description = The user breathes a stream of intense fire toward the target with the full force of its Z-Power.
+Description = 通过Ｚ力量喷出熊熊 烈火，全力撞向对手 。威力会根据原来的 招式而改变。
 #-------------------------------
 [HYDROVORTEX]
-Name = Hydro Vortex
+Name = 超级水流大漩涡
 Type = WATER
 Category = Physical
 Power = 1
@@ -119,10 +119,10 @@ Accuracy = 0
 TotalPP = 1
 Target = NearOther
 Flags = ZMove_WATER,CannotMetronome
-Description = The user creates a huge whirling current using its Z-Power to swallow the target with full force.
+Description = 通过Ｚ力量制造大大 的潮旋，全力吞没对 手。威力会根据原来 的招式而改变。
 #-------------------------------
 [BLOOMDOOM]
-Name = Bloom Doom
+Name = 绚烂缤纷花怒放
 Type = GRASS
 Category = Physical
 Power = 1
@@ -130,10 +130,10 @@ Accuracy = 0
 TotalPP = 1
 Target = NearOther
 Flags = ZMove_GRASS,CannotMetronome
-Description = The user collects energy from plants using its Z-Power and attacks the target with full force.
+Description = 通过Ｚ力量借助花草 的能量，全力攻击对 手。威力会根据原来 的招式而改变。
 #-------------------------------
 [GIGAVOLTHAVOC]
-Name = Gigavolt Havoc
+Name = 终极伏特狂雷闪
 Type = ELECTRIC
 Category = Physical
 Power = 1
@@ -141,10 +141,10 @@ Accuracy = 0
 TotalPP = 1
 Target = NearOther
 Flags = ZMove_ELECTRIC,CannotMetronome
-Description = The user hits the target with a powerful electric current collected by its Z-Power.
+Description = 通过Ｚ力量将蓄积的 强大电流全力撞向对 手。威力会根据原来 的招式而改变。
 #-------------------------------
 [SHATTEREDPSYCHE]
-Name = Shattered Psyche
+Name = 至高精神破坏波
 Type = PSYCHIC
 Category = Physical
 Power = 1
@@ -152,10 +152,10 @@ Accuracy = 0
 TotalPP = 1
 Target = NearOther
 Flags = ZMove_PSYCHIC,CannotMetronome
-Description = The user controls the target with its Z-Power and hurts the target with full force.
+Description = 通过Ｚ力量操纵对手 ，全力使其感受到痛 苦。威力会根据原来 的招式而改变。
 #-------------------------------
 [SUBZEROSLAMMER]
-Name = Subzero Slammer
+Name = 激狂大地万里冰
 Type = ICE
 Category = Physical
 Power = 1
@@ -163,10 +163,10 @@ Accuracy = 0
 TotalPP = 1
 Target = NearOther
 Flags = ZMove_ICE,CannotMetronome
-Description = The user dramatically drops the temperature using its Z-Power and freezes the target with full force.
+Description = 通过Ｚ力量急剧降低 气温，全力冰冻对手 。威力会根据原来的 招式而改变。
 #-------------------------------
 [DEVASTATINGDRAKE]
-Name = Devastating Drake
+Name = 究极巨龙震天地
 Type = DRAGON
 Category = Physical
 Power = 1
@@ -174,10 +174,10 @@ Accuracy = 0
 TotalPP = 1
 Target = NearOther
 Flags = ZMove_DRAGON,CannotMetronome
-Description = The user materializes its aura using its Z-Power and attacks the target with full force.
+Description = 通过Ｚ力量将气场实 体化，向对手全力发 动袭击。威力会根据 原来的招式而改变。
 #-------------------------------
 [BLACKHOLEECLIPSE]
-Name = Black Hole Eclipse
+Name = 黑洞吞噬万物灭
 Type = DARK
 Category = Physical
 Power = 1
@@ -185,10 +185,10 @@ Accuracy = 0
 TotalPP = 1
 Target = NearOther
 Flags = ZMove_DARK,CannotMetronome
-Description = The user gathers dark energy using its Z-Power and sucks the target into it.
+Description = 通过Ｚ力量收集恶能 量，全力将对手吸入 。威力会根据原来的 招式而改变。
 #-------------------------------
 [TWINKLETACKLE]
-Name = Twinkle Tackle
+Name = 可爱星星飞天撞
 Type = FAIRY
 Category = Physical
 Power = 1
@@ -196,10 +196,10 @@ Accuracy = 0
 TotalPP = 1
 Target = NearOther
 Flags = ZMove_FAIRY,CannotMetronome
-Description = The user creates a very charming space using its Z-Power and totally toys with the target.
+Description = 通过Ｚ力量制造魅惑 空间，全力捉弄对手 。威力会根据原来的 招式而改变。
 #-------------------------------
 [CATASTROPIKA]
-Name = Catastropika
+Name = 皮卡皮卡必杀击
 Type = ELECTRIC
 Category = Physical
 Power = 210
@@ -207,10 +207,10 @@ Accuracy = 0
 TotalPP = 1
 Target = NearOther
 Flags = ZMove,Contact,CannotMetronome
-Description = Pikachu surrounds itself with the maximum amount of electricity using its Z-Power.
+Description = 通过Ｚ力量，皮卡丘 全身覆盖最强电力， 全力猛扑对手。
 #-------------------------------
 [TENMILLIONVOLTTHUNDERBOLT]
-Name = 10_000_000 Volt Thunderbolt
+Name = 千万伏特
 Type = ELECTRIC
 Category = Special
 Power = 195
@@ -218,10 +218,10 @@ Accuracy = 0
 TotalPP = 1
 Target = NearOther
 Flags = ZMove,HighCriticalHitRate_2,CannotMetronome
-Description = Pikachu wearing a cap unleashes a jolt of electricity. Critical hits land more easily.
+Description = 戴着帽子的皮卡丘将 通过Ｚ力量增强的电 击全力释放给对手。 容易击中要害。
 #-------------------------------
 [STOKEDSPARKSURFER]
-Name = Stoked Sparksurfer
+Name = 驾雷驭电戏冲浪
 Type = ELECTRIC
 Category = Special
 Power = 175
@@ -231,10 +231,10 @@ Target = NearOther
 FunctionCode = ParalyzeTarget
 Flags = ZMove,CannotMetronome
 EffectChance = 100
-Description = Alolan Raichu attacks the target using its Z-Power and paralyzes the target.
+Description = 得到Ｚ力量的阿罗拉 地区的雷丘将全力进 行攻击。从而让对手 陷入麻痹状态。
 #-------------------------------
 [EXTREMEEVOBOOST]
-Name = Extreme Evoboost
+Name = 九彩升华齐聚顶
 Type = NORMAL
 Category = Status
 Accuracy = 0
@@ -242,10 +242,10 @@ TotalPP = 1
 Target = User
 FunctionCode = RaiseUserMainStats2
 Flags = ZMove,CannotMetronome
-Description = Eevee gets energy from its evolved friends and boosts its stats sharply.
+Description = 得到Ｚ力量的伊布将 借助进化后伙伴们的 力量，大幅提高能力 。
 #-------------------------------
 [PULVERIZINGPANCAKE]
-Name = Pulverizing Pancake
+Name = 认真起来大爆击
 Type = NORMAL
 Category = Physical
 Power = 210
@@ -253,10 +253,10 @@ Accuracy = 0
 TotalPP = 1
 Target = NearOther
 Flags = ZMove,Contact,CannotMetronome
-Description = Snorlax moves its enormous body energetically and attacks the target with full force.
+Description = 通过Ｚ力量使得认真 起来的卡比兽跃动巨 大身躯，全力向对手 发动袭击。
 #-------------------------------
 [GENESISSUPERNOVA]
-Name = Genesis Supernova
+Name = 起源超新星大爆炸
 Type = PSYCHIC
 Category = Special
 Power = 185
@@ -266,10 +266,10 @@ Target = NearOther
 FunctionCode = DamageTargetStartPsychicTerrain
 Flags = ZMove,CannotMetronome
 EffectChance = 100
-Description = Mew attacks the target with full force. The terrain will be charged with psychic energy.
+Description = 得到Ｚ力量的梦幻将 全力攻击对手。脚下 会变成精神场地。
 #-------------------------------
 [SINISTERARROWRAID]
-Name = Sinister Arrow Raid
+Name = 遮天蔽日暗影箭
 Type = GHOST
 Category = Physical
 Power = 180
@@ -277,10 +277,10 @@ Accuracy = 0
 TotalPP = 1
 Target = NearOther
 Flags = ZMove,CannotMetronome
-Description = Decidueye shoots the target with countless arrows using its Z-Power.
+Description = 通过Ｚ力量制造出无 数箭的狙射树枭将全 力射穿对手进行攻击 。
 #-------------------------------
 [MALICIOUSMOONSAULT]
-Name = Malicious Moonsault
+Name = 极恶飞跃粉碎击
 Type = DARK
 Category = Physical
 Power = 180
@@ -288,10 +288,10 @@ Accuracy = 0
 TotalPP = 1
 Target = NearOther
 Flags = ZMove,Contact,TramplesMinimize,CannotMetronome
-Description = Incineroar crashes into the target using its Z-Power.
+Description = 通过Ｚ力量得到强壮 肉体的炽焰咆哮虎将 全力撞向对手进行攻 击。
 #-------------------------------
 [OCEANICOPERETTA]
-Name = Oceanic Operetta
+Name = 海神庄严交响乐
 Type = WATER
 Category = Special
 Power = 195
@@ -299,10 +299,10 @@ Accuracy = 0
 TotalPP = 1
 Target = NearOther
 Flags = ZMove,CannotMetronome
-Description = Primarina summons a massive amount of water using its Z-Power.
+Description = 通过Ｚ力量召唤大量 水的西狮海壬将全力 攻击对手。
 #-------------------------------
 [SPLINTEREDSTORMSHARDS]
-Name = Splintered Stormshards
+Name = 狼啸石牙飓风暴
 Type = ROCK
 Category = Physical
 Power = 190
@@ -312,10 +312,10 @@ Target = NearOther
 FunctionCode = DamageTargetRemoveTerrain
 Flags = ZMove,CannotMetronome
 EffectChance = 100
-Description = Lycanroc attacks the target with full force. This move negates the effect on the battlefield.
+Description = 得到Ｚ力量的鬃岩狼 人将全力进行攻击。 而且会消除场地状态 。
 #-------------------------------
 [LETSSNUGGLEFOREVER]
-Name = Let's Snuggle Forever
+Name = 亲密无间大乱揍
 Type = FAIRY
 Category = Physical
 Power = 190
@@ -323,10 +323,10 @@ Accuracy = 0
 TotalPP = 1
 Target = NearOther
 Flags = ZMove,Contact,CannotMetronome
-Description = After obtaining Z-Power, the user, Mimikyu, punches the target with full force.
+Description = 得到Ｚ力量的谜拟Ｑ 将全力进行乱揍攻击 。
 #-------------------------------
 [CLANGOROUSSOULBLAZE]
-Name = Clangorous Soulblaze
+Name = 炽魂热舞烈音爆
 Type = DRAGON
 Category = Special
 Power = 185
@@ -336,10 +336,10 @@ Target = AllNearFoes
 FunctionCode = RaiseUserMainStats1
 Flags = ZMove,Sound,CannotMetronome
 EffectChance = 100
-Description = Kommo-o attacks the opposing Pokémon with full force. This move boosts the user's stats.
+Description = 得到Ｚ力量的杖尾鳞 甲龙将全力攻击对手 。并且自己的能力会 提高。
 #-------------------------------
 [GUARDIANOFALOLA]
-Name = Guardian of Alola
+Name = 巨人卫士・阿罗拉
 Type = FAIRY
 Category = Special
 Power = 1
@@ -348,10 +348,10 @@ TotalPP = 1
 Target = NearOther
 FunctionCode = FixedDamageThreeQuartersTargetHP
 Flags = ZMove,CannotMetronome
-Description = The Pokémon obtains Alola's energy using its Z-Power. This reduces the target's HP greatly.
+Description = 通过Ｚ力量得到阿罗 拉之力的土地神宝可 梦将全力进行攻击。 对手的剩余HP会减 少很多。
 #-------------------------------
 [SEARINGSUNRAZESMASH]
-Name = Searing Sunraze Smash
+Name = 日光回旋下苍穹
 Type = STEEL
 Category = Physical
 Power = 200
@@ -360,10 +360,10 @@ TotalPP = 1
 Target = NearOther
 FunctionCode = IgnoreTargetAbility
 Flags = ZMove,Contact,CannotMetronome
-Description = Solgaleo attacks the target with full force and ignores the target's Ability.
+Description = 得到Ｚ力量的索尔迦 雷欧将全力进行攻击 。可以无视对手的特 性效果。
 #-------------------------------
 [MENACINGMOONRAZEMAELSTROM]
-Name = Menacing Moonraze Maelstrom
+Name = 月华飞溅落灵霄
 Type = GHOST
 Category = Special
 Power = 200
@@ -372,10 +372,10 @@ TotalPP = 1
 Target = NearOther
 FunctionCode = IgnoreTargetAbility
 Flags = ZMove,CannotMetronome
-Description = Lunala attacks the target with full force and ignores the target's Ability.
+Description = 得到Ｚ力量的露奈雅 拉将全力进行攻击。 可以无视对手的特性 效果。
 #-------------------------------
 [LIGHTTHATBURNSTHESKY]
-Name = Light That Burns the Sky
+Name = 焚天灭世炽光爆
 Type = PSYCHIC
 Category = Special
 Power = 200
@@ -384,10 +384,10 @@ TotalPP = 1
 Target = NearOther
 FunctionCode = CategoryDependsOnHigherDamageIgnoreTargetAbility
 Flags = ZMove,CannotMetronome
-Description = Deals damage based on the user's higher offensive stat. Ignores the target's Ability.
+Description = 奈克洛兹玛会无视对 手的特性效果，在攻 击和特攻之间，用数 值相对较高的一项给 予对方伤害。
 #-------------------------------
 [SOULSTEALING7STARSTRIKE]
-Name = Soul-Stealing 7-Star Strike
+Name = 七星夺魂腿
 Type = GHOST
 Category = Physical
 Power = 195
@@ -395,4 +395,4 @@ Accuracy = 0
 TotalPP = 1
 Target = NearOther
 Flags = ZMove,Contact,CannotMetronome
-Description = Marshadow punches and kicks the target consecutively with full force.
+Description = 得到Ｚ力量的玛夏多 将全力使出拳头和脚 踢的连续招式叩打对 手。

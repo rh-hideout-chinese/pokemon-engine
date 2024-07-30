@@ -1,7 +1,7 @@
-﻿# See the documentation on the wiki to learn how to edit this file.
+﻿# 请参阅 wiki 上的文档，了解如何编辑此文件。
 #-------------------------------
 [TERABLAST]
-Name = Tera Blast
+Name = 太晶爆发
 Type = NORMAL
 Category = Special
 Power = 80
@@ -10,4 +10,4 @@ TotalPP = 10
 Target = NearOther
 FunctionCode = CategoryDependsOnHigherDamageTera
 Flags = CanProtect,CanMirrorMove
-Description = Move type changes to match a Terastallized user's Tera Type. Deals damage based on user's higher stat.
+Description = 太晶化时，会放出太 晶属性的能量攻击。 比较自己的攻击和特 攻，用数值相对较高 的一项给予对方伤害 。
