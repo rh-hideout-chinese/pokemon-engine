@@ -13,7 +13,7 @@ Battle::AbilityEffects::OnSwitchIn.add(:SUPERSWEETSYRUP,
   proc { |ability, battler, battle, switch_in|
     next if battler.ability_triggered?
     battle.pbShowAbilitySplash(battler)
-    battle.pbDisplay(_INTL("A supersweet aroma is wafting from the syrup covering {1}!", battler.pbThis))
+    battle.pbDisplay(_INTL("{1}的蜜散发出了甜甜香气！", battler.pbThis))
     battle.allOtherSideBattlers(battler.index).each do |b|
       next if !b.near?(battler) || b.fainted?
       if b.itemActive? && !b.hasActiveAbility?(:CONTRARY) && b.effects[PBEffects::Substitute] == 0
@@ -37,7 +37,7 @@ Battle::AbilityEffects::OnSwitchIn.add(:HOSPITALITY,
       next if b.hp == b.totalhp
 	    amt = (b.totalhp / 4).floor
       b.pbRecoverHP(amt)
-      battle.pbDisplay(_INTL("{1} drank down all the matcha that {2} made!", b.pbThis, battler.pbThis(true)))
+      battle.pbDisplay(_INTL("{1}喝光了{2}泡的茶！", b.pbThis, battler.pbThis(true)))
     end
     battle.pbHideAbilitySplash(battler)
   }
@@ -54,13 +54,13 @@ Battle::AbilityEffects::OnDealingHit.add(:TOXICCHAIN,
     if target.hasActiveAbility?(:SHIELDDUST) && !battle.moldBreaker
       battle.pbShowAbilitySplash(target)
       if !Battle::Scene::USE_ABILITY_SPLASH
-        battle.pbDisplay(_INTL("{1} is unaffected!", target.pbThis))
+        battle.pbDisplay(_INTL("对于{1}，完全没有效果！", target.pbThis))
       end
       battle.pbHideAbilitySplash(target)
     elsif target.pbCanPoison?(user, Battle::Scene::USE_ABILITY_SPLASH)
       msg = nil
       if !Battle::Scene::USE_ABILITY_SPLASH
-        msg = _INTL("{1} was badly poisoned!", target.pbThis)
+        msg = _INTL("{1}中剧毒了！", target.pbThis)
       end
       target.pbPoison(user, msg, true)
     end
@@ -82,7 +82,7 @@ Battle::AbilityEffects::OnSwitchIn.add(:EMBODYASPECT,
     next if !battler.isSpecies?(:OGERPON)
     next if battler.effects[PBEffects::OneUseAbility] == ability
     mask = GameData::Species.get(:OGERPON).form_name
-    battle.pbDisplay(_INTL("The {1} worn by {2} shone brilliantly!", mask, battler.pbThis(true)))
+    battle.pbDisplay(_INTL("{2}让{1}发出光辉！", mask, battler.pbThis(true)))
     battler.pbRaiseStatStageByAbility(:SPEED, 1, battler)
     battler.effects[PBEffects::OneUseAbility] = ability
   }
@@ -93,7 +93,7 @@ Battle::AbilityEffects::OnSwitchIn.add(:EMBODYASPECT_1,
     next if !battler.isSpecies?(:OGERPON)
     next if battler.effects[PBEffects::OneUseAbility] == ability
     mask = GameData::Species.get(:OGERPON_1).form_name
-    battle.pbDisplay(_INTL("The {1} worn by {2} shone brilliantly!", mask, battler.pbThis(true)))
+    battle.pbDisplay(_INTL("{2}让{1}发出光辉！", mask, battler.pbThis(true)))
     battler.pbRaiseStatStageByAbility(:SPECIAL_DEFENSE, 1, battler)
     battler.effects[PBEffects::OneUseAbility] = ability
   }
@@ -104,7 +104,7 @@ Battle::AbilityEffects::OnSwitchIn.add(:EMBODYASPECT_2,
     next if !battler.isSpecies?(:OGERPON)
     next if battler.effects[PBEffects::OneUseAbility] == ability
     mask = GameData::Species.get(:OGERPON_2).form_name
-    battle.pbDisplay(_INTL("The {1} worn by {2} shone brilliantly!", mask, battler.pbThis(true)))
+    battle.pbDisplay(_INTL("{2}让{1}发出光辉！", mask, battler.pbThis(true)))
     battler.pbRaiseStatStageByAbility(:ATTACK, 1, battler)
     battler.effects[PBEffects::OneUseAbility] = ability
   }
@@ -115,7 +115,7 @@ Battle::AbilityEffects::OnSwitchIn.add(:EMBODYASPECT_3,
     next if !battler.isSpecies?(:OGERPON)
     next if battler.effects[PBEffects::OneUseAbility] == ability
     mask = GameData::Species.get(:OGERPON_3).form_name
-    battle.pbDisplay(_INTL("The {1} worn by {2} shone brilliantly!", mask, battler.pbThis(true)))
+    battle.pbDisplay(_INTL("{2}让{1}发出光辉！", mask, battler.pbThis(true)))
     battler.pbRaiseStatStageByAbility(:DEFENSE, 1, battler)
     battler.effects[PBEffects::OneUseAbility] = ability
   }
@@ -142,7 +142,7 @@ Battle::AbilityEffects::OnMoveSuccessCheck.add(:TERASHELL,
   proc { |ability, user, target, move, battle|
     next if !target.damageState.terashell
     battle.pbShowAbilitySplash(target)
-    battle.pbDisplay(_INTL("{1} made its shell gleam! It's distorting type matchups!", target.pbThis))
+    battle.pbDisplay(_INTL("{1}让甲壳发出光辉，使属性相克发生扭曲！", target.pbThis))
     battle.pbHideAbilitySplash(target)
   }
 )
@@ -164,20 +164,20 @@ Battle::AbilityEffects::OnSwitchIn.add(:TERAFORMZERO,
       battle.field.weather = :None
       battle.field.weatherDuration = 0
       case weather
-      when :Sun         then battle.pbDisplay(_INTL("The sunlight faded."))
-      when :Rain        then battle.pbDisplay(_INTL("The rain stopped."))
-      when :Sandstorm   then battle.pbDisplay(_INTL("The sandstorm subsided."))
+      when :Sun         then battle.pbDisplay(_INTL("日照复原了！"))
+      when :Rain        then battle.pbDisplay(_INTL("雨停了！"))
+      when :Sandstorm   then battle.pbDisplay(_INTL("沙暴停止了！"))
       when :Hail
         case Settings::HAIL_WEATHER_TYPE
-        when 0 then battle.pbDisplay(_INTL("The hail stopped."))
-        when 1 then battle.pbDisplay(_INTL("The snow stopped."))
-        when 2 then battle.pbDisplay(_INTL("The hailstorm ended."))
+        when 0 then battle.pbDisplay(_INTL("冰雹停了！"))
+        when 1 then battle.pbDisplay(_INTL("雪停了！"))
+        when 2 then battle.pbDisplay(_INTL("雹暴停止了！"))
         end
-      when :HarshSun    then battle.pbDisplay(_INTL("The harsh sunlight faded!"))
-      when :HeavyRain   then battle.pbDisplay(_INTL("The heavy rain has lifted!"))
-      when :StrongWinds then battle.pbDisplay(_INTL("The mysterious air current has dissipated!"))
+      when :HarshSun    then battle.pbDisplay(_INTL("大晴天复原了！"))
+      when :HeavyRain   then battle.pbDisplay(_INTL("暴雨停了！"))
+      when :StrongWinds then battle.pbDisplay(_INTL("神秘的气流消散了！"))
       else
-        battle.pbDisplay(_INTL("The weather returned to normal."))
+        battle.pbDisplay(_INTL("天气恢复正常了。"))
       end
     end
     if terrain != :None && battle.field.defaultTerrain == :None
@@ -185,12 +185,12 @@ Battle::AbilityEffects::OnSwitchIn.add(:TERAFORMZERO,
       battle.field.terrain = :None
       battle.field.terrainDuration = 0
       case terrain
-      when :Electric then battle.pbDisplay(_INTL("The electric current disappeared from the battlefield!"))
-      when :Grassy   then battle.pbDisplay(_INTL("The grass disappeared from the battlefield!"))
-      when :Psychic  then battle.pbDisplay(_INTL("The mist disappeared from the battlefield!"))
-      when :Misty    then battle.pbDisplay(_INTL("The weirdness disappeared from the battlefield!"))
+      when :Electric then battle.pbDisplay(_INTL("脚下的电光消失不见了！"))
+      when :Grassy   then battle.pbDisplay(_INTL("脚下的青草消失不见了！"))
+      when :Psychic  then battle.pbDisplay(_INTL("脚下的雾气消失不见了！"))
+      when :Misty    then battle.pbDisplay(_INTL("脚下的奇妙感觉消失了！"))
       else
-        battle.pbDisplay(_INTL("The battlefield returned to normal."))
+        battle.pbDisplay(_INTL("场地恢复正常了。"))
       end
     end
     next if !showSplash

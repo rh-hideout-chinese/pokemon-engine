@@ -33,7 +33,7 @@ class Battle::Move::LowerTargetSpeedOverTime < Battle::Move
     return if target.effects[PBEffects::Syrupy] > 0
     target.effects[PBEffects::Syrupy] = 3
     target.effects[PBEffects::SyrupyUser] = user.index
-    @battle.pbDisplay(_INTL("{1} got covered in sticky candy syrup!", target.pbThis))
+    @battle.pbDisplay(_INTL("{1}被黏糊糊的糖浆覆盖了！", target.pbThis))
   end
 
   def pbShowAnimation(id, user, targets, hitNum = 0, showAnimation = true)
@@ -93,7 +93,7 @@ class Battle::Move::TwoTurnAttackOneTurnInRainRaiseUserSpAtk1 < Battle::Move::Tw
   end
   
   def pbChargingTurnMessage(user, targets)
-    @battle.pbDisplay(_INTL("{1} absorbed electricity!", user.pbThis))
+    @battle.pbDisplay(_INTL("{1}吸收了电力！", user.pbThis))
   end
 
   def pbChargingTurnEffect(user, target)
@@ -112,7 +112,7 @@ class Battle::Move::RandomlyDealsDoubleDamage < Battle::Move
   def pbOnStartUse(user, targets)
     @allOutAttack = (@battle.pbRandom(100) < 30)
     if @allOutAttack
-      @battle.pbDisplay(_INTL("{1} is going all out for this attack!", user.pbThis))
+      @battle.pbDisplay(_INTL("{1}拿出全力了！", user.pbThis))
     end
   end
 
@@ -155,7 +155,7 @@ class Battle::Move::RaiseAlliesCriticalHitRate1DragonTypes2 < Battle::Move
       @validTargets.push(b)
     end
     if @validTargets.length == 0
-      @battle.pbDisplay(_INTL("But it failed!"))
+      @battle.pbDisplay(_INTL("但是，招式失败了！"))
       return true
     end
     return false
@@ -163,7 +163,7 @@ class Battle::Move::RaiseAlliesCriticalHitRate1DragonTypes2 < Battle::Move
 
   def pbFailsAgainstTarget?(user, target, show_message)
     return false if @validTargets.any? { |b| b.index == target.index }
-    @battle.pbDisplay(_INTL("{1} is already pumped!", target.pbThis)) if show_message
+    @battle.pbDisplay(_INTL("{1}已经干劲十足！", target.pbThis)) if show_message
     return true
   end
 
@@ -171,7 +171,7 @@ class Battle::Move::RaiseAlliesCriticalHitRate1DragonTypes2 < Battle::Move
     boost = (target.pbHasType?(:DRAGON)) ? 2 : 1
     target.effects[PBEffects::FocusEnergy] = boost
     @battle.pbCommonAnimation("StatUp", target)
-    @battle.pbDisplay(_INTL("{1} is getting pumped!", target.pbThis))
+    @battle.pbDisplay(_INTL("{1}现在干劲十足！", target.pbThis))
   end
 end
 
@@ -217,7 +217,7 @@ class Battle::Move::DisableTargetHealingMoves2Turns < Battle::Move
     return if target.effects[PBEffects::HealBlock] > 0
     return if pbMoveFailedAromaVeil?(user, target, false)
     target.effects[PBEffects::HealBlock] = 2
-    @battle.pbDisplay(_INTL("{1} was prevented from healing!", target.pbThis))
+    @battle.pbDisplay(_INTL("{1}的回复行为被封住了！", target.pbThis))
     target.pbItemStatusCureCheck
   end
 end
@@ -238,7 +238,7 @@ class Battle::Move::FlinchTargetFailsIfTargetNotUsingPriorityMove < Battle::Move
       hasPriority = true
     end
     if !hasPriority
-      @battle.pbDisplay(_INTL("But it failed!"))
+      @battle.pbDisplay(_INTL("但是，招式失败了！"))
       return true
     end
     return false

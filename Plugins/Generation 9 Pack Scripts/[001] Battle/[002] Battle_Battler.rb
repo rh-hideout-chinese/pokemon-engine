@@ -300,7 +300,7 @@ class Battle::Battler
     @legendPlateType = plateType
     if hasActiveAbility?(:TRACE) && hasActiveItem?(:ABILITYSHIELD)
       @battle.pbShowAbilitySplash(self)
-      @battle.pbDisplay(_INTL("{1}'s Ability is protected by the effects of its Ability Shield!", pbThis))
+      @battle.pbDisplay(_INTL("{1}的特性正受到特性护具效果的保护！", pbThis))
       @battle.pbHideAbilitySplash(self)
     else
       paldea_pbContinualAbilityChecks(onSwitchIn)
@@ -329,7 +329,7 @@ class Battle::Battler
       if @form == 0
         @battle.pbShowAbilitySplash(self, true)
         @battle.pbHideAbilitySplash(self)
-        pbChangeForm(1, _INTL("{1} transformed!", pbThis))
+        pbChangeForm(1, _INTL("{1}的样子发生了变化！", pbThis))
       end
     end
     paldea_pbCheckForm(endOfRound)
@@ -373,7 +373,7 @@ class Battle::Battler
         order = [pairedBattler.pbThis, pbThis(true)]
         pairedBattler.effects[PBEffects::Commander] = nil
       end
-      commanderMsg = _INTL("{1} comes out of {2}'s mouth!", *order)
+      commanderMsg = _INTL("{1}从{2}的口中跳了出来！", *order)
     end
     paldea_pbFaint(showMessage) 
     @battle.pbAddFaintedAlly(self)
@@ -425,11 +425,11 @@ class Battle::Battler
     if move.damagingMove?
       if user.status == :DROWSY && move.electrocuteUser?
         user.pbCureStatus(false)
-        @battle.pbDisplay(_INTL("{1} was shocked wide awake!", user.pbThis))
+        @battle.pbDisplay(_INTL("{1}被惊醒了！", user.pbThis))
       end
       if user.status == :FROSTBITE && move.thawsUser?
         user.pbCureStatus(false)
-        @battle.pbDisplay(_INTL("{1} warmed up!", user.pbThis))
+        @battle.pbDisplay(_INTL("{1}暖和起来了！", user.pbThis))
       end
       targets.each do |b|
         next if b.damageState.unaffected || b.damageState.substitute
@@ -474,7 +474,7 @@ class Battle::Battler
     if !@effects[PBEffects::Instructed] && @lastMoveUsed == move.id &&
 	    @effects[PBEffects::SuccessiveMove] == move.id
       if showMessages
-        msg = _INTL("{1} can't be used twice in a row!", move.name)
+        msg = _INTL("{1}不能连续使用两次！", move.name)
         (commandPhase) ? @battle.pbDisplayPaused(msg) : @battle.pbDisplay(msg)
       end
       return false
@@ -496,7 +496,7 @@ class Battle::Battler
         if target.effects[PBEffects::SilkTrap] && move.damagingMove?
           if move.pbShowFailMessages?(targets)
             @battle.pbCommonAnimation("SilkTrap", target)
-            @battle.pbDisplay(_INTL("{1} protected itself!", target.pbThis))
+            @battle.pbDisplay(_INTL("{1}在攻击中守护住了自己！", target.pbThis))
           end
           target.damageState.protected = true
           @battle.successStates[user.index].protected = true
@@ -510,7 +510,7 @@ class Battle::Battler
         if target.effects[PBEffects::BurningBulwark] && move.damagingMove?
           if move.pbShowFailMessages?(targets)
             @battle.pbCommonAnimation("BurningBulwark", target)
-            @battle.pbDisplay(_INTL("{1} protected itself!", target.pbThis))
+            @battle.pbDisplay(_INTL("{1}在攻击中守护住了自己！", target.pbThis))
           end
           target.damageState.protected = true
           @battle.successStates[user.index].protected = true

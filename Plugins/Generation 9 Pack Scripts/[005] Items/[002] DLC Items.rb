@@ -50,7 +50,7 @@ ItemHandlers::UseOnPokemon.add(:FRESHSTARTMOCHI, proc { |item, qty, pkmn, scene|
   pkmn.calc_stats
   pbSEPlay("Use item in party")
   scene.pbRefresh
-  scene.pbDisplay(_INTL("{1}'s base points were all reset to zero!", pkmn.name))
+  scene.pbDisplay(_INTL("{1}的努力值全部重置为零了！", pkmn.name))
   next true
 })
 
@@ -76,27 +76,27 @@ Battle::ItemEffects::DamageCalcFromUser.copy(:WELLSPRINGMASK, :HEARTHFLAMEMASK, 
 #===============================================================================
 ItemHandlers::UseOnPokemon.add(:METEORITE, proc { |item, qty, pkmn, scene|
   if !pkmn.isSpecies?(:DEOXYS)
-    scene.pbDisplay(_INTL("It had no effect."))
+    scene.pbDisplay(_INTL("没有效果。"))
     next false
   elsif pkmn.fainted?
-    scene.pbDisplay(_INTL("This can't be used on the fainted Pokémon."))
+    scene.pbDisplay(_INTL("不能给倒下的宝可梦使用。"))
     next false
   end
   choices = [
-    _INTL("Normal Forme"),
-    _INTL("Attack Forme"),
-    _INTL("Defense Forme"),
-    _INTL("Speed Forme"),
-    _INTL("Cancel")
+    _INTL("一般形态"),
+    _INTL("攻击形态"),
+    _INTL("防御形态"),
+    _INTL("速度形态"),
+    _INTL("取消")
   ]
-  new_form = scene.pbShowCommands(_INTL("Which form should {1} change into?", pkmn.name), choices, pkmn.form)
+  new_form = scene.pbShowCommands(_INTL("{1}应该变成哪一个形态？", pkmn.name), choices, pkmn.form)
   if new_form == pkmn.form
-    scene.pbDisplay(_INTL("It won't have any effect."))
+    scene.pbDisplay(_INTL("即便使用也无效果哦。"))
     next false
   elsif new_form > -1 && new_form < choices.length - 1
     pkmn.setForm(new_form) do
       scene.pbRefresh
-      scene.pbDisplay(_INTL("{1} transformed!", pkmn.name))
+      scene.pbDisplay(_INTL("{1}的样子发生了变化！", pkmn.name))
     end
     next true
   end

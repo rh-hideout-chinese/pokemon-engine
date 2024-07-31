@@ -12,12 +12,12 @@
 #-------------------------------------------------------------------------------
 ItemHandlers::UseOnPokemon.add(:AWAKENING, proc { |item, qty, pkmn, scene|
   if pkmn.fainted? || ![:SLEEP, :DROWSY].include?(pkmn.status)
-    scene.pbDisplay(_INTL("It won't have any effect."))
+    scene.pbDisplay(_INTL("即便使用也无效果哦。"))
     next false
   end
   case pkmn.status
-  when :SLEEP  then msg = _INTL("{1} woke up.", pkmn.name)
-  when :DROWSY then msg = _INTL("{1} became alert again.", pkmn.name)
+  when :SLEEP  then msg = _INTL("{1}醒过来了！", pkmn.name)
+  when :DROWSY then msg = _INTL("{1}再次变得警觉起来。", pkmn.name)
   end
   pkmn.heal_status
   scene.pbRefresh
@@ -34,12 +34,12 @@ ItemHandlers::UseOnPokemon.copy(:AWAKENING, :CHESTOBERRY, :BLUEFLUTE, :POKEFLUTE
 #-------------------------------------------------------------------------------
 ItemHandlers::UseOnPokemon.add(:ICEHEAL, proc { |item, qty, pkmn, scene|
   if pkmn.fainted? || ![:FROZEN, :FROSTBITE].include?(pkmn.status)
-    scene.pbDisplay(_INTL("It won't have any effect."))
+    scene.pbDisplay(_INTL("即便使用也无效果哦。"))
     next false
   end
   case pkmn.status
-  when :FROZEN    then msg = _INTL("{1} was thawed out.", pkmn.name)
-  when :FROSTBITE then msg = _INTL("{1}'s frostbite was healed.", pkmn.name)
+  when :FROZEN    then msg = _INTL("{1}的冻冰被融化了！", pkmn.name)
+  when :FROSTBITE then msg = _INTL("{1}的冻伤痊愈了。", pkmn.name)
   end
   pkmn.heal_status
   scene.pbRefresh
@@ -56,16 +56,16 @@ ItemHandlers::UseOnPokemon.copy(:ICEHEAL, :ASPEARBERRY)
 #-------------------------------------------------------------------------------
 ItemHandlers::UseOnPokemon.add(:GRACIDEA, proc { |item, qty, pkmn, scene|
   if !pkmn.isSpecies?(:SHAYMIN) || [:FROZEN, :FROSTBITE].include?(pkmn.status) || PBDayNight.isNight?
-    scene.pbDisplay(_INTL("It had no effect."))
+    scene.pbDisplay(_INTL("没有效果。"))
     next false
   elsif pkmn.fainted?
-    scene.pbDisplay(_INTL("This can't be used on the fainted Pokémon."))
+    scene.pbDisplay(_INTL("不能给倒下的宝可梦使用。"))
     next false
   end
   form = (pkmn.form == 0) ? 1 : 0
   pkmn.setForm(form) do
     scene.pbRefresh
-    scene.pbDisplay(_INTL("{1} changed Forme!", pkmn.name))
+    scene.pbDisplay(_INTL("{1}改变了形态！", pkmn.name))
   end
   next true
 })
@@ -77,16 +77,16 @@ ItemHandlers::UseOnPokemon.add(:GRACIDEA, proc { |item, qty, pkmn, scene|
 #-------------------------------------------------------------------------------
 ItemHandlers::UseOnPokemon.add(:REVEALGLASS, proc { |item, qty, pkmn, scene|
   if !pkmn.species_data.has_flag?("ForcesOfNature")
-    scene.pbDisplay(_INTL("It had no effect."))
+    scene.pbDisplay(_INTL("没有效果。"))
     next false
   elsif pkmn.fainted?
-    scene.pbDisplay(_INTL("This can't be used on the fainted Pokémon."))
+    scene.pbDisplay(_INTL("不能给倒下的宝可梦使用。"))
     next false
   end
   newForm = (pkmn.form == 0) ? 1 : 0
   pkmn.setForm(newForm) {
     scene.pbRefresh
-    scene.pbDisplay(_INTL("{1} changed Forme!", pkmn.name))
+    scene.pbDisplay(_INTL("{1}改变了形态！", pkmn.name))
   }
   next true
 })
@@ -97,20 +97,20 @@ ItemHandlers::UseOnPokemon.add(:REVEALGLASS, proc { |item, qty, pkmn, scene|
 # Adds the ability to switch from a Hidden Ability.
 #-------------------------------------------------------------------------------
 ItemHandlers::UseOnPokemon.add(:ABILITYPATCH, proc { |item, qty, pkmn, scene|
-  if scene.pbConfirm(_INTL("Do you want to change {1}'s Ability?", pkmn.name))
+  if scene.pbConfirm(_INTL("你想要改变{1}的特性吗？", pkmn.name))
     current_abi = pkmn.ability_index
     abils = pkmn.getAbilityList
     new_ability_id = nil
     abils.each { |a| new_ability_id = a[0] if (current_abi < 2 && a[1] == 2) || (current_abi == 2 && a[1] == 0) }
     if !new_ability_id || pkmn.isSpecies?(:ZYGARDE)
-      scene.pbDisplay(_INTL("It won't have any effect."))
+      scene.pbDisplay(_INTL("即便使用也无效果哦。"))
       next false
     end
     new_ability_name = GameData::Ability.get(new_ability_id).name
     pkmn.ability_index = current_abi < 2 ? 2 : 0
     pkmn.ability = nil
     scene.pbRefresh
-    scene.pbDisplay(_INTL("{1}'s Ability changed! Its Ability is now {2}!",
+    scene.pbDisplay(_INTL("{1}的特性改变了！现在它的特性是{2}！",
        pkmn.name, new_ability_name))
     next true
   end
@@ -139,7 +139,7 @@ ItemHandlers::CanUseInBattle.copy(:AWAKENING, :CHESTOBERRY)
 
 ItemHandlers::CanUseInBattle.add(:BLUEFLUTE, proc { |item, pokemon, battler, move, firstAction, battle, scene, showMessages|
   if battler&.hasActiveAbility?(:SOUNDPROOF)
-    scene.pbDisplay(_INTL("It won't have any effect.")) if showMessages
+    scene.pbDisplay(_INTL("即便使用也无效果哦。")) if showMessages
     next false
   end
   next pbBattleItemCanCureStatus?(:SLEEP, pokemon, scene, showMessages) ||
@@ -153,8 +153,8 @@ ItemHandlers::BattleUseOnPokemon.add(:AWAKENING, proc { |item, pokemon, battler,
   name = (battler) ? battler.pbThis : pokemon.name
   scene.pbRefresh
   case oldStatus
-  when :SLEEP  then scene.pbDisplay(_INTL("{1} woke up.", name))
-  when :DROWSY then scene.pbDisplay(_INTL("{1} became alert again.", name))
+  when :SLEEP  then scene.pbDisplay(_INTL("{1}醒过来了！", name))
+  when :DROWSY then scene.pbDisplay(_INTL("{1}再次变得警觉起来。", name))
   end
 })
 
@@ -167,7 +167,7 @@ ItemHandlers::BattleUseOnPokemon.copy(:AWAKENING, :CHESTOBERRY, :BLUEFLUTE)
 #-------------------------------------------------------------------------------
 ItemHandlers::CanUseInBattle.add(:POKEFLUTE, proc { |item, pokemon, battler, move, firstAction, battle, scene, showMessages|
   if battle.allBattlers.none? { |b| [:SLEEP, :DROWSY].include?(b.status) && !b.hasActiveAbility?(:SOUNDPROOF) }
-    scene.pbDisplay(_INTL("It won't have any effect.")) if showMessages
+    scene.pbDisplay(_INTL("即便使用也无效果哦。")) if showMessages
     next false
   end
   next true
@@ -177,7 +177,7 @@ ItemHandlers::UseInBattle.add(:POKEFLUTE, proc { |item, battler, battle|
   battle.allBattlers.each do |b|
     b.pbCureStatus(false) if [:SLEEP, :DROWSY].include?(b.status) && !b.hasActiveAbility?(:SOUNDPROOF)
   end
-  battle.pbDisplay(_INTL("All Pokémon were roused by the tune!"))
+  battle.pbDisplay(_INTL("所有宝可梦都被唤醒了！"))
 })
 
 #===============================================================================
@@ -199,8 +199,8 @@ ItemHandlers::BattleUseOnPokemon.add(:ICEHEAL, proc { |item, pokemon, battler, c
   name = (battler) ? battler.pbThis : pokemon.name
   scene.pbRefresh
   case oldStatus
-  when :FROZEN    then scene.pbDisplay(_INTL("{1} was thawed out.", name))
-  when :FROSTBITE then scene.pbDisplay(_INTL("{1}'s frostbite was healed.", name))
+  when :FROZEN    then scene.pbDisplay(_INTL("{1}的冻冰被融化了！", name))
+  when :FROSTBITE then scene.pbDisplay(_INTL("{1}的冻伤痊愈了。", name))
   end
 })
 
@@ -232,26 +232,26 @@ Battle::ItemEffects::StatusCure.add(:LUMBERRY,
     battler.pbCureStatus(forced)
     battler.pbCureConfusion
     if forced
-      battle.pbDisplay(_INTL("{1} snapped out of its confusion.", battler.pbThis)) if oldConfusion
+      battle.pbDisplay(_INTL("{1}的混乱解除了！", battler.pbThis)) if oldConfusion
     else
       case oldStatus
       when :SLEEP
-        battle.pbDisplay(_INTL("{1}'s {2} woke it up!", battler.pbThis, itemName))
+        battle.pbDisplay(_INTL("因为{2}，{1}醒过来了！", battler.pbThis, itemName))
       when :POISON
-        battle.pbDisplay(_INTL("{1}'s {2} cured its poisoning!", battler.pbThis, itemName))
+        battle.pbDisplay(_INTL("因为{2}，{1}治愈了中毒！", battler.pbThis, itemName))
       when :BURN
-        battle.pbDisplay(_INTL("{1}'s {2} healed its burn!", battler.pbThis, itemName))
+        battle.pbDisplay(_INTL("因为{2}，{1}治愈了灼伤！", battler.pbThis, itemName))
       when :PARALYSIS
-        battle.pbDisplay(_INTL("{1}'s {2} cured its paralysis!", battler.pbThis, itemName))
+        battle.pbDisplay(_INTL("因为{2}，{1}治愈了麻痹！", battler.pbThis, itemName))
       when :FROZEN
-        battle.pbDisplay(_INTL("{1}'s {2} defrosted it!", battler.pbThis, itemName))
+        battle.pbDisplay(_INTL("因为{2}，{1}治愈了冰冻状态！", battler.pbThis, itemName))
       when :DROWSY
-        battle.pbDisplay(_INTL("{1}'s {2} made it alert again!", battler.pbThis, itemName))
+        battle.pbDisplay(_INTL("因为{2}，{1}再次变得警觉！", battler.pbThis, itemName))
       when :FROSTBITE
-        battle.pbDisplay(_INTL("{1}'s {2} healed its frostbite!", battler.pbThis, itemName))
+        battle.pbDisplay(_INTL("因为{2}，{1}治愈了冻伤状态！", battler.pbThis, itemName))
       end
       if oldConfusion
-        battle.pbDisplay(_INTL("{1}'s {2} snapped it out of its confusion!", battler.pbThis, itemName))
+        battle.pbDisplay(_INTL("为{2}，{1}的混乱解除了！", battler.pbThis, itemName))
       end
     end
     next true
@@ -271,8 +271,8 @@ Battle::ItemEffects::StatusCure.add(:CHESTOBERRY,
     PBDebug.log("[Item triggered] #{battler.pbThis}'s #{itemName}") if forced
     battle.pbCommonAnimation("EatBerry", battler) if !forced
     case battler.status
-    when :SLEEP  then msg = _INTL("{1}'s {2} woke it up!", battler.pbThis, itemName)
-    when :DROWSY then msg = _INTL("{1}'s {2} made it alert again!", battler.pbThis, itemName)
+    when :SLEEP  then msg = _INTL("因为{2}，{1}醒过来了！", battler.pbThis, itemName)
+    when :DROWSY then msg = _INTL("因为{2}，{1}再次变得警觉！", battler.pbThis, itemName)
     end
     battler.pbCureStatus(forced)
     battle.pbDisplay(msg) if !forced
@@ -293,8 +293,8 @@ Battle::ItemEffects::StatusCure.add(:ASPEARBERRY,
     PBDebug.log("[Item triggered] #{battler.pbThis}'s #{itemName}") if forced
     battle.pbCommonAnimation("EatBerry", battler) if !forced
     case battler.status
-    when :FROZEN    then msg = _INTL("{1}'s {2} defrosted it!", battler.pbThis, itemName)
-    when :FROSTBITE then msg = _INTL("{1}'s {2} healed its frostbite!", battler.pbThis, itemName)
+    when :FROZEN    then msg = _INTL("因为{2}，{1}治愈了冰冻状态！", battler.pbThis, itemName)
+    when :FROSTBITE then msg = _INTL("因为{2}，{1}治愈了冻伤状态！", battler.pbThis, itemName)
     end
     battler.pbCureStatus(forced)
     battle.pbDisplay(msg) if !forced
@@ -313,26 +313,26 @@ Battle::ItemEffects::AfterMoveUseFromTarget.add(:REDCARD,
     newPkmn = battle.pbGetReplacementPokemonIndex(user.index, true)
     next if newPkmn < 0
     battle.pbCommonAnimation("UseItem", battler)
-    battle.pbDisplay(_INTL("{1} held up its {2} against {3}!",
+    battle.pbDisplay(_INTL("{1}猛地向{3}出示了{2}！",
        battler.pbThis, battler.itemName, user.pbThis(true)))
     battler.pbConsumeItem
     next if user.effects[PBEffects::Commander]
     if user.hasActiveAbility?([:SUCTIONCUPS, :GUARDDOG]) && !battle.moldBreaker
       battle.pbShowAbilitySplash(user)
       if Battle::Scene::USE_ABILITY_SPLASH
-        battle.pbDisplay(_INTL("{1} anchors itself!", user.pbThis))
+        battle.pbDisplay(_INTL("{1}固定住了！", user.pbThis))
       else
-        battle.pbDisplay(_INTL("{1} anchors itself with {2}!", user.pbThis, user.abilityName))
+        battle.pbDisplay(_INTL("{1}用{2}固定住了！", user.pbThis, user.abilityName))
       end
       battle.pbHideAbilitySplash(user)
       next
     end
     if user.effects[PBEffects::Ingrain]
-      battle.pbDisplay(_INTL("{1} anchored itself with its roots!", user.pbThis))
+      battle.pbDisplay(_INTL("{1}用根固定住了！", user.pbThis))
       next
     end
     battle.pbRecallAndReplace(user.index, newPkmn, true)
-    battle.pbDisplay(_INTL("{1} was dragged out!", user.pbThis))
+    battle.pbDisplay(_INTL("{1}被拖进了战斗！", user.pbThis))
     battle.pbClearChoice(user.index)
     switched_battlers.push(user.index)
     battle.moldBreaker = false
