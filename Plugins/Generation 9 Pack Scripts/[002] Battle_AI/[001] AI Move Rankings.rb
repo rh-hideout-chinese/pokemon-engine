@@ -854,6 +854,7 @@ Battle::AI::Handlers::MoveFailureCheck.add("HealUserFullyAndFallAsleep",
 Battle::AI::Handlers::MoveFailureCheck.add("UserSwapsPositionsWithAlly",
   proc { |move, user, ai, battle|
     next true if Settings::MECHANICS_GENERATION >= 9 && user.effects[PBEffects::AllySwitch]
+    next true if user.effects[PBEffects::Commander]
     num_targets = 0
     idxUserOwner = battle.pbGetOwnerIndexFromBattlerIndex(user.index)
     ai.each_ally(user.side) do |b, i|

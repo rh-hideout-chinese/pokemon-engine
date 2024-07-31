@@ -68,12 +68,33 @@ class Battle
   def pbCanSwitch?(idxBattler, idxParty = -1, partyScene = nil)
     ret = paldea_pbCanSwitch?(idxBattler, idxParty, partyScene)
     if ret && @battlers[idxBattler].effects[PBEffects::Commander]
-      partyScene&.pbDisplay(_INTL("无法让{1}回来！", battler.pbThis))
+      partyScene&.pbDisplay(_INTL("无法让{1}回来！", @battlers[idxBattler].pbThis))
       return false
     end
     return ret
   end
   
+  
+  #-----------------------------------------------------------------------------
+  # Aliased to ensure Pokemon affected by Commander cannot shift positions.
+  #-----------------------------------------------------------------------------
+  alias paldea_pbCanShift? pbCanShift?
+  def pbCanShift?(idxBattler)
+    ret = paldea_pbCanShift?(idxBattler)
+    if ret
+      idxOther = -1
+      case pbSideSize(idxBattler)
+      when 2
+        idxOther = (idxBattler + 2) % 4
+      when 3
+        idxOther = (idxBattler.even?) ? 2 : 3
+      end
+      return false if @battlers[idxBattler].effects[PBEffects::Commander] || 
+                      @battlers[idxOther].effects[PBEffects::Commander]
+    end
+    return ret
+  end
+
   #-----------------------------------------------------------------------------
   # Counts down the remaining turns of the Splinter effect until its reset.
   #-----------------------------------------------------------------------------
@@ -311,14 +332,18 @@ class Battle::Move
   alias paldea_pbCalcDamageMultipliers pbCalcDamageMultipliers
   def pbCalcDamageMultipliers(user, target, numTargets, type, baseDmg, multipliers)
     # "of Ruin" abilities
-    [:TABLETSOFRUIN, :SWORDOFRUIN, :VESSELOFRUIN, :BEADSOFRUIN].each_with_index do |abil, i|
+    [:TABLETSOFRUIN, :SWORDOFRUIN, :VESSELOFRUIN, :BEADSOFRUIN].each_with_index do |ability, i|
+      next if !@battle.pbCheckGlobalAbility(ability)
       category = (i < 2) ? physicalMove? : specialMove?
       category = !category if i.odd? && @battle.field.effects[PBEffects::WonderRoom] > 0
-      mult = (i.even?) ? multipliers[:attack_multiplier] : multipliers[:defense_multiplier]
-      mult *= 0.75 if @battle.pbCheckGlobalAbility(abil) && !user.hasActiveAbility?(abil) && category
+      if i.even? && !user.hasActiveAbility?(ability)
+        multipliers[:attack_multiplier] *= 0.75 if category
+      elsif i.odd? && !target.hasActiveAbility?(ability)
+        multipliers[:defense_multiplier] *= 0.75 if category
+      end
     end
     if @battle.field.terrain == :Electric && user.affectedByTerrain? &&
-       @function_code == "IncreasePowerWhileElectricTerrain"
+       @function_code == "IncreasePowerInElectricTerrain"
       multipliers[:power_multiplier] *= 1.5 if type != :ELECTRIC
     end
     case user.effectiveWeather

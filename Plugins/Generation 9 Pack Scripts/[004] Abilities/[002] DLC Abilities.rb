@@ -31,11 +31,11 @@ Battle::AbilityEffects::OnSwitchIn.add(:SUPERSWEETSYRUP,
 #===============================================================================
 Battle::AbilityEffects::OnSwitchIn.add(:HOSPITALITY,
   proc { |ability, battler, battle, switch_in|
-    next if battler.allAllies.none? { |b| b.hp < b.totalhp }
+    next if battler.allAllies.none? { |b| b.canHeal? }
     battle.pbShowAbilitySplash(battler)
     battler.allAllies.each do |b|
-      next if b.hp == b.totalhp
-	    amt = (b.totalhp / 4).floor
+      next if !b.canHeal?
+      amt = (b.totalhp / 4).floor
       b.pbRecoverHP(amt)
       battle.pbDisplay(_INTL("{1}喝光了{2}泡的茶！", b.pbThis, battler.pbThis(true)))
     end
@@ -48,6 +48,7 @@ Battle::AbilityEffects::OnSwitchIn.add(:HOSPITALITY,
 #===============================================================================
 Battle::AbilityEffects::OnDealingHit.add(:TOXICCHAIN,
   proc { |ability, user, target, move, battle|
+    next if target.fainted?
     next if battle.pbRandom(100) >= 30
     next if target.hasActiveItem?(:COVERTCLOAK)
     battle.pbShowAbilitySplash(user)

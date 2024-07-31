@@ -254,7 +254,6 @@ class Battle::Move::UserSwapsPositionsWithAlly < Battle::Move
     user.effects[PBEffects::ProtectRate] = oldVal
   end
   
-  alias paldea_pbMoveFailed? pbMoveFailed?
   def pbMoveFailed?(user, targets)
     if Settings::MECHANICS_GENERATION >= 9
       if user.effects[PBEffects::AllySwitch]
@@ -269,7 +268,23 @@ class Battle::Move::UserSwapsPositionsWithAlly < Battle::Move
         return true
       end
     end
-    return paldea_pbMoveFailed?(user, targets)
+    numTargets = 0
+    if !user.effects[PBEffects::Commander]
+      @idxAlly = -1
+      idxUserOwner = @battle.pbGetOwnerIndexFromBattlerIndex(user.index)
+      user.allAllies.each do |b|
+        next if @battle.pbGetOwnerIndexFromBattlerIndex(b.index) != idxUserOwner
+        next if !b.near?(user)
+        next if b.effects[PBEffects::Commander]
+        numTargets += 1
+        @idxAlly = b.index
+      end
+    end
+    if numTargets != 1
+      @battle.pbDisplay(_INTL("But it failed!"))
+      return true
+    end
+    return false
   end
   
   alias paldea_pbEffectGeneral pbEffectGeneral

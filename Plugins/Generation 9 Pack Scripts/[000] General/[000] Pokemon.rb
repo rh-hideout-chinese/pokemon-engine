@@ -101,7 +101,7 @@ class Pokemon
   end
   
   def set_evo_crest_count(item, value)
-    init_crest_count(item)
+    init_evo_crest_count(item)
     @evo_crest_count[item] = value
   end
   
@@ -469,8 +469,11 @@ MultipleForms.register(:OGERPON, {
     next 3 if pkmn.hasItem?(:CORNERSTONEMASK)
     next 0
   },
-  "getFormOnEnteringBattle" => proc { |pkmn, wild|
-    next pkmn.form + 4 if pkmn.form <= 3
+  "getFormOnStartingBattle" => proc { |pkmn, wild|
+  next 5 if pkmn.hasItem?(:WELLSPRINGMASK)
+  next 6 if pkmn.hasItem?(:HEARTHFLAMEMASK)
+  next 7 if pkmn.hasItem?(:CORNERSTONEMASK)
+  next 4
   },
   "getFormOnLeavingBattle" => proc { |pkmn, battle, usedInBattle, endBattle|
     next pkmn.form - 4 if pkmn.form > 3 && endBattle
