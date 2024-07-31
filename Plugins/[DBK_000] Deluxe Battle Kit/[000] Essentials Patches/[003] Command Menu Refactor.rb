@@ -27,7 +27,7 @@ class Battle::Scene::FightMenu < Battle::Scene::MenuBase
         button.bitmap = @buttonBitmap.bitmap
         button.x = self.x + 4
         button.x += (i.even? ? 0 : (@buttonBitmap.width / 2) - 4)
-        button.y = self.y + 6
+        button.y = self.y + 4
         button.y += (((i / 2) == 0) ? 0 : BUTTON_HEIGHT - 4)
         button.src_rect.width  = @buttonBitmap.width / 2
         button.src_rect.height = BUTTON_HEIGHT
@@ -40,7 +40,7 @@ class Battle::Scene::FightMenu < Battle::Scene::MenuBase
       end
       @overlay = BitmapSprite.new(Graphics.width, Graphics.height - self.y, viewport)
       @overlay.x = self.x
-      @overlay.y = self.y
+      @overlay.y = self.y+4
       pbSetNarrowFont(@overlay.bitmap)
       addSprite("overlay", @overlay)
       @infoOverlay = BitmapSprite.new(Graphics.width, Graphics.height - self.y, viewport)
@@ -50,7 +50,7 @@ class Battle::Scene::FightMenu < Battle::Scene::MenuBase
       addSprite("infoOverlay", @infoOverlay)
       @typeIcon = Sprite.new(viewport)
       @typeIcon.bitmap = @typeBitmap.bitmap
-      @typeIcon.x      = self.x + 416
+      @typeIcon.x      = self.x + 425
       @typeIcon.y      = self.y + 20
       @typeIcon.src_rect.height = TYPE_ICON_HEIGHT
       addSprite("typeIcon", @typeIcon)
