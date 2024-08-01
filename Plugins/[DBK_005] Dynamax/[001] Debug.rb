@@ -6,25 +6,25 @@
 # General Debug options
 #-------------------------------------------------------------------------------
 MenuHandlers.add(:debug_menu, :deluxe_dynamax, {
-  "name"        => _INTL("Toggle Dynamax"),
+  "name"        => _INTL("切换极巨化"),
   "parent"      => :deluxe_plugins_menu,
-  "description" => _INTL("Toggles the availability of Dynamax functionality."),
+  "description" => _INTL("切换极巨化功能的可用性."),
   "effect"      => proc {
     $game_switches[Settings::NO_DYNAMAX] = !$game_switches[Settings::NO_DYNAMAX]
     toggle = ($game_switches[Settings::NO_DYNAMAX]) ? "disabled" : "enabled"
-    pbMessage(_INTL("Dynamax {1}.", toggle))
+    pbMessage(_INTL("极巨化 {1}.", 切换))
   }
 })
 
 MenuHandlers.add(:debug_menu, :deluxe_dynamax_settings, {
-  "name"        => _INTL("Dynamax settings..."),
+  "name"        => _INTL("极巨化设定..."),
   "parent"      => :deluxe_plugins_menu,
-  "description" => _INTL("Edit when and where Dynamax is able to be used."),
+  "description" => _INTL("编辑极巨化何时何地可以使用."),
   "effect"      => proc {
     loop do
       commands = [
-        _INTL("Dynamax usable on every map [{1}]",    ($game_switches[Settings::DYNAMAX_ON_ANY_MAP])      ? _INTL("YES") : _INTL("NO")),
-        _INTL("Dynamax usable in wild battles [{1}]", ($game_switches[Settings::DYNAMAX_IN_WILD_BATTLES]) ? _INTL("YES") : _INTL("NO"))
+        _INTL("极巨化在任何地图都可用 [{1}]",    ($game_switches[Settings::DYNAMAX_ON_ANY_MAP])      ? _INTL("是") : _INTL("否")),
+        _INTL("极巨化可在野生战斗使用 [{1}]", ($game_switches[Settings::DYNAMAX_IN_WILD_BATTLES]) ? _INTL("是") : _INTL("否"))
       ]
       command = pbShowCommands(nil, commands, -1, 0)
       break if command < 0
@@ -32,16 +32,16 @@ MenuHandlers.add(:debug_menu, :deluxe_dynamax_settings, {
       when 0
         $game_switches[Settings::DYNAMAX_ON_ANY_MAP] = !$game_switches[Settings::DYNAMAX_ON_ANY_MAP]
         if $game_switches[Settings::DYNAMAX_ON_ANY_MAP]
-          pbMessage(_INTL("Dynamax is now usable on every map."))
+          pbMessage(_INTL("现在可在任何地图使用极巨化."))
         else
-          pbMessage(_INTL("Dynamax is now only usable on maps with the 'PowerSpot' flag."))
+          pbMessage(_INTL("极巨化现在仅在带有“极巨能量”标志的地图上可用."))
         end
       when 1
         $game_switches[Settings::DYNAMAX_IN_WILD_BATTLES] = !$game_switches[Settings::DYNAMAX_IN_WILD_BATTLES]
         if $game_switches[Settings::DYNAMAX_IN_WILD_BATTLES]
-          pbMessage(_INTL("Dynamax is now also usable in wild battles."))
+          pbMessage(_INTL("极巨化现在也可以在野生战斗中使用."))
         else
-          pbMessage(_INTL("Dynamax is now only usable in trainer battles."))
+          pbMessage(_INTL("极巨化现在仅在训练师对战中可用."))
         end
       end
     end
@@ -49,22 +49,22 @@ MenuHandlers.add(:debug_menu, :deluxe_dynamax_settings, {
 })
 
 MenuHandlers.add(:debug_menu, :deluxe_dynamax_metrics, {
-  "name"        => _INTL("Dynamax metrics..."),
+  "name"        => _INTL("极巨化指标..."),
   "parent"      => :deluxe_plugins_menu,
-  "description" => _INTL("Reposition Pokémon Dynamax sprites displayed in battle."),
+  "description" => _INTL("重新定位战斗中显示的宝可梦极巨化精灵."),
   "effect"      => proc {
     if Settings::SHOW_DYNAMAX_SIZE
       loop do
         commands = [
-          _INTL("Edit Dynamax metrics"),
-          _INTL("Auto-set Dynamax metrics")
+          _INTL("编辑极巨化指标"),
+          _INTL("自动设置极巨化指标")
         ]
         command = pbShowCommands(nil, commands, -1, 0)
         break if command < 0
         case command
         when 0  # Edit Dynamax metrics
-          filterCommands = [_INTL("All sprites"), _INTL("Gigantamax sprites"), _INTL("Sprites by generation...")]
-          filterCommand = pbMessage(_INTL("Which sprites do you want to edit?"), filterCommands, -1)
+          filterCommands = [_INTL("全精灵"), _INTL("超极巨化"), _INTL("按世代划分的精灵...")]
+          filterCommand = pbMessage(_INTL("你想编辑哪只精灵?"), filterCommands, -1)
           next if filterCommand < 0
           case filterCommand
           when 1
@@ -74,10 +74,10 @@ MenuHandlers.add(:debug_menu, :deluxe_dynamax_metrics, {
             params.setRange(1, 99)
             params.setDefaultValue(1)
             params.setCancelValue(-1)
-            filterCommand = pbMessageChooseNumber(_INTL("Select a generation."), params)
+            filterCommand = pbMessageChooseNumber(_INTL("选择一个世代."), params)
           end
-          styleCommands = [_INTL("Half back sprites (Gen 4 style)"), _INTL("Full back sprites (Gen 5 style)")]
-          styleCommand = pbMessage(_INTL("What style of back sprites are you using?"), styleCommands, -1)
+          styleCommands = [_INTL("半背面精灵 (第四世代风格)"), _INTL("全背面精灵 (第五世代风格)")]
+          styleCommand = pbMessage(_INTL("你使用的是哪种背面精灵图风格?"), styleCommands, -1)
           next if styleCommand < 0
           pbFadeOutIn {
             scene = DynamaxSpritePositioner.new
@@ -87,12 +87,12 @@ MenuHandlers.add(:debug_menu, :deluxe_dynamax_metrics, {
             screen.pbStart
           }
         when 1  # Auto-set Dynamax metrics
-          if pbConfirmMessage(_INTL("Are you sure you want to automatically reposition all Dynamax sprites?"))
-            styleCommands = [_INTL("Half back sprites (Gen 4 style)"), _INTL("Full back sprites (Gen 5 style)")]
-            styleCommand = pbMessage(_INTL("What style of back sprites are you using?"), styleCommands, -1)
+          if pbConfirmMessage(_INTL("你确定要自动重新定位所有极巨化精灵吗?"))
+            styleCommands = [_INTL("半背面精灵 (第四世代风格)"), _INTL("全背面精灵 (五世代风格)")]
+            styleCommand = pbMessage(_INTL("你使用的是哪种背面精灵图风格?"), styleCommands, -1)
             next if styleCommand < 0
             msgwindow = pbCreateMessageWindow
-            pbMessageDisplay(msgwindow, _INTL("Repositioning all Dynamax sprites. Please wait."), false)
+            pbMessageDisplay(msgwindow, _INTL("正在重新定位所有极巨化精灵.请稍后."), false)
             Graphics.update
             pbDynamaxAutoPositionAll(styleCommand)
             pbDisposeMessageWindow(msgwindow)
@@ -100,7 +100,7 @@ MenuHandlers.add(:debug_menu, :deluxe_dynamax_metrics, {
         end
       end
     else
-      pbMessage(_INTL("SHOW_DYNAMAX_SIZE is set to 'false', so no Dynamax metrics need to be set."))
+      pbMessage(_INTL("SHOW_DYNAMAX_SIZE 被设置为'错误', 无需设置极巨化指标."))
     end
   }
 })
@@ -110,41 +110,41 @@ MenuHandlers.add(:debug_menu, :deluxe_dynamax_metrics, {
 # Pokemon Debug options.
 #-------------------------------------------------------------------------------
 MenuHandlers.add(:pokemon_debug_menu, :deluxe_attributes, {
-  "name"   => _INTL("Plugin attributes..."),
+  "name"   => _INTL("插件属性..."),
   "parent" => :main
 })
 
 MenuHandlers.add(:pokemon_debug_menu, :deluxe_dynamax_attributes, {
-  "name"   => _INTL("Dynamax..."),
+  "name"   => _INTL("极巨化..."),
   "parent" => :deluxe_attributes,
   "effect" => proc { |pkmn, pkmnid, heldpoke, settingUpBattle, screen|
     cmd = 0
     loop do
-      able = (pkmn.dynamax_able?) ? "Yes" : "No"
+      able = (pkmn.dynamax_able?) ? "YES" : "NO"
       dlvl = pkmn.dynamax_lvl
-      gmax = (pkmn.gmax_factor?)  ? "Yes" : "No" 
-      dmax = (pkmn.dynamax?)      ? "Yes" : "No"
-      cmd = screen.pbShowCommands(_INTL("Eligible: {1}\nDynamax Level: {2}\nG-Max Factor: {3}\nDynamaxed: {4}", able, dlvl, gmax, dmax),[
-           _INTL("Set eligibility"),
-           _INTL("Set Dynamax Level"),
-           _INTL("Set G-Max Factor"),
-           _INTL("Set Dynamax"),
-           _INTL("Reset All")], cmd)
+      gmax = (pkmn.gmax_factor?)  ? "YES" : "NO" 
+      dmax = (pkmn.dynamax?)      ? "YES" : "NO"
+      cmd = screen.pbShowCommands(_INTL("符合资格: {1}\n极巨化等级: {2}\n超极巨招式元素: {3}\n极巨化: {4}", able, dlvl, gmax, dmax),[
+           _INTL("设置资格"),
+           _INTL("设置极巨化等级"),
+           _INTL("设置超极巨招式元素"),
+           _INTL("设置极巨化"),
+           _INTL("重置")], cmd)
       break if cmd < 0
       case cmd
       when 0   # Set Eligibility
         if !pkmn.can_dynamax?
           pkmn.dynamax = false
-          screen.pbDisplay(_INTL("{1} belongs to a species or form that cannot currently use Dynamax.\nEligibility cannot be changed.", pkmn.name))
+          screen.pbDisplay(_INTL("{1}属于当前无法使用极巨化的物种或形态.\n资格无法更改.", pkmn.name))
         elsif pkmn.dynamax_able?
           pkmn.dynamax = false
           pkmn.dynamax_lvl = 0
           pkmn.gmax_factor = false
           pkmn.dynamax_able = false
-          screen.pbDisplay(_INTL("{1} is no longer able to use Dynamax.", pkmn.name))
+          screen.pbDisplay(_INTL("{1}现在无法使用极巨化.", pkmn.name))
         else
           pkmn.dynamax_able = true
-          screen.pbDisplay(_INTL("{1} is now able to use Dynamax.", pkmn.name))
+          screen.pbDisplay(_INTL("{1}现在可以使用极巨化.", pkmn.name))
         end
         screen.pbRefreshSingle(pkmnid)
       when 1   # Set Dynamax Level
@@ -154,54 +154,54 @@ MenuHandlers.add(:pokemon_debug_menu, :deluxe_dynamax_attributes, {
           params.setDefaultValue(pkmn.dynamax_lvl)
           params.setCancelValue(pkmn.dynamax_lvl)
           f = pbMessageChooseNumber(
-            _INTL("Set {1}'s Dynamax level (max. 10).", pkmn.name), params) { screen.pbUpdate }
+            _INTL("设置 {1}'s 极巨化等级 (最大值. 10).", pkmn.name), params) { screen.pbUpdate }
           if f != pkmn.dynamax_lvl
             pkmn.dynamax_lvl = f
             pkmn.calc_stats
             screen.pbRefreshSingle(pkmnid)
           end
         else
-          screen.pbDisplay(_INTL("Can't edit Dynamax values on that Pokémon."))
+          screen.pbDisplay(_INTL("无法编辑该宝可梦的极巨化值."))
         end
       when 2   # Set G-Max Factor
         if pkmn.dynamax_able?
           if pkmn.gmax_factor?
             pkmn.gmax_factor = false
-            screen.pbDisplay(_INTL("Gigantamax factor was removed from {1}.", pkmn.name))
+            screen.pbDisplay(_INTL("超极巨化元素已从{1}中移除.", pkmn.name))
           else
             if pkmn.hasGigantamaxForm?
               pkmn.gmax_factor = true
-              screen.pbDisplay(_INTL("Gigantamax factor was given to {1}.", pkmn.name))
+              screen.pbDisplay(_INTL("已赋予{1}超极巨化元素.", pkmn.name))
             else
-              if pbConfirmMessage(_INTL("{1} doesn't have a Gigantamax form.\nGive it Gigantamax factor anyway?", pkmn.name))
+              if pbConfirmMessage(_INTL("{1}没有超极巨化形态.\n仍然赋予它极巨化元素?", pkmn.name))
                 pkmn.gmax_factor = true
-                screen.pbDisplay(_INTL("Gigantamax factor was given to {1}.", pkmn.name))
+                screen.pbDisplay(_INTL("已赋予{1}超极巨化元素.", pkmn.name))
               end
             end
           end
           screen.pbRefreshSingle(pkmnid)
         else
-          screen.pbDisplay(_INTL("Can't edit Dynamax values on that Pokémon."))
+          screen.pbDisplay(_INTL("无法编辑该宝可梦的极巨化值."))
         end
       when 3   # Set Dynamax
         if pkmn.dynamax_able?
           if pkmn.dynamax?
             pkmn.dynamax = false
-            screen.pbDisplay(_INTL("{1} is no longer Dynamaxed.", pkmn.name))
+            screen.pbDisplay(_INTL("{1}现在不再处于极巨化状态.", pkmn.name))
           else
             pkmn.dynamax = true
-            screen.pbDisplay(_INTL("{1} is now Dynamaxed.", pkmn.name))
+            screen.pbDisplay(_INTL("{1}现在处于极巨化状态.", pkmn.name))
           end
           screen.pbRefreshSingle(pkmnid)
         else
-          screen.pbDisplay(_INTL("Can't edit Dynamax values on that Pokémon."))
+          screen.pbDisplay(_INTL("无法编辑该宝可梦的极巨化值."))
         end
       when 4   # Reset All
         pkmn.dynamax = false
         pkmn.dynamax_lvl = 0
         pkmn.gmax_factor = false
         pkmn.dynamax_able = nil
-        screen.pbDisplay(_INTL("All Dynamax settings restored to default."))
+        screen.pbDisplay(_INTL("所有极巨化设置已恢复为默认值."))
         screen.pbRefreshSingle(pkmnid)
       end
     end
@@ -214,9 +214,9 @@ MenuHandlers.add(:pokemon_debug_menu, :deluxe_dynamax_attributes, {
 # Battle Debug options.
 #-------------------------------------------------------------------------------
 MenuHandlers.add(:battle_debug_menu, :deluxe_battle_dynamax, {
-  "name"        => _INTL("Dynamax"),
+  "name"        => _INTL("极巨化"),
   "parent"      => :trainers,
-  "description" => _INTL("Whether each trainer is allowed to Dynamax."),
+  "description" => _INTL("每个训练师是否允许极巨化."),
   "effect"      => proc { |battle|
     cmd = 0
     loop do
@@ -235,7 +235,7 @@ MenuHandlers.add(:battle_debug_menu, :deluxe_battle_dynamax, {
           cmds.push([side, i])
         end
       end
-      cmd = pbMessage("\\ts[]" + _INTL("Choose trainer to toggle whether they can Dynamax."),
+      cmd = pbMessage("\\ts[]" + _INTL("选择训练师以切换他们是否可以极巨化."),
                       commands, -1, nil, cmd)
       break if cmd < 0
       real_cmd = cmds[cmd]
@@ -253,7 +253,7 @@ MenuHandlers.add(:battle_debug_menu, :deluxe_battle_dynamax, {
 # Battle Pokemon Debug options.
 #-------------------------------------------------------------------------------
 MenuHandlers.add(:battle_pokemon_debug_menu, :set_dynamax, {
-  "name"   => _INTL("Dynamax values"),
+  "name"   => _INTL("极巨化值"),
   "parent" => :main,
   "usage"  => :both,
   "effect" => proc { |pkmn, battler, battle|
@@ -261,33 +261,33 @@ MenuHandlers.add(:battle_pokemon_debug_menu, :set_dynamax, {
     loop do
       dlvl = pkmn.dynamax_lvl
       able = (pkmn.dynamax_able?) ? "Can" : "Cannot"
-      gmax = (pkmn.gmax_factor?)  ? "Yes" : "No" 
+      gmax = (pkmn.gmax_factor?)  ? "YES" : "NO" 
       dmax = (pkmn.dynamax?)      ? "Is"  : "Is not"
-      msg = _INTL("{1} Dynamax [Lvl: {2}] [G-Max: {3}]\n{4} currently Dynamaxed.", able, dlvl, gmax, dmax)
+      msg = _INTL("{1}极巨化 [等级: {2}] [超极巨化: {3}]\n{4} 当前处于极巨化状态.", able, dlvl, gmax, dmax)
       cmd = pbMessage("\\ts[]" + msg,
-                      [_INTL("Set eligibility"),
-                       _INTL("Set Dynamax Lvl"),
-                       _INTL("Set G-Max Factor"),
-                       _INTL("Set Dynamax state"),
-                       _INTL("Reset")], -1, nil, cmd)
+                      [_INTL("设置资格"),
+                       _INTL("设置极巨化等级"),
+                       _INTL("设置超极巨招式元素"),
+                       _INTL("设置极巨化状态"),
+                       _INTL("重置")], -1, nil, cmd)
       break if cmd < 0
       case cmd
       when 0   # Set eligibility
         if !pkmn.can_dynamax?
           pkmn.dynamax = false
-          pbMessage("\\ts[]" + _INTL("{1} belongs to a species or form that cannot currently use Dynamax.\nEligibility cannot be changed.", pkmn.name))
+          pbMessage("\\ts[]" + _INTL("{1}属于当前无法使用极巨化的物种或形态.\n资格无法更改.", pkmn.name))
           battler&.pbUpdate
         elsif pkmn.dynamax_able?
           pkmn.gmax_factor = false
           pkmn.dynamax = false
           pkmn.dynamax_lvl = 0
           pkmn.dynamax_able = false
-          pbMessage("\\ts[]" + _INTL("{1} is no longer able to use Dynamax.", pkmn.name))
+          pbMessage("\\ts[]" + _INTL("{1}现在无法使用极巨化.", pkmn.name))
           battler&.display_base_moves
           battler&.pbUpdate
         else
           pkmn.dynamax_able = true
-          pbMessage("\\ts[]" + _INTL("{1} is now able to use Dynamax.", pkmn.name))
+          pbMessage("\\ts[]" + _INTL("{1}现在可以使用极巨化.", pkmn.name))
         end
       when 1   # Set Dynamax Lvl
         if pkmn.dynamax_able?
@@ -296,7 +296,7 @@ MenuHandlers.add(:battle_pokemon_debug_menu, :set_dynamax, {
           params.setDefaultValue(pkmn.dynamax_lvl)
           params.setCancelValue(pkmn.dynamax_lvl)
           f = pbMessageChooseNumber(
-            "\\ts[]" + _INTL("Set {1}'s Dynamax level (max. 10).", pkmn.name), params
+            "\\ts[]" + _INTL("设置 {1}的极巨化值 (最大值. 10).", pkmn.name), params
           )
           if f != pkmn.dynamax_lvl
             pkmn.dynamax_lvl = f
@@ -304,19 +304,19 @@ MenuHandlers.add(:battle_pokemon_debug_menu, :set_dynamax, {
             battler&.pbUpdate
           end
         else
-          pbMessage("\\ts[]" + _INTL("Can't edit Dynamax values on that Pokémon."))
+          pbMessage("\\ts[]" + _INTL("无法编辑该宝可梦的极巨化值."))
         end
       when 2   # Set G-Max Factor
         if pkmn.dynamax_able?
           if pkmn.gmax_factor?
             pkmn.gmax_factor = false
-            pbMessage("\\ts[]" + _INTL("Gigantamax factor was removed from {1}.", pkmn.name))
+            pbMessage("\\ts[]" + _INTL("超极巨化元素已从{1}中移除.", pkmn.name))
           elsif pkmn.hasGigantamaxForm?
             pkmn.gmax_factor = true
-            pbMessage("\\ts[]" + _INTL("Gigantamax factor was given to {1}.", pkmn.name))
-          elsif pbConfirmMessage("\\ts[]" + _INTL("{1} doesn't have a Gigantamax form.\nGive it Gigantamax factor anyway?", pkmn.name))
+            pbMessage("\\ts[]" + _INTL("已赋予{1}超极巨化元素.", pkmn.name))
+          elsif pbConfirmMessage("\\ts[]" + _INTL("{1}没有超极巨化形态。\n仍然赋予它超极巨化元素吗?", pkmn.name))
             pkmn.gmax_factor = true
-            pbMessage("\\ts[]" + _INTL("Gigantamax factor was given to {1}.", pkmn.name))
+            pbMessage("\\ts[]" + _INTL("已赋予{1}超极巨化元素.", pkmn.name))
           end
           battler&.pbUpdate
           if battler&.dynamax?
@@ -324,7 +324,7 @@ MenuHandlers.add(:battle_pokemon_debug_menu, :set_dynamax, {
             battler.display_dynamax_moves
           end
         else
-          pbMessage("\\ts[]" + _INTL("Can't edit Dynamax values on that Pokémon."))
+          pbMessage("\\ts[]" + _INTL("无法编辑该宝可梦的极巨化值."))
         end
       when 3   # Set Dynamax state
         if pkmn.dynamax_able?
@@ -332,7 +332,7 @@ MenuHandlers.add(:battle_pokemon_debug_menu, :set_dynamax, {
             pkmn.dynamax = false
             battler&.display_base_moves
             battler&.effects[PBEffects::Dynamax] = 0
-            pbMessage("\\ts[]" + _INTL("{1} is no longer Dynamaxed.", pkmn.name))
+            pbMessage("\\ts[]" + _INTL("{1}现在不再处于极巨化状态.", pkmn.name))
           else
             pkmn.dynamax = true
             if battler
@@ -344,11 +344,11 @@ MenuHandlers.add(:battle_pokemon_debug_menu, :set_dynamax, {
               battler.effects[PBEffects::Torment]    = false
               battler.display_dynamax_moves
             end
-            pbMessage("\\ts[]" + _INTL("{1} is now Dynamaxed.", pkmn.name))
+            pbMessage("\\ts[]" + _INTL("{1}现在处于极巨化状态.", pkmn.name))
           end
           battler&.pbUpdate
         else
-          pbMessage("\\ts[]" + _INTL("Can't edit Dynamax values on that Pokémon."))
+          pbMessage("\\ts[]" + _INTL("无法编辑该宝可梦的极巨化值."))
         end
       when 4   # Reset
         pkmn.gmax_factor = false
@@ -360,7 +360,7 @@ MenuHandlers.add(:battle_pokemon_debug_menu, :set_dynamax, {
           battler.display_base_moves
           battler.pbUpdate
         end
-        pbMessage("\\ts[]" + _INTL("All Dynamax settings restored to default."))
+        pbMessage("\\ts[]" + _INTL("所有极巨化设置已恢复为默认值."))
       end
     end
   }

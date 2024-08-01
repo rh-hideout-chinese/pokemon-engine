@@ -32,7 +32,7 @@ class Battle::DynamaxMove::UserSideStatUpMove < Battle::DynamaxMove::Move
     @battle.allSameSideBattlers(user).each do |b|
       return false if b.pbCanRaiseStatStage?(@statUp[0], user, self)
     end
-    @battle.pbDisplay(_INTL("But it failed!"))
+    @battle.pbDisplay(_INTL("但是,失败了!"))
     return true
   end
 
@@ -67,7 +67,7 @@ class Battle::DynamaxMove::TargetSideStatDownMove < Battle::DynamaxMove::Move
     @battle.allOtherSideBattlers(user).each do |b|
       return false if b.pbCanLowerStatStage?(@statDown[0], user, self)
     end
-    @battle.pbDisplay(_INTL("But it failed!"))
+    @battle.pbDisplay(_INTL("但是,失败了!"))
     return true
   end
 
@@ -110,7 +110,7 @@ class Battle::DynamaxMove::TargetSideStatusEffectMove < Battle::DynamaxMove::Mov
         end
       end
     end
-    @battle.pbDisplay(_INTL("But it failed!"))
+    @battle.pbDisplay(_INTL("但是,失败了!"))
     return true
   end
   

@@ -26,30 +26,30 @@ Battle::ItemEffects::AfterMoveUseFromTarget.add(:REDCARD,
     newPkmn = battle.pbGetReplacementPokemonIndex(user.index, true)
     next if newPkmn < 0
     battle.pbCommonAnimation("UseItem", battler)
-    battle.pbDisplay(_INTL("{1} held up its {2} against {3}!",
+    battle.pbDisplay(_INTL("{1}使用了{2}来抵挡{3}!",
        battler.pbThis, battler.itemName, user.pbThis(true)))
     battler.pbConsumeItem
     if user.dynamax?
-      battle.pbDisplay(_INTL("But it failed!"))
+      battle.pbDisplay(_INTL("但是,失败了"))
       next
     end
     next if defined?(PBEffects::Commander) && user.effects[PBEffects::Commander]
     if user.hasActiveAbility?([:SUCTIONCUPS, :GUARDDOG]) && !battle.moldBreaker
       battle.pbShowAbilitySplash(user)
       if Battle::Scene::USE_ABILITY_SPLASH
-        battle.pbDisplay(_INTL("{1} anchors itself!", user.pbThis))
+        battle.pbDisplay(_INTL("{1}固定了自己!", user.pbThis))
       else
-        battle.pbDisplay(_INTL("{1} anchors itself with {2}!", user.pbThis, user.abilityName))
+        battle.pbDisplay(_INTL("{1}使用了{2}来固定自己!", user.pbThis, user.abilityName))
       end
       battle.pbHideAbilitySplash(user)
       next
     end
     if user.effects[PBEffects::Ingrain]
-      battle.pbDisplay(_INTL("{1} anchored itself with its roots!", user.pbThis))
+      battle.pbDisplay(_INTL("{1}用他的根部固定了自己!", user.pbThis))
       next
     end
     battle.pbRecallAndReplace(user.index, newPkmn, true)
-    battle.pbDisplay(_INTL("{1} was dragged out!", user.pbThis))
+    battle.pbDisplay(_INTL("{1}被拖出去了!", user.pbThis))
     battle.pbClearChoice(user.index)
     switched_battlers.push(user.index)
     battle.moldBreaker = false
@@ -92,9 +92,9 @@ Battle::ItemEffects::OnEndOfUsingMove.add(:LEPPABERRY,
     battler.baseMoves[choice].pp = pkmnMove.pp if battler.baseMoves[choice]
     moveName = pkmnMove.name
     if forced
-      battle.pbDisplay(_INTL("{1} restored its {2}'s PP.", battler.pbThis, moveName))
+      battle.pbDisplay(_INTL("{1}回复了{2}的PP.", battler.pbThis, moveName))
     else
-      battle.pbDisplay(_INTL("{1}'s {2} restored its {3}'s PP!", battler.pbThis, itemName, moveName))
+      battle.pbDisplay(_INTL("{1}的{2}回复了{3}的PP!", battler.pbThis, itemName, moveName))
     end
     next true
   }
@@ -129,9 +129,9 @@ Battle::AbilityEffects::OnBeingHit.add(:CURSEDBODY,
       user.effects[PBEffects::Disable]     = 3
       user.effects[PBEffects::DisableMove] = regularMove.id
       if Battle::Scene::USE_ABILITY_SPLASH
-        battle.pbDisplay(_INTL("{1}'s {2} was disabled!", user.pbThis, regularMove.name))
+        battle.pbDisplay(_INTL("{1}的{2}被禁用了!", user.pbThis, regularMove.name))
       else
-        battle.pbDisplay(_INTL("{1}'s {2} was disabled by {3}'s {4}!",
+        battle.pbDisplay(_INTL("{1}的{2}被{3}的{4}禁用了!",
            user.pbThis, regularMove.name, target.pbThis(true), target.abilityName))
       end
       battle.pbHideAbilitySplash(target)
@@ -166,9 +166,9 @@ Battle::AbilityEffects::OnBeingHit.add(:WANDERINGSPIRIT,
         battle.pbReplaceAbilitySplash(target)
       end
       if Battle::Scene::USE_ABILITY_SPLASH
-        battle.pbDisplay(_INTL("{1} swapped Abilities with {2}!", target.pbThis, user.pbThis(true)))
+        battle.pbDisplay(_INTL("{1}与{2}交换了特性!", target.pbThis, user.pbThis(true)))
       else
-        battle.pbDisplay(_INTL("{1} swapped its {2} Ability with {3}'s {4} Ability!",
+        battle.pbDisplay(_INTL("{1}讲{2}特性,与{3}的{4}特性交换了!",
            target.pbThis, user.abilityName, user.pbThis(true), target.abilityName))
       end
       if user.opposes?(target)
@@ -202,7 +202,7 @@ class Battle::Move::RemoveUserBindingAndEntryHazards < Battle::Move::StatUpMove
     dynamax_pbEffectAfterAllHits(user,target)
     if user.pbOwnSide.effects[PBEffects::Steelsurge]
       user.pbOwnSide.effects[PBEffects::Steelsurge] = false
-      @battle.pbDisplay(_INTL("{1} blew away the pointed steel!", user.pbThis))
+      @battle.pbDisplay(_INTL("{1}吹走了尖锐的钢刺!", user.pbThis))
     end
   end
 end
@@ -226,7 +226,7 @@ class Battle::Move::LowerTargetEvasion1RemoveSideEffects < Battle::Move::TargetS
        (Settings::MECHANICS_GENERATION >= 6 && target.pbOpposingSide.effects[PBEffects::Steelsurge])
       target.pbOwnSide.effects[PBEffects::Steelsurge]      = false
       target.pbOpposingSide.effects[PBEffects::Steelsurge] = false if Settings::MECHANICS_GENERATION >= 6
-      @battle.pbDisplay(_INTL("{1} blew away the pointed steel!", user.pbThis))
+      @battle.pbDisplay(_INTL("{1}吹走了尖锐的钢刺!", user.pbThis))
     end
   end
 end
@@ -258,7 +258,7 @@ end
 class Battle::Move::PowerHigherWithTargetWeight < Battle::Move
   def pbFailsAgainstTarget?(user, target, show_message)
     if target.dynamax?
-      @battle.pbDisplay(_INTL("But it failed!")) if show_message
+      @battle.pbDisplay(_INTL("但是,失败了")) if show_message
       return true
     end
     return false
@@ -273,7 +273,7 @@ end
 class Battle::Move::PowerHigherWithUserHeavierThanTarget < Battle::Move
   def pbFailsAgainstTarget?(user, target, show_message)
     if target.dynamax?
-      @battle.pbDisplay(_INTL("But it failed!")) if show_message
+      @battle.pbDisplay(_INTL("但是,失败了")) if show_message
       return true
     end
     return false
@@ -289,7 +289,7 @@ class Battle::Move::SetTargetAbilityToUserAbility < Battle::Move
   alias dynamax_pbFailsAgainstTarget? pbFailsAgainstTarget?
   def pbFailsAgainstTarget?(user, target, show_message)
     if target.dynamax?
-      @battle.pbDisplay(_INTL("But it failed!")) if show_message
+      @battle.pbDisplay(_INTL("但是,失败了")) if show_message
       return true
     end
     return dynamax_pbFailsAgainstTarget?(user, target, show_message)
@@ -305,7 +305,7 @@ class Battle::Move::UserTargetSwapAbilities < Battle::Move
   alias dynamax_pbFailsAgainstTarget? pbFailsAgainstTarget?
   def pbFailsAgainstTarget?(user, target, show_message)
     if target.dynamax?
-      @battle.pbDisplay(_INTL("But it failed!")) if show_message
+      @battle.pbDisplay(_INTL("但是,失败了")) if show_message
       return true
     end
     return dynamax_pbFailsAgainstTarget?(user, target, show_message)
@@ -332,7 +332,7 @@ class Battle::Move::UseLastMoveUsed < Battle::Move
         moves = (battler.dynamax?) ? battler.baseMoves : battler.moves
         @copied_move = moves[idxMove].id
       else
-        @battle.pbDisplay(_INTL("But it failed!"))
+        @battle.pbDisplay(_INTL("但是,失败了"))
         return
       end
     end
@@ -349,7 +349,7 @@ class Battle::Move::DisableTargetLastMoveUsed < Battle::Move
   alias dynamax_pbFailsAgainstTarget? pbFailsAgainstTarget?
   def pbFailsAgainstTarget?(user, target, show_message)
     if target.dynamax?
-      @battle.pbDisplay(_INTL("But it failed!")) if show_message
+      @battle.pbDisplay(_INTL("但是,失败了")) if show_message
       return true
     end
     return dynamax_pbFailsAgainstTarget?(user, target, show_message)
@@ -365,7 +365,7 @@ class Battle::Move::DisableTargetUsingDifferentMove < Battle::Move
   alias dynamax_pbFailsAgainstTarget? pbFailsAgainstTarget?
   def pbFailsAgainstTarget?(user, target, show_message)
     if target.dynamax?
-      @battle.pbDisplay(_INTL("But it failed!")) if show_message
+      @battle.pbDisplay(_INTL("但是,失败了")) if show_message
       return true
     end
     return dynamax_pbFailsAgainstTarget?(user, target, show_message)
@@ -381,7 +381,7 @@ class Battle::Move::DisableTargetUsingSameMoveConsecutively < Battle::Move
   alias dynamax_pbFailsAgainstTarget? pbFailsAgainstTarget?
   def pbFailsAgainstTarget?(user, target, show_message)
     if target.dynamax?
-      @battle.pbDisplay(_INTL("But it failed!")) if show_message
+      @battle.pbDisplay(_INTL("但是,失败了")) if show_message
       return true
     end
     return dynamax_pbFailsAgainstTarget?(user, target, show_message)
@@ -397,7 +397,7 @@ class Battle::Move::TargetUsesItsLastUsedMoveAgain < Battle::Move
   alias dynamax_pbFailsAgainstTarget? pbFailsAgainstTarget?
   def pbFailsAgainstTarget?(user, target, show_message)
     if target.dynamax?
-      @battle.pbDisplay(_INTL("But it failed!")) if show_message
+      @battle.pbDisplay(_INTL("但是,失败了")) if show_message
       return true
     end
     return dynamax_pbFailsAgainstTarget?(user, target, show_message)
@@ -421,7 +421,7 @@ class Battle::Move::SwitchOutTargetDamagingMove < Battle::Move
       newPkmn = @battle.pbGetReplacementPokemonIndex(b.index, true)
       next if newPkmn < 0
       @battle.pbRecallAndReplace(b.index, newPkmn, true)
-      @battle.pbDisplay(_INTL("{1} was dragged out!", b.pbThis))
+      @battle.pbDisplay(_INTL("{1}被拖出来了!", b.pbThis))
       @battle.pbClearChoice(b.index)
       @battle.pbOnBattlerEnteringBattle(b.index)
       switched_battlers.push(b.index)

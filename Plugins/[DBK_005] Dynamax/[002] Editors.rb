@@ -17,9 +17,9 @@ module TrainerPokemonProperty
   def self.editor_properties(oldsetting)
     properties = self.dynamax_editor_properties(oldsetting)
     properties.concat([
-      [_INTL("No Dynamax"), BooleanProperty2,       _INTL("If set to true, the trainer will never Dynamax this Pokémon.")],
-      [_INTL("Dynamax Lv"), LimitProperty2.new(10), _INTL("Dynamax level of the Pokémon (0-10).")],
-      [_INTL("Gigantamax"), BooleanProperty2,       _INTL("If set to true, the Pokémon will have G-Max Factor.")]
+      [_INTL("无法极巨化"), BooleanProperty2,       _INTL("如果设置为true, 该训练师将永远无法对这只宝可梦进行极巨化.")],
+      [_INTL("极巨化等级"), LimitProperty2.new(10), _INTL("该宝可梦的极巨化等级 (0-10).")],
+      [_INTL("超极巨化"), BooleanProperty2,       _INTL("如果设置为true,该宝可梦将拥有超极巨化的元素.")]
     ])
     return properties
   end
@@ -213,10 +213,10 @@ class DynamaxSpritePositioner < SpritePositioner
   def pbMenu
     refresh
     cw = Window_CommandPokemon.new(
-      [_INTL("Set Ally Position"),
-       _INTL("Set Enemy Position"),
-       _INTL("Set Shadow Position"),
-       _INTL("Auto-Position Sprites")]
+      [_INTL("设置友方位置"),
+       _INTL("设置敌方位置"),
+       _INTL("设置阴影位置"),
+       _INTL("自动定位精灵")]
     )
     cw.x        = Graphics.width - cw.width
     cw.y        = Graphics.height - cw.height
@@ -255,7 +255,7 @@ class DynamaxSpritePositioner < SpritePositioner
       next if !sp.dynamax_able?
       next if @filter < 0 && !sp.gmax_move
       next if @filter > 0 && sp.generation != @filter
-      name = (sp.form == 0) ? sp.name : _INTL("{1} (form {2})", sp.real_name, sp.form)
+      name = (sp.form == 0) ? sp.name : _INTL("{1} (形态 {2})", sp.real_name, sp.form)
       allspecies.push([sp.id, sp.species, sp.form, name]) if name && !name.empty?
     end
     if allspecies.empty?

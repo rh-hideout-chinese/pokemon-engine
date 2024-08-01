@@ -65,7 +65,7 @@ class SpritePositioner
   def pbGetSpriteList
     allspecies = []
     GameData::Species.each do |sp|
-      name = (sp.form == 0) ? sp.name : _INTL("{1} (表格{2})", sp.real_name, sp.form)
+      name = (sp.form == 0) ? sp.name : _INTL("{1} (形态{2})", sp.real_name, sp.form)
       if name && !name.empty?
         allspecies.push([sp.id, sp.species, sp.form, name, false])
         next if !sp.has_gendered_sprites?
@@ -635,7 +635,7 @@ class DynamaxSpritePositioner < SpritePositioner
 	  next if !sp.dynamax_able?
 	  next if @filter < 0 && !sp.gmax_move
       next if @filter > 0 && sp.generation != @filter
-      name = (sp.form == 0) ? sp.name : _INTL("{1} (表格{2})", sp.real_name, sp.form)
+      name = (sp.form == 0) ? sp.name : _INTL("{1} (形态{2})", sp.real_name, sp.form)
       if name && !name.empty?
         allspecies.push([sp.id, sp.species, sp.form, name, false])
         next if !sp.has_gendered_sprites?

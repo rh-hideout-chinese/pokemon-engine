@@ -121,7 +121,7 @@ class Battle::DynamaxMove::ConfuseTargetSideAddMoney < Battle::DynamaxMove::Targ
   def pbEffectAfterAllHits(user, target)
     super
     @battle.field.effects[PBEffects::PayDay] += 100 * user.level
-    @battle.pbDisplay(_INTL("Coins were scattered everywhere!"))
+    @battle.pbDisplay(_INTL("金币散落一地!"))
   end
 end
 
@@ -138,7 +138,7 @@ class Battle::DynamaxMove::DamageTargetSleepTargetNextTurn < Battle::DynamaxMove
     return if target.effects[PBEffects::Yawn] > 0
     return if @battle.pbRandom(100) < 50
     target.effects[PBEffects::Yawn] = 2
-    @battle.pbDisplay(_INTL("{1} became drowsy!", target.pbThis))
+    @battle.pbDisplay(_INTL("{1}昏昏欲睡了!", target.pbThis))
   end
 end
 
@@ -160,7 +160,7 @@ class Battle::DynamaxMove::StartVineLashOnFoeSide < Battle::DynamaxMove::Move
     return if @battle.pbAllFainted?(target.idxOwnSide)
     return if user.pbOpposingSide.effects[PBEffects::VineLash] > 0
     user.pbOpposingSide.effects[PBEffects::VineLash] = 4
-    @battle.pbDisplay(_INTL("{1} got trapped with vines!", user.pbOpposingTeam))
+    @battle.pbDisplay(_INTL("{1}被藤蔓困住了!", user.pbOpposingTeam))
   end
 end
 
@@ -175,7 +175,7 @@ class Battle::DynamaxMove::StartWildfireOnFoeSide < Battle::DynamaxMove::Move
     return if @battle.pbAllFainted?(target.idxOwnSide)
     return if user.pbOpposingSide.effects[PBEffects::Wildfire] > 0
     user.pbOpposingSide.effects[PBEffects::Wildfire] = 4
-    @battle.pbDisplay(_INTL("{1} were surrounded by fire!", user.pbOpposingTeam))
+    @battle.pbDisplay(_INTL("{1}被火焰包围了!", user.pbOpposingTeam))
   end
 end
 
@@ -190,7 +190,7 @@ class Battle::DynamaxMove::StartCannonadeOnFoeSide < Battle::DynamaxMove::Move
     return if @battle.pbAllFainted?(target.idxOwnSide)
     return if user.pbOpposingSide.effects[PBEffects::Cannonade] > 0
     user.pbOpposingSide.effects[PBEffects::Cannonade] = 4
-    @battle.pbDisplay(_INTL("{1} got caught in a vortex of water!", user.pbOpposingTeam))
+    @battle.pbDisplay(_INTL("{1}被水流漩涡困住了!", user.pbOpposingTeam))
   end
 end
 
@@ -205,7 +205,7 @@ class Battle::DynamaxMove::StartVolcalithOnFoeSide < Battle::DynamaxMove::Move
     return if @battle.pbAllFainted?(target.idxOwnSide)
     return if user.pbOpposingSide.effects[PBEffects::Volcalith] > 0
     user.pbOpposingSide.effects[PBEffects::Volcalith] = 4
-    @battle.pbDisplay(_INTL("{1} became surrounded by rocks!", user.pbOpposingTeam))
+    @battle.pbDisplay(_INTL("{1}被岩石包围了!", user.pbOpposingTeam))
   end
 end
 
@@ -220,7 +220,7 @@ class Battle::DynamaxMove::DamageTargetAddStealthRocksToFoeSide < Battle::Dynama
     return if @battle.pbAllFainted?(target.idxOwnSide)
     return if user.pbOpposingSide.effects[PBEffects::StealthRock]
     user.pbOpposingSide.effects[PBEffects::StealthRock] = true
-    @battle.pbDisplay(_INTL("Pointed stones float in the air around {1}!", user.pbOpposingTeam(true)))
+    @battle.pbDisplay(_INTL("尖锐的岩石在,{1}周围的空中漂浮!", user.pbOpposingTeam(true)))
   end
 end
 
@@ -235,7 +235,7 @@ class Battle::DynamaxMove::DamageTargetAddSteelsurgeToFoeSide < Battle::DynamaxM
     return if @battle.pbAllFainted?(target.idxOwnSide)
     return if user.pbOpposingSide.effects[PBEffects::Steelsurge]
     user.pbOpposingSide.effects[PBEffects::Steelsurge] = true
-    @battle.pbDisplay(_INTL("Sharp-pointed pieces of steel started floating around {1}!", user.pbOpposingTeam(true)))
+    @battle.pbDisplay(_INTL("尖锐的钢刺开始在{1}的,周围漂浮!", user.pbOpposingTeam(true)))
   end
 end
 
@@ -251,7 +251,7 @@ class Battle::DynamaxMove::DamageTargetStartWeakenDamageAgainstUserSide < Battle
     return if user.pbOwnSide.effects[PBEffects::AuroraVeil] > 0
     user.pbOwnSide.effects[PBEffects::AuroraVeil] = 5
     user.pbOwnSide.effects[PBEffects::AuroraVeil] = 8 if user.hasActiveItem?(:LIGHTCLAY)
-    @battle.pbDisplay(_INTL("{1} became stronger against physical and special moves!", user.pbTeam))
+    @battle.pbDisplay(_INTL("{1}变得更能抵抗物攻和特攻了!", user.pbTeam))
   end
 end
 
@@ -274,7 +274,7 @@ class Battle::DynamaxMove::UserSideCriticalBoost1 < Battle::DynamaxMove::Move
     @battle.allSameSideBattlers(user).each do |b|
 	  next if b.effects[PBEffects::FocusEnergy] >= 4
       b.effects[PBEffects::FocusEnergy] += 1
-      @battle.pbDisplay(_INTL("{1} is getting pumped!", b.pbThis))
+      @battle.pbDisplay(_INTL("{1}变得更容易命中要害了!", b.pbThis))
     end
   end
 end
@@ -291,7 +291,7 @@ class Battle::DynamaxMove::DisableTargetSideUsingSameMoveConsecutively < Battle:
     @battle.allOtherSideBattlers(user).each do |b|
       next if b.effects[PBEffects::Torment]
       b.effects[PBEffects::Torment] = true
-      @battle.pbDisplay(_INTL("{1} was subjected to torment!", b.pbThis))
+      @battle.pbDisplay(_INTL("{1}受到了折磨!", b.pbThis))
       b.pbItemStatusCureCheck
     end
   end
@@ -309,7 +309,7 @@ class Battle::DynamaxMove::TrapTargetSideInBattle < Battle::DynamaxMove::Move
     @battle.allOtherSideBattlers(user).each do |b|
       next if b.effects[PBEffects::MeanLook] == user.index
       next if Settings::MORE_TYPE_EFFECTS && b.pbHasType?(:GHOST)
-      @battle.pbDisplay(_INTL("{1} can no longer escape!", b.pbThis))
+      @battle.pbDisplay(_INTL("{1}不能再逃脱了!", b.pbThis))
       b.effects[PBEffects::MeanLook] = user.index
     end
   end
@@ -341,17 +341,17 @@ class Battle::DynamaxMove::BindTargetSideUserCanSwitch < Battle::DynamaxMove::Mo
       b.effects[PBEffects::GMaxTrapping] = true
       case moveid
       when :BIND
-        msg = _INTL("{1} was squeezed by {2}!", b.pbThis, user.pbThis(true))
+        msg = _INTL("{1}被{2}挤压了!", b.pbThis, user.pbThis(true))
       when :FIRESPIN
-        msg = _INTL("{1} was trapped in the fiery vortex!", b.pbThis)
+        msg = _INTL("{1}被火焰漩涡困住了", b.pbThis)
       when :INFESTATION
-        msg = _INTL("{1} has been afflicted with an infestation by {2}!", b.pbThis, user.pbThis(true))
+        msg = _INTL("{1}被{2}的“超极巨蝶影蛊惑”,缠上了!", b.pbThis, user.pbThis(true))
       when :SANDTOMB
-        msg = _INTL("{1} became trapped by Sand Tomb!", b.pbThis)
+        msg = _INTL("{1}被沙岩困住了!", b.pbThis)
       when :WHIRLPOOL
-        msg = _INTL("{1} became trapped in the watery vortex!", b.pbThis)
+        msg = _INTL("{1}被水流漩涡困住了!", b.pbThis)
       else
-        msg = _INTL("{1} was trapped in the vortex!", b.pbThis)
+        msg = _INTL("{1}被漩涡困住了!", b.pbThis)
       end
       @battle.pbDisplay(msg)
     end
@@ -424,7 +424,7 @@ class Battle::DynamaxMove::RestoreUserSideConsumedBerries < Battle::DynamaxMove:
       b.item = b.recycleItem
       b.setRecycleItem(nil)
       b.setInitialItem(b.item) if !b.initialItem
-      @battle.pbDisplay(_INTL("{1} found one {2}!", b.pbThis, b.itemName))	  
+      @battle.pbDisplay(_INTL("{1}找到了一个{2}!", b.pbThis, b.itemName))	  
       b.pbHeldItemTriggerCheck
     end
   end
@@ -461,7 +461,7 @@ class Battle::DynamaxMove::LowerPPOfTargetSideLastMoveBy2 < Battle::DynamaxMove:
         b.pbSetPP(last_move, last_move.pp - reduction)
         showMsg = true
       end
-      @battle.pbDisplay(_INTL("{1}'s PP was reduced!", b.pbThis)) if showMsg
+      @battle.pbDisplay(_INTL("{1}的PP减少了!", b.pbThis)) if showMsg
     end
   end
 end
@@ -476,7 +476,7 @@ class Battle::DynamaxMove::DamageTargetStartGravity < Battle::DynamaxMove::Move
     return if !super
     return if @battle.pbAllFainted?(target.idxOwnSide)
     @battle.field.effects[PBEffects::Gravity] = 5
-    @battle.pbDisplay(_INTL("Gravity intensified!"))
+    @battle.pbDisplay(_INTL("环境里的重力加强了!"))
     @battle.allBattlers.each do |b|
       showMessage = false
       if b.inTwoTurnAttack?("TwoTurnAttackInvulnerableInSky",
@@ -495,7 +495,7 @@ class Battle::DynamaxMove::DamageTargetStartGravity < Battle::DynamaxMove::Move
         showMessage = true
       end
       if showMessage
-        @battle.pbDisplay(_INTL("{1} couldn't stay airborne because of gravity!", b.pbThis))
+        @battle.pbDisplay(_INTL("{1}由于重力无法保持在空中!", b.pbThis))
       end
     end
   end
@@ -513,11 +513,11 @@ class Battle::DynamaxMove::RemoveSideEffectsAndTerrain < Battle::DynamaxMove::Mo
     return if @battle.pbAllFainted?(target.idxOwnSide)
     msg_check = []
     side_effects = [
-      [PBEffects::Spikes,      0,     _INTL("{1} blew away spikes!", user.pbThis)],
-      [PBEffects::ToxicSpikes, 0,     _INTL("{1} blew away poison spikes!", user.pbThis)],
-      [PBEffects::StealthRock, false, _INTL("{1} blew away stealth rocks!", user.pbThis)],
-      [PBEffects::Steelsurge,  false, _INTL("{1} blew away the pointed steel!", user.pbThis)],
-      [PBEffects::StickyWeb,   false, _INTL("{1} blew away sticky webs!", user.pbThis)]
+      [PBEffects::Spikes,      0,     _INTL("{1}吹走了尖刺！", user.pbThis)],
+      [PBEffects::ToxicSpikes, 0,     _INTL("{1}吹走了毒刺！", user.pbThis)],
+      [PBEffects::StealthRock, false, _INTL("{1}吹走了隐形岩！", user.pbThis)],
+      [PBEffects::Steelsurge,  false, _INTL("{1}吹走了尖锐的钢铁！", user.pbThis)],
+      [PBEffects::StickyWeb,   false, _INTL("{1}吹走了粘网！", user.pbThis)]
     ]
     side_effects.each do |effect|
       next if user.pbOwnSide.effects[effect[0]] == effect[1]
@@ -526,11 +526,11 @@ class Battle::DynamaxMove::RemoveSideEffectsAndTerrain < Battle::DynamaxMove::Mo
       msg_check.push(effect[0])
     end
     side_effects.push(
-      [PBEffects::AuroraVeil,  0, _INTL("{1}'s Aurora Veil wore off!", user.pbOpposingTeam)],
-      [PBEffects::LightScreen, 0, _INTL("{1}'s Light Screen wore off!", user.pbOpposingTeam)],
-      [PBEffects::Reflect,     0, _INTL("{1}'s Reflect wore off!", user.pbOpposingTeam)],
-      [PBEffects::Mist,        0, _INTL("{1}'s Mist faded!", user.pbOpposingTeam)],
-      [PBEffects::Safeguard,   0, _INTL("{1} is no longer protected by Safeguard!", user.pbOpposingTeam)]
+      [PBEffects::AuroraVeil,  0, _INTL("{1}的极光幕消失了！", user.pbOpposingTeam)],
+      [PBEffects::LightScreen, 0, _INTL("{1}的光墙消失了！", user.pbOpposingTeam)],
+      [PBEffects::Reflect,     0, _INTL("{1}的反射壁消失了！", user.pbOpposingTeam)],
+      [PBEffects::Mist,        0, _INTL("{1}的白雾消失了！", user.pbOpposingTeam)],
+      [PBEffects::Safeguard,   0, _INTL("{1}不再受到神秘守护保护！", user.pbOpposingTeam)]
     )
     side_effects.each do |effect|
       next if user.pbOpposingSide.effects[effect[0]] == effect[1]
@@ -540,11 +540,11 @@ class Battle::DynamaxMove::RemoveSideEffectsAndTerrain < Battle::DynamaxMove::Mo
     end
     if @battle.field.terrain != :None
       case @battle.field.terrain
-      when :Electric then @battle.pbDisplay(_INTL("The electricity disappeared from the battlefield."))
-      when :Grassy   then @battle.pbDisplay(_INTL("The grass disappeared from the battlefield."))
-      when :Misty    then @battle.pbDisplay(_INTL("The mist disappeared from the battlefield."))
-      when :Psychic  then @battle.pbDisplay(_INTL("The weirdness disappeared from the battlefield."))
-      else                @battle.pbDisplay(_INTL("The battlefield returned to normal.")) 
+      when :Electric then @battle.pbDisplay(_INTL("电气场地消失了。"))
+      when :Grassy   then @battle.pbDisplay(_INTL("青草场地效果消失了。"))
+      when :Misty    then @battle.pbDisplay(_INTL("薄雾场地消失了"))
+      when :Psychic  then @battle.pbDisplay(_INTL("精神场地消失了"))
+      else                @battle.pbDisplay(_INTL("场地恢复正常。")) 
       end
       @battle.field.terrain = :None
     end

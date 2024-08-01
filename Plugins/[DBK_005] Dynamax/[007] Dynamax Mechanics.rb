@@ -116,7 +116,7 @@ MidbattleHandlers.add(:midbattle_global, :wild_dynamax_battle,
       foe.unDynamax
       battle.noBag = false
       battle.disablePokeBalls = false
-      battle.pbDisplayPaused(_INTL("{1}'s Dynamax energy faded!\nIt may now be captured!", foe.pbThis))
+      battle.pbDisplayPaused(_INTL("{1}的极巨化能量消失了!\n现在可以捕捉了!", foe.pbThis))
       ch = battle.choices[idxBattler]
       if !foe.movedThisRound? && ch[0] == :UseMove
         ch[2] = foe.moves[ch[1]]
@@ -285,7 +285,7 @@ class Battle
         @dynamax_bands.each { |item| return GameData::Item.get(item).portion_name if trainer_items&.include?(item) }
       end
     end
-    return _INTL("Dynamax Band")
+    return _INTL("极巨化手环")
   end
   
   #-----------------------------------------------------------------------------
@@ -356,16 +356,16 @@ class Battle
         type = (battler.hasEmax?) ? "Eternamax" : (battler.hasGmax?) ? "Gigantamax" : "Dynamax"
         idxBattler = battler.index
         if battler.wild?
-          pbDisplay(_INTL("{1} surrounded itself in {2} energy!", battler.pbThis, type))
+          pbDisplay(_INTL("{1}将自己包围在{2}能量中!", battler.pbThis, type))
           @scene.pbRevertBattlerStart(idxBattler)
           battler.makeDynamax
           @scene.pbRevertBattlerEnd
         else
           trainerName = pbGetOwnerName(idxBattler)
-          pbDisplay(_INTL("{1} recalled {2}!", trainerName, battler.pbThis(true)))
+          pbDisplay(_INTL("{1}召回{2}!", trainerName, battler.pbThis(true)))
           xpos, ypos = @scene.sprites["pokemon_#{idxBattler}"].x, @scene.sprites["pokemon_#{idxBattler}"].y
           @scene.pbRecall(idxBattler)
-          pbDisplay(_INTL("{1}'s ball surges with {2} energy!", battler.pbThis, type))
+          pbDisplay(_INTL("{1}的宝贝球充满了{2}能量!", battler.pbThis, type))
           @scene.pbDynamaxSendOut(idxBattler, xpos, ypos)
         end
       end

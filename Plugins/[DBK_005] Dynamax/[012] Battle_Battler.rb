@@ -71,7 +71,7 @@ class Battle::Battler
       baseMove = @baseMoves[move.index]
       if @battle.allOtherSideBattlers(@index).any? { |b| b.effects[PBEffects::Imprison] && b.pbHasMove?(baseMove.id) }
         if showMessages
-          msg = _INTL("{1} can't use its sealed {2}!", pbThis, baseMove.name)
+          msg = _INTL("{1}无法使用被封印的{2}!", pbThis, baseMove.name)
           (commandPhase) ? @battle.pbDisplayPaused(msg) : @battle.pbDisplay(msg)
         end
         return false
@@ -105,7 +105,7 @@ class Battle::Battler
       targets.each do |b|
         next if b.damageState.unaffected
         next if !b.isProtected?(user, move)
-        @battle.pbDisplay(_INTL("{1} couldn't fully protect itself and got hurt!", b.pbThis))
+        @battle.pbDisplay(_INTL("{1}无法完全保护自己，并受到了伤害!", b.pbThis))
       end
     end
     dynamax_pbEffectsAfterMove(user, targets, move, numHits)
@@ -121,7 +121,7 @@ class Battle::Battler
         baseMove = user.baseMoves[move.index]
         user.pbSetPP(move, 0)
         user.pbSetPP(baseMove, 0)
-        @battle.pbDisplay(_INTL("{1}'s {2} lost all of its PP due to the grudge!",
+        @battle.pbDisplay(_INTL("由于怨念{1}的{2}所有 PP 都耗尽了grudge!",
                               user.pbThis, baseMove.name))
         target.effects[PBEffects::Grudge] = false
       end
@@ -138,7 +138,7 @@ class Battle::Battler
       if target.effects[PBEffects::MaxGuard] && !move.ignoresMaxGuard?
         if move.pbShowFailMessages?(targets)
           @battle.pbCommonAnimation("Protect", target)
-          @battle.pbDisplay(_INTL("{1} protected itself!", target.pbThis))
+          @battle.pbDisplay(_INTL("{1}保护了自己!", target.pbThis))
         end
         target.damageState.protected = true
         @battle.successStates[user.index].protected = true

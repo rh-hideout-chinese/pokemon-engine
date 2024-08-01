@@ -184,7 +184,7 @@ class PokemonSummary_Scene
         dlevel = @pokemon.dynamax_lvl
         levels = AnimatedBitmap.new(_INTL(path + "dynamax_bar"))
         overlay.blt(xpos + 82, 352, levels.bitmap, Rect.new(0, 0, dlevel * 16, 14))
-        pbDrawTextPositions(overlay, [ [_INTL("Dynamax Lv."), Graphics.width - 102, 324, 2, Color.new(255, 255, 255), Color.new(123, 123, 123)] ])
+        pbDrawTextPositions(overlay, [ [_INTL("极巨化等级."), Graphics.width - 102, 324, 2, Color.new(255, 255, 255), Color.new(123, 123, 123)] ])
       end
     end
     dynamax_drawPageTwo
@@ -238,14 +238,14 @@ class PokemonPokedexInfo_Scene
        246, 48, :left, Color.new(248, 248, 248), Color.black]
     ]
     if @show_battled_count
-      textpos.push([_INTL("Number Battled"), 314, 164, :left, base, shadow])
+      textpos.push([_INTL("对战次数"), 314, 164, :left, base, shadow])
       textpos.push([$player.pokedex.battled_count(@species).to_s, 452, 196, :right, base, shadow])
     else
-      textpos.push([_INTL("Height"), 314, 164, :left, base, shadow])
-      textpos.push([_INTL("Weight"), 314, 196, :left, base, shadow])
+      textpos.push([_INTL("高度"), 314, 164, :left, base, shadow])
+      textpos.push([_INTL("体重"), 314, 196, :left, base, shadow])
     end
     if $player.owned?(@species)
-      textpos.push([_INTL("{1} Pokémon", species_data.category), 246, 80, :left, base, shadow])
+      textpos.push([_INTL("{1}宝可梦", species_data.category), 246, 80, :left, base, shadow])
       if !@show_battled_count
         height = species_data.height
         weight = species_data.weight

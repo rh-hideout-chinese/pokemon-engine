@@ -65,7 +65,7 @@ class Battle
       if !Effectiveness.ineffective?(eff)
         eff = eff.to_f / Effectiveness::NORMAL_EFFECTIVE
         battler.pbReduceHP(battler.totalhp * eff / 8, false)
-        pbDisplay(_INTL("The sharp steel bit into {1}!", battler.pbThis(true)))
+        pbDisplay(_INTL("尖锐的钢刺刺入了{1}!", battler.pbThis(true)))
         battler.pbItemHPHealCheck
       end
     end
@@ -91,7 +91,7 @@ class Battle
           @scene.pbDamageAnimation(battler)
           movename = GameData::Move.get(:GMAXVINELASH).name
           battler.pbTakeEffectDamage(battler.totalhp / 6, false) { |hp_lost|
-            pbDisplay(_INTL("{1} is hurt by {2}'s ferocious beating!", battler.pbThis, movename))
+            pbDisplay(_INTL("{1}被{2}猛烈攻击了!", battler.pbThis, movename))
           }
         end
       end
@@ -108,7 +108,7 @@ class Battle
           @scene.pbDamageAnimation(battler)
           movename = GameData::Move.get(:GMAXWILDFIRE).name
           battler.pbTakeEffectDamage(battler.totalhp / 6, false) { |hp_lost|
-            pbDisplay(_INTL("{1} is burning up within {2}'s flames!", battler.pbThis, movename))
+            pbDisplay(_INTL("{1}被卷入了{2}的火焰,剧烈的燃烧了!", battler.pbThis, movename))
           }
         end
       end
@@ -125,7 +125,7 @@ class Battle
           @scene.pbDamageAnimation(battler)
           movename = GameData::Move.get(:GMAXCANNONADE).name
           battler.pbTakeEffectDamage(battler.totalhp / 6, false) { |hp_lost|
-            pbDisplay(_INTL("{1} is hurt by {2}'s vortex!", battler.pbThis, movename))
+            pbDisplay(_INTL("{1}被{2}的漩涡攻击了!", battler.pbThis, movename))
           }
         end
       end
@@ -142,7 +142,7 @@ class Battle
           @scene.pbDamageAnimation(battler)
           movename = GameData::Move.get(:GMAXVOLCALITH).name
           battler.pbTakeEffectDamage(battler.totalhp / 6, false) { |hp_lost|
-            pbDisplay(_INTL("{1} is hurt by the rocks thrown out by {2}!", battler.pbThis, movename))
+            pbDisplay(_INTL("{1}被{2}抛出的岩石伤害了!", battler.pbThis, movename))
           }
         end
       end
@@ -155,19 +155,19 @@ class Battle
     # Vine Lash
     movename = GameData::Move.get(:GMAXVINELASH).name
     pbEORCountDownSideEffect(side, PBEffects::VineLash,
-                             _INTL("{1} was released from {2}'s beating!", @battlers[side].pbTeam, movename))
+                             _INTL("{1}摆脱了{2}的猛烈攻击!", @battlers[side].pbTeam, movename))
     # Wildfire
     movename = GameData::Move.get(:GMAXWILDFIRE).name
     pbEORCountDownSideEffect(side, PBEffects::Wildfire,
-                             _INTL("{1} was released from {2}'s flames!", @battlers[side].pbTeam, movename))
+                             _INTL("{1}从{2}的火焰中逃了出来!", @battlers[side].pbTeam, movename))
     # Cannonade
     movename = GameData::Move.get(:GMAXCANNONADE).name
     pbEORCountDownSideEffect(side, PBEffects::Cannonade,
-                             _INTL("{1} was released from {2}'s vortex!", @battlers[side].pbTeam, movename))
+                             _INTL("{1}从{2}的漩涡中逃了出来!", @battlers[side].pbTeam, movename))
     # Volcalith
     movename = GameData::Move.get(:GMAXVOLCALITH).name
     pbEORCountDownSideEffect(side, PBEffects::Volcalith,
-                             _INTL("Rocks stopped being thrown out by {1} on {2}!", movename, @battlers[side].pbTeam(true)))
+                             _INTL("{1}不再在向{2}投掷岩石了!", movename, @battlers[side].pbTeam(true)))
   end
   
   #-----------------------------------------------------------------------------
