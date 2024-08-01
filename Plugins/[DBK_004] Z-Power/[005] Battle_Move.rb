@@ -92,7 +92,7 @@ class Battle::Move
       $stats.total_zmove_count += 1 if user.pbOwnedByPlayer?
       trigger = (@status_zmove) ? "BeforeZStatus" : "BeforeZMove"
       @battle.pbDeluxeTriggers(user, nil, trigger, user.species, @type, @id)
-      @battle.pbDisplayBrief(_INTL("{1} surrounded itself with its Z-Power!", user.pbThis))
+      @battle.pbDisplayBrief(_INTL("{1}被Z力量包围着!", user.pbThis))
       if @battle.scene.pbCommonAnimationExists?("ZMove")
         pbCommonAnimation("ZMove", user)
       elsif Settings::SHOW_ZMOVE_ANIM && $PokemonSystem.battlescene == 0
@@ -106,7 +106,7 @@ class Battle::Move
       side  = user.idxOwnSide
       owner = @battle.pbGetOwnerIndexFromBattlerIndex(user.index)
       @battle.zMove[side][owner] = -2
-      @battle.pbDisplayBrief(_INTL("{1} unleashed its full force Z-Move!", user.pbThis))
+      @battle.pbDisplayBrief(_INTL("{1}全力释放了Z招式!", user.pbThis))
     end
     zmove_pbDisplayUseMessage(user)
   end
@@ -256,7 +256,7 @@ class Battle::Move
     when "HealUser"
       if user.hp < user.totalhp
         user.pbRecoverHP(user.totalhp, false)
-        @battle.pbDisplay(_INTL("{1} restored its HP using its Z-Power!", user.pbThis))
+        @battle.pbDisplay(_INTL("{1}使用它的Z力量回复了HP!", user.pbThis))
       end
     #---------------------------------------------------------------------------
     # Z-Powered effects that fully restores the HP of an incoming Pokemon.
@@ -268,7 +268,7 @@ class Battle::Move
       if user.effects[PBEffects::FocusEnergy] < 4
         user.effects[PBEffects::FocusEnergy] += 2
         user.effects[PBEffects::FocusEnergy] = 4 if user.effects[PBEffects::FocusEnergy] > 4
-        @battle.pbDisplay(_INTL("{1} boosted its critical hit ratio using its Z-Power!", user.pbThis))
+        @battle.pbDisplay(_INTL("{1}使用它的Z力量提升了命中要害的几率!", user.pbThis))
       end
     #---------------------------------------------------------------------------
     # Z-Powered effects that resets the user's lowered stats.
@@ -279,12 +279,12 @@ class Battle::Move
           user.stages[s.id] = 0
           user.statsRaisedThisRound = true
         end
-        @battle.pbDisplay(_INTL("{1} returned its decreased stats to normal using its Z-Power!", user.pbThis))
+        @battle.pbDisplay(_INTL("{1}使用其Z力量将降低的能力值恢复正常!", user.pbThis))
       end
     #---------------------------------------------------------------------------
     # Z-Powered effects that cause misdirection.
     when "FollowMe"
-      @battle.pbDisplay(_INTL("{1} became the center of attention using its Z-Power!", user.pbThis))
+      @battle.pbDisplay(_INTL("{1}的Z力量使它获得全场的关注!", user.pbThis))
       user.effects[PBEffects::FollowMe] = 1
       user.eachAlly do |b|
         next if b.effects[PBEffects::FollowMe] < user.effects[PBEffects::FollowMe]
@@ -312,7 +312,7 @@ class Battle::Move
               boost = (stats.length > 1) ? "stats" : GameData::Stat.get(stat).name
               boost += " drastically" if stage >= 3
               boost += " sharply"     if stage == 2
-              @battle.pbDisplay(_INTL("{1} boosted its {2} using its Z-Power!", user.pbThis, boost))
+              @battle.pbDisplay(_INTL("{1}的Z力量,提升了它的{2}!", user.pbThis, boost))
               showAnim = false
             end
           end

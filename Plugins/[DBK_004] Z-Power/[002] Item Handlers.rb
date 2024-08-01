@@ -38,13 +38,13 @@ module GameData
       properties = self.zcrystal_editor_properties
       properties.each_with_index do |prop, i|
         next if prop[0] != "Move"
-        properties[i][2] = _INTL("The move taught by a TM/HM/TR, or a Z-Move linked to a Z-Crystal.")
+        properties[i][2] = _INTL("通过技能机/秘传机/记录技能所学的招式，或与Z晶石相关联的Z招式。")
         break
       end
       properties.concat([
-        ["HeldDescription", StringProperty, _INTL("Alternate description of this item while it's being held by a Pokémon.")],
-        ["ZCombo",          StringProperty, _INTL("A move ID followed by any number of species ID's. " +
-                                                "Used as the base move and eligible species for a Z-Move.")]
+        ["HeldDescription", StringProperty, _INTL("当该道具由宝可梦持有时的备用描述。")],
+        ["ZCombo",          StringProperty, _INTL("一个招式ID后跟任意数量的种类ID。"+
+                                                  "用于Z招式的基础招式和适用的种类。")]
       ])
       return properties
     end
@@ -141,12 +141,12 @@ module Compiler
     GameData::Item.each do |item|
 	  next if !item.is_zcrystal?
 	  if !item.move
-	    raise _INTL("{1} is a Z-Crystal, but missing a Z-Move in the 'Move' field.\n{2}", item.id, FileLineData.linereport)
+	    raise _INTL("{1}是一个Z纯晶，但在“技能列表”中没有登记,因此不能使用Z招式。\n{2}", item.id, FileLineData.linereport)
 	  end
       next if item.zcombo.empty?
       params = item.zcombo
       if params.length < 2
-        raise _INTL("{1} is a Z-Crystal, but the 'ZCombo' field is missing a move or a species.\n{2}", item.id, FileLineData.linereport)
+        raise _INTL("{1}是一个Z纯晶,但是在'ZCombo'列表中没有登记这个技能或宝可梦\n{2}", item.id, FileLineData.linereport)
       end
       params.each_with_index do |param, i|
         enum = (i == 0) ? :Move : :Species
@@ -284,27 +284,27 @@ ItemHandlers::UseOnPokemon.addIf(:zcrystals,
     crystal    = GameData::Item.get(item).portion_name
     compatible = pkmn.has_zmove?(item) || pkmn.getUltraItem == item
     if pkmn.shadowPokemon? || pkmn.egg?
-      scene.pbDisplay(_INTL("It won't have any effect."))
+      scene.pbDisplay(_INTL("没有任何效果。"))
       next false
     elsif pkmn.item == item
-      scene.pbDisplay(_INTL("{1} is already holding a piece of {2}.", pkmn.name, crystal))
+      scene.pbDisplay(_INTL("但是,{1} 已经持有{2}了.", pkmn.name, crystal))
       next false
-    elsif !compatible && !scene.pbConfirm(_INTL("{1} cannot currently use this crystal's Z-Power. Is that OK?", pkmn.name))
+    elsif !compatible && !scene.pbConfirm(_INTL("{1}目前无法使用这个Z纯晶的力量。确定吗?", pkmn.name))
       next false
     end
-    scene.pbDisplay(_INTL("The piece of {1} will be given to {2} so that it may use its Z-Power!", crystal, pkmn.name))
+    scene.pbDisplay(_INTL("{1}确定给{2}吗。这样他就能使用Z招式!", crystal, pkmn.name))
     if pkmn.item
       heldItem = GameData::Item.get(pkmn.item)
       prefix = (heldItem.is_zcrystal?) ? "a piece of" : (heldItem.portion_name.starts_with_vowel?) ? "an" : "a"
-      scene.pbDisplay(_INTL("{1} is already holding {2} {3}.\1", pkmn.name, prefix, heldItem.portion_name))
-      if scene.pbConfirm(_INTL("Would you like to switch the two items?"))
+      scene.pbDisplay(_INTL("但是，{1}已经持有{2}.\1", pkmn.name, heldItem.portion_name))
+      if scene.pbConfirm(_INTL("您想要交换这两个道具吗？"))
         if !$bag.can_add?(pkmn.item)
-          scene.pbDisplay(_INTL("The Bag is full. The Pokémon's item could not be removed."))
+          scene.pbDisplay(_INTL("包包已满。宝可梦的道具无法拿下。"))
           next false
         else
           $bag.add(pkmn.item)
           itemname = (heldItem.is_zcrystal?) ? "piece of #{heldItem.name}" : heldItem.portion_name
-          scene.pbDisplay(_INTL("You took {1}'s {2} and gave it a piece of {3}.", pkmn.name, itemname, crystal))
+          scene.pbDisplay(_INTL("你从{1}那里拿走了{2},并给了它一个{3}.", pkmn.name, itemname, crystal))
         end
       else
         next false
@@ -312,7 +312,7 @@ ItemHandlers::UseOnPokemon.addIf(:zcrystals,
     end
     pkmn.item = item
     pbSEPlay("Pkmn move learnt")
-    scene.pbDisplay(_INTL("{1} is now holding a piece of {2}!", pkmn.name, crystal))
+    scene.pbDisplay(_INTL("{1}现在携带着{2}!", pkmn.name, crystal))
     next true
   }
 )
@@ -334,13 +334,13 @@ ItemHandlers::CanUseInBattle.add(:ZBOOSTER, proc { |item, pokemon, battler, move
   owner = battle.pbGetOwnerIndexFromBattlerIndex(battler.index)
   ring  = battle.pbGetZRingName(battler.index)      
   if !battle.pbHasZRing?(battler.index)
-    scene.pbDisplay(_INTL("You don't have a {1} to charge!", ring)) if showMessages
+    scene.pbDisplay(_INTL("你没有{1}可充能!", ring)) if showMessages
     next false
   elsif !firstAction
-    scene.pbDisplay(_INTL("You can't use this item while issuing orders at the same time!")) if showMessages
+    scene.pbDisplay(_INTL("你不能在下达命令的同时使用这个道具!")) if showMessages
     next false
   elsif battle.zMove[side][owner] == -1
-    scene.pbDisplay(_INTL("You don't need to recharge your {1} yet!", ring)) if showMessages
+    scene.pbDisplay(_INTL("你还不需要为你的{1}充能!", ring)) if showMessages
     next false
   end
   next true
@@ -357,5 +357,5 @@ ItemHandlers::UseInBattle.add(:ZBOOSTER, proc { |item, battler, battle|
   trainer = battle.pbGetOwnerName(battler.index)
   item    = GameData::Item.get(item).portion_name
   pbSEPlay(sprintf("Anim/Lucky Chant"))
-  battle.pbDisplayPaused(_INTL("The {1} fully recharged {2}'s {3}!\n{2} can use Z-Moves again!", item, trainer, ring))
+  battle.pbDisplayPaused(_INTL("{1}使{2}的{3}Z手环重新充满了力量!\n{2}可以再次使用Z招式!", item, trainer, ring))
 })

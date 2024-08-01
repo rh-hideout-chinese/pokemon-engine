@@ -86,7 +86,7 @@ MidbattleHandlers.add(:midbattle_global, :wild_zpower_battle,
         battle.totemBattle = nil if defined?(battle.totemBattle)
         foe.damageThreshold = 6
         battle.pbAnimation(:DRAGONDANCE, foe, foe)
-        battle.pbDisplay(_INTL("{1}'s aura flared to life!", foe.pbThis))
+        battle.pbDisplay(_INTL("{1}的气场焕发了活力!", foe.pbThis))
         showAnim = true
         GameData::Stat.each_main_battle do |s|
           foe.pbRaiseStatStage(s.id, 1, foe, showAnim)
@@ -101,7 +101,7 @@ MidbattleHandlers.add(:midbattle_global, :wild_zpower_battle,
         PBDebug.log("[Midbattle Global] #{logname} able to use Z-Moves again")
         battle.zMove[1][0] = -1
         battle.pbAnimation(:DRAGONDANCE, foe, foe)
-        battle.pbDisplay(_INTL("{1}'s Z-Power was replenished by its aura!", foe.pbThis))
+        battle.pbDisplay(_INTL("{1}的Z力量被它的气场补充了!", foe.pbThis))
       end	
     when "BattlerReachedHPCap_foe"
       PBDebug.log("[Midbattle Global] #{logname} damage cap reached")
@@ -115,7 +115,7 @@ MidbattleHandlers.add(:midbattle_global, :wild_zpower_battle,
       battle.zMove[1][0] == -2
       battle.noBag = false
       battle.disablePokeBalls = false
-      battle.pbDisplayPaused(_INTL("{1}'s aura faded!\nIt may now be captured!", foe.pbThis))
+      battle.pbDisplayPaused(_INTL("{1}的气场消失了！\n现在可以捕捉它了!", foe.pbThis))
     when "BattleEndWin"
       if battle.wildBattleMode == :zmove
         $stats.wild_zpower_battles_won += 1
@@ -274,7 +274,7 @@ class Battle
         @z_rings.each { |item| return GameData::Item.get(item).portion_name if trainer_items&.include?(item) }
       end
     end
-    return _INTL("Z-Ring")
+    return _INTL("Z手环")
   end
   
   #-----------------------------------------------------------------------------
@@ -402,7 +402,7 @@ class Battle::Scene
         if !battler.hasCompatibleZMove?(baseMove)
           itemname = battler.item.name
           movename = battler.moves[cw.index].name
-          @battle.pbDisplay(_INTL("{1} is not compatible with {2}!", movename, itemname))
+          @battle.pbDisplay(_INTL("{1}与{2}不兼容!", movename, itemname))
           ret = :cancel
         end
       end

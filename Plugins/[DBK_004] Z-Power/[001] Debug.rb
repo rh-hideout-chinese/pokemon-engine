@@ -6,24 +6,24 @@
 # General Debug options
 #-------------------------------------------------------------------------------
 MenuHandlers.add(:debug_menu, :deluxe_zmoves, {
-  "name"        => _INTL("Toggle Z-Moves"),
+  "name"        => _INTL("切换Z招式"),
   "parent"      => :deluxe_plugins_menu,
-  "description" => _INTL("Toggles the availability of Z-Move functionality."),
+  "description" => _INTL("切换Z招式功能的可用性。"),
   "effect"      => proc {
     $game_switches[Settings::NO_ZMOVE] = !$game_switches[Settings::NO_ZMOVE]
     toggle = ($game_switches[Settings::NO_ZMOVE]) ? "disabled" : "enabled"
-    pbMessage(_INTL("Z-Moves {1}.", toggle))
+    pbMessage(_INTL("Z招式{1}.", toggle))
   }
 })
 
 MenuHandlers.add(:debug_menu, :deluxe_ultra_burst, {
-  "name"        => _INTL("Toggle Ultra Burst"),
+  "name"        => _INTL("切换究极爆发"),
   "parent"      => :deluxe_plugins_menu,
-  "description" => _INTL("Toggles the availability of Ultra Burst functionality."),
+  "description" => _INTL("切换究极爆发功能的可用性。"),
   "effect"      => proc {
     $game_switches[Settings::NO_ULTRA_BURST] = !$game_switches[Settings::NO_ULTRA_BURST]
     toggle = ($game_switches[Settings::NO_ULTRA_BURST]) ? "disabled" : "enabled"
-    pbMessage(_INTL("Ultra Burst {1}.", toggle))
+    pbMessage(_INTL("究极爆发{1}.", toggle))
   }
 })
 
@@ -32,9 +32,9 @@ MenuHandlers.add(:debug_menu, :deluxe_ultra_burst, {
 # Battle Debug options.
 #-------------------------------------------------------------------------------
 MenuHandlers.add(:battle_debug_menu, :deluxe_battle_zmoves, {
-  "name"        => _INTL("Z-Moves"),
+  "name"        => _INTL("Z招式"),
   "parent"      => :trainers,
-  "description" => _INTL("Whether each trainer is allowed to use Z-Moves."),
+  "description" => _INTL("切换每个训练师是否允许使用Z招式功能。"),
   "effect"      => proc { |battle|
     cmd = 0
     loop do
@@ -53,7 +53,7 @@ MenuHandlers.add(:battle_debug_menu, :deluxe_battle_zmoves, {
           cmds.push([side, i])
         end
       end
-      cmd = pbMessage("\\ts[]" + _INTL("Choose trainer to toggle whether they can use Z-Moves."),
+      cmd = pbMessage("\\ts[]" + _INTL("选择训练师来切换是否可以使用Z招式。"),
                       commands, -1, nil, cmd)
       break if cmd < 0
       real_cmd = cmds[cmd]
@@ -68,9 +68,9 @@ MenuHandlers.add(:battle_debug_menu, :deluxe_battle_zmoves, {
 
 
 MenuHandlers.add(:battle_debug_menu, :deluxe_battle_ultra_burst, {
-  "name"        => _INTL("Ultra Burst"),
+  "name"        => _INTL("究极爆发"),
   "parent"      => :trainers,
-  "description" => _INTL("Whether each trainer is allowed to Ultra Burst."),
+  "description" => _INTL("每个训练师是否允许进行究极爆发。"),
   "effect"      => proc { |battle|
     cmd = 0
     loop do
@@ -89,7 +89,7 @@ MenuHandlers.add(:battle_debug_menu, :deluxe_battle_ultra_burst, {
           cmds.push([side, i])
         end
       end
-      cmd = pbMessage("\\ts[]" + _INTL("Choose trainer to toggle whether they can Ultra Burst."),
+      cmd = pbMessage("\\ts[]" + _INTL("选择训练师来切换是否可以进行究极爆发。"),
                       commands, -1, nil, cmd)
       break if cmd < 0
       real_cmd = cmds[cmd]

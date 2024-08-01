@@ -52,7 +52,7 @@ class Battle
     if position.effects[PBEffects::ZHealing]
       if battler.canHeal?
         pbCommonAnimation("HealingWish", battler)
-        pbDisplay(_INTL("The Z-Power healed {1}!", battler.pbThis(true)))
+        pbDisplay(_INTL("Z招式让{1}治愈了!", battler.pbThis(true)))
         battler.pbRecoverHP(battler.totalhp)
         position.effects[PBEffects::ZHealing] = false
       elsif Settings::MECHANICS_GENERATION < 8
@@ -132,7 +132,7 @@ class Battle::Battler
     if move.zMove?
       if @battle.field.effects[PBEffects::Gravity] > 0 && move.unusableInGravity?
         if showMessages
-          msg = _INTL("{1} can't use {2} because of gravity!", pbThis, move.name)
+          msg = _INTL("{1}因为重力无法使用{2}!", pbThis, move.name)
           (commandPhase) ? @battle.pbDisplayPaused(msg) : @battle.pbDisplay(msg)
         end
         return false
@@ -205,7 +205,7 @@ class Battle::Battler
       targets.each do |b|
         next if b.damageState.unaffected
         next if !b.isProtected?(user, move)
-        @battle.pbDisplay(_INTL("{1} couldn't fully protect itself and got hurt!", b.pbThis))
+        @battle.pbDisplay(_INTL("{1}无法完全保护自己，并受到了伤害!", b.pbThis))
       end
     end
     zmove_pbEffectsAfterMove(user, targets, move, numHits)

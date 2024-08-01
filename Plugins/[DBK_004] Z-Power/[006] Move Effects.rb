@@ -79,13 +79,13 @@ class Battle::ZMove::DamageTargetRemoveTerrain < Battle::Move
   def pbAdditionalEffect(user, target)
     case @battle.field.terrain
     when :Electric
-      @battle.pbDisplay(_INTL("The electricity disappeared from the battlefield."))
+      @battle.pbDisplay(_INTL("电气场地从战场上消失了。"))
     when :Grassy
-      @battle.pbDisplay(_INTL("The grass disappeared from the battlefield."))
+      @battle.pbDisplay(_INTL("青草场地从战场上消失了。"))
     when :Misty
-      @battle.pbDisplay(_INTL("The mist disappeared from the battlefield."))
+      @battle.pbDisplay(_INTL("薄雾场地从战场上消失了。"))
     when :Psychic
-      @battle.pbDisplay(_INTL("The weirdness disappeared from the battlefield."))
+      @battle.pbDisplay(_INTL("精神场地从战场上消失了。"))
     end
     @battle.field.terrain = :None
   end
@@ -150,7 +150,7 @@ class Battle::Move::UseLastMoveUsed < Battle::Move
   def pbMoveFailed?(user, targets)
     if !@copied_move || GameData::Move.get(@copied_move).zMove? ||
        @moveBlacklist.include?(GameData::Move.get(@copied_move).function_code)
-      @battle.pbDisplay(_INTL("But it failed!"))
+      @battle.pbDisplay(_INTL("但是它失败了..."))
       return true
     end
     return false
@@ -166,7 +166,7 @@ class Battle::Move::DisableTargetUsingDifferentMove < Battle::Move
   alias zmove_pbFailsAgainstTarget? pbFailsAgainstTarget?
   def pbFailsAgainstTarget?(user, target, show_message)
     if target.lastMoveUsedIsZMove
-      @battle.pbDisplay(_INTL("But it failed!")) if show_message
+      @battle.pbDisplay(_INTL("但是它失败了...")) if show_message
       return true
     end
     return zmove_pbFailsAgainstTarget?(user, target, show_message)

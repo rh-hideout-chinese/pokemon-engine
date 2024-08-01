@@ -39,7 +39,7 @@ module Settings
   #-----------------------------------------------------------------------------
   # Sets the name to be displayed for the Z-Crystal bag pocket.
   #-----------------------------------------------------------------------------
-  ZCRYSTAL_BAG_POCKET_NAME = _INTL("Z-Crystals")
+  ZCRYSTAL_BAG_POCKET_NAME = _INTL("Z纯晶")
   
   #-----------------------------------------------------------------------------
   # Sets the bag pocket used for Z-Crystals. This adds a new bag slot by default.

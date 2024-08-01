@@ -78,7 +78,7 @@ MidbattleHandlers.add(:midbattle_global, :wild_ultra_battle,
         foe.damageThreshold = 6
         PBDebug.log("[Midbattle Global] #{logname} gains a Z-Powered aura")
         battle.pbAnimation(:DRAGONDANCE, foe, foe)
-        battle.pbDisplay(_INTL("{1}'s aura flared to life!", foe.pbThis))
+        battle.pbDisplay(_INTL("{1}的气场充满活力!", foe.pbThis))
         showAnim = true
         GameData::Stat.each_main_battle do |s|
           foe.pbRaiseStatStage(s.id, 1, foe, showAnim)
@@ -99,7 +99,7 @@ MidbattleHandlers.add(:midbattle_global, :wild_ultra_battle,
       end
       battle.noBag = false
       battle.disablePokeBalls = false
-      battle.pbDisplayPaused(_INTL("{1}'s Ultra Burst faded!\nIt may now be captured!", foe.pbThis))
+      battle.pbDisplayPaused(_INTL("{1}的究极爆发结束了!\n现在可以捕捉它了!", foe.pbThis))
     when "BattleEndWin"
       if battle.wildBattleMode == :ultra
         $stats.wild_ultra_battles_won += 1
@@ -264,9 +264,9 @@ class Battle
     if battler.hasActiveAbility?(:ILLUSION)
       Battle::AbilityEffects.triggerOnBeingHit(battler.ability, nil, battler, nil, self)
     end
-    pbDisplay(_INTL("Bright light is about to burst out of {1}!", battler.pbThis(true)))    
+    pbDisplay(_INTL("{1}即将爆发出耀眼的光芒!", battler.pbThis(true)))    
     pbAnimateUltraBurst(battler)
-    pbDisplay(_INTL("{1} regained its true power with Ultra Burst!", battler.pbThis))    
+    pbDisplay(_INTL("{1}通过究极爆发恢复了它的真正力量!", battler.pbThis))    
     side  = battler.idxOwnSide
     owner = pbGetOwnerIndexFromBattlerIndex(idxBattler)
     @ultraBurst[side][owner] = -2
@@ -559,7 +559,7 @@ MultipleForms.register(:NECROZMA, {
       form_moves.each do |move|
         next if !pkmn.hasMove?(move)
         pkmn.forget_move(move)
-        pbMessage(_INTL("{1} forgot {2}...", pkmn.name, GameData::Move.get(move).name))
+        pbMessage(_INTL("{1}忘记了{2}...", pkmn.name, GameData::Move.get(move).name))
       end
       pbLearnMove(pkmn, :CONFUSION) if pkmn.numMoves == 0
     else
