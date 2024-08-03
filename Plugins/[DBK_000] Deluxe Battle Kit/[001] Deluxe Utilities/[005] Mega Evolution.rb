@@ -8,20 +8,20 @@
 # Adds a toggle for Mega Evolution in the debug menu.
 #-------------------------------------------------------------------------------
 MenuHandlers.add(:debug_menu, :deluxe_plugins_menu, {
-  "name"        => _INTL("Deluxe plugin settings..."),
+  "name"        => _INTL("豪华插件设定……"),
   "parent"      => :main,
-  "description" => _INTL("Settings added by the Deluxe Battle Kit and other add-on plugins."),
+  "description" => _INTL("由DBK及其附加插件添加的设定。"),
   "always_show" => false
 })
 
 MenuHandlers.add(:debug_menu, :deluxe_mega, {
-  "name"        => _INTL("Toggle Mega Evolution"),
+  "name"        => _INTL("设置超级进化"),
   "parent"      => :deluxe_plugins_menu,
-  "description" => _INTL("Toggles the availability of Mega Evolution functionality."),
+  "description" => _INTL("设置是否能进行超级进化。"),
   "effect"      => proc {
     $game_switches[Settings::NO_MEGA_EVOLUTION] = !$game_switches[Settings::NO_MEGA_EVOLUTION]
-    toggle = ($game_switches[Settings::NO_MEGA_EVOLUTION]) ? "disabled" : "enabled"
-    pbMessage(_INTL("Mega Evolution {1}.", toggle))
+    toggle = ($game_switches[Settings::NO_MEGA_EVOLUTION]) ? "已禁止" : "已允许"
+    pbMessage(_INTL("{1}超级进化。", toggle))
   }
 })
 
@@ -111,24 +111,24 @@ class Battle
     if battler.wild?
       case battler.pokemon.megaMessage
       when 1
-        pbDisplay(_INTL("{1} radiates with Mega energy!", battler.pbThis))
+        pbDisplay(_INTL("{1}散发出超级能量！", battler.pbThis))
       else
-        pbDisplay(_INTL("{1}'s {2} radiates with Mega energy!", battler.pbThis, battler.itemName))
+        pbDisplay(_INTL("{1}的{2}散发出超级能量！", battler.pbThis, battler.itemName))
       end
     else
       trainerName = pbGetOwnerName(idxBattler)
       case battler.pokemon.megaMessage
       when 1
-        pbDisplay(_INTL("{1}'s fervent wish has reached {2}!", trainerName, battler.pbThis))
+        pbDisplay(_INTL("{1}衷心的祈愿传递到了{2}那里！", trainerName, battler.pbThis))
       else
-        pbDisplay(_INTL("{1}'s {2} is reacting to {3}'s {4}!",
+        pbDisplay(_INTL("{1}的{2}和{3}的{4}起了反应！",
                         battler.pbThis, battler.itemName, trainerName, pbGetMegaRingName(idxBattler)))
       end
     end
     pbAnimateMegaEvolution(battler)
     megaName = battler.pokemon.megaName
-    megaName = _INTL("Mega {1}", battler.pokemon.speciesName) if nil_or_empty?(megaName)
-    pbDisplay(_INTL("{1} has Mega Evolved into {2}!", battler.pbThis, megaName))
+    megaName = _INTL("超级{1}", battler.pokemon.speciesName) if nil_or_empty?(megaName)
+    pbDisplay(_INTL("{1}超级进化成了{2}！", battler.pbThis, megaName))
     side  = battler.idxOwnSide
     owner = pbGetOwnerIndexFromBattlerIndex(idxBattler)
     @megaEvolution[side][owner] = -2
