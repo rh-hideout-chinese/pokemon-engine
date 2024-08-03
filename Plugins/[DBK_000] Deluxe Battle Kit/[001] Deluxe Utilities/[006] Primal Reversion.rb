@@ -35,7 +35,7 @@ class Battle
     pbDeluxeTriggers(idxBattler, nil, "BeforePrimalReversion", battler.species, *battler.pokemon.types)
     @scene.pbAnimateSubstitute(idxBattler, :hide)
     pbAnimatePrimalReversion(battler)
-    pbDisplay(_INTL("{1}'s Primal Reversion!\nIt reverted to its primal form!", battler.pbThis))
+    pbDisplay(_INTL("{1}的原始回归！\n恢复了原始的样子！", battler.pbThis))
     pbDeluxeTriggers(idxBattler, nil, "AfterPrimalReversion", battler.species, *battler.pokemon.types)
     @scene.pbAnimateSubstitute(idxBattler, :show)
   end
