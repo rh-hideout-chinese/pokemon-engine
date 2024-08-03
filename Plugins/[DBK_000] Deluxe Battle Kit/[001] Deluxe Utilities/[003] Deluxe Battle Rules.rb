@@ -408,7 +408,7 @@ class Battle
   alias dx_pbItemMenu pbItemMenu
   def pbItemMenu(idxBattler, firstAction)
     if @noBag
-      pbDisplay(_INTL("Items can't be used in this battle."))
+      pbDisplay(_INTL("本次战斗无法使用道具。"))
       return false
     end
     return dx_pbItemMenu(idxBattler, firstAction)
@@ -435,15 +435,15 @@ class Battle
         trainers.each_with_index do |t, i|
           msg += "\r\n" if msg.length > 0
           if side == 0 && i == trainers.length - 1
-            msg += "Go! "
+            msg += "上吧！"
             sent = sendOuts[side][0]
           else
-            msg += "#{t.full_name} sent out "
+            msg += "#{t.full_name}派出了"
             sent = (side == 0) ? sendOuts[0][1] : sendOuts[1][i]
           end
           sent.each_with_index do |idxBattler, j|
             if j > 0
-              msg += (j == sent.length - 1) ? " and " : ", "
+              msg += (j == sent.length - 1) ? "和" : "，"
             end
             if defined?(@battlers[idxBattler].name_title)
               msg += @battlers[idxBattler].name_title
@@ -451,7 +451,7 @@ class Battle
               msg += @battlers[idxBattler].name
             end
           end
-          msg += "!"
+          msg += "！"
           toSendOut.concat(sent)
         end
         pbDisplayBrief(_INTL("{1}", msg)) if msg.length > 0
