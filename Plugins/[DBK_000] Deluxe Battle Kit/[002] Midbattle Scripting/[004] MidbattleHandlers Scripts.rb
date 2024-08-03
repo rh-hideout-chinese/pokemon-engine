@@ -31,10 +31,10 @@ MidbattleHandlers.add(:midbattle_scripts, :demo_wild_rotom,
     # The player's Poke Balls are disabled at the start of the first round.
     when "RoundStartCommand_1_foe"
       PBDebug.log("[Midbattle Script] '#{trigger}' triggered by #{logname}...")
-      battle.pbDisplayPaused(_INTL("{1}发出了强大的磁脉冲!", foe.pbThis))
+      battle.pbDisplayPaused(_INTL("{1} emited a powerful magnetic pulse!", foe.pbThis))
       battle.pbAnimation(:CHARGE, foe, foe)
       pbSEPlay("Anim/Paralyze3")
-      battle.pbDisplayPaused(_INTL("你的精灵球坏了！\n本场战斗无法使用精灵球！!"))
+      battle.pbDisplayPaused(_INTL("Your Poké Balls short-circuited!\nThey cannot be used this battle!"))
       battle.disablePokeBalls = true
       PBDebug.log("[Midbattle Script] '#{trigger}' effects ended")
     #---------------------------------------------------------------------------
@@ -44,7 +44,7 @@ MidbattleHandlers.add(:midbattle_scripts, :demo_wild_rotom,
       PBDebug.log("[Midbattle Script] '#{trigger}' triggered by #{logname}...")
       battle.pbAnimation(:NIGHTMARE, foe.pbDirectOpposing(true), foe)
       form = battle.pbRandom(1..5)
-      foe.pbSimpleFormChange(form, _INTL("{1}换成了新的形态!", foe.pbThis))
+      foe.pbSimpleFormChange(form, _INTL("{1} possessed a new appliance!", foe.pbThis))
       foe.pbRecoverHP(foe.totalhp / 4)
       foe.pbCureAttract
       foe.pbCureConfusion
@@ -53,12 +53,12 @@ MidbattleHandlers.add(:midbattle_scripts, :demo_wild_rotom,
         battle.pbShowAbilitySplash(foe, true, false)
         foe.ability = :MOTORDRIVE
         battle.pbReplaceAbilitySplash(foe)
-        battle.pbDisplay(_INTL("{1}获得了{2}!", foe.pbThis, foe.abilityName))
+        battle.pbDisplay(_INTL("{1} acquired {2}!", foe.pbThis, foe.abilityName))
         battle.pbHideAbilitySplash(foe)
       end
       if foe.item_id != :CELLBATTERY
         foe.item = :CELLBATTERY
-        battle.pbDisplay(_INTL("{1}装备了从电器里找到的{2}!", foe.pbThis, foe.itemName))
+        battle.pbDisplay(_INTL("{1} equipped a {2} it found in the appliance!", foe.pbThis, foe.itemName))
       end
       PBDebug.log("[Midbattle Script] '#{trigger}' effects ended")
     #---------------------------------------------------------------------------
@@ -69,11 +69,11 @@ MidbattleHandlers.add(:midbattle_scripts, :demo_wild_rotom,
       battle.pbAnimation(:CHARGE, foe, foe)
       if foe.effects[PBEffects::Charge] <= 0
         foe.effects[PBEffects::Charge] = 5
-        battle.pbDisplay(_INTL("{1}开始充能了!", foe.pbThis))
+        battle.pbDisplay(_INTL("{1} began charging power!", foe.pbThis))
       end
       if foe.effects[PBEffects::MagnetRise] <= 0
         foe.effects[PBEffects::MagnetRise] = 5
-        battle.pbDisplay(_INTL("{1}通过电磁力悬浮了!", foe.pbThis))
+        battle.pbDisplay(_INTL("{1} levitated with electromagnetism!", foe.pbThis))
       end
       battle.pbStartTerrain(foe, :Electric)
       PBDebug.log("[Midbattle Script] '#{trigger}' effects ended")
@@ -81,7 +81,7 @@ MidbattleHandlers.add(:midbattle_scripts, :demo_wild_rotom,
     # Opponent paralyzes the player's Pokemon when taking Super Effective damage.
     when "UserMoveEffective_player"
       PBDebug.log("[Midbattle Script] '#{trigger}' triggered by #{logname}...")
-      battle.pbDisplayPaused(_INTL("{1}绝望中发出了电脉冲!", foe.pbThis))
+      battle.pbDisplayPaused(_INTL("{1} emited an electrical pulse out of desperation!", foe.pbThis))
       battler = battle.battlers[idxBattler]
       if battler.pbCanInflictStatus?(:PARALYSIS, foe, true)
         battler.pbInflictStatus(:PARALYSIS)
@@ -107,25 +107,25 @@ MidbattleHandlers.add(:midbattle_scripts, :demo_collapsing_cave,
     when "RoundStartCommand_1_foe"
       PBDebug.log("[Midbattle Script] '#{trigger}' triggered by #{logname}...")
       pbSEPlay("Mining collapse")
-      battle.pbDisplayPaused(_INTL("洞穴天花板开始崩塌在你周围!"))
+      battle.pbDisplayPaused(_INTL("The cave ceiling begins to crumble down all around you!"))
       scene.pbStartSpeech(1)
-      battle.pbDisplayPaused(_INTL("我不会让你逃跑的!"))
-      battle.pbDisplayPaused(_INTL("我不在乎整个洞穴是否会塌下来……哈哈哈!"))
+      battle.pbDisplayPaused(_INTL("I am not letting you escape!"))
+      battle.pbDisplayPaused(_INTL("I don't care if this whole cave collapses down on the both of us...haha!"))
       scene.pbForceEndSpeech
-      battle.pbDisplayPaused(_INTL("在时间耗尽之前击败你的对手!"))
+      battle.pbDisplayPaused(_INTL("Defeat your opponent before time runs out!"))
       PBDebug.log("[Midbattle Script] '#{trigger}' effects ended")
     #---------------------------------------------------------------------------
     # Repeated end-of-round text.
     when "RoundEnd_player"
       PBDebug.log("[Midbattle Script] '#{trigger}' triggered by #{logname}...")
       pbSEPlay("Mining collapse")
-      battle.pbDisplayPaused(_INTL("洞穴继续在你周围崩塌!"))
+      battle.pbDisplayPaused(_INTL("The cave continues to collapse all around you!"))
       PBDebug.log("[Midbattle Script] '#{trigger}' effects ended")
     #---------------------------------------------------------------------------
     # Player's Pokemon is struck by falling rock, dealing damage & causing confusion.
     when "RoundEnd_2_player"
       PBDebug.log("[Midbattle Script] '#{trigger}' triggered by #{logname}...")
-      battle.pbDisplayPaused(_INTL("{1}被落下的岩石击中了头部!", battler.pbThis))
+      battle.pbDisplayPaused(_INTL("{1} was struck on the head by a falling rock!", battler.pbThis))
       battle.pbAnimation(:ROCKSMASH, battler.pbDirectOpposing(true), battler)
       old_hp = battler.hp
       battler.hp -= (battler.totalhp / 4).round
@@ -140,16 +140,16 @@ MidbattleHandlers.add(:midbattle_scripts, :demo_collapsing_cave,
     # Warning message.
     when "RoundEnd_3_player"
       PBDebug.log("[Midbattle Script] '#{trigger}' triggered by #{logname}...")
-      battle.pbDisplayPaused(_INTL("你快没时间了!"))
-      battle.pbDisplayPaused(_INTL("你需要立即逃跑!"))
+      battle.pbDisplayPaused(_INTL("You're running out of time!"))
+      battle.pbDisplayPaused(_INTL("You need to escape immediately!"))
       PBDebug.log("[Midbattle Script] '#{trigger}' effects ended")
     #---------------------------------------------------------------------------
     # Player runs out of time and is forced to forfeit.
     when "RoundEnd_4_player"
       PBDebug.log("[Midbattle Script] '#{trigger}' triggered by #{logname}...")
-      battle.pbDisplayPaused(_INTL("你未能在时间内击败对手!"))
+      battle.pbDisplayPaused(_INTL("You failed to defeat your opponent in time!"))
       scene.pbRecall(idxBattler)
-      battle.pbDisplayPaused(_INTL("你被迫逃离了战斗!"))
+      battle.pbDisplayPaused(_INTL("You were forced to flee the battle!"))
       pbSEPlay("Battle flee")
       battle.decision = 3
       PBDebug.log("[Midbattle Script] '#{trigger}' effects ended")
@@ -159,12 +159,12 @@ MidbattleHandlers.add(:midbattle_scripts, :demo_collapsing_cave,
       next if battle.pbTriggerActivated?(trigger)
       PBDebug.log("[Midbattle Script] '#{trigger}' triggered by #{logname}...")
       scene.pbStartSpeech(1)
-      battle.pbDisplayPaused(_INTL("我{1}永远不会放弃!", battler.name))
+      battle.pbDisplayPaused(_INTL("My {1} will never give up!", battler.name))
       scene.pbForceEndSpeech
       battle.pbAnimation(:BULKUP, battler, battler)
       battler.displayPokemon.play_cry
       battler.pbRecoverHP(battler.totalhp / 2)
-      battle.pbDisplayPaused(_INTL("{1}正在坚守阵地!", battler.pbThis))
+      battle.pbDisplayPaused(_INTL("{1} is standing its ground!", battler.pbThis))
       showAnim = true
       [:DEFENSE, :SPECIAL_DEFENSE].each do |stat|
         next if !battler.pbCanRaiseStatStage?(stat, battler)
@@ -177,7 +177,7 @@ MidbattleHandlers.add(:midbattle_scripts, :demo_collapsing_cave,
     when "BattleEndForfeit"
       PBDebug.log("[Midbattle Script] '#{trigger}' triggered by #{logname}...")
       scene.pbStartSpeech(1)
-      battle.pbDisplayPaused(_INTL("哈哈……你永远无法活着出去!"))
+      battle.pbDisplayPaused(_INTL("Haha...you'll never make it out alive!"))
       PBDebug.log("[Midbattle Script] '#{trigger}' effects ended")
     end
   }
@@ -223,7 +223,7 @@ MidbattleHandlers.add(:midbattle_global, :wild_mega_battle,
       PBDebug.log("[Midbattle Global] #{logname} damage cap reached")
       foe.unMega
       battle.disablePokeBalls = false
-      battle.pbDisplayPaused(_INTL("{1}的Mega进化消失了！\n现在可以进行捕捉!", foe.pbThis))
+      battle.pbDisplayPaused(_INTL("{1}'s Mega Evolution faded!\nIt may now be captured!", foe.pbThis))
     #---------------------------------------------------------------------------
     # Tracks player's win count.
     when "BattleEndWin"

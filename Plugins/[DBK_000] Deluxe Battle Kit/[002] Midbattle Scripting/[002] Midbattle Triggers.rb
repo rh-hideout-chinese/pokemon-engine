@@ -475,7 +475,7 @@ MidbattleHandlers.add(:midbattle_triggers, "useItem",
     elsif ItemHandlers.hasBattleUseOnPokemon(item)
       ItemHandlers.triggerBattleUseOnPokemon(item, battler.pokemon, battler, ch, battle.scene)
     else
-      battle.pbDisplay(_INTL("但是,没有效果..."))
+      battle.pbDisplay(_INTL("But it had no effect!"))
     end
   }
 )
@@ -624,9 +624,9 @@ MidbattleHandlers.add(:midbattle_triggers, "switchOut",
         end
         case switch
         when :Forced
-          battle.pbDisplay(_INTL("{1}变回了{2}!", battler.pbThis, trainerName))
+          battle.pbDisplay(_INTL("{1} went back to {2}!", battler.pbThis, trainerName))
           battle.pbRecallAndReplace(battler.index, newPkmn, true)
-          battle.pbDisplay(_INTL("{1}被拖出来了!", battler.pbThis))
+          battle.pbDisplay(_INTL("{1} was dragged out!", battler.pbThis))
         else
           battle.pbMessageOnRecall(battler)
           battle.pbRecallAndReplace(battler.index, newPkmn)
@@ -935,7 +935,7 @@ MidbattleHandlers.add(:midbattle_triggers, "battlerAbility",
         msg = _INTL("#{msg}", battler.pbThis(lowercase), trainerName)
         battle.pbDisplay(msg.gsub(/\\PN/i, battle.pbPlayer.name))
       else
-        battle.pbDisplay(_INTL("{1}获得了{2}!", battler.pbThis, battler.abilityName))
+        battle.pbDisplay(_INTL("{1} acquired {2}!", battler.pbThis, battler.abilityName))
       end
       battle.pbHideAbilitySplash(battler)
     end
@@ -974,7 +974,7 @@ MidbattleHandlers.add(:midbattle_triggers, "battlerItem",
       battler.item = nil
       if msg && !msg.is_a?(String)
         itemName = GameData::Item.get(olditem).portion_name
-        battle.pbDisplay(_INTL("{1}携带的{2}被拿走了!", battler.pbThis, itemName))
+        battle.pbDisplay(_INTL("{1}'s held {2} was removed!", battler.pbThis, itemName))
       end
     else
       battler.item = item
@@ -982,7 +982,7 @@ MidbattleHandlers.add(:midbattle_triggers, "battlerItem",
       if msg && !msg.is_a?(String)
         itemName = GameData::Item.get(battler.item).portion_name
         prefix = (itemName.starts_with_vowel?) ? "an" : "a"
-        battle.pbDisplay(_INTL("{1}获得了{2} {3}!", battler.pbThis, prefix, itemName))
+        battle.pbDisplay(_INTL("{1} obtained {2} {3}!", battler.pbThis, prefix, itemName))
       end
     end
     if msg.is_a?(String)
@@ -1047,7 +1047,7 @@ MidbattleHandlers.add(:midbattle_triggers, "battlerStats",
       if battler.hasAlteredStatStages?
         battler.pbResetStatStages
         PBDebug.log("     'battlerStats': #{battler.name} (#{battler.index})'s stat changes returning to normal")
-        battle.pbDisplay(_INTL("{1}}的能力值变化恢复正常!", battler.pbThis))
+        battle.pbDisplay(_INTL("{1}'s stat changes returned to normal!", battler.pbThis))
       end
     when :ResetRaised
       if battler.hasRaisedStatStages?
@@ -1055,14 +1055,14 @@ MidbattleHandlers.add(:midbattle_triggers, "battlerStats",
         battler.statsLoweredThisRound = true
         GameData::Stat.each_battle { |s| battler.stages[s.id] = 0 if battler.stages[s.id] > 0 }
         PBDebug.log("     'battlerStats': #{battler.name} (#{battler.index})'s raised stat stages returning to normal")
-        battle.pbDisplay(_INTL("{1}的提高的能力值恢复正常!", battler.pbThis))
+        battle.pbDisplay(_INTL("{1}'s raised stats returned to normal!", battler.pbThis))
       end
     when :ResetLowered
       if battler.hasLoweredStatStages?
         battler.statsRaisedThisRound = true
         GameData::Stat.each_battle { |s| battler.stages[s.id] = 0 if battler.stages[s.id] < 0 }
         PBDebug.log("     'battlerStats': #{battler.name} (#{battler.index})'s raised stat stages returning to normal")
-        battle.pbDisplay(_INTL("{1}的降低的能力值恢复正常!", battler.pbThis))
+        battle.pbDisplay(_INTL("{1}'s lowered stats returned to normal!", battler.pbThis))
       end
     when Array
       showAnim = true
@@ -1340,7 +1340,7 @@ MidbattleHandlers.add(:midbattle_triggers, "fieldEffects",
                 b.effects[PBEffects::SkyDrop]       = -1
                 showMessage = true
               end
-              battle.pbDisplay(_INTL("{1}由于重力无法保持悬浮!", b.pbThis)) if showMessage
+              battle.pbDisplay(_INTL("{1} couldn't stay airborne because of gravity!", b.pbThis)) if showMessage
             end
           end
         else
@@ -1375,22 +1375,22 @@ MidbattleHandlers.add(:midbattle_triggers, "changeWeather",
     when :None
       PBDebug.log("     'changeWeather': ending current weather")
       case battle.field.weather
-      when :Sun       then battle.pbDisplay(_INTL("阳光变弱了。"))
-      when :Rain      then battle.pbDisplay(_INTL("雨停了。"))
-      when :Sandstorm then battle.pbDisplay(_INTL("沙尘暴平息了。"))
-      when :ShadowSky then battle.pbDisplay(_INTL("暗影世界消散了。"))
+      when :Sun       then battle.pbDisplay(_INTL("The sunlight faded."))
+      when :Rain      then battle.pbDisplay(_INTL("The rain stopped."))
+      when :Sandstorm then battle.pbDisplay(_INTL("The sandstorm subsided."))
+      when :ShadowSky then battle.pbDisplay(_INTL("The shadow sky faded."))
       when :Hail    
         if defined?(Settings::HAIL_WEATHER_TYPE)
           case Settings::HAIL_WEATHER_TYPE
-          when 0 then battle.pbDisplay(_INTL("冰雹停下了。"))
-          when 1 then battle.pbDisplay(_INTL("雪停了。"))
-          when 2 then battle.pbDisplay(_INTL("冰雹暴风结束了。"))
+          when 0 then battle.pbDisplay(_INTL("The hail stopped."))
+          when 1 then battle.pbDisplay(_INTL("The snow stopped."))
+          when 2 then battle.pbDisplay(_INTL("The hailstorm ended."))
           end
         else
-          battle.pbDisplay(_INTL("冰雹停了。"))
+          battle.pbDisplay(_INTL("The hail stopped."))
         end
       else
-        battle.pbDisplay(_INTL("天气变晴了。"))
+        battle.pbDisplay(_INTL("The weather cleared."))
       end
       battle.pbStartWeather(battler, :None, true)
     else
@@ -1425,11 +1425,11 @@ MidbattleHandlers.add(:midbattle_triggers, "changeTerrain",
     when :None
       PBDebug.log("     'changeTerrain': ending current terrain")
       case battle.field.terrain
-      when :Electric  then battle.pbDisplay(_INTL("场上的电力消失了。"))
-      when :Grassy    then battle.pbDisplay(_INTL("场上的草地消失了。"))
-      when :Misty     then battle.pbDisplay(_INTL("场上的雾消散了。"))
-      when :Psychic   then battle.pbDisplay(_INTL("场上奇怪的气氛消失了。"))
-      else                 battle.pbDisplay(_INTL("战场恢复正常。"))
+      when :Electric  then battle.pbDisplay(_INTL("The electricity disappeared from the battlefield."))
+      when :Grassy    then battle.pbDisplay(_INTL("The grass disappeared from the battlefield."))
+      when :Misty     then battle.pbDisplay(_INTL("The mist disappeared from the battlefield."))
+      when :Psychic   then battle.pbDisplay(_INTL("The weirdness disappeared from the battlefield."))
+      else                 battle.pbDisplay(_INTL("The battlefield returned to normal."))
       end
       battle.pbStartTerrain(battler, :None)
     else

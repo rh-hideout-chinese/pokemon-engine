@@ -71,7 +71,7 @@ def setBattleRule(*args)
       $game_temp.add_battle_rule(arg)
     end
   end
-  raise _INTL("参数{1}后面应该有一个变量，但没有找到。", r) if r
+  raise _INTL("Argument {1} expected a variable after it but didn't have one.", r) if r
 end
 
 
@@ -238,7 +238,7 @@ module Battle::CatchAndStoreMixin
       end
       stored_box = $PokemonStorage.pbStoreCaught(pkmn)
       box_name = @peer.pbBoxName(stored_box)
-      pbDisplayPaused(_INTL("{1}传送到盒子\"{2}\"了!", pkmn.name, box_name))
+      pbDisplayPaused(_INTL("{1} has been sent to Box \"{2}\"!", pkmn.name, box_name))
     else
       dx_pbStorePokemon(pkmn)
     end
@@ -258,7 +258,7 @@ class Battle::Battler
     end
     return if fainted_count >= @battle.pbSideSize(0)
     @battle.pbPauseAndPlayBGM(bgm)
-    @battle.pbDisplayPaused(_INTL("{1}很虚弱!\n现在使用精灵球吧!", target.name))
+    @battle.pbDisplayPaused(_INTL("{1} is weak!\nThrow a Poké Ball now!", target.name))
     pbWait(0.5)
     cmd = 0
     cmd = @battle.pbShowCommands("", ["Catch", "Don't Catch"], 1)
@@ -267,7 +267,7 @@ class Battle::Battler
       pbPlayDecisionSE
       @battle.sendToBoxes = 1
       if $PokemonStorage.full?
-        @battle.pbDisplay(_INTL("但是电脑已经没有空位了!"))
+        @battle.pbDisplay(_INTL("But there is no room left in the PC!"))
         target.wild_flee(fleeMsg)
       else
         ball = nil
@@ -408,7 +408,7 @@ class Battle
   alias dx_pbItemMenu pbItemMenu
   def pbItemMenu(idxBattler, firstAction)
     if @noBag
-      pbDisplay(_INTL("在战斗中不能使用这个道具"))
+      pbDisplay(_INTL("Items can't be used in this battle."))
       return false
     end
     return dx_pbItemMenu(idxBattler, firstAction)
@@ -519,7 +519,7 @@ class Battle::Scene::Animation::Intro < Battle::Scene::Animation
           f = 0
           w = bitmap.width
           h = bitmap.height
-          deltaY = h - findTop(bitmap) - 12
+          deltaY = h - findTop(bitmap)
           s.setDelta(0, 0, deltaY)
           s.moveDelta(0, appearTime - 3, 0, (deltaY * deltaMult).floor)
           appearTime.times do |i|
@@ -544,7 +544,7 @@ def findTop(bitmap)
   return 0 if !bitmap
   (1..bitmap.height).each do |i|
     bitmap.width.times do |j|
-      return i if bitmap.get_pixel(j, bitmap.height - i).alpha > 0
+      return i if bitmap.get_pixel(j, i).alpha > 0
     end
   end
   return 0

@@ -114,13 +114,13 @@ class Battle::Battler
     immunities = @pokemon.immunities
     if (immunities.include?(:ALLSTATUS) || immunities.include?(newStatus)) && !self_inflicted && !ignoreStatus
       case newStatus
-      when :SLEEP     then msg = _INTL("{1}免疫了睡眠！", pbThis)
-      when :POISON    then msg = _INTL("{1}免疫了中毒！", pbThis)
-      when :BURN      then msg = _INTL("{1}免疫了烧伤！", pbThis)
-      when :PARALYSIS then msg = _INTL("{1}免疫了麻痹！", pbThis)
-      when :FROZEN    then msg = _INTL("{1}免疫了冰冻！", pbThis)
-      when :FROSTBITE then msg = _INTL("{1}免疫了冻伤！", pbThis)
-      when :DROWSY    then msg = _INTL("{1}免疫了困倦！", pbThis)
+      when :SLEEP     then msg = _INTL("{1} is completely immune to being put to sleep!", pbThis)
+      when :POISON    then msg = _INTL("{1} is completely immune to poisoning!", pbThis)
+      when :BURN      then msg = _INTL("{1} is completely immune to burns!", pbThis)
+      when :PARALYSIS then msg = _INTL("{1} is completely immune to paralysis!", pbThis)
+      when :FROZEN    then msg = _INTL("{1} is completely immune to being frozen!", pbThis)
+      when :FROSTBITE then msg = _INTL("{1} is completely immune to frostbite!", pbThis)
+      when :DROWSY    then msg = _INTL("{1} is completely immune to becoming drowsy!", pbThis)
       end
       @battle.pbDisplay(msg) if showMessages
       return false
@@ -150,7 +150,7 @@ class Battle::Battler
     return false if fainted?
     immunities = @pokemon.immunities
     if immunities.include?(:ALLSTATUS) || immunities.include?(:CONFUSED)
-      @battle.pbDisplay(_INTL("{1}免疫了混乱!", pbThis)) if args[1]
+      @battle.pbDisplay(_INTL("{1} is completely immune to confusion!", pbThis)) if args[1]
       return false
     end
     return dx_pbCanConfuse?(*args)
@@ -162,7 +162,7 @@ class Battle::Battler
     return false if !user || user.fainted?
     immunities = @pokemon.immunities
     if immunities.include?(:ALLSTATUS) || immunities.include?(:ATTRACT)
-      @battle.pbDisplay(_INTL("{1}免疫对对手的着迷!", pbThis)) if showMessages
+      @battle.pbDisplay(_INTL("{1} is completely immune to infatuation!", pbThis)) if showMessages
       return false
     end
     return dx_pbCanAttract?(user, showMessages)
@@ -186,7 +186,7 @@ class Battle::Battler
     return false if fainted?
     if (!args[1] || args[1].index != @index) && 
        @pokemon.immunities.include?(:STATDROPS) && !hasActiveAbility?(:CONTRARY)
-      @battle.pbDisplay(_INTL("{1}免疫了能力值的降低!", pbThis)) if args[3]
+      @battle.pbDisplay(_INTL("{1} is completely immune to having its stats lowered!", pbThis)) if args[3]
       return false
     end
     return dx_pbCanLowerStatStage?(*args)
@@ -209,7 +209,7 @@ class Battle::Battler
   def takesIndirectDamage?(showMsg = false)
     return false if fainted?
     if @pokemon.immunities.include?(:INDIRECT)
-      @battle.pbDisplay("{1}免疫了间接的伤害!", pbThis) if showMsg
+      @battle.pbDisplay("{1} is completely immune to indirect damage!", pbThis) if showMsg
       return false
     end
     return dx_takesIndirectDamage?(showMsg)
@@ -286,7 +286,7 @@ class Battle::Move
   alias dx_pbMoveFailedAromaVeil? pbMoveFailedAromaVeil?
   def pbMoveFailedAromaVeil?(user, target, showMessage = true)
     if target.pokemon.immunities.include?(:DISABLE)
-      @battle.pbDisplay(_INTL("{1}免疫了让其招式失效的效果!", target.pbThis)) if showMessage
+      @battle.pbDisplay(_INTL("{1} is completely immune to effects that may disable its moves!", target.pbThis)) if showMessage
       return true
     end
     return dx_pbMoveFailedAromaVeil?(user, target, showMessage)

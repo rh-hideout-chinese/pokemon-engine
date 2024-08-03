@@ -257,7 +257,7 @@ class Battle
       ch[1] = nil
       return
     end
-    pbDisplay(_INTL("但是,没有效果..."))
+    pbDisplay(_INTL("But it had no effect!"))
     pbReturnUnusedItemToBag(item, userBattler.index)
   end
   
@@ -279,10 +279,10 @@ class Battle
         pbReduceLauncherPoints(userBattler, item, true)
         return
       else
-        pbDisplay(_INTL("但是,没有效果..."))
+        pbDisplay(_INTL("But it had no effect!"))
       end
     else
-      pbDisplay(_INTL("这个地方不能使用这个道具!"))
+      pbDisplay(_INTL("But it's not where this item can be used!"))
     end
     pbReturnUnusedItemToBag(item, userBattler.index)
   end
@@ -303,7 +303,7 @@ class Battle
       ch[1] = nil
       return
     end
-    pbDisplay(_INTL("但是,没有效果..."))
+    pbDisplay(_INTL("But it had no effect!"))
     pbReturnUnusedItemToBag(item, userBattler.index)
   end
   
@@ -626,7 +626,7 @@ class Battle::Battler
   end
   
   alias dx_pbAttract pbAttract
-  def pbAttract(msg = nil)
+  def pbAttract(user, msg = nil)
     oldEffect = @effects[PBEffects::Attract]
     dx_pbAttract(msg)
     if @effects[PBEffects::Attract] > oldEffect && oldEffect == -1
