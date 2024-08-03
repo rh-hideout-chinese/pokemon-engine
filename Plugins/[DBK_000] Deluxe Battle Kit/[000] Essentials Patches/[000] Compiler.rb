@@ -269,7 +269,7 @@ module PluginManager
         valid = self.compare_versions(p_ver, v_num)
         next if valid > -1
         link = self.link(p_name)
-        self.error("Plugin '#{p_name}' is out of date.\nPlease download the latest version at:\n#{link}")
+        self.error("插件'#{p_name}'已过时。\n请于#{link}下载最新版。")
       end
     end
   end
