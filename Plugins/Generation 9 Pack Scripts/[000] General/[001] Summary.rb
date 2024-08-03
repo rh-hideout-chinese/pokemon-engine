@@ -94,8 +94,8 @@ class PokemonSummary_Scene
     case @page
     when 4
       commands[cmdCheckMoves = commands.length] = _INTL("查看招式") if !@pokemon.moves.empty?
-      commands[cmdLearnMoves = commands.length] = _INTL("记住招式") if @pokemon.can_relearn_move?
-      commands[cmdForgetMove = commands.length] = _INTL("忘记招式") if @pokemon.moves.length > 1
+      commands[cmdLearnMoves = commands.length] = _INTL("回忆招式") if @pokemon.can_relearn_move?
+      commands[cmdForgetMove = commands.length] = _INTL("遗忘招式") if @pokemon.moves.length > 1
       commands[cmdTeachTMs   = commands.length] = _INTL("使用招式学习器")
     else
       if !@pokemon.egg?
@@ -121,7 +121,7 @@ class PokemonSummary_Scene
     elsif cmdTakeItem >= 0 && command == cmdTakeItem
       dorefresh = pbTakeItemFromPokemon(@pokemon, self)
     elsif cmdNickname >= 0 && command == cmdNickname
-      nickname = pbEnterPokemonName(_INTL("{1}的昵称？", @pokemon.name), 0, Pokemon::MAX_NAME_SIZE, "", @pokemon, true)
+      nickname = pbEnterPokemonName(_INTL("{1}的名字是？", @pokemon.name), 0, Pokemon::MAX_NAME_SIZE, "", @pokemon, true)
       @pokemon.name = nickname
       dorefresh = true
     elsif cmdPokedex >= 0 && command == cmdPokedex
@@ -145,7 +145,7 @@ class PokemonSummary_Scene
       move_index = pbForgetMove(@pokemon, nil)
       if move_index >= 0
         old_move_name = @pokemon.moves[move_index].name
-        pbMessage(_INTL("{1}忘记了{2}。", @pokemon.name, old_move_name))
+        pbMessage(_INTL("{1}把{2}的使用方法忘得干干净净了！", @pokemon.name, old_move_name))
         @pokemon.forget_move_at_index(move_index)
         dorefresh = true
       end
