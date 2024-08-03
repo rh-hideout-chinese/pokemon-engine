@@ -71,7 +71,7 @@ def setBattleRule(*args)
       $game_temp.add_battle_rule(arg)
     end
   end
-  raise _INTL("Argument {1} expected a variable after it but didn't have one.", r) if r
+  raise _INTL("参数{1}后面需要一个变量，但是实际上没有。", r) if r
 end
 
 
@@ -238,7 +238,7 @@ module Battle::CatchAndStoreMixin
       end
       stored_box = $PokemonStorage.pbStoreCaught(pkmn)
       box_name = @peer.pbBoxName(stored_box)
-      pbDisplayPaused(_INTL("{1} has been sent to Box \"{2}\"!", pkmn.name, box_name))
+      pbDisplayPaused(_INTL("已将{1}传送到盒子\"{2}\"！", pkmn.name, box_name))
     else
       dx_pbStorePokemon(pkmn)
     end
@@ -258,7 +258,7 @@ class Battle::Battler
     end
     return if fainted_count >= @battle.pbSideSize(0)
     @battle.pbPauseAndPlayBGM(bgm)
-    @battle.pbDisplayPaused(_INTL("{1} is weak!\nThrow a Poké Ball now!", target.name))
+    @battle.pbDisplayPaused(_INTL("{1}变得虚弱了！\n现在是使用精灵球的好机会！", target.name))
     pbWait(0.5)
     cmd = 0
     cmd = @battle.pbShowCommands("", ["Catch", "Don't Catch"], 1)
@@ -267,7 +267,7 @@ class Battle::Battler
       pbPlayDecisionSE
       @battle.sendToBoxes = 1
       if $PokemonStorage.full?
-        @battle.pbDisplay(_INTL("But there is no room left in the PC!"))
+        @battle.pbDisplay(_INTL("但是电脑里没有空间了！"))
         target.wild_flee(fleeMsg)
       else
         ball = nil
