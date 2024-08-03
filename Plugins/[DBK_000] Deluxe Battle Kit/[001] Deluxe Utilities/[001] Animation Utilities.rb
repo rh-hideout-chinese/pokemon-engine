@@ -246,9 +246,9 @@ class Battle::Battler
         @battle.pbSwapBattlers(@index, idxOther)
         case @battle.pbSideSize(@index)
         when 2
-          @battle.pbDisplay(_INTL("{1} moved across!", pbThis))
+          @battle.pbDisplay(_INTL("{1}移动到了一边！", pbThis))
         when 3
-          @battle.pbDisplay(_INTL("{1} moved to the center!", pbThis))
+          @battle.pbDisplay(_INTL("{1}移动到了中间！", pbThis))
         end
       end
       pbBeginTurn(choice)
@@ -279,7 +279,7 @@ class SafariBattle
       pkmn = @party2[0]
       pbSetSeen(pkmn)
       @scene.pbStartBattle(self)
-      pbDisplayPaused(_INTL("Wild {1} appeared!", pkmn.name))
+      pbDisplayPaused(_INTL("野生的{1}出现了！", pkmn.name))
       @scene.pbSafariStart
       weather_data = GameData::BattleWeather.try_get(@weather)
       @scene.pbCommonAnimation(weather_data.animation) if weather_data
@@ -294,7 +294,7 @@ class SafariBattle
         case cmd
         when 0
           if pbBoxesFull?
-            pbDisplay(_INTL("The boxes are full! You can't catch any more Pokémon!"))
+            pbDisplay(_INTL("盒子满了！你无法再捕捉任何宝可梦了！"))
             next
           end
           @ballCount -= 1
@@ -308,18 +308,18 @@ class SafariBattle
             end
           end
         when 1
-          pbDisplayBrief(_INTL("{1} threw some bait at the {2}!", self.pbPlayer.name, pkmn.name))
+          pbDisplayBrief(_INTL("{1}向{2}扔出了诱饵！", self.pbPlayer.name, pkmn.name))
           @scene.pbThrowBait
           catchFactor  /= 2 if pbRandom(100) < 90
           escapeFactor /= 2
         when 2
-          pbDisplayBrief(_INTL("{1} threw a rock at the {2}!", self.pbPlayer.name, pkmn.name))
+          pbDisplayBrief(_INTL("{1}向{2}扔出了石头！", self.pbPlayer.name, pkmn.name))
           @scene.pbThrowRock
           catchFactor  *= 2
           escapeFactor *= 2 if pbRandom(100) < 90
         when 3
           pbSEPlay("Battle flee")
-          pbDisplayPaused(_INTL("You got away safely!"))
+          pbDisplayPaused(_INTL("顺利逃走了！"))
           @decision = 3
         else
           next
@@ -329,17 +329,17 @@ class SafariBattle
         if @decision == 0
           if @ballCount <= 0
             pbSEPlay("Safari Zone end")
-            pbDisplay(_INTL("PA: You have no Safari Balls left! Game over!"))
+            pbDisplay(_INTL("你的狩猎球用完了！游戏结束！"))
             @decision = 2
           elsif pbRandom(100) < 5 * escapeFactor
             @scene.pbBattlerFlee(@battlers[1])
             @decision = 3
           elsif cmd == 1
-            pbDisplay(_INTL("{1} is eating!", pkmn.name))
+            pbDisplay(_INTL("{1}正在进食！", pkmn.name))
           elsif cmd == 2
-            pbDisplay(_INTL("{1} is angry!", pkmn.name))
+            pbDisplay(_INTL("{1}很生气！", pkmn.name))
           else
-            pbDisplay(_INTL("{1} is watching carefully!", pkmn.name))
+            pbDisplay(_INTL("{1}正在仔细地观察！", pkmn.name))
           end
           weather_data = GameData::BattleWeather.try_get(@weather)
           @scene.pbCommonAnimation(weather_data.animation) if weather_data
