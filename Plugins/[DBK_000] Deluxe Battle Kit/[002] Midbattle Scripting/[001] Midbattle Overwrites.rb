@@ -257,7 +257,7 @@ class Battle
       ch[1] = nil
       return
     end
-    pbDisplay(_INTL("But it had no effect!"))
+    pbDisplay(_INTL("但是，没有效果！"))
     pbReturnUnusedItemToBag(item, userBattler.index)
   end
   
@@ -279,10 +279,10 @@ class Battle
         pbReduceLauncherPoints(userBattler, item, true)
         return
       else
-        pbDisplay(_INTL("But it had no effect!"))
+        pbDisplay(_INTL("但是，没有效果！"))
       end
     else
-      pbDisplay(_INTL("But it's not where this item can be used!"))
+      pbDisplay(_INTL("但是，现在不是使用这个道具的时候！"))
     end
     pbReturnUnusedItemToBag(item, userBattler.index)
   end
@@ -303,7 +303,7 @@ class Battle
       ch[1] = nil
       return
     end
-    pbDisplay(_INTL("But it had no effect!"))
+    pbDisplay(_INTL("但是，没有效果！"))
     pbReturnUnusedItemToBag(item, userBattler.index)
   end
   
