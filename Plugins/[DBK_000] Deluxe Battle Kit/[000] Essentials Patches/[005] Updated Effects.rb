@@ -19,9 +19,9 @@ Battle::ItemEffects::HPHeal.add(:BERRYJUICE,
     battler.stopBoostedHPScaling = true
     battler.pbRecoverHP(20)
     if forced
-      battle.pbDisplay(_INTL("{1}'s HP was restored.", battler.pbThis))
+      battle.pbDisplay(_INTL("{1}的体力回复了！", battler.pbThis))
     else
-      battle.pbDisplay(_INTL("{1} restored its health using its {2}!", battler.pbThis, itemName))
+      battle.pbDisplay(_INTL("{1}用{2}回复了体力！", battler.pbThis, itemName))
     end
     next true
   }
@@ -50,9 +50,9 @@ Battle::ItemEffects::HPHeal.add(:ORANBERRY,
     itemName = GameData::Item.get(item).name
     if forced
       PBDebug.log("[Item triggered] Forced consuming of #{itemName}")
-      battle.pbDisplay(_INTL("{1}'s HP was restored.", battler.pbThis))
+      battle.pbDisplay(_INTL("{1}的体力回复了！", battler.pbThis))
     else
-      battle.pbDisplay(_INTL("{1} restored a little HP using its {2}!", battler.pbThis, itemName))
+      battle.pbDisplay(_INTL("{1}用{2}回复了体力！", battler.pbThis, itemName))
     end
     next true
   }
@@ -71,7 +71,7 @@ Battle::ItemEffects::AfterMoveUseFromUser.add(:SHELLBELL,
     next if totalDamage <= 0
     user.stopBoostedHPScaling = true
     user.pbRecoverHP(totalDamage / 8)
-    battle.pbDisplay(_INTL("{1} restored a little HP using its {2}!",
+    battle.pbDisplay(_INTL("{1}用{2}回复了少许HP。",
        user.pbThis, user.itemName))
   }
 )
@@ -188,10 +188,10 @@ Battle::AbilityEffects::OnSwitchIn.add(:FOREWARN,
       battle.pbShowAbilitySplash(battler)
       forewarnMoveName = forewarnMoves[battle.pbRandom(forewarnMoves.length)]
       if Battle::Scene::USE_ABILITY_SPLASH
-        battle.pbDisplay(_INTL("{1} was alerted to {2}!",
+        battle.pbDisplay(_INTL("{1}读取了{2}！",
           battler.pbThis, forewarnMoveName))
       else
-        battle.pbDisplay(_INTL("{1}'s Forewarn alerted it to {2}!",
+        battle.pbDisplay(_INTL("{1}的预知梦读取了{2}！",
           battler.pbThis, forewarnMoveName))
       end
       battle.pbHideAbilitySplash(battler)
@@ -213,9 +213,9 @@ Battle::AbilityEffects::OnBeingHit.add(:INNARDSOUT,
       user.stopBoostedHPScaling = true
       user.pbReduceHP(target.damageState.hpLost, false)
       if Battle::Scene::USE_ABILITY_SPLASH
-        battle.pbDisplay(_INTL("{1} is hurt!", user.pbThis))
+        battle.pbDisplay(_INTL("{1}受伤了！", user.pbThis))
       else
-        battle.pbDisplay(_INTL("{1} is hurt by {2}'s {3}!", user.pbThis,
+        battle.pbDisplay(_INTL("{1}受到了{2}的{3}伤害！", user.pbThis,
            target.pbThis(true), target.abilityName))
       end
     end
@@ -237,7 +237,7 @@ Battle::AbilityEffects::AfterMoveUseFromTarget.add(:COLORCHANGE,
     typeName = GameData::Type.get(move.calcType).name
     battle.pbShowAbilitySplash(target)
     target.pbChangeTypes(move.calcType)
-    battle.pbDisplay(_INTL("{1}'s type changed to {2} because of its {3}!",
+    battle.pbDisplay(_INTL("由于{3}，{1}的属性变成了{2}！",
        target.pbThis, typeName, target.abilityName))
     battle.pbHideAbilitySplash(target)
   }
@@ -254,7 +254,7 @@ Battle::AbilityEffects::OnTerrainChange.add(:MIMICRY,
     if battle.field.terrain == :None
       battle.pbShowAbilitySplash(battler)
       battler.pbResetTypes
-      battle.pbDisplay(_INTL("{1} changed back to its regular type!", battler.pbThis))
+      battle.pbDisplay(_INTL("{1}变回了原来的属性！", battler.pbThis))
       battle.pbHideAbilitySplash(battler)
     else
       terrain_hash = {
@@ -273,7 +273,7 @@ Battle::AbilityEffects::OnTerrainChange.add(:MIMICRY,
       if new_type
         battle.pbShowAbilitySplash(battler)
         battler.pbChangeTypes(new_type)
-        battle.pbDisplay(_INTL("{1}'s type changed to {2}!", battler.pbThis, new_type_name))
+        battle.pbDisplay(_INTL("{1}的属性变成了{2}！", battler.pbThis, new_type_name))
         battle.pbHideAbilitySplash(battler)
       end
     end
@@ -307,7 +307,7 @@ end
 class Battle::Move::FixedDamageHalfTargetHP < Battle::Move::FixedDamageMove
   def pbFailsAgainstTarget?(user, target, show_message)
     if target.isRaidBoss?
-      @battle.pbDisplay(_INTL("But it failed!")) if show_message
+      @battle.pbDisplay(_INTL("但是，招式失败了！！")) if show_message
       return true
     end
     return false
@@ -340,7 +340,7 @@ class Battle::Move::UserTargetAverageHP < Battle::Move
 	  target.stopBoostedHPScaling = true
 	  target.pbRecoverHP(newHP - target.real_hp, false)
     end
-    @battle.pbDisplay(_INTL("The battlers shared their pain!"))
+    @battle.pbDisplay(_INTL("均分了彼此的体力！"))
     user.pbItemHPHealCheck
     target.pbItemHPHealCheck
   end
@@ -382,7 +382,7 @@ class Battle::Move::RecoilMove < Battle::Move
     amt = 1 if amt < 1
     user.stopBoostedHPScaling = true
     user.pbReduceHP(amt, false)
-    @battle.pbDisplay(_INTL("{1} is damaged by recoil!", user.pbThis))
+    @battle.pbDisplay(_INTL("{1}受到了反作用力造成的伤害！", user.pbThis))
     user.pbItemHPHealCheck
   end
 end
@@ -414,7 +414,7 @@ class Battle::Move::ReplaceMoveThisBattleWithTargetLastMoveUsed < Battle::Move
        user.pbHasMove?(target.lastRegularMoveUsed) ||
        @moveBlacklist.include?(lastMoveData.function_code) ||
        lastMoveData.type == :SHADOW
-      @battle.pbDisplay(_INTL("But it failed!")) if show_message
+      @battle.pbDisplay(_INTL("但是，招式失败了！！")) if show_message
       return true
     end
     return false
@@ -426,7 +426,7 @@ class Battle::Move::ReplaceMoveThisBattleWithTargetLastMoveUsed < Battle::Move
       newMove = Pokemon::Move.new(target.lastRegularMoveUsed)
       user.moves[i] = Battle::Move.from_pokemon_move(@battle, newMove)
       user.baseMoves[i] = user.moves[i] if !user.baseMoves.empty?
-      @battle.pbDisplay(_INTL("{1} learned {2}!", user.pbThis, newMove.name))
+      @battle.pbDisplay(_INTL("{1}学会了{2}！", user.pbThis, newMove.name))
       user.pbCheckFormOnMovesetChange
       break
     end
@@ -445,7 +445,7 @@ class Battle::Move::ReplaceMoveWithTargetLastMoveUsed < Battle::Move
        user.pbHasMove?(target.lastRegularMoveUsed) ||
        @moveBlacklist.include?(lastMoveData.function_code) ||
        lastMoveData.type == :SHADOW
-      @battle.pbDisplay(_INTL("But it failed!")) if show_message
+      @battle.pbDisplay(_INTL("但是，招式失败了！！")) if show_message
       return true
     end
     return false
@@ -462,7 +462,7 @@ class Battle::Move::UseMoveTargetIsAboutToUse < Battle::Move
     return true if pbMoveFailedTargetAlreadyMoved?(target, show_message)
     oppMove = @battle.choices[target.index][2]
     if !oppMove || oppMove.statusMove? || oppMove.powerMove? || @moveBlacklist.include?(oppMove.function)
-      @battle.pbDisplay(_INTL("But it failed!")) if show_message
+      @battle.pbDisplay(_INTL("但是，招式失败了！！")) if show_message
       return true
     end
     return false
@@ -486,7 +486,7 @@ class Battle::Move::LowerPPOfTargetLastMoveBy4 < Battle::Move
       last_move = target.pbGetMoveWithID(target.lastRegularMoveUsed)
     end
     if !last_move || last_move.pp == 0 || last_move.total_pp <= 0
-      @battle.pbDisplay(_INTL("But it failed!")) if show_message
+      @battle.pbDisplay(_INTL("但是，招式失败了！！")) if show_message
       return true
     end
     return false
@@ -514,7 +514,7 @@ class Battle::Move::LowerPPOfTargetLastMoveBy4 < Battle::Move
       showMsg = true
     end
     move_name = last_move.name if !move_name
-    @battle.pbDisplay(_INTL("It reduced the PP of {1}'s {2} by {3}!",
+    @battle.pbDisplay(_INTL("削减了{1}的{2}{3}点！",
                             target.pbThis(true), move_name, reduction))
   end
 end
@@ -550,7 +550,7 @@ class Battle::Move::LowerPPOfTargetLastMoveBy3 < Battle::Move
       showMsg = true
     end
     move_name = last_move.name if !move_name
-    @battle.pbDisplay(_INTL("It reduced the PP of {1}'s {2} by {3}!",
+    @battle.pbDisplay(_INTL("削减了{1}的{2}{3}点！",
                             target.pbThis(true), move_name, reduction))
   end
 end
@@ -580,11 +580,11 @@ class Battle::Move::TransformUserIntoTarget < Battle::Move
   alias dx_pbMoveFailed? pbMoveFailed?
   def pbMoveFailed?(user, targets)
     if user.tera_form? || (user.tera? && user.tera_type == :STELLAR)
-      @battle.pbDisplay(_INTL("But it failed!"))
+      @battle.pbDisplay(_INTL("但是，招式失败了！！"))
       return true
     end
     if user.pokemon.immunities.include?(:TRANSFORM)
-      @battle.pbDisplay(_INTL("But it failed!"))
+      @battle.pbDisplay(_INTL("但是，招式失败了！！"))
       return true
     end
     return dx_pbMoveFailed?(user, targets)
@@ -593,15 +593,15 @@ class Battle::Move::TransformUserIntoTarget < Battle::Move
   alias dx_pbFailsAgainstTarget? pbFailsAgainstTarget?
   def pbFailsAgainstTarget?(user, target, show_message)
     if target.pokemon.immunities.include?(:TRANSFORM)
-      @battle.pbDisplay(_INTL("{1} is completely immune to being copied!", target.pbThis)) if show_message
+      @battle.pbDisplay(_INTL("{1}不会被复制！", target.pbThis)) if show_message
       return true
     end
     if user.dynamax? && !target.dynamax_able?
-      @battle.pbDisplay(_INTL("But it failed!")) if show_message
+      @battle.pbDisplay(_INTL("但是，招式失败了！！")) if show_message
       return true
     end
     if target.tera_form?
-      @battle.pbDisplay(_INTL("But it failed!")) if show_message
+      @battle.pbDisplay(_INTL("但是，招式失败了！！")) if show_message
       return true
     end
     return dx_pbFailsAgainstTarget?(user, target, show_message)
@@ -631,11 +631,11 @@ class Battle::Move::OHKO < Battle::Move::FixedDamageMove
   alias dx_pbFailsAgainstTarget? pbFailsAgainstTarget?
   def pbFailsAgainstTarget?(user, target, show_message)
     if target.pokemon.immunities.include?(:OHKO)
-      @battle.pbDisplay(_INTL("{1} is completely immune to one-hit KO's!", target.pbThis)) if show_message
+      @battle.pbDisplay(_INTL("{1}不会被一击必杀招式击倒！", target.pbThis)) if show_message
       return true
     end
     if target.dynamax?
-      @battle.pbDisplay(_INTL("{1} is unaffected!", target.pbThis)) if show_message
+      @battle.pbDisplay(_INTL("对于{1}，完全没有效果！", target.pbThis)) if show_message
       return true
     end
     return dx_pbFailsAgainstTarget?(user, target, show_message)
@@ -650,7 +650,7 @@ end
 class Battle::Move::OHKOIce < Battle::Move::OHKO
   def pbFailsAgainstTarget?(user, target, show_message)
     if target.pbHasType?(:ICE)
-      @battle.pbDisplay(_INTL("But it failed!")) if show_message
+      @battle.pbDisplay(_INTL("但是，招式失败了！！")) if show_message
       return true
     end
     return super
@@ -679,7 +679,7 @@ class Battle::Move::CurseTargetOrLowerUserSpd1RaiseUserAtkDef1 < Battle::Move
   def pbMoveFailed?(user, targets)
     if user.pokemon.immunities.include?(:SELFKO) && 
        user.pbHasType?(:GHOST) && user.real_hp <= user.real_totalhp / 2
-      @battle.pbDisplay(_INTL("But it failed!"))
+      @battle.pbDisplay(_INTL("但是，招式失败了！！"))
       return true
     end
     return dx_pbMoveFailed?(user,targets)
@@ -695,7 +695,7 @@ class Battle::Move::UserLosesHalfOfTotalHP < Battle::Move
   def pbMoveFailed?(user, targets)
     if user.pokemon.immunities.include?(:SELFKO) && 
        user.takesIndirectDamage? && user.real_hp <= user.real_totalhp / 2
-      @battle.pbDisplay(_INTL("But it failed!"))
+      @battle.pbDisplay(_INTL("但是，招式失败了！！"))
       return true
     end
     return false
@@ -712,7 +712,7 @@ class Battle::Move::UserLosesHalfOfTotalHPExplosive < Battle::Move
   def pbMoveFailed?(user, targets)
     if user.pokemon.immunities.include?(:SELFKO) && 
        user.takesIndirectDamage? && user.real_hp <= user.real_totalhp / 2
-      @battle.pbDisplay(_INTL("But it failed!"))
+      @battle.pbDisplay(_INTL("但是，招式失败了！！"))
       return true
     end
     return dx_pbMoveFailed?(user,targets)
@@ -728,7 +728,7 @@ class Battle::Move::UserFaintsExplosive < Battle::Move
   alias dx_pbMoveFailed? pbMoveFailed?
   def pbMoveFailed?(user, targets)
     if user.pokemon.immunities.include?(:SELFKO)
-      @battle.pbDisplay(_INTL("But it failed!"))
+      @battle.pbDisplay(_INTL("但是，招式失败了！！"))
       return true
     end
     return dx_pbMoveFailed?(user,targets)
@@ -750,7 +750,7 @@ end
 class Battle::Move::UserFaintsFixedDamageUserHP < Battle::Move::FixedDamageMove
   def pbMoveFailed?(user, targets)
     if user.pokemon.immunities.include?(:SELFKO)
-      @battle.pbDisplay(_INTL("But it failed!"))
+      @battle.pbDisplay(_INTL("但是，招式失败了！！"))
       return true
     end
     return false
@@ -772,7 +772,7 @@ end
 class Battle::Move::UserFaintsLowerTargetAtkSpAtk2 < Battle::Move::TargetMultiStatDownMove
   def pbMoveFailed?(user, targets)
     if user.pokemon.immunities.include?(:SELFKO)
-      @battle.pbDisplay(_INTL("But it failed!"))
+      @battle.pbDisplay(_INTL("但是，招式失败了！！"))
       return true
     end
     return false
@@ -795,7 +795,7 @@ class Battle::Move::UserFaintsHealAndCureReplacement < Battle::Move
   alias dx_pbMoveFailed? pbMoveFailed?
   def pbMoveFailed?(user, targets)
     if user.pokemon.immunities.include?(:SELFKO)
-      @battle.pbDisplay(_INTL("But it failed!"))
+      @battle.pbDisplay(_INTL("但是，招式失败了！！"))
       return true
     end
     return dx_pbMoveFailed?(user,targets)
@@ -819,7 +819,7 @@ class Battle::Move::UserFaintsHealAndCureReplacementRestorePP < Battle::Move
   alias dx_pbMoveFailed? pbMoveFailed?
   def pbMoveFailed?(user, targets)
     if user.pokemon.immunities.include?(:SELFKO)
-      @battle.pbDisplay(_INTL("But it failed!"))
+      @battle.pbDisplay(_INTL("但是，招式失败了！！"))
       return true
     end
     return dx_pbMoveFailed?(user,targets)
@@ -842,7 +842,7 @@ end
 class Battle::Move::StartPerishCountsForAllBattlers < Battle::Move
   def pbMoveFailed?(user, targets)
     if user.isRaidBoss? || user.pbDirectOpposing.isRaidBoss?
-      @battle.pbDisplay(_INTL("But it failed!"))
+      @battle.pbDisplay(_INTL("但是，招式失败了！！"))
       return true
     end
     failed = true
@@ -875,7 +875,7 @@ class Battle::Move::AttackerFaintsIfUserFaints < Battle::Move
   alias dx_pbMoveFailed? pbMoveFailed?
   def pbMoveFailed?(user, targets)
     if user.isRaidBoss?
-      @battle.pbDisplay(_INTL("But it failed!"))
+      @battle.pbDisplay(_INTL("但是，招式失败了！！"))
       return true
     end
     return dx_pbMoveFailed?(user, targets)
@@ -891,7 +891,7 @@ class Battle::Move::UserMakeSubstitute < Battle::Move
   alias dx_pbMoveFailed? pbMoveFailed?
   def pbMoveFailed?(user, targets)
     if user.isRaidBoss?
-      @battle.pbDisplay(_INTL("But it failed!"))
+      @battle.pbDisplay(_INTL("但是，招式失败了！！"))
       return true
     end
     return dx_pbMoveFailed?(user, targets)
@@ -919,7 +919,7 @@ class Battle::Move::UserConsumeTargetBerry < Battle::Move
     itemName = target.itemName
     user.setBelched
     target.pbRemoveItem
-    @battle.pbDisplay(_INTL("{1} stole and ate its target's {2}!", user.pbThis, itemName))
+    @battle.pbDisplay(_INTL("{1}夺取并吃掉了{2}！", user.pbThis, itemName))
     user.pbHeldItemTriggerCheck(item.id, false)
     user.pbSymbiosis
   end
@@ -939,7 +939,7 @@ class Battle::Move::DestroyTargetBerryOrGem < Battle::Move
     return if target.hasActiveAbility?(:STICKYHOLD) && !@battle.moldBreaker
     item_name = target.itemName
     target.pbRemoveItem
-    @battle.pbDisplay(_INTL("{1}'s {2} was incinerated!", target.pbThis, item_name))
+    @battle.pbDisplay(_INTL("{1}的{2}被烧净了！", target.pbThis, item_name))
   end
 end
 
@@ -952,7 +952,7 @@ class Battle::Move::SwitchOutTargetStatusMove < Battle::Move
   alias dx_pbFailsAgainstTarget? pbFailsAgainstTarget?
   def pbFailsAgainstTarget?(user, target, show_message)
     if target.dynamax? || target.isRaidBoss? || target.pokemon.immunities.include?(:ESCAPE)
-      @battle.pbDisplay(_INTL("But it failed!")) if show_message
+      @battle.pbDisplay(_INTL("但是，招式失败了！！")) if show_message
       return true
     end
     return dx_pbFailsAgainstTarget?(user, target, show_message)
@@ -1011,7 +1011,7 @@ class Battle::Move::TwoTurnAttackInvulnerableInSkyTargetCannotAct < Battle::Move
   alias dx_pbFailsAgainstTarget? pbFailsAgainstTarget?
   def pbFailsAgainstTarget?(user, target, show_message)
     if target.dynamax? || target.isRaidBoss?
-      @battle.pbDisplay(_INTL("But it failed!")) if show_message
+      @battle.pbDisplay(_INTL("但是，招式失败了！！")) if show_message
       return true
     end
     return dx_pbFailsAgainstTarget?(user, target, show_message)
