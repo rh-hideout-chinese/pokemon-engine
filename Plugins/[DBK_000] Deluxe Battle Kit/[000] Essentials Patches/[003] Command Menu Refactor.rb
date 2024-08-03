@@ -333,14 +333,14 @@ class Battle
     move = (idxMove.is_a?(Integer)) ? battler.moves[idxMove] : idxMove
     return false unless move
     if move.pp == 0 && move.total_pp > 0 && !sleepTalk
-      pbDisplayPaused(_INTL("There's no PP left for this move!")) if showMessages
+      pbDisplayPaused(_INTL("这个招式没有PP了！")) if showMessages
       return false
     end
     if battler.effects[PBEffects::Encore] > 0
       if !move.powerMove? && move.id != battler.effects[PBEffects::EncoreMove]
         if showMessages
           encoreMove = GameData::Move.get(battler.effects[PBEffects::EncoreMove]).name
-          pbDisplayPaused(_INTL("{1} can only use {2} due to its Encore!", battler.name, encoreMove))
+          pbDisplayPaused(_INTL("因为再来一次的效果，{1}只能使出{2}！", battler.name, encoreMove))
         end
         return false
       end
