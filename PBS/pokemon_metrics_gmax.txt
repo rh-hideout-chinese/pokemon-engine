@@ -28,8 +28,8 @@ ShadowSprite = 2,23,10
 #-------------------------------
 [MEOWTH,3]
 BackSprite = 3,46
-FrontSprite = -2,7
-ShadowSprite = 1,12,9
+FrontSprite = -2,8
+ShadowSprite = 2,12,7
 AnimationSpeed = 3
 #-------------------------------
 [MACHAMP,1]
@@ -54,8 +54,8 @@ ShadowSprite = 2,-11,7
 #-------------------------------
 [EEVEE,2]
 BackSprite = 0,40
-FrontSprite = 0,4
-ShadowSprite = 2,17,9
+FrontSprite = 3,10
+ShadowSprite = 2,17,5
 #-------------------------------
 [SNORLAX,1]
 BackSprite = 5,49
@@ -67,7 +67,6 @@ AnimationSpeed = 3
 BackSprite = 6,45
 FrontSprite = -7,18
 ShadowSprite = 9,-12,-3
-AnimationSpeed = 1
 #-------------------------------
 [MELMETAL,1]
 BackSprite = 9,43
@@ -81,9 +80,9 @@ ShadowSprite = 1,6,5
 AnimationSpeed = 2,3
 #-------------------------------
 [CINDERACE,1]
-BackSprite = 12,49
+BackSprite = -11,45
 FrontSprite = 9,8
-ShadowSprite = 0,9,15
+ShadowSprite = 1,12,12
 #-------------------------------
 [INTELEON,1]
 BackSprite = 0,37
@@ -98,20 +97,20 @@ ShadowSprite = 4,0,-10
 #-------------------------------
 [ORBEETLE,1]
 BackSprite = 4,57
-FrontSprite = -6,22
-ShadowSize = -2
-ShadowSprite = 4,-15,-2
+FrontSprite = 1,15
+ShadowSize = -1
+ShadowSprite = 2,-15,0
 #-------------------------------
 [DREDNAW,1]
 BackSprite = 0,40
-FrontSprite = -4,6
-ShadowSprite = 2,15,12
+FrontSprite = -4,15
+ShadowSprite = 3,15,6
 AnimationSpeed = 3
 #-------------------------------
 [COALOSSAL,1]
-BackSprite = 0,41
-FrontSprite = -3,16
-ShadowSprite = 0,16,5
+BackSprite = 0,47
+FrontSprite = 4,16
+ShadowSprite = 0,13,5
 #-------------------------------
 [FLAPPLE,1]
 BackSprite = 0,34

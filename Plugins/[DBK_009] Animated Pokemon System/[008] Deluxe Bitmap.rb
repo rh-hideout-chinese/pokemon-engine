@@ -5,14 +5,13 @@
 #===============================================================================
 class DeluxeBitmapWrapper
   attr_reader :width, :height, :total_frames, :frame_idx
-  attr_accessor :constrict, :constrict_x, :constrict_y
-  attr_accessor :pokemon, :scale, :speed, :reversed 
+  attr_accessor :constrict_x, :constrict_y, :constrict_w, :constrict_h
+  attr_accessor :pokemon, :scale, :speed, :reversed
   
   def initialize(file, metrics, back = false)
-    raise "EBDXBitmapWrapper filename is nil." if file.nil?
+    raise "DeluxeBitmapWrapper filename is nil." if file.nil?
     @bitmaps      = []
     @bmp_file     = file
-    @constrict    = nil
     @pokemon      = nil
     @changed_hue  = false
     @reversed     = false
@@ -21,6 +20,8 @@ class DeluxeBitmapWrapper
     @total_frames = 0
     @frame_idx    = 0
     @last_uptime  = 0
+    @constrict_x  = 0
+    @constrict_y  = 0
     case metrics
     when Array
       @scale, @speed = *metrics
@@ -31,6 +32,7 @@ class DeluxeBitmapWrapper
       @scale = 1
       @speed = 0
     end
+    @speed = 0 if $PokemonSystem.animated_sprites > 0
     @base_speed = @speed
     self.refresh
   end
@@ -43,6 +45,7 @@ class DeluxeBitmapWrapper
   # Refreshes bitmap properties based on the Pokemon's condition.
   #-----------------------------------------------------------------------------
   def update_pokemon_sprite(speed_mod = nil, reversed = false)
+    return if $PokemonSystem.animated_sprites > 0
     if !speed_mod.nil?
       @base_speed = speed_mod
       @speed = @base_speed
@@ -85,14 +88,18 @@ class DeluxeBitmapWrapper
     when Pokemon
       metrics = GameData::SpeciesMetrics.get_species_form(@pokemon.species, @pokemon.form, @pokemon.gender == 1)
       hue_change(metrics.sprite_super_hue) if @pokemon.super_shiny?
-      @speed = (back) ? metrics.back_sprite_speed : metrics.front_sprite_speed
-      @base_speed = @speed
+      if $PokemonSystem.animated_sprites == 0
+        @speed = (back) ? metrics.back_sprite_speed : metrics.front_sprite_speed
+        @base_speed = @speed
+      end
     when Battle::Battler
       pkmn = @pokemon.visiblePokemon
       metrics = GameData::SpeciesMetrics.get_species_form(pkmn.species, pkmn.form, pkmn.gender == 1)
       hue_change(metrics.sprite_super_hue) if pkmn.super_shiny?
-      @speed = (back) ? metrics.back_sprite_speed : metrics.front_sprite_speed
-      @base_speed = @speed
+      if $PokemonSystem.animated_sprites == 0
+        @speed = (back) ? metrics.back_sprite_speed : metrics.front_sprite_speed
+        @base_speed = @speed
+      end
     end
     hue_change(hue) if hue && !changedHue?
   end
@@ -100,17 +107,19 @@ class DeluxeBitmapWrapper
   #-----------------------------------------------------------------------------
   # Compiles a spritesheet.
   #-----------------------------------------------------------------------------
-  def compile_strip(species = nil)
+  def compile_strip(pkmn = nil, back = false)
     strip = []
     bmp = Bitmap.new(@bmp_file)
+    $game_temp.spinda_spots = nil
+    alter_function = MultipleForms.getFunction(pkmn.species, "alterBitmap") if pkmn
     @total_frames.times do |i|
       bitmap = Bitmap.new(@width, @height)
       bitmap.stretch_blt(Rect.new(0, 0, @width, @height), bmp, Rect.new((@width / @scale) * i, 0, @width / @scale, @height / @scale))
+      if alter_function && !back
+        pkmn.set_spot_pattern(bitmap, @scale, i)
+        alter_function.call(pkmn, bitmap, @scale, i)
+      end
       strip.push(bitmap)
-    end
-    if species
-      alter_function = MultipleForms.getFunction(species, "alterBitmap")
-      @total_frames.times { |i| alter_function.call(species, strip[i]) } if alter_function
     end
     self.refresh(strip)
   end
@@ -165,7 +174,8 @@ class DeluxeBitmapWrapper
   #-----------------------------------------------------------------------------
   def update
     return false if self.disposed?
-    return false if @speed < 1
+    return false if $PokemonSystem.animated_sprites > 0
+    return false if @speed <= 0
     timer = System.uptime
     delay = ((@speed / 2.0) * Settings::ANIMATION_FRAME_DELAY).round / 1000.0
     return if timer - @last_uptime < delay
@@ -221,12 +231,10 @@ class DeluxeBitmapWrapper
   end
   
   def box
-    c_x = @constrict_x || @constrict || @width
-    x = (c_x < @width ? ((@width - c_x) / 2.0).ceil : 0)
-    w = (c_x < @width ? c_x : @width)
-    c_y = @constrict_y || @constrict || @height
-    y = (c_y < @height ? ((@height - c_y) / 2.0).ceil : 0)
-    h = (c_y < @height ? c_y : @height)
+    x = @constrict_x || 0
+    y = @constrict_y || 0
+    w = @constrict_w || @width
+    h = @constrict_h || @height
     return x, y, w, h
   end
   
