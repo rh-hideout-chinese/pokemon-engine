@@ -121,7 +121,7 @@ module Compiler
         #-----------------------------------------------------------------------
         # Compiles a data hash for each text file found in PBS/Plugins/#{plugin}.
         #-----------------------------------------------------------------------
-        next if !text_files[data_type] || text_files[data_type].empty?
+        next if !text_files[data_type] || text_files[data_type][1].empty?
         text_files[data_type][1].each do |file_name|
           file_path = file_name.split("/")[1]
           path = "PBS/Plugins/#{plugin}/#{file_path}"
@@ -227,8 +227,8 @@ module Compiler
           end
           if @plugin_change
             edit_and_rewrite_pbs_file_text(path) do |line|
-            next line.gsub!("### Changes will apply automatically. ###", 
-                            "### Apply changes by holding SHIFT while compiling. ###")
+              next line.gsub!("### Changes will apply automatically. ###", 
+                              "### Apply changes by holding SHIFT while compiling. ###")
             end
           end
         end
@@ -251,18 +251,18 @@ module PluginManager
   #-----------------------------------------------------------------------------
   # Used to ensure all plugins that rely on Deluxe Battle Kit are up to date.
   #-----------------------------------------------------------------------------
-  def self.plugin_check_DBK(version = "1.1.6")
+  def self.plugin_check_DBK(version = "1.2.5")
     if self.installed?("Deluxe Battle Kit", version, true)
-      {"[DBK] Enhanced Battle UI"      => "2.0.2",
-       "[DBK] SOS Battles"             => "1.0.6",
+      {"[DBK] Enhanced Battle UI"      => "2.0.7",
+       "[DBK] SOS Battles"             => "1.0.9",
        "[DBK] Raid Battles"            => "1.0",
-       "[DBK] Z-Power"                 => "1.0.5",
-       "[DBK] Dynamax"                 => "1.0.6",
-       "[DBK] Terastallization"        => "1.0.9",
-       "[DBK] Improved Item AI"        => "1.0",
-       "[DBK] Wonder Launcher"         => "1.0.1",
-       "[DBK] Animated Pokémon System" => "1.0.3",
-       "[MUI] Improved Mementos"       => "1.0.2"
+       "[DBK] Z-Power"                 => "1.1",
+       "[DBK] Dynamax"                 => "1.1.1",
+       "[DBK] Terastallization"        => "1.1.4",
+       "[DBK] Improved Item AI"        => "1.0.1",
+       "[DBK] Wonder Launcher"         => "1.0.5",
+       "[DBK] Animated Pokémon System" => "1.0.8",
+       "[MUI] Improved Mementos"       => "1.0.3"
       }.each do |p_name, v_num|
         next if !self.installed?(p_name)
         p_ver = self.version(p_name)

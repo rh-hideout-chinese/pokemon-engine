@@ -27,7 +27,7 @@ class Battle::Scene::FightMenu < Battle::Scene::MenuBase
         button.bitmap = @buttonBitmap.bitmap
         button.x = self.x + 4
         button.x += (i.even? ? 0 : (@buttonBitmap.width / 2) - 4)
-        button.y = self.y + 4
+        button.y = self.y + 6
         button.y += (((i / 2) == 0) ? 0 : BUTTON_HEIGHT - 4)
         button.src_rect.width  = @buttonBitmap.width / 2
         button.src_rect.height = BUTTON_HEIGHT
@@ -40,7 +40,7 @@ class Battle::Scene::FightMenu < Battle::Scene::MenuBase
       end
       @overlay = BitmapSprite.new(Graphics.width, Graphics.height - self.y, viewport)
       @overlay.x = self.x
-      @overlay.y = self.y+4
+      @overlay.y = self.y
       pbSetNarrowFont(@overlay.bitmap)
       addSprite("overlay", @overlay)
       @infoOverlay = BitmapSprite.new(Graphics.width, Graphics.height - self.y, viewport)
@@ -50,7 +50,7 @@ class Battle::Scene::FightMenu < Battle::Scene::MenuBase
       addSprite("infoOverlay", @infoOverlay)
       @typeIcon = Sprite.new(viewport)
       @typeIcon.bitmap = @typeBitmap.bitmap
-      @typeIcon.x      = self.x + 425
+      @typeIcon.x      = self.x + 416
       @typeIcon.y      = self.y + 20
       @typeIcon.src_rect.height = TYPE_ICON_HEIGHT
       addSprite("typeIcon", @typeIcon)
@@ -180,7 +180,8 @@ class Battle::Scene
     bagCommand = _INTL("背包")
     shadowTrainer = (GameData::Type.exists?(:SHADOW) && @battle.trainerBattle?)
     runCommand = (shadowTrainer) ? _INTL("呼叫") : (firstAction) ? _INTL("逃跑") : _INTL("取消")
-    if @battle.raidBattle?
+    hasCheer = defined?(@battle.cheerMode) && @battle.cheerMode
+    if hasCheer
       runCommand = _INTL("加油")
       mode = 5
     elsif @battle.launcherBattle?
@@ -195,8 +196,8 @@ class Battle::Scene
       _INTL("精灵"), runCommand
     ]
     ret = pbCommandMenuEx(idxBattler, cmds, mode)
-    ret = 4 if ret == 3 && shadowTrainer || @battle.raidBattle?
-    ret = -1 if ret == 3 && !firstAction && !@battle.raidBattle?
+    ret = 4 if ret == 3 && (shadowTrainer || hasCheer)
+    ret = -1 if ret == 3 && (!firstAction && !hasCheer)
     return 3 if ret > 3 && ($DEBUG && Input.press?(Input::CTRL))
     return ret
   end
@@ -445,6 +446,11 @@ class Battle::AI
     end
     ret = false
     PBDebug.logonerr { ret = pbChooseToUseItem }
+    if ret
+      PBDebug.log("")
+      return
+    end
+    PBDebug.logonerr { ret = pbChooseToUseSpecialCommand }
     if ret
       PBDebug.log("")
       return

@@ -2,7 +2,7 @@
 # Implements new Battle Rules.
 #===============================================================================
 class Game_Temp
-  attr_accessor :old_player_data, :old_player_bag, :old_player_party
+  attr_accessor :old_player_data, :old_player_bag, :old_player_party, :inverse_battle
   
   alias dx_add_battle_rule add_battle_rule
   def add_battle_rule(rule, var = nil)
@@ -12,11 +12,13 @@ class Game_Temp
     when "nevercapture"      then rules["captureSuccess"]    = false
     when "tutorialcapture"   then rules["captureTutorial"]   = true
     when "autobattle"        then rules["autoBattle"]        = true
-    when "towerbattle"       then rules["towerBattle"]       = false
+    when "towerbattle"       then rules["internalBattle"]    = false
+    when "inversebattle"     then rules["inverseBattle"]     = true
     when "nobag"             then rules["noBag"]             = true
     when "wildmegaevolution" then rules["wildBattleMode"]    = :mega
     when "raidstylecapture"  then rules["raidStyleCapture"]  = var
     when "setslidesprite"    then rules["slideSpriteStyle"]  = var
+    when "databoxstyle"      then rules["databoxStyle"]      = var
     when "battleintrotext"   then rules["battleIntroText"]   = var
     when "opponentwintext"   then rules["opposingWinText"]   = var
     when "opponentlosetext"  then rules["opposingLoseText"]  = var
@@ -77,7 +79,7 @@ end
 
 def additionalRules
   return [
-    "raidstylecapture", "setslidesprite", 
+    "raidstylecapture", "setslidesprite", "databoxstyle",
     "battleintrotext", "opponentwintext", "opponentlosetext",
     "tempplayer", "tempbag", "tempparty", 
     "battlebgm", "victorybgm", "captureme", "lowhealthbgm", 
@@ -85,7 +87,6 @@ def additionalRules
     "midbattlescript", "nomegaevolution"
   ]
 end
-
 
 #===============================================================================
 # Sets new Battle Rules during battle prep.
@@ -97,15 +98,16 @@ module BattleCreationHelperMethods
   def prepare_battle(battle)
     return BattleCreationHelperMethods.dx_prepare_battle(battle) if pbInSafari?
     battleRules = $game_temp.battle_rules
-    battle.captureSuccess   = battleRules["captureSuccess"]   if !battleRules["captureSuccess"].nil?
-    battle.tutorialCapture  = battleRules["captureTutorial"]  if !battleRules["captureTutorial"].nil?
-    battle.raidStyleCapture = battleRules["raidStyleCapture"] if !battleRules["raidStyleCapture"].nil?
-    battle.wildBattleMode   = battleRules["wildBattleMode"]   if !battleRules["wildBattleMode"].nil?
-    battle.controlPlayer    = battleRules["autoBattle"]       if !battleRules["autoBattle"].nil?
-    battle.internalBattle   = battleRules["towerBattle"]      if !battleRules["towerBattle"].nil?
-    battle.noBag            = battleRules["noBag"]            if !battleRules["noBag"].nil?
-    battle.introText        = battleRules["battleIntroText"]  if !battleRules["battleIntroText"].nil?
-    battle.slideSpriteStyle = battleRules["slideSpriteStyle"] if !battleRules["slideSpriteStyle"].nil?
+    battle.captureSuccess     = battleRules["captureSuccess"]   if !battleRules["captureSuccess"].nil?
+    battle.tutorialCapture    = battleRules["captureTutorial"]  if !battleRules["captureTutorial"].nil?
+    battle.raidStyleCapture   = battleRules["raidStyleCapture"] if !battleRules["raidStyleCapture"].nil?
+    battle.wildBattleMode     = battleRules["wildBattleMode"]   if !battleRules["wildBattleMode"].nil?
+    battle.controlPlayer      = battleRules["autoBattle"]       if !battleRules["autoBattle"].nil?
+    battle.internalBattle     = battleRules["internalBattle"]   if !battleRules["internalBattle"].nil?
+    battle.noBag              = battleRules["noBag"]            if !battleRules["noBag"].nil?
+    battle.introText          = battleRules["battleIntroText"]  if !battleRules["battleIntroText"].nil?
+    battle.slideSpriteStyle   = battleRules["slideSpriteStyle"] if !battleRules["slideSpriteStyle"].nil?
+    battle.databoxStyle       = battleRules["databoxStyle"]     if !battleRules["databoxStyle"].nil?
     if !battleRules["midbattleScript"].nil?
       script = battleRules["midbattleScript"]
       if script.is_a?(Symbol)
@@ -147,9 +149,9 @@ module BattleCreationHelperMethods
       "noZMoves", "noUltraBurst", # Z-Power Add-on
       "noDynamax",                # Dynamax Add-on
       "noTerastallize",           # Terastallization Add-on
-      "noBattleStyles",           # PLA Battle Styles (TBD)
-      "noZodiacPowers",           # Pokemon Birthsigns (TBD)
-      "noFocusMeter"              # Focus Meter System (TBD)
+      #"noBattleStyles",           # PLA Battle Styles (TBD)
+      #"noZodiacPowers",           # Pokemon Birthsigns (TBD)
+      #"noFocusMeter"              # Focus Meter System (TBD)
     ]
     specialActions.each do |rule|
       next if !battleRules[rule]
@@ -159,9 +161,9 @@ module BattleCreationHelperMethods
       when "noUltraBurst"    then action = battle.ultraBurst
       when "noDynamax"       then action = battle.dynamax
       when "noTerastallize"  then action = battle.terastallize
-      when "noBattleStyles"  then action = battle.style
-      when "noZodiacPowers"  then action = battle.zodiac
-      when "noFocusMeter"    then action = battle.focus
+      #when "noBattleStyles"  then action = battle.style
+      #when "noZodiacPowers"  then action = battle.zodiac
+      #when "noFocusMeter"    then action = battle.focus
       end
       case battleRules[rule]
       when :All      then sides = [0, 1]
@@ -178,24 +180,12 @@ module BattleCreationHelperMethods
     BattleCreationHelperMethods.dx_prepare_battle(battle)
     $PokemonGlobal.nextBattleBGM          = battleRules["battleBGM"]    if !battleRules["battleBGM"].nil?
     $PokemonGlobal.nextBattleVictoryBGM   = battleRules["victoryBGM"]   if !battleRules["victoryBGM"].nil?
-    $PokemonGlobal.nextBattleLowHealthBGM = battleRules["lowHealthBGM"] if !battleRules["lowHealthBGM"].nil?
     $PokemonGlobal.nextBattleCaptureME    = battleRules["captureME"]    if !battleRules["captureME"].nil?
+    battle.low_hp_bgm = battleRules["lowHealthBGM"] if !battleRules["lowHealthBGM"].nil?
     track = (battle.wildBattle?) ? pbGetWildBattleBGM(battle.pbParty(1)) : pbGetTrainerBattleBGM(battle.opponent)
     battle.default_bgm = (track.is_a?(String)) ? track : track&.name
+    battle.playing_bgm = battle.default_bgm
   end
-end
-
-#===============================================================================
-# Adds low HP battle music to global metadata.
-#===============================================================================
-class PokemonGlobalMetadata
-  attr_accessor :nextBattleLowHealthBGM
-end
-
-def pbGetBattleLowHealthBGM
-  track = "Battle low HP"
-  track = $PokemonGlobal.nextBattleLowHealthBGM.clone if $PokemonGlobal.nextBattleLowHealthBGM
-  return (track != "") ? pbResolveAudioFile(track) : track
 end
 
 #===============================================================================
@@ -221,11 +211,17 @@ module Battle::CatchAndStoreMixin
   
   alias dx_pbStorePokemon pbStorePokemon
   def pbStorePokemon(pkmn)
+    pkmn.makeUnmega
+    pkmn.makeUnprimal
+    pkmn.makeUnUltra if pkmn.ultra?
+    pkmn.dynamax       = false if pkmn.dynamax?
+    pkmn.terastallized = false if pkmn.tera?
     if pkmn.hp_level > 0
       pkmn.hp_level = 0
       pkmn.calc_stats
       pkmn.hp = pkmn.hp.clamp(1, pkmn.totalhp)
     end
+    pbResetRaidProperties(pkmn) if pkmn.immunities.include?(:RAIDBOSS)
     pkmn.immunities = nil
     pkmn.name = nil if pkmn.nicknamed?
     if @raidStyleCapture && !@caughtPokemon.empty?
@@ -245,7 +241,6 @@ module Battle::CatchAndStoreMixin
   end
 end
 
-
 #===============================================================================
 # Utilities for battle_rules["raidStyleCapture"].
 #===============================================================================
@@ -257,14 +252,27 @@ class Battle::Battler
       fainted_count += 1
     end
     return if fainted_count >= @battle.pbSideSize(0)
+    if @battle.pbAbleCount(target.index) <= 1
+      @battle.raidCaptureMode = true
+      @battle.field.initialize
+      2.times { |i| @battle.sides[i].initialize }
+      @battle.eachSameSideBattler do |b|
+        b.pbInitEffects(false)
+        @battle.positions[b.index].initialize
+      end
+    end
     @battle.pbPauseAndPlayBGM(bgm)
-    @battle.pbDisplayPaused(_INTL("{1}很虚弱!\n现在使用精灵球吧!", target.name))
-    pbWait(0.5)
-    cmd = 0
-    cmd = @battle.pbShowCommands("", ["Catch", "Don't Catch"], 1)
+    @battle.scene.pbHideDatabox(target.index)
+    @battle.scene.pbToggleDataboxes if @battle.raidBattle?
+    @battle.pbDisplayPaused(_INTL("{1}很虚弱!\n现在使用精灵球吧!", target.pbThis))
+    @battle.scene.pbRevertBattlerStart
+    @battle.scene.pbPauseScene(0.5)
+    cmd = @battle.pbShowCommands(
+      _INTL("尝试收服{1}?", target.pbThis(true)), ["收服", "不要"], 1)
+    pbPlayDecisionSE
+    @battle.scene.pbRevertBattlerEnd
     case cmd
     when 0
-      pbPlayDecisionSE
       @battle.sendToBoxes = 1
       if $PokemonStorage.full?
         @battle.pbDisplay(_INTL("但是电脑已经没有空位了!"))
@@ -290,7 +298,6 @@ class Battle::Battler
         end
       end
     else
-      pbPlayDecisionSE
       target.wild_flee(fleeMsg)
     end
   end
@@ -318,7 +325,7 @@ class Battle::Battler
       @battle.pbEndPrimordialWeather
       @battle.pbRemoveFromParty(@index, @pokemonIndex)
     else
-      @battle.decision = 3
+      @battle.decision = (self.isRaidBoss?) ? 1 : 3
     end
   end
   
@@ -326,32 +333,70 @@ class Battle::Battler
   def pbFaint(showMessage = true)
     if self.canRaidCapture?
       self.hp = 1
+      if defined?(@vanished)
+        @battle.scene.pbAnimateSubstitute(@index, :hide)
+        @effects[PBEffects::Substitute]    = 0
+        @effects[PBEffects::SkyDrop]       = -1
+        @effects[PBEffects::TwoTurnAttack] = nil
+        @battle.scene.pbChangePokemon(self, self.visiblePokemon, true)
+      end
       raid = @battle.raidStyleCapture
       if raid.is_a?(Hash)
         pbRaidStyleCapture(self, raid[:capture_chance], raid[:flee_msg], raid[:capture_bgm])
       else
         pbRaidStyleCapture(self)
       end
-    else
-      if fainted? && !@fainted
-        triggers = ["BattlerFainted", @species, *@pokemon.types]
-        triggers.push("LastBattlerFainted", @species, *@pokemon.types) if @battle.pbAllFainted?(@index)
-      end	  
+    else  
       dx_pbFaint(showMessage)
-      @battle.pbDeluxeTriggers(@index, nil, *triggers) if triggers
+      if @battle.pbAllFainted? && @battle.raidStyleCapture && !@battle.canLose
+        @battle.caughtPokemon.clear
+      end
     end
+  end
+  
+  alias dx_itemActive? itemActive?
+  def itemActive?(ignoreFainted = false)
+    return false if @battle.raidCaptureMode
+    return dx_itemActive?(ignoreFainted)
+  end
+  
+  alias dx_abilityActive? abilityActive?
+  def abilityActive?(ignore_fainted = false, check_ability = nil)
+    return false if @battle.raidCaptureMode
+    return dx_abilityActive?(ignore_fainted, check_ability)
   end
 end
 
+#===============================================================================
+# Edited for battle_rules["inverseBattle"].
+#===============================================================================
+module GameData
+  class Type
+    alias dx_effectiveness effectiveness
+    def effectiveness(other_type)
+      return Effectiveness::NORMAL_EFFECTIVE_ONE if !other_type
+      ret = dx_effectiveness(other_type)
+      if $game_temp.inverse_battle
+        case ret
+        when Effectiveness::INEFFECTIVE, Effectiveness::NOT_VERY_EFFECTIVE
+          ret = Effectiveness::SUPER_EFFECTIVE
+        when Effectiveness::SUPER_EFFECTIVE
+          ret = Effectiveness::NOT_VERY_EFFECTIVE
+        end
+      end
+      return ret
+    end
+  end
+end
 
 #===============================================================================
 # Adds new Battle Rules to the Battle class.
 #===============================================================================
 class Battle
-  attr_accessor :captureSuccess, :tutorialCapture, :raidStyleCapture
+  attr_accessor :caughtPokemon, :captureSuccess, :tutorialCapture, :raidStyleCapture, :raidCaptureMode
   attr_accessor :wildBattleMode, :noBag
-  attr_accessor :introText, :slideSpriteStyle
-  attr_accessor :default_bgm, :playing_bgm, :bgm_paused, :bgm_position
+  attr_accessor :introText, :slideSpriteStyle, :databoxStyle
+  attr_accessor :default_bgm, :playing_bgm, :bgm_paused, :bgm_position, :low_hp_bgm
   
   alias dx_initialize initialize
   def initialize(*args)
@@ -359,14 +404,17 @@ class Battle
     @captureSuccess   = nil
     @tutorialCapture  = false
     @raidStyleCapture = false
+    @raidCaptureMode  = false
     @wildBattleMode   = nil
     @noBag            = false
     @introText        = nil
     @slideSpriteStyle = nil
+    @databoxStyle     = nil
     @bgm_paused       = false
     @bgm_position     = 0
     @default_bgm      = nil
-    @playing_bgm      = pbGetBattleBGM&.name
+    @playing_bgm      = nil
+    @low_hp_bgm       = "Battle low HP"
   end
   
   #-----------------------------------------------------------------------------
@@ -375,6 +423,11 @@ class Battle
   def pbGetBattleBGM
     return nil if nil_or_empty?(@default_bgm)
     return pbResolveAudioFile(@default_bgm)
+  end
+  
+  def pbGetBattleLowHealthBGM
+    return "" if nil_or_empty?(@low_hp_bgm)
+    return pbResolveAudioFile(@low_hp_bgm)
   end
   
   def pbResumeBattleBGM
@@ -412,6 +465,15 @@ class Battle
       return false
     end
     return dx_pbItemMenu(idxBattler, firstAction)
+  end
+  
+  #-----------------------------------------------------------------------------
+  # Aliased for battle_rules["raidStyleCapture"]
+  #-----------------------------------------------------------------------------
+  alias dx_pbEORStatusProblemDamage pbEORStatusProblemDamage
+  def pbEORStatusProblemDamage(priority)
+    return if @raidCaptureMode
+    dx_pbEORStatusProblemDamage(priority)
   end
   
   #-----------------------------------------------------------------------------
@@ -519,7 +581,7 @@ class Battle::Scene::Animation::Intro < Battle::Scene::Animation
           f = 0
           w = bitmap.width
           h = bitmap.height
-          deltaY = h - findTop(bitmap) - 12
+          deltaY = h - findTop(bitmap)
           s.setDelta(0, 0, deltaY)
           s.moveDelta(0, appearTime - 3, 0, (deltaY * deltaMult).floor)
           appearTime.times do |i|
@@ -544,7 +606,7 @@ def findTop(bitmap)
   return 0 if !bitmap
   (1..bitmap.height).each do |i|
     bitmap.width.times do |j|
-      return i if bitmap.get_pixel(j, bitmap.height - i).alpha > 0
+      return i if bitmap.get_pixel(j, i).alpha > 0
     end
   end
   return 0
@@ -560,8 +622,13 @@ class Pokemon
     @moves.clear if !value.empty?
     value.each do |move|
       break if @moves.length >= MAX_MOVES
-      new_move = Pokemon::Move.new(move)
-      next if @moves.include?(new_move)
+	  case move
+	  when Pokemon::Move
+	    new_move = move.clone
+      else
+	    new_move = Pokemon::Move.new(move)
+	  end
+      next if !@moves.empty? && @moves.any? { |m| m.id == new_move.id }
       @moves.push(new_move)
     end
   end
@@ -631,8 +698,44 @@ class Pokemon
       end
     end
   end
+  
+  #-----------------------------------------------------------------------------
+  # Fixes for cloning Pokemon objects.
+  #-----------------------------------------------------------------------------
+  def set_moves=(value)
+    @moves = value
+  end
+  
+  def set_ribbons=(value)
+    @ribbons = value
+  end
+  
+  def set_ivs=(value)
+    @iv = value
+  end
+  
+  def set_evs=(value)
+    @ev = value
+  end
+  
+  def clone
+    ret = super
+    ret.set_ivs = {}
+    ret.ivMaxed = {}
+    ret.set_evs = {}
+    GameData::Stat.each_main do |s|
+      ret.iv[s.id]      = @iv[s.id]
+      ret.ivMaxed[s.id] = @ivMaxed[s.id]
+      ret.ev[s.id]      = @ev[s.id]
+    end
+    ret.set_moves   = []
+    @moves.each_with_index { |m, i| ret.moves[i] = m.clone }
+    ret.first_moves = @first_moves.clone
+    ret.owner       = @owner.clone
+    ret.set_ribbons = @ribbons.clone
+    return ret
+  end
 end
-
 
 #===============================================================================
 # Event handlers.
@@ -647,6 +750,7 @@ EventHandlers.add(:on_wild_pokemon_created, :edit_wild_pokemon,
     ["editWildPokemon", "editWildPokemon2", "editWildPokemon3"].each do |rule|
       next if !battleRules[rule]
       battleRules[rule].each do |property, value|
+        next if value.nil?
         if pkmn.respond_to?(property.to_s) || [:shiny, :super_shiny].include?(property)
           pkmn.send("#{property}=", value)
         end
@@ -659,7 +763,7 @@ EventHandlers.add(:on_wild_pokemon_created, :edit_wild_pokemon,
 )
 
 #-------------------------------------------------------------------------------
-# Used for battle_rules["tempPlayer"], ["tempBag"], and ["tempParty"].
+# Used for battle_rules["tempPlayer"], ["tempBag"], ["tempParty"] and ["inverseBattle"].
 #-------------------------------------------------------------------------------
 EventHandlers.add(:on_start_battle, :change_player_and_party,
   proc {
@@ -717,11 +821,12 @@ EventHandlers.add(:on_start_battle, :change_player_and_party,
     $game_temp.old_player_data = old_player_data
     $game_temp.old_player_bag = old_player_bag
     $game_temp.old_player_party = old_player_party
+    $game_temp.inverse_battle = battleRules["inverseBattle"]
   }
 )
 
 #-------------------------------------------------------------------------------
-# Reverts battle_rules["tempPlayer"], ["tempBag"], and ["tempParty"].
+# Reverts battle_rules["tempPlayer"], ["tempBag"], ["tempParty"] and ["inverseBattle"].
 #-------------------------------------------------------------------------------
 EventHandlers.add(:on_end_battle, :revert_player_and_party,
   proc { |decision, canLose|
@@ -739,5 +844,6 @@ EventHandlers.add(:on_end_battle, :revert_player_and_party,
       $player.party = $game_temp.old_player_party
       $game_temp.old_player_party = nil
     end
+    $game_temp.inverse_battle = nil
   }
 )

@@ -125,7 +125,7 @@ class Battle::Move
     when :Electric
       if type == :ELECTRIC
         multipliers[:power_multiplier] *= terrain_multiplier if user.affectedByTerrain?
-      elsif @function_code == "IncreasePowerWhileElectricTerrain"
+      elsif @function_code == "IncreasePowerInElectricTerrain"
         multipliers[:power_multiplier] *= 1.5 if user.affectedByTerrain?
       end
     when :Grassy
@@ -357,19 +357,18 @@ class Battle::Move
     if damage > 1
       target.stopBoostedHPScaling = true
       return if target.damageState.substitute
-      return if target.damageThreshold == 0
-      thresh = (target.totalhp / target.damageThreshold).round
-      thresh = target.totalhp + thresh if thresh < 0
-      thresh = 1 if thresh <= 0
-      target.hpThreshold = thresh
-      if (target.hp > thresh) && (damage > target.hp - thresh)
-        new_damage = target.hp - thresh
-        new_damage = 0 if new_damage < 0
-      elsif target.hp <= thresh
+      return if !target.damageThreshold
+      thresh = (target.totalhp * (target.damageThreshold / 100.0)).round
+      thresh = 1 if thresh < 1
+      if target.hp > thresh
+        if damage > target.hp - thresh
+          new_damage = target.hp - thresh
+        end
+      else 
         new_damage = 0
       end
       return if !new_damage
-      if damage != new_damage && new_damage >= 0
+      if damage > new_damage && new_damage >= 0
         target.damageState.hpLost       = new_damage
         target.damageState.totalHPLost -= damage
         target.damageState.totalHPLost += new_damage
@@ -638,7 +637,7 @@ class Battle::AI::AIMove
       when :Electric
         if calc_type == :ELECTRIC
           multipliers[:power_multiplier] *= terrain_multiplier if user.battler.affectedByTerrain?
-        elsif function_code == "IncreasePowerWhileElectricTerrain"
+        elsif function_code == "IncreasePowerInElectricTerrain"
           multipliers[:power_multiplier] *= 1.5 if user_battler.affectedByTerrain?
         end
       when :Grassy

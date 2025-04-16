@@ -21,7 +21,7 @@ Battle::ItemEffects::HPHeal.add(:BERRYJUICE,
     if forced
       battle.pbDisplay(_INTL("{1}的体力已回恢复了", battler.pbThis))
     else
-      battle.pbDisplay(_INTL("{1}使用它的{2}恢复了体力!", battler.pbThis, itemName))
+      battle.pbDisplay(_INTL("{1}使用{2}恢复了体力!", battler.pbThis, itemName))
     end
     next true
   }
@@ -120,6 +120,7 @@ Battle::AbilityEffects::DamageCalcFromUser.add(:GORILLATACTICS,
 Battle::AbilityEffects::OnSwitchIn.add(:IMPOSTER,
   proc { |ability, battler, battle, switch_in|
     next if !switch_in || battler.effects[PBEffects::Transform]
+    next if battler.tera? && battler.tera_type == :STELLAR
     choice = battler.pbDirectOpposing
     next if choice.fainted?
     next if choice.effects[PBEffects::Transform] ||
@@ -326,18 +327,18 @@ class Battle::Move::UserTargetAverageHP < Battle::Move
   def pbEffectAgainstTarget(user,target)
     newHP = (user.real_hp + target.real_hp) / 2
     if user.real_hp > newHP
-	  user.stopBoostedHPScaling = true
-	  user.pbReduceHP(user.real_hp - newHP, false, false)
+      user.stopBoostedHPScaling = true
+      user.pbReduceHP(user.real_hp - newHP, false, false)
     elsif user.real_hp < newHP
-	  user.stopBoostedHPScaling = true
-	  user.pbRecoverHP(newHP - user.real_hp, false)
+      user.stopBoostedHPScaling = true
+      user.pbRecoverHP(newHP - user.real_hp, false)
     end
     if target.real_hp > newHP
-	  target.stopBoostedHPScaling = true
-	  target.pbReduceHP(target.real_hp - newHP, false, false)
+      target.stopBoostedHPScaling = true
+      target.pbReduceHP(target.real_hp - newHP, false, false)
     elsif target.real_hp < newHP
-	  target.stopBoostedHPScaling = true
-	  target.pbRecoverHP(newHP - target.real_hp, false)
+      target.stopBoostedHPScaling = true
+      target.pbRecoverHP(newHP - target.real_hp, false)
     end
     @battle.pbDisplay(_INTL("宝可梦分担了痛苦!"))
     user.pbItemHPHealCheck
@@ -576,9 +577,9 @@ end
 # Saves data for Transform target prior to transforming.
 #-------------------------------------------------------------------------------
 class Battle::Move::TransformUserIntoTarget < Battle::Move
-  alias tera_pbMoveFailed? pbMoveFailed?
+  alias dx_pbMoveFailed? pbMoveFailed?
   def pbMoveFailed?(user, targets)
-    if user.tera_form?
+    if user.tera_form? || (user.tera? && user.tera_type == :STELLAR)
       @battle.pbDisplay(_INTL("但是失败了..."))
       return true
     end
@@ -586,7 +587,7 @@ class Battle::Move::TransformUserIntoTarget < Battle::Move
       @battle.pbDisplay(_INTL("但是失败了..."))
       return true
     end
-    return tera_pbMoveFailed?(user, targets)
+    return dx_pbMoveFailed?(user, targets)
   end
 
   alias dx_pbFailsAgainstTarget? pbFailsAgainstTarget?
@@ -982,14 +983,13 @@ class Battle::Move::TwoTurnMove < Battle::Move
     @chargingTurn = false
     @damagingTurn = true
     if !user.effects[PBEffects::TwoTurnAttack]
-      if user.isRaidBoss? &&
-         ["TwoTurnAttackInvulnerableInSky",
-          "TwoTurnAttackInvulnerableUnderground",
-          "TwoTurnAttackInvulnerableUnderwater",
-          "TwoTurnAttackInvulnerableInSkyParalyzeTarget",
-          "TwoTurnAttackInvulnerableRemoveProtections",
-          "TwoTurnAttackInvulnerableInSkyTargetCannotAct"].include?(@function)
-        @chargingTurn = true
+      if user.isRaidBoss? && [
+         "TwoTurnAttackInvulnerableInSky",
+         "TwoTurnAttackInvulnerableUnderground",
+         "TwoTurnAttackInvulnerableUnderwater",
+         "TwoTurnAttackInvulnerableInSkyParalyzeTarget",
+         "TwoTurnAttackInvulnerableRemoveProtections",
+         "TwoTurnAttackInvulnerableInSkyTargetCannotAct"].include?(@function_code)
         @damagingTurn = true
       else
         @powerHerb = user.hasActiveItem?(:POWERHERB)
@@ -1004,12 +1004,12 @@ end
 #===============================================================================
 # Sky Drop
 #===============================================================================
-# Fails to work on Dynamax targets or Raid bosses.
+# Fails to work on Dynamax targets or if a Raid Boss is on the field.
 #-------------------------------------------------------------------------------
 class Battle::Move::TwoTurnAttackInvulnerableInSkyTargetCannotAct < Battle::Move::TwoTurnMove
   alias dx_pbFailsAgainstTarget? pbFailsAgainstTarget?
   def pbFailsAgainstTarget?(user, target, show_message)
-    if target.dynamax? || target.isRaidBoss?
+    if target.dynamax? || @battle.raidBattle?
       @battle.pbDisplay(_INTL("但是失败了...")) if show_message
       return true
     end

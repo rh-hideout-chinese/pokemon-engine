@@ -213,7 +213,7 @@ MidbattleHandlers.add(:midbattle_global, :wild_mega_battle,
         battle.disablePokeBalls = true
         battle.sosBattle = false if defined?(battle.sosBattle)
         battle.totemBattle = nil if defined?(battle.totemBattle)
-        foe.damageThreshold = 6
+        foe.damageThreshold = 20
       else
         battle.wildBattleMode = nil
       end
@@ -244,7 +244,7 @@ MidbattleHandlers.add(:midbattle_global, :low_hp_music,
     next if !Settings::PLAY_LOW_HP_MUSIC
     battler = battle.battlers[idxBattler]
     next if !battler || !battler.pbOwnedByPlayer?
-    track = pbGetBattleLowHealthBGM
+    track = battle.pbGetBattleLowHealthBGM
     next if !track.is_a?(RPG::AudioFile)
     playingBGM = battle.playing_bgm
     case trigger
