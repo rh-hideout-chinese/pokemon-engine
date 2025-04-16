@@ -107,6 +107,7 @@ class Battle
       # Determines the new party to replace the previous one with.
       idxParty = 0
       partyToAdd = []
+      @battleAI.create_new_ai_trainer(idxTrainer) if !@opponent[idxTrainer]
       @opponent[idxTrainer] = trainer
       trainer_parties[idxTrainer] = trainer.party
       trainer_parties.each_with_index do |tr_party, tr_idx|
@@ -160,7 +161,7 @@ class Battle
   #-----------------------------------------------------------------------------
   # Returns an available battler index to be used by the called Pokemon.
   #-----------------------------------------------------------------------------
-  def pbFindNewBattlerIndex(caller, answered = true)
+  def pbFindNewBattlerIndex(caller, idxSkip = [], answered = true)
     idxNewBattler = -1
     return idxNewBattler if !answered
     changeSize = false
@@ -168,6 +169,7 @@ class Battle
     6.times do |i|
       b = @battlers[i]
       next if b && !b.fainted?
+      next if idxSkip.include?(i)
       next if caller.opposes?(i)
       idxNewBattler = i
       changeSize = b.nil?
@@ -367,14 +369,15 @@ class Battle
     answer_rate *= 3.0 if @lastCallAnswered == false
     answered = roll < answer_rate.round || $DEBUG && Input.press?(Input::CTRL)
     pbDeluxeTriggers(caller, nil, "BeforeSOS", caller.species, *caller.pokemon.types)
+    @scene.pbAnimateSubstitute(caller, :hide)
     if caller.totemBattler
-      pbDisplay(_INTL("{1}召唤了它的伙伴宝可!", caller.pbThis))
+      pbDisplay(_INTL("{1}召唤了它的宝可梦伙伴!", caller.pbThis))
     else
-      pbDisplay(_INTL("{1}寻求了帮助p!", caller.pbThis))
+      pbDisplay(_INTL("{1}寻求了帮助!", caller.pbThis))
     end
     @scene.pbAnimation(:GROWL, caller, caller.pbDirectOpposing(true))
     pbDisplayPaused(_INTL("... ... ..."))
-    idxNewBattler = pbFindNewBattlerIndex(caller, answered)
+    idxNewBattler = pbFindNewBattlerIndex(caller, [], answered)
     if idxNewBattler >= 0
       PBDebug.log("[SOS] #{caller.pbThis}'s (#{caller.index}) call succeeded (Answer rate = #{answer_rate})")
       @lastCallAnswered = true
@@ -383,6 +386,7 @@ class Battle
       battler = pbGenerateSOSBattler(idxNewBattler, caller, roll)
       @scene.pbSOSJoin(idxNewBattler)
       pbDisplay(_INTL("{1}出现了!", battler.name))
+      @scene.pbAnimateSubstitute(caller, :show)
       pbCalculatePriority(true)
       pbOnBattlerEnteringBattle(idxNewBattler)
       battler.pbCheckForm
@@ -391,7 +395,8 @@ class Battle
     else
       PBDebug.log("[SOS] #{caller.pbThis}'s (#{caller.index}) call failed (Answer rate = #{answer_rate})")
       @lastCallAnswered = false
-      pbDisplay(_INTL("它的帮助没有出现!"))
+      pbDisplay(_INTL("它没有成功帮助你!"))
+      @scene.pbAnimateSubstitute(caller, :show)
       pbDeluxeTriggers(caller, nil, "FailedSOS", caller.species, *caller.pokemon.types)
     end
     @lastTurnCalled = @turnCount
@@ -401,8 +406,9 @@ class Battle
   # A simplified version of the method above. Call is guaranteed to be answered.
   #-----------------------------------------------------------------------------
   def pbCallForHelpSimple(caller)
+    @scene.pbAnimateSubstitute(caller, :hide)
     if caller.totemBattler
-      pbDisplay(_INTL("{1}叫来了它的伙伴宝可梦!", caller.pbThis))
+      pbDisplay(_INTL("{1}叫来了它的\n宝可梦伙伴!", caller.pbThis))
     else
       pbDisplay(_INTL("{1}寻求了帮助!", caller.pbThis))
     end
@@ -412,16 +418,19 @@ class Battle
     if idxNewBattler >= 0
       PBDebug.log("[SOS] #{caller.pbThis}'s (#{caller.index}) call succeeded (Answer rate = 100)")
       @lastCallAnswered = true
+      @originalCaller = caller.pokemon
       battler = pbGenerateSOSBattler(idxNewBattler, caller, pbRandom(100))
       @scene.pbSOSJoin(idxNewBattler)
       pbDisplay(_INTL("{1}出现了!", battler.name))
+      @scene.pbAnimateSubstitute(caller, :show)
       pbCalculatePriority(true)
       pbOnBattlerEnteringBattle(idxNewBattler)
       battler.pbCheckForm
     else
       PBDebug.log("[SOS] #{caller.pbThis}'s (#{caller.index}) call failed (Answer rate = 100)")
       @lastCallAnswered = false
-      pbDisplay(_INTL("它的帮助没有出现!"))
+      pbDisplay(_INTL("它没有成功帮助你!"))
+      @scene.pbAnimateSubstitute(caller, :show)
     end
     @lastTurnCalled = @turnCount
   end
@@ -468,9 +477,6 @@ class Battle
   #-----------------------------------------------------------------------------
   def pbAddNewTrainer(tr_type, tr_name, version = 0)
     return if !trainerBattle?
-    caller = @battlers[1] || @battlers[3] || @battlers[5]
-    idxBattler = pbFindNewBattlerIndex(caller)
-    return if idxBattler < 0
     idxTrainer = -1
     3.times do |i|
       sideCounts = pbAbleTeamCounts(1)[i]
@@ -478,19 +484,40 @@ class Battle
       idxTrainer = i
       break
     end
-    return if idxTrainer < 0 
+    return if idxTrainer < 0
+    indecies = []
+    caller = @battlers[1] || @battlers[3] || @battlers[5]
+    slots = pbNumPositions(1, idxTrainer)
+    slots = [1, pbSideSize(1) - pbSideBattlerCount(1)].max if slots == 0
+    slots.times do |i|
+      idxBattler = pbFindNewBattlerIndex(caller, indecies)
+      next if idxBattler < 0
+      indecies.push(idxBattler)
+    end
+    return if indecies.empty?
     trainer = pbLoadTrainer(tr_type, tr_name, version)
     EventHandlers.trigger(:on_trainer_load, trainer)
-    pokemon = trainer.party.first
-    fullUpdate = @battlers[idxBattler].nil?
-    pbInitializeNewBattler([idxBattler, pokemon], [idxTrainer, trainer], fullUpdate)
     @items[idxTrainer] = trainer.items
     pbSetLauncherItems(1, idxTrainer) if launcherBattle?
-    battler = @battlers[idxBattler]
-    @scene.pbTrainerJoin(idxBattler, idxTrainer)
+    sendOuts = []
+    indecies.each_with_index do |idxBattler, i|
+      pokemon = trainer.party[i]
+      next if !pokemon
+      sendOuts.push([idxBattler, pokemon])
+      fullUpdate = @battlers[idxBattler].nil?
+      pbInitializeNewBattler([idxBattler, pokemon], [idxTrainer, trainer], fullUpdate)
+    end
+    @scene.pbTrainerJoin(sendOuts, idxTrainer)
     pbCalculatePriority(true)
-    pbOnBattlerEnteringBattle(idxBattler)
-    battler.pbCheckForm
+  end
+  
+  #-----------------------------------------------------------------------------
+  # Aliased to prevent new trainers from sending out a duplicate Pokemon.
+  #-----------------------------------------------------------------------------
+  alias sos_pbCanChooseNonActive? pbCanChooseNonActive?
+  def pbCanChooseNonActive?(idxBattler)
+    return false if opposes?(idxBattler) && pbParty(idxBattler).length <= pbSideSize(idxBattler)
+    return sos_pbCanChooseNonActive?(idxBattler)
   end
   
   #-----------------------------------------------------------------------------
