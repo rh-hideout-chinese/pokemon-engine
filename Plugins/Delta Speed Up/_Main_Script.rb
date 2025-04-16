@@ -215,11 +215,11 @@ end
 # Options menu handlers
 #===============================================================================#
 MenuHandlers.add(:options_menu, :only_speedup_battles, {
-  "name" => _INTL("Speed Up Settings"),
+  "name" => _INTL("加速设置"),
   "order" => 25,
   "type" => EnumOption,
-  "parameters" => [_INTL("Always"), _INTL("Only Battles")],
-  "description" => _INTL("Choose which aspect is sped up."),
+  "parameters" => [_INTL("永久"), _INTL("仅限战斗")],
+  "description" => _INTL("选择一个加速速度/"),
   "get_proc" => proc { next $PokemonSystem.only_speedup_battles },
   "set_proc" => proc { |value, scene|
     $GameSpeed = 0 if value != $PokemonSystem.only_speedup_battles
@@ -228,11 +228,11 @@ MenuHandlers.add(:options_menu, :only_speedup_battles, {
   }
 })
 MenuHandlers.add(:options_menu, :battle_speed, {
-  "name" => _INTL("Battle Speed"),
+  "name" => _INTL("战斗速度"),
   "order" => 26,
   "type" => EnumOption,
   "parameters" => [_INTL("x#{SPEEDUP_STAGES[0]}"), _INTL("x#{SPEEDUP_STAGES[1]}"), _INTL("x#{SPEEDUP_STAGES[2]}")],
-  "description" => _INTL("Choose the battle speed when the battle speed-up is set to 'Battles Only'."),
+  "description" => _INTL("如果你选了战斗加速而已\n请选择一个速度"),
   "get_proc" => proc { next $PokemonSystem.battle_speed },
   "set_proc" => proc { |value, scene|
     $PokemonSystem.battle_speed = value
