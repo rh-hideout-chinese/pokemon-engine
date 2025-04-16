@@ -279,7 +279,7 @@ ItemHandlers::CanUseInBattle.add(:RADIANTTERAJEWEL, proc { |item, pokemon, battl
   elsif !firstAction
     scene.pbDisplay(_INTL("You can't use this item while issuing orders at the same time!")) if showMessages
     next false
-  elsif battle.terastallize[side][owner] == -1 && $player.tera_charged?
+  elsif battle.terastallize[side][owner] == -1 || (side == 0 && owner == 0 && $player.tera_charged?)
     scene.pbDisplay(_INTL("You don't need to recharge your {1} yet!", orb)) if showMessages
     next false
   end
@@ -293,7 +293,7 @@ ItemHandlers::UseInBattle.add(:RADIANTTERAJEWEL, proc { |item, battler, battle|
   side    = battler.idxOwnSide
   owner   = battle.pbGetOwnerIndexFromBattlerIndex(battler.index)
   battle.terastallize[side][owner] = -1
-  $player.tera_charged = true
+  $player.tera_charged = true if side == 0 && owner == 0
   orb     = battle.pbGetTeraOrbName(battler.index)
   trainer = battle.pbGetOwnerName(battler.index)
   item    = GameData::Item.get(item).portion_name

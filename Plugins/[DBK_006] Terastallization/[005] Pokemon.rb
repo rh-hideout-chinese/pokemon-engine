@@ -71,6 +71,7 @@ class Pokemon
       elsif check_type == :Random && !@tera_type 
         type = pbGetRandomType
       end
+	  break
     end
     return type if forced_type || GameData::Type.exists?(type)
     return pbGetRandomType if $game_switches[Settings::RANDOMIZED_TERA_TYPES]
