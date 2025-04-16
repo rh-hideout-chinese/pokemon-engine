@@ -1,4 +1,4 @@
-### Apply changes by holding SHIFT while compiling. ###
+### Changes will apply automatically. ###
 #-------------------------------
 [BULBASAUR]
 DmaxBackSprite = 0,0

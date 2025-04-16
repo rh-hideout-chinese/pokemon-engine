@@ -107,7 +107,7 @@ MidbattleHandlers.add(:midbattle_global, :wild_dynamax_battle,
         battle.disablePokeBalls = true
         battle.sosBattle = false if defined?(battle.sosBattle)
         battle.totemBattle = nil if defined?(battle.totemBattle)
-        foe.damageThreshold = 6
+        foe.damageThreshold = 20
       else
         battle.wildBattleMode = nil
       end
@@ -116,7 +116,7 @@ MidbattleHandlers.add(:midbattle_global, :wild_dynamax_battle,
       foe.unDynamax
       battle.noBag = false
       battle.disablePokeBalls = false
-      battle.pbDisplayPaused(_INTL("{1}的极巨化能量消失了!\n现在可以捕捉了!", foe.pbThis))
+      battle.pbDisplayPaused(_INTL("{1}'s Dynamax energy faded!\nIt may now be captured!", foe.pbThis))
       ch = battle.choices[idxBattler]
       if !foe.movedThisRound? && ch[0] == :UseMove
         ch[2] = foe.moves[ch[1]]
@@ -285,7 +285,7 @@ class Battle
         @dynamax_bands.each { |item| return GameData::Item.get(item).portion_name if trainer_items&.include?(item) }
       end
     end
-    return _INTL("极巨化手环")
+    return _INTL("Dynamax Band")
   end
   
   #-----------------------------------------------------------------------------
@@ -332,6 +332,7 @@ class Battle
     side  = battler.idxOwnSide
     owner = pbGetOwnerIndexFromBattlerIndex(idxBattler)
     @dynamax[side][owner] = -2
+    pbCalculatePriority(false, [idxBattler])
     triggers = ["AfterDynamax", battler.species, *battler.pokemon.types]
     if battler.hasGmax?
       triggers.push("AfterGigantamax", battler.species, *battler.pokemon.types)
@@ -356,16 +357,16 @@ class Battle
         type = (battler.hasEmax?) ? "Eternamax" : (battler.hasGmax?) ? "Gigantamax" : "Dynamax"
         idxBattler = battler.index
         if battler.wild?
-          pbDisplay(_INTL("{1}将自己包围在{2}能量中!", battler.pbThis, type))
+          pbDisplay(_INTL("{1} surrounded itself in {2} energy!", battler.pbThis, type))
           @scene.pbRevertBattlerStart(idxBattler)
           battler.makeDynamax
           @scene.pbRevertBattlerEnd
         else
           trainerName = pbGetOwnerName(idxBattler)
-          pbDisplay(_INTL("{1}召回{2}!", trainerName, battler.pbThis(true)))
+          pbDisplay(_INTL("{1} recalled {2}!", trainerName, battler.pbThis(true)))
           xpos, ypos = @scene.sprites["pokemon_#{idxBattler}"].x, @scene.sprites["pokemon_#{idxBattler}"].y
           @scene.pbRecall(idxBattler)
-          pbDisplay(_INTL("{1}的宝贝球充满了{2}能量!", battler.pbThis, type))
+          pbDisplay(_INTL("{1}'s ball surges with {2} energy!", battler.pbThis, type))
           @scene.pbDynamaxSendOut(idxBattler, xpos, ypos)
         end
       end
@@ -430,9 +431,9 @@ class Battle::Battler
   #-----------------------------------------------------------------------------
   # Checks if battler has the option to Dynamax.
   #-----------------------------------------------------------------------------
-  def hasDynamax?
+  def hasDynamax?(check_available = true)
     return false if shadowPokemon?
-    return false if !pbDynamaxAvailable?
+    return false if check_available && !pbDynamaxAvailable?
     return false if !getActiveState.nil?
     return false if hasEligibleAction?(:mega, :primal, :zmove, :ultra, :zodiac)
     return false if defined?(isCommanderHost?) && isCommanderHost?
@@ -455,6 +456,7 @@ class Battle::Battler
   def pbDynamaxAvailable?
     side  = self.idxOwnSide
     owner = @battle.pbGetOwnerIndexFromBattlerIndex(@index)
+    return false if @battle.raidBattle? && @battle.raidRules[:style] != :Max
     return false if @battle.dynamax[side][owner] == -2
     return false if $game_switches[Settings::NO_DYNAMAX]
     map_data = GameData::MapMetadata.try_get($game_map.map_id)
@@ -491,24 +493,21 @@ class Battle::Battler
   
   def unDynamax
     return if !@pokemon
-    if !isRaidBoss?
-      @battle.scene.pbRevertBattlerStart(@index)
-      self.display_base_moves
-      @effects[PBEffects::Dynamax] = 0
-      @pokemon.makeUndynamaxForm
-      self.form = @pokemon.form
-      @pokemon.makeUndynamax
-      pbUpdate(true)
-      pkmn = visiblePokemon
-      @battle.scene.pbChangePokemon(self, pkmn)
-      @battle.scene.pbRevertBattlerEnd
-      @battle.scene.pbHPChanged(self, @totalhp) if !fainted?
-      @battle.scene.pbRefreshOne(@index)
-      if hasActiveAbility?(:COMMANDER)
-        Battle::AbilityEffects.triggerOnSwitchIn(self.ability, self, @battle)
-      end
-    else
-      @pokemon.dynamax = false
+    return if isRaidBoss?
+    @battle.scene.pbRevertBattlerStart(@index)
+    self.display_base_moves
+    @effects[PBEffects::Dynamax] = 0
+    @pokemon.makeUndynamaxForm
+    self.form = @pokemon.form
+    @pokemon.makeUndynamax
+    pbUpdate(true)
+    pkmn = visiblePokemon
+    @battle.scene.pbChangePokemon(self, pkmn)
+    @battle.scene.pbRevertBattlerEnd
+    @battle.scene.pbHPChanged(self, @totalhp) if !fainted?
+    @battle.scene.pbRefreshOne(@index)
+    if hasActiveAbility?(:COMMANDER)
+      Battle::AbilityEffects.triggerOnSwitchIn(self.ability, self, @battle)
     end
   end
   

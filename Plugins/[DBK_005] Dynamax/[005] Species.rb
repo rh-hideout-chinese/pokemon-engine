@@ -18,6 +18,16 @@ module GameData
       return ret
     end
 	
+    alias dynamax_get_property_for_PBS get_property_for_PBS
+    def get_property_for_PBS(key, writing_form = false)
+      ret = dynamax_get_property_for_PBS(key, writing_form)
+      case key
+      when "UngmaxForm"
+        ret = nil if !@gmax_move || ret == 0
+      end
+      return ret
+    end
+	
     #---------------------------------------------------------------------------
     # Aliased to initialize G-Max properties.
     #---------------------------------------------------------------------------
