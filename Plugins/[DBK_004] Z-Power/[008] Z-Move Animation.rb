@@ -12,6 +12,15 @@ class Battle::Scene::Animation::BattlerZMove < Battle::Scene::Animation
     @battler = @battle.battlers[idxBattler]
     @opposes = @battle.opposes?(idxBattler)
     @pkmn = @battler.visiblePokemon
+    @zpkmn = {
+      :pokemon => @pkmn,
+      :species => @pkmn.species,
+      :gender  => @pkmn.gender,
+      :form    => @pkmn.form,
+      :shiny   => @pkmn.shiny?,
+      :shadow  => @pkmn.shadowPokemon?,
+      :hue     => @pkmn.super_shiny_hue
+    }
     @cry_file = GameData::Species.cry_filename_from_pokemon(@pkmn)
     if @battler.item && @battler.item.is_zcrystal?
       @zcrystal_file = "Graphics/Items/" + @battler.item_id.to_s
@@ -63,12 +72,12 @@ class Battle::Scene::Animation::BattlerZMove < Battle::Scene::Animation
     #---------------------------------------------------------------------------
     # Sets up bases.
     baseData = dxSetBases(@path + "Z-Power/base", @base_file, delay, center_x, center_y, !@battler.wild?)
-    arrBASES, tr_base_offset = baseData[0], baseData[1]
+    arrBASES, base_width = baseData[0], baseData[1]
     #---------------------------------------------------------------------------
     # Sets up trainer & Z-Ring                                          
     if !@battler.wild?
-      trData = dxSetTrainerWithItem(@trainer_file, @item_file, delay, !@opposes)
-      picTRAINER, trainer_end_x, trainer_y, arrITEM = trData[0], trData[1], trData[2], trData[3]
+      trData = dxSetTrainerWithItem(@trainer_file, @item_file, delay, !@opposes, base_width)
+      picTRAINER, arrITEM = trData[0], trData[1]
     end
     #---------------------------------------------------------------------------
     # Sets up overlay.
@@ -76,17 +85,20 @@ class Battle::Scene::Animation::BattlerZMove < Battle::Scene::Animation
     picOVERLAY, sprOVERLAY = overlayData[0], overlayData[1]
     #---------------------------------------------------------------------------
     # Sets up battler.
-    arrPOKE = dxSetPokemonWithOutline(@pkmn, delay, !@opposes, !@battler.wild?, Color.new(*@type_outline))
+    arrPOKE = dxSetPokemonWithOutline(@zpkmn, delay, !@opposes, !@battler.wild?, Color.new(*@type_outline))
+    dxSetSpotPatterns(@pkmn, @pictureSprites[arrPOKE.last[1]]) if @pkmn.form == @zpkmn[:form]
     #---------------------------------------------------------------------------
     # Sets up Z-Crystal.
-    item_y = @pictureSprites[arrPOKE.last[1]].y - @pictureSprites[arrPOKE.last[1]].bitmap.height
+    pkmnsprite = @pictureSprites[arrPOKE.last[1]]
+    item_y = pkmnsprite.y - pkmnsprite.bitmap.height + findTop(pkmnsprite.bitmap)
     arrCRYSTAL = dxSetSpriteWithOutline(@zcrystal_file, delay, center_x, item_y)
     #---------------------------------------------------------------------------
     # Sets particles.
     arrPARTICLES = dxSetParticles(@path + "Z-Power/particle", delay, center_x, center_y, 200)
     #---------------------------------------------------------------------------
     # Sets up pulse.
-    pulseData = dxSetSprite(@path + "pulse", delay, center_x, center_y, !@battler.wild?, 100, 50)
+    offset_y = (@battler.wild?) ? center_y : center_y + 20
+    pulseData = dxSetSprite(@path + "pulse", delay, center_x, offset_y, PictureOrigin::CENTER, 100, 50)
     picPULSE, sprPULSE = pulseData[0], pulseData[1]
     #---------------------------------------------------------------------------
     # Sets Z-Move title.
@@ -106,22 +118,24 @@ class Battle::Scene::Animation::BattlerZMove < Battle::Scene::Animation
     arrPOKE.last[0].setVisible(delay, true)
     picFADE.moveOpacity(delay, 8, 0)
     delay = picFADE.totalDuration
-    picBUTTON.moveXY(delay, 6, 0, Graphics.height - 38)
-    picBUTTON.moveXY(delay + 36, 6, 0, Graphics.height)
+    picBUTTON.moveDelta(delay, 6, 0, -38)
+    picBUTTON.moveDelta(delay + 36, 6, 0, 38)
     #---------------------------------------------------------------------------
     # Slides trainer on screen with base (non-wild only).
     if !@battler.wild?
       picTRAINER.setVisible(delay + 4, true)
       arrBASES.first.setVisible(delay + 4, true)
-      picTRAINER.moveXY(delay + 4, 8, trainer_end_x, trainer_y)
-      arrBASES.first.moveXY(delay + 4, 8, trainer_end_x - tr_base_offset, center_y - 33)
+      delta = (base_width.to_f * 0.75).to_i
+      delta = -delta if @opposes
+      picTRAINER.moveDelta(delay + 4, 8, delta, 0)
+      arrBASES.first.moveDelta(delay + 4, 8, delta, 0)
       delay = picTRAINER.totalDuration + 1
       #-------------------------------------------------------------------------
       # Z-Ring appears with outline; slide upwards.
       picTRAINER.setSE(delay, "DX Action")
       arrITEM.each do |p, s| 
         p.setVisible(delay, true)
-        p.moveXY(delay, 15, @pictureSprites[s].x, @pictureSprites[s].y - 20)
+        p.moveDelta(delay, 15, 0, -20)
         p.moveOpacity(delay, 15, 255)
       end
       delay = picTRAINER.totalDuration
@@ -131,7 +145,7 @@ class Battle::Scene::Animation::BattlerZMove < Battle::Scene::Animation
     picBG.setSE(delay, "DX Action") if @battler.wild?    
     arrCRYSTAL.each do |p, s| 
       p.setVisible(delay, true)
-      p.moveXY(delay, 15, @pictureSprites[s].x, @pictureSprites[s].y - 20)
+      p.moveDelta(delay, 15, 0, -20)
       p.moveOpacity(delay, 15, 255)
     end
     #---------------------------------------------------------------------------
