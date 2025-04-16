@@ -33,7 +33,7 @@ class Battle::Move::LowerTargetSpeedOverTime < Battle::Move
     return if target.effects[PBEffects::Syrupy] > 0
     target.effects[PBEffects::Syrupy] = 3
     target.effects[PBEffects::SyrupyUser] = user.index
-    @battle.pbDisplay(_INTL("{1}被黏糊糊的糖浆覆盖了！", target.pbThis))
+    @battle.pbDisplay(_INTL("{1}陷入了满身糖状态！", target.pbThis))
   end
 
   def pbShowAnimation(id, user, targets, hitNum = 0, showAnimation = true)
@@ -155,7 +155,7 @@ class Battle::Move::RaiseAlliesCriticalHitRate1DragonTypes2 < Battle::Move
       @validTargets.push(b)
     end
     if @validTargets.length == 0
-      @battle.pbDisplay(_INTL("但是，招式失败了！"))
+      @battle.pbDisplay(_INTL("但是，招式失败了！！"))
       return true
     end
     return false
@@ -163,7 +163,7 @@ class Battle::Move::RaiseAlliesCriticalHitRate1DragonTypes2 < Battle::Move
 
   def pbFailsAgainstTarget?(user, target, show_message)
     return false if @validTargets.any? { |b| b.index == target.index }
-    @battle.pbDisplay(_INTL("{1}已经干劲十足！", target.pbThis)) if show_message
+    @battle.pbDisplay(_INTL("{1}已经拿出干劲了！", target.pbThis)) if show_message
     return true
   end
 
@@ -214,6 +214,7 @@ end
 #-------------------------------------------------------------------------------
 class Battle::Move::DisableTargetHealingMoves2Turns < Battle::Move
   def pbAdditionalEffect(user, target)
+    return if target.fainted?
     return if target.effects[PBEffects::HealBlock] > 0
     return if pbMoveFailedAromaVeil?(user, target, false)
     target.effects[PBEffects::HealBlock] = 2
@@ -234,11 +235,11 @@ class Battle::Move::FlinchTargetFailsIfTargetNotUsingPriorityMove < Battle::Move
       next if b.movedThisRound?
       choices = @battle.choices[b.index]
       next if !choices[2].damagingMove?
-	  next if !choices[4] || choices[4] <= 0 || choices[4] > @priority
+	    next if !choices[4] || choices[4] <= 0 || choices[4] > @priority
       hasPriority = true
     end
     if !hasPriority
-      @battle.pbDisplay(_INTL("但是，招式失败了！"))
+      @battle.pbDisplay(_INTL("但是，招式失败了！！"))
       return true
     end
     return false

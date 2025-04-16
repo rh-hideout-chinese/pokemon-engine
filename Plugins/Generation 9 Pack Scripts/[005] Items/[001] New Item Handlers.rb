@@ -46,7 +46,7 @@ ItemHandlers::BattleUseOnPokemon.copy(:ETHER, :LEPPABERRY, :HOPOBERRY)
 ItemHandlers::UseOnPokemon.add(:SCROLLOFWATERS,
   proc { |item, qty, pkmn, scene|
     if pkmn.shadowPokemon?
-      scene.pbDisplay(_INTL("即便使用也无效果哦。"))
+      scene.pbDisplay(_INTL("没有任何效果。"))
       next false
     end
     newspecies = pkmn.check_evolution_on_use_item(item)
@@ -64,7 +64,7 @@ ItemHandlers::UseOnPokemon.add(:SCROLLOFWATERS,
       }
       next true
     end
-    scene.pbDisplay(_INTL("即便使用也无效果哦。"))
+    scene.pbDisplay(_INTL("没有任何效果。"))
     next false
   }
 )
@@ -189,7 +189,7 @@ Battle::ItemEffects::DamageCalcFromUser.add(:PUNCHINGGLOVE,
 Battle::ItemEffects::StatLossImmunity.add(:CLEARAMULET,
   proc { |item, battler, stat, battle, showMessages|
     if showMessages
-      battle.pbDisplay(_INTL("{1}的{2}防止了能力降低！", battler.pbThis, battler.itemName))
+      battle.pbDisplay(_INTL("{1}的{2}阻止了能力降低！", battler.pbThis, battler.itemName))
     end
     next true
   }

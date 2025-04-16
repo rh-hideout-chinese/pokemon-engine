@@ -1,173 +1,173 @@
-﻿# 请参阅 wiki 上的文档，了解如何编辑此文件。
+﻿# See the documentation on the wiki to learn how to edit this file.
 #-------------------------------
 [ANGERSHELL]
 Name = 愤怒甲壳
-Description = 濒血降低防御和特防，但 攻击特攻速度会提高。
+Description = 因被对手攻击而ＨＰ变为一半时，会因愤怒降低防御和特防。但攻击、特攻、速度会提高。
 #-------------------------------
 [ARMORTAIL]
 Name = 尾甲
-Description = 使对手无法对我方使出先 制招式。
+Description = 包裹头部的神秘尾巴使对手无法对我方使出先制招式。
 #-------------------------------
 [BEADSOFRUIN]
 Name = 灾祸之玉
-Description = 在场时其他特性的宝可梦 的特防降低。
+Description = 以能呼唤灾厄的勾玉的力量降低除自己以外的宝可梦的特防。
 #-------------------------------
 [COMMANDER]
 Name = 发号施令
-Description = 若我方有吃吼霸就会进入 其口中发出指令。
+Description = 出场时，若我方当中有吃吼霸，就会进入其口中，并从其口中发出指令。
 #-------------------------------
 [COSTAR]
 Name = 同台共演
-Description = 出场时，复制同伴的能力 变化。
+Description = 出场时，复制同伴的能力变化。
 #-------------------------------
 [CUDCHEW]
 Name = 反刍
-Description = 吃了树果后，会在下一回 合结束时再吃１次。
+Description = 吃了树果后，会在下一回合结束时从胃反刍出来再吃１次。
 #-------------------------------
 [EARTHEATER]
 Name = 食土
-Description = 受到地面属性招式攻击时 回复HP。
+Description = 受到地面属性的招式攻击时，不会受到伤害，而是会得到回复。
 #-------------------------------
 [ELECTROMORPHOSIS]
 Name = 电力转换
-Description = 受到伤害时，会进入充电 状态。
+Description = 受到伤害时，会变为充电状态。
 #-------------------------------
 [GOODASGOLD]
 Name = 黄金之躯
-Description = 不会受到其他宝可梦变化 招式的影响。
+Description = 不会氧化的坚固黄金身躯不会受到对手的变化招式的影响。
 #-------------------------------
 [GUARDDOG]
 Name = 看门犬
-Description = 受到威吓时攻击会提高让 对方的招式和道具无效。
+Description = 受到威吓时，攻击会提高。让替换宝可梦的招式和道具无效。
 #-------------------------------
 [HADRONENGINE]
 Name = 强子引擎
-Description = 出场时布下电气场地。处 于电气场地时特攻提高。
+Description = 出场时，会布下电气场地。处于电气场地时，会通过未来的机关升高特攻。
 #-------------------------------
 [LINGERINGAROMA]
 Name = 甩不掉的气味
-Description = 与这只宝可梦接触会传播 这种特性。
+Description = 被对手接触到后，甩不掉的气味会沾上对手。
 #-------------------------------
 [MYCELIUMMIGHT]
 Name = 菌丝之力
-Description = 使出变化招式时能够使特 性失效，总是最晚行动。
+Description = 使出变化招式时，虽然行动必定会变慢，但能不受对手的特性妨碍。
 #-------------------------------
 [OPPORTUNIST]
 Name = 跟风
-Description = 对手的能力提高时，也会 提高相同的能力。
+Description = 对手的能力提高时，自己也会趁机同样地提高能力。
 #-------------------------------
 [ORICHALCUMPULSE]
 Name = 绯红脉动
-Description = 出场时天气转为大晴天， 大晴天时攻击提高。
+Description = 出场时，会将天气变为晴朗。日照强烈时，会通过古代的脉动升高攻击。
 #-------------------------------
 [PROTOSYNTHESIS]
 Name = 古代活性
-Description = 携带驱劲能量或天气为大 晴天时能力提高。
+Description = 携带着驱劲能量或天气为晴朗时，数值最高的能力会提高。
 #-------------------------------
 [PURIFYINGSALT]
 Name = 洁净之盐
-Description = 不会陷入异常状态且受到 幽灵招式的伤害减半。
+Description = 因洁净的盐而不会陷入异常状态。会让幽灵属性的招式伤害减半。
 #-------------------------------
 [QUARKDRIVE]
 Name = 夸克充能
-Description = 携带驱劲能量或在电气场 地上时能力提高。
+Description = 携带着驱劲能量或在电气场地上时，数值最高的能力会提高。
 #-------------------------------
 [ROCKYPAYLOAD]
 Name = 搬岩
-Description = 使出的岩石属性的招式威 力会提高50%。
+Description = 岩石属性的招式威力会提高。
 #-------------------------------
 [SEEDSOWER]
 Name = 掉出种子
-Description = 受到攻击时，场地会变为 青草场地，持续5回合。
+Description = 受到攻击时，会将脚下变成青草场地。
 #-------------------------------
 [SHARPNESS]
 Name = 锋锐
-Description = 使出的切割类招式威力会 提高50%。
+Description = 提高切割对手的招式的威力。
 #-------------------------------
 [SUPREMEOVERLORD]
 Name = 大将
-Description = 每位倒下的宝可梦都会增 强招式的力量。
+Description = 出场时，攻击和特攻会按照目前被打倒的同伴数量逐渐提升，被打倒越多，提升越多。
 #-------------------------------
 [SWORDOFRUIN]
 Name = 灾祸之剑
-Description = 在场时其他特性的宝可梦 的防御降低。
+Description = 以能呼唤灾厄的剑的力量降低除自己以外的宝可梦的防御。
 #-------------------------------
 [TABLETSOFRUIN]
 Name = 灾祸之简
-Description = 在场时其他特性的宝可梦 的攻击降低。
+Description = 以能呼唤灾厄的简的力量降低除自己以外的宝可梦的攻击。
 #-------------------------------
 [THERMALEXCHANGE]
 Name = 热交换
-Description = 受到火属性招式时攻击提 高且不会陷入灼伤状态。
+Description = 受到火属性的招式攻击时，攻击会提高，且不会陷入灼伤状态。
 #-------------------------------
 [TOXICDEBRIS]
 Name = 毒满地
-Description = 受到物理招式攻击时向对 手的场地撒下毒菱。
+Description = 受到物理招式的伤害时，会在对手脚下散布毒菱。
 #-------------------------------
 [VESSELOFRUIN]
 Name = 灾祸之鼎
-Description = 在场时其他特性的宝可梦 的特攻降低。
+Description = 以能呼唤灾厄的鼎的力量降低除自己以外的宝可梦的特攻。
 #-------------------------------
 [WELLBAKEDBODY]
 Name = 焦香之躯
-Description = 受到火属性招式不会造成 影响并大幅提升防御力。
+Description = 受到火属性的招式攻击时，不会受到伤害，而是会大幅提高防御。
 #-------------------------------
 [WINDPOWER]
 Name = 风力发电
-Description = 受到风的招式或己方使用 顺风时会进入充电状态。
+Description = 受到风的招式攻击时，会变为充电状态。
 #-------------------------------
 [WINDRIDER]
 Name = 乘风
-Description = 被风的招式击中或己方顺 风时，提升攻击。
+Description = 吹起了顺风或受到风的招式攻击时，不会受到伤害，而是会提高攻击。
 #-------------------------------
 [ZEROTOHERO]
 Name = 全能变身
-Description = 回到同行队伍后，会变为 全能形态。
+Description = 回到同行队伍后，会变为全能形态。
 #-------------------------------
 [SUPERSWEETSYRUP]
 Name = 甘露之蜜
-Description = 会散发出甜腻的蜜的香味 来降低对手的闪避率。
+Description = 首次出场时，会散发出甜腻的蜜的香味来降低对手的闪避率。
 #-------------------------------
 [HOSPITALITY]
 Name = 款待
-Description = 出场时款待同伴，回复其 少量HP。
+Description = 出场时款待同伴，回复其少量ＨＰ。
 #-------------------------------
 [TOXICCHAIN]
 Name = 毒锁链
-Description = 有时能让被招式击中的对 手陷入剧毒状态。
+Description = 凭借含有毒素的锁链的力量，有时能让被招式击中的对手陷入剧毒状态。
 #-------------------------------
 [MINDSEYE]
 Name = 心眼
-Description = 无视对手的闪避率的变化 ，且命中率不会被降低。
+Description = 一般属性和格斗属性的招式可以击中幽灵属性的宝可梦。无视对手的闪避率的变化，且命中率不会被降低。
 #-------------------------------
 [EMBODYASPECT]
 Name = 面影辉映
-Description = 让碧草面具发出光辉，提 高自己的速度。
+Description = 将回忆映于心中，让碧草面具发出光辉，提高自己的速度。
 #-------------------------------
 [EMBODYASPECT_1]
 Name = 面影辉映
-Description = 让火灶面具发出光辉，提 高自己的攻击。
+Description = 将回忆映于心中，让水井面具发出光辉，提高自己的特防。
 #-------------------------------
 [EMBODYASPECT_2]
 Name = 面影辉映
-Description = 让火灶面具发出光辉，提 高自己的攻击。
+Description = 将回忆映于心中，让火灶面具发出光辉，提高自己的攻击。
 #-------------------------------
 [EMBODYASPECT_3]
 Name = 面影辉映
-Description = 让础石面具发出光辉，提 高自己的防御。
+Description = 将回忆映于心中，让础石面具发出光辉，提高自己的防御。
 #-------------------------------
 [POISONPUPPETEER]
 Name = 毒傀儡
-Description = 陷入中毒状态的对手同时 也会陷入混乱状态。
+Description = 因桃歹郎的招式而陷入中毒状态的对手同时也会陷入混乱状态。
 #-------------------------------
 [TERASHIFT]
 Name = 太晶变形
-Description = 出场时，会吸收周围的能 量，变为太晶形态。
+Description = 出场时，会吸收周围的能量，变为太晶形态。
 #-------------------------------
 [TERASHELL]
 Name = 太晶甲壳
-Description = 将自己HP全满时受到的 伤害全都变为效果不好。
+Description = 甲壳蕴藏着全部属性的力量，会将自己ＨＰ全满时受到的伤害全都变为效果不好。
 #-------------------------------
 [TERAFORMZERO]
 Name = 归零化境
-Description = 将天气和场地的影响全部 归零。
+Description = 太乐巴戈斯变为星晶形态时，蕴藏在它身上的力量会将天气和场地的影响全部归零。

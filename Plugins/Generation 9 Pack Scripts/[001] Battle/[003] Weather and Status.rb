@@ -52,18 +52,18 @@ class Battle
   #-----------------------------------------------------------------------------
   def pbWeatherStartMessage
     case @field.weather
-    when :Sun         then pbDisplay(_INTL("现在日照很强！"))
-    when :Rain        then pbDisplay(_INTL("现在正在下雨！"))
-    when :Sandstorm   then pbDisplay(_INTL("现在正在刮沙暴！"))
-    when :HarshSun    then pbDisplay(_INTL("现在日照非常强！"))
-    when :HeavyRain   then pbDisplay(_INTL("现在正在下暴雨！"))
-    when :StrongWinds then pbDisplay(_INTL("现在正在刮强风！"))
-    when :ShadowSky   then pbDisplay(_INTL("现在很暗！"))
+    when :Sun         then pbDisplay(_INTL("日照强烈。"))
+    when :Rain        then pbDisplay(_INTL("正在下雨。"))
+    when :Sandstorm   then pbDisplay(_INTL("沙暴肆虐。"))
+    when :HarshSun    then pbDisplay(_INTL("强日照势头不减！"))
+    when :HeavyRain   then pbDisplay(_INTL("暴雨势头不减！"))
+    when :StrongWinds then pbDisplay(_INTL("神秘的乱流势头不减！"))
+    when :ShadowSky   then pbDisplay(_INTL("天空黯淡。"))
     when :Hail
       if Settings::HAIL_WEATHER_TYPE == 1
-        pbDisplay(_INTL("现在正在下雪！"))
+        pbDisplay(_INTL("正在下雪。"))
       else
-        pbDisplay(_INTL("现在正在下冰雹！"))
+        pbDisplay(_INTL("正在下冰雹。"))
       end
     end
   end
@@ -74,9 +74,9 @@ class Battle
   def pbTerrainStartMessage
     case @field.terrain
     when :Electric then pbDisplay(_INTL("脚下电光飞闪！"))
-    when :Grassy   then pbDisplay(_INTL("脚下青草如茵！"))
+    when :Grassy   then pbDisplay(_INTL("脚下绿草如茵！"))
     when :Misty    then pbDisplay(_INTL("脚下雾气缭绕！"))
-    when :Psychic  then pbDisplay(_INTL("脚下传来了奇妙的感觉！"))
+    when :Psychic  then pbDisplay(_INTL("脚下感觉奇妙！"))
     end
   end
   
@@ -115,7 +115,7 @@ class Battle
       pbCommonAnimation(weather_data.animation) if showAnim && weather_data
       pbHideAbilitySplash(user) if user
       if Settings::HAIL_WEATHER_TYPE == 2
-        pbDisplay(_INTL("一场猛烈的冰雹咆哮着!"))
+        pbDisplay(_INTL("猛烈的暴风雪吹起来了！"))
       else
         pbDisplay(_INTL("开始下雪了！"))
       end
@@ -135,9 +135,9 @@ class Battle
       @field.weatherDuration -= 1 if @field.weatherDuration > 0
       if @field.weatherDuration == 0
         if Settings::HAIL_WEATHER_TYPE == 2
-          pbDisplay(_INTL("雹暴停下了。"))
+          pbDisplay(_INTL("暴风雪停息了！"))
         else
-          pbDisplay(_INTL("雪停了。"))
+          pbDisplay(_INTL("雪停了！"))
         end
         @field.weather = :None
         allBattlers.each { |battler| battler.pbCheckFormOnWeatherChange }
@@ -146,7 +146,7 @@ class Battle
       end
       weather_data = GameData::BattleWeather.try_get(@field.weather)
       pbCommonAnimation(weather_data.animation) if weather_data && !@weather
-      pbDisplay(_INTL("冰雹正在坠落！")) if Settings::HAIL_WEATHER_TYPE == 2
+      pbDisplay(_INTL("冰雹漫天。")) if Settings::HAIL_WEATHER_TYPE == 2
       priority.each do |battler|
         if battler.abilityActive?
           Battle::AbilityEffects.triggerEndOfRoundWeather(battler.ability, battler.effectiveWeather, battler, self)
@@ -274,14 +274,14 @@ class Battle::Battler
       #-------------------------------------------------------------------------
       if self.status == newStatus && !ignoreStatus
         if showMessages
-          @battle.pbDisplay(_INTL("{1}已经昏昏欲睡了！", pbThis))      if newStatus == :DROWSY
-          @battle.pbDisplay(_INTL("{1}已经冻伤了！", pbThis)) if newStatus == :FROSTBITE
+          @battle.pbDisplay(_INTL("{1}已经瞌睡了。", pbThis))      if newStatus == :DROWSY
+          @battle.pbDisplay(_INTL("{1}已经被冻伤了。", pbThis)) if newStatus == :FROSTBITE
         end
         return false
       end
       if (self.status != :NONE && !ignoreStatus && !selfInflicted) ||
          (@effects[PBEffects::Substitute] > 0 && !(move && move.ignoresSubstitute?(user)) && !selfInflicted)
-        @battle.pbDisplay(_INTL("对于{1}，好像没有效果……", pbThis(true))) if showMessages
+        @battle.pbDisplay(_INTL("这对{1}，好像没有效果……", pbThis(true))) if showMessages
         return false
       end
       case newStatus
@@ -296,7 +296,7 @@ class Battle::Battler
         if !(hasActiveAbility?(:SOUNDPROOF) && !@battle.moldBreaker)
           @battle.allBattlers.each do |b|
             next if b.effects[PBEffects::Uproar] == 0
-            @battle.pbDisplay(_INTL("但吵闹使{1}保持警惕！", pbThis(true))) if showMessages
+            @battle.pbDisplay(_INTL("但是，{1}被吵得无法瞌睡！", pbThis(true))) if showMessages
             return false
           end
         end
@@ -305,7 +305,7 @@ class Battle::Battler
       #-------------------------------------------------------------------------
       when :FROSTBITE
         if pbHasType?(:ICE) || [:Sun, :HarshSun].include?(effectiveWeather)
-          @battle.pbDisplay(_INTL("对于{1}，好像没有效果……", pbThis(true))) if showMessages
+          @battle.pbDisplay(_INTL("这对{1}，好像没有效果……", pbThis(true))) if showMessages
           return false
         end
       end
@@ -337,18 +337,18 @@ class Battle::Battler
           msg = ""
           if Battle::Scene::USE_ABILITY_SPLASH
             case originalStatus
-            when :SLEEP  then msg = _INTL("{1}保持警觉！", pbThis)
+            when :SLEEP  then msg = _INTL("{1}保持清醒！", pbThis)
             when :FROZEN then msg = _INTL("{1}不会被冻伤！", pbThis)
             end
           elsif immAlly
             case originalStatus
-            when :SLEEP  then msg = _INTL("{1}因为{2}的{3}而保持警惕！", pbThis, immAlly.pbThis(true), immAlly.abilityName)
-            when :FROZEN then msg = _INTL("{1}因为{2}的{3}而不会被冻伤！", pbThis, immAlly.pbThis(true), immAlly.abilityName)
+            when :SLEEP  then msg = _INTL("因为{2}的{3}，{1}保持清醒！", pbThis, immAlly.pbThis(true), immAlly.abilityName)
+            when :FROZEN then msg = _INTL("因为{2}的{3}，{1}不会被冻伤！", pbThis, immAlly.pbThis(true), immAlly.abilityName)
             end
           else
             case originalStatus
-            when :SLEEP  then msg = _INTL("{1}的{2}避免了睡意！", pbThis, abilityName)
-            when :FROZEN then msg = _INTL("{1}的{2}避免了冻伤！", pbThis, abilityName)
+            when :SLEEP  then msg = _INTL("{1}的{2}阻止了瞌睡！", pbThis, abilityName)
+            when :FROZEN then msg = _INTL("{1}的{2}阻止了冻伤！", pbThis, abilityName)
             end
           end
           @battle.pbDisplay(msg)
@@ -361,7 +361,7 @@ class Battle::Battler
       #-------------------------------------------------------------------------
       if pbOwnSide.effects[PBEffects::Safeguard] > 0 && !selfInflicted && move &&
          !(user && user.hasActiveAbility?(:INFILTRATOR))
-        @battle.pbDisplay(_INTL("{1}一方正受到神秘之幕的保护！", pbThis)) if showMessages
+        @battle.pbDisplay(_INTL("{1}方正受到神秘之幕的保护！", pbThis)) if showMessages
         return false
       end
       return true
@@ -411,8 +411,8 @@ class Battle::Battler
         @battle.pbDisplay(msg)
       else
         case newStatus
-        when :DROWSY    then @battle.pbDisplay(_INTL("{1}变得昏昏欲睡！\n它可能太困了，动弹不得！", pbThis))
-        when :FROSTBITE then @battle.pbDisplay(_INTL("{1}冻伤了！", pbThis))
+        when :DROWSY    then @battle.pbDisplay(_INTL("{1}陷入了瞌睡，很难使出招式！", pbThis))
+        when :FROSTBITE then @battle.pbDisplay(_INTL("{1}被冻伤了！", pbThis))
         end
       end
       PBDebug.log("[Status change] #{pbThis}'s drowsy count is #{newStatusCount}") if newStatus == :DROWSY
@@ -440,8 +440,8 @@ class Battle::Battler
       self.status = :NONE
       if showMessages
         case oldStatus
-        when :DROWSY    then @battle.pbDisplay(_INTL("{1}再次变得警觉起来。", pbThis))
-        when :FROSTBITE then @battle.pbDisplay(_INTL("{1}的冻伤痊愈了。", pbThis))
+        when :DROWSY    then @battle.pbDisplay(_INTL("{1}清醒过来了。", pbThis))
+        when :FROSTBITE then @battle.pbDisplay(_INTL("{1}的冻伤痊愈了！", pbThis))
         end
       end
       PBDebug.log("[Status change] #{pbThis}'s status was cured") if !showMessages
@@ -472,9 +472,9 @@ class Battle::Battler
     when :PARALYSIS
       @battle.pbDisplay(_INTL("{1}因身体麻痹而无法行动！", pbThis))
     when :FROZEN
-      @battle.pbDisplay(_INTL("{1}被冻住了！", pbThis))
+      @battle.pbDisplay(_INTL("{1}因冻住了而无法行动！", pbThis))
     when :DROWSY
-      @battle.pbDisplay(_INTL("{1}太困了，动不了！", pbThis))
+      @battle.pbDisplay(_INTL("{1}因困意而无法行动！", pbThis))
 	  PBDebug.log("[Status continues] #{pbThis}'s drowsy count is #{@statusCount}")
     when :FROSTBITE
       @battle.pbDisplay(_INTL("{1}受到了冻伤的伤害！", pbThis))
@@ -513,7 +513,7 @@ class Battle::Battler
   def pbCheckFormOnStatusChange
     return if fainted? || @effects[PBEffects::Transform]
     if isSpecies?(:SHAYMIN) && frostbite?
-      pbChangeForm(0, _INTL("{1}的样子发生了变化！", pbThis))
+      pbChangeForm(0, _INTL("{1}的样子改变了！", pbThis))
     end
     paldea_pbCheckFormOnStatusChange
   end

@@ -73,8 +73,7 @@ class Battle
     end
     return ret
   end
-  
-  
+
   #-----------------------------------------------------------------------------
   # Aliased to ensure Pokemon affected by Commander cannot shift positions.
   #-----------------------------------------------------------------------------
@@ -102,7 +101,7 @@ class Battle
   def pbEOREndBattlerEffects(priority)
     paldea_pbEOREndBattlerEffects(priority)
     pbEORCountDownBattlerEffect(priority, PBEffects::Splinters) { |battler|
-      pbDisplay(_INTL("{1}摆脱了锯齿状的碎片！", battler.pbThis))
+      pbDisplay(_INTL("{1}甩掉了碎片！", battler.pbThis))
       battler.effects[PBEffects::SplintersType] = nil
     }
   end
@@ -118,7 +117,7 @@ class Battle
       pbCommonAnimation("Syrupy", battler)
       battler.effects[PBEffects::Syrupy] -= 1
       battler.pbLowerStatStage(:SPEED, 1, battler) if battler.pbCanLowerStatStage?(:SPEED)
-      pbDisplay(_INTL("{1}摆脱了黏糊糊的糖浆！", battler.pbThis)) if battler.effects[PBEffects::Syrupy] == 0
+      pbDisplay(_INTL("{1}摆脱了满身糖状态！", battler.pbThis)) if battler.effects[PBEffects::Syrupy] == 0
     end
   end
   
@@ -137,7 +136,7 @@ class Battle
       damage = ((((2.0 * battler.level / 5) + 2).floor * 25 * battler.attack / battler.defense).floor / 50).floor + 2
       damage *= effectiveness.to_f / Effectiveness::NORMAL_EFFECTIVE
       battler.pbTakeEffectDamage(damage) { |hp_lost|
-        pbDisplay(_INTL("{1}受到了锯齿般碎片的伤害！", battler.pbThis))
+        pbDisplay(_INTL("{1}受到了碎片的伤害！", battler.pbThis))
       }
     end
     priority.each do |battler|
@@ -198,7 +197,7 @@ class Battle
     pkmn.hp = [1, (pkmn.totalhp / 2).floor].max
     pkmn.heal_status
     displayname = (pbOwnedByPlayer?(idxBattler)) ? pkmn.name : _INTL("对手的{1}", pkmn.name)
-    pbDisplay(_INTL("{1}复活了，准备再次战斗!", displayname))
+    pbDisplay(_INTL("{1}复活并能继续战斗了！", displayname))
   end
 end
 
@@ -390,8 +389,8 @@ class Battle::Scene
     modParty = @battle.pbPlayerDisplayParty(idxBattler)
     scene = PokemonParty_Scene.new
     switchScreen = PokemonPartyScreen.new(scene, modParty)
-    msg = _INTL("选择一只宝可梦。")
-    msg = _INTL("发送哪只宝可梦到盒子里？") if mode == 1
+    msg = _INTL("请选择宝可梦。")
+    msg = _INTL("要发送哪只宝可梦呢？") if mode == 1
     switchScreen.pbStartScene(msg, @battle.pbNumPositions(0, 0))
     loop do
       scene.pbSetHelpText(msg)
@@ -405,12 +404,13 @@ class Battle::Scene
       cmdSelect  = -1
       cmdSummary = -1
       commands = []
-      commands[cmdSwitch  = commands.length] = _INTL("替换") if mode == 0 && modParty[idxParty].able?
-      commands[cmdBoxes   = commands.length] = _INTL("发送到盒子") if mode == 1
+      commands[cmdSwitch  = commands.length] = _INTL("调换") if mode == 0 && modParty[idxParty].able? &&
+                                                                     (@battle.canSwitch || !canCancel)
+      commands[cmdBoxes   = commands.length] = _INTL("发送到盒子里") if mode == 1
       commands[cmdSelect  = commands.length] = _INTL("选择") if mode == 2 && modParty[idxParty].fainted?
-      commands[cmdSummary = commands.length] = _INTL("信息")
+      commands[cmdSummary = commands.length] = _INTL("查看能力")
       commands[commands.length]              = _INTL("取消")
-      command = scene.pbShowCommands(_INTL("对{1}做什么？", modParty[idxParty].name), commands)
+      command = scene.pbShowCommands(_INTL("要对{1}做什么？", modParty[idxParty].name), commands)
       if (cmdSwitch >= 0 && command == cmdSwitch) ||   # Switch In
          (cmdBoxes >= 0 && command == cmdBoxes)   ||   # Send to Boxes
          (cmdSelect >= 0 && command == cmdSelect)      # Select for Revival Blessing

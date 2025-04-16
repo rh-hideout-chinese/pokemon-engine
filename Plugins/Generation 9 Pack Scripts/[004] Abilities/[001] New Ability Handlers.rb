@@ -44,7 +44,7 @@ Battle::AbilityEffects::OnSwitchIn.add(:SUPREMEOVERLORD,
     numFainted = [5, battler.num_fainted_allies].min
     next if numFainted <= 0
     battle.pbShowAbilitySplash(battler)
-    battle.pbDisplay(_INTL("{1}从被打倒的伙伴那里得到了力量！", battler.pbThis))
+    battle.pbDisplay(_INTL("{1}从被打倒的同伴身上得到力量了！", battler.pbThis))
     battler.effects[PBEffects::SupremeOverlord] = numFainted
     battle.pbHideAbilitySplash(battler)
   }
@@ -96,9 +96,9 @@ Battle::AbilityEffects::MoveImmunity.add(:GOODASGOLD,
     if show_message
       battle.pbShowAbilitySplash(target)
       if Battle::Scene::USE_ABILITY_SPLASH
-        battle.pbDisplay(_INTL("对于{1}，好像没有效果……", target.pbThis(true)))
+        battle.pbDisplay(_INTL("这对{1}，好像没有效果……", target.pbThis(true)))
       else
-        battle.pbDisplay(_INTL("{1}的{2}阻止了{3}！",
+        battle.pbDisplay(_INTL("{1}的{2}抵挡了{3}！",
            target.pbThis, target.abilityName, move.name))
       end
       battle.pbHideAbilitySplash(target)
@@ -132,9 +132,9 @@ Battle::AbilityEffects::MoveImmunity.add(:WINDRIDER,
           target.pbRaiseStatStageByCause(:ATTACK, 1, user, target.abilityName)
         end
       elsif Battle::Scene::USE_ABILITY_SPLASH
-        battle.pbDisplay(_INTL("对于{1}，好像没有效果……", target.pbThis(true)))
+        battle.pbDisplay(_INTL("这对{1}，好像没有效果……", target.pbThis(true)))
       else
-        battle.pbDisplay(_INTL("因为{1}的{2}，{3}无效！", target.pbThis, target.abilityName, move.name))
+        battle.pbDisplay(_INTL("{1}的{2}使{3}没有效果！", target.pbThis, target.abilityName, move.name))
       end
       battle.pbHideAbilitySplash(target)
     end
@@ -236,7 +236,7 @@ Battle::AbilityEffects::OnBeingHit.add(:TOXICDEBRIS,
     battle.pbShowAbilitySplash(target)
     target.pbOpposingSide.effects[PBEffects::ToxicSpikes] += 1
     battle.pbAnimation(:TOXICSPIKES, target, target.pbDirectOpposing)
-    battle.pbDisplay(_INTL("{1}周围的地面上散落着毒菱！", target.pbOpposingTeam(true)))
+    battle.pbDisplay(_INTL("{1}脚下散落着毒菱！", target.pbOpposingTeam(true)))
     battle.pbHideAbilitySplash(target)
   }
 )
@@ -286,12 +286,12 @@ Battle::AbilityEffects::OnOpposingStatGain.add(:OPPORTUNIST,
     showAnim = true
     battle.pbShowAbilitySplash(battler)
     statUps.each do |stat, increment|
-	  next if !battler.pbCanRaiseStatStage?(stat, battler)
+	    next if !battler.pbCanRaiseStatStage?(stat, battler)
       if battler.pbRaiseStatStage(stat, increment, battler, showAnim)
         showAnim = false
       end
     end
-    battle.pbDisplay(_INTL("{1}的{2}已经无法再提高了！", user.pbThis)) if showAnim
+    battle.pbDisplay(_INTL("{1}的能力已经无法再提高了！", battler.pbThis)) if showAnim
     battle.pbHideAbilitySplash(battler)
     battler.pbItemOpposingStatGainCheck(statUps)
     # Mirror Herb can trigger off this ability.
@@ -334,7 +334,7 @@ Battle::AbilityEffects::OnSwitchIn.add(:ZEROTOHERO,
     next if !battler.isSpecies?(:PALAFIN)
     next if battler.form == 0 || battler.ability_triggered?
     battle.pbShowAbilitySplash(battler)
-    battle.pbDisplay(_INTL("{1}在变身之后回来了！", battler.pbThis))
+    battle.pbDisplay(_INTL("{1}变身后归来了！", battler.pbThis))
     battle.pbHideAbilitySplash(battler)
     battle.pbSetAbilityTrigger(battler)
   }
@@ -365,7 +365,7 @@ Battle::AbilityEffects::OnSwitchIn.add(:COMMANDER,
       next if defined?(b.dynamax?) && b.dynamax?
       battle.pbShowAbilitySplash(battler)
       battle.pbClearChoice(battler.index)
-      battle.pbDisplay(_INTL("{1}跳进了{2}的口中！", battler.pbThis, b.pbThis(true)))
+      battle.pbDisplay(_INTL("{1}作为发号施令的要员而被{2}吞下去了！", battler.pbThis, b.pbThis(true)))
       battle.scene.sprites["pokemon_#{battler.index}"].visible = false
       b.effects[PBEffects::Commander] = [battler.index, battler.form]
       battler.effects[PBEffects::Commander] = [b.index]
@@ -415,11 +415,11 @@ Battle::AbilityEffects::OnSwitchIn.add(:ORICHALCUMPULSE,
   proc { |ability, battler, battle, switch_in|
     if [:Sun, :HarshSun].include?(battler.effectiveWeather)
       battle.pbShowAbilitySplash(battler)
-      battle.pbDisplay(_INTL("{1}令日照变强，激起了古代的脉动！", battler.pbThis))
+      battle.pbDisplay(_INTL("{1}受到日照而激起了古代的脉动！！", battler.pbThis))
       battle.pbHideAbilitySplash(battler)
     else
       battle.pbStartWeatherAbility(:Sun, battler)
-      battle.pbDisplay(_INTL("{1}令日照变得刺眼，激起了古代的脉动！", battler.pbThis))
+      battle.pbDisplay(_INTL("{1}令日照变强，激起了古代的脉动！！", battler.pbThis))
     end
   }
 )
@@ -437,11 +437,11 @@ Battle::AbilityEffects::OnSwitchIn.add(:HADRONENGINE,
   proc { |ability, battler, battle, switch_in|
     battle.pbShowAbilitySplash(battler)
     if battle.field.terrain == :Electric
-      battle.pbDisplay(_INTL("{1}通过电气场地，使未来的机关跃动起来！", battler.pbThis))
+      battle.pbDisplay(_INTL("{1}用电气场地使未来的机关跃动起来！！", battler.pbThis))
       battle.pbHideAbilitySplash(battler)
     else
       battle.pbStartTerrain(battler, :Electric)
-      battle.pbDisplay(_INTL("{1}布下电气场地，使未来的机关跃动起来！", battler.pbThis))
+      battle.pbDisplay(_INTL("{1}布下电气场地使未来的机关跃动起来！！", battler.pbThis))
     end
   }
 )
@@ -463,7 +463,7 @@ Battle::AbilityEffects::OnSwitchIn.add(:PROTOSYNTHESIS,
     when :QUARKDRIVE     then field_check = battle.field.terrain == :Electric
     end
     if !field_check && !battler.effects[PBEffects::BoosterEnergy] && battler.effects[PBEffects::ParadoxStat]
-      battle.pbDisplay(_INTL("{1}的{2}的影响消失了！", battler.pbThis(true), battler.abilityName))
+      battle.pbDisplay(_INTL("{1}的{2}的效果消失了！", battler.pbThis(true), battler.abilityName))
       battler.effects[PBEffects::ParadoxStat] = nil
     end
     next if battler.effects[PBEffects::ParadoxStat]
@@ -487,14 +487,14 @@ Battle::AbilityEffects::OnSwitchIn.add(:PROTOSYNTHESIS,
         when :PROTOSYNTHESIS then cause = "大晴天"
         when :QUARKDRIVE     then cause = "电气场地"
         end
-        battle.pbDisplay(_INTL("#{cause}激活了{1}的{2}！", battler.pbThis(true), battler.abilityName))
+        battle.pbDisplay(_INTL("{1}通过#{cause}发动了{2}！", battler.pbThis(true), battler.abilityName))
       elsif battler.item_id == :BOOSTERENERGY
         battler.effects[PBEffects::BoosterEnergy] = true
-        battle.pbDisplay(_INTL("{1}通过{2}激活了{3}！", battler.pbThis, battler.itemName, battler.abilityName))
+        battle.pbDisplay(_INTL("{1}通过{2}发动了{3}！", battler.pbThis, battler.itemName, battler.abilityName))
         battler.pbHeldItemTriggered(battler.item)
       end
       battler.effects[PBEffects::ParadoxStat] = highestStat
-      battle.pbDisplay(_INTL("{1}的{2}被提高了！", battler.pbThis, GameData::Stat.get(highestStat).name))
+      battle.pbDisplay(_INTL("{1}的{2}提高了！", battler.pbThis, GameData::Stat.get(highestStat).name))
       battle.pbHideAbilitySplash(battler)
     end
   }

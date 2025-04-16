@@ -7,44 +7,46 @@
 
 module Settings
   #=============================================================================
-  # Weather Settings (Hail/Snow)
+  # 天气设置（冰雹/下雪）
   #=============================================================================
-  # 0 : Hail     (Classic) Hail weather functions as it did in Gen 8 and older.
-  # 1 : Snow      (Gen 9+) Snow weather replaces Hail. Boosts Defence of Ice-types.
-  # 2 : Hailstorm (Custom) Hailstorm weather combines both versions.
+  # 0：冰雹（经典） 第八世代及以前的冰雹天气。
+  # 1：下雪（第九世代） 用雪天代替冰雹。冰属性宝可梦的特防会提高。
+  # 2：冰风暴（自定义） 结合了上述两种天气的冰风暴。
   #-----------------------------------------------------------------------------
-  # Note: In all versions of Snow/Hail, the odds of inflicting the Frostbite 
-  # status is doubled if a move is capable of inflicting Frostbite. Pokemon with
-  # the Drowsy status are also twice as likely to be unable to act each turn.
+  # 注意：所有版本的冰雹/下雪天气时，招式使对手冻伤的几率会翻倍。处于瞌睡状态的宝可梦
+  # 无法行动的几率也会翻倍。
   #-----------------------------------------------------------------------------
   HAIL_WEATHER_TYPE = 1
   
   
   #=============================================================================
-  # Status Settings (Drowsy/Frostbite)
+  # 异常状态设置
   #=============================================================================
-  # When true, effects that would normally check for or inflict Sleep/Freeze
-  # will call the Drowsy/Frostbite statuses instead. If false, they will be
-  # treated as separate status conditions.
+  # 设为true时，原本会检测或造成睡眠/冰冻的效果会替换成瞌睡/冻伤。设为false时，则将瞌睡/
+  # 冻伤视为独立的异常状态。
   #-----------------------------------------------------------------------------
   SLEEP_EFFECTS_CAUSE_DROWSY     = false
   FREEZE_EFFECTS_CAUSE_FROSTBITE = false
-  
-  
-  #=============================================================================
-  # Mechanic Settings.
-  #=============================================================================
-  # Makes game mechanics function like their Gen 9 equivalents where appropriate. 
-  # Don't change this setting if you want the full Gen 9 experience.
   #-----------------------------------------------------------------------------
-  # Updated Effects:
-  # -Battle Bond Ability now boosts stats instead of changing into Ash-Greninja.
-  # -Protean/Libero Abilities now only trigger once per switch-in.
-  # -Dauntless Shield/Intrepid Sword now only trigger once per battle.
-  # -Ally Switch now fails with consecutive use.
-  # -Charge effect now lasts until the next Electric-type move is used.
-  # -Transistor ability grants a 30% power boost, down from 50%.
-  # -Incense is no longer required to hatch baby species of certain Pokemon.
+  # 设为true时，受到触电的招式攻击后，会解除睡眠状态。
+  # （电光、伏特攻击或疯狂伏特）
+  #-----------------------------------------------------------------------------
+  ELECTROCUTE_MOVES_CURE_SLEEP = false  
+  
+  #=============================================================================
+  # 机制设置
+  #=============================================================================
+  # 让游戏机制按照第九世代运行。如果想获得完整的第九世代体验，请勿修改此设定。
+  #-----------------------------------------------------------------------------
+  # 升级版效果：
+  # 1.牵绊变身会提高能力，而非变为小智版甲贺忍蛙。
+  # 2.变幻自如/自由者每次出场只会触发一次。
+  # 3.不挠之剑/不屈之盾仅首次出场时发动。
+  # 4.连续使出交换场地可能会失败。
+  # 5.充电效果会持续到下一次使出电属性招式之前。
+  # 6.电晶体改为提升电属性招式威力30%而非50%。
+  # 7.获得部分宝可梦的幼年体不再需要熏香。
+  # 8.发光增添了命中率不会被降低的效果。（原本设置未列出，此处补充）
   #-----------------------------------------------------------------------------
   MECHANICS_GENERATION = 9
 end

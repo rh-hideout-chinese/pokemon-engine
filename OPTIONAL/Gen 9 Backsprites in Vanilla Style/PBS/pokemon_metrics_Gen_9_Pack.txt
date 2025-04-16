@@ -1,3 +1,4 @@
+# See the documentation on the wiki to learn how to edit this file.
 #-------------------------------
 [GROWLITHE,1]
 BackSprite = 0,0
