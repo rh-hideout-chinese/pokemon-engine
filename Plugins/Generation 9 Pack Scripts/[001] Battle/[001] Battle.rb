@@ -118,7 +118,7 @@ class Battle
       pbCommonAnimation("Syrupy", battler)
       battler.effects[PBEffects::Syrupy] -= 1
       battler.pbLowerStatStage(:SPEED, 1, battler) if battler.pbCanLowerStatStage?(:SPEED)
-      pbDisplay(_INTL("{1}摆脱了黏糊糊的糖浆！", battler.pbThis)) if battler.effects[PBEffects::Syrupy] == 0
+      pbDisplay(_INTL("{1}摆脱了满身糖状态！", battler.pbThis)) if battler.effects[PBEffects::Syrupy] == 0
     end
   end
   
@@ -137,7 +137,7 @@ class Battle
       damage = ((((2.0 * battler.level / 5) + 2).floor * 25 * battler.attack / battler.defense).floor / 50).floor + 2
       damage *= effectiveness.to_f / Effectiveness::NORMAL_EFFECTIVE
       battler.pbTakeEffectDamage(damage) { |hp_lost|
-        pbDisplay(_INTL("{1}受到了锯齿般碎片的伤害！", battler.pbThis))
+        pbDisplay(_INTL("{1}受到了尖锐的碎片的伤害！", battler.pbThis))
       }
     end
     priority.each do |battler|
@@ -198,7 +198,7 @@ class Battle
     pkmn.hp = [1, (pkmn.totalhp / 2).floor].max
     pkmn.heal_status
     displayname = (pbOwnedByPlayer?(idxBattler)) ? pkmn.name : _INTL("对手的{1}", pkmn.name)
-    pbDisplay(_INTL("{1}复活了，准备再次战斗!", displayname))
+    pbDisplay(_INTL("{1}复活并能继续战斗了！", displayname))
   end
 end
 
