@@ -3,34 +3,39 @@
 #===============================================================================
 module Settings
   #-----------------------------------------------------------------------------
-  # Stores the path name for the graphics utilized by this plugin.
+  # 本插件所使用的文件的存放位置。
   #-----------------------------------------------------------------------------
   DELUXE_GRAPHICS_PATH = "Graphics/Plugins/Deluxe Battle Kit/"
   
   #-----------------------------------------------------------------------------
-  # Shortens long move names in the fight menu so they can fit the default battle UI.
+  # 在战斗UI中缩短名字较长招式的名称。
   #-----------------------------------------------------------------------------
   SHORTEN_MOVES = true
   
   #-----------------------------------------------------------------------------
-  # Allows for different battle music to play when the player's Pokemon is at low HP.
+  # 若设为true，则使出招式时会隐藏数据栏。
+  #-----------------------------------------------------------------------------
+  HIDE_DATABOXES_DURING_MOVES = true
+  
+  #-----------------------------------------------------------------------------
+  # 当玩家的宝可梦HP低时是否播放BGM。
   #-----------------------------------------------------------------------------
   PLAY_LOW_HP_MUSIC = true
   
   #-----------------------------------------------------------------------------
-  # Toggles the appearance of the Mega Evolution animation used by this plugin.
+  # 是否显示本插件提供的超级进化动画。
   #-----------------------------------------------------------------------------
   SHOW_MEGA_ANIM = true
   
   #-----------------------------------------------------------------------------
-  # Toggles the appearance of the Primal Reversion animation used by this plugin.
+  # 是否显示本插件提供的原始回归动画。
   #-----------------------------------------------------------------------------
   SHOW_PRIMAL_ANIM = true
   
   #-----------------------------------------------------------------------------
-  # Sets how the overlay pattern on Shadow Pokemon animates.
-  # The first entry in the array corresponds to X-axis movement.
-  # The second entry in the array corresponds to Y-axis movement.
+  # 设置黑暗宝可梦的覆盖动画。
+  # 第一个表示X方向运动
+  # 第二个表示Y方向运动
   #-----------------------------------------------------------------------------
   # X-Axis    Y-Axis
   # :none     :none 
@@ -41,9 +46,8 @@ module Settings
   SHADOW_PATTERN_MOVEMENT = [:none, :up]
   
   #-----------------------------------------------------------------------------
-  # When true, existing sprites you have for Shadow Pokemon species won't
-  # be given the shadow overlay pattern added by this plugin.
-  # Set this to false to give Shadow Pokemon sprites this overlay too.
+  # 若设为true，则已有特殊图像的黑暗宝可梦不会添加本插件提供的覆盖。
+  # 设为false则为已有特殊图像的黑暗宝可梦添加覆盖。
   #-----------------------------------------------------------------------------
   DONT_OVERLAY_EXISTING_SHADOW_SPRITES = true
 end

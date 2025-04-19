@@ -15,6 +15,27 @@ class Battle::Scene
   end
   
   #-----------------------------------------------------------------------------
+  # Rewritten to toggle databoxes during move animations.
+  #-----------------------------------------------------------------------------
+  def pbAnimation(moveID, user, targets, hitNum = 0)
+    animID = pbFindMoveAnimation(moveID, user.index, hitNum)
+    return if !animID
+    anim = animID[0]
+    target = (targets.is_a?(Array)) ? targets[0] : targets
+    animations = pbLoadBattleAnimations
+    return if !animations
+    pbToggleDataboxes if Settings::HIDE_DATABOXES_DURING_MOVES
+    pbSaveShadows do
+      if animID[1]
+        pbAnimationCore(animations[anim], target, user, true)
+      else
+        pbAnimationCore(animations[anim], user, target)
+      end
+    end
+    pbToggleDataboxes(true) if Settings::HIDE_DATABOXES_DURING_MOVES
+  end
+  
+  #-----------------------------------------------------------------------------
   # Calls a flee animation for wild Pokemon.
   #-----------------------------------------------------------------------------
   def pbBattlerFlee(battler, msg = nil)
@@ -33,7 +54,7 @@ class Battle::Scene
     if msg.is_a?(String)
       @battle.pbDisplayPaused(_INTL("#{msg}", battler.pbThis))
     else
-      @battle.pbDisplayPaused(_INTL("{1}逃跑了!", battler.pbThis))
+      @battle.pbDisplayPaused(_INTL("{1} fled!", battler.pbThis))
     end
   end
  
@@ -207,7 +228,7 @@ class Battle::Battler
     if tryFlee && wild? &&
        @battle.rules["alwaysflee"] && @battle.pbCanRun?(@index)
       pbBeginTurn(choice)
-      wild_flee(_INTL("{1}在战斗中逃跑了!", pbThis))
+      wild_flee(_INTL("{1} fled from battle!", pbThis))
       pbEndTurn(choice)
       return true
     end
@@ -225,9 +246,9 @@ class Battle::Battler
         @battle.pbSwapBattlers(@index, idxOther)
         case @battle.pbSideSize(@index)
         when 2
-          @battle.pbDisplay(_INTL("{1}移动过去了!", pbThis))
+          @battle.pbDisplay(_INTL("{1}移动到了一边！", pbThis))
         when 3
-          @battle.pbDisplay(_INTL("{1}移动到中心了!", pbThis))
+          @battle.pbDisplay(_INTL("{1}移动到了中间！", pbThis))
         end
       end
       pbBeginTurn(choice)
@@ -258,7 +279,7 @@ class SafariBattle
       pkmn = @party2[0]
       pbSetSeen(pkmn)
       @scene.pbStartBattle(self)
-      pbDisplayPaused(_INTL("野生的{1}跳出来了!", pkmn.name))
+      pbDisplayPaused(_INTL("野生的{1}出现了！", pkmn.name))
       @scene.pbSafariStart
       weather_data = GameData::BattleWeather.try_get(@weather)
       @scene.pbCommonAnimation(weather_data.animation) if weather_data
@@ -273,7 +294,7 @@ class SafariBattle
         case cmd
         when 0
           if pbBoxesFull?
-            pbDisplay(_INTL("这个盒子已经满了，装不下宝可梦了"))
+            pbDisplay(_INTL("盒子满了！你无法再捕捉任何宝可梦了！"))
             next
           end
           @ballCount -= 1
@@ -287,18 +308,18 @@ class SafariBattle
             end
           end
         when 1
-          pbDisplayBrief(_INTL("{1}向{2}丢了一些树果!", self.pbPlayer.name, pkmn.name))
+          pbDisplayBrief(_INTL("{1}向{2}扔出了诱饵！", self.pbPlayer.name, pkmn.name))
           @scene.pbThrowBait
           catchFactor  /= 2 if pbRandom(100) < 90
           escapeFactor /= 2
         when 2
-          pbDisplayBrief(_INTL("{1}向{2}丢了一块石头!", self.pbPlayer.name, pkmn.name))
+          pbDisplayBrief(_INTL("{1}向{2}扔出了石头！", self.pbPlayer.name, pkmn.name))
           @scene.pbThrowRock
           catchFactor  *= 2
           escapeFactor *= 2 if pbRandom(100) < 90
         when 3
           pbSEPlay("Battle flee")
-          pbDisplayPaused(_INTL("你安全逃脱了...!"))
+          pbDisplayPaused(_INTL("顺利逃走了！"))
           @decision = 3
         else
           next
@@ -308,17 +329,17 @@ class SafariBattle
         if @decision == 0
           if @ballCount <= 0
             pbSEPlay("Safari Zone end")
-            pbDisplay(_INTL("你没有剩余的狩猎球了!"))
+            pbDisplay(_INTL("你的狩猎球用完了！游戏结束！"))
             @decision = 2
           elsif pbRandom(100) < 5 * escapeFactor
             @scene.pbBattlerFlee(@battlers[1])
             @decision = 3
           elsif cmd == 1
-            pbDisplay(_INTL("{1}正在吃!", pkmn.name))
+            pbDisplay(_INTL("{1}正在进食！", pkmn.name))
           elsif cmd == 2
-            pbDisplay(_INTL("{1}生气了!", pkmn.name))
+            pbDisplay(_INTL("{1}很生气！", pkmn.name))
           else
-            pbDisplay(_INTL("{1}正小心的观察着!", pkmn.name))
+            pbDisplay(_INTL("{1}正在仔细地观察！", pkmn.name))
           end
           weather_data = GameData::BattleWeather.try_get(@weather)
           @scene.pbCommonAnimation(weather_data.animation) if weather_data
@@ -347,9 +368,10 @@ class Battle::Scene::Animation
     when Pokemon
       s = PokemonSprite.new(@viewport)
       s.setPokemonBitmap(poke, back)
-    when Array
+    when Hash
       s = PokemonSprite.new(@viewport)
-      s.setSpeciesBitmap(*poke, back)
+      s.setSpeciesBitmap(poke[:species], poke[:gender], poke[:form], poke[:shiny], poke[:shadow], back)
+	  s.hue = poke[:hue] if defined?(s.hue)
     end
     num = @pictureEx.length
     picture = PictureEx.new(s.z)
@@ -524,6 +546,15 @@ class Battle::Scene::Animation
       picturePOKE.push([outline, sprite])
     end
     return picturePOKE
+  end
+  
+  #-----------------------------------------------------------------------------
+  # Specifically used to reapply spot patterns to Spinda sprites during animations.
+  #-----------------------------------------------------------------------------
+  def dxSetSpotPatterns(pkmn, sprite)
+    alter_bitmap_function = MultipleForms.hasFunction?(pkmn, "alterBitmap")
+    return if !alter_bitmap_function
+    sprite.setPokemonBitmap(pkmn)
   end
   
   #-----------------------------------------------------------------------------

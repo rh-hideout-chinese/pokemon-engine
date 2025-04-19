@@ -8,20 +8,20 @@
 # Adds a toggle for Mega Evolution in the debug menu.
 #-------------------------------------------------------------------------------
 MenuHandlers.add(:debug_menu, :deluxe_plugins_menu, {
-  "name"        => _INTL("Deluxe plugin 设置..."),
+  "name"        => _INTL("豪华插件设定……"),
   "parent"      => :main,
-  "description" => _INTL("由Deluxe plugin工具包和其他附加插件添加的设置。"),
+  "description" => _INTL("由DBK及其附加插件添加的设定。"),
   "always_show" => false
 })
 
 MenuHandlers.add(:debug_menu, :deluxe_mega, {
-  "name"        => _INTL("切换Mega进化"),
+  "name"        => _INTL("设置超级进化"),
   "parent"      => :deluxe_plugins_menu,
-  "description" => _INTL("切换Mega进化功能的可用性。"),
+  "description" => _INTL("设置是否能进行超级进化。"),
   "effect"      => proc {
     $game_switches[Settings::NO_MEGA_EVOLUTION] = !$game_switches[Settings::NO_MEGA_EVOLUTION]
-    toggle = ($game_switches[Settings::NO_MEGA_EVOLUTION]) ? "disabled" : "enabled"
-    pbMessage(_INTL("Mega进化{1}.", toggle))
+    toggle = ($game_switches[Settings::NO_MEGA_EVOLUTION]) ? "已禁止" : "已允许"
+    pbMessage(_INTL("{1}超级进化。", toggle))
   }
 })
 
@@ -111,24 +111,24 @@ class Battle
     if battler.wild?
       case battler.pokemon.megaMessage
       when 1
-        pbDisplay(_INTL("{1}散发着Mega能量!", battler.pbThis))
+        pbDisplay(_INTL("{1}散发出超级能量！", battler.pbThis))
       else
-        pbDisplay(_INTL("{1}的{2}散发着Mega能量!", battler.pbThis, battler.itemName))
+        pbDisplay(_INTL("{1}的{2}散发出超级能量！", battler.pbThis, battler.itemName))
       end
     else
       trainerName = pbGetOwnerName(idxBattler)
       case battler.pokemon.megaMessage
       when 1
-        pbDisplay(_INTL("{1}的许愿传达到了{2}!", trainerName, battler.pbThis))
+        pbDisplay(_INTL("{1}衷心的祈愿传递到了{2}那里！", trainerName, battler.pbThis))
       else
-        pbDisplay(_INTL("{1}的{2}对{3}的{4}有反应了!",
+        pbDisplay(_INTL("{1}的{2}和{3}的{4}起了反应！",
                         battler.pbThis, battler.itemName, trainerName, pbGetMegaRingName(idxBattler)))
       end
     end
     pbAnimateMegaEvolution(battler)
     megaName = battler.pokemon.megaName
-    megaName = _INTL("Mega {1}", battler.pokemon.speciesName) if nil_or_empty?(megaName)
-    pbDisplay(_INTL("{1}Mega进化成了{2}!", battler.pbThis, megaName))
+    megaName = _INTL("超级{1}", battler.pokemon.speciesName) if nil_or_empty?(megaName)
+    pbDisplay(_INTL("{1}超级进化成了{2}！", battler.pbThis, megaName))
     side  = battler.idxOwnSide
     owner = pbGetOwnerIndexFromBattlerIndex(idxBattler)
     @megaEvolution[side][owner] = -2
@@ -218,7 +218,15 @@ class Battle::Scene::Animation::BattlerMegaEvolve < Battle::Scene::Animation
     @battler = @battle.battlers[idxBattler]
     @opposes = @battle.opposes?(idxBattler)
     @pkmn = @battler.pokemon
-    @mega = [@pkmn.species, @pkmn.gender, @pkmn.getMegaForm, @pkmn.shiny?, @pkmn.shadowPokemon?]
+    @mega = {
+      :pokemon => @pkmn,
+      :species => @pkmn.species,
+      :gender  => @pkmn.gender,
+      :form    => @pkmn.getMegaForm,
+      :shiny   => @pkmn.shiny?,
+      :shadow  => @pkmn.shadowPokemon?,
+      :hue     => @pkmn.super_shiny_hue
+    }
     @cry_file = GameData::Species.cry_filename(@mega[0], @mega[2])
     if @battler.item && @battler.item.is_mega_stone?
       @megastone_file = "Graphics/Items/" + @battler.item_id.to_s

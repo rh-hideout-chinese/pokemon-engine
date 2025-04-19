@@ -35,7 +35,7 @@ class Battle
     pbDeluxeTriggers(idxBattler, nil, "BeforePrimalReversion", battler.species, *battler.pokemon.types)
     @scene.pbAnimateSubstitute(idxBattler, :hide)
     pbAnimatePrimalReversion(battler)
-    pbDisplay(_INTL("{1}原始回归了!\n它变回了原始形态!", battler.pbThis))
+    pbDisplay(_INTL("{1}的原始回归！\n恢复了原始的样子！", battler.pbThis))
     pbDeluxeTriggers(idxBattler, nil, "AfterPrimalReversion", battler.species, *battler.pokemon.types)
     @scene.pbAnimateSubstitute(idxBattler, :show)
   end
@@ -89,7 +89,15 @@ class Battle::Scene::Animation::BattlerPrimalReversion < Battle::Scene::Animatio
     @battler = @battle.battlers[idxBattler]
     @opposes = @battle.opposes?(idxBattler)
     @pkmn = @battler.pokemon
-    @primal = [@pkmn.species, @pkmn.gender, @pkmn.getPrimalForm, @pkmn.shiny?, @pkmn.shadowPokemon?]
+    @primal = {
+      :pokemon => @pkmn,
+      :species => @pkmn.species,
+      :gender  => @pkmn.gender,
+      :form    => @pkmn.getPrimalForm,
+      :shiny   => @pkmn.shiny?,
+      :shadow  => @pkmn.shadowPokemon?,
+      :hue     => @pkmn.super_shiny_hue
+    }
     @cry_file = GameData::Species.cry_filename(@primal[0], @primal[2])
     case @pkmn.species
     when :GROUDON then @bg_color = Color.new(255, 0, 0, 180)

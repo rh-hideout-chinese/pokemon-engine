@@ -48,28 +48,28 @@ module TrainerPokemonProperty
   def self.editor_properties(oldsetting)
     max_level = GameData::GrowthRate.max_level
     properties = [
-      [_INTL("种类"),    SpeciesProperty,                     _INTL("宝可梦的种类")],
-      [_INTL("等级"),      NonzeroLimitProperty.new(max_level), _INTL("宝可梦的等级(1-{1}).", max_level)],
-      [_INTL("名字"),       StringProperty,                      _INTL("宝可梦的名称")],
-      [_INTL("形态"),       LimitProperty2.new(999),             _INTL("宝可梦的形态")],
-      [_INTL("性别"),     GenderProperty,                      _INTL("宝可梦的性别")],
-      [_INTL("闪光"),      BooleanProperty2,                    _INTL("如果设置为true，则宝可梦是不同颜色的样子")],
-      [_INTL("超闪光"), BooleanProperty2,                    _INTL("神奇宝贝是否超闪光（用特殊的闪光动画显示）")],
-      [_INTL("阴影"),     BooleanProperty2,                    _INTL("如果设置为true，则宝可梦是阴影的宝可梦")]
+      [_INTL("Species"),    SpeciesProperty,                     _INTL("宝可梦的种类。")],
+      [_INTL("Level"),      NonzeroLimitProperty.new(max_level), _INTL("宝可梦的等级(1-{1})。", max_level)],
+      [_INTL("Name"),       StringProperty,                      _INTL("宝可梦的昵称。")],
+      [_INTL("Form"),       LimitProperty2.new(999),             _INTL("宝可梦的形态。")],
+      [_INTL("Gender"),     GenderProperty,                      _INTL("宝可梦的性别。")],
+      [_INTL("Shiny"),      BooleanProperty2,                    _INTL("若设为真，则该宝可梦为异色。")],
+      [_INTL("SuperShiny"), BooleanProperty2,                    _INTL("宝可梦是否为超闪光（有特殊动画的异色）。")],
+      [_INTL("Shadow"),     BooleanProperty2,                    _INTL("若设为真，则该宝可梦为黑暗宝可梦。")]
     ]
     Pokemon::MAX_MOVES.times do |i|
       properties.push([_INTL("招式{1}", i + 1),
-                       MovePropertyForSpecies.new(oldsetting), _INTL("宝可梦已学会的招式。所有招式留空（使用Z键删除）为野生招式配置。")])
+                       MovePropertyForSpecies.new(oldsetting), _INTL("宝可梦掌握的招式。如果为空（按Z取消）则依野生宝可梦招式处理。")])
     end
     properties.concat([
-      [_INTL("特性"), AbilityProperty, _INTL("宝可梦的特性。覆盖特性索引。")],
-      [_INTL("种族值"), LimitProperty2.new(99), _INTL("特性索引。0=第一个特性，1=第二个特性，2+=隐藏特性。")],
-      [_INTL("持有物品"), ItemProperty, _INTL("宝可梦持有的物品。")],
-      [_INTL("性格"), GameDataProperty.new(:Nature), _INTL("宝可梦的性格。")],
-      [_INTL("个体值"), IVsProperty.new(Pokemon::IV_STAT_LIMIT), _INTL("宝可梦的个体值。")],
-      [_INTL("基础点数"), EVsProperty.new(Pokemon::EV_STAT_LIMIT), _INTL("宝可梦的努力值。")],
-      [_INTL("亲密度"), LimitProperty2.new(255), _INTL("宝可梦的亲密度（0-255）。")],
-      [_INTL("精灵球"), BallProperty.new(oldsetting), _INTL("宝可梦被抓的精灵球类型。")],
+      [_INTL("特性"),       AbilityProperty,                         _INTL("宝可梦的特性。会覆盖特性指标。")],
+      [_INTL("特性指标"), LimitProperty2.new(99),                  _INTL("特性指标。0=第一特性， 1=第二特性， 2+=隐藏特性。")],
+      [_INTL("持有物"),     ItemProperty,                            _INTL("宝可梦携带的道具。")],
+      [_INTL("性格"),        GameDataProperty.new(:Nature),           _INTL("宝可梦的性格。")],
+      [_INTL("个体值"),           IVsProperty.new(Pokemon::IV_STAT_LIMIT), _INTL("各宝可梦的个体值。")],
+      [_INTL("努力值"),           EVsProperty.new(Pokemon::EV_STAT_LIMIT), _INTL("各宝可梦的努力值。")],
+      [_INTL("亲密度"),     LimitProperty2.new(255),                 _INTL("宝可梦的亲密度(0-255)。")],
+      [_INTL("精灵球"),     BallProperty.new(oldsetting),            _INTL("宝可梦的精灵球的种类。")]
     ])
     return properties
   end

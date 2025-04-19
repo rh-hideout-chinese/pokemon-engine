@@ -27,7 +27,7 @@ class Battle::Scene::FightMenu < Battle::Scene::MenuBase
         button.bitmap = @buttonBitmap.bitmap
         button.x = self.x + 4
         button.x += (i.even? ? 0 : (@buttonBitmap.width / 2) - 4)
-        button.y = self.y + 4
+        button.y = self.y + 6
         button.y += (((i / 2) == 0) ? 0 : BUTTON_HEIGHT - 4)
         button.src_rect.width  = @buttonBitmap.width / 2
         button.src_rect.height = BUTTON_HEIGHT
@@ -40,7 +40,7 @@ class Battle::Scene::FightMenu < Battle::Scene::MenuBase
       end
       @overlay = BitmapSprite.new(Graphics.width, Graphics.height - self.y, viewport)
       @overlay.x = self.x
-      @overlay.y = self.y+4
+      @overlay.y = self.y
       pbSetNarrowFont(@overlay.bitmap)
       addSprite("overlay", @overlay)
       @infoOverlay = BitmapSprite.new(Graphics.width, Graphics.height - self.y, viewport)
@@ -50,7 +50,7 @@ class Battle::Scene::FightMenu < Battle::Scene::MenuBase
       addSprite("infoOverlay", @infoOverlay)
       @typeIcon = Sprite.new(viewport)
       @typeIcon.bitmap = @typeBitmap.bitmap
-      @typeIcon.x      = self.x + 425
+      @typeIcon.x      = self.x + 416
       @typeIcon.y      = self.y + 20
       @typeIcon.src_rect.height = TYPE_ICON_HEIGHT
       addSprite("typeIcon", @typeIcon)
@@ -177,22 +177,22 @@ class Battle::Scene
   # Edited for command menu display.
   #-----------------------------------------------------------------------------
   def pbCommandMenu(idxBattler, firstAction)
-    bagCommand = _INTL("背包")
+    bagCommand = _INTL("Bag")
     shadowTrainer = (GameData::Type.exists?(:SHADOW) && @battle.trainerBattle?)
-    runCommand = (shadowTrainer) ? _INTL("呼叫") : (firstAction) ? _INTL("逃跑") : _INTL("取消")
+    runCommand = (shadowTrainer) ? _INTL("Call") : (firstAction) ? _INTL("Run") : _INTL("Cancel")
     if @battle.raidBattle?
-      runCommand = _INTL("加油")
+      runCommand = _INTL("Cheer")
       mode = 5
     elsif @battle.launcherBattle?
-      bagCommand = _INTL("进行")
+      bagCommand = _INTL("Launch")
       mode = (shadowTrainer) ? 8 : (firstAction) ? 6 : 7
     else
       mode = (shadowTrainer) ? 2 : (firstAction) ? 0 : 1
     end
     cmds = [
-      _INTL("{1} 要做什\n么呢?", @battle.battlers[idxBattler].name),
-      _INTL("对战"), bagCommand,
-      _INTL("精灵"), runCommand
+      _INTL("What will\n{1} do?", @battle.battlers[idxBattler].name),
+      _INTL("Fight"), bagCommand,
+      _INTL("Pokémon"), runCommand
     ]
     ret = pbCommandMenuEx(idxBattler, cmds, mode)
     ret = 4 if ret == 3 && shadowTrainer || @battle.raidBattle?
@@ -333,14 +333,14 @@ class Battle
     move = (idxMove.is_a?(Integer)) ? battler.moves[idxMove] : idxMove
     return false unless move
     if move.pp == 0 && move.total_pp > 0 && !sleepTalk
-      pbDisplayPaused(_INTL("这个招式已经没有PP了!")) if showMessages
+      pbDisplayPaused(_INTL("这个招式没有PP了！")) if showMessages
       return false
     end
     if battler.effects[PBEffects::Encore] > 0
       if !move.powerMove? && move.id != battler.effects[PBEffects::EncoreMove]
         if showMessages
           encoreMove = GameData::Move.get(battler.effects[PBEffects::EncoreMove]).name
-          pbDisplayPaused(_INTL("{1}由于受到再来一次的影响只能使用{2}!", battler.name, encoreMove))
+          pbDisplayPaused(_INTL("因为再来一次的效果，{1}只能使出{2}！", battler.name, encoreMove))
         end
         return false
       end

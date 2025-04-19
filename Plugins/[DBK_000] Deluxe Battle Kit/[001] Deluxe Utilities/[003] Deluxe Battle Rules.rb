@@ -71,7 +71,7 @@ def setBattleRule(*args)
       $game_temp.add_battle_rule(arg)
     end
   end
-  raise _INTL("参数{1}后面应该有一个变量，但没有找到。", r) if r
+  raise _INTL("参数{1}后面需要一个变量，但是实际上没有。", r) if r
 end
 
 
@@ -238,7 +238,7 @@ module Battle::CatchAndStoreMixin
       end
       stored_box = $PokemonStorage.pbStoreCaught(pkmn)
       box_name = @peer.pbBoxName(stored_box)
-      pbDisplayPaused(_INTL("{1}传送到盒子\"{2}\"了!", pkmn.name, box_name))
+      pbDisplayPaused(_INTL("已将{1}传送到盒子\"{2}\"！", pkmn.name, box_name))
     else
       dx_pbStorePokemon(pkmn)
     end
@@ -258,7 +258,7 @@ class Battle::Battler
     end
     return if fainted_count >= @battle.pbSideSize(0)
     @battle.pbPauseAndPlayBGM(bgm)
-    @battle.pbDisplayPaused(_INTL("{1}很虚弱!\n现在使用精灵球吧!", target.name))
+    @battle.pbDisplayPaused(_INTL("{1}变得虚弱了！\n现在是使用精灵球的好机会！", target.name))
     pbWait(0.5)
     cmd = 0
     cmd = @battle.pbShowCommands("", ["Catch", "Don't Catch"], 1)
@@ -267,7 +267,7 @@ class Battle::Battler
       pbPlayDecisionSE
       @battle.sendToBoxes = 1
       if $PokemonStorage.full?
-        @battle.pbDisplay(_INTL("但是电脑已经没有空位了!"))
+        @battle.pbDisplay(_INTL("但是电脑里没有空间了！"))
         target.wild_flee(fleeMsg)
       else
         ball = nil
@@ -408,7 +408,7 @@ class Battle
   alias dx_pbItemMenu pbItemMenu
   def pbItemMenu(idxBattler, firstAction)
     if @noBag
-      pbDisplay(_INTL("在战斗中不能使用这个道具"))
+      pbDisplay(_INTL("本次战斗无法使用道具。"))
       return false
     end
     return dx_pbItemMenu(idxBattler, firstAction)
@@ -435,15 +435,15 @@ class Battle
         trainers.each_with_index do |t, i|
           msg += "\r\n" if msg.length > 0
           if side == 0 && i == trainers.length - 1
-            msg += "Go! "
+            msg += "上吧！"
             sent = sendOuts[side][0]
           else
-            msg += "#{t.full_name} sent out "
+            msg += "#{t.full_name}派出了"
             sent = (side == 0) ? sendOuts[0][1] : sendOuts[1][i]
           end
           sent.each_with_index do |idxBattler, j|
             if j > 0
-              msg += (j == sent.length - 1) ? " and " : ", "
+              msg += (j == sent.length - 1) ? "和" : "，"
             end
             if defined?(@battlers[idxBattler].name_title)
               msg += @battlers[idxBattler].name_title
@@ -451,7 +451,7 @@ class Battle
               msg += @battlers[idxBattler].name
             end
           end
-          msg += "!"
+          msg += "！"
           toSendOut.concat(sent)
         end
         pbDisplayBrief(_INTL("{1}", msg)) if msg.length > 0
@@ -519,7 +519,7 @@ class Battle::Scene::Animation::Intro < Battle::Scene::Animation
           f = 0
           w = bitmap.width
           h = bitmap.height
-          deltaY = h - findTop(bitmap) - 12
+          deltaY = h - findTop(bitmap)
           s.setDelta(0, 0, deltaY)
           s.moveDelta(0, appearTime - 3, 0, (deltaY * deltaMult).floor)
           appearTime.times do |i|
@@ -544,7 +544,7 @@ def findTop(bitmap)
   return 0 if !bitmap
   (1..bitmap.height).each do |i|
     bitmap.width.times do |j|
-      return i if bitmap.get_pixel(j, bitmap.height - i).alpha > 0
+      return i if bitmap.get_pixel(j, i).alpha > 0
     end
   end
   return 0

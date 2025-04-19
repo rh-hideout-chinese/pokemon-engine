@@ -95,7 +95,7 @@ class Battle
     elsif pkmn.is_a?(Pokemon) && item_data.battle_use < 4
       pbDisplayBrief(_INTL("{1}对{3}使用了{2}。", trainerName, itemName, pkmn.name))
     else
-      pbDisplayBrief(_INTL("{1}使用了{2}.", trainerName, itemName))
+      pbDisplayBrief(_INTL("{1}使用了{2}。", trainerName, itemName))
     end
   end
 end
@@ -272,14 +272,14 @@ class Battle::Battler
     if isSpecies?(:DIALGA)
       newForm = 0
       newForm = 1 if self.item_id == :ADAMANTCRYSTAL
-      pbSimpleFormChange(newForm, _INTL("{1}变身了!", pbThis))
+      pbSimpleFormChange(newForm, _INTL("{1}变成其他样子了！", pbThis))
     end
     #---------------------------------------------------------------------------
     # Palkia - holding Lustrous Globe
     if isSpecies?(:PALKIA)
       newForm = 0
       newForm = 1 if self.item_id == :LUSTROUSGLOBE
-      pbSimpleFormChange(newForm, _INTL("{1}变身了!", pbThis))
+      pbSimpleFormChange(newForm, _INTL("{1}变成其他样子了！", pbThis))
     end
     #---------------------------------------------------------------------------
     # Giratina - holding Griseous Orb/Core
@@ -288,7 +288,7 @@ class Battle::Battler
       newForm = 0
       newForm = 1 if Settings::MECHANICS_GENERATION <= 8 && self.item_id == :GRISEOUSORB
       newForm = 1 if Settings::MECHANICS_GENERATION >= 9 && self.item_id == :GRISEOUSCORE
-      pbSimpleFormChange(newForm, _INTL("{1}变身了!", pbThis))
+      pbSimpleFormChange(newForm, _INTL("{1}变成其他样子了！", pbThis))
     end
     #---------------------------------------------------------------------------
     # Arceus - holding a Plate with Multi-Type
@@ -321,7 +321,7 @@ class Battle::Battler
           newForm = form
         end
       end
-      pbSimpleFormChange(newForm, _INTL("{1}变成了{2}属性!", pbThis, type.name))
+      pbSimpleFormChange(newForm, _INTL("{1}变成了{2}属性！", pbThis, type.name))
     end
     #---------------------------------------------------------------------------
     # Genesect - holding a Drive
@@ -364,7 +364,7 @@ class Battle::Battler
           newForm = form
         end
       end
-      pbSimpleFormChange(newForm, _INTL("{1}变成了{2}属性!", pbThis, type.name))
+      pbSimpleFormChange(newForm, _INTL("{1}变成了{2}属性！", pbThis, type.name))
     end
     #---------------------------------------------------------------------------
     # Zacian - holding Rusted Sword
@@ -378,7 +378,7 @@ class Battle::Battler
         move.pp = m.pp
         @moves[i] = Battle::Move.from_pokemon_move(@battle, move)
       end
-      pbSimpleFormChange(newForm, _INTL("{1}变身了!", pbThis))
+      pbSimpleFormChange(newForm, _INTL("{1} transformed!", pbThis))
     end
     #---------------------------------------------------------------------------
     # Zamazenta - holding Rusted Shield
@@ -392,7 +392,7 @@ class Battle::Battler
         move.pp = m.pp
         @moves[i] = Battle::Move.from_pokemon_move(@battle, move)
       end
-      pbSimpleFormChange(newForm, _INTL("{1}变身了!", pbThis))
+      pbSimpleFormChange(newForm, _INTL("{1}变成其他样子了！", pbThis))
     end
     #---------------------------------------------------------------------------
     # Ogerpon - holding masks
@@ -406,7 +406,7 @@ class Battle::Battler
         maskName = GameData::Item.get(mask).name
         break
       end
-      pbSimpleFormChange(newForm, _INTL("{1}放在了{2}上!", pbThis, maskName))
+      pbSimpleFormChange(newForm, _INTL("{1}戴上了{2}！", pbThis, maskName))
     end
   end
 end
