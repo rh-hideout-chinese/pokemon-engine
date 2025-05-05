@@ -12,8 +12,16 @@ class Battle::Scene::Animation::BattlerTerastallize < Battle::Scene::Animation
     @battler = @battle.battlers[idxBattler]
     @opposes = @battle.opposes?(idxBattler)
     @pkmn = @battler.visiblePokemon
-    @terastal = [@pkmn.species, @pkmn.gender, @pkmn.getTerastalForm, @pkmn.shiny?, @pkmn.shadowPokemon?]
-    @cry_file = GameData::Species.cry_filename_from_pokemon(@pkmn)
+    @terastal = {
+      :pokemon => @pkmn,
+      :species => @pkmn.species,
+      :gender  => @pkmn.gender,
+      :form    => @pkmn.getTerastalForm,
+      :shiny   => @pkmn.shiny?,
+      :shadow  => @pkmn.shadowPokemon?,
+      :hue     => @pkmn.super_shiny_hue
+    }
+    @cry_file = GameData::Species.cry_filename(@terastal[:species], @terastal[:form])
     #---------------------------------------------------------------------------
     # Gets trainer data from battler index (non-wild only).
     if !@battler.wild?
@@ -59,12 +67,12 @@ class Battle::Scene::Animation::BattlerTerastallize < Battle::Scene::Animation
     #---------------------------------------------------------------------------
     # Sets up bases.
     baseData = dxSetBases(@path + "Tera/base", @base_file, delay, center_x, center_y, !@battler.wild?)
-    arrBASES, tr_base_offset = baseData[0], baseData[1]
+    arrBASES, base_width = baseData[0], baseData[1]
     #---------------------------------------------------------------------------
     # Sets up trainer & Tera Orb                                        
     if !@battler.wild?
-      trData = dxSetTrainerWithItem(@trainer_file, @item_file, delay, !@opposes)
-      picTRAINER, trainer_end_x, trainer_y, arrITEM = trData[0], trData[1], trData[2], trData[3]
+      trData = dxSetTrainerWithItem(@trainer_file, @item_file, delay, !@opposes, base_width)
+      picTRAINER, arrITEM = trData[0], trData[1]
     end
     #---------------------------------------------------------------------------
     # Sets up overlay.
@@ -72,7 +80,8 @@ class Battle::Scene::Animation::BattlerTerastallize < Battle::Scene::Animation
     picOVERLAY, sprOVERLAY = overlayData[0], overlayData[1]
     #---------------------------------------------------------------------------
     # Sets up shine.
-    shineData = dxSetSprite(@path + "shine", delay, center_x, center_y, !@battler.wild?)
+    offset_y = (@battler.wild?) ? center_y : center_y + 20
+    shineData = dxSetSprite(@path + "shine", delay, center_x, offset_y)
     picSHINE, sprSHINE = shineData[0], shineData[1]
     picSHINE.setColor(delay, Color.new(*@type_outline))
     #---------------------------------------------------------------------------
@@ -82,12 +91,13 @@ class Battle::Scene::Animation::BattlerTerastallize < Battle::Scene::Animation
     #---------------------------------------------------------------------------
     # Sets up Tera Pokemon.
     arrPOKE = dxSetPokemonWithOutline(@terastal, delay, !@opposes, !@battler.wild?, Color.new(*@type_outline))
+    dxSetSpotPatterns(@pkmn, @pictureSprites[arrPOKE.last[1]]) if @pkmn.form == @terastal[:form]
     @pictureSprites[arrPOKE.last[1]].set_tera_pattern(@pkmn, true)
     #---------------------------------------------------------------------------
     # Sets up Tera crystals.
     arrCRYSTALS = []
     3.times do |i|
-      crystal = dxSetSprite(@path + "Tera/crystal_#{i + 1}", delay, center_x, center_y, !@battler.wild?, 100, 0)
+      crystal = dxSetSprite(@path + "Tera/crystal_#{i + 1}", delay, center_x, offset_y, PictureOrigin::CENTER, 100, 0)
       arrCRYSTALS.push([crystal[0], crystal[1]])
     end
     #---------------------------------------------------------------------------
@@ -95,15 +105,15 @@ class Battle::Scene::Animation::BattlerTerastallize < Battle::Scene::Animation
     arrBREAK = dxSetParticlesRect(@path + "Tera/crystal_4", delay, 154, 166, 100, !@battler.wild?)
     #---------------------------------------------------------------------------
     # Sets up Tera pulse.
-    pulseData = dxSetSprite(@path + "Tera/pulse", delay, center_x, center_y, !@battler.wild?, 100, 50)
+    pulseData = dxSetSprite(@path + "Tera/pulse", delay, center_x, offset_y, PictureOrigin::CENTER, 100, 50)
     picPULSE, sprPULSE = pulseData[0], pulseData[1]
     #---------------------------------------------------------------------------
     # Sets up Tera icon.
-    iconData = dxSetSprite(@path + "Tera/icon", delay, center_x, center_y, !@battler.wild?, 0, 50)
+    iconData = dxSetSprite(@path + "Tera/icon", delay, center_x, offset_y, PictureOrigin::CENTER, 0, 50)
     picICON, sprICON = iconData[0], iconData[1]
     #---------------------------------------------------------------------------
     # Sets up rainbow shine.
-    shine2Data = dxSetSprite(@path + "Tera/shine", delay, center_x, center_y, !@battler.wild?)
+    shine2Data = dxSetSprite(@path + "Tera/shine", delay, center_x, offset_y)
     picSHINE2, sprSHINE2 = shine2Data[0], shine2Data[1]
     #---------------------------------------------------------------------------
     # Sets up skip button & fade out.
@@ -120,22 +130,24 @@ class Battle::Scene::Animation::BattlerTerastallize < Battle::Scene::Animation
     picPOKE.setVisible(delay, true)
     picFADE.moveOpacity(delay, 8, 0)
     delay = picFADE.totalDuration
-    picBUTTON.moveXY(delay, 6, 0, Graphics.height - 38)
-    picBUTTON.moveXY(delay + 36, 6, 0, Graphics.height)
+    picBUTTON.moveDelta(delay, 6, 0, -38)
+    picBUTTON.moveDelta(delay + 36, 6, 0, 38)
     #---------------------------------------------------------------------------
     # Slides trainer on screen with base (non-wild only).
     if !@battler.wild?
       picTRAINER.setVisible(delay + 4, true)
       arrBASES.first.setVisible(delay + 4, true)
-      picTRAINER.moveXY(delay + 4, 8, trainer_end_x, trainer_y)
-      arrBASES.first.moveXY(delay + 4, 8, trainer_end_x - tr_base_offset, center_y - 33)
+      delta = (base_width.to_f * 0.75).to_i
+      delta = -delta if @opposes
+      picTRAINER.moveDelta(delay + 4, 8, delta, 0)
+      arrBASES.first.moveDelta(delay + 4, 8, delta, 0)
       delay = picTRAINER.totalDuration + 1
       #-------------------------------------------------------------------------
       # Tera Orb appears with outline; slide upwards.
       picTRAINER.setSE(delay, "Anim/Saint7", 100, 90)
       arrITEM.each do |p, s| 
         p.setVisible(delay, true)
-        p.moveXY(delay, 15, @pictureSprites[s].x, @pictureSprites[s].y - 20)
+        p.moveDelta(delay, 15, 0, -20)
         p.moveOpacity(delay, 15, 255)
       end
       delay = picTRAINER.totalDuration

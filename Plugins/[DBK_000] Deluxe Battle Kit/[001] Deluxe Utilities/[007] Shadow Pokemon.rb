@@ -12,23 +12,14 @@ class Sprite
   def apply_shadow_pattern(pokemon, subfolder = "Front")
     path = Settings::DELUXE_GRAPHICS_PATH
     return if !pbResolveBitmap(path + "shadow_pattern")
-    if Settings::DONT_OVERLAY_EXISTING_SHADOW_SPRITES
-      try_form, try_gender = [""], [""]
-      try_form.insert(0, sprintf("_%d", pokemon.form)) if pokemon.form > 0
-      try_gender.insert(0, "_female") if pokemon.gender == 1
-      try_form.each do |f|
-        try_gender.each do |g|
-          try_file = sprintf("Graphics/Pokemon/%s/%s%s%s_shadow", subfolder, pokemon.species, f, g)
-          next if !pbResolveBitmap(try_file)
-          self.pattern = nil
-          self.pattern_type = nil
-          return
-        end
-      end
+    if pbCanUseShadowPattern?(pokemon)
+      self.pattern = Bitmap.new(path + "shadow_pattern")
+      self.pattern_opacity = 150
+      self.pattern_type = :shadow
+    else
+      self.pattern = nil
+      self.pattern_type = nil
     end
-    self.pattern = Bitmap.new(path + "shadow_pattern")
-    self.pattern_opacity = 150
-    self.pattern_type = :shadow
   end
 
   def set_shadow_pattern(pokemon)
@@ -41,6 +32,7 @@ class Sprite
   end
   
   def set_shadow_icon_pattern
+    return if !self.pokemon
     if self.pokemon.shadowPokemon?
       apply_shadow_pattern(self.pokemon, "Icons")
     else
@@ -79,6 +71,27 @@ class Sprite
   def update_plugin_pattern
     update_shadow_pattern
   end
+end
+
+#-------------------------------------------------------------------------------
+# Utility for checking if the Shadow pattern can be used on a Pokemon.
+#-------------------------------------------------------------------------------
+def pbCanUseShadowPattern?(pokemon)
+  return false if !pokemon.shadowPokemon?
+  return false if !pbResolveBitmap(Settings::DELUXE_GRAPHICS_PATH + "shadow_pattern")
+  if Settings::DONT_OVERLAY_EXISTING_SHADOW_SPRITES
+    try_form, try_gender = [""], [""]
+    try_form.insert(0, sprintf("_%d", pokemon.form)) if pokemon.form > 0
+    try_gender.insert(0, "_female") if pokemon.gender == 1
+    try_form.each do |f|
+      try_gender.each do |g|
+        try_file = sprintf("Graphics/Pokemon/Front/%s%s%s_shadow", pokemon.species, f, g)
+        next if !pbResolveBitmap(try_file)
+        return false
+      end
+    end
+  end
+  return true
 end
 
 #-------------------------------------------------------------------------------
@@ -145,5 +158,42 @@ class Battle::Scene
     battler = (idxBattler.respond_to?("index")) ? idxBattler : @battle.battlers[idxBattler]
     pkmnSprite = @sprites["pokemon_#{battler.index}"]
     pkmnSprite.set_plugin_pattern(battler)
+  end
+end
+
+#-------------------------------------------------------------------------------
+# Alias for Call command to update battler's databox.
+#-------------------------------------------------------------------------------
+class Battle
+  alias shadow_pbCall pbCall
+  def pbCall(idxBattler)
+    shadow_pbCall(idxBattler)
+    return if pbDebugRun != 0
+    battler = @battlers[idxBattler]
+    if battler.shadowPokemon? && !battler.inHyperMode?
+      @scene.pbRefreshOne(idxBattler)
+    end
+  end
+  
+  alias shadow_pbEOREndBattlerSelfEffects pbEOREndBattlerSelfEffects
+  def pbEOREndBattlerSelfEffects(battler)
+    wasInHyperMode = battler.inHyperMode?
+    shadow_pbEOREndBattlerSelfEffects(battler)
+    @scene.pbRefreshOne(battler.index) if !battler.inHyperMode? && wasInHyperMode
+  end
+end
+
+#-------------------------------------------------------------------------------
+# Hyper Mode call rewritten to update battler's databox.
+#-------------------------------------------------------------------------------
+class Battle::Battler
+  def pbHyperMode
+    return if fainted? || !shadowPokemon? || inHyperMode? || !pbOwnedByPlayer?
+    p = self.pokemon
+    if @battle.pbRandom(p.heart_gauge) <= p.max_gauge_size / 4
+      p.hyper_mode = true
+      @battle.pbDisplay(_INTL("{1}情绪高涨到了极点！\n进入了狂暴模式！", self.pbThis))
+      @battle.scene.pbRefreshOne(@index)
+    end
   end
 end

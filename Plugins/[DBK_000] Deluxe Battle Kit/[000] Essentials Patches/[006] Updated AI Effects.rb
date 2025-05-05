@@ -316,7 +316,7 @@ Battle::AI::Handlers::MoveFailureCheck.add("UserLosesHalfOfTotalHP",
 Battle::AI::Handlers::MoveFailureCheck.add("UserLosesHalfOfTotalHPExplosive",
   proc { |move, user, ai, battle|
     next true if !battle.moldBreaker && battle.pbCheckGlobalAbility(:DAMP)
-    case function_code
+    case move.function_code
     when "UserLosesHalfOfTotalHPExplosive"
       user_hp = user.battler.real_hp
       total_hp = user.battler.real_totalhp

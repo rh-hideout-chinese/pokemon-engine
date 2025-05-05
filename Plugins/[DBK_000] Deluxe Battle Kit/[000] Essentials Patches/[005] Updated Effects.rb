@@ -71,7 +71,7 @@ Battle::ItemEffects::AfterMoveUseFromUser.add(:SHELLBELL,
     next if totalDamage <= 0
     user.stopBoostedHPScaling = true
     user.pbRecoverHP(totalDamage / 8)
-    battle.pbDisplay(_INTL("{1}用{2}回复了少许HP。",
+    battle.pbDisplay(_INTL("{1}用{2}回复了少许体力!",
        user.pbThis, user.itemName))
   }
 )
@@ -273,7 +273,7 @@ Battle::AbilityEffects::OnTerrainChange.add(:MIMICRY,
       if new_type
         battle.pbShowAbilitySplash(battler)
         battler.pbChangeTypes(new_type)
-        battle.pbDisplay(_INTL("{1}的属性变成了{2}！", battler.pbThis, new_type_name))
+        battle.pbDisplay(_INTL("{1}的属性变成了{2}!", battler.pbThis, new_type_name))
         battle.pbHideAbilitySplash(battler)
       end
     end
@@ -327,18 +327,18 @@ class Battle::Move::UserTargetAverageHP < Battle::Move
   def pbEffectAgainstTarget(user,target)
     newHP = (user.real_hp + target.real_hp) / 2
     if user.real_hp > newHP
-	  user.stopBoostedHPScaling = true
-	  user.pbReduceHP(user.real_hp - newHP, false, false)
+      user.stopBoostedHPScaling = true
+      user.pbReduceHP(user.real_hp - newHP, false, false)
     elsif user.real_hp < newHP
-	  user.stopBoostedHPScaling = true
-	  user.pbRecoverHP(newHP - user.real_hp, false)
+      user.stopBoostedHPScaling = true
+      user.pbRecoverHP(newHP - user.real_hp, false)
     end
     if target.real_hp > newHP
-	  target.stopBoostedHPScaling = true
-	  target.pbReduceHP(target.real_hp - newHP, false, false)
+      target.stopBoostedHPScaling = true
+      target.pbReduceHP(target.real_hp - newHP, false, false)
     elsif target.real_hp < newHP
-	  target.stopBoostedHPScaling = true
-	  target.pbRecoverHP(newHP - target.real_hp, false)
+      target.stopBoostedHPScaling = true
+      target.pbRecoverHP(newHP - target.real_hp, false)
     end
     @battle.pbDisplay(_INTL("均分了彼此的体力！"))
     user.pbItemHPHealCheck
@@ -477,7 +477,7 @@ end
 class Battle::Move::LowerPPOfTargetLastMoveBy4 < Battle::Move
   def pbFailsAgainstTarget?(user, target, show_message)
     if !target.lastRegularMoveUsed || target.pokemon.immunities.include?(:PPLOSS)
-      @battle.pbDisplay(_INTL("But it failed!")) if show_message
+      @battle.pbDisplay(_INTL("但是，招式失败了！！")) if show_message
       return true
     end
     if target.powerMoveIndex >= 0
@@ -853,7 +853,7 @@ class Battle::Move::StartPerishCountsForAllBattlers < Battle::Move
       break
     end
     if failed
-      @battle.pbDisplay(_INTL("But it failed!"))
+      @battle.pbDisplay(_INTL("但是，招式失败了！！"))
       return true
     end
     return false
@@ -983,14 +983,13 @@ class Battle::Move::TwoTurnMove < Battle::Move
     @chargingTurn = false
     @damagingTurn = true
     if !user.effects[PBEffects::TwoTurnAttack]
-      if user.isRaidBoss? &&
-         ["TwoTurnAttackInvulnerableInSky",
-          "TwoTurnAttackInvulnerableUnderground",
-          "TwoTurnAttackInvulnerableUnderwater",
-          "TwoTurnAttackInvulnerableInSkyParalyzeTarget",
-          "TwoTurnAttackInvulnerableRemoveProtections",
-          "TwoTurnAttackInvulnerableInSkyTargetCannotAct"].include?(@function)
-        @chargingTurn = true
+      if user.isRaidBoss? && [
+         "TwoTurnAttackInvulnerableInSky",
+         "TwoTurnAttackInvulnerableUnderground",
+         "TwoTurnAttackInvulnerableUnderwater",
+         "TwoTurnAttackInvulnerableInSkyParalyzeTarget",
+         "TwoTurnAttackInvulnerableRemoveProtections",
+         "TwoTurnAttackInvulnerableInSkyTargetCannotAct"].include?(@function_code)
         @damagingTurn = true
       else
         @powerHerb = user.hasActiveItem?(:POWERHERB)
@@ -1005,12 +1004,12 @@ end
 #===============================================================================
 # Sky Drop
 #===============================================================================
-# Fails to work on Dynamax targets or Raid bosses.
+# Fails to work on Dynamax targets or if a Raid Boss is on the field.
 #-------------------------------------------------------------------------------
 class Battle::Move::TwoTurnAttackInvulnerableInSkyTargetCannotAct < Battle::Move::TwoTurnMove
   alias dx_pbFailsAgainstTarget? pbFailsAgainstTarget?
   def pbFailsAgainstTarget?(user, target, show_message)
-    if target.dynamax? || target.isRaidBoss?
+    if target.dynamax? || @battle.raidBattle?
       @battle.pbDisplay(_INTL("但是，招式失败了！！")) if show_message
       return true
     end

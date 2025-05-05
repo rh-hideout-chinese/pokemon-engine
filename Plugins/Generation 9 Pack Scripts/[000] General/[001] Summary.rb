@@ -100,8 +100,8 @@ class PokemonSummary_Scene
     else
       if !@pokemon.egg?
         commands[cmdGiveItem = commands.length] = _INTL("给予道具")
-        commands[cmdTakeItem = commands.length] = _INTL("取出道具") if @pokemon.hasItem?
-        commands[cmdNickname = commands.length] = _INTL("昵称") if !@pokemon.foreign?
+        commands[cmdTakeItem = commands.length] = _INTL("取回道具") if @pokemon.hasItem?
+        commands[cmdNickname = commands.length] = _INTL("取昵称") if !@pokemon.foreign?
         commands[cmdPokedex  = commands.length] = _INTL("查看图鉴") if $player.has_pokedex
       end
       commands[cmdMark = commands.length] = _INTL("标记")

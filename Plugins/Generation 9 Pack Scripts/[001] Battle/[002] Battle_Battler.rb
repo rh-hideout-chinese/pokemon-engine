@@ -287,7 +287,10 @@ class Battle::Battler
   end
   
   #-----------------------------------------------------------------------------
-  # Aliased for new continuous ability checks.
+  # - Edited to trigger Commander ability
+  # - Edited to reset protean trigger
+  # - Edited to reset Judgement type
+  # - Edited to trigger skip Trace ability an Pokémon that has Ability Shield
   #-----------------------------------------------------------------------------
   def pbContinualAbilityChecks(onSwitchIn = false)
     @battle.pbEndPrimordialWeather
@@ -301,7 +304,7 @@ class Battle::Battler
       if hasActiveItem?(:ABILITYSHIELD) # Trace failed by its own Ability Shield
         if onSwitchIn
           @battle.pbShowAbilitySplash(self)
-          @battle.pbDisplay(_INTL("{1}'s Ability is protected by the effects of its Ability Shield!", pbThis))
+          @battle.pbDisplay(_INTL("{1}的特性正受到特性护具效果的保护！", pbThis))
           @battle.pbHideAbilitySplash(self)
         end
       else
@@ -312,7 +315,7 @@ class Battle::Battler
           choice = choices[@battle.pbRandom(choices.length)]
           @battle.pbShowAbilitySplash(self)
           self.ability = choice.ability
-          @battle.pbDisplay(_INTL("{1} traced {2}'s {3}!", pbThis, choice.pbThis(true), choice.abilityName))
+          @battle.pbDisplay(_INTL("{1}复制了{2}的{3}！", pbThis, choice.pbThis(true), choice.abilityName))
           @battle.pbHideAbilitySplash(self)
           if !onSwitchIn && (unstoppableAbility? || abilityActive?)
             Battle::AbilityEffects.triggerOnSwitchIn(self.ability, self, @battle)
@@ -344,7 +347,7 @@ class Battle::Battler
       if @form == 0
         @battle.pbShowAbilitySplash(self, true)
         @battle.pbHideAbilitySplash(self)
-        pbChangeForm(1, _INTL("{1}的样子发生了变化！", pbThis))
+        pbChangeForm(1, _INTL("{1}变成其他样子了！", pbThis))
       end
     end
     paldea_pbCheckForm(endOfRound)
@@ -361,7 +364,7 @@ class Battle::Battler
   def isCommanderHost?
     commander = @effects[PBEffects::Commander]
     return commander && commander.length == 2
-  end
+  end  
   
   #-----------------------------------------------------------------------------
   # Aliased to prevent Pokemon under the effects of Commander from switching.
@@ -388,7 +391,7 @@ class Battle::Battler
           order = [pairedBattler.pbThis, pbThis(true)]
           pairedBattler.effects[PBEffects::Commander] = nil
         end
-        commanderMsg = _INTL("{1}从{2}的口中跳了出来！!", *order)
+        commanderMsg = _INTL("{1}从{2}的嘴里出来了！", *order)
         batSprite = @battle.scene.sprites["pokemon_#{pairedBattler.index}"]
       end
     end
@@ -463,11 +466,12 @@ class Battle::Battler
       end
       if user.status == :FROSTBITE && move.thawsUser?
         user.pbCureStatus(false)
-        @battle.pbDisplay(_INTL("{1}暖和起来了！", user.pbThis))
+        @battle.pbDisplay(_INTL("{1}暖和了！", user.pbThis))
       end
       targets.each do |b|
         next if b.damageState.unaffected || b.damageState.substitute
         b.pbCureStatus if b.status == :DROWSY && move.electrocuteUser?
+        b.pbCureStatus if b.status == :SLEEP && Settings::ELECTROCUTE_MOVES_CURE_SLEEP && move.electrocuteUser?
         b.pbCureStatus if b.status == :FROSTBITE && move.thawsUser?  
       end
     end
@@ -508,7 +512,7 @@ class Battle::Battler
     if !@effects[PBEffects::Instructed] && @lastMoveUsed == move.id &&
 	    @effects[PBEffects::SuccessiveMove] == move.id
       if showMessages
-        msg = _INTL("{1}不能连续使用两次！", move.name)
+        msg = _INTL("不能连续使出2次{1}！", move.name)
         (commandPhase) ? @battle.pbDisplayPaused(msg) : @battle.pbDisplay(msg)
       end
       return false
@@ -530,7 +534,7 @@ class Battle::Battler
         if target.effects[PBEffects::SilkTrap] && move.damagingMove?
           if move.pbShowFailMessages?(targets)
             @battle.pbCommonAnimation("SilkTrap", target)
-            @battle.pbDisplay(_INTL("{1}在攻击中守护住了自己！", target.pbThis))
+            @battle.pbDisplay(_INTL("{1}摆出了防守的架势！", target.pbThis))
           end
           target.damageState.protected = true
           @battle.successStates[user.index].protected = true
@@ -544,7 +548,7 @@ class Battle::Battler
         if target.effects[PBEffects::BurningBulwark] && move.damagingMove?
           if move.pbShowFailMessages?(targets)
             @battle.pbCommonAnimation("BurningBulwark", target)
-            @battle.pbDisplay(_INTL("{1}在攻击中守护住了自己！", target.pbThis))
+            @battle.pbDisplay(_INTL("{1}摆出了防守的架势！", target.pbThis))
           end
           target.damageState.protected = true
           @battle.successStates[user.index].protected = true

@@ -5,27 +5,6 @@
 #===============================================================================
 
 #-------------------------------------------------------------------------------
-# Adds a toggle for Mega Evolution in the debug menu.
-#-------------------------------------------------------------------------------
-MenuHandlers.add(:debug_menu, :deluxe_plugins_menu, {
-  "name"        => _INTL("豪华插件设定……"),
-  "parent"      => :main,
-  "description" => _INTL("由DBK及其附加插件添加的设定。"),
-  "always_show" => false
-})
-
-MenuHandlers.add(:debug_menu, :deluxe_mega, {
-  "name"        => _INTL("设置超级进化"),
-  "parent"      => :deluxe_plugins_menu,
-  "description" => _INTL("设置是否能进行超级进化。"),
-  "effect"      => proc {
-    $game_switches[Settings::NO_MEGA_EVOLUTION] = !$game_switches[Settings::NO_MEGA_EVOLUTION]
-    toggle = ($game_switches[Settings::NO_MEGA_EVOLUTION]) ? "已禁止" : "已允许"
-    pbMessage(_INTL("{1}超级进化。", toggle))
-  }
-})
-
-#-------------------------------------------------------------------------------
 # Game stat tracking for wild Mega battles.
 #-------------------------------------------------------------------------------
 class GameStats
@@ -170,6 +149,7 @@ class Battle::Battler
   def hasMega?
     return false if shadowPokemon? || @effects[PBEffects::Transform]
     return false if wild? && @battle.wildBattleMode != :mega
+    return false if @battle.raidBattle? && @battle.raidRules[:style] != :Basic
     return false if !getActiveState.nil?
     return false if hasEligibleAction?(:primal, :zmove, :ultra, :zodiac)
     return @pokemon&.hasMegaForm?
@@ -189,7 +169,10 @@ end
 class Battle::Scene::PokemonDataBox < Sprite
   def draw_special_form_icon
     specialX = (@battler.opposes?(0)) ? 208 : -28
-    if @battler.mega?
+    if @battler.shadowPokemon? && @battler.inHyperMode?
+      specialY = 8
+      filename = "Graphics/UI/Battle/icon_hyper_mode"
+    elsif @battler.mega?
       specialY = 8
       base_file = "Graphics/UI/Battle/icon_mega"
       try_file = base_file + "_" + @battler.pokemon.speciesName
@@ -227,7 +210,7 @@ class Battle::Scene::Animation::BattlerMegaEvolve < Battle::Scene::Animation
       :shadow  => @pkmn.shadowPokemon?,
       :hue     => @pkmn.super_shiny_hue
     }
-    @cry_file = GameData::Species.cry_filename(@mega[0], @mega[2])
+    @cry_file = GameData::Species.cry_filename(@mega[:species], @mega[:form])
     if @battler.item && @battler.item.is_mega_stone?
       @megastone_file = "Graphics/Items/" + @battler.item_id.to_s
     end
@@ -275,12 +258,12 @@ class Battle::Scene::Animation::BattlerMegaEvolve < Battle::Scene::Animation
     #---------------------------------------------------------------------------
     # Sets up bases.
     baseData = dxSetBases(@path + "Mega/base", @base_file, delay, center_x, center_y, !@battler.wild?)
-    arrBASES, tr_base_offset = baseData[0], baseData[1]
+    arrBASES, base_width = baseData[0], baseData[1]
     #---------------------------------------------------------------------------
     # Sets up trainer & Mega Ring                                          
     if !@battler.wild?
-      trData = dxSetTrainerWithItem(@trainer_file, @item_file, delay, !@opposes)
-      picTRAINER, trainer_end_x, trainer_y, arrITEM = trData[0], trData[1], trData[2], trData[3]
+      trData = dxSetTrainerWithItem(@trainer_file, @item_file, delay, !@opposes, base_width)
+      picTRAINER, arrITEM = trData[0], trData[1]
     end
     #---------------------------------------------------------------------------
     # Sets up overlay.
@@ -292,13 +275,15 @@ class Battle::Scene::Animation::BattlerMegaEvolve < Battle::Scene::Animation
     picPOKE, sprPOKE = pokeData[0], pokeData[1]
     #---------------------------------------------------------------------------
     # Sets up Mega Stone.
-    item_y = @pictureSprites[sprPOKE]. y - @pictureSprites[sprPOKE].bitmap.height
+    pkmnsprite = @pictureSprites[sprPOKE]
+    item_y = pkmnsprite.y - pkmnsprite.bitmap.height + findTop(pkmnsprite.bitmap)
     arrSTONE = dxSetSpriteWithOutline(@megastone_file, delay, center_x, item_y)
     #---------------------------------------------------------------------------
     # Animation objects.
-    orbData = dxSetSprite(@path + "Mega/orb_1", delay, center_x, center_y, !@battler.wild?, 0, 0)
+    offset_y = (@battler.wild?) ? center_y : center_y + 20
+    orbData = dxSetSprite(@path + "Mega/orb_1", delay, center_x, offset_y, PictureOrigin::CENTER, 0, 0)
     picORB, sprORB = orbData[0], orbData[1]
-    shineData = dxSetSprite(@path + "Mega/shine", delay, center_x, center_y, !@battler.wild?)
+    shineData = dxSetSprite(@path + "Mega/shine", delay, center_x, offset_y)
     picSHINE, sprSHINE = shineData[0], shineData[1]
     #---------------------------------------------------------------------------
     # Sets up Mega Pokemon.
@@ -306,15 +291,16 @@ class Battle::Scene::Animation::BattlerMegaEvolve < Battle::Scene::Animation
     arrPOKE.last[0].setColor(delay, Color.white)
     #---------------------------------------------------------------------------
     # Animation objects.
-    orb2Data = dxSetSprite(@path + "Mega/orb_2", delay, center_x, center_y, !@battler.wild?, 0)
+    orb2Data = dxSetSprite(@path + "Mega/orb_2", delay, center_x, offset_y, PictureOrigin::CENTER, 0)
     picORB2, sprORB2 = orb2Data[0], orb2Data[1]
     arrPARTICLES = dxSetParticles(@path + "particle", delay, center_x, center_y, 200)
-    pulseData = dxSetSprite(@path + "pulse", delay, center_x, center_y, !@battler.wild?, 100, 50)
+    pulseData = dxSetSprite(@path + "pulse", delay, center_x, offset_y, PictureOrigin::CENTER, 100, 50)
     picPULSE, sprPULSE = pulseData[0], pulseData[1]
     #---------------------------------------------------------------------------
     # Sets up Mega icon.
-    icon_y = @pictureSprites[arrPOKE.last[1]].y - @pictureSprites[arrPOKE.last[1]].bitmap.height - 20
-    iconData = dxSetSprite(@path + "Mega/icon", delay, center_x, icon_y, false, 0)
+    pkmnsprite = @pictureSprites[arrPOKE.last[1]]
+    icon_y = pkmnsprite.y - pkmnsprite.bitmap.height + findTop(pkmnsprite.bitmap) - 20
+    iconData = dxSetSprite(@path + "Mega/icon", delay, center_x, icon_y, PictureOrigin::BOTTOM, 0)
     picICON, sprICON = iconData[0], iconData[1]
     #---------------------------------------------------------------------------
     # Sets up skip button & fade out.
@@ -331,22 +317,24 @@ class Battle::Scene::Animation::BattlerMegaEvolve < Battle::Scene::Animation
     picPOKE.setVisible(delay, true)
     picFADE.moveOpacity(delay, 8, 0)
     delay = picFADE.totalDuration
-    picBUTTON.moveXY(delay, 6, 0, Graphics.height - 38)
-    picBUTTON.moveXY(delay + 36, 6, 0, Graphics.height)
+    picBUTTON.moveDelta(delay, 6, 0, -38)
+    picBUTTON.moveDelta(delay + 36, 6, 0, 38)
     #---------------------------------------------------------------------------
     # Slides trainer on screen with base (non-wild only).
     if !@battler.wild?
       picTRAINER.setVisible(delay + 4, true)
       arrBASES.first.setVisible(delay + 4, true)
-      picTRAINER.moveXY(delay + 4, 8, trainer_end_x, trainer_y)
-      arrBASES.first.moveXY(delay + 4, 8, trainer_end_x - tr_base_offset, center_y - 33)
+      delta = (base_width.to_f * 0.75).to_i
+      delta = -delta if @opposes
+      picTRAINER.moveDelta(delay + 4, 8, delta, 0)
+      arrBASES.first.moveDelta(delay + 4, 8, delta, 0)
       delay = picTRAINER.totalDuration + 1
       #-------------------------------------------------------------------------
       # Mega Ring appears with outline; slide upwards.
       picTRAINER.setSE(delay, "DX Action")
       arrITEM.each do |p, s| 
         p.setVisible(delay, true)
-        p.moveXY(delay, 15, @pictureSprites[s].x, @pictureSprites[s].y - 20)
+        p.moveDelta(delay, 15, 0, -20)
         p.moveOpacity(delay, 15, 255)
         p.moveOpacity(delay + 15, 8, 0)
       end
@@ -356,7 +344,7 @@ class Battle::Scene::Animation::BattlerMegaEvolve < Battle::Scene::Animation
     # Mega Stone appears with outline; slide upwards.
     arrSTONE.each do |p, s| 
       p.setVisible(delay, true)
-      p.moveXY(delay, 15, @pictureSprites[s].x, @pictureSprites[s].y - 20)
+      p.moveDelta(delay, 15, 0, -20)
       p.moveOpacity(delay, 15, 255)
       p.moveOpacity(delay + 15, 8, 0)
     end

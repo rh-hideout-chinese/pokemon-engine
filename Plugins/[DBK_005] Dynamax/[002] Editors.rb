@@ -17,9 +17,9 @@ module TrainerPokemonProperty
   def self.editor_properties(oldsetting)
     properties = self.dynamax_editor_properties(oldsetting)
     properties.concat([
-      [_INTL("无法极巨化"), BooleanProperty2,       _INTL("如果设置为true, 该训练师将永远无法对这只宝可梦进行极巨化.")],
-      [_INTL("极巨化等级"), LimitProperty2.new(10), _INTL("该宝可梦的极巨化等级 (0-10).")],
-      [_INTL("超极巨化"), BooleanProperty2,       _INTL("如果设置为true,该宝可梦将拥有超极巨化的元素.")]
+      [_INTL("无法极巨化"), BooleanProperty2,       _INTL("如果设置为true, 该训练师将永远无法对这只宝可梦进行极巨化。")],
+      [_INTL("极巨化等级"), LimitProperty2.new(10), _INTL("该宝可梦的极巨化等级 (0-10)。")],
+      [_INTL("超极巨化"), BooleanProperty2,       _INTL("如果设置为true,该宝可梦将拥有超极巨化的元素。")]
     ])
     return properties
   end

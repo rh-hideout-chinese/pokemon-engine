@@ -1,23 +1,3 @@
-module Settings
-	#字体垂直偏移量（默认为8，值越小文本向下）
-	Y_OFFSET_OF_TEXT = 8
-	
-  #命令纠正偏移量(默认为8，值越小文本向下)
-  Y_OFFSET_OF_ORDER_CORRCETION = 8
-
-	#引号中填写自已使用的字体即可
-	GLOBAL_FONT_NAME = "FZCuYuan-M03S"
-end
-
-module MessageConfig
-  FONT_NAME                 = Settings::GLOBAL_FONT_NAME
-  SMALL_FONT_NAME           = Settings::GLOBAL_FONT_NAME
-  NARROW_FONT_NAME          = Settings::GLOBAL_FONT_NAME
-  FONT_Y_OFFSET             = Settings::Y_OFFSET_OF_TEXT
-  SMALL_FONT_Y_OFFSET       = Settings::Y_OFFSET_OF_TEXT
-  NARROW_FONT_Y_OFFSET      = Settings::Y_OFFSET_OF_TEXT
-end
-
 def getLineBrokenChunks(bitmap, value, width, dims, plain = false)
   x = 0
   y = 0
@@ -26,47 +6,27 @@ def getLineBrokenChunks(bitmap, value, width, dims, plain = false)
     dims[0] = 0
     dims[1] = 0
   end
-  re = /<c=([^>]+)>/
-  reNoMatch = /<c=[^>]+>/
   return ret if !bitmap || bitmap.disposed? || width <= 0
   textmsg = value.clone
   color = Font.default_color
-  while (c = textmsg.slice!(/\n|[^ \r\t\f\n\-]*\-+|(\S*([ \r\t\f]?))/)) != nil
-    break if c == ""
-    # 中文处理
-    c.each_char do |ch|ch
-      if ch == "\n"
-        x = 0
-        y += 32
-        next
-      end
-      textSize = bitmap.text_size(ch)
-      textwidth = textSize.width
-      if x > 0 && x + textwidth > width
-        if ch =~ /[[:punct:]]/
-          # 当需要换行且字符是标点符号时，直接显示，不进行宽度判断
-          ret.push([ch, x, y, textwidth, 32, color])
-          x += textwidth
-          dims[0] = x if dims && dims[0] < x
-        else
-          # 需要换行且字符不是标点符号时，进行换行操作
-          x = 0
-          y += 32
-          ret.push([ch, x, y, textwidth, 32, color])
-          x += textwidth
-          dims[0] = x if dims && dims[0] < x
-        end
-      else
-        # 不需要换行时，正常显示
-        ret.push([ch, x, y, textwidth, 32, color])
-        x += textwidth
-        dims[0] = x if dims && dims[0] < x
-      end
+  textmsg.each_char do |ch|
+    if ch == "\n"
+      x = 0
+      y += 32
+      next
     end
-    # 结束
+    textSize = bitmap.text_size(ch)
+    textwidth = textSize.width
+    if x > 0 && x + textwidth > width && ch !~ /[[:punct:]]/
+      x = 0
+      y += 32
+    end
+    ret.push([ch, x, y, textwidth, 32, color])
+    x += textwidth
+    dims[0] = x if dims && dims[0] < x
   end
   dims[1] = y + 32 if dims
-  return ret
+  ret
 end
 
 def getLineBrokenText(bitmap, value, width, dims)
@@ -78,79 +38,35 @@ def getLineBrokenText(bitmap, value, width, dims)
     dims[0] = 0
     dims[1] = 0
   end
-  line = 0
-  position = 0
-  column = 0
   return ret if !bitmap || bitmap.disposed? || width <= 0
+
   textmsg = value.delete(" ").clone
   ret.push(["", 0, 0, 0, bitmap.text_size("中").height, 0, 0, 0, 0])
-  while (c = textmsg.slice!(/\n|(\S*([ \r\t\f]?))/)) != nil
-    break if c == ""
-    length = c.scan(/./m).length
-    ccheck = c
-    if ccheck == "\n"
-      ret.push(["\n", x, y, 0, textheight, line, position, column, 0])
-      x = 0
-      y += (textheight == 0) ? bitmap.text_size("国").height : textheight
-      line += 1
-      textheight = 0
-      column = 0
-      position += length
-      ret.push(["", x, y, 0, textheight, line, position, column, 0])
-      next
-    end
-    words = [ccheck]
-    words.length.times do |i|
-      word = words[i]
-      next if nil_or_empty?(word)
-      textSize = bitmap.text_size(word)
+  textmsg.each_line do |line|
+    length = line.scan(/./m).length
+    line.each_char do |char|
+      textSize = bitmap.text_size(char)
       textwidth = textSize.width
       if x > 0 && x + textwidth >= width - 2
-        # Zero-length word break
-        ret.push(["", x, y, 0, textheight, line, position, column, 0])
+        ret.push(["", x, y, 0, textheight, 0, 0, 0, 0])
         x = 0
-        column = 0
-        y += (textheight == 0) ? bitmap.text_size("国").height : textheight
-        line += 1
+        y += textheight.zero? ? bitmap.text_size("国").height : textheight
         textheight = 0
       end
       textheight = [textheight, textSize.height].max
-      ret.push([word, x, y, textwidth, textheight, line, position, column, length])
+      ret.push([char, x, y, textwidth, textheight, 0, 0, 0, length])
       x += textwidth
       dims[0] = x if dims && dims[0] < x
     end
-    position += length
-    column += length
+    y += textheight if y > 0
   end
   dims[1] = y + textheight if dims
-  return ret
+  ret
 end
+
 
 def ischinese?(char)
   char.ord >= 0x4e00 && char.ord <= 0x9fa5
-end
-
-def check_version_to_color(param)
-  if Essentials::VERSION == "21" || Essentials::VERSION == "21.1"
-    return Color.new_from_rgb(param)
-  else
-    return rgbToColor(param)
-  end
-end
-
-def check_version_to_textchunks(textchunks)
-  if Essentials::VERSION == "21" || Essentials::VERSION == "21.1"
-    return textchunks.each { |chunk| fmtReplaceEscapes(chunk) }
-  else
-    textchunks.each do |chunk|
-      chunk.gsub!(/&lt;/, "<")
-      chunk.gsub!(/&gt;/, ">")
-      chunk.gsub!(/&apos;/, "'")
-      chunk.gsub!(/&quot;/, "\"")
-      chunk.gsub!(/&amp;/, "&")
-    end
-    return textchunks
-  end
 end
 
 def _MAPINTL(mapid, *arg)
@@ -197,7 +113,7 @@ def getFormattedText(bitmap, xDst, yDst, widthDst, heightDst, text, lineheight =
   characters = []
   charactersInternal = []
   textchunks.push(text)
-  textchunks = check_version_to_textchunks(textchunks)
+  textchunks.each { |chunk| fmtReplaceEscapes(chunk) }
   textlen = 0
   controls.each_with_index do |control, i|
     textlen += textchunks[i].scan(/./m).length
@@ -248,113 +164,42 @@ def getFormattedText(bitmap, xDst, yDst, widthDst, heightDst, text, lineheight =
       param = controls[i][1]
       endtag = controls[i][3]
       case control
-      when "c"
-        if endtag
-          colorstack.pop
-        else
-          color = check_version_to_color(param)
-          colorstack.push([color, nil])
-        end
-      when "c2"
-        if endtag
-          colorstack.pop
-        else
-          base = check_version_to_color(param[0, 4])
-          shadow = check_version_to_color(param[4, 4])
-          colorstack.push([base, shadow])
-        end
+      when "c" then endtag ? colorstack.pop : colorstack.push([Color.new_from_rgb(param), nil])
+      when "c2" then endtag ? colorstack.pop : colorstack.push([Color.new_from_rgb(param[0, 4]), Color.new_from_rgb(param[4, 4])])
       when "c3"
         if endtag
           colorstack.pop
         else
           param = param.split(",")
-          # get pure colors unaffected by opacity
           oldColors = getLastParam(colorstack, defaultcolors)
-          base = (param[0] && param[0] != "") ? check_version_to_color(param[0]) : oldColors[0]
-          shadow = (param[1] && param[1] != "") ? check_version_to_color(param[1]) : oldColors[1]
+          base = param[0].empty? ? oldColors[0] : Color.new_from_rgb(param[0])
+          shadow = param[1].empty? ? oldColors[1] : Color.new_from_rgb(param[1])
           colorstack.push([base, shadow])
         end
-      when "o"
-        if endtag
-          opacitystack.pop
-        else
-          opacitystack.push(param.sub(/\s+$/, "").to_i)
-        end
-      when "b"
-        boldcount += (endtag ? -1 : 1)
-      when "i"
-        italiccount += (endtag ? -1 : 1)
-      when "u"
-        underlinecount += (endtag ? -1 : 1)
-      when "s"
-        strikecount += (endtag ? -1 : 1)
-      when "outln"
-        outlinecount += (endtag ? -1 : 1)
-      when "outln2"
-        outline2count += (endtag ? -1 : 1)
-      when "fs"   # Font size
-        if endtag
-          fontsizestack.pop
-        else
-          fontsizestack.push(param.sub(/\s+$/, "").to_i)
-        end
-        fontsize = getLastParam(fontsizestack, defaultfontsize)
-        bitmap.font.size = fontsize
-      when "fn"   # Font name
-        if endtag
-          fontnamestack.pop
-        else
-          fontname = param.sub(/\s+$/, "")
-          fontnamestack.push(Font.exist?(fontname) ? fontname : "Arial")
-        end
-        fontname = getLastParam(fontnamestack, defaultfontname)
-        bitmap.font.name = fontname
-      when "ar"   # Right align
-        if endtag
-          alignstack.pop
-        else
-          alignstack.push(1)
-        end
+      when "o" then endtag ? opacitystack.pop : opacitystack.push(param.sub(/\s+$/, "").to_i)
+      when "b" then boldcount += endtag ? -1 : 1
+      when "i" then italiccount += endtag ? -1 : 1
+      when "u" then underlinecount += endtag ? -1 : 1
+      when "s" then strikecount += endtag ? -1 : 1
+      when "outln" then outlinecount += endtag ? -1 : 1
+      when "outln2" then outline2count += endtag ? -1 : 1
+      when "fs" then endtag ? fontsizestack.pop : fontsizestack.push(param.sub(/\s+$/, "").to_i)
+      when "fn" then endtag ? fontnamestack.pop : fontnamestack.push(Font.exist?(param.sub(/\s+$/, "")) ? param.sub(/\s+$/, "") : "Arial")
+      when "ar", "al", "ac" 
+        endtag ? alignstack.pop : alignstack.push(control[0] == "ar" ? 1 : control[0] == "al" ? 0 : 2)
         nextline = 1 if x > 0 && nextline == 0
-      when "al"   # Left align
-        if endtag
-          alignstack.pop
-        else
-          alignstack.push(0)
-        end
-        nextline = 1 if x > 0 && nextline == 0
-      when "ac"   # Center align
-        if endtag
-          alignstack.pop
-        else
-          alignstack.push(2)
-        end
-        nextline = 1 if x > 0 && nextline == 0
-      when "icon"   # Icon
-        if !endtag
-          param = param.sub(/\s+$/, "")
-          graphic = "Graphics/Icons/#{param}"
-          controls[i] = nil
-          break
-        end
-      when "img"   # Icon
-        if !endtag
-          param = param.sub(/\s+$/, "")
-          param = param.split("|")
+      when "icon" then graphic = "Graphics/Icons/#{param.sub(/\s+$/, "")}" unless endtag
+      when "img"
+        unless endtag
+          param = param.sub(/\s+$/, "").split("|")
           graphic = param[0]
           if param.length > 1
-            graphicX = param[1].to_i
-            graphicY = param[2].to_i
-            graphicWidth = param[3].to_i
-            graphicHeight = param[4].to_i
+            graphicX, graphicY, graphicWidth, graphicHeight = param[1..4].map(&:to_i)
           end
-          controls[i] = nil
-          break
         end
-      when "br"   # Line break
-        nextline += 1 if !endtag
-      when "r"   # Right align this line
-        if !endtag
+      when "br" then nextline += 1 unless endtag
+      when "r"
+        unless endtag
           x = 0
           rightalign = 1
           lastword = [characters.length, x]
@@ -672,7 +517,6 @@ def getFormattedTextFast(bitmap, xDst, yDst, widthDst, heightDst, text, lineheig
     characters.compact!
   end
   characters.each { |char| char[1] = xDst + char[1] }
-  # Remove all characters with Y greater or equal to _yDst_+_heightDst_
   if heightDst >= 0
     characters.each_with_index do |char, i|
       characters[i] = nil if char[2] >= yDst + heightDst

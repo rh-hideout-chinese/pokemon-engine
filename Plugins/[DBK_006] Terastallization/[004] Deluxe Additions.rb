@@ -157,17 +157,17 @@ MidbattleHandlers.add(:midbattle_global, :wild_tera_battle,
       if battle.pbCanTerastallize?(foe.index)
         PBDebug.log("[Midbattle Global] #{logname} will Terastallize.")
         battle.pbTerastallize(foe.index)
-        battle.noBag = false
         battle.disablePokeBalls = true
         battle.sosBattle = false if defined?(battle.sosBattle)
         battle.totemBattle = nil if defined?(battle.totemBattle)
-        foe.damageThreshold = 6
+        foe.damageThreshold = 20
       else
         battle.wildBattleMode = nil
       end
     when "BattlerReachedHPCap_foe"
       PBDebug.log("[Midbattle Global] #{logname} damage cap reached.")
       foe.unTera(true)
+      battle.noBag = false
       battle.disablePokeBalls = false
       battle.pbDisplayPaused(_INTL("{1}'s Tera Jewel shattered!\nIt may now be captured!", foe.pbThis))
     when "BattleEndWin"

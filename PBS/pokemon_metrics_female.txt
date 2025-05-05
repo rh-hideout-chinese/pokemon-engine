@@ -3,7 +3,7 @@
 [RATICATE,,female]
 BackSprite = -6,30
 FrontSprite = 2,10
-ShadowSprite = 2,-6,2
+ShadowSprite = 0,-6,1
 #-------------------------------
 [PIKACHU,,female]
 BackSprite = -5,5
@@ -71,3 +71,8 @@ ShadowSprite = 0,-13,2
 BackSprite = -15,35
 FrontSprite = 11,5
 ShadowSprite = 2,5,4
+#-------------------------------
+[PYROAR,,female]
+BackSprite = -21,45
+FrontSprite = 9,8
+ShadowSprite = 3,-8,3

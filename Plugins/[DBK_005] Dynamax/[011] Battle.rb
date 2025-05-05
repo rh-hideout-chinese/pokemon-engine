@@ -231,7 +231,7 @@ end
 #===============================================================================
 class Battle::Scene
   #-----------------------------------------------------------------------------
-  # Aliased to apply Dynamax pattern to battler sprites.
+  # Aliased to get the correct sprite when Dynamax is concerned.
   #-----------------------------------------------------------------------------
   alias dynamax_pbChangePokemon pbChangePokemon
   def pbChangePokemon(idxBattler, pkmn)
@@ -244,11 +244,13 @@ class Battle::Scene
     if !pbInSafari? && battler.pokemon.personalID != pkmn.personalID
       newPkmn             = Pokemon.new(pkmn.species, pkmn.level)
       newPkmn.gender      = pkmn.gender
+      newPkmn.form_simple = pkmn.form if !pkmn.emax? && !pkmn.gmax?
       newPkmn.shiny       = pkmn.shiny?
       newPkmn.super_shiny = pkmn.super_shiny?
       newPkmn.gmax_factor = battler.gmax_factor?
       newPkmn.dynamax     = battler.dynamax?
       newPkmn.makeShadow if pkmn.shadowPokemon?
+      newPkmn.spot_hash   = pkmn.spot_hash if defined?(pkmn.spot_hash)
       return newPkmn
     end
     return pkmn

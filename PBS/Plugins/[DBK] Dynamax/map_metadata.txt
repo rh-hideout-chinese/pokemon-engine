@@ -1,4 +1,4 @@
-﻿### Changes will apply automatically. ###
+### Changes will apply automatically. ###
 #-------------------------------
 [010]   # Cedolan Gym
 Flags = PowerSpot

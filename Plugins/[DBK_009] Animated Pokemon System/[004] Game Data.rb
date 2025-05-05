@@ -248,8 +248,19 @@ module GameData
       else
         ret = self.front_sprite_bitmap(species, pkmn.form, pkmn.gender, pkmn.shiny?, pkmn.shadowPokemon?)
       end
-      ret.compile_strip(species)
+      ret.compile_strip(pkmn, back)
       return ret
     end
+  end
+end
+
+#===============================================================================
+# Utility for quickly obtaining the super shiny hue value to apply to a Pokemon.
+#===============================================================================
+class Pokemon
+  def super_shiny_hue
+    return 0 if !super_shiny?
+    metrics = GameData::SpeciesMetrics.get_species_form(@species, @form, @gender == 1)
+    return metrics.sprite_super_hue
   end
 end

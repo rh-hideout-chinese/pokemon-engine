@@ -177,26 +177,27 @@ class Battle::Scene
   # Edited for command menu display.
   #-----------------------------------------------------------------------------
   def pbCommandMenu(idxBattler, firstAction)
-    bagCommand = _INTL("Bag")
+    bagCommand = _INTL("背包")
     shadowTrainer = (GameData::Type.exists?(:SHADOW) && @battle.trainerBattle?)
-    runCommand = (shadowTrainer) ? _INTL("Call") : (firstAction) ? _INTL("Run") : _INTL("Cancel")
-    if @battle.raidBattle?
-      runCommand = _INTL("Cheer")
+    runCommand = (shadowTrainer) ? _INTL("呼叫") : (firstAction) ? _INTL("逃跑") : _INTL("取消")
+    hasCheer = defined?(@battle.cheerMode) && @battle.cheerMode
+    if hasCheer
+      runCommand = _INTL("加油")
       mode = 5
     elsif @battle.launcherBattle?
-      bagCommand = _INTL("Launch")
+      bagCommand = _INTL("进行")
       mode = (shadowTrainer) ? 8 : (firstAction) ? 6 : 7
     else
       mode = (shadowTrainer) ? 2 : (firstAction) ? 0 : 1
     end
     cmds = [
-      _INTL("What will\n{1} do?", @battle.battlers[idxBattler].name),
-      _INTL("Fight"), bagCommand,
-      _INTL("Pokémon"), runCommand
+      _INTL("{1} 要做什\n么呢?", @battle.battlers[idxBattler].name),
+      _INTL("对战"), bagCommand,
+      _INTL("精灵"), runCommand
     ]
     ret = pbCommandMenuEx(idxBattler, cmds, mode)
-    ret = 4 if ret == 3 && shadowTrainer || @battle.raidBattle?
-    ret = -1 if ret == 3 && !firstAction && !@battle.raidBattle?
+    ret = 4 if ret == 3 && (shadowTrainer || hasCheer)
+    ret = -1 if ret == 3 && (!firstAction && !hasCheer)
     return 3 if ret > 3 && ($DEBUG && Input.press?(Input::CTRL))
     return ret
   end
@@ -333,14 +334,14 @@ class Battle
     move = (idxMove.is_a?(Integer)) ? battler.moves[idxMove] : idxMove
     return false unless move
     if move.pp == 0 && move.total_pp > 0 && !sleepTalk
-      pbDisplayPaused(_INTL("这个招式没有PP了！")) if showMessages
+      pbDisplayPaused(_INTL("这个招式已经没有PP了!")) if showMessages
       return false
     end
     if battler.effects[PBEffects::Encore] > 0
       if !move.powerMove? && move.id != battler.effects[PBEffects::EncoreMove]
         if showMessages
           encoreMove = GameData::Move.get(battler.effects[PBEffects::EncoreMove]).name
-          pbDisplayPaused(_INTL("因为再来一次的效果，{1}只能使出{2}！", battler.name, encoreMove))
+          pbDisplayPaused(_INTL("{1}由于受到再来一次的影响只能使用{2}!", battler.name, encoreMove))
         end
         return false
       end
@@ -445,6 +446,11 @@ class Battle::AI
     end
     ret = false
     PBDebug.logonerr { ret = pbChooseToUseItem }
+    if ret
+      PBDebug.log("")
+      return
+    end
+    PBDebug.logonerr { ret = pbChooseToUseSpecialCommand }
     if ret
       PBDebug.log("")
       return

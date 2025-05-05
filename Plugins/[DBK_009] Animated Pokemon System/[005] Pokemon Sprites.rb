@@ -5,7 +5,8 @@
 ################################################################################
 
 class PokemonSprite < Sprite
-  attr_reader :pkmn
+  attr_reader   :pkmn
+  attr_accessor :hue, :display_values
 
   #-----------------------------------------------------------------------------
   # General sprite utilities.
@@ -21,6 +22,12 @@ class PokemonSprite < Sprite
   
   def iconBitmap; return @_iconbitmap; end
   
+  def hue=(value)
+    return if !animated? || @_iconbitmap.changedHue?
+    @_iconbitmap.hue_change(value)
+    @hue = value
+  end
+  
   #-----------------------------------------------------------------------------
   # Aliased to set Pokemon property and update the animation.
   #-----------------------------------------------------------------------------
@@ -30,6 +37,7 @@ class PokemonSprite < Sprite
     @pkmn = pokemon
     @_iconbitmap.setPokemon(@pkmn, back)
     @_iconbitmap.update_pokemon_sprite
+    pbSetDisplay
   end
   
   alias animated_setPokemonBitmapSpecies setPokemonBitmapSpecies
@@ -38,6 +46,13 @@ class PokemonSprite < Sprite
     @pkmn = pokemon
     @_iconbitmap.setPokemon(@pkmn, back)
     @_iconbitmap.update_pokemon_sprite
+    pbSetDisplay
+  end
+  
+  alias animated_setSpeciesBitmap setSpeciesBitmap
+  def setSpeciesBitmap(*args)
+    animated_setSpeciesBitmap(*args)
+	pbSetDisplay
   end
   
   alias animated_update update
@@ -57,7 +72,7 @@ class PokemonSprite < Sprite
     if filename
       @pkmn = pkmn
       bitmap = DeluxeBitmapWrapper.new(filename, [Settings::FRONT_BATTLER_SPRITE_SCALE, 1])
-      bitmap.compile_strip(@pkmn.species)
+      bitmap.compile_strip(@pkmn, back)
       bitmap.setPokemon(@pkmn, back)
       bitmap.update_pokemon_sprite
       @_iconbitmap = bitmap
@@ -69,6 +84,7 @@ class PokemonSprite < Sprite
       @_iconbitmap = nil
       self.bitmap = nil
     end
+    pbSetDisplay
   end
   
   #-----------------------------------------------------------------------------
@@ -129,18 +145,46 @@ class PokemonSprite < Sprite
   end
   
   #-----------------------------------------------------------------------------
-  # Utility for constricting sprites to prevent overlapping with UI elements.
+  # Utility for determining how to display sprites in various UI's.
   #-----------------------------------------------------------------------------
-  def constrict(amt, deanimate = false)
-    return if !@_iconbitmap || !Settings::CONSTRICT_POKEMON_SPRITES
-    if amt.is_a?(Array)
-      @_iconbitmap.constrict_x = amt[0]
-      @_iconbitmap.constrict_y = amt[1]
-      @_iconbitmap.constrict   = amt.max
-    else
-      @_iconbitmap.constrict = amt
+  def pbSetDisplay(params = [], species = nil, back = false)
+    @display_values = params if !@display_values && !params.empty?
+    return if !@_iconbitmap || !@display_values
+    setOffset
+    v = @display_values.clone
+    self.x = v[0] || 0
+    self.y = v[1] || 0
+    oldX, oldY = self.x, self.y
+    offset = findCenter(self.bitmap)
+    sp_metrics = Settings::POKEMON_UI_METRICS
+    species_offset = (@pkmn) ? sp_metrics[@pkmn.species_data.id] : sp_metrics[species]
+    if species_offset
+      offset[0] = (back) ? (offset[0] - species_offset[0]) : (offset[0] + species_offset[0])
+      offset[1] += species_offset[1]
     end
-    @_iconbitmap.deanimate if deanimate
+    (self.mirror) ? self.x -= offset[0] : self.x += offset[0]
+    self.y += offset[1]
+    if Settings::CONSTRICT_POKEMON_SPRITES
+      width, height = self.bitmap.width, self.bitmap.height
+      v[2] += (v[2] * self.zoom_x * 0.6).ceil if self.zoom_x != 1
+      v[3] += (v[3] * self.zoom_y * 0.6).ceil if v[3] && self.zoom_y != 1
+      c_x = v[2] || width
+      if width < c_x
+        @_iconbitmap.constrict_x += offset[0] if offset[0] < 0
+        @_iconbitmap.constrict_w = (offset[0] < 0) ? (width + -offset[0] * 2) : (width + offset[0] * 2)
+      else
+        @_iconbitmap.constrict_x = ((width - c_x) / 2.0).ceil + -offset[0]
+        @_iconbitmap.constrict_w = c_x
+      end
+      c_y = v[3] || v[2] || height
+      if height < c_y
+        @_iconbitmap.constrict_y += offset[1] if offset[1] < 0
+        @_iconbitmap.constrict_h = (offset[1] < 0) ? (height + -offset[1] * 2) : (height + offset[1] * 2)
+      else
+        @_iconbitmap.constrict_y = ((height - c_y) / 2.0).ceil + -offset[1]
+        @_iconbitmap.constrict_h = c_y
+      end
+    end
     self.update
   end
 end

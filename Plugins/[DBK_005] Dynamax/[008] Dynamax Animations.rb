@@ -18,11 +18,13 @@ class Battle::Scene::Animation
       when Pokemon
         poke.species_data.apply_dynamax_metrics_to_sprite(@pictureSprites[sprite], 1)
         @pictureSprites[sprite].set_dynamax_pattern(pkmn.species_data.id, true)
-      when Array
-        speciesID = GameData::Species.get_species_form(poke[0], poke[2]).id
-        metrics_data = GameData::SpeciesMetrics.get(speciesID)
+      when Hash
+        species_data = GameData::Species.get_species_form(poke[:species], poke[:form])
+        data = [species_data.species, species_data.form]
+        data.push(poke[:gender] == 1) if PluginManager.installed?("[DBK] Animated Pokémon System")
+        metrics_data = GameData::SpeciesMetrics.get_species_form(*data)
         metrics_data.apply_dynamax_metrics_to_sprite(@pictureSprites[sprite], 1)
-        @pictureSprites[sprite].set_dynamax_pattern(speciesID, true)
+        @pictureSprites[sprite].set_dynamax_pattern(species_data.id, true)
       end
       outline.setXY(delay, @pictureSprites[sprite].x, @pictureSprites[sprite].y)
       outline.setZ(delay, @pictureSprites[sprite].z)
@@ -82,14 +84,27 @@ class Battle::Scene::Animation::BattlerDynamax < Battle::Scene::Animation
   def setPokemonSpriteData
     pkmn = @battler.visiblePokemon
     form = pkmn.getUndynamaxForm
-    @pkmn = [pkmn.species, pkmn.gender, form, pkmn.shiny?, pkmn.shadowPokemon?]
+    @pkmn = {
+      :pokemon => pkmn,
+      :species => pkmn.species,
+      :gender  => pkmn.gender,
+      :form    => form,
+      :shiny   => pkmn.shiny?,
+      :shadow  => pkmn.shadowPokemon?,
+      :hue     => pkmn.super_shiny_hue
+    }
     if @battler.gmax_factor?
       form = pkmn.form        if pkmn.gmax?
       form = pkmn.getGmaxForm if pkmn.hasGigantamaxForm?
     end
     form = pkmn.form        if pkmn.emax?
     form = pkmn.getEmaxForm if pkmn.hasEternamaxForm?
-    @dynamax = [pkmn.species, pkmn.gender, form, pkmn.shiny?, pkmn.shadowPokemon?]
+    @dynamax = @pkmn.clone
+    @dynamax[:form] = form
+    if pkmn.super_shiny? && PluginManager.installed?("[DBK] Animated Pokémon System")
+      metrics = GameData::SpeciesMetrics.get_species_form(pkmn.species, form, pkmn.gender == 1)
+      @dynamax[:hue] = metrics.sprite_super_hue 
+    end
     @shadow_file = GameData::Species.shadow_filename(pkmn.species, form)
     @shadow_file = GameData::Species.convert_shadow_file(@shadow_file, pkmn.species, pkmn.form)
     @cry_file = GameData::Species.cry_filename(pkmn.species, form)
@@ -114,16 +129,13 @@ class Battle::Scene::Animation::BattlerDynamax < Battle::Scene::Animation
     picOVERLAY, sprOVERLAY = overlayData[0], overlayData[1]
     #---------------------------------------------------------------------------
     # Sets up Dynamax shadow.
-    shadowData = dxSetSprite(@shadow_file, delay, center_x, center_y, false, 0, 0)
+    shadowData = dxSetSprite(@shadow_file, delay, center_x, center_y * 1.5, PictureOrigin::CENTER, 0, 0)
     picSHADOW, sprSHADOW = shadowData[0], shadowData[1]
-    shadow_offset = @pictureSprites[sprSHADOW].bitmap.width / 2
-    shadow_x = @pictureSprites[sprSHADOW].x - shadow_offset
-    shadow_y = @pictureSprites[sprSHADOW].y
-    picSHADOW.setXY(delay, shadow_x, shadow_y)
     #---------------------------------------------------------------------------
     # Sets up Dynamax Pokemon.
     ypos = Graphics.height / 4 + center_y
     arrPOKE = dynamaxSpriteWithOutline(@dynamax, delay, center_x, ypos, !@opposes)
+    dxSetSpotPatterns(@dynamax[:pokemon], @pictureSprites[arrPOKE.last[1]]) if @pkmn[:form] == @dynamax[:form]
     arrPOKE.last[0].setColor(delay, Color.white)
     arrPOKE.each do |p, s|
       p.setZoom(delay, 0)
@@ -131,42 +143,45 @@ class Battle::Scene::Animation::BattlerDynamax < Battle::Scene::Animation
     end
     #---------------------------------------------------------------------------
     # Sets up pulse.
-    pulseData = dxSetSprite(@path + "pulse", delay, center_x, center_y, false, 100, 50)
+    pulseData = dxSetSprite(@path + "pulse", delay, center_x, center_y, PictureOrigin::CENTER, 100, 50)
     picPULSE, sprPULSE = pulseData[0], pulseData[1]
     #---------------------------------------------------------------------------
     # Sets up base.
     baseData = dxSetBases(@path + "Dynamax/base", @base_file, delay, center_x, center_y)
     picBASE, sprBASE = baseData[0].first, @pictureEx.length - 1
-    @pictureSprites[sprBASE].x = center_x - @pictureSprites[sprBASE].bitmap.width / 2
-    base_x, base_y = @pictureSprites[sprBASE].x, @pictureSprites[sprBASE].y
-    picBASE.setXY(delay, base_x, base_y)
+    picBASE.setOrigin(delay, PictureOrigin::BOTTOM)
+    base_x = @pictureSprites[sprBASE].x
+    base_y = center_y + @pictureSprites[sprBASE].bitmap.height
+    picBASE.setXY(delay, center_x, base_y)
     #---------------------------------------------------------------------------
     # Sets up battler.
     pokeData = dxSetPokemon(@pkmn, delay, !@opposes)
     picPOKE, sprPOKE = pokeData[0], pokeData[1]
+    dxSetSpotPatterns(@pkmn[:pokemon], @pictureSprites[sprPOKE])
     #---------------------------------------------------------------------------
     # Sets up trainer
-    picTRAINER, sprTRAINER = dxSetSprite(@trainer_file, delay, center_x, 138)
+    picTRAINER, sprTRAINER = dxSetSprite(@trainer_file, delay, center_x, center_y, PictureOrigin::BOTTOM)
+    offsetX = @pictureSprites[sprTRAINER].bitmap.width / 2
     if @opposes
-      offset = 64
-      @pictureSprites[sprTRAINER].x = Graphics.width
+      @pictureSprites[sprTRAINER].x = Graphics.width + offsetX
     else
-      offset = -64
       @pictureSprites[sprTRAINER].mirror = true
-      @pictureSprites[sprTRAINER].x = -@pictureSprites[sprTRAINER].bitmap.width
-    end	
-    trainer_x, trainer_y = @pictureSprites[sprTRAINER].x, @pictureSprites[sprTRAINER].y
-    trainer_end_x = center_x - @pictureSprites[sprTRAINER].bitmap.width / 2
+      @pictureSprites[sprTRAINER].x = -offsetX
+    end
+    trainer_x = @pictureSprites[sprTRAINER].x
+    trainer_y = base_y - (@pictureSprites[sprBASE].bitmap.height / 2) + 4
     picTRAINER.setXY(delay, trainer_x, trainer_y)
-    picTRAINER.setOrigin(delay, PictureOrigin::TOP_LEFT)
     #---------------------------------------------------------------------------
     # Sets up Dynamax Band
-    arrITEM = dxSetSpriteWithOutline(@item_file, delay, center_x, 130)
+    item_y = trainer_y - @pictureSprites[sprTRAINER].bitmap.height
+    arrITEM = dxSetSpriteWithOutline(@item_file, delay, center_x, item_y)
     #---------------------------------------------------------------------------
     # Sets Poke Ball.
-    ballData = dxSetSprite(@ball_file, delay, center_x + 112, center_y + 55)
+    ballData = dxSetSprite(@ball_file, delay, 0, 0, PictureOrigin::BOTTOM_LEFT)
     picBALL, sprBALL = ballData[0], ballData[1]
-    ball_x, ball_y = @pictureSprites[sprBALL].x, @pictureSprites[sprBALL].y
+    ball_x = center_x - (@pictureSprites[sprBALL].bitmap.width / 16)
+    ball_y = trainer_y + 22
+    picBALL.setXY(delay, ball_x, ball_y)
     picBALL.setSrcSize(delay, 32, 64)
     #---------------------------------------------------------------------------
     # Sets up skip button & fade out.
@@ -184,35 +199,37 @@ class Battle::Scene::Animation::BattlerDynamax < Battle::Scene::Animation
     picBALL.setVisible(delay, true)
     picFADE.moveOpacity(delay, 8, 0)
     delay = picFADE.totalDuration
-    picBUTTON.moveXY(delay, 6, 0, Graphics.height - 38)
-    picBUTTON.moveXY(delay + 36, 6, 0, Graphics.height)
+    picBUTTON.moveDelta(delay, 6, 0, -38)
+    picBUTTON.moveDelta(delay + 36, 6, 0, 38)
     #---------------------------------------------------------------------------
     # Opens Poke Ball; begins recall of Pokemon.
     picPOKE.moveColor(delay, 4, Color.new(31 * 8, 22 * 8, 30 * 8, 255))
     delay = picPOKE.totalDuration
     picPOKE.setSE(delay, "Battle recall")
     picBALL.setName(delay, @ball_file + "_open")
-    picBALL.setSrcSize(delay, 32, 64)
     #---------------------------------------------------------------------------
     # Shrink and move Pokemon sprite to ball; close ball.
     picPOKE.moveZoom(delay, 6, 0)
-    picPOKE.moveXY(delay, 6, center_x, ball_y)
+    picPOKE.moveXY(delay, 6, center_x, ball_y - 38)
+    picPOKE.moveZ(delay + 1, 1, 1000)
     picPOKE.setVisible(delay + 6, false)
     delay = picPOKE.totalDuration + 1
     picBALL.setName(delay, @ball_file)
     picBALL.setSrcSize(delay, 32, 64)
     #---------------------------------------------------------------------------
     # Slides trainer on screen; shifts ball over.
-    picBALL.moveXY(delay, 8, ball_x + -offset, ball_y)
+    picBALL.moveDelta(delay, 8, ((@opposes) ? -64 : 64), 0)
     picTRAINER.setVisible(delay + 6, true)
-    picTRAINER.moveXY(delay + 6, 12, trainer_end_x, trainer_y)
+    delta_trainer = (@opposes) ? -(center_x + offsetX) : center_x + offsetX
+    trainer_x += delta_trainer
+    picTRAINER.moveDelta(delay + 6, 12, delta_trainer, 0)
     delay = picTRAINER.totalDuration + 1
     #---------------------------------------------------------------------------
     # Dynamax Band appears with outline; slides upwards.  
     picBALL.setSE(delay, "DX Action")
     arrITEM.each do |p, s| 
       p.setVisible(delay, true)
-      p.moveXY(delay, 15, @pictureSprites[s].x, @pictureSprites[s].y - 20)
+      p.moveDelta(delay, 15, 0, -20)
       p.moveOpacity(delay, 15, 255)
     end
     delay = arrITEM.last[0].totalDuration + 1
@@ -220,8 +237,7 @@ class Battle::Scene::Animation::BattlerDynamax < Battle::Scene::Animation
     # Poke Ball enlarges and changes color.
     picBALL.setSE(delay, "Anim/Psych Up", 100)
     picBALL.moveZoom(delay, 6, 150)
-    enlarge_x = (@opposes) ? -8 : 120
-    picBALL.moveXY(delay, 6, ball_x + enlarge_x, ball_y)
+    picBALL.moveDelta(delay, 6, -8, 8)
     picBALL.moveColor(delay, 6, Color.new(255, 51, 153, 180))
     delay = picBALL.totalDuration + 6
     picBALL.setVisible(delay, false)
@@ -231,10 +247,12 @@ class Battle::Scene::Animation::BattlerDynamax < Battle::Scene::Animation
     picBG.moveZoom(delay, 6, zoomBG * 150)
     picOVERLAY.setVisible(delay, true)
     picOVERLAY.moveOpacity(delay, 6, 255)
-    picBASE.moveZoom(delay, 6, 600)
+    dir = (@opposes) ? -600 : 600
+    picBASE.moveZoom(delay, 6, dir.abs)
+    picBASE.moveDelta(delay, 6, dir, dir.abs)
     picBASE.setOpacity(delay + 6, 0)
-    picTRAINER.moveXY(delay, 6, trainer_end_x + 128, trainer_y) if @opposes
-    picTRAINER.moveZoom(delay, 6, 600)
+    picTRAINER.moveZoom(delay, 6, dir.abs)
+    picTRAINER.moveDelta(delay, 6, dir, dir.abs - 200)
     picTRAINER.setSE(delay, "Battle throw", 100)
     picTRAINER.setVisible(delay + 6, false)
     delay = picTRAINER.totalDuration
@@ -250,9 +268,10 @@ class Battle::Scene::Animation::BattlerDynamax < Battle::Scene::Animation
     delay = picOVERLAY.totalDuration + 20
     #---------------------------------------------------------------------------
     # Poke Ball drops, sinks into base, and shakes screen.
-    new_ball_x = ball_x + enlarge_x + offset
-    picBALL.setVisible(delay, true)
+    new_ball_x = ball_x - 8
+    new_ball_y = ball_y + 16
     picBALL.setXY(delay, new_ball_x, -32)
+    picBALL.setVisible(delay, true)
     delay = picBALL.totalDuration + 2
     4.times do |i|
       t = [4, 4, 3, 2][i]
@@ -261,14 +280,14 @@ class Battle::Scene::Animation::BattlerDynamax < Battle::Scene::Animation
       if i > 0
         picBG.moveXY(delay, t, bg_x, bg_y - (100 / d))
         picBASE.moveXY(delay, t, base_x, base_y - (100 / d))
-        picBALL.moveXY(delay, t, new_ball_x, ball_y - (100 / d))
+        picBALL.moveXY(delay, t, new_ball_x, new_ball_y - (100 / d))
       else
         picBALL.setSrcSize(delay + (2 * t), 32, 40)
         picBALL.setSE(delay + (2 * t), "Anim/Earth1")
       end
       picBG.moveXY(delay + t, t, bg_x, bg_y)
       picBASE.moveXY(delay + t, t, base_x, base_y)
-      picBALL.moveXY(delay + t, t, new_ball_x, ball_y)
+      picBALL.moveXY(delay + t, t, new_ball_x, new_ball_y)
       delay = picBALL.totalDuration
     end
     #---------------------------------------------------------------------------
@@ -286,7 +305,6 @@ class Battle::Scene::Animation::BattlerDynamax < Battle::Scene::Animation
     #---------------------------------------------------------------------------
     # Dynamax Pokemon zooms out of ball; shadow expands along with Pokemon.
     picSHADOW.setVisible(delay, true)
-    picSHADOW.setXY(delay, shadow_x + shadow_offset, shadow_y *= 1.5)
     picSHADOW.moveZoom(delay, 20, 200)
     picSHADOW.moveOpacity(delay, 20, 100)
     arrPOKE.each do |p, s| 
@@ -305,17 +323,19 @@ class Battle::Scene::Animation::BattlerDynamax < Battle::Scene::Animation
     picBG.moveTone(delay, 10, Tone.new(100, 100, 100, 100))
     #---------------------------------------------------------------------------
     # Trainer and the base zoom back in from off screen.
-    trainer_x = (@opposes) ? offset * 2 + 32 : offset / 2
-    new_trainer_x, new_trainer_y = trainer_end_x + trainer_x, trainer_y + 160
-    picBASE.setOrigin(delay, PictureOrigin::CENTER)
-    picBASE.setXY(delay, new_trainer_x, new_trainer_y + 228)
+    new_base_x = (@opposes) ? base_x + 100 : base_x - 100
+    new_base_y = base_y + 50
+    base_height = @pictureSprites[sprBASE].bitmap.height
+    new_trainer_x = (@opposes) ? trainer_x + 100 : trainer_x - 100
+    new_trainer_y = new_base_y - (base_height / 4) + 2
+    picBASE.setXY(delay, new_base_x, new_base_y + Graphics.height + base_height)
+    picBASE.moveXY(delay, 16, new_base_x, new_base_y)
     picBASE.setZoom(delay, 600)
     picBASE.moveZoom(delay, 16, 50)
-    picBASE.moveXY(delay, 16, new_trainer_x, new_trainer_y + 32)
     picBASE.moveOpacity(delay, 16, 255)
     picTRAINER.setVisible(delay, true)
-    picTRAINER.setOrigin(delay, PictureOrigin::CENTER)
-    picTRAINER.setXY(delay, new_trainer_x, new_trainer_y)
+    picTRAINER.setXY(delay, new_trainer_x, new_trainer_y + Graphics.height)
+    picTRAINER.moveXY(delay, 16, new_trainer_x, new_trainer_y)
     picTRAINER.moveZoom(delay, 16, 50)
     delay = picBG.totalDuration + 4
     #---------------------------------------------------------------------------
@@ -340,7 +360,7 @@ class Battle::Scene::Animation::BattlerDynamax < Battle::Scene::Animation
       if i > 0
         picOVERLAY.moveOpacity(delay + 2, t, 240)
         picBG.moveXY(delay, t, -25, -(100 / d))        
-        picBASE.moveXY(delay, t, new_trainer_x, (new_trainer_y + 32) - (100 / d))
+        picBASE.moveXY(delay, t, new_base_x, new_base_y - (100 / d))
         picTRAINER.moveXY(delay, t, new_trainer_x, new_trainer_y - (100 / d))
         arrPOKE.each { |p, s| p.moveXY(delay + 2, t, @pictureSprites[s].x, @pictureSprites[s].y - (200 / d)) }
       else
@@ -350,7 +370,7 @@ class Battle::Scene::Animation::BattlerDynamax < Battle::Scene::Animation
         picPULSE.moveOpacity(delay + 2, 10, 0)
         for i in 0...arrPOKE.length
           if arrPOKE[i] == arrPOKE.last
-            if @pkmn[2] != @dynamax[2]
+            if @pkmn[:form] != @dynamax[:form]
               arrPOKE[i][0].setSE(delay + (2 * t), @cry_file) if @cry_file
             else
               arrPOKE[i][0].setSE(delay + (2 * t), @cry_file, 100, 60) if @cry_file
@@ -365,7 +385,7 @@ class Battle::Scene::Animation::BattlerDynamax < Battle::Scene::Animation
       end
       picOVERLAY.moveOpacity(delay + t, t, 160)
       picBG.moveXY(delay + t, t, -25, -19)
-      picBASE.moveXY(delay + t, t, new_trainer_x, new_trainer_y + 32)
+      picBASE.moveXY(delay + t, t, new_base_x, new_base_y)
       picTRAINER.moveXY(delay + t, t, new_trainer_x, new_trainer_y)
       arrPOKE.each { |p, s| p.moveXY(delay + t, t, @pictureSprites[s].x, @pictureSprites[s].y) }
       delay = arrPOKE.last[0].totalDuration
@@ -402,14 +422,27 @@ class Battle::Scene::Animation::BattlerDynamaxWild < Battle::Scene::Animation
   def setPokemonSpriteData
     pkmn = @battler.visiblePokemon
     form = pkmn.getUndynamaxForm
-    @pkmn = [pkmn.species, pkmn.gender, form, pkmn.shiny?, pkmn.shadowPokemon?]
+    @pkmn = {
+      :pokemon => pkmn,
+      :species => pkmn.species,
+      :gender  => pkmn.gender,
+      :form    => form,
+      :shiny   => pkmn.shiny?,
+      :shadow  => pkmn.shadowPokemon?,
+      :hue     => pkmn.super_shiny_hue
+    }
     if @battler.gmax_factor?
       form = pkmn.form        if pkmn.gmax?
       form = pkmn.getGmaxForm if pkmn.hasGigantamaxForm?
     end
     form = pkmn.form        if pkmn.emax?
     form = pkmn.getEmaxForm if pkmn.hasEternamaxForm?
-    @dynamax = [pkmn.species, pkmn.gender, form, pkmn.shiny?, pkmn.shadowPokemon?]
+    @dynamax = @pkmn.clone
+    @dynamax[:form] = form
+    if pkmn.super_shiny? && PluginManager.installed?("[DBK] Animated Pokémon System")
+      metrics = GameData::SpeciesMetrics.get_species_form(pkmn.species, form, pkmn.gender == 1)
+      @dynamax[:hue] = metrics.sprite_super_hue 
+    end
     @shadow_file = GameData::Species.shadow_filename(pkmn.species, form)
     @shadow_file = GameData::Species.convert_shadow_file(@shadow_file, pkmn.species, pkmn.form)
     @cry_file = GameData::Species.cry_filename(pkmn.species, form)
@@ -429,18 +462,15 @@ class Battle::Scene::Animation::BattlerDynamaxWild < Battle::Scene::Animation
     picBG, sprBG = bgData[0], bgData[1]
     #---------------------------------------------------------------------------
     # Sets up base.
-    baseData = dxSetBases(@path + "Dynamax/base", @base_file, delay, center_x, center_y + 30)
+    baseData = dxSetBases(@path + "Dynamax/base", @base_file, delay, center_x, center_y)
     picBASE, sprBASE = baseData[0].first, @pictureEx.length - 1
-    @pictureSprites[sprBASE].x = center_x - @pictureSprites[sprBASE].bitmap.width / 2
-    picBASE.setXY(delay, @pictureSprites[sprBASE].x, @pictureSprites[sprBASE].y)
+    picBASE.setOrigin(delay, PictureOrigin::BOTTOM)
+    base_y = center_y + @pictureSprites[sprBASE].bitmap.height + 30
+    picBASE.setXY(delay, center_x, base_y)
     #---------------------------------------------------------------------------
     # Sets up Dynamax shadow.
-    shadowData = dxSetSprite(@shadow_file, delay, center_x, center_y, false, 0, 0)
+    shadowData = dxSetSprite(@shadow_file, delay, center_x, center_y * 1.5, PictureOrigin::CENTER, 0, 0)
     picSHADOW, sprSHADOW = shadowData[0], shadowData[1]
-    shadow_offset = @pictureSprites[sprSHADOW].bitmap.width / 2
-    shadow_x = @pictureSprites[sprSHADOW].x - shadow_offset
-    shadow_y = @pictureSprites[sprSHADOW].y
-    picSHADOW.setXY(delay, shadow_x, shadow_y)
     #---------------------------------------------------------------------------
     # Sets up overlay.
     overlayData = dxSetOverlay(@path + "burst", delay)
@@ -449,16 +479,18 @@ class Battle::Scene::Animation::BattlerDynamaxWild < Battle::Scene::Animation
     # Sets up battler.
     pokeData = dxSetPokemon(@pkmn, delay, !@opposes)
     picPOKE, sprPOKE = pokeData[0], pokeData[1]
+    dxSetSpotPatterns(@pkmn[:pokemon], @pictureSprites[sprPOKE])
     @pictureSprites[sprPOKE].y += 30
     picPOKE.setXY(delay, @pictureSprites[sprPOKE].x, @pictureSprites[sprPOKE].y)
     #---------------------------------------------------------------------------
     # Sets up Dynamax Pokemon.
     ypos = Graphics.height / 4 + center_y
     arrPOKE = dynamaxSpriteWithOutline(@dynamax, delay, center_x, ypos, !@opposes)
+    dxSetSpotPatterns(@dynamax[:pokemon], @pictureSprites[arrPOKE.last[1]]) if @pkmn[:form] == @dynamax[:form]
     arrPOKE.last[0].setColor(delay, Color.white)
     #---------------------------------------------------------------------------
     # Sets up pulse.
-    pulseData = dxSetSprite(@path + "pulse", delay, center_x, center_y, false, 100, 50)
+    pulseData = dxSetSprite(@path + "pulse", delay, center_x, center_y, PictureOrigin::CENTER, 100, 50)
     picPULSE, sprPULSE = pulseData[0], pulseData[1]
     #---------------------------------------------------------------------------
     # Sets up skip button & fade out.
@@ -489,7 +521,6 @@ class Battle::Scene::Animation::BattlerDynamaxWild < Battle::Scene::Animation
     #---------------------------------------------------------------------------
     # Dynamax Pokemon is shown and begins to enlarge along with a shadow.
     picSHADOW.setVisible(delay, true)
-    picSHADOW.setXY(delay, shadow_x + shadow_offset, shadow_y * 1.5)
     picSHADOW.moveZoom(delay, 20, 200)
     picSHADOW.moveOpacity(delay, 20, 100)
     picBASE.setVisible(delay, false)
@@ -531,7 +562,7 @@ class Battle::Scene::Animation::BattlerDynamaxWild < Battle::Scene::Animation
         picPULSE.moveOpacity(delay + 2, 10, 0)
         for i in 0...arrPOKE.length
           if arrPOKE[i] == arrPOKE.last
-            if @pkmn[2] != @dynamax[2]
+            if @pkmn[:form] != @dynamax[:form]
               arrPOKE[i][0].setSE(delay + (2 * t), @cry_file) if @cry_file
             else
               arrPOKE[i][0].setSE(delay + (2 * t), @cry_file, 100, 60) if @cry_file

@@ -9,26 +9,26 @@
 # Allows you to set the status count for a Pokemon's Drowsy status in the party.
 #-------------------------------------------------------------------------------
 MenuHandlers.add(:pokemon_debug_menu, :set_status, {
-  "name"   => _INTL("设置状态"),
+  "name"   => _INTL("设置异常状态"),
   "parent" => :hp_status_menu,
   "effect" => proc { |pkmn, pkmnid, heldpoke, settingUpBattle, screen|
     if pkmn.egg?
       screen.pbDisplay(_INTL("{1}是蛋。", pkmn.name))
     elsif pkmn.hp <= 0
-      screen.pbDisplay(_INTL("{1}倒下了，不能修改状态。", pkmn.name))
+      screen.pbDisplay(_INTL("{1}已经倒下，无法更改异常状态。", pkmn.name))
     else
       cmd = 0
-      commands = [_INTL("[治疗]")]
+      commands = [_INTL("[治愈]")]
       ids = [:NONE]
       GameData::Status.each do |s|
         next if s.id == :NONE
-        commands.push(_INTL("设置{1}", s.name))
+        commands.push(_INTL("设为{1}", s.name))
         ids.push(s.id)
       end
       loop do
-        msg = _INTL("当前状态：{1}", GameData::Status.get(pkmn.status).name)
+        msg = _INTL("目前异常状态：{1}", GameData::Status.get(pkmn.status).name)
         if pkmn.status == :SLEEP
-          msg = _INTL("当前状态：{1}（回合：{2}）",
+          msg = _INTL("目前异常状态：{1}（回合：{2}）",
                       GameData::Status.get(pkmn.status).name, pkmn.statusCount)
         end
         cmd = screen.pbShowCommands(msg, commands, cmd)
@@ -44,9 +44,9 @@ MenuHandlers.add(:pokemon_debug_menu, :set_status, {
             params = ChooseNumberParams.new
             params.setRange(0, 9)
             params.setDefaultValue(3)
-			status = (ids[cmd] == :SLEEP) ? "睡眠" : "瞌睡"
+			      status = (ids[cmd] == :SLEEP) ? "睡眠" : "瞌睡"
             count = pbMessageChooseNumber(
-              _INTL("设置宝可梦#{status}的回合。"), params
+              _INTL("设置宝可梦#{status}的回合数。"), params
             ) { screen.pbUpdate }
             cancel = true if count <= 0
           end
@@ -66,7 +66,7 @@ MenuHandlers.add(:pokemon_debug_menu, :set_status, {
 # Allows you to set the status count for a Pokemon's Drowsy status in battle.
 #-------------------------------------------------------------------------------
 MenuHandlers.add(:battle_pokemon_debug_menu, :set_status, {
-  "name"   => _INTL("设置状态"),
+  "name"   => _INTL("设置异常状态"),
   "parent" => :hp_status_menu,
   "usage"  => :both,
   "effect" => proc { |pkmn, battler, battle|
@@ -74,26 +74,26 @@ MenuHandlers.add(:battle_pokemon_debug_menu, :set_status, {
       pbMessage("\\ts[]" + _INTL("{1}是蛋。", pkmn.name))
       next
     elsif pkmn.hp <= 0
-      pbMessage("\\ts[]" + _INTL("{1}倒下了，不能修改状态。", pkmn.name))
+      pbMessage("\\ts[]" + _INTL("{1}已经倒下，无法更改异常状态。", pkmn.name))
       next
     end
     cmd = 0
-    commands = [_INTL("[治疗]")]
+    commands = [_INTL("[治愈]")]
     ids = [:NONE]
     GameData::Status.each do |s|
       next if s.id == :NONE
-      commands.push(_INTL("设置{1}", s.name))
+      commands.push(_INTL("设为{1}", s.name))
       ids.push(s.id)
     end
     loop do
-      msg = _INTL("当前状态：{1}", GameData::Status.get(pkmn.status).name)
+      msg = _INTL("目前异常状态：{1}", GameData::Status.get(pkmn.status).name)
       if pkmn.status == :SLEEP
-        msg += " " + _INTL("（回合：{1}）)", pkmn.statusCount)
+        msg += " " + _INTL("（回合：{1}）", pkmn.statusCount)
       elsif pkmn.status == :POISON && pkmn.statusCount > 0
         if battler
-          msg += " " + _INTL("（剧毒，计数：{1}）", battler.effects[PBEffects::Toxic])
+          msg += " " + _INTL("剧毒，回合：{1}）", battler.effects[PBEffects::Toxic])
         else
-          msg += " " + _INTL("（剧毒）")
+          msg += " " + _INTL("剧毒")
         end
       end
       cmd = pbMessage("\\ts[]" + msg, commands, -1, nil, cmd)
@@ -113,19 +113,19 @@ MenuHandlers.add(:battle_pokemon_debug_menu, :set_status, {
           params.setRange(0, 99)
           params.setDefaultValue((pkmn.status == :SLEEP) ? pkmn.statusCount : 3)
           params.setCancelValue(-1)
-		  status = (ids[cmd] == :SLEEP) ? "睡眠" : "瞌睡"
-          count = pbMessageChooseNumber("\\ts[]" + _INTL("设置{1}#{status}的回合 (0-99)。", pkmn_name), params)
+		      status = (ids[cmd] == :SLEEP) ? "睡眠" : "瞌睡"
+          count = pbMessageChooseNumber("\\ts[]" + _INTL("设置宝可梦#{status}的回合数（0-99）。", pkmn_name), params)
           next if count < 0
           (battler || pkmn).statusCount = count
         when :POISON
-          if pbConfirmMessage("\\ts[]" + _INTL("使{1}中毒（剧毒）？", pkmn_name))
+          if pbConfirmMessage("\\ts[]" + _INTL("要使{1}中剧毒吗？", pkmn_name))
             if battler
               params = ChooseNumberParams.new
               params.setRange(0, 16)
               params.setDefaultValue(battler.effects[PBEffects::Toxic])
               params.setCancelValue(-1)
               count = pbMessageChooseNumber(
-                "\\ts[]" + _INTL("设置{1}的剧毒计数 (0-16)。", pkmn_name), params
+                "\\ts[]" + _INTL("设置{1}剧毒的回合数。", pkmn_name), params
               )
               next if count < 0
               battler.statusCount = 1
@@ -236,10 +236,10 @@ class Battle::DebugSetEffects
         when :type
           @window.refresh if update_input_for_type(effect, variable_data)
         else
-          raise "Unknown kind of variable!"
+          raise "未知种类的变量！"
         end
       else
-        raise "Unknown kind of variable!"
+        raise "未知种类的变量！"
       end
     end
   end

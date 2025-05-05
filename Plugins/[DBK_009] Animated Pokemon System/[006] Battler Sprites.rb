@@ -7,8 +7,6 @@
 class Battle::Scene::BattlerSprite < RPG::Sprite
   attr_accessor :substitute, :speed, :reversed, :hue
   
-  COMMAND_BOBBING_DURATION = nil
-  
   #-----------------------------------------------------------------------------
   # General sprite utilities.
   #-----------------------------------------------------------------------------
@@ -67,14 +65,35 @@ class Battle::Scene::BattlerSprite < RPG::Sprite
   end
   
   #-----------------------------------------------------------------------------
-  # Aliased for updating animations and patterns.
+  # Rewritten for updating animations and patterns.
+  # Turns of sprite bobbing for animated sprites.
   #-----------------------------------------------------------------------------
-  alias animated_update update
   def update
+    return if !@_iconBitmap
+    @updating = true
+    @_iconBitmap.update
+    self.bitmap = @_iconBitmap.bitmap
+    @spriteYExtra = 0
+    if @selected == 1 && COMMAND_BOBBING_DURATION && $PokemonSystem.animated_sprites > 0
+      bob_delta = System.uptime % COMMAND_BOBBING_DURATION
+      bob_frame = (4 * bob_delta / COMMAND_BOBBING_DURATION).floor
+      case bob_frame
+      when 1 then @spriteYExtra = 2
+      when 3 then @spriteYExtra = -2
+      end
+    end
+    self.x       = self.x
+    self.y       = self.y
+    self.visible = @spriteVisible
+    if @selected == 2 && @spriteVisible && TARGET_BLINKING_DURATION
+      blink_delta = System.uptime % TARGET_BLINKING_DURATION   # 0-TARGET_BLINKING_DURATION
+      blink_frame = (3 * blink_delta / TARGET_BLINKING_DURATION).floor
+      self.visible = (blink_frame != 0)
+    end
+    @updating = false
     self.set_status_pattern(@battler) if !@substitute
-    animated_update
-    return if !animated?
-    @_iconBitmap.update_pokemon_sprite(@speed, @reversed)
+    self.update_plugin_pattern
+    @_iconBitmap.update_pokemon_sprite(@speed, @reversed) if animated?
   end
 end
 
@@ -144,7 +163,7 @@ class Battle::Scene::BattlerShadowSprite < RPG::Sprite
       self.x      = sprite.x
       self.y      = sprite.y
       self.y     -= sprite.bitmap.height / 4 if @index.odd?
-	  self.y     -= 25 if @battler.dynamax? && @index.odd? && Settings::SHOW_DYNAMAX_SIZE
+      self.y     -= 25 if @battler.dynamax? && @index.odd? && Settings::SHOW_DYNAMAX_SIZE
       self.angle  = sprite.angle
       self.angle += ((@index.even?) ? 176 : -2)
       @pkmn.species_data.apply_metrics_to_sprite(self, @index, true)
@@ -244,7 +263,7 @@ class MosaicBattlerSprite < Battle::Scene::BattlerSprite
   end
 
   def mosaicRefresh(bitmap)
-    return if @inrefresh
+    return if @inrefresh || !bitmap
     @inrefresh = true
     @oldbitmap = bitmap
     if @mosaic <= 0 || !@oldbitmap
@@ -438,6 +457,18 @@ class Battle::Battler
   end
 end
 
+#===============================================================================
+# Safari Zone compatibility.
+#===============================================================================
+class Battle::FakeBattler
+  def vanishedOffScreen?; return false; end
+  def airborneOffScreen?; return false; end
+  def vanished;           return false; end
+  def mosaicChange;       return false; end
+  def vanished=(value);                 end
+  def mosaicChange=(value);             end
+end
+
 
 ################################################################################
 #
@@ -457,7 +488,7 @@ Battle::AbilityEffects::OnBeingHit.add(:ILLUSION,
     battle.scene.pbAnimateSubstitute(target, :hide)
     target.effects[PBEffects::Illusion] = nil
     battle.scene.pbChangePokemon(target, target.pokemon)
-    battle.pbDisplay(_INTL("{1}的幻觉消失了!", target.pbThis))
+    battle.pbDisplay(_INTL("{1}'s illusion wore off!", target.pbThis))
     battle.pbSetSeen(target)
     battle.scene.pbAnimateSubstitute(target, :show, true)
   }
@@ -522,7 +553,7 @@ module Battle::Scene::Animation::BallAnimationMixin
     pkmn = battler.visiblePokemon
     metrics = GameData::SpeciesMetrics.get_species_form(pkmn.species, pkmn.form, pkmn.female?)
     size = metrics.shadow_size
-    scale = (battler.opposes?) ? metrics.front_sprite_scale : metrics.back_sprite_scale
+    scale = (battler.opposes?(0)) ? metrics.front_sprite_scale : metrics.back_sprite_scale
     zoomX = 100 * (1 + size * 0.1)
     zoomY = 100 * (scale * 0.25 * 0.5 + (size * 0.025))
     shadow.setZoomXY(delay, zoomX, zoomY)

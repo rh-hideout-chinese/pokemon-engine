@@ -17,11 +17,11 @@ class Battle::Move::GiveUserStatusToTarget < Battle::Move
       when :DROWSY
         target.pbSleep
         user.pbCureStatus(false)
-        @battle.pbDisplay(_INTL("{1}再次变得警觉起来。", user.pbThis))
+        @battle.pbDisplay(_INTL("{1}清醒过来了。", user.pbThis))
       when :FROSTBITE
         target.pbFreeze
         user.pbCureStatus(false)
-        @battle.pbDisplay(_INTL("{1}的冻伤痊愈了。", user.pbThis))
+        @battle.pbDisplay(_INTL("{1}的冻伤痊愈了！", user.pbThis))
       end
     else
       paldea_pbEffectAgainstTarget
@@ -46,19 +46,19 @@ class Battle::Move::CureUserPartyStatus < Battle::Move
     end
     case oldStatus
     when :SLEEP
-      @battle.pbDisplay(_INTL("{1}醒过来了！", curedName))
+      @battle.pbDisplay(_INTL("{1}从睡眠中被叫醒了！", curedName))
     when :POISON
-      @battle.pbDisplay(_INTL("{1}的毒消失得干干净净！", curedName))
+      @battle.pbDisplay(_INTL("{1}中的毒彻底清除了！", curedName))
     when :BURN
       @battle.pbDisplay(_INTL("{1}的灼伤治愈了！", curedName))
     when :PARALYSIS
       @battle.pbDisplay(_INTL("{1}的麻痹被解除了！", curedName))
     when :FROZEN
-      @battle.pbDisplay(_INTL("{1}的冻冰被融化了！", curedName))
+      @battle.pbDisplay(_INTL("{1}的冰冻被融化了！", curedName))
     when :DROWSY
-      @battle.pbDisplay(_INTL("{1}再次变得警觉起来。", curedName))
+      @battle.pbDisplay(_INTL("{1}清醒过来了。", curedName))
     when :FROSTBITE
-      @battle.pbDisplay(_INTL("{1}的冻伤痊愈了。", curedName))
+      @battle.pbDisplay(_INTL("{1}的冻伤痊愈了！", curedName))
     end
   end
 end
@@ -79,19 +79,19 @@ class Battle::Move::HealUserAndAlliesQuarterOfTotalHPCureStatus < Battle::Move
       target.pbCureStatus(false)
       case old_status
       when :SLEEP
-        @battle.pbDisplay(_INTL("{1}醒过来了！", target.pbThis))
+        @battle.pbDisplay(_INTL("{1}从睡眠中被叫醒了！", target.pbThis))
       when :POISON
-        @battle.pbDisplay(_INTL("{1}的毒消失得干干净净！", target.pbThis))
+        @battle.pbDisplay(_INTL("{1}中的毒彻底清除了！", target.pbThis))
       when :BURN
         @battle.pbDisplay(_INTL("{1}的灼伤治愈了！", target.pbThis))
       when :PARALYSIS
         @battle.pbDisplay(_INTL("{1}的麻痹被解除了！", target.pbThis))
       when :FROZEN
-        @battle.pbDisplay(_INTL("{1}的冻冰被融化了！", target.pbThis))
+        @battle.pbDisplay(_INTL("{1}的冰冻被融化了！", target.pbThis))
       when :DROWSY
-        @battle.pbDisplay(_INTL("{1}再次变得警觉起来。", target.pbThis))
+        @battle.pbDisplay(_INTL("{1}清醒过来了。", target.pbThis))
       when :FROSTBITE
-        @battle.pbDisplay(_INTL("{1}的冻伤痊愈了。", target.pbThis))
+        @battle.pbDisplay(_INTL("{1}的冻伤痊愈了！", target.pbThis))
       end
     end
   end
@@ -139,7 +139,7 @@ class Battle::Move::HealUserFullyAndFallAsleep < Battle::Move::HealingMove
   alias paldea_pbMoveFailed? pbMoveFailed?
   def pbMoveFailed?(user, targets)
     if user.hasActiveAbility?(:PURIFYINGSALT)
-      @battle.pbDisplay(_INTL("但是，招式失败了！"))
+      @battle.pbDisplay(_INTL("但是，招式失败了！！"))
       return true
     end
     return paldea_pbMoveFailed?(user, targets)
@@ -155,16 +155,16 @@ class Battle::Move::SwitchOutTargetStatusMove < Battle::Move
   alias paldea_pbFailsAgainstTarget? pbFailsAgainstTarget?
   def pbFailsAgainstTarget?(user, target, show_message)
 	if target.isCommander?
-      @battle.pbDisplay(_INTL("但是，招式失败了！")) if show_message
+      @battle.pbDisplay(_INTL("但是，招式失败了！！")) if show_message
       return true
     end
     if target.hasActiveAbility?(:GUARDDOG) && !@battle.moldBreaker
       if show_message
         @battle.pbShowAbilitySplash(target)
         if Battle::Scene::USE_ABILITY_SPLASH
-          @battle.pbDisplay(_INTL("{1}固定住了！", target.pbThis))
+          @battle.pbDisplay(_INTL("{1}屹立不动！", target.pbThis))
         else
-          @battle.pbDisplay(_INTL("{1}用{2}固定住了！", target.pbThis, target.abilityName))
+          @battle.pbDisplay(_INTL("{1}用{2}固定住了自己！", target.pbThis, target.abilityName))
         end
         @battle.pbHideAbilitySplash(target)
       end
@@ -174,10 +174,11 @@ class Battle::Move::SwitchOutTargetStatusMove < Battle::Move
   end
 
   def pbSwitchOutTargetEffect(user, targets, numHits, switched_battlers)
-    return if @battle.wildBattle? || !switched_battlers.empty?
+    return if !switched_battlers.empty?
     return if user.fainted? || numHits == 0
     targets.each do |b|
       next if b.fainted? || b.damageState.unaffected
+      next if b.wild?
       next if b.effects[PBEffects::Ingrain]
       next if b.hasActiveAbility?([:SUCTIONCUPS, :GUARDDOG]) && !@battle.moldBreaker
       next if b.isCommander?
@@ -228,14 +229,14 @@ class Battle::Move::StartUserSideDoubleSpeed < Battle::Move
   def pbEffectGeneral(user)
     user.pbOwnSide.effects[PBEffects::Tailwind] = 4
     @battle.pbDisplay(_INTL("从{1}身后吹起了顺风！", user.pbTeam(true)))
-    @battle.allSameSideBattlers.each do |b| 
+    @battle.allSameSideBattlers(user).each do |b|
       next if !b || b.fainted?
       if b.hasActiveAbility?(:WINDRIDER) && b.pbCanRaiseStatStage?(:ATTACK, b, self)
         b.pbRaiseStatStageByAbility(:ATTACK, 1, b)
       elsif b.hasActiveAbility?(:WINDPOWER) && b.effects[PBEffects::Charge] == 0
         @battle.pbShowAbilitySplash(b)
         b.effects[PBEffects::Charge] = 2
-        @battle.pbDisplay(_INTL("{1}受到顺风而充电了！", b.pbThis(true)))
+        @battle.pbDisplay(_INTL("顺风使{1}充满了力量！", b.pbThis(true)))
         @battle.pbHideAbilitySplash(b)
       end
     end
@@ -253,18 +254,18 @@ class Battle::Move::UserSwapsPositionsWithAlly < Battle::Move
     super
     user.effects[PBEffects::ProtectRate] = oldVal
   end
-  
+
   def pbMoveFailed?(user, targets)
     if Settings::MECHANICS_GENERATION >= 9
       if user.effects[PBEffects::AllySwitch]
         user.effects[PBEffects::ProtectRate] = 1
-        @battle.pbDisplay(_INTL("但是，招式失败了！"))
+        @battle.pbDisplay(_INTL("但是，招式失败了！！"))
         return true
       end
       if user.effects[PBEffects::ProtectRate] > 1 &&
          @battle.pbRandom(user.effects[PBEffects::ProtectRate]) != 0
         user.effects[PBEffects::ProtectRate] = 1
-        @battle.pbDisplay(_INTL("但是，招式失败了！"))
+        @battle.pbDisplay(_INTL("但是，招式失败了！！"))
         return true
       end
     end
@@ -281,7 +282,7 @@ class Battle::Move::UserSwapsPositionsWithAlly < Battle::Move
       end
     end
     if numTargets != 1
-      @battle.pbDisplay(_INTL("But it failed!"))
+      @battle.pbDisplay(_INTL("但是，招式失败了！！"))
       return true
     end
     return false
@@ -514,13 +515,13 @@ class Battle::Move::MaxUserAttackLoseHalfOfTotalHP < Battle::Move
       user.statsLoweredThisRound = true
       user.statsDropped = true
       @battle.pbCommonAnimation("StatDown", user)
-      @battle.pbDisplay(_INTL("{1}削减了体力，并将攻击下降到最低！", user.pbThis))
+      @battle.pbDisplay(_INTL("{1}削减了体力并收缩了全部力量！", user.pbThis))
     else
       user.stages[:ATTACK] = 6
       user.addSideStatUps(:ATTACK, 6)
       user.statsRaisedThisRound = true
       @battle.pbCommonAnimation("StatUp", user)
-      @battle.pbDisplay(_INTL("{1}削减了体力，并将攻击提升到最高！", user.pbThis))
+      @battle.pbDisplay(_INTL("{1}削减了体力并释放了全部力量！", user.pbThis))
     end
     user.pbItemHPHealCheck
   end
@@ -590,7 +591,7 @@ class Battle::Move::TypeDependsOnUserPlate < Battle::Move
       if user.form != newForm
         @battle.scene.pbArceusTransform(user.index, newType)
         user.pbChangeForm(newForm,
-        _INTL("{1}变成了{2}属性！", user.pbThis, typeName))
+        _INTL("{1}变身成了{2}属性！", user.pbThis, typeName))
       end
     end
   end

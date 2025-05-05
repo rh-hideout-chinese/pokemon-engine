@@ -50,7 +50,7 @@ ItemHandlers::UseOnPokemon.add(:FRESHSTARTMOCHI, proc { |item, qty, pkmn, scene|
   pkmn.calc_stats
   pbSEPlay("Use item in party")
   scene.pbRefresh
-  scene.pbDisplay(_INTL("{1}的努力值全部重置为零了！", pkmn.name))
+  scene.pbDisplay(_INTL("{1}的基础点数归零了！", pkmn.name))
   next true
 })
 
@@ -76,27 +76,27 @@ Battle::ItemEffects::DamageCalcFromUser.copy(:WELLSPRINGMASK, :HEARTHFLAMEMASK, 
 #===============================================================================
 ItemHandlers::UseOnPokemon.add(:METEORITE, proc { |item, qty, pkmn, scene|
   if !pkmn.isSpecies?(:DEOXYS)
-    scene.pbDisplay(_INTL("没有效果。"))
+    scene.pbDisplay(_INTL("即便使用也无效果哦。"))
     next false
   elsif pkmn.fainted?
-    scene.pbDisplay(_INTL("不能给倒下的宝可梦使用。"))
+    scene.pbDisplay(_INTL("不能用于濒死的宝可梦。"))
     next false
   end
   choices = [
-    _INTL("一般形态"),
+    _INTL("普通形态"),
     _INTL("攻击形态"),
     _INTL("防御形态"),
     _INTL("速度形态"),
     _INTL("取消")
   ]
-  new_form = scene.pbShowCommands(_INTL("{1}应该变成哪一个形态？", pkmn.name), choices, pkmn.form)
+  new_form = scene.pbShowCommands(_INTL("{1}要变为哪个形态呢？", pkmn.name), choices, pkmn.form)
   if new_form == pkmn.form
-    scene.pbDisplay(_INTL("即便使用也无效果哦。"))
+    scene.pbDisplay(_INTL("没有任何效果。"))
     next false
   elsif new_form > -1 && new_form < choices.length - 1
     pkmn.setForm(new_form) do
       scene.pbRefresh
-      scene.pbDisplay(_INTL("{1}的样子发生了变化！", pkmn.name))
+      scene.pbDisplay(_INTL("{1}变成其他样子了！", pkmn.name))
     end
     next true
   end

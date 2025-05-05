@@ -29,18 +29,18 @@ end
 # New effects and values to be added to the debug menu.
 #-------------------------------------------------------------------------------
 module Battle::DebugVariables
-  BATTLER_EFFECTS[PBEffects::AllySwitch]      = { name: "Ally Switch applies this round",                default: false }
-  BATTLER_EFFECTS[PBEffects::CudChew]         = { name: "Cud Chew number of rounds until active",        default: 0 }
-  BATTLER_EFFECTS[PBEffects::DoubleShock]     = { name: "Double Shock has removed self's Electric type", default: false }
-  BATTLER_EFFECTS[PBEffects::GlaiveRush]      = { name: "Glaive Rush vulnerability rounds remaining",    default: 0 }
-  BATTLER_EFFECTS[PBEffects::ParadoxStat]     = { name: "Protosynthesis/Quark Drive stat boosted",       default: nil, type: :stat }
-  BATTLER_EFFECTS[PBEffects::BoosterEnergy]   = { name: "Booster Energy applies",                        default: false }
-  BATTLER_EFFECTS[PBEffects::SaltCure]        = { name: "Salt Cure applies",                             default: false }
-  BATTLER_EFFECTS[PBEffects::SilkTrap]        = { name: "Silk Trap applies this round",                  default: false }
-  BATTLER_EFFECTS[PBEffects::Splinters]       = { name: "Splinters number of rounds remaining",          default: 0 }
-  BATTLER_EFFECTS[PBEffects::SplintersType]   = { name: "Splinters damage typing",                       default: nil, type: :type }
-  BATTLER_EFFECTS[PBEffects::SupremeOverlord] = { name: "Supreme Overlord multiplier 1 + 0.1*x (0-5)",   default: 0, max: 5 }
-  BATTLER_EFFECTS[PBEffects::Syrupy]          = { name: "Syrupy turns remaining",                        default: 0 }
-  BATTLER_EFFECTS[PBEffects::SyrupyUser]      = { name: "Battler syruped self",                          default: -1 }
-  BATTLER_EFFECTS[PBEffects::BurningBulwark]  = { name: "Burning Bulwark applies this round",            default: false }
+  BATTLER_EFFECTS[PBEffects::AllySwitch]      = { name: "本回合已经使出交换场地",                      default: false }
+  BATTLER_EFFECTS[PBEffects::CudChew]         = { name: "反刍距离生效的回合数",                            default: 0 }
+  BATTLER_EFFECTS[PBEffects::DoubleShock]     = { name: "电光双击使电属性消失",                        default: false }
+  BATTLER_EFFECTS[PBEffects::GlaiveRush]      = { name: "巨剑突击脆弱状态剩余回合",                        default: 0 }
+  BATTLER_EFFECTS[PBEffects::ParadoxStat]     = { name: "古代活性/夸克充能提升的能力",      default: nil, type: :stat }
+  BATTLER_EFFECTS[PBEffects::BoosterEnergy]   = { name: "驱劲能量生效",                               default: false }
+  BATTLER_EFFECTS[PBEffects::SaltCure]        = { name: "受到盐腌的影响",                             default: false }
+  BATTLER_EFFECTS[PBEffects::SilkTrap]        = { name: "本回合已经使出线阱",                         default: false }
+  BATTLER_EFFECTS[PBEffects::Splinters]       = { name: "碎片剩余回合",                                  default: 0 }
+  BATTLER_EFFECTS[PBEffects::SplintersType]   = { name: "碎片的属性",                     default: nil, type: :type }
+  BATTLER_EFFECTS[PBEffects::SupremeOverlord] = { name: "大将攻击特攻的倍率1 + 0.1*x (0-5)",     default: 0, max: 5  }
+  BATTLER_EFFECTS[PBEffects::Syrupy]          = { name: "满身糖剩余回合",                               default: 0  }
+  BATTLER_EFFECTS[PBEffects::SyrupyUser]      = { name: "使出糖浆炸弹者",                               default: -1 }
+  BATTLER_EFFECTS[PBEffects::BurningBulwark]  = { name: "本回合已经使出火焰守护",                     default: false }
 end

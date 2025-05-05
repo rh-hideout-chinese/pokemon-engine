@@ -26,7 +26,7 @@ class Battle::Scene
   # Handles all animations related to the Substitute doll.
   #-----------------------------------------------------------------------------
   def pbAnimateSubstitute(idxBattler, mode, delay = false)
-    return if !idxBattler || @battle.decision > 0
+    return if pbInSafari? || !idxBattler || @battle.decision > 0
     battler = (idxBattler.respond_to?("index")) ? idxBattler : @battle.battlers[idxBattler]
     return if battler.semiInvulnerable? || @battle.pbAllFainted?(battler.pbDirectOpposing.index)
     return if battler.effects[PBEffects::Substitute] == 0 && mode != :broken
@@ -185,8 +185,8 @@ class Battle::Scene::Animation::SubstituteAppear < Battle::Scene::Animation
     shadow = addSprite(@sprites["shadow_#{@battler.index}"], PictureOrigin::CENTER)
     shadow.setVisible(delay, false)
     battler = addSprite(batSprite, PictureOrigin::BOTTOM)
-    dir = (@battler.opposes?) ? batSprite.zoom_x : -batSprite.zoom_x
-    battler.moveDelta(delay, 6, dir * batSprite.bitmap.width * 2, 0)
+    dir = (@battler.opposes?) ? Graphics.width / 2 : -Graphics.width / 2
+    battler.moveDelta(delay, 6, dir, 0)
     battler.setSE(delay, "GUI party switch")
     delay = battler.totalDuration
     substitute.moveDelta(delay, 6, 0, 128)
@@ -222,26 +222,19 @@ class Battle::Scene::Animation::SubstituteSwapIn < Battle::Scene::Animation
     offset = (@battler.opposes?) ? Settings::SUBSTITUTE_DOLL_METRICS[1] : Settings::SUBSTITUTE_DOLL_METRICS[0]
     substitute = addNewSprite(pos[0], pos[1] + offset, @filename, PictureOrigin::BOTTOM)
     sprite = @pictureEx.length - 1
-    spriteWidth = @pictureSprites[sprite].bitmap.width
-    if @battler.opposes?
-      dir = 1
-      startX = @pictureSprites[sprite].x + spriteWidth
-    else
-      dir = -1
-      startX = @pictureSprites[sprite].x - spriteWidth
-    end
-    substitute.setXY(delay, startX, @pictureSprites[sprite].y)
+    dir = (@battler.opposes?) ? Graphics.width / 2 : -Graphics.width / 2
+    substitute.setXY(delay, @pictureSprites[sprite].x + dir, @pictureSprites[sprite].y)
     substitute.setZ(delay, batSprite.z)
     substitute.setVisible(delay, false)
     shadow = addSprite(@sprites["shadow_#{@battler.index}"], PictureOrigin::CENTER)
     shadow.setVisible(delay, false)
     battler = addSprite(batSprite, PictureOrigin::BOTTOM)
-    battler.moveDelta(delay, 6, dir * batSprite.bitmap.width * 2, 0)
+    battler.moveDelta(delay, 6, dir, 0)
     battler.setSE(delay, "GUI party switch")
     delay = battler.totalDuration
     battler.setVisible(delay, false)
     substitute.setVisible(delay, true)
-    substitute.moveDelta(delay, 6, -dir * spriteWidth, 0)
+    substitute.moveDelta(delay, 6, -dir, 0)
   end
 end
 
@@ -263,19 +256,12 @@ class Battle::Scene::Animation::SubstituteSwapOut < Battle::Scene::Animation
     pos = Battle::Scene.pbBattlerPosition(batSprite.index, batSprite.sideSize)
     pokemon = addPokeSprite(@pkmn, !@battler.opposes?, PictureOrigin::BOTTOM)
     sprite = @pictureEx.length - 1
-    spriteWidth = @pictureSprites[sprite].bitmap.width
     @pictureSprites[sprite].x = pos[0]
     @pictureSprites[sprite].y = pos[1]
     metrics_data = GameData::SpeciesMetrics.get_species_form(@pkmn.species, @pkmn.form, @pkmn.female?)
     metrics_data.apply_metrics_to_sprite(@pictureSprites[sprite], batSprite.index)
-    if @battler.opposes?
-      dir = -1
-      startX = @pictureSprites[sprite].x + spriteWidth
-    else
-      dir = 1
-      startX = @pictureSprites[sprite].x - spriteWidth
-    end
-    pokemon.setXY(delay, startX, @pictureSprites[sprite].y)
+    dir = (@battler.opposes?) ? Graphics.width / 2 : -Graphics.width / 2
+    pokemon.setXY(delay, @pictureSprites[sprite].x + dir, @pictureSprites[sprite].y)
     pokemon.setZ(delay, batSprite.z)
     pokemon.setVisible(delay, false)
     shadow = addSprite(@sprites["shadow_#{@battler.index}"], PictureOrigin::CENTER)
@@ -284,13 +270,13 @@ class Battle::Scene::Animation::SubstituteSwapOut < Battle::Scene::Animation
     if @broken
       battler.moveOpacity(delay, 8, 0)
     else
-      battler.moveDelta(delay, 6, -dir * spriteWidth, 0)
+      battler.moveDelta(delay, 6, dir, 0)
       battler.setSE(delay, "GUI party switch")
     end
     delay = battler.totalDuration
     battler.setVisible(delay, false)
     battler.setOpacity(delay, 255)
     pokemon.setVisible(delay, true)
-    pokemon.moveDelta(delay, 6, dir * spriteWidth, 0)
+    pokemon.moveDelta(delay, 6, -dir, 0)
   end
 end

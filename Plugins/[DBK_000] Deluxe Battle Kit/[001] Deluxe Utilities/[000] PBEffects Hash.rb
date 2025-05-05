@@ -33,6 +33,12 @@ $DELUXE_PBEFFECTS = {
   :team => {
     :counter => [
       :AuroraVeil,
+      :CheerDefense1,
+      :CheerDefense2,
+      :CheerDefense3,
+      :CheerOffense1,
+      :CheerOffense2,
+      :CheerOffense3,
       :Reflect,
       :LightScreen,
       :Safeguard,

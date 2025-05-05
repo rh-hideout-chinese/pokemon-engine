@@ -97,3 +97,42 @@ module TrainerPokemonProperty
     return ret
   end
 end
+
+#===============================================================================
+# Fix for partner trainers not inheriting inventories set in PBS data.
+#===============================================================================
+module BattleCreationHelperMethods
+  module_function
+  
+  def set_up_player_trainers(foe_party)
+    trainer_array = [$player]
+    ally_items    = []
+    pokemon_array = $player.party
+    party_starts  = [0]
+    if partner_can_participate?(foe_party)
+      ally = NPCTrainer.new($PokemonGlobal.partner[1], $PokemonGlobal.partner[0])
+      ally.id    = $PokemonGlobal.partner[2]
+      ally.party = $PokemonGlobal.partner[3]
+      ally_items[1] = $PokemonGlobal.partner[4].clone
+      trainer_array.push(ally)
+      pokemon_array = []
+      $player.party.each { |pkmn| pokemon_array.push(pkmn) }
+      party_starts.push(pokemon_array.length)
+      ally.party.each { |pkmn| pokemon_array.push(pkmn) }
+      setBattleRule("double") if $game_temp.battle_rules["size"].nil?
+    end
+    return trainer_array, ally_items, pokemon_array, party_starts
+  end
+end
+
+def pbRegisterPartner(tr_type, tr_name, tr_id = 0)
+  tr_type = GameData::TrainerType.get(tr_type).id
+  pbCancelVehicles
+  trainer = pbLoadTrainer(tr_type, tr_name, tr_id)
+  EventHandlers.trigger(:on_trainer_load, trainer)
+  trainer.party.each do |i|
+    i.owner = Pokemon::Owner.new_from_trainer(trainer)
+    i.calc_stats
+  end
+  $PokemonGlobal.partner = [tr_type, tr_name, trainer.id, trainer.party, trainer.items]
+end

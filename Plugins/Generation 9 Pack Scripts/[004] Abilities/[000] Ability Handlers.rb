@@ -67,8 +67,8 @@ Battle::AbilityEffects::StatusCure.add(:INSOMNIA,
     battler.pbCureStatus(Battle::Scene::USE_ABILITY_SPLASH)
     if !Battle::Scene::USE_ABILITY_SPLASH
       case battler.status
-      when :SLEEP  then msg = _INTL("因为{2}，{1}醒过来了！", battler.pbThis, battler.abilityName)
-      when :DROWSY then msg = _INTL("因为{2}，{1}再次变得警觉！", battler.pbThis, battler.abilityName)
+      when :SLEEP  then msg = _INTL("{1}的{2}让自己醒过来了！", battler.pbThis, battler.abilityName)
+      when :DROWSY then msg = _INTL("{1}的{2}清醒过来了！", battler.pbThis, battler.abilityName)
       end
       battler.battle.pbDisplay(msg)
     end
@@ -78,6 +78,15 @@ Battle::AbilityEffects::StatusCure.add(:INSOMNIA,
 
 Battle::AbilityEffects::StatusCure.copy(:INSOMNIA, :VITALSPIRIT)
 
+Battle::AbilityEffects::OnSwitchOut.add(:INSOMNIA,
+  proc { |ability, battler, endOfBattle|
+    next if ![:SLEEP, :DROWSY].include?(battler.status)
+    PBDebug.log("[Ability triggered] #{battler.pbThis}'s #{battler.abilityName}")
+    battler.status = :NONE
+  }
+)
+
+Battle::AbilityEffects::OnSwitchOut.copy(:INSOMNIA, :VITALSPIRIT)
 
 #===============================================================================
 # Magma Armor
@@ -91,12 +100,20 @@ Battle::AbilityEffects::StatusCure.add(:MAGMAARMOR,
     battler.pbCureStatus(Battle::Scene::USE_ABILITY_SPLASH)
     if !Battle::Scene::USE_ABILITY_SPLASH
       case battler.status
-      when :FROZEN    then msg = _INTL("因为{2}，{1}治愈了冰冻状态！", battler.pbThis, battler.abilityName)
-      when :FROSTBITE then msg = _INTL("因为{2}，{1}治愈了冻伤状态！", battler.pbThis, battler.abilityName)
+      when :FROZEN    then msg = _INTL("{1}的{2}治愈了冰冻状态！", battler.pbThis, battler.abilityName)
+      when :FROSTBITE then msg = _INTL("{1}的{2}治愈了伙伴的冻伤！", battler.pbThis, battler.abilityName)
       end
       battler.battle.pbDisplay(msg)
     end
     battler.battle.pbHideAbilitySplash(battler)
+  }
+)
+
+Battle::AbilityEffects::OnSwitchOut.add(:MAGMAARMOR,
+  proc { |ability, battler, endOfBattle|
+    next if ![:FROZEN, :FROSTBITE].include?(battler.status)
+    PBDebug.log("[Ability triggered] #{battler.pbThis}'s #{battler.abilityName}")
+    battler.status = :NONE
   }
 )
 
@@ -116,19 +133,19 @@ Battle::AbilityEffects::EndOfRoundHealing.add(:HEALER,
       if !Battle::Scene::USE_ABILITY_SPLASH
         case oldStatus
         when :SLEEP
-          battle.pbDisplay(_INTL("因为{1}的{2}，伙伴醒过来了！", battler.pbThis, battler.abilityName))
+          battle.pbDisplay(_INTL("{1}的{2}让队友醒过来了！", battler.pbThis, battler.abilityName))
         when :POISON
-          battle.pbDisplay(_INTL("因为{1}的{2}，伙伴治愈了中毒！", battler.pbThis, battler.abilityName))
+          battle.pbDisplay(_INTL("{1}的{2}治愈了队友的中毒！", battler.pbThis, battler.abilityName))
         when :BURN
-          battle.pbDisplay(_INTL("因为{1}的{2}，伙伴治愈了灼伤！", battler.pbThis, battler.abilityName))
+          battle.pbDisplay(_INTL("{1}的{2}治愈了队友的灼伤！", battler.pbThis, battler.abilityName))
         when :PARALYSIS
-          battle.pbDisplay(_INTL("因为{1}的{2}，伙伴治愈了麻痹！", battler.pbThis, battler.abilityName))
+          battle.pbDisplay(_INTL("{1}的{2}治愈了队友的麻痹！", battler.pbThis, battler.abilityName))
         when :FROZEN
-          battle.pbDisplay(_INTL("因为{1}的{2}，伙伴治愈了冰冻状态！", battler.pbThis, battler.abilityName))
+          battle.pbDisplay(_INTL("{1}的{2}治愈了队友的冰冻！", battler.pbThis, battler.abilityName))
         when :DROWSY
-          battle.pbDisplay(_INTL("因为{1}的{2}，伙伴再次变得警觉！", battler.pbThis, battler.abilityName))
+          battle.pbDisplay(_INTL("{1}的{2}让伙伴清醒过来了！", battler.pbThis, battler.abilityName))
         when :FROSTBITE
-          battle.pbDisplay(_INTL("因为{1}的{2}，伙伴治愈了冻伤！", battler.pbThis, battler.abilityName))
+          battle.pbDisplay(_INTL("{1}的{2}治愈了伙伴的冻伤！", battler.pbThis, battler.abilityName))
         end
       end
       battle.pbHideAbilitySplash(battler)
@@ -151,19 +168,19 @@ Battle::AbilityEffects::EndOfRoundHealing.add(:HYDRATION,
     if !Battle::Scene::USE_ABILITY_SPLASH
       case oldStatus
       when :SLEEP
-        battle.pbDisplay(_INTL("因为{2}，{1}醒过来了！", battler.pbThis, battler.abilityName))
+        battle.pbDisplay(_INTL("{1}的{2}让队友醒过来了！", battler.pbThis, battler.abilityName))
       when :POISON
-        battle.pbDisplay(_INTL("因为{2}，{1}治愈了中毒！", battler.pbThis, battler.abilityName))
+        battle.pbDisplay(_INTL("{1}的{2}治愈了队友的中毒！", battler.pbThis, battler.abilityName))
       when :BURN
-        battle.pbDisplay(_INTL("因为{2}，{1}治愈了灼伤！", battler.pbThis, battler.abilityName))
+        battle.pbDisplay(_INTL("{1}的{2}治愈了队友的灼伤！", battler.pbThis, battler.abilityName))
       when :PARALYSIS
-        battle.pbDisplay(_INTL("因为{2}，{1}治愈了麻痹！", battler.pbThis, battler.abilityName))
+        battle.pbDisplay(_INTL("{1}的{2}治愈了队友的麻痹！", battler.pbThis, battler.abilityName))
       when :FROZEN
-        battle.pbDisplay(_INTL("因为{2}，{1}治愈了冰冻状态！", battler.pbThis, battler.abilityName))
+        battle.pbDisplay(_INTL("{1}的{2}治愈了队友的冰冻！", battler.pbThis, battler.abilityName))
       when :DROWSY
-        battle.pbDisplay(_INTL("因为{2}，{1}再次变得警觉！", battler.pbThis, battler.abilityName))
+        battle.pbDisplay(_INTL("{1}的{2}让伙伴清醒过来了！", battler.pbThis, battler.abilityName))
       when :FROSTBITE
-        battle.pbDisplay(_INTL("因为{2}，{1}治愈了冻伤！", battler.pbThis, battler.abilityName))
+        battle.pbDisplay(_INTL("{1}的{2}治愈了伙伴的冻伤！", battler.pbThis, battler.abilityName))
       end
     end
     battle.pbHideAbilitySplash(battler)
@@ -185,19 +202,19 @@ Battle::AbilityEffects::EndOfRoundHealing.add(:SHEDSKIN,
     if !Battle::Scene::USE_ABILITY_SPLASH
       case oldStatus
       when :SLEEP
-        battle.pbDisplay(_INTL("因为{2}，{1}醒过来了！", battler.pbThis, battler.abilityName))
+        battle.pbDisplay(_INTL("{1}的{2}让队友醒过来了！", battler.pbThis, battler.abilityName))
       when :POISON
-        battle.pbDisplay(_INTL("因为{2}，{1}治愈了中毒！", battler.pbThis, battler.abilityName))
+        battle.pbDisplay(_INTL("{1}的{2}治愈了队友的中毒！", battler.pbThis, battler.abilityName))
       when :BURN
-        battle.pbDisplay(_INTL("因为{2}，{1}治愈了灼伤！", battler.pbThis, battler.abilityName))
+        battle.pbDisplay(_INTL("{1}的{2}治愈了队友的灼伤！", battler.pbThis, battler.abilityName))
       when :PARALYSIS
-        battle.pbDisplay(_INTL("因为{2}，{1}治愈了麻痹！", battler.pbThis, battler.abilityName))
+        battle.pbDisplay(_INTL("{1}的{2}治愈了队友的麻痹！", battler.pbThis, battler.abilityName))
       when :FROZEN
-        battle.pbDisplay(_INTL("因为{2}，{1}治愈了冰冻状态！", battler.pbThis, battler.abilityName))
+        battle.pbDisplay(_INTL("{1}的{2}治愈了队友的冰冻！", battler.pbThis, battler.abilityName))
       when :DROWSY
-        battle.pbDisplay(_INTL("因为{2}，{1}再次变得警觉！", battler.pbThis, battler.abilityName))
+        battle.pbDisplay(_INTL("{1}的{2}让伙伴清醒过来了！", battler.pbThis, battler.abilityName))
       when :FROSTBITE
-        battle.pbDisplay(_INTL("因为{2}，{1}治愈了冻伤！", battler.pbThis, battler.abilityName))
+        battle.pbDisplay(_INTL("{1}的{2}治愈了伙伴的冻伤！", battler.pbThis, battler.abilityName))
       end
     end
     battle.pbHideAbilitySplash(battler)
@@ -218,7 +235,7 @@ Battle::AbilityEffects::OnStatusInflicted.add(:SYNCHRONIZE,
         battler.battle.pbShowAbilitySplash(battler)
         msg = nil
         if !Battle::Scene::USE_ABILITY_SPLASH
-          msg = _INTL("因为{1}的{2}，{3}中毒了！", battler.pbThis, battler.abilityName, user.pbThis(true))
+          msg = _INTL("{1}的{2}让{3}中毒了！", battler.pbThis, battler.abilityName, user.pbThis(true))
         end
         user.pbPoison(nil, msg, (battler.statusCount > 0))
         battler.battle.pbHideAbilitySplash(battler)
@@ -228,7 +245,7 @@ Battle::AbilityEffects::OnStatusInflicted.add(:SYNCHRONIZE,
         battler.battle.pbShowAbilitySplash(battler)
         msg = nil
         if !Battle::Scene::USE_ABILITY_SPLASH
-          msg = _INTL("因为{1}的{2}，{3}被灼伤了！", battler.pbThis, battler.abilityName, user.pbThis(true))
+          msg = _INTL("{1}的{2}让{3}灼伤了！", battler.pbThis, battler.abilityName, user.pbThis(true))
         end
         user.pbBurn(nil, msg)
         battler.battle.pbHideAbilitySplash(battler)
@@ -238,7 +255,7 @@ Battle::AbilityEffects::OnStatusInflicted.add(:SYNCHRONIZE,
         battler.battle.pbShowAbilitySplash(battler)
         msg = nil
         if !Battle::Scene::USE_ABILITY_SPLASH
-          msg = _INTL("因为{1}的{2}，{3}被麻痹了！很难使出招式！",
+          msg = _INTL("{1}的{2}让{3}麻痹了！很难使出招式！",
              battler.pbThis, battler.abilityName, user.pbThis(true))
         end
         user.pbParalyze(nil, msg)
@@ -249,7 +266,7 @@ Battle::AbilityEffects::OnStatusInflicted.add(:SYNCHRONIZE,
         battler.battle.pbShowAbilitySplash(battler)
         msg = nil
         if !Battle::Scene::USE_ABILITY_SPLASH
-          msg = _INTL("因为{1}的{2}，{3}变得昏昏欲睡！太困了，可能使不出招式！",
+          msg = _INTL("{1}的{2}让{3}瞌睡了！可能无法行动！",
              battler.pbThis, battler.abilityName, user.pbThis(true))
         end
         user.pbSleep(nil, msg)
@@ -260,7 +277,7 @@ Battle::AbilityEffects::OnStatusInflicted.add(:SYNCHRONIZE,
         battler.battle.pbShowAbilitySplash(battler)
         msg = nil
         if !Battle::Scene::USE_ABILITY_SPLASH
-          msg = _INTL("因为{1}的{2}，{3}被冻伤了！", battler.pbThis, battler.abilityName, user.pbThis(true))
+          msg = _INTL("{1}的{2}让{3}冻伤了！", battler.pbThis, battler.abilityName, user.pbThis(true))
         end
         user.pbFreeze(nil, msg)
         battler.battle.pbHideAbilitySplash(battler)
@@ -276,6 +293,7 @@ Battle::AbilityEffects::OnStatusInflicted.add(:SYNCHRONIZE,
 #-------------------------------------------------------------------------------
 Battle::AbilityEffects::OnDealingHit.add(:POISONTOUCH,
   proc { |ability, user, target, move, battle|
+    next if target.fainted?
     next if !move.contactMove?
     next if battle.pbRandom(100) >= 30
     next if target.hasActiveItem?(:COVERTCLOAK)
@@ -328,7 +346,7 @@ Battle::AbilityEffects::OnBeingHit.add(:MUMMY,
     next if !move.pbContactMove?(user)
     next if user.fainted?
     next if user.unstoppableAbility?
-    next if [:MUMMY, :LINGERINGAROMA].include?(user.ability)
+    next if [:MUMMY, :LINGERINGAROMA].include?(user.ability_id)
     next if user.hasActiveItem?(:ABILITYSHIELD)
     oldAbil = nil
     battle.pbShowAbilitySplash(target) if user.opposes?(target)
@@ -342,11 +360,11 @@ Battle::AbilityEffects::OnBeingHit.add(:MUMMY,
         when :MUMMY
           msg = _INTL("{1}的特性变成了{2}！", user.pbThis, user.abilityName)
         when :LINGERINGAROMA
-          msg = _INTL("一种甩不掉的气味附着在{1}身上！", user.pbThis(true))
+          msg = _INTL("{1}沾上了味道且挥之不去！", user.pbThis(true))
         end
         battle.pbDisplay(msg)
       else
-        battle.pbDisplay(_INTL("因为{3}，{1}的特性变成了{2}！",
+        battle.pbDisplay(_INTL("由于{3}，{1}的特性变成了{2}！",
            user.pbThis, user.abilityName, target.pbThis(true)))
       end
       battle.pbHideAbilitySplash(user) if user.opposes?(target)
@@ -383,7 +401,7 @@ Battle::AbilityEffects::OnBeingHit.add(:WANDERINGSPIRIT,
       if Battle::Scene::USE_ABILITY_SPLASH
         battle.pbDisplay(_INTL("{1}与{2}互换了各自的特性！", target.pbThis, user.pbThis(true)))
       else
-        battle.pbDisplay(_INTL("{1}将{2}与{3}的{4}互换了！",
+        battle.pbDisplay(_INTL("{1}的{2}与{3}的{4}特性互换了！",
            target.pbThis, user.abilityName, user.pbThis(true), target.abilityName))
       end
       if user.opposes?(target)
@@ -411,8 +429,8 @@ Battle::AbilityEffects::OnSwitchIn.add(:NEUTRALIZINGGAS,
     battle.pbDisplay(_INTL("周围充满了化学变化气体！"))
     battle.allBattlers.each do |b|
       if b.hasActiveItem?(:ABILITYSHIELD)
-        itemname = GameData::Item.get(target.item).name
-        @battle.pbDisplay(_INTL("{1}的特性正受到{2}效果的保护！",b.pbThis,itemname))
+        itemname = GameData::Item.get(b.item).name
+        battle.pbDisplay(_INTL("{1}的特性受到了{2}的保护！", b.pbThis, itemname))
         next
       end
       b.effects[PBEffects::SlowStart] = 0
@@ -479,9 +497,9 @@ Battle::AbilityEffects::OnBeingHit.add(:ANGERPOINT,
     target.statsRaisedThisRound = true
     battle.pbCommonAnimation("StatUp", target)
     if Battle::Scene::USE_ABILITY_SPLASH
-      battle.pbDisplay(_INTL("{1}的{2}被提高到了最大！", target.pbThis, GameData::Stat.get(:ATTACK).name))
+      battle.pbDisplay(_INTL("{1}使{2}最大化了！", target.pbThis, GameData::Stat.get(:ATTACK).name))
     else
-      battle.pbDisplay(_INTL("{1}的{3}被{2}提高到了最大！",
+      battle.pbDisplay(_INTL("{1}的{2}使{3}最大化了！",
          target.pbThis, target.abilityName, GameData::Stat.get(:ATTACK).name))
     end
     battle.pbHideAbilitySplash(target)

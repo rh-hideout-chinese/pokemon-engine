@@ -96,9 +96,6 @@ Pokedex = It swims by jetting water from its horns. The most notable characteris
 Generation = 9
 Flags = InheritFormWithEverStone
 #-------------------------------
-[QUILAVA,1]
-Generation = 8
-#-------------------------------
 [TYPHLOSION,1]
 FormName = Hisuian
 Types = FIRE,GHOST
@@ -166,9 +163,6 @@ Height = 6.3
 Weight = 659.0
 Pokedex = It soars across the sky in a form that greatly resembles the creator of all things. Perhaps this imitation of appearance is Palkia's strategy for gaining Arceus's powers.
 #-------------------------------
-[DEWOTT,1]
-Generation = 8
-#-------------------------------
 [SAMUROTT,1]
 FormName = Hisuian
 Types = WATER,DARK
@@ -179,9 +173,6 @@ Moves = 0,CEASELESSEDGE,1,SLASH,1,SUCKERPUNCH,1,MEGAHORN,1,TAILWHIP,1,TACKLE,1,W
 TutorMoves = AERIALACE,AIRSLASH,AVALANCHE,BLIZZARD,BODYSLAM,BRICKBREAK,BULLDOZE,CHILLINGWATER,DARKPULSE,DIG,DRILLRUN,ENCORE,ENDURE,FACADE,FALSESWIPE,FLING,FLIPTURN,GIGAIMPACT,GRASSKNOT,HELPINGHAND,HYDROCANNON,HYDROPUMP,HYPERBEAM,ICEBEAM,ICYWIND,KNOCKOFF,LASHOUT,LIQUIDATION,PROTECT,RAINDANCE,REST,SCARYFACE,SLEEPTALK,SMARTSTRIKE,SNARL,SNOWSCAPE,SUBSTITUTE,SURF,SWIFT,SWORDSDANCE,TAKEDOWN,TAUNT,THIEF,THROATCHOP,UPPERHAND,VACUUMWAVE,WATERFALL,WATERPLEDGE,WATERPULSE,WHIRLPOOL,XSCISSOR
 Weight = 58.2
 Pokedex = Hard of heart and deft of blade, this rare form of Samurott is a product of the Pokémon's evolution in the region of Hisui. Its turbulent blows crash into foes like ceaseless pounding waves.
-Generation = 8
-#-------------------------------
-[PETILIL,1]
 Generation = 8
 #-------------------------------
 [LILLIGANT,1]
@@ -235,9 +226,6 @@ Pokedex = With its disheveled white fur, it looks like an embodiment of death. H
 Generation = 8
 Flags = InheritFormWithEverStone
 #-------------------------------
-[RUFFLET,1]
-Generation = 8
-#-------------------------------
 [BRAVIARY,1]
 FormName = Hisuian
 Types = PSYCHIC,FLYING
@@ -251,9 +239,6 @@ Weight = 43.4
 Color = White
 Category = Battle Cry
 Pokedex = Screaming a bloodcurdling battle cry, this huge and ferocious bird Pokémon goes out on the hunt. It blasts lakes with shock waves, then scoops up any prey that float to the water's surface.
-Generation = 8
-#-------------------------------
-[GOOMY,1]
 Generation = 8
 #-------------------------------
 [SLIGGOO,1]
@@ -282,9 +267,6 @@ Category = Shell Bunker
 Pokedex = Able to freely control the hardness of its metallic shell. It loathes solitude and is extremely clingy—it will fume and run riot if those dearest to it ever leave its side.
 Generation = 8
 #-------------------------------
-[BERGMITE,1]
-Generation = 8
-#-------------------------------
 [AVALUGG,1]
 FormName = Hisuian
 Types = ICE,ROCK
@@ -295,9 +277,6 @@ TutorMoves = AVALANCHE,BLIZZARD,BODYPRESS,BODYSLAM,BULLDOZE,CHILLINGWATER,CRUNCH
 Height = 1.4
 Weight = 262.4
 Pokedex = The armor of ice covering its lower jaw puts steel to shame and can shatter rocks with ease. This Pokémon barrels along steep mountain paths, cleaving through the deep snow.
-Generation = 8
-#-------------------------------
-[DARTRIX,1]
 Generation = 8
 #-------------------------------
 [DECIDUEYE,1]

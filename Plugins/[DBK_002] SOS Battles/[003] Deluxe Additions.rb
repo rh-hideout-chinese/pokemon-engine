@@ -76,7 +76,7 @@ MidbattleHandlers.add(:midbattle_global, :wild_totem_battle,
     foe = battle.battlers[1]
     PBDebug.log("[Midbattle Global] #{foe.pbThis} (#{foe.index}) gains a Z-Powered aura")
     battle.pbAnimation(:DRAGONDANCE, foe, foe)
-    battle.pbDisplay(_INTL("{1} 的气场突然亮起！", foe.pbThis))
+    battle.pbDisplay(_INTL("{1}的气场突然爆发!", foe.pbThis))
     stats = battle.totemBattle 
     if !stats.is_a?(Array)
       stats = []
@@ -99,7 +99,7 @@ MidbattleHandlers.add(:midbattle_triggers, "sosCall",
     battler = battle.battlers[idxBattler]
     if battler && battler.canSOSCallSimple?
       battle.scene.pbForceEndSpeech
-	  PBDebug.log("     'sosCall': calling a wild battler")
+      PBDebug.log("     'sosCall': calling a wild battler")
       battle.pbCallForHelpSimple(battler)
     end
   }
@@ -111,8 +111,8 @@ MidbattleHandlers.add(:midbattle_triggers, "sosCall",
 MidbattleHandlers.add(:midbattle_triggers, "disableSOS",
   proc { |battle, idxBattler, idxTarget, params|
     battle.sosBattle = !params
-	value = (battle.sosBattle) ? "enabled" : "disabled"
-	PBDebug.log("     'disableSOS': SOS calling has been #{value}")
+    value = (battle.sosBattle) ? "enabled" : "disabled"
+    PBDebug.log("     'disableSOS': SOS calling has been #{value}")
   }
 )
 
@@ -123,7 +123,7 @@ MidbattleHandlers.add(:midbattle_triggers, "addWild",
   proc { |battle, idxBattler, idxTarget, params|
     next if battle.decision > 0
     battle.scene.pbForceEndSpeech
-	PBDebug.log("     'addWild': adding a new wild battler")
+    PBDebug.log("     'addWild': adding a new wild battler")
     battle.pbAddNewBattler(*params)
   }
 )
@@ -135,7 +135,7 @@ MidbattleHandlers.add(:midbattle_triggers, "addTrainer",
   proc { |battle, idxBattler, idxTarget, params|
     next if battle.decision > 0
     battle.scene.pbForceEndSpeech
-	PBDebug.log("     'addWild': adding a new trainer")
+    PBDebug.log("     'addTrainer': adding a new trainer")
     battle.pbAddNewTrainer(*params)
   }
 )
