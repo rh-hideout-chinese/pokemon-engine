@@ -9,7 +9,7 @@ Abilities = THICKFAT
 HiddenAbilities = THICKFAT
 Height = 2.4
 Weight = 155.5
-Pokedex = 为了支撑在超级进化后成长得更大的花 ，它的腰腿也变得更加健壮了。
+Pokedex = 为了支撑在超级进化后成长得更大的花，它的腰腿也变得更加健壮了。
 Generation = 6
 UngmaxForm = 0
 #-------------------------------
@@ -23,7 +23,7 @@ Abilities = TOUGHCLAWS
 HiddenAbilities = TOUGHCLAWS
 Weight = 110.5
 Color = Black
-Pokedex = 全身充斥着非比寻常的力量，这种力量 染黑了它的身体，燃烧出炽热的蓝色火 焰。
+Pokedex = 全身充斥着非比寻常的力量，这种力量染黑了它的身体，燃烧出炽热的蓝色火焰。
 Generation = 6
 UngmaxForm = 0
 #-------------------------------
@@ -35,7 +35,7 @@ BaseExp = 317
 Abilities = DROUGHT
 HiddenAbilities = DROUGHT
 Weight = 100.5
-Pokedex = 与训练家的牵绊是它的力量之源。它引 以为傲的飞行能力完全凌驾于喷气式飞 机之上。
+Pokedex = 与训练家的牵绊是它的力量之源。它引以为傲的飞行能力完全凌驾于喷气式飞机之上。
 Generation = 6
 UngmaxForm = 0
 #-------------------------------
@@ -47,7 +47,7 @@ BaseExp = 315
 Abilities = MEGALAUNCHER
 HiddenAbilities = MEGALAUNCHER
 Weight = 101.1
-Pokedex = 龟甲上的大炮拥有不逊于坦克的威力。 结实的腰腿使它能在发射的冲击力之下 用力站稳。
+Pokedex = 龟甲上的大炮拥有不逊于坦克的威力。结实的腰腿使它能在发射的冲击力之下用力站稳。
 Generation = 6
 UngmaxForm = 0
 #-------------------------------
@@ -60,7 +60,7 @@ Abilities = ADAPTABILITY
 HiddenAbilities = ADAPTABILITY
 Height = 1.4
 Weight = 40.5
-Pokedex = 双脚也变化为毒针。用手脚的针猛刺之 后，以尾部的毒针给出最后一击。
+Pokedex = 双脚也变化为毒针。用手脚的针猛刺之后，以尾部的毒针给出最后一击。
 Generation = 6
 UngmaxForm = 0
 #-------------------------------
@@ -73,7 +73,7 @@ Abilities = NOGUARD
 HiddenAbilities = NOGUARD
 Height = 2.2
 Weight = 50.5
-Pokedex = 肌肉的力量大幅提升。能够连续２个星 期不眠不休地持续飞行。
+Pokedex = 肌肉的力量大幅提升。能够连续２个星期不眠不休地持续飞行。
 Generation = 6
 UngmaxForm = 0
 #-------------------------------
@@ -86,7 +86,7 @@ TutorMoves = ATTRACT,BLIZZARD,CONFIDE,COVET,DARKPULSE,DOUBLETEAM,EMBARGO,ENDEAVO
 EggMoves = COUNTER,FINALGAMBIT,FURYSWIPES,MEFIRST,REVENGE,REVERSAL,SNATCH,STOCKPILE,SWALLOW,SWITCHEROO,UPROAR
 Weight = 3.8
 Color = Black
-Pokedex = 用门牙咬破大门侵入民宅。扯动胡须寻 找出食物，来进行盗窃。
+Pokedex = 用门牙咬破大门侵入民宅。扯动胡须寻找出食物，来进行盗窃。
 Generation = 7
 Flags = InheritFormWithEverStone
 WildItemUncommon = PECHABERRY
@@ -102,7 +102,7 @@ HiddenAbilities = THICKFAT
 TutorMoves = ATTRACT,BLIZZARD,BULKUP,CONFIDE,COVET,DARKPULSE,DOUBLETEAM,EMBARGO,ENDEAVOR,FACADE,FRUSTRATION,GIGAIMPACT,GRASSKNOT,HIDDENPOWER,HYPERBEAM,ICEBEAM,ICYWIND,IRONTAIL,KNOCKOFF,LASTRESORT,PROTECT,QUASH,RAINDANCE,REST,RETURN,ROAR,ROUND,SHADOWBALL,SHADOWCLAW,SHOCKWAVE,SLEEPTALK,SLUDGEBOMB,SLUDGEWAVE,SNARL,SNATCH,SNORE,STOMPINGTANTRUM,SUBSTITUTE,SUNNYDAY,SUPERFANG,SWAGGER,SWORDSDANCE,TAUNT,THIEF,THROATCHOP,TORMENT,TOXIC,UPROAR,UTURN,VENOSHOCK,ZENHEADBUTT,TERABLAST
 Weight = 25.5
 Color = Black
-Pokedex = 率领小拉达组成团队。每个团队都有自 己的领地，会因为寻找食物而发生争斗 。
+Pokedex = 率领小拉达组成团队。每个团队都有自己的领地，会因为寻找食物而发生争斗。
 Generation = 7
 Flags = InheritFormWithEverStone
 WildItemUncommon = PECHABERRY
@@ -119,7 +119,7 @@ TutorMoves = ALLYSWITCH,ATTRACT,BRICKBREAK,CALMMIND,CHARGEBEAM,CONFIDE,COVET,DOU
 Height = 0.7
 Weight = 21.0
 Color = Brown
-Pokedex = 用念力操纵电力。乘在尾巴上，利用精 神力量浮起，就这么移动。
+Pokedex = 用念力操纵电力。乘在尾巴上，利用精神力量浮起，就这么移动。
 Generation = 7
 UngmaxForm = 0
 #-------------------------------
@@ -135,7 +135,7 @@ EggMoves = AMNESIA,CHIPAWAY,COUNTER,CRUSHCLAW,CURSE,ENDURE,FLAIL,HONECLAWS,ICICL
 Height = 0.7
 Weight = 40.0
 Color = White
-Pokedex = 背上的皮肤硬如钢铁。因为柔软的肚子 会成为攻击目标，所以它会死命地趴在 地上。
+Pokedex = 背上的皮肤硬如钢铁。因为柔软的肚子会成为攻击目标，所以它会死命地趴在地上。
 Generation = 7
 Flags = InheritFormWithEverStone
 Evolutions = SANDSLASH,Item,ICESTONE
@@ -166,7 +166,7 @@ Moves = 1,POWDERSNOW,4,TAILWHIP,7,ROAR,9,BABYDOLLEYES,10,ICESHARD,12,CONFUSERAY,
 TutorMoves = AQUATAIL,ATTRACT,AURORAVEIL,BLIZZARD,CONFIDE,COVET,DARKPULSE,DOUBLETEAM,FACADE,FOULPLAY,FROSTBREATH,FRUSTRATION,HAIL,HEALBELL,HIDDENPOWER,ICEBEAM,ICYWIND,IRONTAIL,PAINSPLIT,PAYBACK,PROTECT,PSYCHUP,RAINDANCE,REST,RETURN,ROAR,ROLEPLAY,ROUND,SAFEGUARD,SLEEPTALK,SNORE,SPITE,SUBSTITUTE,SWAGGER,TOXIC,ZENHEADBUTT,TERABLAST
 EggMoves = AGILITY,CHARM,DISABLE,ENCORE,EXTRASENSORY,FLAIL,FREEZEDRY,HOWL,HYPNOSIS,MOONBLAST,POWERSWAP,SECRETPOWER,SPITE,TAILSLAP
 Color = White
-Pokedex = 在炎热的时候，用６根尾巴制作冰砾在 周围挥洒，让身体冷却下来。
+Pokedex = 在炎热的时候，用６根尾巴制作冰砾在周围挥洒，让身体冷却下来。
 Generation = 7
 Flags = InheritFormWithEverStone
 WildItemUncommon = SNOWBALL
@@ -183,7 +183,7 @@ HiddenAbilities = SNOWWARNING
 Moves = 0,DAZZLINGGLEAM,1,DAZZLINGGLEAM,1,IMPRISON,1,NASTYPLOT,1,ICEBEAM,1,ICESHARD,1,CONFUSERAY,1,SAFEGUARD
 TutorMoves = AQUATAIL,ATTRACT,AURORAVEIL,BLIZZARD,CALMMIND,CONFIDE,COVET,DARKPULSE,DAZZLINGGLEAM,DOUBLETEAM,DREAMEATER,FACADE,FOULPLAY,FROSTBREATH,FRUSTRATION,GIGAIMPACT,HAIL,HEALBELL,HIDDENPOWER,HYPERBEAM,ICEBEAM,ICYWIND,IRONTAIL,LASERFOCUS,PAINSPLIT,PAYBACK,PROTECT,PSYCHUP,PSYSHOCK,RAINDANCE,REST,RETURN,ROAR,ROLEPLAY,ROUND,SAFEGUARD,SLEEPTALK,SNORE,SPITE,SUBSTITUTE,SWAGGER,TOXIC,WONDERROOM,ZENHEADBUTT,TERABLAST
 Color = Blue
-Pokedex = 居住在被冰雪覆盖万年的山上，被信奉 为神的化身。会在暴风雪的伴随下出现 。
+Pokedex = 居住在被冰雪覆盖万年的山上，被信奉为神的化身。会在暴风雪的伴随下出现。
 Generation = 7
 Flags = InheritFormWithEverStone
 WildItemUncommon = SNOWBALL
@@ -198,7 +198,7 @@ Moves = 1,SANDATTACK,1,METALCLAW,4,GROWL,7,ASTONISH,10,MUDSLAP,14,MAGNITUDE,18,B
 TutorMoves = AERIALACE,ATTRACT,BULLDOZE,CONFIDE,DOUBLETEAM,EARTHPOWER,EARTHQUAKE,ECHOEDVOICE,FACADE,FLASHCANNON,FRUSTRATION,HIDDENPOWER,IRONDEFENSE,IRONHEAD,PROTECT,REST,RETURN,ROCKSLIDE,ROCKTOMB,ROUND,SANDSTORM,SHADOWCLAW,SLEEPTALK,SLUDGEBOMB,SNORE,STEALTHROCK,STOMPINGTANTRUM,SUBSTITUTE,SUNNYDAY,SWAGGER,THIEF,TOXIC,WORKUP,TERABLAST
 EggMoves = ANCIENTPOWER,BEATUP,ENDURE,FEINTATTACK,FINALGAMBIT,HEADBUTT,MEMENTO,METALSOUND,PURSUIT,REVERSAL,THRASH
 Weight = 1.0
-Pokedex = 从头上长出的金属物体是由胡子变化而 来的。通过摆动跟伙伴进行交流。
+Pokedex = 从头上长出的金属物体是由胡子变化而来的。通过摆动跟伙伴进行交流。
 Generation = 7
 Flags = InheritFormWithEverStone
 UngmaxForm = 0
@@ -212,7 +212,7 @@ Abilities = SANDVEIL,TANGLINGHAIR
 Moves = 0,SANDTOMB,1,SANDTOMB,1,ROTOTILLER,1,NIGHTSLASH,1,TRIATTACK,1,SANDATTACK,1,METALCLAW,1,GROWL,4,GROWL,7,ASTONISH,10,MUDSLAP,14,MAGNITUDE,18,BULLDOZE,22,SUCKERPUNCH,25,MUDBOMB,30,EARTHPOWER,35,DIG,41,IRONHEAD,47,EARTHQUAKE,53,FISSURE
 TutorMoves = AERIALACE,ATTRACT,BULLDOZE,CONFIDE,DOUBLETEAM,EARTHPOWER,EARTHQUAKE,ECHOEDVOICE,FACADE,FLASHCANNON,FRUSTRATION,GIGAIMPACT,HIDDENPOWER,HYPERBEAM,IRONDEFENSE,IRONHEAD,PROTECT,REST,RETURN,ROCKSLIDE,ROCKTOMB,ROUND,SANDSTORM,SHADOWCLAW,SLEEPTALK,SLUDGEBOMB,SLUDGEWAVE,SNORE,STEALTHROCK,STOMPINGTANTRUM,STONEEDGE,SUBSTITUTE,SUNNYDAY,SWAGGER,THIEF,TOXIC,WORKUP,TERABLAST
 Weight = 66.6
-Pokedex = 用金光闪烁的胡子保护身体。听说，如 果把脱落的胡须带回家，会招来不幸。
+Pokedex = 用金光闪烁的胡子保护身体。听说，如果把脱落的胡须带回家，会招来不幸。
 Generation = 7
 Flags = InheritFormWithEverStone
 UngmaxForm = 0
@@ -226,7 +226,7 @@ Moves = 1,SCRATCH,1,GROWL,6,BITE,9,FAKEOUT,14,FURYSWIPES,17,SCREECH,22,FEINTATTA
 TutorMoves = AERIALACE,ATTRACT,CONFIDE,COVET,DARKPULSE,DOUBLETEAM,DREAMEATER,ECHOEDVOICE,EMBARGO,FACADE,FOULPLAY,FRUSTRATION,GUNKSHOT,HIDDENPOWER,HYPERVOICE,ICYWIND,IRONTAIL,KNOCKOFF,LASTRESORT,PAYBACK,PROTECT,PSYCHUP,QUASH,RAINDANCE,REST,RETURN,ROUND,SEEDBOMB,SHADOWBALL,SHADOWCLAW,SHOCKWAVE,SLEEPTALK,SNATCH,SNORE,SPITE,SUBSTITUTE,SUNNYDAY,SWAGGER,TAUNT,THIEF,THROATCHOP,THUNDER,THUNDERBOLT,TORMENT,TOXIC,UPROAR,UTURN,WATERPULSE,WORKUP,TERABLAST
 EggMoves = AMNESIA,ASSIST,CHARM,COVET,FLAIL,FLATTER,FOULPLAY,HYPNOSIS,PARTINGSHOT,PUNISHMENT,SNATCH,SPITE
 Color = Blue
-Pokedex = 浮躁、任性、耐不住性子。深受那些比 起被别人照顾，更喜欢照顾别人的训练 家欢迎。
+Pokedex = 浮躁、任性、耐不住性子。深受那些比起被别人照顾，更喜欢照顾别人的训练家欢迎。
 Generation = 7
 Flags = InheritFormWithEverStone
 Evolutions = PERSIAN,Happiness,
@@ -243,7 +243,7 @@ EggMoves = COVET,CURSE,DOUBLEEDGE,FLAIL,NIGHTSLASH,SPITE
 Weight = 7.5
 Color = Brown
 Shape = BipedalTail
-Pokedex = 和好战的海洋民族一起生活，久而久之 身体的各个地方就都变成了黑铁。
+Pokedex = 和好战的海洋民族一起生活，久而久之身体的各个地方就都变成了黑铁。
 Generation = 8
 Flags = InheritFormWithEverStone
 Evolutions = PERRSERKER,Level,28
@@ -260,7 +260,7 @@ TutorMoves = AERIALACE,ATTRACT,CONFIDE,COVET,DARKPULSE,DOUBLETEAM,DREAMEATER,ECH
 Height = 1.1
 Weight = 33.0
 Color = Blue
-Pokedex = 圆脸是富贵的象征。体型丰满，大盘脸 的猫老大会被认为是美丽的。
+Pokedex = 圆脸是富贵的象征。体型丰满，大盘脸的猫老大会被认为是美丽的。
 Generation = 7
 Flags = InheritFormWithEverStone
 UngmaxForm = 0
@@ -273,7 +273,7 @@ BaseExp = 300
 Abilities = TRACE
 HiddenAbilities = TRACE
 Height = 1.2
-Pokedex = 胡地以肌肉为代价换来了真正力量的释 放。能用精神力量看穿一切。
+Pokedex = 胡地以肌肉为代价换来了真正力量的释放。能用精神力量看穿一切。
 Generation = 6
 UngmaxForm = 0
 #-------------------------------
@@ -287,7 +287,7 @@ TutorMoves = ATTRACT,BLOCK,BRICKBREAK,BRUTALSWING,BULLDOZE,CHARGEBEAM,CONFIDE,DO
 EggMoves = AUTOTOMIZE,BLOCK,COUNTER,CURSE,ENDURE,FLAIL,MAGNETRISE,ROCKCLIMB,SCREECH,WIDEGUARD
 Weight = 20.3
 Color = Gray
-Pokedex = 会用头锤和伙伴争斗。头上的铁矿砂会 附着在磁力强的一方那里。
+Pokedex = 会用头锤和伙伴争斗。头上的铁矿砂会附着在磁力强的一方那里。
 Generation = 7
 Flags = InheritFormWithEverStone
 WildItemUncommon = CELLBATTERY
@@ -302,7 +302,7 @@ Moves = 1,TACKLE,1,DEFENSECURL,1,CHARGE,1,ROCKPOLISH,4,CHARGE,6,ROCKPOLISH,10,RO
 TutorMoves = ALLYSWITCH,ATTRACT,BLOCK,BRICKBREAK,BRUTALSWING,BULLDOZE,CHARGEBEAM,CONFIDE,DOUBLETEAM,EARTHPOWER,EARTHQUAKE,ELECTROWEB,EXPLOSION,FACADE,FIREBLAST,FIREPUNCH,FLAMETHROWER,FLING,FOCUSPUNCH,FRUSTRATION,GYROBALL,HIDDENPOWER,IRONDEFENSE,MAGNETRISE,NATUREPOWER,PROTECT,REST,RETURN,ROCKPOLISH,ROCKSLIDE,ROCKTOMB,ROUND,SANDSTORM,SHOCKWAVE,SLEEPTALK,SMACKDOWN,SNORE,STEALTHROCK,STOMPINGTANTRUM,STONEEDGE,SUBSTITUTE,SUNNYDAY,SUPERPOWER,SWAGGER,THUNDER,THUNDERBOLT,THUNDERPUNCH,TOXIC,VOLTSWITCH,TERABLAST
 Weight = 110.0
 Color = Gray
-Pokedex = 为寻找吃的石头而打架。每次隆隆石之 间互相碰撞都会迸发出爆炸声和光芒。
+Pokedex = 为寻找吃的石头而打架。每次隆隆石之间互相碰撞都会迸发出爆炸声和光芒。
 Generation = 7
 Flags = InheritFormWithEverStone
 WildItemUncommon = CELLBATTERY
@@ -318,7 +318,7 @@ TutorMoves = ALLYSWITCH,ATTRACT,BLOCK,BRICKBREAK,BRUTALSWING,BULLDOZE,CHARGEBEAM
 Height = 1.7
 Weight = 316.0
 Color = Gray
-Pokedex = 发射出带着电的岩石。哪怕没有命中， 只是擦到，对手也会麻痹而失去意识。
+Pokedex = 发射出带着电的岩石。哪怕没有命中，只是擦到，对手也会麻痹而失去意识。
 Generation = 7
 Flags = InheritFormWithEverStone
 WildItemCommon = CELLBATTERY
@@ -335,7 +335,7 @@ Height = 0.8
 Weight = 24.0
 Color = White
 Category = 一角
-Pokedex = 小小的角里蕴藏着治愈之力。如果只是 一点小伤，它只要用角轻擦伤口就能治 愈。
+Pokedex = 小小的角里蕴藏着治愈之力。如果只是一点小伤，它只要用角轻擦伤口就能治愈。
 Generation = 8
 Flags = InheritFormWithEverStone
 UngmaxForm = 0
@@ -350,7 +350,7 @@ TutorMoves = AGILITY,ALLYSWITCH,ATTRACT,BATONPASS,BODYSLAM,BOUNCE,CALMMIND,CHARM
 Weight = 80.0
 Color = White
 Category = 一角
-Pokedex = 会从犄角发射强力的精神利刃。那超群 的破坏力甚至可以在厚厚的铁板上开出 洞来。
+Pokedex = 会从犄角发射强力的精神利刃。那超群的破坏力甚至可以在厚厚的铁板上开出洞来。
 Generation = 8
 Flags = InheritFormWithEverStone
 UngmaxForm = 0
@@ -361,7 +361,7 @@ Types = PSYCHIC
 Abilities = GLUTTONY,OWNTEMPO
 Moves = 1,TACKLE,1,CURSE,3,GROWL,6,ACID,9,YAWN,12,CONFUSION,15,DISABLE,18,WATERPULSE,21,HEADBUTT,24,ZENHEADBUTT,27,AMNESIA,30,SURF,33,SLACKOFF,36,PSYCHIC,39,PSYCHUP,42,RAINDANCE,45,HEALPULSE
 TutorMoves = AMNESIA,ATTRACT,BLIZZARD,BODYSLAM,BRINE,BULLDOZE,CALMMIND,DIG,DIVE,EARTHQUAKE,ENDURE,EXPANDINGFORCE,FACADE,FIREBLAST,FLAMETHROWER,FOULPLAY,FUTURESIGHT,GRASSKNOT,HAIL,HIDDENPOWER,HYDROPUMP,ICEBEAM,ICYWIND,IMPRISON,IRONTAIL,LIGHTSCREEN,LIQUIDATION,MUDSHOT,PAYDAY,PROTECT,PSYCHIC,PSYCHICTERRAIN,PSYSHOCK,RAINDANCE,REST,ROUND,SAFEGUARD,SCALD,SHADOWBALL,SKILLSWAP,SLEEPTALK,SNORE,STOREDPOWER,SUBSTITUTE,SUNNYDAY,SURF,SWIFT,THUNDERWAVE,TRIATTACK,TRICK,TRICKROOM,WEATHERBALL,WHIRLPOOL,WONDERROOM,ZENHEADBUTT,TERABLAST
-Pokedex = 平时一直都在发呆，但偶尔会突然露出 锐利的神色。据说这和它所吃的食物有 关。
+Pokedex = 平时一直都在发呆，但偶尔会突然露出锐利的神色。据说这和它所吃的食物有关。
 Generation = 8
 Flags = InheritFormWithEverStone
 Evolutions = SLOWBRO,Item,GALARICACUFF,SLOWKING,Item,GALARICAWREATH
@@ -375,7 +375,7 @@ Abilities = QUICKDRAW,OWNTEMPO
 Moves = 0,SHELLSIDEARM,1,SHELLSIDEARM,1,WITHDRAW,1,TACKLE,1,CURSE,1,GROWL,1,ACID,9,YAWN,12,CONFUSION,15,DISABLE,18,WATERPULSE,21,HEADBUTT,24,ZENHEADBUTT,27,AMNESIA,30,SURF,33,SLACKOFF,36,PSYCHIC,39,PSYCHUP,42,RAINDANCE,45,HEALPULSE
 TutorMoves = AMNESIA,ATTRACT,AVALANCHE,BLIZZARD,BODYSLAM,BRICKBREAK,BRINE,BRUTALSWING,BULLDOZE,CALMMIND,DIG,DIVE,DRAINPUNCH,EARTHQUAKE,ENDURE,EXPANDINGFORCE,FACADE,FIREBLAST,FLAMETHROWER,FLING,FOCUSBLAST,FOULPLAY,FUTURESIGHT,GIGAIMPACT,GRASSKNOT,HAIL,HIDDENPOWER,HYDROPUMP,HYPERBEAM,ICEBEAM,ICEPUNCH,ICYWIND,IMPRISON,IRONDEFENSE,IRONTAIL,LIGHTSCREEN,LIQUIDATION,MEGAKICK,MEGAPUNCH,MUDDYWATER,MUDSHOT,NASTYPLOT,PAYDAY,POISONJAB,PROTECT,PSYCHIC,PSYCHICTERRAIN,PSYSHOCK,RAINDANCE,RAZORSHELL,REST,ROUND,SAFEGUARD,SCALD,SHADOWBALL,SKILLSWAP,SLEEPTALK,SLUDGEBOMB,SLUDGEWAVE,SNORE,STOREDPOWER,SUBSTITUTE,SUNNYDAY,SURF,SWIFT,THUNDERWAVE,TRIATTACK,TRICK,TRICKROOM,VENOSHOCK,WEATHERBALL,WHIRLPOOL,WONDERROOM,ZENHEADBUTT,TERABLAST
 Weight = 70.5
-Pokedex = 如果去捏咬着它的大舌贝的舌头，它就 会从螺的尖端喷出含有剧毒的液体。
+Pokedex = 如果去捏咬着它的大舌贝的舌头，它就会从螺的尖端喷出含有剧毒的液体。
 Generation = 8
 Flags = InheritFormWithEverStone
 UngmaxForm = 0
@@ -390,7 +390,7 @@ HiddenAbilities = SHELLARMOR
 Height = 2.0
 Weight = 120.0
 Shape = HeadArms
-Pokedex = 被大舌贝整个吞下后，它获得了铜墙铁 壁般的防御力。里面待起来相当舒适。
+Pokedex = 被大舌贝整个吞下后，它获得了铜墙铁壁般的防御力。里面待起来相当舒适。
 Generation = 6
 UngmaxForm = 0
 #-------------------------------
@@ -404,7 +404,7 @@ Moves = 1,PECK,1,SANDATTACK,5,LEER,10,FURYCUTTER,15,ROCKSMASH,20,BRUTALSWING,25,
 TutorMoves = ASSURANCE,ATTRACT,BODYSLAM,BRAVEBIRD,BRICKBREAK,BRUTALSWING,CLOSECOMBAT,DUALWINGBEAT,ENDURE,FACADE,FOCUSENERGY,HELPINGHAND,HIDDENPOWER,LEAFBLADE,POISONJAB,PROTECT,REST,RETALIATE,REVENGE,ROUND,SLEEPTALK,SNORE,SOLARBLADE,STEELWING,SUBSTITUTE,SUNNYDAY,SUPERPOWER,SWORDSDANCE,THROATCHOP,WORKUP,TERABLAST
 EggMoves = COUNTER,COVET,CURSE,DOUBLEEDGE,FEINT,FLAIL,NIGHTSLASH,QUICKATTACK,QUICKGUARD,SIMPLEBEAM,SKYATTACK
 Weight = 42.0
-Pokedex = 在不断活用又粗又长的伽勒尔大葱的过 程中，大葱鸭演化成了独特的样子。
+Pokedex = 在不断活用又粗又长的伽勒尔大葱的过程中，大葱鸭演化成了独特的样子。
 Generation = 8
 Flags = InheritFormWithEverStone
 WildItemCommon = LEEK
@@ -422,7 +422,7 @@ EggMoves = ASSURANCE,CLEARSMOG,CURSE,IMPRISON,MEANLOOK,POWERUPPUNCH,PURSUIT,SCAR
 Height = 0.7
 Weight = 42.0
 Color = Green
-Pokedex = 为了解决垃圾问题从其他地区带来的臭 泥不知不觉就变成了这个样子。
+Pokedex = 为了解决垃圾问题从其他地区带来的臭泥不知不觉就变成了这个样子。
 Generation = 7
 Flags = InheritFormWithEverStone
 UngmaxForm = 0
@@ -437,7 +437,7 @@ TutorMoves = ATTRACT,BLOCK,BRICKBREAK,BRUTALSWING,CONFIDE,DARKPULSE,DOUBLETEAM,E
 Height = 1.0
 Weight = 52.0
 Color = Green
-Pokedex = 身体的颜色极度鲜艳，这是因为吃下的 垃圾经常在体内引起化学反应。
+Pokedex = 身体的颜色极度鲜艳，这是因为吃下的垃圾经常在体内引起化学反应。
 Generation = 7
 Flags = InheritFormWithEverStone
 UngmaxForm = 0
@@ -450,7 +450,7 @@ BaseExp = 300
 Abilities = SHADOWTAG
 HiddenAbilities = SHADOWTAG
 Height = 1.4
-Pokedex = 因为超级进化的能量而觉醒。潜伏在异 次元，一直静静地等待着攻击的机会。
+Pokedex = 因为超级进化的能量而觉醒。潜伏在异次元，一直静静地等待着攻击的机会。
 Generation = 6
 UngmaxForm = 0
 #-------------------------------
@@ -463,7 +463,7 @@ Moves = 0,DRAGONHAMMER,1,DRAGONHAMMER,1,SEEDBOMB,1,BARRAGE,1,HYPNOSIS,1,CONFUSIO
 TutorMoves = ATTRACT,BLOCK,BRICKBREAK,BRUTALSWING,BULLDOZE,CONFIDE,DOUBLETEAM,DRACOMETEOR,DRAGONPULSE,DRAGONTAIL,DREAMEATER,EARTHQUAKE,ENERGYBALL,EXPLOSION,FACADE,FLAMETHROWER,FRUSTRATION,GIGADRAIN,GIGAIMPACT,GRASSKNOT,GRAVITY,HIDDENPOWER,HYPERBEAM,INFESTATION,IRONHEAD,IRONTAIL,KNOCKOFF,LIGHTSCREEN,LOWKICK,NATUREPOWER,OUTRAGE,PROTECT,PSYCHIC,PSYCHUP,PSYSHOCK,REFLECT,REST,RETURN,ROUND,SEEDBOMB,SKILLSWAP,SLEEPTALK,SLUDGEBOMB,SNORE,SOLARBEAM,STOMPINGTANTRUM,SUBSTITUTE,SUNNYDAY,SUPERPOWER,SWAGGER,SWORDSDANCE,SYNTHESIS,TELEKINESIS,THIEF,TOXIC,TRICKROOM,WORRYSEED,ZENHEADBUTT,TERABLAST
 Height = 10.9
 Weight = 415.6
-Pokedex = 悠然惬意地长大之后，它便不再需要原 来的精神力量，沉睡于体内的龙之力量 已经觉醒。
+Pokedex = 悠然惬意地长大之后，它便不再需要原来的精神力量，沉睡于体内的龙之力量已经觉醒。
 Generation = 7
 UngmaxForm = 0
 #-------------------------------
@@ -481,7 +481,7 @@ Moves = 1,GROWL,1,TAILWHIP,1,BONECLUB,1,FLAMEWHEEL,3,TAILWHIP,7,BONECLUB,11,FLAM
 TutorMoves = AERIALACE,ALLYSWITCH,ATTRACT,BLIZZARD,BRICKBREAK,BRUTALSWING,BULLDOZE,CONFIDE,DARKPULSE,DOUBLETEAM,DREAMEATER,EARTHPOWER,EARTHQUAKE,ECHOEDVOICE,ENDEAVOR,FACADE,FALSESWIPE,FIREBLAST,FIREPUNCH,FLAMECHARGE,FLAMETHROWER,FLING,FOCUSBLAST,FOCUSPUNCH,FRUSTRATION,GIGAIMPACT,HEATWAVE,HIDDENPOWER,HYPERBEAM,ICEBEAM,ICYWIND,IRONDEFENSE,IRONHEAD,IRONTAIL,KNOCKOFF,LASERFOCUS,LOWKICK,OUTRAGE,PAINSPLIT,PROTECT,RAINDANCE,REST,RETURN,ROCKSLIDE,ROCKTOMB,ROUND,SANDSTORM,SHADOWBALL,SLEEPTALK,SMACKDOWN,SNORE,SPITE,STEALTHROCK,STOMPINGTANTRUM,STONEEDGE,SUBSTITUTE,SUNNYDAY,SWAGGER,SWORDSDANCE,THIEF,THROATCHOP,THUNDER,THUNDERBOLT,THUNDERPUNCH,TOXIC,UPROAR,WILLOWISP,TERABLAST
 Weight = 34.0
 Color = Purple
-Pokedex = 有哀悼伙伴的习性。如果路边有隆起的 土，那是嘎啦嘎啦的坟墓。
+Pokedex = 有哀悼伙伴的习性。如果路边有隆起的土，那是嘎啦嘎啦的坟墓。
 Generation = 7
 UngmaxForm = 0
 #-------------------------------
@@ -494,7 +494,7 @@ TutorMoves = ASSURANCE,ATTRACT,BRUTALSWING,CORROSIVEGAS,DARKPULSE,DAZZLINGGLEAM,
 Height = 3.0
 Weight = 16.0
 Color = Gray
-Pokedex = 会吸收大气中的污染成分，然后吐出新 鲜的空气，这就是它的排泄方式。
+Pokedex = 会吸收大气中的污染成分，然后吐出新鲜的空气，这就是它的排泄方式。
 Generation = 8
 WildItemUncommon = MISTYSEED
 UngmaxForm = 0
@@ -507,7 +507,7 @@ BaseExp = 207
 Abilities = PARENTALBOND
 HiddenAbilities = PARENTALBOND
 Weight = 100.0
-Pokedex = 孩子会因超级进化而成长。可总是争强 好胜，母亲对其将来有点担心。
+Pokedex = 孩子会因超级进化而成长。可总是争强好胜，母亲对其将来有点担心。
 Generation = 6
 UngmaxForm = 0
 #-------------------------------
@@ -524,7 +524,7 @@ Height = 1.4
 Weight = 56.8
 Color = White
 Category = 舞蹈
-Pokedex = 擅长踢踏舞。会用冷气制造出冰之地板 并将其踢起，以此作为保护自己的障壁 。
+Pokedex = 擅长踢踏舞。会用冷气制造出冰之地板并将其踢起，以此作为保护自己的障壁。
 Generation = 8
 Flags = InheritFormWithEverStone
 Evolutions = MRRIME,Level,42
@@ -541,7 +541,7 @@ HiddenAbilities = AERILATE
 Height = 1.7
 Weight = 59.0
 Shape = MultiWinged
-Pokedex = 会以极快的速度飞来飞去，并寻找对手 的可乘之机。目的是用巨大的钳子穿刺 对手。
+Pokedex = 会以极快的速度飞来飞去，并寻找对手的可乘之机。目的是用巨大的钳子穿刺对手。
 Generation = 6
 UngmaxForm = 0
 #-------------------------------
@@ -554,7 +554,7 @@ BaseExp = 224
 Abilities = MOLDBREAKER
 HiddenAbilities = MOLDBREAKER
 Weight = 305.0
-Pokedex = 能以音速飞出水面。如果被卷入其中的 话，即使是大船也会被折成两段。
+Pokedex = 能以音速飞出水面。如果被卷入其中的话，即使是大船也会被折成两段。
 Generation = 6
 UngmaxForm = 0
 #-------------------------------
@@ -567,7 +567,7 @@ Abilities = TOUGHCLAWS
 HiddenAbilities = TOUGHCLAWS
 Height = 2.1
 Weight = 79.0
-Pokedex = 超级进化后，粗暴的脾气比以前更胜一 筹。据说因为过剩的力量而苦恼。
+Pokedex = 超级进化后，粗暴的脾气比以前更胜一筹。据说因为过剩的力量而苦恼。
 Generation = 6
 UngmaxForm = 0
 #-------------------------------
@@ -583,7 +583,7 @@ TutorMoves = AGILITY,AIRSLASH,ALLYSWITCH,BRAVEBIRD,CALMMIND,DUALWINGBEAT,ENDURE,
 Weight = 50.9
 Color = Purple
 Category = 冷酷
-Pokedex = 用精神力量制作出的羽毛形刀刃能像裁 纸般轻松地劈开厚厚的铁板。
+Pokedex = 用精神力量制作出的羽毛形刀刃能像裁纸般轻松地劈开厚厚的铁板。
 Generation = 8
 UngmaxForm = 0
 #-------------------------------
@@ -598,7 +598,7 @@ Moves = 1,PECK,1,FOCUSENERGY,5,ROCKSMASH,10,LIGHTSCREEN,15,PLUCK,20,AGILITY,25,A
 TutorMoves = ACROBATICS,AGILITY,ASSURANCE,BLAZEKICK,BOUNCE,BRAVEBIRD,BRICKBREAK,BULKUP,CLOSECOMBAT,COACHING,DUALWINGBEAT,ENDURE,FACADE,FLY,FOCUSENERGY,GIGAIMPACT,HIDDENPOWER,HURRICANE,HYPERBEAM,LIGHTSCREEN,LOWKICK,LOWSWEEP,MEGAKICK,PAYBACK,PROTECT,REST,RETALIATE,REVENGE,REVERSAL,ROUND,SCARYFACE,SCREECH,SLEEPTALK,SNORE,STEELWING,STOMPINGTANTRUM,SUBSTITUTE,SUPERPOWER,SWIFT,TAUNT,THROATCHOP,UTURN,TERABLAST
 Weight = 58.2
 Category = 健脚
-Pokedex = 羽毛相互摩擦时会发出像电一样的噼噼 啪啪声，因此得到了闪电鸟这个名字。
+Pokedex = 羽毛相互摩擦时会发出像电一样的噼噼啪啪声，因此得到了闪电鸟这个名字。
 Generation = 8
 UngmaxForm = 0
 #-------------------------------
@@ -614,7 +614,7 @@ TutorMoves = AGILITY,AIRSLASH,ASSURANCE,BRAVEBIRD,DARKPULSE,DUALWINGBEAT,ENDURE,
 Weight = 66.0
 Color = Red
 Category = 邪恶
-Pokedex = 如果有谁接触到了它那如烈火般邪恶的 气场，便会灵魂枯竭，烧得只剩白色灰 烬。
+Pokedex = 如果有谁接触到了它那如烈火般邪恶的气场，便会灵魂枯竭，烧得只剩白色灰烬。
 Generation = 8
 UngmaxForm = 0
 #-------------------------------
@@ -628,7 +628,7 @@ Abilities = STEADFAST
 HiddenAbilities = STEADFAST
 Height = 2.3
 Weight = 127.0
-Pokedex = 身体上的肌肉因精神力量而增强。它的 握力为１吨。只要２秒就可以跑完10 0米！
+Pokedex = 身体上的肌肉因精神力量而增强。它的握力为１吨。只要２秒就可以跑完10 0米！
 Generation = 6
 UngmaxForm = 0
 #-------------------------------
@@ -641,7 +641,7 @@ Abilities = INSOMNIA
 HiddenAbilities = INSOMNIA
 Height = 1.5
 Weight = 33.0
-Pokedex = 虽然身体变小了，力量却大到无法计算 。只要稍稍使用念力，哪怕是高楼大厦 也会化为灰烬。
+Pokedex = 虽然身体变小了，力量却大到无法计算。只要稍稍使用念力，哪怕是高楼大厦也会化为灰烬。
 Generation = 6
 UngmaxForm = 0
 #-------------------------------
@@ -660,7 +660,7 @@ BaseStats = 90,95,105,45,165,110
 BaseExp = 305
 Abilities = MOLDBREAKER
 HiddenAbilities = MOLDBREAKER
-Pokedex = 庞大的能量会激烈地刺激细胞。体内沉 睡着的龙血好像觉醒了。
+Pokedex = 庞大的能量会激烈地刺激细胞。体内沉睡着的龙血好像觉醒了。
 Generation = 6
 UngmaxForm = 0
 #-------------------------------
@@ -673,7 +673,7 @@ Moves = 0,EERIESPELL,1,EERIESPELL,1,POWERGEM,1,NASTYPLOT,1,SWAGGER,1,TACKLE,1,CU
 TutorMoves = AMNESIA,ATTRACT,AVALANCHE,BLIZZARD,BODYSLAM,BRICKBREAK,BRINE,BULLDOZE,CALMMIND,DIG,DIVE,DRAINPUNCH,EARTHQUAKE,ENDURE,EXPANDINGFORCE,FACADE,FIREBLAST,FLAMETHROWER,FLING,FOCUSBLAST,FOULPLAY,FUTURESIGHT,GIGAIMPACT,GRASSKNOT,HAIL,HEX,HIDDENPOWER,HYDROPUMP,HYPERBEAM,ICEBEAM,ICEPUNCH,ICYWIND,IMPRISON,IRONDEFENSE,IRONTAIL,LIGHTSCREEN,LIQUIDATION,MEGAKICK,MEGAPUNCH,MUDDYWATER,MUDSHOT,NASTYPLOT,PAYDAY,POWERGEM,PROTECT,PSYCHIC,PSYCHICTERRAIN,PSYSHOCK,RAINDANCE,RAZORSHELL,REST,ROUND,SAFEGUARD,SCALD,SHADOWBALL,SKILLSWAP,SLEEPTALK,SLUDGEBOMB,SLUDGEWAVE,SNORE,STOREDPOWER,SUBSTITUTE,SUNNYDAY,SURF,SWIFT,THUNDERWAVE,TRIATTACK,TRICK,TRICKROOM,VENOMDRENCH,VENOSHOCK,WEATHERBALL,WHIRLPOOL,WONDERROOM,ZENHEADBUTT,TERABLAST
 Height = 1.8
 Category = 诅咒师
-Pokedex = 会一边咏唱诡异的咒语，一边混合吃掉 的东西和体内的毒素来制造可疑的药。
+Pokedex = 会一边咏唱诡异的咒语，一边混合吃掉的东西和体内的毒素来制造可疑的药。
 Generation = 8
 Flags = InheritFormWithEverStone
 UngmaxForm = 0
@@ -809,7 +809,7 @@ Abilities = TECHNICIAN
 HiddenAbilities = TECHNICIAN
 Height = 2.0
 Weight = 125.0
-Pokedex = 比起夹击，它更擅长用钳子抡打对手。 长时间战斗后，它就会变得无法承受钳 子的重量。
+Pokedex = 比起夹击，它更擅长用钳子抡打对手。长时间战斗后，它就会变得无法承受钳子的重量。
 Generation = 6
 UngmaxForm = 0
 #-------------------------------
@@ -822,7 +822,7 @@ Abilities = SKILLLINK
 HiddenAbilities = SKILLLINK
 Height = 1.7
 Weight = 62.5
-Pokedex = 会通过沐浴惊人的能量来健美。超级进 化结束后，它就会受苦于强烈的肌肉疼 痛。
+Pokedex = 会通过沐浴惊人的能量来健美。超级进化结束后，它就会受苦于强烈的肌肉疼痛。
 Generation = 6
 UngmaxForm = 0
 #-------------------------------
@@ -837,7 +837,7 @@ TutorMoves = AMNESIA,ATTRACT,BLIZZARD,BODYSLAM,BRINE,BULLDOZE,CALMMIND,DIG,EARTH
 EggMoves = CONFUSERAY,DESTINYBOND,HAZE,HEADSMASH,NATUREPOWER,WATERPULSE
 Weight = 0.5
 Color = White
-Pokedex = 它是因急遽环境变化而死去的远古太阳 珊瑚。会用珊瑚枝吸取人的精气。
+Pokedex = 它是因急遽环境变化而死去的远古太阳珊瑚。会用珊瑚枝吸取人的精气。
 Generation = 8
 Flags = InheritFormWithEverStone
 Evolutions = CURSOLA,Level,38
@@ -852,7 +852,7 @@ Abilities = SOLARPOWER
 HiddenAbilities = SOLARPOWER
 Height = 1.9
 Weight = 49.5
-Pokedex = 在黑鲁加自己都吃不消的高温下，红色 爪子和尾巴前端已经开始熔化了。
+Pokedex = 在黑鲁加自己都吃不消的高温下，红色爪子和尾巴前端已经开始熔化了。
 Generation = 6
 UngmaxForm = 0
 #-------------------------------
@@ -864,7 +864,7 @@ BaseExp = 350
 HiddenAbilities = SANDSTREAM
 Height = 2.5
 Weight = 255.0
-Pokedex = 后背由于体内注入了惊人的能量而裂开 了。只剩下破坏的本能在驱使着它行动 。
+Pokedex = 后背由于体内注入了惊人的能量而裂开了。只剩下破坏的本能在驱使着它行动。
 Generation = 6
 UngmaxForm = 0
 #-------------------------------
@@ -909,7 +909,7 @@ Moves = 1,TACKLE,1,LEER,3,SANDATTACK,6,LICK,9,SNARL,12,HEADBUTT,15,BABYDOLLEYES,
 TutorMoves = ASSURANCE,ATTRACT,BLIZZARD,BODYSLAM,DIG,ENDURE,FACADE,FAKETEARS,FLING,GRASSKNOT,GUNKSHOT,HELPINGHAND,HIDDENPOWER,HYPERVOICE,ICEBEAM,ICYWIND,IRONTAIL,LASHOUT,MUDSHOT,PAYBACK,PINMISSILE,PROTECT,RAINDANCE,REST,RETALIATE,ROUND,SCARYFACE,SCREECH,SEEDBOMB,SHADOWBALL,SLEEPTALK,SNARL,SNORE,SUBSTITUTE,SUNNYDAY,SURF,SWIFT,TAUNT,THIEF,THUNDER,THUNDERBOLT,THUNDERWAVE,TRICK,WHIRLPOOL,WORKUP,TERABLAST
 EggMoves = KNOCKOFF,PARTINGSHOT,QUICKGUARD
 Color = White
-Pokedex = 一直在奔跑，永远静不下来。如果发现 了其他的宝可梦，就会故意撞上去挑起 事端。
+Pokedex = 一直在奔跑，永远静不下来。如果发现了其他的宝可梦，就会故意撞上去挑起事端。
 Generation = 8
 Flags = InheritFormWithEverStone
 UngmaxForm = 0
@@ -919,7 +919,7 @@ FormName = 伽勒尔
 Types = DARK,NORMAL
 Moves = 0,NIGHTSLASH,1,NIGHTSLASH,1,SWITCHEROO,1,PINMISSILE,1,BABYDOLLEYES,1,TACKLE,1,LEER,1,SANDATTACK,1,LICK,9,SNARL,12,HEADBUTT,15,HONECLAWS,18,FURYSWIPES,23,REST,28,TAKEDOWN,33,SCARYFACE,38,COUNTER,43,TAUNT,48,DOUBLEEDGE
 TutorMoves = ASSURANCE,ATTRACT,BLIZZARD,BODYPRESS,BODYSLAM,DIG,ENDURE,FACADE,FAKETEARS,FLING,GIGAIMPACT,GRASSKNOT,GUNKSHOT,HELPINGHAND,HIDDENPOWER,HYPERBEAM,HYPERVOICE,ICEBEAM,ICYWIND,IRONTAIL,LASHOUT,MUDSHOT,PAYBACK,PINMISSILE,PROTECT,RAINDANCE,REST,RETALIATE,ROUND,SCARYFACE,SCREECH,SEEDBOMB,SHADOWBALL,SHADOWCLAW,SLEEPTALK,SNARL,SNORE,STOMPINGTANTRUM,SUBSTITUTE,SUNNYDAY,SURF,SWIFT,TAUNT,THIEF,THROATCHOP,THUNDER,THUNDERBOLT,THUNDERWAVE,TRICK,WHIRLPOOL,WORKUP,TERABLAST
-Pokedex = 会用长舌头挑衅猎物。一旦猎物被自己 激怒，便会猛烈地冲撞上去。
+Pokedex = 会用长舌头挑衅猎物。一旦猎物被自己激怒，便会猛烈地冲撞上去。
 Generation = 8
 Flags = InheritFormWithEverStone
 Evolutions = OBSTAGOON,LevelNight,35
@@ -943,7 +943,7 @@ BaseExp = 168
 Abilities = MAGICBOUNCE
 HiddenAbilities = MAGICBOUNCE
 Weight = 161.0
-Pokedex = 因为巨大的宝石很沉，所以不擅长突然 转变方向。来自后方的攻击是它的弱点 。
+Pokedex = 因为巨大的宝石很沉，所以不擅长突然转变方向。来自后方的攻击是它的弱点。
 Generation = 6
 UngmaxForm = 0
 #-------------------------------
@@ -956,7 +956,7 @@ Abilities = HUGEPOWER
 HiddenAbilities = HUGEPOWER
 Height = 1.0
 Weight = 23.5
-Pokedex = ２个颚部像是有意识一样，猛烈地大 闹着。只要咬一口，连岩石都能粉碎。
+Pokedex = ２个颚部像是有意识一样，猛烈地大闹着。只要咬一口，连岩石都能粉碎。
 Generation = 6
 UngmaxForm = 0
 #-------------------------------
@@ -990,7 +990,7 @@ Abilities = INTIMIDATE
 HiddenAbilities = INTIMIDATE
 Height = 1.8
 Weight = 44.0
-Pokedex = 因身体里储存着过多的电而焦躁不安。 有着与落雷相同速度的瞬间爆发力。
+Pokedex = 因身体里储存着过多的电而焦躁不安。有着与落雷相同速度的瞬间爆发力。
 Generation = 6
 UngmaxForm = 0
 #-------------------------------
@@ -1003,7 +1003,7 @@ Abilities = STRONGJAW
 HiddenAbilities = STRONGJAW
 Height = 2.5
 Weight = 130.3
-Pokedex = 黄色的花纹是以前的旧伤。超级进化的 能量在里面游走，一阵一阵的疼痛，好 像很痛苦。
+Pokedex = 黄色的花纹是以前的旧伤。超级进化的能量在里面游走，一阵一阵的疼痛，好像很痛苦。
 Generation = 6
 UngmaxForm = 0
 #-------------------------------
@@ -1035,21 +1035,21 @@ UngmaxForm = 0
 FormName = 太阳的样子
 Types = FIRE
 Color = Red
-Pokedex = 万里无云时飘浮泡泡的样子。如果接触 到皮肤，会出人意料的热。所以要小心 哦。
+Pokedex = 万里无云时飘浮泡泡的样子。如果接触到皮肤，会出人意料的热。所以要小心哦。
 UngmaxForm = 0
 #-------------------------------
 [CASTFORM,2]
 FormName = 雨水的样子
 Types = WATER
 Color = Blue
-Pokedex = 被雨淋到时飘浮泡泡的样子。如果按它 的身体，就会像海绵一样渗出些水来。
+Pokedex = 被雨淋到时飘浮泡泡的样子。如果按它的身体，就会像海绵一样渗出些水来。
 UngmaxForm = 0
 #-------------------------------
 [CASTFORM,3]
 FormName = 雪云的样子
 Types = ICE
 Color = White
-Pokedex = 被雪落到时飘浮泡泡的样子。全身像冰 一般，体温是零下５度左右。
+Pokedex = 被雪落到时飘浮泡泡的样子。全身像冰一般，体温是零下５度左右。
 UngmaxForm = 0
 #-------------------------------
 [BANETTE,1]
@@ -1061,7 +1061,7 @@ Abilities = PRANKSTER
 HiddenAbilities = PRANKSTER
 Height = 1.2
 Weight = 13.0
-Pokedex = 过大的能量增强了诅咒，无法压制。就 连自己的训练家也会憎恨。
+Pokedex = 过大的能量增强了诅咒，无法压制。就连自己的训练家也会憎恨。
 Generation = 6
 UngmaxForm = 0
 #-------------------------------
@@ -1073,7 +1073,7 @@ BaseExp = 198
 Abilities = MAGICBOUNCE
 HiddenAbilities = MAGICBOUNCE
 Weight = 49.0
-Pokedex = 体内充盈着超级进化的能量，因此全身 的体毛都竖了起来。但这并非是翅膀， 所以无法飞行。
+Pokedex = 体内充盈着超级进化的能量，因此全身的体毛都竖了起来。但这并非是翅膀，所以无法飞行。
 Generation = 6
 UngmaxForm = 0
 #-------------------------------
@@ -1086,7 +1086,7 @@ Abilities = REFRIGERATE
 HiddenAbilities = REFRIGERATE
 Height = 2.1
 Weight = 350.2
-Pokedex = 把猎物放入口中的瞬间就会让其冻结， 但因为下颚脱臼而没法吃。
+Pokedex = 把猎物放入口中的瞬间就会让其冻结，但因为下颚脱臼而没法吃。
 Generation = 6
 UngmaxForm = 0
 #-------------------------------
@@ -1099,7 +1099,7 @@ Abilities = AERILATE
 HiddenAbilities = AERILATE
 Height = 1.8
 Weight = 112.6
-Pokedex = 会将前脚收拢在外壳的间隙中，变为飞 行的姿势。即使是复杂的地形也能以高 速飞来飞去。
+Pokedex = 会将前脚收拢在外壳的间隙中，变为飞行的姿势。即使是复杂的地形也能以高速飞来飞去。
 Generation = 6
 UngmaxForm = 0
 #-------------------------------
@@ -1112,7 +1112,7 @@ Abilities = TOUGHCLAWS
 HiddenAbilities = TOUGHCLAWS
 Height = 2.5
 Weight = 942.9
-Pokedex = 它的头脑变得更优秀了。其结果令战斗 变得冷酷得惨不忍睹。
+Pokedex = 它的头脑变得更优秀了。其结果令战斗变得冷酷得惨不忍睹。
 Generation = 6
 UngmaxForm = 0
 #-------------------------------
@@ -1231,19 +1231,19 @@ UngmaxForm = 0
 [CHERRIM,1]
 FormName = 晴天形态
 Color = Pink
-Pokedex = 充分沐浴到阳光后活力满满的样子。会 一直活泼到日落。
+Pokedex = 充分沐浴到阳光后活力满满的样子。会一直活泼到日落。
 UngmaxForm = 0
 #-------------------------------
 [SHELLOS,1]
 FormName = 东海
 Color = Blue
-Pokedex = 样子会随环境而改变。也有人认为它在 水温冰冷的大海里会变成这个样子。
+Pokedex = 样子会随环境而改变。也有人认为它在水温冰冷的大海里会变成这个样子。
 UngmaxForm = 0
 #-------------------------------
 [GASTRODON,1]
 FormName = 东海
 Color = Blue
-Pokedex = 全身包裹着滑溜溜的液体。因为害怕干 燥，所以能在陆地上活动的时间非常短 。
+Pokedex = 全身包裹着滑溜溜的液体。因为害怕干燥，所以能在陆地上活动的时间非常短。
 UngmaxForm = 0
 #-------------------------------
 [LOPUNNY,1]
@@ -1256,7 +1256,7 @@ Abilities = SCRAPPY
 HiddenAbilities = SCRAPPY
 Height = 1.3
 Weight = 28.3
-Pokedex = 像鞭子一样挥动耳朵鞭打敌人 。脾气暴躁又好战。
+Pokedex = 像鞭子一样挥动耳朵鞭打敌人。脾气暴躁又好战。
 Generation = 6
 UngmaxForm = 0
 #-------------------------------
@@ -1267,7 +1267,7 @@ BaseStats = 108,170,115,92,120,95
 BaseExp = 350
 Abilities = SANDFORCE
 HiddenAbilities = SANDFORCE
-Pokedex = 引以为傲的翅膀变成镰刀，脾气也变得 异常狂暴。挥舞镰刀，把大地剁成粉末 。
+Pokedex = 引以为傲的翅膀变成镰刀，脾气也变得异常狂暴。挥舞镰刀，把大地剁成粉末。
 Generation = 6
 UngmaxForm = 0
 #-------------------------------
@@ -1280,7 +1280,7 @@ Abilities = ADAPTABILITY
 HiddenAbilities = ADAPTABILITY
 Height = 1.3
 Weight = 57.5
-Pokedex = 沐浴在爆发性的能量中，使得斗争的本 能觉醒了。对于敌人，毫不留情。
+Pokedex = 沐浴在爆发性的能量中，使得斗争的本能觉醒了。对于敌人，毫不留情。
 Generation = 6
 UngmaxForm = 0
 #-------------------------------
@@ -1311,7 +1311,7 @@ FormName = 加热洛托姆
 Types = ELECTRIC,FIRE
 BaseStats = 50,65,107,86,105,107
 BaseExp = 182
-Pokedex = 钻进由特殊马达驱动的烤箱微波炉里的 洛托姆。十分擅长控制火焰。
+Pokedex = 钻进由特殊马达驱动的烤箱微波炉里的洛托姆。十分擅长控制火焰。
 UngmaxForm = 0
 #-------------------------------
 [ROTOM,2]
@@ -1319,7 +1319,7 @@ FormName = 清洗洛托姆
 Types = ELECTRIC,WATER
 BaseStats = 50,65,107,86,105,107
 BaseExp = 182
-Pokedex = 会让房间发大水。喜欢利用水来恶作剧 的洛托姆。
+Pokedex = 会让房间发大水。喜欢利用水来恶作剧的洛托姆。
 UngmaxForm = 0
 #-------------------------------
 [ROTOM,3]
@@ -1327,7 +1327,7 @@ FormName = 结冰洛托姆
 Types = ELECTRIC,ICE
 BaseStats = 50,65,107,86,105,107
 BaseExp = 182
-Pokedex = 钻进由特殊马达驱动的电冰箱里的洛托 姆。会吐出冷气战斗。
+Pokedex = 钻进由特殊马达驱动的电冰箱里的洛托姆。会吐出冷气战斗。
 UngmaxForm = 0
 #-------------------------------
 [ROTOM,4]
@@ -1335,7 +1335,7 @@ FormName = 旋转洛托姆
 Types = ELECTRIC,FLYING
 BaseStats = 50,65,107,86,105,107
 BaseExp = 182
-Pokedex = 会吹飞你重要的资料。喜欢利用刮风来 恶作剧的洛托姆。
+Pokedex = 会吹飞你重要的资料。喜欢利用刮风来恶作剧的洛托姆。
 UngmaxForm = 0
 #-------------------------------
 [ROTOM,5]
@@ -1343,7 +1343,7 @@ FormName = 切割洛托姆
 Types = ELECTRIC,GRASS
 BaseStats = 50,65,107,86,105,107
 BaseExp = 182
-Pokedex = 钻进由特殊马达驱动的割草机里的洛托 姆。会把割下的草到处乱撒。
+Pokedex = 钻进由特殊马达驱动的割草机里的洛托姆。会把割下的草到处乱撒。
 UngmaxForm = 0
 #-------------------------------
 [GIRATINA,1]
@@ -1472,7 +1472,7 @@ UngmaxForm = 0
 [BASCULIN,1]
 FormName = 蓝条纹的样子
 Abilities = ROCKHEAD,ADAPTABILITY
-Pokedex = 无论是什么，都会用大颚吃掉。但野蛮 鲈鱼本身也不过是更强大生物的食物罢 了。
+Pokedex = 无论是什么，都会用大颚吃掉。但野蛮鲈鱼本身也不过是更强大生物的食物罢了。
 WildItemUncommon = DEEPSEASCALE
 UngmaxForm = 0
 #-------------------------------
@@ -1485,7 +1485,7 @@ EggMoves = FLAMEWHEEL,FOCUSPUNCH,FREEZEDRY,HAMMERARM,INCINERATE,POWERUPPUNCH,TAK
 Height = 0.7
 Weight = 40.0
 Color = White
-Pokedex = 身体越冷就越有活力。会把呼出来的气 冻起来做成雪球和伙伴互相扔着玩。
+Pokedex = 身体越冷就越有活力。会把呼出来的气冻起来做成雪球和伙伴互相扔着玩。
 Generation = 8
 Flags = InheritFormWithEverStone
 Evolutions = DARMANITAN,Item,ICESTONE
@@ -1498,7 +1498,7 @@ BaseStats = 105,30,105,55,140,105
 BaseExp = 189
 EVs = SPECIAL_ATTACK,2
 Color = Blue
-Pokedex = 受伤之后会像岩石一样动也不动。那其 实是它在用沉思来磨练内心。
+Pokedex = 受伤之后会像岩石一样动也不动。那其实是它在用沉思来磨练内心。
 UngmaxForm = 0
 #-------------------------------
 [DARMANITAN,2]
@@ -1511,7 +1511,7 @@ Height = 1.7
 Weight = 120.0
 Color = White
 Category = 不倒翁
-Pokedex = 会把食物装到头顶的雪球里带回家。在 暴风雪的日子会下山来到人类居住的村 落。
+Pokedex = 会把食物装到头顶的雪球里带回家。在暴风雪的日子会下山来到人类居住的村落。
 Generation = 8
 Flags = InheritFormWithEverStone
 UngmaxForm = 0
@@ -1528,7 +1528,7 @@ TutorMoves = ATTRACT,AVALANCHE,BLIZZARD,BODYPRESS,BODYSLAM,BRICKBREAK,BULKUP,BUL
 Height = 1.7
 Weight = 120.0
 Color = White
-Pokedex = 原本已经退化的火囊因愤怒而重生。在 所到之处胡乱喷火大闹一番。
+Pokedex = 原本已经退化的火囊因愤怒而重生。在所到之处胡乱喷火大闹一番。
 Generation = 8
 UngmaxForm = 0
 #-------------------------------
@@ -1539,7 +1539,7 @@ BaseStats = 38,55,85,30,30,65
 Abilities = WANDERINGSPIRIT
 Moves = 1,ASTONISH,1,PROTECT,4,HAZE,8,NIGHTSHADE,12,DISABLE,16,BRUTALSWING,20,CRAFTYSHIELD,24,HEX,28,MEANLOOK,32,SLAM,36,CURSE,40,SHADOWBALL,44,EARTHQUAKE,48,POWERSPLIT,48,GUARDSPLIT,52,DESTINYBOND
 TutorMoves = ALLYSWITCH,ATTRACT,BRUTALSWING,CALMMIND,DARKPULSE,EARTHPOWER,EARTHQUAKE,ENDURE,ENERGYBALL,FACADE,FAKETEARS,HEX,HIDDENPOWER,IMPRISON,IRONDEFENSE,NASTYPLOT,PAYBACK,POLTERGEIST,PROTECT,PSYCHIC,RAINDANCE,REST,ROCKSLIDE,ROCKTOMB,ROUND,SAFEGUARD,SANDSTORM,SHADOWBALL,SLEEPTALK,SNORE,SUBSTITUTE,THIEF,TOXICSPIKES,TRICKROOM,WILLOWISP,WONDERROOM,ZENHEADBUTT,TERABLAST
-Pokedex = 据说它是古代黏土板被带有强烈怨念的 灵魂吸引后诞生的宝可梦。
+Pokedex = 据说它是古代黏土板被带有强烈怨念的灵魂吸引后诞生的宝可梦。
 Generation = 8
 Flags = InheritFormWithEverStone
 Evolutions = RUNERIGUS,EventAfterDamageTaken,2
@@ -1583,7 +1583,7 @@ TutorMoves = ATTRACT,BOUNCE,BULLDOZE,CRUNCH,DIG,EARTHPOWER,EARTHQUAKE,ENDURE,FAC
 EggMoves = ASTONISH,BIND,COUNTER,CURSE,PAINSPLIT,REFLECTTYPE,SPITE,YAWN
 Weight = 20.5
 Color = Green
-Pokedex = 会藏在泥巴里，用显眼的嘴唇吸引猎物 接近自己，接着用锯齿般的钢鳍紧紧将 对手夹住。
+Pokedex = 会藏在泥巴里，用显眼的嘴唇吸引猎物接近自己，接着用锯齿般的钢鳍紧紧将对手夹住。
 Generation = 8
 Flags = InheritFormWithEverStone
 UngmaxForm = 0
@@ -1627,7 +1627,7 @@ EVs = SPECIAL_ATTACK,3
 Abilities = TURBOBLAZE
 Moves = 1,ICYWIND,1,DRAGONRAGE,8,IMPRISON,15,ANCIENTPOWER,22,ICEBEAM,29,DRAGONBREATH,36,SLASH,43,FUSIONFLARE,50,ICEBURN,57,DRAGONPULSE,64,NOBLEROAR,71,ENDEAVOR,78,BLIZZARD,85,OUTRAGE,92,HYPERVOICE
 Height = 3.6
-Pokedex = 已经看出宝可梦和人类之间的真实世界 将会到来，它试图去保护这样的未来。
+Pokedex = 已经看出宝可梦和人类之间的真实世界将会到来，它试图去保护这样的未来。
 UngmaxForm = 0
 #-------------------------------
 [KYUREM,2]
@@ -1638,7 +1638,7 @@ EVs = ATTACK,3
 Abilities = TERAVOLT
 Moves = 1,ICYWIND,1,DRAGONRAGE,8,IMPRISON,15,ANCIENTPOWER,22,ICEBEAM,29,DRAGONBREATH,36,SLASH,43,FUSIONBOLT,50,FREEZESHOCK,57,DRAGONPULSE,64,NOBLEROAR,71,ENDEAVOR,78,BLIZZARD,85,OUTRAGE,92,HYPERVOICE
 Height = 3.3
-Pokedex = 传说它是为了保护宝可梦与人类之间那 将在未来实现的理想世界而战斗
+Pokedex = 传说它是为了保护宝可梦与人类之间那将在未来实现的理想世界而战斗
 UngmaxForm = 0
 #-------------------------------
 [KYUREM,3]
@@ -1664,7 +1664,7 @@ UngmaxForm = 0
 [KELDEO,1]
 FormName = 觉悟的样子
 TutorMoves = AERIALACE,AQUATAIL,BOUNCE,CALMMIND,CONFIDE,COVET,CUT,DOUBLETEAM,ENDEAVOR,FACADE,FALSESWIPE,FOCUSBLAST,FRUSTRATION,GIGAIMPACT,HAIL,HELPINGHAND,HIDDENPOWER,HYPERBEAM,ICYWIND,LASTRESORT,LIQUIDATION,LOWKICK,POISONJAB,PROTECT,PSYCHUP,RAINDANCE,REFLECT,REST,RETURN,ROAR,ROCKSMASH,ROUND,SAFEGUARD,SCALD,SLEEPTALK,SNORE,STONEEDGE,STRENGTH,SUBSTITUTE,SUPERPOWER,SURF,SWAGGER,SWORDSDANCE,TAUNT,TOXIC,WATERPULSE,WORKUP,XSCISSOR,TERABLAST
-Pokedex = 沉睡在身体深处的力量包裹住了它额头 上的角，形成了能撕裂一切的剑。
+Pokedex = 沉睡在身体深处的力量包裹住了它额头上的角，形成了能撕裂一切的剑。
 UngmaxForm = 0
 #-------------------------------
 [MELOETTA,1]
@@ -1819,7 +1819,7 @@ BaseStats = 74,65,67,92,125,128
 BaseExp = 243
 Moves = 1,TACKLE,1,VINEWHIP,1,FAIRYWIND,6,FAIRYWIND,10,LUCKYCHANT,15,RAZORLEAF,20,WISH,25,MAGICALLEAF,27,GRASSYTERRAIN,33,PETALBLIZZARD,38,AROMATHERAPY,43,MISTYTERRAIN,46,MOONBLAST,50,LIGHTOFRUIN,51,PETALDANCE,58,SOLARBEAM
 EggGroups = Undiscovered
-Pokedex = 它拿着的花，现在任何地方都没有在开 放。而且被认为蕴藏着恐怖的力量。
+Pokedex = 它拿着的花，现在任何地方都没有在开放。而且被认为蕴藏着恐怖的力量。
 Evolutions = FLORGES,None,
 UngmaxForm = 0
 CallRateSOS = 0
@@ -1881,14 +1881,14 @@ FormName = 雌性
 HiddenAbilities = COMPETITIVE
 Moves = 1,STOREDPOWER,1,MEFIRST,1,MAGICALLEAF,1,SCRATCH,1,LEER,1,COVET,1,CONFUSION,5,COVET,9,CONFUSION,13,LIGHTSCREEN,17,PSYBEAM,19,FAKEOUT,22,DISARMINGVOICE,25,PSYSHOCK,28,CHARGEBEAM,31,SHADOWBALL,35,EXTRASENSORY,40,PSYCHIC,43,ROLEPLAY,45,SIGNALBEAM,48,SUCKERPUNCH,50,FUTURESIGHT,53,STOREDPOWER
 Color = White
-Pokedex = 性格要比雄性更任性一些，而且也更具 攻击性。要是惹得它不高兴，就会被它 用精神力量狠狠教训。
+Pokedex = 性格要比雄性更任性一些，而且也更具攻击性。要是惹得它不高兴，就会被它用精神力量狠狠教训。
 UngmaxForm = 0
 #-------------------------------
 [AEGISLASH,1]
 FormName = 刀剑形态
 BaseStats = 60,140,50,60,140,50
 EVs = ATTACK,2,SPECIAL_ATTACK,1
-Pokedex = 虽然带着坚盾剑怪的国王曾经支配了整 个国家，最后却被它吸走了精气，国家 也灭亡了。
+Pokedex = 虽然带着坚盾剑怪的国王曾经支配了整个国家，最后却被它吸走了精气，国家也灭亡了。
 UngmaxForm = 0
 #-------------------------------
 [PUMPKABOO,1]
@@ -1897,7 +1897,7 @@ BaseStats = 49,66,70,51,44,55
 HiddenAbilities = INSOMNIA
 Height = 0.4
 Weight = 5.0
-Pokedex = 在这个世界游荡的灵魂会被装到南瓜精 的身体里，启程前往另一个世界。
+Pokedex = 在这个世界游荡的灵魂会被装到南瓜精的身体里，启程前往另一个世界。
 UngmaxForm = 0
 #-------------------------------
 [PUMPKABOO,2]
@@ -1905,7 +1905,7 @@ FormName = 大尺寸
 BaseStats = 54,66,70,46,44,55
 Height = 0.5
 Weight = 7.5
-Pokedex = 大尺寸的南瓜精喜欢把大人的灵魂带往 另一个世界。
+Pokedex = 大尺寸的南瓜精喜欢把大人的灵魂带往另一个世界。
 UngmaxForm = 0
 #-------------------------------
 [PUMPKABOO,3]
@@ -1914,7 +1914,7 @@ BaseStats = 59,66,70,41,44,55
 HiddenAbilities = INSOMNIA
 Height = 0.8
 Weight = 15.0
-Pokedex = 据说是因为生活在游荡的灵魂特别多的 地方，所以身体变得特别大。
+Pokedex = 据说是因为生活在游荡的灵魂特别多的地方，所以身体变得特别大。
 WildItemCommon = MIRACLESEED
 WildItemUncommon = MIRACLESEED
 WildItemRare = MIRACLESEED
@@ -1926,7 +1926,7 @@ BaseStats = 65,90,122,84,58,75
 HiddenAbilities = INSOMNIA
 Height = 0.9
 Weight = 12.5
-Pokedex = 深夜时分，它身体里发出的诡异叫声似 乎是死者在另一个世界里的痛苦哭声。
+Pokedex = 深夜时分，它身体里发出的诡异叫声似乎是死者在另一个世界里的痛苦哭声。
 UngmaxForm = 0
 #-------------------------------
 [GOURGEIST,2]
@@ -1934,7 +1934,7 @@ FormName = 大尺寸
 BaseStats = 75,95,122,69,58,75
 Height = 1.1
 Weight = 14.0
-Pokedex = 大尺寸的南瓜怪人会扮成大人，牵起小 孩子的手把他们带往另一个世界。
+Pokedex = 大尺寸的南瓜怪人会扮成大人，牵起小孩子的手把他们带往另一个世界。
 UngmaxForm = 0
 #-------------------------------
 [GOURGEIST,3]
@@ -1943,7 +1943,7 @@ BaseStats = 85,100,122,54,58,75
 HiddenAbilities = INSOMNIA
 Height = 1.7
 Weight = 39.0
-Pokedex = 特大尺寸的南瓜怪人不管对方是谁，都 会强行把他们带往那一个世界。
+Pokedex = 特大尺寸的南瓜怪人不管对方是谁，都会强行把他们带往那一个世界。
 WildItemCommon = MIRACLESEED
 WildItemUncommon = MIRACLESEED
 WildItemRare = MIRACLESEED
@@ -1961,7 +1961,7 @@ Height = 1.2
 Weight = 33.5
 Color = Black
 Shape = Quadruped
-Pokedex = 基格尔德的一部分聚集了十分之一左右 。会扑到对手的怀里用锐利的牙齿咬住 。
+Pokedex = 基格尔德的一部分聚集了十分之一左右。会扑到对手的怀里用锐利的牙齿咬住。
 Generation = 7
 UngmaxForm = 0
 #-------------------------------
@@ -1975,7 +1975,7 @@ Height = 4.5
 Weight = 610.0
 Color = Black
 Shape = BipedalTail
-Pokedex = 完整的基格尔德的样子。从胸部的嘴里 放射出能摧毁一切的高能量。
+Pokedex = 完整的基格尔德的样子。从胸部的嘴里放射出能摧毁一切的高能量。
 Generation = 7
 UngmaxForm = 0
 #-------------------------------
@@ -2017,21 +2017,21 @@ UngmaxForm = 0
 FormName = 啪滋啪滋风格
 Types = ELECTRIC,FLYING
 Color = Yellow
-Pokedex = 摩擦羽毛生电。像跳舞一样接近敌人， 施展出电击拳。
+Pokedex = 摩擦羽毛生电。像跳舞一样接近敌人，施展出电击拳。
 UngmaxForm = 0
 #-------------------------------
 [ORICORIO,2]
 FormName = 呼拉呼拉风格
 Types = PSYCHIC,FLYING
 Color = Pink
-Pokedex = 摇摇摆摆地放松自己。这之后，将提高 的精神力量瞄准敌人发射出去。
+Pokedex = 摇摇摆摆地放松自己。这之后，将提高的精神力量瞄准敌人发射出去。
 UngmaxForm = 0
 #-------------------------------
 [ORICORIO,3]
 FormName = 轻盈轻盈风格
 Types = GHOST,FLYING
 Color = Purple
-Pokedex = 用充满幻想的舞蹈召唤死者。借助这股 怨念的力量对敌人施加诅咒。
+Pokedex = 用充满幻想的舞蹈召唤死者。借助这股怨念的力量对敌人施加诅咒。
 UngmaxForm = 0
 #-------------------------------
 [ROCKRUFF,2]
@@ -2051,7 +2051,7 @@ TutorMoves = ATTRACT,BRICKBREAK,BULKUP,CONFIDE,COVET,DOUBLETEAM,DUALCHOP,EARTHPO
 Height = 1.1
 Color = Red
 Shape = BipedalTail
-Pokedex = 挑衅敌人来袭击自己。以杀敌一千自损 八百的决心头锤敌人，并用鬃毛上的岩 石将对方的骨头砸碎。
+Pokedex = 挑衅敌人来袭击自己。以杀敌一千自损八百的决心头锤敌人，并用鬃毛上的岩石将对方的骨头砸碎。
 UngmaxForm = 0
 #-------------------------------
 [LYCANROC,2]
@@ -2061,7 +2061,7 @@ Abilities = TOUGHCLAWS
 HiddenAbilities = TOUGHCLAWS
 Moves = 0,THRASH,1,THRASH,1,ACCELEROCK,1,COUNTER,1,TACKLE,1,LEER,1,SANDATTACK,1,BITE,4,SANDATTACK,7,BITE,12,HOWL,15,ROCKTHROW,18,ODORSLEUTH,23,ROCKTOMB,26,ROAR,29,STEALTHROCK,34,ROCKSLIDE,37,SCARYFACE,40,CRUNCH,45,ROCKCLIMB,48,STONEEDGE
 TutorMoves = ATTRACT,BRICKBREAK,BULKUP,CONFIDE,COVET,DOUBLETEAM,DRILLRUN,EARTHPOWER,ECHOEDVOICE,ENDEAVOR,FACADE,FRUSTRATION,HIDDENPOWER,HYPERVOICE,IRONDEFENSE,IRONHEAD,IRONTAIL,LASTRESORT,OUTRAGE,PROTECT,REST,RETURN,ROAR,ROCKPOLISH,ROCKSLIDE,ROCKTOMB,ROUND,SLEEPTALK,SNARL,SNORE,STEALTHROCK,STOMPINGTANTRUM,STONEEDGE,SUBSTITUTE,SWAGGER,SWORDSDANCE,TAUNT,TOXIC,ZENHEADBUTT,TERABLAST
-Pokedex = 沐浴着夕阳而发生了特殊进化的鬃岩狼 人。很安静，却蕴藏着强烈的斗志。
+Pokedex = 沐浴着夕阳而发生了特殊进化的鬃岩狼人。很安静，却蕴藏着强烈的斗志。
 Flags = InheritFormFromMother
 UngmaxForm = 0
 #-------------------------------
@@ -2072,7 +2072,7 @@ BaseExp = 217
 Height = 8.2
 Weight = 78.6
 Shape = MultiBody
-Pokedex = 弱丁鱼们为了对抗敌人而组成了阵型。 以被称之为海之魔物的力量而自豪。
+Pokedex = 弱丁鱼们为了对抗敌人而组成了阵型。以被称之为海之魔物的力量而自豪。
 UngmaxForm = 0
 #-------------------------------
 [SILVALLY,1]
@@ -2173,7 +2173,7 @@ BaseExp = 175
 EVs = ATTACK,1,SPECIAL_ATTACK,1
 Weight = 0.3
 Color = Red
-Pokedex = 内核如果一直暴露着，就会很快消散。 听说如果赶紧放入精灵球，就能活下来 。
+Pokedex = 内核如果一直暴露着，就会很快消散。听说如果赶紧放入精灵球，就能活下来。
 Flags = InheritFormFromMother
 UngmaxForm = 0
 #-------------------------------
@@ -2184,7 +2184,7 @@ BaseExp = 175
 EVs = ATTACK,1,SPECIAL_ATTACK,1
 Weight = 0.3
 Color = Red
-Pokedex = 内核如果一直暴露着，就会很快消散。 听说如果赶紧放入精灵球，就能活下来 。
+Pokedex = 内核如果一直暴露着，就会很快消散。听说如果赶紧放入精灵球，就能活下来。
 Flags = InheritFormFromMother
 UngmaxForm = 0
 #-------------------------------
@@ -2195,7 +2195,7 @@ BaseExp = 175
 EVs = ATTACK,1,SPECIAL_ATTACK,1
 Weight = 0.3
 Color = Yellow
-Pokedex = 内核如果一直暴露着，就会很快消散。 听说如果赶紧放入精灵球，就能活下来 。
+Pokedex = 内核如果一直暴露着，就会很快消散。听说如果赶紧放入精灵球，就能活下来。
 Flags = InheritFormFromMother
 UngmaxForm = 0
 #-------------------------------
@@ -2206,7 +2206,7 @@ BaseExp = 175
 EVs = ATTACK,1,SPECIAL_ATTACK,1
 Weight = 0.3
 Color = Green
-Pokedex = 内核如果一直暴露着，就会很快消散。 听说如果赶紧放入精灵球，就能活下来 。
+Pokedex = 内核如果一直暴露着，就会很快消散。听说如果赶紧放入精灵球，就能活下来。
 Flags = InheritFormFromMother
 UngmaxForm = 0
 #-------------------------------
@@ -2217,7 +2217,7 @@ BaseExp = 175
 EVs = ATTACK,1,SPECIAL_ATTACK,1
 Weight = 0.3
 Color = Blue
-Pokedex = 内核如果一直暴露着，就会很快消散。 听说如果赶紧放入精灵球，就能活下来 。
+Pokedex = 内核如果一直暴露着，就会很快消散。听说如果赶紧放入精灵球，就能活下来。
 Flags = InheritFormFromMother
 UngmaxForm = 0
 #-------------------------------
@@ -2228,7 +2228,7 @@ BaseExp = 175
 EVs = ATTACK,1,SPECIAL_ATTACK,1
 Weight = 0.3
 Color = Blue
-Pokedex = 内核如果一直暴露着，就会很快消散。 听说如果赶紧放入精灵球，就能活下来 。
+Pokedex = 内核如果一直暴露着，就会很快消散。听说如果赶紧放入精灵球，就能活下来。
 Flags = InheritFormFromMother
 UngmaxForm = 0
 #-------------------------------
@@ -2239,13 +2239,13 @@ BaseExp = 175
 EVs = ATTACK,1,SPECIAL_ATTACK,1
 Weight = 0.3
 Color = Purple
-Pokedex = 内核如果一直暴露着，就会很快消散。 听说如果赶紧放入精灵球，就能活下来 。
+Pokedex = 内核如果一直暴露着，就会很快消散。听说如果赶紧放入精灵球，就能活下来。
 Flags = InheritFormFromMother
 UngmaxForm = 0
 #-------------------------------
 [MIMIKYU,1]
 FormName = 现形的样子
-Pokedex = 因正身就要暴露而很悲痛。绝不原谅折 断了它脖子的对手，会向对方报仇。
+Pokedex = 因正身就要暴露而很悲痛。绝不原谅折断了它脖子的对手，会向对方报仇。
 UngmaxForm = 0
 #-------------------------------
 [NECROZMA,1]
@@ -2258,7 +2258,7 @@ Height = 3.8
 Weight = 460.0
 Color = Yellow
 Shape = Quadruped
-Pokedex = 奈克洛兹玛不断吸取索尔迦雷欧的力量 的样子。非常粗暴，令人无从应付。
+Pokedex = 奈克洛兹玛不断吸取索尔迦雷欧的力量的样子。非常粗暴，令人无从应付。
 UngmaxForm = 0
 #-------------------------------
 [NECROZMA,2]
@@ -2270,7 +2270,7 @@ EVs = SPECIAL_ATTACK,3
 Height = 4.2
 Weight = 350.0
 Color = Blue
-Pokedex = 露奈雅拉已经没有自我意识。它被奈克 洛兹玛支配，不断释放出全部能量。
+Pokedex = 露奈雅拉已经没有自我意识。它被奈克洛兹玛支配，不断释放出全部能量。
 UngmaxForm = 0
 #-------------------------------
 [NECROZMA,3]
@@ -2282,7 +2282,7 @@ EVs = ATTACK,1,SPECIAL_ATTACK,1,SPEED,1
 Abilities = NEUROFORCE
 Height = 7.5
 Color = Yellow
-Pokedex = 全身放出的光会对生物和自然发生作用 ，造成各种各样的影响。
+Pokedex = 全身放出的光会对生物和自然发生作用，造成各种各样的影响。
 Flags = Legendary,CannotDynamax
 UngmaxForm = 0
 #-------------------------------
@@ -2301,17 +2301,17 @@ UngmaxForm = 0
 [MAGEARNA,1]
 FormName = ５００年前的颜色
 Color = Red
-Pokedex = 刚被发明出来时的玛机雅娜。因为奢华 绚烂的装饰而受到国王女儿的喜爱。
+Pokedex = 刚被发明出来时的玛机雅娜。因为奢华绚烂的装饰而受到国王女儿的喜爱。
 UngmaxForm = 0
 #-------------------------------
 [CRAMORANT,1]
 FormName = 一口吞的样子
-Pokedex = 因为特别贪吃，所以想把肉滚滚的刺梭 鱼整只吞下，结果却把它卡在了喉咙里 。
+Pokedex = 因为特别贪吃，所以想把肉滚滚的刺梭鱼整只吞下，结果却把它卡在了喉咙里。
 UngmaxForm = 0
 #-------------------------------
 [CRAMORANT,2]
 FormName = 大口吞的样子
-Pokedex = 不小心吞下了皮卡丘。虽然卡住了喉咙 不太舒服，但它并不是特别在意。
+Pokedex = 不小心吞下了皮卡丘。虽然卡住了喉咙不太舒服，但它并不是特别在意。
 UngmaxForm = 0
 #-------------------------------
 [TOXTRICITY,1]
@@ -2319,23 +2319,23 @@ FormName = 低调的样子
 Abilities = PUNKROCK,MINUS
 Moves = 0,SPARK,1,SPARK,1,EERIEIMPULSE,1,BELCH,1,TEARFULLOOK,1,NUZZLE,1,GROWL,1,FLAIL,1,ACID,1,THUNDERSHOCK,1,ACIDSPRAY,1,LEER,1,NOBLEROAR,4,CHARGE,8,SHOCKWAVE,12,SCARYFACE,16,TAUNT,20,VENOMDRENCH,24,SCREECH,28,SWAGGER,32,TOXIC,36,DISCHARGE,40,POISONJAB,44,OVERDRIVE,48,BOOMBURST,52,MAGNETICFLUX
 TutorMoves = ATTRACT,DRAINPUNCH,EERIEIMPULSE,ELECTROBALL,ENCORE,ENDURE,FACADE,FIREPUNCH,FLING,GIGAIMPACT,GUNKSHOT,HEX,HYPERBEAM,HYPERVOICE,MEGAKICK,MEGAPUNCH,PAYBACK,POISONJAB,PROTECT,REST,RISINGVOLTAGE,ROUND,SCARYFACE,SCREECH,SLEEPTALK,SLUDGEBOMB,SLUDGEWAVE,SNARL,SNORE,STOREDPOWER,SUBSTITUTE,SWIFT,TAUNT,THROATCHOP,THUNDER,THUNDERBOLT,THUNDERPUNCH,THUNDERWAVE,UPROAR,VENOMDRENCH,VOLTSWITCH,WILDCHARGE,TERABLAST
-Pokedex = 它能够制造出１５０００伏特的电流， 任何对手都不放在眼里。
+Pokedex = 它能够制造出１５０００伏特的电流，任何对手都不放在眼里。
 UngmaxForm = 0
 #-------------------------------
 [SINISTEA,1]
 FormName = 真品形态
-Pokedex = 弱点是身上的漩涡。如果把漩涡搅乱了 ，它就会头晕目眩。
+Pokedex = 弱点是身上的漩涡。如果把漩涡搅乱了，它就会头晕目眩。
 Evolutions = POLTEAGEIST,Item,CHIPPEDPOT
 UngmaxForm = 0
 #-------------------------------
 [POLTEAGEIST,1]
 FormName = 真品形态
-Pokedex = 口感和香味十分独特。会让自己信赖的 训练家稍稍地品尝一下味道。
+Pokedex = 口感和香味十分独特。会让自己信赖的训练家稍稍地品尝一下味道。
 UngmaxForm = 0
 #-------------------------------
 [ALCREMIE,7]
 FormName = 奶香红钻
-Pokedex = 制造鲜奶油的细胞在进化时受到了不稳 定状态的影响，所以变成了酸甜的风味 。
+Pokedex = 制造鲜奶油的细胞在进化时受到了不稳定状态的影响，所以变成了酸甜的风味。
 UngmaxForm = 0
 #-------------------------------
 [ALCREMIE,8]
@@ -2365,7 +2365,7 @@ UngmaxForm = 0
 [ALCREMIE,14]
 FormName = 奶香抹茶
 Color = Green
-Pokedex = 制造鲜奶油的细胞在进化时受到了不稳 定状态的影响，所以变成了芳香的风味 。
+Pokedex = 制造鲜奶油的细胞在进化时受到了不稳定状态的影响，所以变成了芳香的风味。
 UngmaxForm = 0
 #-------------------------------
 [ALCREMIE,15]
@@ -2395,7 +2395,7 @@ UngmaxForm = 0
 [ALCREMIE,21]
 FormName = 奶香薄荷
 Color = Blue
-Pokedex = 制造鲜奶油的细胞在进化时受到了不稳 定状态的影响，所以变成了清爽的风味 。
+Pokedex = 制造鲜奶油的细胞在进化时受到了不稳定状态的影响，所以变成了清爽的风味。
 UngmaxForm = 0
 #-------------------------------
 [ALCREMIE,22]
@@ -2425,7 +2425,7 @@ UngmaxForm = 0
 [ALCREMIE,28]
 FormName = 奶香柠檬
 Color = Yellow
-Pokedex = 制造鲜奶油的细胞在进化时受到了不稳 定状态的影响，所以变成了酸酸的风味 。
+Pokedex = 制造鲜奶油的细胞在进化时受到了不稳定状态的影响，所以变成了酸酸的风味。
 UngmaxForm = 0
 #-------------------------------
 [ALCREMIE,29]
@@ -2454,7 +2454,7 @@ UngmaxForm = 0
 #-------------------------------
 [ALCREMIE,35]
 FormName = 奶香雪盐
-Pokedex = 制造鲜奶油的细胞在进化时受到了不稳 定状态的影响，所以变成了咸咸的风味 。
+Pokedex = 制造鲜奶油的细胞在进化时受到了不稳定状态的影响，所以变成了咸咸的风味。
 UngmaxForm = 0
 #-------------------------------
 [ALCREMIE,36]
@@ -2484,7 +2484,7 @@ UngmaxForm = 0
 [ALCREMIE,42]
 FormName = 红钻综合
 Color = Yellow
-Pokedex = 制造鲜奶油的细胞在进化时受到了不稳 定状态的影响，所以变成了缤纷的风味 。
+Pokedex = 制造鲜奶油的细胞在进化时受到了不稳定状态的影响，所以变成了缤纷的风味。
 UngmaxForm = 0
 #-------------------------------
 [ALCREMIE,43]
@@ -2514,7 +2514,7 @@ UngmaxForm = 0
 [ALCREMIE,49]
 FormName = 焦糖综合
 Color = Brown
-Pokedex = 制造鲜奶油的细胞在进化时受到了不稳 定状态的影响，所以变成了偏苦的风味 。
+Pokedex = 制造鲜奶油的细胞在进化时受到了不稳定状态的影响，所以变成了偏苦的风味。
 UngmaxForm = 0
 #-------------------------------
 [ALCREMIE,50]
@@ -2544,7 +2544,7 @@ UngmaxForm = 0
 [ALCREMIE,56]
 FormName = 三色综合
 Color = Yellow
-Pokedex = 制造鲜奶油的细胞在进化时受到了不稳 定状态的影响，所以变成了复杂的风味 。
+Pokedex = 制造鲜奶油的细胞在进化时受到了不稳定状态的影响，所以变成了复杂的风味。
 UngmaxForm = 0
 #-------------------------------
 [ALCREMIE,57]
@@ -2574,7 +2574,7 @@ UngmaxForm = 0
 [EISCUE,1]
 FormName = 解冻头
 BaseStats = 75,80,70,130,65,50
-Pokedex = 脸上的冰块碎掉的样子。它那一脸惆怅 的表情让许多人为之着迷。
+Pokedex = 脸上的冰块碎掉的样子。它那一脸惆怅的表情让许多人为之着迷。
 UngmaxForm = 0
 #-------------------------------
 [INDEEDEE,1]
@@ -2585,13 +2585,13 @@ Abilities = OWNTEMPO,SYNCHRONIZE
 Moves = 1,STOREDPOWER,1,PLAYNICE,5,BATONPASS,10,DISARMINGVOICE,15,PSYBEAM,20,HELPINGHAND,25,FOLLOWME,30,AROMATHERAPY,35,PSYCHIC,40,CALMMIND,45,GUARDSPLIT,50,PSYCHICTERRAIN,55,HEALINGWISH
 TutorMoves = ALLYSWITCH,ATTRACT,BATONPASS,CALMMIND,DAZZLINGGLEAM,DRAININGKISS,DRAINPUNCH,ENDURE,ENERGYBALL,EXPANDINGFORCE,FACADE,FUTURESIGHT,GUARDSWAP,HELPINGHAND,HYPERVOICE,IMPRISON,LIGHTSCREEN,MAGICALLEAF,METRONOME,MYSTICALFIRE,PAYDAY,PLAYROUGH,PROTECT,PSYCHIC,PSYCHICTERRAIN,PSYSHOCK,REFLECT,REST,ROUND,SAFEGUARD,SHADOWBALL,SLEEPTALK,SNORE,STOREDPOWER,SUBSTITUTE,SWIFT,TERRAINPULSE,TRICK,ZENHEADBUTT,TERABLAST
 EggMoves = FAKEOUT,HEALPULSE,PSYCHUP,PSYCHOSHIFT
-Pokedex = 为了收集感谢之情而为人和宝可梦贴心 服务。雌性十分擅长带孩子。
+Pokedex = 为了收集感谢之情而为人和宝可梦贴心服务。雌性十分擅长带孩子。
 UngmaxForm = 0
 #-------------------------------
 [MORPEKO,1]
 FormName = 空腹花纹
 Color = Purple
-Pokedex = 饥饿荷尔蒙改变了它的性情。它会做尽 一切的坏事，直到把肚子填饱为止。
+Pokedex = 饥饿荷尔蒙改变了它的性情。它会做尽一切的坏事，直到把肚子填饱为止。
 UngmaxForm = 0
 #-------------------------------
 [ZACIAN,1]
@@ -2600,7 +2600,7 @@ Types = FAIRY,STEEL
 BaseStats = 92,170,115,148,80,115
 BaseExp = 360
 Weight = 355.0
-Pokedex = 能斩断世间万物，因此被称为妖精王之 剑，让敌友都对其敬畏不已。
+Pokedex = 能斩断世间万物，因此被称为妖精王之剑，让敌友都对其敬畏不已。
 UngmaxForm = 0
 #-------------------------------
 [ZAMAZENTA,1]
@@ -2609,7 +2609,7 @@ Types = FIGHTING,STEEL
 BaseStats = 92,130,145,128,80,145
 BaseExp = 360
 Weight = 785.0
-Pokedex = 能够反弹一切的攻击，因此被称为格斗 王之盾，受到人们的畏惧与尊崇。
+Pokedex = 能够反弹一切的攻击，因此被称为格斗王之盾，受到人们的畏惧与尊崇。
 UngmaxForm = 0
 #-------------------------------
 [URSHIFU,1]
@@ -2617,7 +2617,7 @@ FormName = 连击流
 Types = FIGHTING,WATER
 Moves = 0,SURGINGSTRIKES,1,SURGINGSTRIKES,1,AQUAJET,1,ROCKSMASH,1,LEER,1,ENDURE,1,FOCUSENERGY,12,AERIALACE,16,SCARYFACE,20,HEADBUTT,24,BRICKBREAK,28,DETECT,32,BULKUP,36,IRONHEAD,40,DYNAMICPUNCH,44,COUNTER,48,CLOSECOMBAT,52,FOCUSPUNCH
 TutorMoves = ACROBATICS,ATTRACT,AURASPHERE,BODYPRESS,BODYSLAM,BRICKBREAK,BRINE,BULKUP,CLOSECOMBAT,COACHING,DIG,DIVE,DRAINPUNCH,ENDURE,FACADE,FALSESWIPE,FIREPUNCH,FOCUSBLAST,FOCUSENERGY,GIGAIMPACT,HELPINGHAND,ICEPUNCH,IRONDEFENSE,IRONHEAD,LIQUIDATION,LOWKICK,LOWSWEEP,MEGAKICK,MEGAPUNCH,POISONJAB,PROTECT,RAINDANCE,REST,RETALIATE,REVENGE,REVERSAL,ROCKSLIDE,ROCKTOMB,ROUND,SCALD,SCARYFACE,SLEEPTALK,SNORE,STONEEDGE,SUBSTITUTE,SUPERPOWER,SWIFT,TAUNT,THUNDERPUNCH,UTURN,WATERFALL,WHIRLPOOL,WORKUP,ZENHEADBUTT,TERABLAST
-Pokedex = 据说，它是以时而湍急时而平稳的河水 为灵感，创造出了格斗招式的形式。
+Pokedex = 据说，它是以时而湍急时而平稳的河水为灵感，创造出了格斗招式的形式。
 UngmaxForm = 0
 #-------------------------------
 [CALYREX,1]
@@ -2634,7 +2634,7 @@ Weight = 809.1
 Color = White
 Shape = Quadruped
 Category = 帝皇
-Pokedex = 据说它虽然对挡路之徒手下毫不留情， 但在战斗结束后却会不计前嫌地帮敌人 疗伤。
+Pokedex = 据说它虽然对挡路之徒手下毫不留情，但在战斗结束后却会不计前嫌地帮敌人疗伤。
 UngmaxForm = 0
 #-------------------------------
 [CALYREX,2]
@@ -2651,5 +2651,5 @@ Weight = 53.6
 Color = Black
 Shape = Quadruped
 Category = 帝皇
-Pokedex = 据说它用能够看透过去与未来所有事件 的能力从陨石掉落的危机中拯救了森林 中的生物。
+Pokedex = 据说它用能够看透过去与未来所有事件的能力从陨石掉落的危机中拯救了森林中的生物。
 UngmaxForm = 0
