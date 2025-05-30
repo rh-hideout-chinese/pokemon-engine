@@ -1,0 +1,6 @@
+Name       = [DBK] Animated Trainer Intros
+Version    = 1.0
+Essentials = 21.1
+Requires   = Deluxe Battle Kit,1.2.6
+Website    = https://lucidious89-tutorials.gitbook.io/deluxe-battle-kit-tutorial/deluxe-battle-kit-for-v21.1/add-on-tutorials/animated-trainer-system
+Credits    = Lucidious89,Luka S.J.
