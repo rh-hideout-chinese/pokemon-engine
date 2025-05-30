@@ -112,8 +112,8 @@ module TrainerPokemonProperty
   def self.editor_properties(oldsetting)
     properties = self.tera_editor_properties(oldsetting)
     properties.concat([
-      [_INTL("No Tera"),   BooleanProperty2,            _INTL("If set to true, the trainer will never Terastallize this Pokémon.")],
-      [_INTL("Tera Type"), GameDataProperty.new(:Type), _INTL("Tera type of the Pokémon.")]
+      [_INTL("不要太晶化"), BooleanProperty2, _INTL("若设为 true，训练家将永远不会使这只宝可梦太晶化。")],
+      [_INTL("太晶属性"), GameDataProperty.new(:Type), _INTL("该宝可梦的太晶属性。")]
     ])
     return properties
   end
@@ -169,7 +169,7 @@ MidbattleHandlers.add(:midbattle_global, :wild_tera_battle,
       foe.unTera(true)
       battle.noBag = false
       battle.disablePokeBalls = false
-      battle.pbDisplayPaused(_INTL("{1}'s Tera Jewel shattered!\nIt may now be captured!", foe.pbThis))
+      battle.pbDisplayPaused(_INTL("{1}的太晶护罩破碎了！\n现在可以捕捉了！", foe.pbThis))
     when "BattleEndWin"
       if battle.wildBattleMode == :tera
         $stats.wild_tera_battles_won += 1

@@ -114,7 +114,7 @@ class Battle
         @tera_orbs.each { |item| return GameData::Item.get(item).name if trainer_items&.include?(item) }
       end
     end
-    return _INTL("Tera Orb")
+    return _INTL("太晶珠")
   end
   
   #-----------------------------------------------------------------------------
@@ -164,7 +164,7 @@ class Battle
       end
     end
     pbAnimateTerastallization(battler)
-    pbDisplay(_INTL("{1} Terastallized into the {2}-type!", battler.pbThis, GameData::Type.get(battler.tera_type).name))
+    pbDisplay(_INTL("{1}太晶化并变为{2}属性!", battler.pbThis, GameData::Type.get(battler.tera_type).name))
     if battler.tera_form?
       battler.pbOnLosingAbility(old_ability)
       battler.pbTriggerAbilityOnGainingIt
@@ -207,10 +207,10 @@ class Battle
         battler.form_update
       else
         if battler.wild?
-          pbDisplay(_INTL("{1} surrounded itself in Terastal energy!", battler.pbThis))
+          pbDisplay(_INTL("{1}被太晶能量包围了！", battler.pbThis))
         else
           trainerName = pbGetOwnerName(battler.index)
-          pbDisplay(_INTL("{1} is reacting to {2}'s {3}!", battler.pbThis, trainerName, pbGetTeraOrbName(battler.index)))
+          pbDisplay(_INTL("{1}对{2}的{3}产生了反应！", battler.pbThis, trainerName, pbGetTeraOrbName(battler.index)))
         end
         @scene.pbRevertBattlerStart(battler.index)
         battler.pokemon.terastallized = true

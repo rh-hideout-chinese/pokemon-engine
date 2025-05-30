@@ -199,7 +199,7 @@ class Battle::Move::LowerTargetSpeed1MakeTargetWeakerToFire < Battle::Move::Targ
     super
     if !target.effects[PBEffects::TarShot] && !target.tera?
       target.effects[PBEffects::TarShot] = true
-      @battle.pbDisplay(_INTL("{1} became weaker to fire!", target.pbThis))
+      @battle.pbDisplay(_INTL("{1}对火属性的抗性降低了！", target.pbThis))
     end
   end
 end
