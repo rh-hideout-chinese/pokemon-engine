@@ -188,6 +188,7 @@ TotalPP = 5
 Target = UserAndAllies
 FunctionCode = HealUserAndAlliesQuarterOfTotalHPCureStatus
 Description = 向新月献上祈祷，回复自己和场上同伴的ＨＰ和状态。
+Flags = ZPower_ResetStats
 #-------------------------------
 [PSYSHIELDBASH]
 Name = 屏障猛攻
@@ -247,7 +248,7 @@ Accuracy = 0
 TotalPP = 10
 Target = User
 FunctionCode = RaiseUserAtkDefSpd1
-Flags = Dance
+Flags = Dance,ZPower_ResetStats
 Description = 激烈地跳起唤来胜利的舞蹈，提高自己的攻击、防御和速度。
 #-------------------------------
 [SHELTER]
@@ -259,6 +260,7 @@ TotalPP = 10
 Target = User
 FunctionCode = RaiseUserDefense2
 Description = 将皮肤变得坚硬如铁盾，从而大幅提高自己的防御。
+Flags = ZPower_ResetStats
 #-------------------------------
 [INFERNALPARADE]
 Name = 群魔乱舞
@@ -295,6 +297,7 @@ TotalPP = 10
 Target = User
 FunctionCode = RaiseUserSpAtkSpDef1CureStatus
 Description = 鼓起冲劲，治愈自己的异常状态，同时提高自己的特攻和特防。
+Flags = ZPower_ResetStats
 #-------------------------------
 [AQUACUTTER]
 Name = 水波刀
@@ -393,7 +396,7 @@ Accuracy = 0
 TotalPP = 10
 Target = BothSides
 FunctionCode = SwitchOutUserStartHailWeather
-Flags = CannotMetronome
+Flags = CannotMetronome,ZPower_HealSwitch
 Description = 留下冷场的冷笑话后，和后备宝可梦进行替换。在５回合内会下雪。
 #-------------------------------
 [COLLISIONCOURSE]
@@ -441,7 +444,7 @@ Accuracy = 100
 TotalPP = 10
 Target = NearFoe
 FunctionCode = SetUserAlliesAbilityToTargetAbility
-Flags = CannotMetronome
+Flags = CannotMetronome,ZPower_SPEED_1
 Description = 把握并映射出对手的本质，让自己和同伴宝可梦的特性变得和对手相同。
 #-------------------------------
 [DOUBLESHOCK]
@@ -476,7 +479,7 @@ Accuracy = 0
 TotalPP = 10
 Target = NearOther
 FunctionCode = RaiseUserAtkSpAtkSpeed2LoseHalfOfTotalHP
-Flags = CannotMetronome
+Flags = CannotMetronome,ZPower_HealUser
 Description = 削减自己的ＨＰ，大幅提高攻击和特攻以及速度。
 #-------------------------------
 [FLOWERTRICK]
@@ -710,7 +713,7 @@ Accuracy = 0
 TotalPP = 1
 Target = User
 FunctionCode = RevivePokemonHalfHP
-Flags = CannotMetronome
+Flags = CannotMetronome,ZPower_HealUser
 Description = 通过以慈爱之心祈祷，让陷入昏厥的后备宝可梦以回复一半ＨＰ的状态复活。
 #-------------------------------
 [RUINATION]
@@ -746,7 +749,7 @@ Accuracy = 0
 TotalPP = 10
 Target = User
 FunctionCode = UserMakeSubstituteSwitchOut
-Flags = CannotMetronome
+Flags = CannotMetronome,ZPower_HealSwitch
 Description = 削减自己的ＨＰ，制造分身后会返回，并和后备宝可梦进行替换。
 #-------------------------------
 [SILKTRAP]
@@ -758,7 +761,7 @@ TotalPP = 10
 Target = User
 Priority = 4
 FunctionCode = ProtectUserFromDamagingMovesSilkTrap
-Flags = CannotMetronome
+Flags = CannotMetronome,ZPower_SPEED_1
 Description = 用丝设置陷阱。防住对方攻击的同时，能够降低所接触到的对手的速度。
 #-------------------------------
 [SNOWSCAPE]
@@ -769,7 +772,7 @@ Accuracy = 0
 TotalPP = 10
 Target = BothSides
 FunctionCode = StartHailWeather
-Flags = CannotMetronome
+Flags = CannotMetronome,ZPower_SPECIAL_DEFENSE_1
 Description = 在５回合内会下雪。冰属性的防御会提高。
 #-------------------------------
 [SPICYEXTRACT]
@@ -780,7 +783,7 @@ Accuracy = 0
 TotalPP = 15
 Target = NearOther
 FunctionCode = RaiseTargetAtkLowerTargetDef2
-Flags = CanProtect,CanMirrorMove,CannotMetronome
+Flags = CanProtect,CanMirrorMove,CannotMetronome,ZPower_ATTACK_2
 Description = 放出极为辛辣的精华。对手的攻击会大幅提高，防御会大幅降低。
 #-------------------------------
 [SPINOUT]
@@ -803,7 +806,7 @@ Accuracy = 0
 TotalPP = 10
 Target = User
 FunctionCode = RaiseUserAtkSpd1RemoveHazardsSubstitutes
-Flags = CannotMetronome
+Flags = CannotMetronome,ZPower_ResetStats
 EffectChance = 100
 Description = 将撒菱、隐形岩、黏黏网、毒菱、替身全部扫除掉。自己的攻击和速度会提高。
 #-------------------------------
@@ -991,6 +994,7 @@ Target = User
 Priority = 4
 FunctionCode = ProtectUserBurningBulwark
 Description = 用超高温的体毛防住对手攻击的同时，让接触到自己的对手灼伤。
+Flags = ZPower_DEFENSE_1
 #-------------------------------
 [THUNDERCLAP]
 Name = 迅雷
@@ -1050,6 +1054,7 @@ TotalPP = 15
 Target = AllAllies
 FunctionCode = RaiseAlliesCriticalHitRate1DragonTypes2
 Description = 以龙之鼓舞提高士气，让我方的招式变得容易击中要害。对龙属性的鼓舞效果会更强。
+Flags = ZPower_CriticalHit
 #-------------------------------
 [ALLURINGVOICE]
 Name = 魅诱之声

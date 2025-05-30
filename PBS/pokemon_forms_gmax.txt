@@ -1,4 +1,4 @@
-﻿# See the documentation on the wiki to learn how to edit this file.
+﻿# 请参阅wiki以了解如何编辑文件
 #-------------------------------
 [VENUSAUR,2]
 FormName = Gigantamax

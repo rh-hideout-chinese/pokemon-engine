@@ -1,3 +1,4 @@
+﻿# 请参阅wiki以了解如何编辑文件
 #-------------------------------
 [PIKACHU,8]
 FormName = Original Cap
@@ -5,7 +6,7 @@ EggGroups = Undiscovered
 Pokedex = The cap this Pikachu wears is filled with memories of this Pokémon and its partner traveling across lots of different regions together.
 Generation = 7
 Flags = SOSForm_0,CannotDynamax,CannotTerastallize
-Evolutions = RAICHU,None
+Evolutions = RAICHU,None,
 #-------------------------------
 [PIKACHU,9]
 FormName = Hoenn Cap
@@ -13,7 +14,7 @@ EggGroups = Undiscovered
 Pokedex = The cap this Pikachu wears is filled with memories of this Pokémon and its partner traveling across the Hoenn region together.
 Generation = 7
 Flags = SOSForm_0,CannotDynamax,CannotTerastallize
-Evolutions = RAICHU,None
+Evolutions = RAICHU,None,
 #-------------------------------
 [PIKACHU,10]
 FormName = Sinnoh Cap
@@ -21,7 +22,7 @@ EggGroups = Undiscovered
 Pokedex = The cap this Pikachu wears is filled with memories of this Pokémon and its partner traveling across the Sinnoh region together.
 Generation = 7
 Flags = SOSForm_0,CannotDynamax,CannotTerastallize
-Evolutions = RAICHU,None
+Evolutions = RAICHU,None,
 #-------------------------------
 [PIKACHU,11]
 FormName = Unova Cap
@@ -29,7 +30,7 @@ EggGroups = Undiscovered
 Pokedex = The cap this Pikachu wears is filled with memories of this Pokémon and its partner traveling across the Unova region together.
 Generation = 7
 Flags = SOSForm_0,CannotDynamax,CannotTerastallize
-Evolutions = RAICHU,None
+Evolutions = RAICHU,None,
 #-------------------------------
 [PIKACHU,12]
 FormName = Kalos Cap
@@ -37,7 +38,7 @@ EggGroups = Undiscovered
 Pokedex = The cap this Pikachu wears is filled with memories of this Pokémon and its partner traveling across the Kalos region together.
 Generation = 7
 Flags = SOSForm_0,CannotDynamax,CannotTerastallize
-Evolutions = RAICHU,None
+Evolutions = RAICHU,None,
 #-------------------------------
 [PIKACHU,13]
 FormName = Alola Cap
@@ -45,7 +46,7 @@ EggGroups = Undiscovered
 Pokedex = The cap this Pikachu wears is filled with memories of this Pokémon and its partner traveling across the Alola region together.
 Generation = 7
 Flags = SOSForm_0,CannotDynamax,CannotTerastallize
-Evolutions = RAICHU,None
+Evolutions = RAICHU,None,
 #-------------------------------
 [PIKACHU,14]
 FormName = Partner Cap
@@ -53,7 +54,7 @@ EggGroups = Undiscovered
 Pokedex = The cap this Pikachu wears is filled with memories of this Pokémon traveling together with its partner, whom it met in a fateful encounter.
 Generation = 8
 Flags = SOSForm_0,CannotDynamax,CannotTerastallize
-Evolutions = RAICHU,None
+Evolutions = RAICHU,None,
 #-------------------------------
 [PIKACHU,15]
 FormName = World Cap
@@ -61,4 +62,4 @@ EggGroups = Undiscovered
 Pokedex = The cap this Pikachu wears is filled with memories of this Pokémon and its partner traveling across the world together.
 Generation = 8
 Flags = SOSForm_0,CannotDynamax,CannotTerastallize
-Evolutions = RAICHU,None
+Evolutions = RAICHU,None,
