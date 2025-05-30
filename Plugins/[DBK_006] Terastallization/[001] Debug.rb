@@ -228,7 +228,7 @@ MenuHandlers.add(:battle_pokemon_debug_menu, :set_terastal, {
                       [_INTL("设定是否可太晶化"),
                        _INTL("设定太晶属性"),
                        _INTL("设定太晶化状态"),
-                       _INTL("重置")]
+                       _INTL("重置")], -1, nil, cmd)
       break if cmd < 0
       case cmd
       when 0   # Set eligibility
