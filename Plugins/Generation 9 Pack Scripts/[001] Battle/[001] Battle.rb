@@ -156,8 +156,9 @@ class Battle
   def pbEndOfRoundPhase
     paldea_pbEndOfRoundPhase
     allBattlers.each_with_index do |battler, i|
-	  battler.effects[PBEffects::AllySwitch]     = false
-	  battler.effects[PBEffects::BurningBulwark] = false
+      battler.effects[PBEffects::AllySwitch]     = false
+      battler.effects[PBEffects::BurningBulwark] = false
+      battler.effects[PBEffects::SilkTrap]       = false
       if Settings::MECHANICS_GENERATION >= 9
         battler.effects[PBEffects::Charge]   += 1 if battler.effects[PBEffects::Charge]     > 0
       end

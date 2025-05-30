@@ -24,7 +24,7 @@ class Battle::Move::GiveUserStatusToTarget < Battle::Move
         @battle.pbDisplay(_INTL("{1}的冻伤痊愈了！", user.pbThis))
       end
     else
-      paldea_pbEffectAgainstTarget
+      paldea_pbEffectAgainstTarget(user, target)
     end
   end
 end

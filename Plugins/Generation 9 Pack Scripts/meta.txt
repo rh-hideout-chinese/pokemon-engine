@@ -1,11 +1,22 @@
 Name = Generation 9 Pack
-Version = 3.3.0
+Version = 3.3.1
 Essentials = 21.1
 Requires = v21.1 Hotfixes,1.0.9
 Website = https://www.eeveeexpo.com/threads/5817/
 Credits = Caruban
 
 # Change logs
+#############################################
+# 3.3.1
+#############################################
+# - Added Chilly Reception move failure check, so it fails if the Pokémon cannot switch and under Hail or Primodial weather
+# - Added Silk Trap effect in pbEndOfRoundPhase
+# - Fixed Charge effect to ends only after using an Electric-type damaging move
+# - Fixed Chilly Reception MoveFailureCheck AI method
+# - Fixed pbCanInflictStatus? to preventing fainted Pokémon from being inflicted by Drowsy and Frostbite
+# - Fixed Psycho Shift error when used on the Pokémon that has a status condition other than Drowsy and Frostbite
+# - Simplified Chilly Reception MoveEffectScore AI method
+# - Updated Hoopa getForm and onSetForm handler
 #############################################
 # 3.3.0
 #############################################

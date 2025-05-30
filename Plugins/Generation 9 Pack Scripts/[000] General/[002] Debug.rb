@@ -44,7 +44,7 @@ MenuHandlers.add(:pokemon_debug_menu, :set_status, {
             params = ChooseNumberParams.new
             params.setRange(0, 9)
             params.setDefaultValue(3)
-			      status = (ids[cmd] == :SLEEP) ? "睡眠" : "瞌睡"
+			      status = (ids[cmd] == :SLEEP) ? "sleep" : "drowsy"
             count = pbMessageChooseNumber(
               _INTL("设置宝可梦#{status}的回合数。"), params
             ) { screen.pbUpdate }
@@ -113,7 +113,7 @@ MenuHandlers.add(:battle_pokemon_debug_menu, :set_status, {
           params.setRange(0, 99)
           params.setDefaultValue((pkmn.status == :SLEEP) ? pkmn.statusCount : 3)
           params.setCancelValue(-1)
-		      status = (ids[cmd] == :SLEEP) ? "睡眠" : "瞌睡"
+		      status = (ids[cmd] == :SLEEP) ? "sleep" : "drowsy"
           count = pbMessageChooseNumber("\\ts[]" + _INTL("设置宝可梦#{status}的回合数（0-99）。", pkmn_name), params)
           next if count < 0
           (battler || pkmn).statusCount = count

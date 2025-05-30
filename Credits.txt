@@ -31,7 +31,9 @@ Pokemon Icon Sprites:
 -Gen 8 Icon Sprites		- Larry Turbo, Leparagon
 -Shiny Icon Sprites		- StarrWolf, Pokemon Shattered Light Team
 -PLA Pokemon Icon Sprites	- LuigiTKO
+-Shiny PLA Pokemon Icon Sprites	- StarrWolf (recolored from LuigiTKO icons)
 -Gen 9 Icon Sprites		- ezerart, JordanosArt
+-Shiny Gen 9 Icon Sprites	- ezerart, JordanosArt
 -PLA Vanilla Icon Sprites	- LuigiTKO, Pikafan2000, Cesare_CBass, Vent, Cesare_Cbass, MultiDiegoDani, leParagon, JWNutz
 and thanks for 
 Pokémon Icons Act 2.9 - Teracristalizando

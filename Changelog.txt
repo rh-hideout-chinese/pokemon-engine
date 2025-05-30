@@ -1,5 +1,124 @@
 # Change logs
 #############################################
+# 3.3.1
+#############################################
+# - Added Chilly Reception move failure check, so it fails if the Pokémon cannot switch and under Hail or Primodial weather
+# - Added Silk Trap effect in pbEndOfRoundPhase
+# - Fixed Charge effect to ends only after using an Electric-type damaging move
+# - Fixed Chilly Reception MoveFailureCheck AI method
+# - Fixed pbCanInflictStatus? to preventing fainted Pokémon from being inflicted by Drowsy and Frostbite
+# - Fixed Psycho Shift error when used on the Pokémon that has a status condition other than Drowsy and Frostbite
+# - Simplified Chilly Reception MoveEffectScore AI method
+# - Updated Hoopa getForm and onSetForm handler
+#############################################
+# 3.3.0
+#############################################
+# - Fixed the Psychic Noise effect on a fainted target
+# - Added Drowsy and Frostbite as a status that could be healed by abilities with an OnSwitchOut AbilityEffects handler.
+# - Added Drowsy and Frostbite to get_score_change_for_consuming_item AI method
+# - Added Drowsy and Frostbite to :cure_status_problem_by_switching_out AI ShouldSwitch handlers
+# - Added Frostbite to :thawing_move_when_frozen AI GeneralMoveScore handlers
+# - Added Frostbite to :thawing_move_against_frozen_target AI GeneralMoveAgainstTargetScore handlers
+# - Added :electrocuting_move_when_drowsy AI GeneralMoveScore handlers
+# - Added :electrocuting_move_against_drowsy_target AI GeneralMoveAgainstTargetScore handlers
+# - Added ELECTROCUTE_MOVES_CURE_SLEEP in the plugin Settings. If ELECTROCUTE_MOVES_CURE_SLEEP is set to true, moves with the "ElectrocuteUser" flag can wake the target from Sleep.
+#############################################
+# 3.2.10
+#############################################
+# - Fixed the Psychic Noise effect on a fainted target
+# - Added Drowsy and Frostbite as a status that could be healed by abilities with an OnSwitchOut AbilityEffects handler.
+# - Added Drowsy and Frostbite to get_score_change_for_consuming_item AI method
+# - Added Drowsy and Frostbite to :cure_status_problem_by_switching_out AI ShouldSwitch handlers
+# - Added Frostbite to :thawing_move_when_frozen AI GeneralMoveScore handlers
+# - Added Frostbite to :thawing_move_against_frozen_target AI GeneralMoveAgainstTargetScore handlers
+# - Added :electrocuting_move_when_drowsy AI GeneralMoveScore handlers
+# - Added :electrocuting_move_against_drowsy_target AI GeneralMoveAgainstTargetScore handlers
+# - Added ELECTROCUTE_MOVES_CURE_SLEEP in the plugin Settings. If ELECTROCUTE_MOVES_CURE_SLEEP is set to true, moves with the "ElectrocuteUser" flag can wake the target from Sleep.
+#############################################
+# 3.2.9
+#############################################
+# - Added an ice defense buff algorithm for the AI during snow
+# - Fixed a bug in the pbPartyScreen for Revival Blessing
+# - Fixed the Opportunist message to display battler.pbThis instead of user.pbThis
+# - Fixed the Triple Arrows AI move's defense stat drop score
+#############################################
+# 3.2.8
+#############################################
+# - Changed Infernal Parade burn score "b" parameter to "target"
+# - Changed Matcha Gatcha burn score "b" parameter to "target"
+# - Changed Barb Barrage poison score "b" parameter to "target"
+# - Changed Ceaseless Edge's spike score method
+# - Changed Stone Axe's stealth rock score method
+# - Changed Chilly Reception's switch out score method
+# - Changed Frostbite AI handler to FrostbiteTarget
+# - Changed @battle to battle from Neutralizing Gas ability handler (line 416)
+# - Fixed Psyblade's AI move score algorithm
+# - Fixed Syrup Bomb's AI move score method id
+# - Removed "OHKO" check from Stone Axe's MoveFailureAgainstTargetCheck handler
+# - Updated Electro Shot AI move score
+# - Updated Upper Hand AI move score
+#############################################
+# 3.2.7
+#############################################
+# - Added the missing Sharpness ability to Gallade in PBS
+# - Added the missing Tatsugiri form on creation
+# - Fixed Basculegion's forms bug when generated in the wild
+# - Fixed Supersweet Syrup ability battler name into a lowercase
+# - Fixed Tail Shed AI MoveEffectScore handler
+# - Fixed typo in Mabosstiff follower sprite's name
+#############################################
+# 3.2.6
+#############################################
+# - Fixed Trace interaction with Ability Shield
+# - Changed Doodle and Dragon Cheer Battle::AI::Handlers from using batttle.allSameSideBattlers to ai.each_same_side_battler
+# - Moved rough_damage method from Battle::AI to Battle::AI::AIMove
+# - Moved zero_to_hero_ability ShouldSwitch handler outside of Battle::AI class
+#
+#############################################
+# 3.2.5
+#############################################
+# - Added new alias for pbCanShift? method to ensure Pokemon affected by Commander cannot shift positions
+# - Changed Ogerpon "getFormOnEnteringBattle" method to "getFormOnStartingBattle"
+# - Fixed Commander ability from actived by a switched out pokemon
+# - Fixed Ally Switch move to ensure it's failed when used by Commander's affected Pokemon
+# - Fixed AI move handler for Ally Switch to ensure it's failed when used by Commander's affected Pokemon
+# - Fixed pbCanSwitch? message bug
+#
+#############################################
+# 3.2.4
+#############################################
+# - Added new function code for Bleakwind Storm, Wildbolt Storm, and Sandsear Storm to make it always hit while Rain/Heavy Rain
+# - Added new alias for get_score_for_terrain and get_score_for_weather to adds score modifier for the Gen 9 abilities and moves.
+# - Fixed Commander ability error when Dondozo is supposed to remain trapped even after Tatsugiri faints.
+# - Fixed Lingering Aroma's spammed ability message.
+# - Fixed Protosynthesis error when its actived while there is a cloud nine / air lock pokemon in the field.
+# - Fixed Supreme Overlord's death count error.
+# - Fixed Tailwind error from triggering player's Wind Power and Wind Rider abilities from the opponent's Tailwind.
+# - Fixed Hospitality ability to be negated by Heal Block
+# - Fixed "of Ruin" abilities bug
+# - Fixed Toxic Touch and Toxic Chain message error for the fainted target
+# - Fixed Psyblade function code from IncreasePowerWhileElectricTerrain to IncreasePowerInElectricTerrain
+# - Fixed Dragon Cheer total PP from 10 to 15
+# - Fixed Chilly Reception function code typo
+# - Fixed Fillet Away function code typo
+# - Fixed Ice Spinner from triggering if the user faints after dealing damage
+# - Fixed Tidy Up target from NearOthers to User
+# - Fixed Bitter Malice EffectChance from 30 to 100
+# - Fixed Take Heart pbEffectGeneral to allow the stat changes to actually take effect
+# - Fixed Neutraling Gas typos in portion that check for an Ability Shield
+# - Fixed Kingambit evolution typos in the evolution method
+# - Fixed Dondozo's reversed left and right overworld sprites
+# - Removed Psyblade EffectChance
+# - Removed Dire Claw HighCriticalHitRate flag
+# - Removed Quilava, Dewott, Rufflet, Petilil, Goomy, Bergmite, Dartrix from pokemon form PBS
+#
+#############################################
+# 3.2.3
+#############################################
+# - Added Gen 9 shiny icons
+# - Fixed Gen 9 pokemon metric PBS
+#
+#############################################
 # 3.2.2
 #############################################
 # - Added Terapagos terastal form and Archaludon overworld

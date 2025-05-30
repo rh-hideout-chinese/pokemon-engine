@@ -432,6 +432,7 @@ Flags = Legendary,TeraType_ROCK
 #-------------------------------
 [OGERPON,4]
 PokedexForm = 0
+Flags = Legendary,TeraType_GRASS
 #-------------------------------
 [OGERPON,5]
 FormName = 水井面具
@@ -492,6 +493,7 @@ Height = 0.3
 Weight = 16.0
 Shape = Head
 Pokedex = 若太晶的甲壳受到对手招式的攻击，就会将其能量吸收，供自己使用。
+Flags = Legendary,TeraType_STELLAR
 #-------------------------------
 [TERAPAGOS,2]
 FormName = 星晶形态

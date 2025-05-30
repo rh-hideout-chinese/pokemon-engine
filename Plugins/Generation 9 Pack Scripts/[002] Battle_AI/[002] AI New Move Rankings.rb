@@ -725,13 +725,14 @@ Battle::AI::Handlers::MoveEffectScore.copy("RemoveTerrain",
 #===============================================================================
 Battle::AI::Handlers::MoveFailureCheck.add("SwitchOutUserStartHailWeather",
   proc { |move, user, ai, battle|
-    cannot_switch = true
+    cannot_switch = false
     if user.wild?
       cannot_switch = !battle.pbCanRun?(user.index) || user.battler.allAllies.length > 0
+    else
+      cannot_switch = !battle.pbCanChooseNonActive?(user.index) # Check if user can't switch out
     end
-    cannot_switch = !battle.pbCanChooseNonActive?(user.index) if cannot_switch
-    cannot_switch = [:HarshSun, :HeavyRain, :StrongWinds, move.move.weatherType].include?(battle.field.weather) if cannot_switch
-    next cannot_switch
+    cannot_change_weather = [:HarshSun, :HeavyRain, :StrongWinds, move.move.weatherType].include?(battle.field.weather)
+    next cannot_switch && cannot_change_weather
   }
 )
 Battle::AI::Handlers::MoveEffectScore.add("SwitchOutUserStartHailWeather",
@@ -739,17 +740,11 @@ Battle::AI::Handlers::MoveEffectScore.add("SwitchOutUserStartHailWeather",
     switchout_score = Battle::AI::Handlers.apply_move_effect_score("SwitchOutUserStatusMove",
       score, move, user, ai, battle)
     score += switchout_score if switchout_score != Battle::AI::MOVE_USELESS_SCORE
-    next Battle::AI::MOVE_USELESS_SCORE if switchout_score == Battle::AI::MOVE_USELESS_SCORE && 
-                                          (battle.pbCheckGlobalAbility(:AIRLOCK) ||
-                                           battle.pbCheckGlobalAbility(:CLOUDNINE))
-    # Not worth it at lower HP
-    if ai.trainer.has_skill_flag?("HPAware")
-      score -= 10 if user.hp < user.totalhp / 2
-    end
-    if ai.trainer.high_skill? && battle.field.weather != :None
-      score -= ai.get_score_for_weather(battle.field.weather, user)
-    end
-    score += ai.get_score_for_weather(:Hail, user, true)
+
+    hail_score = Battle::AI::Handlers.apply_move_effect_score("StartHailWeather",
+      score, move, user, ai, battle)
+    score += hail_score if hail_score != Battle::AI::MOVE_USELESS_SCORE
+
     next score
   }
 )

@@ -604,6 +604,7 @@ Generation = 6
 FormName = 刺刺耳皮丘
 Generation = 4
 Evolutions = PIKACHU,None,
+CallRateSOS = 0
 #-------------------------------
 [AMPHAROS,1]
 FormName = 超级电龙
@@ -1617,6 +1618,7 @@ Moves = 1,TACKLE,1,VINEWHIP,1,FAIRYWIND,6,FAIRYWIND,10,LUCKYCHANT,15,RAZORLEAF,2
 EggGroups = Undiscovered
 Pokedex = 它拿着的花，现在任何地方都没有在开放。而且被认为蕴藏着恐怖的力量。
 Evolutions = FLORGES,None,
+CallRateSOS = 0
 #-------------------------------
 [FLORGES,1]
 FormName = 黄花

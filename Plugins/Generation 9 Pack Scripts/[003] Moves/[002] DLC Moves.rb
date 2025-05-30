@@ -235,7 +235,7 @@ class Battle::Move::FlinchTargetFailsIfTargetNotUsingPriorityMove < Battle::Move
       next if b.movedThisRound?
       choices = @battle.choices[b.index]
       next if !choices[2].damagingMove?
-	    next if !choices[4] || choices[4] <= 0 || choices[4] > @priority
+	  next if !choices[4] || choices[4] <= 0 || choices[4] > @priority
       hasPriority = true
     end
     if !hasPriority
