@@ -484,8 +484,8 @@ Battle::AbilityEffects::OnSwitchIn.add(:PROTOSYNTHESIS,
       battle.pbShowAbilitySplash(battler)
       if field_check
         case ability
-        when :PROTOSYNTHESIS then cause = "大晴天"
-        when :QUARKDRIVE     then cause = "电气场地"
+        when :PROTOSYNTHESIS then cause = "harsh sunlight"
+        when :QUARKDRIVE     then cause = "Electric Terrain"
         end
         battle.pbDisplay(_INTL("{1}通过#{cause}发动了{2}！", battler.pbThis(true), battler.abilityName))
       elsif battler.item_id == :BOOSTERENERGY

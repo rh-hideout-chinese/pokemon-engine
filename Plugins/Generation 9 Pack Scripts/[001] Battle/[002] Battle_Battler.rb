@@ -450,7 +450,7 @@ class Battle::Battler
   
   
   #-----------------------------------------------------------------------------
-    # -Aliased so the Charge effect ends only after using an Electric-type damaging move.
+  # -Aliased so the Charge effect ends only after using an Electric-type damaging move.
   # -Moves that cause electrocution heals Drowsiness.
   # -Moves that cause thawing heals Frostbite.
   #-----------------------------------------------------------------------------
