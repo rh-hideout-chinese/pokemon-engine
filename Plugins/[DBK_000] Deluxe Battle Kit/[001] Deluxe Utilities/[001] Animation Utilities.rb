@@ -525,6 +525,9 @@ class Battle::Scene::Animation
     trainer_x, trainer_y = @pictureSprites[spriteTRAINER].x, @pictureSprites[spriteTRAINER].y
     pictureTRAINER.setXY(delay, trainer_x, trainer_y)
     pictureTRAINER.setZ(delay, @pictureSprites[spriteTRAINER].z)
+    if defined?(@pictureSprites[spriteTRAINER].to_last_frame)
+      @pictureSprites[spriteTRAINER].to_last_frame
+    end
     pictureITEM = []
     for i in [ [2, 0], [-2, 0], [0, 2], [0, -2], [2, 2], [-2, -2], [2, -2], [-2, 2], [0, 0] ]
       outline = addNewSprite(0, 0, item, PictureOrigin::BOTTOM)

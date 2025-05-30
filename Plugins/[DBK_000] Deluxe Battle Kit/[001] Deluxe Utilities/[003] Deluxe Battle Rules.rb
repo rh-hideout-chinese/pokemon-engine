@@ -481,6 +481,7 @@ class Battle
   #-----------------------------------------------------------------------------
   alias dx_pbStartBattleSendOut pbStartBattleSendOut
   def pbStartBattleSendOut(sendOuts)
+    @scene.pbAnimateTrainerIntros if defined?(@scene.pbAnimateTrainerIntros) 
     if @introText
       foes = @opponent || pbParty(1)
       foe_names = []

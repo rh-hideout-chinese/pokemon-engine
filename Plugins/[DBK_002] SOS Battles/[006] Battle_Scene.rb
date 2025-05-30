@@ -72,15 +72,25 @@ class Battle::Scene
       addNewBattler = addNew if i == 0
     end
     trainer = @battle.opponent[idxTrainer]
+    animated = PluginManager.installed?("[DBK] Animated Trainer Intros")
     id = "trainer_#{idxTrainer + 1}"
     if @sprites[id]
-      trainerFile = GameData::TrainerType.front_sprite_filename(trainer.trainer_type)
-      spriteX, spriteY = Battle::Scene.pbTrainerPosition(1, idxTrainer, @battle.opponent.length)
-      @sprites[id].setBitmap(trainerFile)
-      @sprites[id].x = spriteX
-      @sprites[id].y = spriteY
-      @sprites[id].ox = @sprites[id].src_rect.width / 2
-      @sprites[id].oy = @sprites[id].bitmap.height
+      if animated
+        sh = "trshadow_#{idxTrainer + 1}"
+        [id, sh].each do |sprite|
+          @sprites[sprite].index = idxTrainer
+          @sprites[sprite].numTrainers = @battle.opponent.length
+          @sprites[id].setTrainerBitmap(trainer, nil, sprite == sh)
+        end
+      else
+        trainerFile = GameData::TrainerType.front_sprite_filename(trainer.trainer_type)
+        spriteX, spriteY = Battle::Scene.pbTrainerPosition(1, idxTrainer, @battle.opponent.length)
+        @sprites[id].setBitmap(trainerFile)
+        @sprites[id].x = spriteX
+        @sprites[id].y = spriteY
+        @sprites[id].ox = @sprites[id].src_rect.width / 2
+        @sprites[id].oy = @sprites[id].bitmap.height
+      end
     else
       pbCreateTrainerFrontSprite(idxTrainer, trainer.trainer_type, @battle.opponent.length)
     end
@@ -91,6 +101,14 @@ class Battle::Scene
     @animations.push(joinAnim)
     while inPartyAnimation?
       pbUpdate
+    end
+    if animated
+      loop do 
+        pbUpdate
+        break if @sprites[id].iconBitmap.finished?
+        @sprites[id]&.play
+        @sprites["trshadow_#{idxTrainer + 1}"]&.play
+      end
     end
     pbDisplayPausedMessage(_INTL("{1} joined the battle!", trainer.full_name))
     battler_names = ""

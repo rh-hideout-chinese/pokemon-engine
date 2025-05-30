@@ -28,6 +28,34 @@ class PokemonSprite < Sprite
     @hue = value
   end
   
+    def to_first_frame
+    return if !@_iconbitmap
+    @_iconbitmap.to_frame(0)
+    self.bitmap = @_iconbitmap.bitmap
+  end
+  
+  def to_last_frame
+    return if !@_iconbitmap
+    @_iconbitmap.to_frame("last")
+    self.bitmap = @_iconbitmap.bitmap
+  end
+  
+  def play
+    return if !@_iconbitmap
+    @_iconbitmap.play
+    self.bitmap = @_iconbitmap.bitmap
+  end
+  
+  def finished?
+    return true if !@_iconbitmap
+    return @_iconbitmap.finished?
+  end
+  
+  def reversed=(value)
+    return if !@_iconbitmap
+	@_iconbitmap.reversed = value
+  end
+  
   #-----------------------------------------------------------------------------
   # Aliased to set Pokemon property and update the animation.
   #-----------------------------------------------------------------------------

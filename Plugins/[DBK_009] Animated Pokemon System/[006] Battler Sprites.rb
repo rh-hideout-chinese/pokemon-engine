@@ -19,6 +19,34 @@ class Battle::Scene::BattlerSprite < RPG::Sprite
     return @_iconBitmap.length > 1
   end
   
+    def play
+    return if !@_iconBitmap
+    @_iconBitmap.play
+    self.bitmap = @_iconBitmap.bitmap
+  end
+  
+  def to_first_frame
+    return if !@_iconBitmap
+    @_iconBitmap.to_frame(0)
+    self.bitmap = @_iconBitmap.bitmap
+  end
+  
+  def to_last_frame
+    return if !@_iconBitmap
+    @_iconBitmap.to_frame("last")
+    self.bitmap = @_iconBitmap.bitmap
+  end
+    
+  def finished?
+    return true if !@_iconBitmap
+    return @_iconBitmap.finished?
+  end
+  
+  def reversed=(value)
+    return if !@_iconBitmap
+	@_iconBitmap.reversed = value
+  end
+  
   def iconBitmap; return @_iconBitmap; end
   
   #-----------------------------------------------------------------------------

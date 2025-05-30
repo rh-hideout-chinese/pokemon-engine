@@ -447,7 +447,50 @@ class Battle::Battler
         maskName = GameData::Item.get(mask).name
         break
       end
-      pbSimpleFormChange(newForm, _INTL("{1}戴上了{2}！", pbThis, maskName))
+       pbSimpleFormChange(newForm, _INTL("{1}放在了{2}上!", pbThis, maskName))
+    end
+  end
+end
+
+#===============================================================================
+# Trainer battle call that has the player select a number of Pokemon for battle.
+#===============================================================================
+class TrainerBattle
+  def self.select_start(size, *args)
+	size = 1 if size < 1
+	size = Settings::MAX_PARTY_SIZE if size > Settings::MAX_PARTY_SIZE
+    gender = (args[0].is_a?(NPCTrainer)) ? args[0].gender : GameData::TrainerType.get(args[0]).gender
+	g = (gender == 0) ? "\\b" : (gender == 1) ? "\\r" : ""
+    if $player.able_pokemon_count < size
+      pbMessage(_INTL("#{g}你的队伍里能上场的宝可梦不够哦……"))
+      pbMessage(_INTL("#{g} 等带够宝可梦再来挑战吧！"))
+      return nil
+    else
+      new_party = nil
+      ruleset = PokemonRuleSet.new
+      ruleset.setNumber(size)
+      ruleset.addPokemonRule(AblePokemonRestriction.new)
+      pbFadeOutIn {
+        scene = PokemonParty_Scene.new
+        screen = PokemonPartyScreen.new(scene, $player.party)
+        new_party = screen.pbPokemonMultipleEntryScreenEx(ruleset)
+      }
+      if new_party
+        reserve = []
+        $player.party.each do |pkmn|
+          pID = pkmn.personalID
+          next if new_party.any? { |p| p.personalID == pID }
+          reserve.push(pkmn)
+        end
+        $player.party = new_party
+        outcome = TrainerBattle.start_core(*args)
+        $player.party += reserve
+        return outcome == 1
+      else
+	    pbMessage(_INTL("#{g}嗯？改变主意了吗？"))
+        pbMessage(_INTL("#{g}准备好合适的宝可梦再来吧。"))
+        return nil
+      end
     end
   end
 end
@@ -477,7 +520,7 @@ class Battle::AI
   
   def pbGetMoveScoreAgainstTarget
     if @trainer.has_skill_flag?("PredictMoveFailure") && pbPredictMoveFailureAgainstTarget
-      PBDebug.log("     move will not affect #{@target.name}")
+      PBDebug.log("招式没有效果 #{@target.name}")
       return -1
     end
     score = MOVE_BASE_SCORE
@@ -492,7 +535,7 @@ class Battle::AI
     target_data = @move.pbTarget(@user.battler)
     if pbShouldInvertScore?(target_data)
       if score == MOVE_USELESS_SCORE
-        PBDebug.log("     move is useless against #{@target.name}")
+        PBDebug.log("此招式对它没有任何效果。#{@target.name}")
         return -1
       end
       old_score = score

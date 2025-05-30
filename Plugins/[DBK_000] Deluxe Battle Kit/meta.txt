@@ -1,5 +1,5 @@
 Name       = Deluxe Battle Kit 
-Version    = 1.2.5
+Version    = 1.2.6
 Essentials = 21.1
 Requires   = v21.1 Hotfixes,1.0.9
 Optional   = Generation 9 Pack,3.3.0

@@ -206,7 +206,13 @@ class DeluxeBitmapWrapper
     @speed = @base_speed
   end
   
-  def finished?; return (@frame_idx >= @total_frames - 1); end
+    def finished?
+    if @reversed
+	  return (@frame_idx == 0)
+	else
+	  return (@frame_idx >= @total_frames - 1)
+	end
+  end
 
   #-----------------------------------------------------------------------------
   # Bitmap related utilities.
