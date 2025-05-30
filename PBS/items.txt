@@ -35,7 +35,7 @@ Price = 20
 FieldUse = Direct
 Flags = Fling_30
 Consumable = false
-Description = 以黑色玻璃制成的哨子。在使用的地方更容易遇到强大的宝可梦 。
+Description = 以黑色玻璃制成的哨子。在使用的地方更容易遇到强大的宝可梦。
 #-------------------------------
 [WHITEFLUTE]
 Name = 白色玻璃哨
@@ -45,7 +45,7 @@ Price = 20
 FieldUse = Direct
 Flags = Fling_30
 Consumable = false
-Description = 以白色玻璃制成的哨子。在使用的地方更容易遇到弱小的宝可梦 。
+Description = 以白色玻璃制成的哨子。在使用的地方更容易遇到弱小的宝可梦。
 #-------------------------------
 [HONEY]
 Name = 甜甜蜜
@@ -296,7 +296,7 @@ NamePlural = 贝壳化石
 Pocket = 1
 Price = 7000
 Flags = Fossil,Fling_100
-Description = 很久以前栖息在海里的古代宝可梦的化石。好像是贝壳的一部分 。
+Description = 很久以前栖息在海里的古代宝可梦的化石。好像是贝壳的一部分。
 #-------------------------------
 [DOMEFOSSIL]
 Name = 甲壳化石
@@ -304,7 +304,7 @@ NamePlural = 甲壳化石
 Pocket = 1
 Price = 7000
 Flags = Fossil,Fling_100
-Description = 很久以前栖息在海里的古代宝可梦的化石。好像是甲壳的一部分 。
+Description = 很久以前栖息在海里的古代宝可梦的化石。好像是甲壳的一部分。
 #-------------------------------
 [OLDAMBER]
 Name = 秘密琥珀
@@ -328,7 +328,7 @@ NamePlural = 爪子化石
 Pocket = 1
 Price = 7000
 Flags = Fossil,Fling_100
-Description = 很久以前栖息在海里的古代宝可梦的化石。好像是爪子的一部分 。
+Description = 很久以前栖息在海里的古代宝可梦的化石。好像是爪子的一部分。
 #-------------------------------
 [SKULLFOSSIL]
 Name = 头盖化石
@@ -336,7 +336,7 @@ NamePlural = 头盖化石
 Pocket = 1
 Price = 7000
 Flags = Fossil,Fling_100
-Description = 很久以前生活在地上的古代宝可梦的化石。好像是头部的一部分 。
+Description = 很久以前生活在地上的古代宝可梦的化石。好像是头部的一部分。
 #-------------------------------
 [ARMORFOSSIL]
 Name = 盾甲化石
@@ -344,7 +344,7 @@ NamePlural = 盾甲化石
 Pocket = 1
 Price = 7000
 Flags = Fossil,Fling_100
-Description = 很久以前生活在地上的古代宝可梦的化石。好像是领饰的一部分 。
+Description = 很久以前生活在地上的古代宝可梦的化石。好像是领饰的一部分。
 #-------------------------------
 [COVERFOSSIL]
 Name = 背盖化石
@@ -352,7 +352,7 @@ NamePlural = 背盖化石
 Pocket = 1
 Price = 7000
 Flags = Fossil,Fling_100
-Description = 很久以前栖息在海里的古代宝可梦的化石。好像是后背的一部分 。
+Description = 很久以前栖息在海里的古代宝可梦的化石。好像是后背的一部分。
 #-------------------------------
 [PLUMEFOSSIL]
 Name = 羽毛化石
@@ -376,7 +376,7 @@ NamePlural = 鳍之化石
 Pocket = 1
 Price = 7000
 Flags = Fossil,Fling_100
-Description = 很久以前生活在地上的古代宝可梦的化石。好像是头鳍的一部分 。
+Description = 很久以前生活在地上的古代宝可梦的化石。好像是头鳍的一部分。
 #-------------------------------
 [FOSSILIZEDBIRD]
 Name = 化石鸟
@@ -448,7 +448,7 @@ NamePlural = 珍珠
 Pocket = 1
 Price = 2000
 Flags = Fling_30
-Description = 散发着美丽银辉且有点小的珍珠 。可以在商店低价出售。
+Description = 散发着美丽银辉且有点小的珍珠。可以在商店低价出售。
 #-------------------------------
 [BIGPEARL]
 Name = 大珍珠
@@ -472,7 +472,7 @@ NamePlural = 星星沙子
 Pocket = 1
 Price = 3000
 Flags = Fling_30
-Description = 手感细腻且十分美丽的红色沙子 。可以在商店低价出售。
+Description = 手感细腻且十分美丽的红色沙子。可以在商店低价出售。
 #-------------------------------
 [STARPIECE]
 Name = 星星碎片
@@ -480,7 +480,7 @@ NamePlural = 星星碎片
 Pocket = 1
 Price = 12000
 Flags = Fling_30
-Description = 闪着红光且十分美丽的宝石碎片 。可以在商店高价出售。
+Description = 闪着红光且十分美丽的宝石碎片。可以在商店高价出售。
 #-------------------------------
 [COMETSHARD]
 Name = 彗星碎片
@@ -504,7 +504,7 @@ NamePlural = 巨大金珠
 Pocket = 1
 Price = 40000
 Flags = Fling_30
-Description = 以纯金制成，闪着金光的大珠子 。可以在商店高价出售。
+Description = 以纯金制成，闪着金光的大珠子。可以在商店高价出售。
 #-------------------------------
 [HEARTSCALE]
 Name = 心之鳞片
@@ -559,7 +559,7 @@ NamePlural = 古代之壶
 Pocket = 1
 Price = 0
 Flags = Fling_30
-Description = 约3000年前的文明制造的壶 。
+Description = 约3000年前的文明制造的壶。
 #-------------------------------
 [RELICBAND]
 Name = 古代手镯
@@ -591,7 +591,7 @@ NamePlural = 速速肥
 Pocket = 1
 Price = 200
 Flags = Mulch,Fling_30
-Description = 在培育树果的地方，也就是松软土壤上使用。爱好者会高价收购 。
+Description = 在培育树果的地方，也就是松软土壤上使用。爱好者会高价收购。
 #-------------------------------
 [DAMPMULCH]
 Name = 湿湿肥
@@ -599,7 +599,7 @@ NamePlural = 湿湿肥
 Pocket = 1
 Price = 200
 Flags = Mulch,Fling_30
-Description = 在培育树果的地方，也就是松软土壤上使用。爱好者会高价收购 。
+Description = 在培育树果的地方，也就是松软土壤上使用。爱好者会高价收购。
 #-------------------------------
 [STABLEMULCH]
 Name = 久久肥
@@ -607,7 +607,7 @@ NamePlural = 久久肥
 Pocket = 1
 Price = 200
 Flags = Mulch,Fling_30
-Description = 在培育树果的地方，也就是松软土壤上使用。爱好者会高价收购 。
+Description = 在培育树果的地方，也就是松软土壤上使用。爱好者会高价收购。
 #-------------------------------
 [GOOEYMULCH]
 Name = 粘粘肥
@@ -615,7 +615,7 @@ NamePlural = 粘粘肥
 Pocket = 1
 Price = 200
 Flags = Mulch,Fling_30
-Description = 在培育树果的地方，也就是松软土壤上使用。爱好者会高价收购 。
+Description = 在培育树果的地方，也就是松软土壤上使用。爱好者会高价收购。
 #-------------------------------
 [SHOALSALT]
 Name = 浅滩海盐
@@ -639,7 +639,7 @@ NamePlural = 楔石
 Pocket = 1
 Price = 2100
 Flags = Fling_80
-Description = 没有它，石之塔就会崩塌的重要石头。有时能从石头里听到声音 。
+Description = 没有它，石之塔就会崩塌的重要石头。有时能从石头里听到声音。
 #-------------------------------
 [REDNECTAR]
 Name = 朱红色花蜜
@@ -666,7 +666,7 @@ Pocket = 1
 Price = 300
 FieldUse = OnPokemon
 Flags = Fling_10
-Description = 在皇家大道的花园里获得的花蜜 。可以改变特定宝可梦的样子。
+Description = 在皇家大道的花园里获得的花蜜。可以改变特定宝可梦的样子。
 #-------------------------------
 [PURPLENECTAR]
 Name = 兰紫色花蜜
@@ -890,7 +890,7 @@ NamePlural = 炽热岩石
 Pocket = 1
 Price = 4000
 Flags = Fling_60
-Description = 携带它的宝可梦使出大晴天的话 ，晴天的时间就会比平时更长。
+Description = 携带它的宝可梦使出大晴天的话，晴天的时间就会比平时更长。
 #-------------------------------
 [DAMPROCK]
 Name = 潮湿岩石
@@ -938,7 +938,7 @@ NamePlural = 紧缠钩爪
 Pocket = 1
 Price = 4000
 Flags = Fling_90
-Description = 携带后，绑紧以及紧束等会持续造成伤害的招式的回合数会增加 。
+Description = 携带后，绑紧以及紧束等会持续造成伤害的招式的回合数会增加。
 #-------------------------------
 [BINDINGBAND]
 Name = 紧绑束带
@@ -947,7 +947,7 @@ Pocket = 1
 Price = 3000
 SellPrice = 2000
 Flags = Fling_30
-Description = 能增强绑紧招式的束带。携带后 ，绑紧招式的威力会变强。
+Description = 能增强绑紧招式的束带。携带后，绑紧招式的威力会变强。
 #-------------------------------
 [BIGROOT]
 Name = 大根茎
@@ -1012,7 +1012,7 @@ NamePlural = 球根
 Pocket = 1
 Price = 4000
 Flags = Fling_30
-Description = 一次性使用的球根。携带它的宝可梦如果受到水属性招式的攻击 ，特攻就会提高。
+Description = 一次性使用的球根。携带它的宝可梦如果受到水属性招式的攻击，特攻就会提高。
 #-------------------------------
 [CELLBATTERY]
 Name = 充电电池
@@ -1171,7 +1171,7 @@ NamePlural = 焦点镜
 Pocket = 1
 Price = 4000
 Flags = Fling_30
-Description = 能看见弱点的镜片。携带它的宝可梦的招式会变得容易击中要害 。
+Description = 能看见弱点的镜片。携带它的宝可梦的招式会变得容易击中要害。
 #-------------------------------
 [WIDELENS]
 Name = 广角镜
@@ -1179,7 +1179,7 @@ NamePlural = 广角镜
 Pocket = 1
 Price = 4000
 Flags = Fling_10
-Description = 能放大观看物体的镜片。携带后 ，招式的命中率就会少量提高。
+Description = 能放大观看物体的镜片。携带后，招式的命中率就会少量提高。
 #-------------------------------
 [ZOOMLENS]
 Name = 对焦镜
@@ -1195,7 +1195,7 @@ NamePlural = 王者之证
 Pocket = 1
 Price = 5000
 Flags = Fling_30
-Description = 携带后进行攻击，在造成伤害时 ，有时会让对手畏缩。
+Description = 携带后进行攻击，在造成伤害时，有时会让对手畏缩。
 #-------------------------------
 [RAZORFANG]
 Name = 锐利之牙
@@ -1254,7 +1254,7 @@ NamePlural = 剧毒宝珠
 Pocket = 1
 Price = 4000
 Flags = Fling_30
-Description = 触碰后会放出毒的神奇宝珠。携带后，在战斗时会变成剧毒状态 。
+Description = 触碰后会放出毒的神奇宝珠。携带后，在战斗时会变成剧毒状态。
 #-------------------------------
 [STICKYBARB]
 Name = 附着针
@@ -1343,7 +1343,7 @@ NamePlural = 悠闲薰香
 Pocket = 1
 Price = 5000
 Flags = Fling_10
-Description = 携带后，薰香的神奇香气会迷惑对手，其招式会变得不容易命中 。
+Description = 携带后，薰香的神奇香气会迷惑对手，其招式会变得不容易命中。
 #-------------------------------
 [FULLINCENSE]
 Name = 饱腹薰香
@@ -1351,7 +1351,7 @@ NamePlural = 饱腹薰香
 Pocket = 1
 Price = 5000
 Flags = Fling_10
-Description = 有着神奇香气的薰香。携带后， 宝可梦的行动会比平时更加迟缓 。
+Description = 有着神奇香气的薰香。携带后， 宝可梦的行动会比平时更加迟缓。
 #-------------------------------
 [LUCKINCENSE]
 Name = 幸运薰香
@@ -1399,7 +1399,7 @@ NamePlural = 奇异薰香
 Pocket = 1
 Price = 2000
 Flags = Fling_10
-Description = 有着神奇香气的薰香。携带后， 超能力属性的招式威力就会提高 。
+Description = 有着神奇香气的薰香。携带后， 超能力属性的招式威力就会提高。
 #-------------------------------
 [ROCKINCENSE]
 Name = 岩石薰香
@@ -1506,7 +1506,7 @@ Pocket = 1
 Price = 3000
 SellPrice = 500
 Flags = Fling_10
-Description = 散发着银色光辉的粉末。携带后 ，虫属性的招式威力就会提高。
+Description = 散发着银色光辉的粉末。携带后，虫属性的招式威力就会提高。
 #-------------------------------
 [HARDSTONE]
 Name = 硬石头
@@ -1873,7 +1873,7 @@ NamePlural = 吉利拳
 Pocket = 1
 Price = 1000
 Flags = Fling_40
-Description = 能带来幸运的拳套。让吉利蛋携带后，招式会变得容易击中要害 。
+Description = 能带来幸运的拳套。让吉利蛋携带后，招式会变得容易击中要害。
 #-------------------------------
 [METALPOWDER]
 Name = 金属粉
@@ -1897,7 +1897,7 @@ NamePlural = 粗骨头
 Pocket = 1
 Price = 1000
 Flags = Fling_90
-Description = 某种坚硬的骨头。让卡拉卡拉或嘎啦嘎啦携带后，攻击就会提高 。
+Description = 某种坚硬的骨头。让卡拉卡拉或嘎啦嘎啦携带后，攻击就会提高。
 #-------------------------------
 [LEEK]
 Name = 大葱
@@ -1905,7 +1905,7 @@ NamePlural = 大葱
 Pocket = 1
 Price = 1000
 Flags = Fling_60
-Description = 非常长且坚硬的茎。让大葱鸭携带后，招式会变得容易击中要害 。
+Description = 非常长且坚硬的茎。让大葱鸭携带后，招式会变得容易击中要害。
 #-------------------------------
 [SOULDEW]
 Name = 心之水滴
@@ -2164,7 +2164,7 @@ Pocket = 1
 Price = 3000
 SellPrice = 1000
 Flags = Fling_30
-Description = 内部储存了各种信息的透明机器 。西尔佛公司制造。
+Description = 内部储存了各种信息的透明机器。西尔佛公司制造。
 #-------------------------------
 [DUBIOUSDISC]
 Name = 可疑补丁
@@ -2173,7 +2173,7 @@ Pocket = 1
 Price = 3000
 SellPrice = 1000
 Flags = Fling_50
-Description = 内部储存了奇怪信息的透明机器 。制造者不明。
+Description = 内部储存了奇怪信息的透明机器。制造者不明。
 #-------------------------------
 [PROTECTOR]
 Name = 护具
@@ -2245,7 +2245,7 @@ Pocket = 1
 Price = 3000
 SellPrice = 1000
 Flags = Fling_80
-Description = 装着散发微浓香气的香料的袋子 。某种宝可梦很喜欢它。
+Description = 装着散发微浓香气的香料的袋子。某种宝可梦很喜欢它。
 #-------------------------------
 [STRAWBERRYSWEET]
 Name = 草莓糖饰
@@ -2309,7 +2309,7 @@ NamePlural = 妙蛙花进化石
 Pocket = 1
 Price = 0
 Flags = MegaStone,Fling_80
-Description = 让妙蛙花携带后，在战斗时就能进行超级进化的一种神奇超级石 。
+Description = 让妙蛙花携带后，在战斗时就能进行超级进化的一种神奇超级石。
 #-------------------------------
 [CHARIZARDITEX]
 Name = 喷火龙进化石Ｘ
@@ -2317,7 +2317,7 @@ NamePlural = 喷火龙进化石Ｘ
 Pocket = 1
 Price = 0
 Flags = MegaStone,Fling_80
-Description = 让喷火龙携带后，在战斗时就能进行超级进化的一种神奇超级石 。
+Description = 让喷火龙携带后，在战斗时就能进行超级进化的一种神奇超级石。
 #-------------------------------
 [CHARIZARDITEY]
 Name = 喷火龙进化石Ｙ
@@ -2325,7 +2325,7 @@ NamePlural = 喷火龙进化石Ｙ
 Pocket = 1
 Price = 0
 Flags = MegaStone,Fling_80
-Description = 让喷火龙携带后，在战斗时就能进行超级进化的一种神奇超级石 。
+Description = 让喷火龙携带后，在战斗时就能进行超级进化的一种神奇超级石。
 #-------------------------------
 [BLASTOISINITE]
 Name = 水箭龟进化石
@@ -2333,7 +2333,7 @@ NamePlural = 水箭龟进化石
 Pocket = 1
 Price = 0
 Flags = MegaStone,Fling_80
-Description = 让水箭龟携带后，在战斗时就能进行超级进化的一种神奇超级石 。
+Description = 让水箭龟携带后，在战斗时就能进行超级进化的一种神奇超级石。
 #-------------------------------
 [BEEDRILLITE]
 Name = 大针蜂进化石
@@ -2349,7 +2349,7 @@ NamePlural = 大比鸟进化石
 Pocket = 1
 Price = 0
 Flags = MegaStone,Fling_80
-Description = 让大比鸟携带后，在战斗时就能进行超级进化的一种神奇超级石 。
+Description = 让大比鸟携带后，在战斗时就能进行超级进化的一种神奇超级石。
 #-------------------------------
 [ALAKAZITE]
 Name = 胡地进化石
@@ -2365,7 +2365,7 @@ NamePlural = 呆壳兽进化石
 Pocket = 1
 Price = 0
 Flags = MegaStone,Fling_80
-Description = 让呆壳兽携带后，在战斗时就能进行超级进化的一种神奇超级石 。
+Description = 让呆壳兽携带后，在战斗时就能进行超级进化的一种神奇超级石。
 #-------------------------------
 [GENGARITE]
 Name = 耿鬼进化石
@@ -2389,7 +2389,7 @@ NamePlural = 凯罗斯进化石
 Pocket = 1
 Price = 0
 Flags = MegaStone,Fling_80
-Description = 让凯罗斯携带后，在战斗时就能进行超级进化的一种神奇超级石 。
+Description = 让凯罗斯携带后，在战斗时就能进行超级进化的一种神奇超级石。
 #-------------------------------
 [GYARADOSITE]
 Name = 暴鲤龙进化石
@@ -2397,7 +2397,7 @@ NamePlural = 暴鲤龙进化石
 Pocket = 1
 Price = 0
 Flags = MegaStone,Fling_80
-Description = 让暴鲤龙携带后，在战斗时就能进行超级进化的一种神奇超级石 。
+Description = 让暴鲤龙携带后，在战斗时就能进行超级进化的一种神奇超级石。
 #-------------------------------
 [AERODACTYLITE]
 Name = 化石翼龙进化石
@@ -2437,7 +2437,7 @@ NamePlural = 大钢蛇进化石
 Pocket = 1
 Price = 0
 Flags = MegaStone,Fling_80
-Description = 让大钢蛇携带后，在战斗时就能进行超级进化的一种神奇超级石 。
+Description = 让大钢蛇携带后，在战斗时就能进行超级进化的一种神奇超级石。
 #-------------------------------
 [SCIZORITE]
 Name = 巨钳螳螂进化石
@@ -2461,7 +2461,7 @@ NamePlural = 黑鲁加进化石
 Pocket = 1
 Price = 0
 Flags = MegaStone,Fling_80
-Description = 让黑鲁加携带后，在战斗时就能进行超级进化的一种神奇超级石 。
+Description = 让黑鲁加携带后，在战斗时就能进行超级进化的一种神奇超级石。
 #-------------------------------
 [TYRANITARITE]
 Name = 班基拉斯进化石
@@ -2477,7 +2477,7 @@ NamePlural = 蜥蜴王进化石
 Pocket = 1
 Price = 0
 Flags = MegaStone,Fling_80
-Description = 让蜥蜴王携带后，在战斗时就能进行超级进化的一种神奇超级石 。
+Description = 让蜥蜴王携带后，在战斗时就能进行超级进化的一种神奇超级石。
 #-------------------------------
 [BLAZIKENITE]
 Name = 火焰鸡进化石
@@ -2485,7 +2485,7 @@ NamePlural = 火焰鸡进化石
 Pocket = 1
 Price = 0
 Flags = MegaStone,Fling_80
-Description = 让火焰鸡携带后，在战斗时就能进行超级进化的一种神奇超级石 。
+Description = 让火焰鸡携带后，在战斗时就能进行超级进化的一种神奇超级石。
 #-------------------------------
 [SWAMPERTITE]
 Name = 巨沼怪进化石
@@ -2493,7 +2493,7 @@ NamePlural = 巨沼怪进化石
 Pocket = 1
 Price = 0
 Flags = MegaStone,Fling_80
-Description = 让巨沼怪携带后，在战斗时就能进行超级进化的一种神奇超级石 。
+Description = 让巨沼怪携带后，在战斗时就能进行超级进化的一种神奇超级石。
 #-------------------------------
 [GARDEVOIRITE]
 Name = 沙奈朵进化石
@@ -2501,7 +2501,7 @@ NamePlural = 沙奈朵进化石
 Pocket = 1
 Price = 0
 Flags = MegaStone,Fling_80
-Description = 让沙奈朵携带后，在战斗时就能进行超级进化的一种神奇超级石 。
+Description = 让沙奈朵携带后，在战斗时就能进行超级进化的一种神奇超级石。
 #-------------------------------
 [SABLENITE]
 Name = 勾魂眼进化石
@@ -2509,7 +2509,7 @@ NamePlural = 勾魂眼进化石
 Pocket = 1
 Price = 0
 Flags = MegaStone,Fling_80
-Description = 让勾魂眼携带后，在战斗时就能进行超级进化的一种神奇超级石 。
+Description = 让勾魂眼携带后，在战斗时就能进行超级进化的一种神奇超级石。
 #-------------------------------
 [MAWILITE]
 Name = 大嘴娃进化石
@@ -2517,7 +2517,7 @@ NamePlural = 大嘴娃进化石
 Pocket = 1
 Price = 0
 Flags = MegaStone,Fling_80
-Description = 让大嘴娃携带后，在战斗时就能进行超级进化的一种神奇超级石 。
+Description = 让大嘴娃携带后，在战斗时就能进行超级进化的一种神奇超级石。
 #-------------------------------
 [AGGRONITE]
 Name = 波士可多拉进化石
@@ -2533,7 +2533,7 @@ NamePlural = 恰雷姆进化石
 Pocket = 1
 Price = 0
 Flags = MegaStone,Fling_80
-Description = 让恰雷姆携带后，在战斗时就能进行超级进化的一种神奇超级石 。
+Description = 让恰雷姆携带后，在战斗时就能进行超级进化的一种神奇超级石。
 #-------------------------------
 [MANECTITE]
 Name = 雷电兽进化石
@@ -2541,7 +2541,7 @@ NamePlural = 雷电兽进化石
 Pocket = 1
 Price = 0
 Flags = MegaStone,Fling_80
-Description = 让雷电兽携带后，在战斗时就能进行超级进化的一种神奇超级石 。
+Description = 让雷电兽携带后，在战斗时就能进行超级进化的一种神奇超级石。
 #-------------------------------
 [SHARPEDONITE]
 Name = 巨牙鲨进化石
@@ -2549,7 +2549,7 @@ NamePlural = 巨牙鲨进化石
 Pocket = 1
 Price = 0
 Flags = MegaStone,Fling_80
-Description = 让巨牙鲨携带后，在战斗时就能进行超级进化的一种神奇超级石 。
+Description = 让巨牙鲨携带后，在战斗时就能进行超级进化的一种神奇超级石。
 #-------------------------------
 [CAMERUPTITE]
 Name = 喷火驼进化石
@@ -2589,7 +2589,7 @@ NamePlural = 冰鬼护进化石
 Pocket = 1
 Price = 0
 Flags = MegaStone,Fling_80
-Description = 让冰鬼护携带后，在战斗时就能进行超级进化的一种神奇超级石 。
+Description = 让冰鬼护携带后，在战斗时就能进行超级进化的一种神奇超级石。
 #-------------------------------
 [SALAMENCITE]
 Name = 暴飞龙进化石
@@ -2605,7 +2605,7 @@ NamePlural = 巨金怪进化石
 Pocket = 1
 Price = 0
 Flags = MegaStone,Fling_80
-Description = 让巨金怪携带后，在战斗时就能进行超级进化的一种神奇超级石 。
+Description = 让巨金怪携带后，在战斗时就能进行超级进化的一种神奇超级石。
 #-------------------------------
 [LATIASITE]
 Name = 拉帝亚斯进化石
@@ -2653,7 +2653,7 @@ NamePlural = 暴雪王进化石
 Pocket = 1
 Price = 0
 Flags = MegaStone,Fling_80
-Description = 让暴雪王携带后，在战斗时就能进行超级进化的一种神奇超级石 。
+Description = 让暴雪王携带后，在战斗时就能进行超级进化的一种神奇超级石。
 #-------------------------------
 [GALLADITE]
 Name = 艾路雷朵进化石
@@ -2677,7 +2677,7 @@ NamePlural = 蒂安希进化石
 Pocket = 1
 Price = 0
 Flags = MegaStone,Fling_80
-Description = 让蒂安希携带后，在战斗时就能进行超级进化的一种神奇超级石 。
+Description = 让蒂安希携带后，在战斗时就能进行超级进化的一种神奇超级石。
 #-------------------------------
 [REDORB]
 Name = 朱红色宝珠
@@ -2872,7 +2872,7 @@ Price = 350
 FieldUse = OnPokemon
 BattleUse = OnPokemon
 Flags = Fling_30
-Description = 在密阿雷市很受欢迎的点心。能治愈1只宝可梦的所有异常状态 。
+Description = 在密阿雷市很受欢迎的点心。能治愈1只宝可梦的所有异常状态。
 #-------------------------------
 [SHALOURSABLE]
 Name = 娑罗沙布蕾
@@ -3198,7 +3198,7 @@ Pocket = 2
 Price = 20
 FieldUse = OnPokemon
 Flags = Fling_10
-Description = 宝可梦闻了这种薄荷之后，攻击会易于提高，而防御则难以提高 。
+Description = 宝可梦闻了这种薄荷之后，攻击会易于提高，而防御则难以提高。
 #-------------------------------
 [ADAMANTMINT]
 Name = 固执薄荷
@@ -3207,7 +3207,7 @@ Pocket = 2
 Price = 20
 FieldUse = OnPokemon
 Flags = Fling_10
-Description = 宝可梦闻了这种薄荷之后，攻击会易于提高，而特攻则难以提高 。
+Description = 宝可梦闻了这种薄荷之后，攻击会易于提高，而特攻则难以提高。
 #-------------------------------
 [NAUGHTYMINT]
 Name = 顽皮薄荷
@@ -3378,7 +3378,7 @@ Pocket = 2
 Price = 20
 FieldUse = OnPokemon
 Flags = Fling_10
-Description = 宝可梦闻了这种薄荷之后，攻击 、防御、速度、特防、特攻能全方位提高。
+Description = 宝可梦闻了这种薄荷之后，攻击、防御、速度、特防、特攻能全方位提高。
 #-------------------------------
 [ABILITYCAPSULE]
 Name = 特性胶囊
@@ -3386,7 +3386,7 @@ NamePlural = 特性胶囊
 Pocket = 2
 Price = 10000
 FieldUse = OnPokemon
-Description = 如果用于有着2种特性的宝可梦 ，就能令其现有特性变为另一种的胶囊。
+Description = 如果用于有着2种特性的宝可梦，就能令其现有特性变为另一种的胶囊。
 #-------------------------------
 [ABILITYPATCH]
 Name = 特性膏药
@@ -3412,7 +3412,7 @@ Pocket = 2
 Price = 240
 FieldUse = OnPokemon
 Flags = Fling_30
-Description = 充满能量的糖果。交给1只宝可梦后，可以为它增加少许经验值 。
+Description = 充满能量的糖果。交给1只宝可梦后，可以为它增加少许经验值。
 #-------------------------------
 [EXPCANDYM]
 Name = 经验糖果Ｍ
@@ -3430,7 +3430,7 @@ Pocket = 2
 Price = 3000
 FieldUse = OnPokemon
 Flags = Fling_30
-Description = 充满能量的糖果。交给1只宝可梦后，可以为它增加许多经验值 。
+Description = 充满能量的糖果。交给1只宝可梦后，可以为它增加许多经验值。
 #-------------------------------
 [EXPCANDYXL]
 Name = 经验糖果ＸＬ
@@ -3439,7 +3439,7 @@ Pocket = 2
 Price = 10000
 FieldUse = OnPokemon
 Flags = Fling_30
-Description = 充满能量的糖果。交给1只宝可梦后，可以为它增加大量经验值 。
+Description = 充满能量的糖果。交给1只宝可梦后，可以为它增加大量经验值。
 #-------------------------------
 [RARECANDY]
 Name = 神奇糖果
@@ -3547,7 +3547,7 @@ Pocket = 3
 Price = 1000
 BattleUse = OnFoe
 Flags = PokeBall
-Description = 有点与众不同的球。回合数花费得越多，宝可梦就会越容易捕捉 。
+Description = 有点与众不同的球。回合数花费得越多，宝可梦就会越容易捕捉。
 #-------------------------------
 [LUXURYBALL]
 Name = 豪华球
@@ -3556,7 +3556,7 @@ Pocket = 3
 Price = 3000
 BattleUse = OnFoe
 Flags = PokeBall
-Description = 住着十分惬意的球。捉到的野生宝可梦会变得容易和训练家亲密 。
+Description = 住着十分惬意的球。捉到的野生宝可梦会变得容易和训练家亲密。
 #-------------------------------
 [PREMIERBALL]
 Name = 纪念球
@@ -3703,7 +3703,7 @@ Price = 3000
 FieldUse = TR
 Flags = Fling_80
 Move = DRAGONCLAW
-Description = 用尖锐的巨爪劈开对手进行攻击 。
+Description = 用尖锐的巨爪劈开对手进行攻击。
 #-------------------------------
 [TM03]
 Name = TM03
@@ -3773,7 +3773,7 @@ Price = 2000
 FieldUse = TR
 Flags = Fling_25
 Move = BULLETSEED
-Description = 向对手猛烈地发射种子进行攻击 。连续攻击2～5次。
+Description = 向对手猛烈地发射种子进行攻击。连续攻击2～5次。
 #-------------------------------
 [TM10]
 Name = TM10
@@ -3793,7 +3793,7 @@ Price = 2000
 FieldUse = TR
 Flags = Fling_10
 Move = SUNNYDAY
-Description = 在5回合内阳光变得强烈，从而提高火属性的招式威力。水属性的招式威力则降低 。
+Description = 在5回合内阳光变得强烈，从而提高火属性的招式威力。水属性的招式威力则降低。
 #-------------------------------
 [TM12]
 Name = TM12
@@ -3823,7 +3823,7 @@ Price = 5500
 FieldUse = TR
 Flags = Fling_110
 Move = BLIZZARD
-Description = 猛烈地刮起飞雪般的落花，攻击周围所有的宝可梦，并给予伤害 。
+Description = 猛烈地刮起飞雪般的落花，攻击周围所有的宝可梦，并给予伤害。
 #-------------------------------
 [TM15]
 Name = TM15
@@ -3833,7 +3833,7 @@ Price = 7500
 FieldUse = TR
 Flags = Fling_150
 Move = HYPERBEAM
-Description = 向对手发射强烈的光线进行攻击 。下一回合自己将无法动弹。
+Description = 向对手发射强烈的光线进行攻击。下一回合自己将无法动弹。
 #-------------------------------
 [TM16]
 Name = TM16
@@ -3843,7 +3843,7 @@ Price = 2000
 FieldUse = TR
 Flags = Fling_10
 Move = LIGHTSCREEN
-Description = 在5回合内使用神奇的墙，减弱从对手那受到的特殊攻击的伤害 。
+Description = 在5回合内使用神奇的墙，减弱从对手那受到的特殊攻击的伤害。
 #-------------------------------
 [TM17]
 Name = TM17
@@ -3863,7 +3863,7 @@ Price = 2000
 FieldUse = TR
 Flags = Fling_10
 Move = RAINDANCE
-Description = 在5回合内一直降雨 ，从而提高水属性的招式威力。火属性的招式威力则降低。
+Description = 在5回合内一直降雨，从而提高水属性的招式威力。火属性的招式威力则降低。
 #-------------------------------
 [TM19]
 Name = TM19
@@ -3973,7 +3973,7 @@ Price = 3000
 FieldUse = TR
 Flags = Fling_90
 Move = PSYCHIC
-Description = 向对手发送强大的念力进行攻击 。有时会降低对手的特防。
+Description = 向对手发送强大的念力进行攻击。有时会降低对手的特防。
 #-------------------------------
 [TM30]
 Name = TM30
@@ -4013,7 +4013,7 @@ Price = 2000
 FieldUse = TR
 Flags = Fling_10
 Move = REFLECT
-Description = 在5回合内使用神奇的墙，减弱从对手那受到的物理攻击的伤害 。
+Description = 在5回合内使用神奇的墙，减弱从对手那受到的物理攻击的伤害。
 #-------------------------------
 [TM34]
 Name = TM34
@@ -4023,7 +4023,7 @@ Price = 3000
 FieldUse = TR
 Flags = Fling_60
 Move = SHOCKWAVE
-Description = 向对手快速发出电击 。攻击必定会命中。
+Description = 向对手快速发出电击。攻击必定会命中。
 #-------------------------------
 [TM35]
 Name = TM35
@@ -4113,7 +4113,7 @@ Price = 3000
 FieldUse = TR
 Flags = Fling_70
 Move = VOLTSWITCH
-Description = 在攻击之后急速返回 ，和后备宝可梦进行替换。
+Description = 在攻击之后急速返回，和后备宝可梦进行替换。
 #-------------------------------
 [TM44]
 Name = TM44
@@ -4153,7 +4153,7 @@ Price = 3000
 FieldUse = TR
 Flags = Fling_70
 Move = STEELWING
-Description = 用坚硬的翅膀敲打对手进行攻击 。有时会提高自己的防御。
+Description = 用坚硬的翅膀敲打对手进行攻击。有时会提高自己的防御。
 #-------------------------------
 [TM48]
 Name = TM48
@@ -4233,7 +4233,7 @@ Price = 3000
 FieldUse = TR
 Flags = Fling_65
 Move = BRINE
-Description = 当对手的HP负伤到一半左右时 ，招式威力会变成倍。
+Description = 当对手的HP负伤到一半左右时，招式威力会变成倍。
 #-------------------------------
 [TM56]
 Name = TM56
@@ -4323,7 +4323,7 @@ Price = 7500
 FieldUse = TR
 Flags = Fling_250
 Move = EXPLOSION
-Description = 对自己周围的所有宝可梦进行攻击，但使出后，自己会陷入濒死 。在薄雾场地上，招式威力会提高。
+Description = 对自己周围的所有宝可梦进行攻击，但使出后，自己会陷入濒死。在薄雾场地上，招式威力会提高。
 #-------------------------------
 [TM65]
 Name = TM65
@@ -4373,7 +4373,7 @@ Price = 1500
 FieldUse = TR
 Flags = Fling_10
 Move = ROCKPOLISH
-Description = 打磨自己的身体，减少空气阻力 。可以大幅提高自己的速度。
+Description = 打磨自己的身体，减少空气阻力。可以大幅提高自己的速度。
 #-------------------------------
 [TM70]
 Name = TM70
@@ -4383,7 +4383,7 @@ Price = 3000
 FieldUse = TR
 Flags = Fling_100
 Move = STONEEDGE
-Description = 用尖尖的岩石刺入对手进行攻击 。容易击中要害。
+Description = 用尖尖的岩石刺入对手进行攻击。容易击中要害。
 #-------------------------------
 [TM71]
 Name = TM71
@@ -4453,7 +4453,7 @@ Price = 3000
 FieldUse = TR
 Flags = Fling_55
 Move = SNARL
-Description = 没完没了地大声斥责 ，从而降低对手的特攻。
+Description = 没完没了地大声斥责，从而降低对手的特攻。
 #-------------------------------
 [TM78]
 Name = TM78
@@ -4463,7 +4463,7 @@ Price = 3000
 FieldUse = TR
 Flags = Fling_80
 Move = DARKPULSE
-Description = 从体内发出充满恶意的恐怖气场 。有时会使对手畏缩。
+Description = 从体内发出充满恶意的恐怖气场。有时会使对手畏缩。
 #-------------------------------
 [TM79]
 Name = TM79
@@ -4533,7 +4533,7 @@ Price = 3000
 FieldUse = TR
 Flags = Fling_10
 Move = GRASSKNOT
-Description = 用草缠住并绊倒对手。对手越重 ，威力越大。
+Description = 用草缠住并绊倒对手。对手越重，威力越大。
 #-------------------------------
 [TM86]
 Name = TM86
@@ -4543,7 +4543,7 @@ Price = 1500
 FieldUse = TR
 Flags = Fling_10
 Move = SWAGGER
-Description = 激怒对手，使其混乱。因为愤怒 ，对手的攻击会大幅提高。
+Description = 激怒对手，使其混乱。因为愤怒，对手的攻击会大幅提高。
 #-------------------------------
 [TM87]
 Name = TM87
@@ -4573,7 +4573,7 @@ Price = 2000
 FieldUse = TR
 Flags = Fling_10
 Move = SUBSTITUTE
-Description = 削减少许自己的HP，制造分身 。分身将成为自己的替身。
+Description = 削减少许自己的HP，制造分身。分身将成为自己的替身。
 #-------------------------------
 [TM90]
 Name = TM90
@@ -4642,7 +4642,7 @@ Pocket = 4
 Price = 0
 FieldUse = HM
 Move = STRENGTH
-Description = 使出浑身力气殴打对手进行攻击 。
+Description = 使出浑身力气殴打对手进行攻击。
 #-------------------------------
 [HM05]
 Name = HM05
@@ -4697,7 +4697,7 @@ Price = 20
 FieldUse = OnPokemon
 BattleUse = OnPokemon
 Flags = Berry,Fling_10,NaturalGift_FIRE_80
-Description = 让宝可梦携带后，可以治愈麻痹 。
+Description = 让宝可梦携带后，可以治愈麻痹。
 #-------------------------------
 [CHESTOBERRY]
 Name = 零余果
@@ -4707,7 +4707,7 @@ Price = 20
 FieldUse = OnPokemon
 BattleUse = OnPokemon
 Flags = Berry,Fling_10,NaturalGift_WATER_80
-Description = 让宝可梦携带后，可以治愈睡眠 。
+Description = 让宝可梦携带后，可以治愈睡眠。
 #-------------------------------
 [PECHABERRY]
 Name = 桃桃果
@@ -4717,7 +4717,7 @@ Price = 20
 FieldUse = OnPokemon
 BattleUse = OnPokemon
 Flags = Berry,Fling_10,NaturalGift_ELECTRIC_80
-Description = 让宝可梦携带后，可以治愈中毒 。
+Description = 让宝可梦携带后，可以治愈中毒。
 #-------------------------------
 [RAWSTBERRY]
 Name = 莓莓果
@@ -4727,7 +4727,7 @@ Price = 20
 FieldUse = OnPokemon
 BattleUse = OnPokemon
 Flags = Berry,Fling_10,NaturalGift_GRASS_80
-Description = 让宝可梦携带后，可以治愈灼伤 。
+Description = 让宝可梦携带后，可以治愈灼伤。
 #-------------------------------
 [ASPEARBERRY]
 Name = 利木果
@@ -4737,7 +4737,7 @@ Price = 20
 FieldUse = OnPokemon
 BattleUse = OnPokemon
 Flags = Berry,Fling_10,NaturalGift_ICE_80
-Description = 让宝可梦携带后，可以治愈冰冻 。
+Description = 让宝可梦携带后，可以治愈冰冻。
 #-------------------------------
 [LEPPABERRY]
 Name = 苹野果
@@ -4766,7 +4766,7 @@ Pocket = 5
 Price = 20
 BattleUse = OnBattler
 Flags = Berry,Fling_10,NaturalGift_GROUND_80
-Description = 让宝可梦携带后，可以治愈混乱 。
+Description = 让宝可梦携带后，可以治愈混乱。
 #-------------------------------
 [LUMBERRY]
 Name = 木子果
@@ -5128,7 +5128,7 @@ NamePlural = 洛玫果
 Pocket = 5
 Price = 20
 Flags = Berry,Fling_10,NaturalGift_FAIRY_80
-Description = 让宝可梦携带后，在受到一般属性招式攻击时，能令其威力减弱 。
+Description = 让宝可梦携带后，在受到一般属性招式攻击时，能令其威力减弱。
 #-------------------------------
 [CHILANBERRY]
 Name = 灯浆果
@@ -5136,7 +5136,7 @@ NamePlural = 灯浆果
 Pocket = 5
 Price = 20
 Flags = Berry,Fling_10,NaturalGift_NORMAL_80
-Description = 让宝可梦携带后，在受到一般属性招式攻击时，能令其威力减弱 。
+Description = 让宝可梦携带后，在受到一般属性招式攻击时，能令其威力减弱。
 #-------------------------------
 [LIECHIBERRY]
 Name = 枝荔果
@@ -5240,7 +5240,7 @@ NamePlural = 亚开果
 Pocket = 5
 Price = 20
 Flags = Berry,Fling_10,NaturalGift_FAIRY_100
-Description = 让宝可梦携带后，在受到物理招式攻击时，自己的防御就会提高 。
+Description = 让宝可梦携带后，在受到物理招式攻击时，自己的防御就会提高。
 #-------------------------------
 [MARANGABERRY]
 Name = 香罗果
@@ -5248,7 +5248,7 @@ NamePlural = 香罗果
 Pocket = 5
 Price = 20
 Flags = Berry,Fling_10,NaturalGift_DARK_100
-Description = 让宝可梦携带后，在受到特殊招式攻击时，自己的特防就会提高 。
+Description = 让宝可梦携带后，在受到特殊招式攻击时，自己的特防就会提高。
 #-------------------------------
 [GRASSMAIL]
 Name = 青草邮件
@@ -5280,7 +5280,7 @@ NamePlural = 绽放邮件
 Pocket = 6
 Price = 50
 Flags = IconMail
-Description = 印有漂亮的花卉图案的特殊信纸 。使用该道具时，需要让宝可梦携带着来用。
+Description = 印有漂亮的花卉图案的特殊信纸。使用该道具时，需要让宝可梦携带着来用。
 #-------------------------------
 [TUNNELMAIL]
 Name = 隧道邮件
@@ -5296,7 +5296,7 @@ NamePlural = 钢铁邮件
 Pocket = 6
 Price = 50
 Flags = IconMail
-Description = 印有很酷的机械设计的特殊信纸 。使用该道具时，需要让宝可梦携带着来用。
+Description = 印有很酷的机械设计的特殊信纸。使用该道具时，需要让宝可梦携带着来用。
 #-------------------------------
 [HEARTMAIL]
 Name = 甜蜜邮件
@@ -5362,7 +5362,7 @@ Pocket = 7
 Price = 0
 BattleUse = OnBattler
 Flags = Fling_30
-Description = 能相对提高战斗中宝可梦的攻击 。离场后，效果便会消失。
+Description = 能相对提高战斗中宝可梦的攻击。离场后，效果便会消失。
 #-------------------------------
 [XATTACK3]
 Name = 力量强化3
@@ -5371,7 +5371,7 @@ Pocket = 7
 Price = 0
 BattleUse = OnBattler
 Flags = Fling_30
-Description = 能大量提高战斗中宝可梦的攻击 。离场后，效果便会消失。
+Description = 能大量提高战斗中宝可梦的攻击。离场后，效果便会消失。
 #-------------------------------
 [XATTACK6]
 Name = 力量强化6
@@ -5380,7 +5380,7 @@ Pocket = 7
 Price = 0
 BattleUse = OnBattler
 Flags = Fling_30
-Description = 能极大提高战斗中宝可梦的攻击 。离场后，效果便会消失。
+Description = 能极大提高战斗中宝可梦的攻击。离场后，效果便会消失。
 #-------------------------------
 [XDEFENSE]
 Name = 防御强化
@@ -5398,7 +5398,7 @@ Pocket = 7
 Price = 0
 BattleUse = OnBattler
 Flags = Fling_30
-Description = 能相对提高战斗中宝可梦的防御 。离场后，效果便会消失。
+Description = 能相对提高战斗中宝可梦的防御。离场后，效果便会消失。
 #-------------------------------
 [XDEFENSE3]
 Name = 防御强化3
@@ -5407,7 +5407,7 @@ Pocket = 7
 Price = 0
 BattleUse = OnBattler
 Flags = Fling_30
-Description = 能大量提高战斗中宝可梦的防御 。离场后，效果便会消失。
+Description = 能大量提高战斗中宝可梦的防御。离场后，效果便会消失。
 #-------------------------------
 [XDEFENSE6]
 Name = 防御强化6
@@ -5416,7 +5416,7 @@ Pocket = 7
 Price = 0
 BattleUse = OnBattler
 Flags = Fling_30
-Description = 能极大提高战斗中宝可梦的防御 。离场后，效果便会消失。
+Description = 能极大提高战斗中宝可梦的防御。离场后，效果便会消失。
 #-------------------------------
 [XSPATK]
 Name = 特攻强化
@@ -5434,7 +5434,7 @@ Pocket = 7
 Price = 0
 BattleUse = OnBattler
 Flags = Fling_30
-Description = 能相对提高战斗中宝可梦的特攻 。离场后，效果便会消失。
+Description = 能相对提高战斗中宝可梦的特攻。离场后，效果便会消失。
 #-------------------------------
 [XSPATK3]
 Name = 特攻强化3
@@ -5443,7 +5443,7 @@ Pocket = 7
 Price = 0
 BattleUse = OnBattler
 Flags = Fling_30
-Description = 能大量提高战斗中宝可梦的特攻 。离场后，效果便会消失。
+Description = 能大量提高战斗中宝可梦的特攻。离场后，效果便会消失。
 #-------------------------------
 [XSPATK6]
 Name = 特攻强化6
@@ -5452,7 +5452,7 @@ Pocket = 7
 Price = 0
 BattleUse = OnBattler
 Flags = Fling_30
-Description = 能极大提高战斗中宝可梦的特攻 。离场后，效果便会消失。
+Description = 能极大提高战斗中宝可梦的特攻。离场后，效果便会消失。
 #-------------------------------
 [XSPDEF]
 Name = 特防强化
@@ -5470,7 +5470,7 @@ Pocket = 7
 Price = 0
 BattleUse = OnBattler
 Flags = Fling_30
-Description = 能相对提高战斗中宝可梦的特防 。离场后，效果便会消失。
+Description = 能相对提高战斗中宝可梦的特防。离场后，效果便会消失。
 #-------------------------------
 [XSPDEF3]
 Name = 特防强化3
@@ -5479,7 +5479,7 @@ Pocket = 7
 Price = 0
 BattleUse = OnBattler
 Flags = Fling_30
-Description = 能大量提高战斗中宝可梦的特防 。离场后，效果便会消失。
+Description = 能大量提高战斗中宝可梦的特防。离场后，效果便会消失。
 #-------------------------------
 [XSPDEF6]
 Name = 特防强化6
@@ -5488,7 +5488,7 @@ Pocket = 7
 Price = 0
 BattleUse = OnBattler
 Flags = Fling_30
-Description = 能极大提高战斗中宝可梦的特防 。离场后，效果便会消失。
+Description = 能极大提高战斗中宝可梦的特防。离场后，效果便会消失。
 #-------------------------------
 [XSPEED]
 Name = 速度强化
@@ -5506,7 +5506,7 @@ Pocket = 7
 Price = 0
 BattleUse = OnBattler
 Flags = Fling_30
-Description = 能相对提高战斗中宝可梦的速度 。离场后，效果便会消失。
+Description = 能相对提高战斗中宝可梦的速度。离场后，效果便会消失。
 #-------------------------------
 [XSPEED3]
 Name = 速度强化3
@@ -5515,7 +5515,7 @@ Pocket = 7
 Price = 0
 BattleUse = OnBattler
 Flags = Fling_30
-Description = 能大量提高战斗中宝可梦的速度 。离场后，效果便会消失。
+Description = 能大量提高战斗中宝可梦的速度。离场后，效果便会消失。
 #-------------------------------
 [XSPEED6]
 Name = 速度强化6
@@ -5524,7 +5524,7 @@ Pocket = 7
 Price = 0
 BattleUse = OnBattler
 Flags = Fling_30
-Description = 能极大提高战斗中宝可梦的速度 。离场后，效果便会消失。
+Description = 能极大提高战斗中宝可梦的速度。离场后，效果便会消失。
 #-------------------------------
 [XACCURACY]
 Name = 命中强化
@@ -5542,7 +5542,7 @@ Pocket = 7
 Price = 0
 BattleUse = OnBattler
 Flags = Fling_30
-Description = 能相对提高战斗中宝可梦的命中 。离场后，效果便会消失。
+Description = 能相对提高战斗中宝可梦的命中。离场后，效果便会消失。
 #-------------------------------
 [XACCURACY3]
 Name = 命中强化3
@@ -5551,7 +5551,7 @@ Pocket = 7
 Price = 0
 BattleUse = OnBattler
 Flags = Fling_30
-Description = 能大量提高战斗中宝可梦的命中 。离场后，效果便会消失。
+Description = 能大量提高战斗中宝可梦的命中。离场后，效果便会消失。
 #-------------------------------
 [XACCURACY6]
 Name = 命中强化6
@@ -5560,7 +5560,7 @@ Pocket = 7
 Price = 0
 BattleUse = OnBattler
 Flags = Fling_30
-Description = 能极大提高战斗中宝可梦的命中 。离场后，效果便会消失。
+Description = 能极大提高战斗中宝可梦的命中。离场后，效果便会消失。
 #-------------------------------
 [MAXMUSHROOMS]
 Name = 极巨菇菇
@@ -5569,7 +5569,7 @@ Pocket = 7
 Price = 8000
 BattleUse = OnBattler
 Flags = Fling_30
-Description = 拥有某种神奇力量的蘑菇，能改变宝可梦极巨化的样子。在战斗中，可以提高宝可梦所有的能力 。
+Description = 拥有某种神奇力量的蘑菇，能改变宝可梦极巨化的样子。在战斗中，可以提高宝可梦所有的能力。
 #-------------------------------
 [DIREHIT]
 Name = 要害攻击
@@ -5758,7 +5758,7 @@ Pocket = 8
 Price = 0
 FieldUse = Direct
 Flags = KeyItem
-Description = 能够将藏在草丛里的宝可梦找出来的道具。走路就能给电池充电 。
+Description = 能够将藏在草丛里的宝可梦找出来的道具。走路就能给电池充电。
 #-------------------------------
 [TOWNMAP]
 Name = 城镇地图
@@ -5959,7 +5959,7 @@ Pocket = 8
 Price = 0
 FieldUse = OnPokemon
 Flags = KeyItem
-Description = 人们曾经用来进献给国王的缰绳 。可增强丰饶之力，并使蕾冠王与爱马合二为一。
+Description = 人们曾经用来进献给国王的缰绳。可增强丰饶之力，并使蕾冠王与爱马合二为一。
 #-------------------------------
 [REINSOFUNITYUSED]
 Name = 牵绊缰绳
@@ -5968,7 +5968,7 @@ Pocket = 8
 Price = 0
 FieldUse = OnPokemon
 Flags = KeyItem
-Description = 人们曾经用来进献给国王的缰绳 。通过缰绳连接的二者可以相互交流。可使蕾冠王与爱马一分为二。
+Description = 人们曾经用来进献给国王的缰绳。通过缰绳连接的二者可以相互交流。可使蕾冠王与爱马一分为二。
 #-------------------------------
 [OVALCHARM]
 Name = 圆形护符

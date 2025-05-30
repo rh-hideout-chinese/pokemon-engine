@@ -315,7 +315,7 @@ ItemHandlers::UseOnPokemon.addIf(:zcrystals,
     scene.pbDisplay(_INTL("{1}确定给{2}吗。\n这样他就能使用Z招式!", crystal, pkmn.name))
     if pkmn.item
       heldItem = GameData::Item.get(pkmn.item)
-      prefix = (heldItem.is_zcrystal?) ? "a piece of" : (heldItem.portion_name.starts_with_vowel?) ? "an" : "a"
+      prefix = (heldItem.is_zcrystal?) ? "已经持有一个" : (heldItem.portion_name.starts_with_vowel?) ? "an" : "a"
       scene.pbDisplay(_INTL("但是，{1}已经持有{2}{3}。\1", pkmn.name, prefix, heldItem.portion_name))
       if scene.pbConfirm(_INTL("包包已满。宝可梦\n的道具无法拿下。"))
         if !$bag.can_add?(pkmn.item)
@@ -323,7 +323,7 @@ ItemHandlers::UseOnPokemon.addIf(:zcrystals,
           next false
         else
           $bag.add(pkmn.item)
-          itemname = (heldItem.is_zcrystal?) ? "piece of #{heldItem.name}" : heldItem.portion_name
+          itemname = (heldItem.is_zcrystal?) ? "已经持有一个#{heldItem.name}" : heldItem.portion_name
           scene.pbDisplay(_INTL("你从{1}那里拿走了\n{2},并给了它\n一个{3}。", pkmn.name, itemname, crystal))
         end
       else
