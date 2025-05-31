@@ -31,7 +31,7 @@ class PokemonPokedexInfo_Scene
       elsif sp.form == 0 && !gender_differences
         2.times do |real_gndr|
           next if !$player.pokedex.seen_form?(@species, real_gndr, sp.form) && !Settings::DEX_SHOWS_ALL_FORMS
-          ret.push([sp.form_name || _INTL("One Form"), 0, sp.form])
+          ret.push([sp.form_name || _INTL("普通形态"), 0, sp.form])
           break
         end
       else   # Both male and female
@@ -50,10 +50,10 @@ class PokemonPokedexInfo_Scene
         entry[0] = "" if !multiple_forms && !gender_differences
       else   # Necessarily applies only to form 0
         case entry[1]
-        when 0 then entry[0] = _INTL("Male")
-        when 1 then entry[0] = _INTL("Female")
+        when 0 then entry[0] = _INTL("公")
+        when 1 then entry[0] = _INTL("母")
         else
-          entry[0] = (multiple_forms) ? _INTL("One Form") : _INTL("Genderless")
+          entry[0] = (multiple_forms) ? _INTL("普通形态") : _INTL("无性别")
         end
       end
       entry[1] = 0 if entry[1] == 2   # Genderless entries are treated as male
@@ -176,8 +176,8 @@ class PokemonRegionMap_Scene
       @sprites["mapbottom"].mapdetails  = pbGetMapDetails(@map_x, @map_y)
       if Input.trigger?(Input::BACK)
         if @editor && @changed
-          pbSaveMapData if pbConfirmMessage(_INTL("Save changes?")) { pbUpdate }
-          break if pbConfirmMessage(_INTL("Exit from the map?")) { pbUpdate }
+          pbSaveMapData if pbConfirmMessage(_INTL("保存更改？")) { pbUpdate }
+          break if pbConfirmMessage(_INTL("退出这个地图吗？")) { pbUpdate }
         else
           break
         end
@@ -187,7 +187,7 @@ class PokemonRegionMap_Scene
            ($DEBUG && Input.press?(Input::CTRL)))
           return healspot if @fly_map
           name = pbGetMapNameFromId(healspot[0])
-          return healspot if pbConfirmMessage(_INTL("Would you like to use Fly to go to {1}?", name)) { pbUpdate }
+          return healspot if pbConfirmMessage(_INTL("你想要飞到{1}吗？", name)) { pbUpdate }
         end
       elsif Input.trigger?(Input::USE) && @editor   # Intentionally after other USE input check
         pbChangeMapLocation(@map_x, @map_y)
