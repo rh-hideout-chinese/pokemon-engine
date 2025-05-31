@@ -1,7 +1,7 @@
 ﻿# See the documentation on the wiki to learn how to edit this file.
 #-------------------------------
 [0]
-Name = Essen
+Name = 未知地图
 Filename = mapRegion0.png
 Point = 13,12,Lappet Town,Oak's Lab,2,8,8
 Point = 13,11,Route 1
