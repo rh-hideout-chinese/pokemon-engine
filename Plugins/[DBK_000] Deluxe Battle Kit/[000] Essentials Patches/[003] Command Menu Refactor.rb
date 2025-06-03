@@ -191,7 +191,7 @@ class Battle::Scene
       mode = (shadowTrainer) ? 2 : (firstAction) ? 0 : 1
     end
     cmds = [
-      _INTL("{1}要做什么呢?", @battle.battlers[idxBattler].name),
+      _INTL("{1}要\n做什么呢?", @battle.battlers[idxBattler].name),
       _INTL("对战"), bagCommand,
       _INTL("精灵"), runCommand
     ]
