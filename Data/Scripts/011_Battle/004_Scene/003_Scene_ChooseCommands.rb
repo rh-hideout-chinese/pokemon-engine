@@ -10,7 +10,7 @@ class Battle::Scene
       _INTL("战斗"),
       _INTL("背包"),
       _INTL("宝可梦"),
-      (shadowTrainer) ? _INTL("呼唤") : (firstAction) ? _INTL("逃跑") : _INTL("取消")
+      (shadowTrainer) ? _INTL("呼叫") : (firstAction) ? _INTL("逃跑") : _INTL("取消")
     ]
     ret = pbCommandMenuEx(idxBattler, cmds, (shadowTrainer) ? 2 : (firstAction) ? 0 : 1)
     ret = 4 if ret == 3 && shadowTrainer   # Convert "Run" to "Call"

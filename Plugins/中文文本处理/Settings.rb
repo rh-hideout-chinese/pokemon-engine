@@ -1,12 +1,12 @@
 module Settings
 	#字体垂直偏移量（默认为8，值越小文本向下）
-	Y_OFFSET_OF_TEXT = 4
+	Y_OFFSET_OF_TEXT = 8
 	
   #命令纠正偏移量(默认为8，值越小文本向下)
-  Y_OFFSET_OF_ORDER_CORRCETION = 4
+  Y_OFFSET_OF_ORDER_CORRCETION = 8
 
 	#引号中填写自已使用的字体即可
-	GLOBAL_FONT_NAME = "FZCuYuan-M03S"
+	GLOBAL_FONT_NAME = "zihunxingmouhei_trial"
 end
 #=========================================================
 # 以下内容禁止编辑

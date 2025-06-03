@@ -50,8 +50,8 @@ class Battle::Scene::FightMenu < Battle::Scene::MenuBase
       addSprite("infoOverlay", @infoOverlay)
       @typeIcon = Sprite.new(viewport)
       @typeIcon.bitmap = @typeBitmap.bitmap
-      @typeIcon.x      = self.x + 430
-      @typeIcon.y      = self.y + 20
+      @typeIcon.x      = self.x + 435
+      @typeIcon.y      = self.y + 10
       @typeIcon.src_rect.height = TYPE_ICON_HEIGHT
       addSprite("typeIcon", @typeIcon)
       @actionButton = Sprite.new(viewport)
@@ -191,7 +191,7 @@ class Battle::Scene
       mode = (shadowTrainer) ? 2 : (firstAction) ? 0 : 1
     end
     cmds = [
-      _INTL("{1} 要做什\n么呢?", @battle.battlers[idxBattler].name),
+      _INTL("{1}要做什么呢?", @battle.battlers[idxBattler].name),
       _INTL("对战"), bagCommand,
       _INTL("精灵"), runCommand
     ]

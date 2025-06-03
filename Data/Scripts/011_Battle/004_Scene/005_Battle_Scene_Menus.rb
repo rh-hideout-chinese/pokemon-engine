@@ -117,7 +117,7 @@ class Battle::Scene::CommandMenu < Battle::Scene::MenuBase
     self.y = Graphics.height - 96
     # Create message box (shows "What will X do?")
     @msgBox = Window_UnformattedTextPokemon.newWithSize(
-      "", self.x + 16, self.y + 2, 220, Graphics.height - self.y, viewport
+      "", self.x + 12, self.y + 2, 220, Graphics.height - self.y, viewport
     )
     @msgBox.baseColor   = TEXT_BASE_COLOR
     @msgBox.shadowColor = TEXT_SHADOW_COLOR
@@ -264,7 +264,7 @@ class Battle::Scene::FightMenu < Battle::Scene::MenuBase
       @typeIcon = Sprite.new(viewport)
       @typeIcon.bitmap = @typeBitmap.bitmap
       @typeIcon.x      = self.x + 416
-      @typeIcon.y      = self.y + 20
+      @typeIcon.y      = self.y + 50
       @typeIcon.src_rect.height = TYPE_ICON_HEIGHT
       addSprite("typeIcon", @typeIcon)
       # Create Mega Evolution button
@@ -389,7 +389,7 @@ class Battle::Scene::FightMenu < Battle::Scene::MenuBase
       if move.total_pp <= 0
         @msgBox.text = _INTL("PP——<br>属性/{1}", moveType)
       else
-        @msgBox.text = _ISPRINTF("PP:{1: 2d}/{2: 2d}<br>TYPE/{3:s}",
+        @msgBox.text = _ISPRINTF("PP:{1: 2d}/{2: 2d}<br>属性/{3:s}",
                                  move.pp, move.total_pp, moveType)
       end
       return
@@ -408,9 +408,9 @@ class Battle::Scene::FightMenu < Battle::Scene::MenuBase
       ppFraction = [(4.0 * move.pp / move.total_pp).ceil, 3].min
       textPos = []
       textPos.push([_INTL("PP:"),
-                    448, 56, :center,PP_COLORS[ppFraction * 2], PP_COLORS[(ppFraction * 2) + 1 ]])
+                    448, 52, :center,PP_COLORS[ppFraction * 2], PP_COLORS[(ppFraction * 2) + 1 ]])
       textPos.push([_INTL("{1}/{2}", move.pp, move.total_pp),
-                    448, 80, :center,PP_COLORS[ppFraction * 2], PP_COLORS[(ppFraction * 2) + 1]])
+                    448, 76, :center,PP_COLORS[ppFraction * 2], PP_COLORS[(ppFraction * 2) + 1]])
       pbDrawTextPositions(@infoOverlay.bitmap, textPos)
     end
   end
