@@ -110,14 +110,14 @@ class Battle::Scene
         @sprites["trshadow_#{idxTrainer + 1}"]&.play
       end
     end
-    pbDisplayPausedMessage(_INTL("{1} joined the battle!", trainer.full_name))
+    pbDisplayPausedMessage(_INTL("{1}加入了战斗!", trainer.full_name))
     battler_names = ""
     sendOuts.each_with_index do |sendOut, i|
       battler = @battle.battlers[sendOut[0]]
       battler_names += ((i == sendOuts.length - 1) ? " and " : ", ") if i > 0
       battler_names += (defined?(battler.name_title)) ? battler.name_title : battler.name
     end
-    pbDisplayMessage(_INTL("{1} sent out {2}!", trainer.full_name, battler_names))
+    pbDisplayMessage(_INTL("{1}派出了{2}!", trainer.full_name, battler_names))
     @battle.pbSendOut(sendOuts)
   end
   
